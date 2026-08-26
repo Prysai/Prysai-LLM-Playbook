@@ -180,6 +180,15 @@ before serving it. It is not a deployment command. Run
 artifact boundary, credential-signature and symlink guards, loopback binding,
 artifact root, listing boundary, and path-traversal boundary.
 
+The Playwright smoke checks (`browser_smoke.mjs`, `visual_guide_smoke.mjs`, and
+`reader_visual_smoke.mjs`) build their Pages candidate in a process-specific
+temporary directory. This is deliberate: the builder swaps a sibling
+`._site-previous` directory, so concurrent checks must not share `_site/` or
+they can delete one another's files. The full browser check also writes failure
+screenshots and traces under a process-specific `.work/browser-smoke/` folder.
+Run the visual checks independently or concurrently when diagnosing race
+conditions; a passing smoke run proves the declared browser contract only.
+
 `check_deployed_site.py` is the post-publish public-integrity check used by
 the Docs deployment job. It compares the generated discovery files, the
 canonical visual-guide entry, every static locale entry, and route-critical
