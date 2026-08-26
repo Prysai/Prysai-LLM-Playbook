@@ -636,7 +636,8 @@
     { tokens: ['observable-action-boundary'], path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
     { tokens: ['chapter-09-verification-and-recovery', 'task-to-evidence'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
     { tokens: ['llm-core-visible-failures', 'llm-core-check-repair', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions'], path: 'assets/teaching/failed-interaction-recovery-red-black.svg', step: 4 },
-    { tokens: ['chapter-11-designing-a-skill', 'skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    { tokens: ['chapter-11-designing-a-skill'], path: 'assets/teaching/skill-trigger-boundary-decision-map.svg', step: 2 },
+    { tokens: ['skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
     { tokens: ['lab-008-research-question', 'research-question-to-source-record'], path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
     { tokens: ['chapter-10-planning-and-slicing', 'lab-013-l3-vertical-slice'], path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
     { tokens: ['lab-018-language-transfer', 'communication-clinic', 'language-partner', 'beginner-practice-loop'], path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
@@ -731,6 +732,16 @@
       'zh-tw': { title: '說清楚你實際擁有哪些階段的證據', body: '把已設計的契約、已呈現的頁面、學習者執行、遷移與獨立複核分開。', next: '這份紀錄支持到哪個階段？還缺少什麼證據？', boundary: '這張階梯圖用來揭露界線，不是評分；它不能證明學習者理解、遷移或方法已經獨立複核。' },
       fr: { title: 'Nommer le niveau de preuve réellement disponible', body: 'Séparez le contrat conçu, la page rendue, l’essai d’un apprenant, le transfert et la revue indépendante.', next: 'Quel niveau ce relevé permet-il de soutenir, et quelle preuve manque encore ?', boundary: 'Cette échelle sert à expliciter les limites, pas à attribuer une note ; elle ne prouve ni la compréhension, ni le transfert, ni une revue indépendante.' },
     },
+    'skill-trigger-boundary-decision-map.svg': {
+      en: { title: 'A Skill must know when to yield', body: 'Name the narrow job, check the input, separate capability from permission, inspect the actual run, and keep the claim inside the record.', next: 'Is the fit, authority, and evidence visible enough to route this task?', boundary: 'The map describes a Skill contract; it does not prove that a Skill triggered, a tool ran, or an action was authorized.' },
+      zh: { title: 'Skill 必须知道什么时候让出', body: '先说清狭窄任务，检查输入，分开能力与权限，查看实际运行，再让结论留在记录范围内。', next: '这项任务的适配性、权限和证据是否都清楚可见？', boundary: '这张图说明 Skill 契约；它不能证明 Skill 已触发、工具已运行或行动已获授权。' },
+      es: { title: 'Un Skill debe saber cuándo ceder', body: 'Nombra el trabajo concreto, comprueba las entradas, separa capacidad y autorización, inspecciona la ejecución real y mantén la afirmación dentro del registro.', next: '¿Son visibles el encaje, la autorización y la evidencia necesarios para encaminar esta tarea?', boundary: 'El tablero describe un contrato de Skill; no demuestra que se haya activado un Skill, que se haya ejecutado una herramienta ni que una acción estuviera autorizada.' },
+      ja: { title: 'Skill には、譲るべき時を判断する境界が要る', body: '対象を狭く定め、入力を確認し、能力と権限を分け、実際の実行を確認して、主張を記録の範囲に保ちます。', next: 'このタスクを進めるために、適合性・権限・証拠は十分に見えているか？', boundary: 'この図は Skill の契約を示すだけです。Skill が発動したこと、ツールが実行されたこと、操作が許可されたことは証明しません。' },
+      ko: { title: 'Skill은 언제 물러나야 하는지도 알아야 합니다', body: '작업 범위를 좁히고 입력을 확인한 뒤 능력과 권한을 나눕니다. 실제 실행을 점검하고 주장은 기록이 뒷받침하는 범위에 둡니다.', next: '이 작업을 진행할 만큼 적합성·권한·증거가 모두 분명한가?', boundary: '이 그림은 Skill 계약을 설명할 뿐입니다. Skill이 호출됐는지, 도구가 실행됐는지, 행동이 승인됐는지는 증명하지 않습니다.' },
+      de: { title: 'Ein Skill muss auch wissen, wann er abgeben muss', body: 'Benenne die enge Aufgabe, prüfe die Eingabe, trenne Fähigkeit und Berechtigung, sieh den tatsächlichen Lauf an und halte die Aussage innerhalb des Belegs.', next: 'Sind Passung, Berechtigung und Beleg für diese Aufgabe sichtbar genug?', boundary: 'Die Tafel beschreibt einen Skill-Vertrag. Sie belegt weder eine Auslösung noch einen Tool-Lauf oder eine erteilte Berechtigung.' },
+      'zh-tw': { title: 'Skill 也必須知道何時讓出', body: '先說清楚狹窄的工作範圍，檢查輸入，分開能力與權限，查看實際執行，再讓主張留在紀錄範圍內。', next: '這項任務的適配性、權限與證據是否都清楚可見？', boundary: '這張圖說明 Skill 契約；它不能證明 Skill 已觸發、工具已執行或行動已獲授權。' },
+      fr: { title: 'Un Skill doit aussi savoir quand céder la main', body: 'Définissez la tâche étroite, vérifiez les entrées, séparez capacité et autorisation, examinez l’exécution réelle et gardez l’affirmation dans les limites du relevé.', next: 'L’adéquation, l’autorisation et les preuves sont-elles assez visibles pour poursuivre ?', boundary: 'La planche décrit un contrat de Skill ; elle ne prouve ni le déclenchement d’un Skill, ni l’exécution d’un outil, ni l’autorisation d’une action.' },
+    },
     'failed-interaction-recovery-red-black.svg': {
       en: { title: 'Recover from the first mismatch', body: 'Preserve the inputs and trace, classify the first mismatch, change one condition, and keep the result bounded.', next: 'What failed first, and what single safe change can test that diagnosis?', boundary: 'The board orders a recovery attempt; it does not prove that a retry worked or that the original gap is closed.' },
       zh: { title: '从第一个不匹配处开始恢复', body: '保留输入和轨迹，分类第一个不匹配，只改变一个条件，并让结论保持有边界。', next: '最先失败的是什么？哪一个单一且安全的改变能检验判断？', boundary: '这张图安排一次恢复尝试；它不能证明重试成功，也不能证明原始缺口已经消失。' },
@@ -784,8 +795,9 @@
       { path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
     ] },
     { tokens: ['chapter-11-designing-a-skill', 'chapter-14-discover-and-audit-skills', 'lab-005-design-a-skill', 'lab-017-skill-discovery-audit'], visuals: [
-      { path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
       { path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+      { path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
+      { path: 'assets/teaching/skill-trigger-boundary-decision-map.svg', step: 2 },
     ] },
     { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'lab-015-evidence-delivery'], visuals: [
       { path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
