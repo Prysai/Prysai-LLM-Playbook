@@ -44,3 +44,22 @@ were also checked with a local Playwright run. The full browser suite retains a
 historical pass record, but its latest rerun timed out and needs a separate
 performance investigation before it can be treated as current evidence. None
 of these checks substitute for deployment propagation or learner checks.
+
+## Follow-up: additive foundation bridge audit
+
+The homepage's first-task evidence bridge uses a runtime dictionary layer in
+`site/app.js`. The static site-i18n validator now audits that layer as well,
+including its localized title, body, and alternative text. This closes a
+false-negative validation gap without changing the runtime fallback order.
+
+| Check | Result | Scope |
+| --- | --- | --- |
+| Additive dictionary regression fixtures | passed | `SITE_I18N_TESTS_OK fixtures=10` |
+| Site i18n inventory after bridge audit | passed | `html_keys=674 translated_keys=674`, all 8 locales |
+| Visual Guide smoke after bridge audit | passed | `VISUAL_GUIDE_SMOKE_OK locales=8 cards=21 mobile=390,360 no_script=1` |
+| Reader visual smoke after bridge audit | passed | `READER_VISUAL_SMOKE_OK locales=8 lab=003 first_task_locales=8 research_locales=8 chapter=15 mobile=390 no_horizontal_overflow=1` |
+
+The bridge board remains a teaching aid. These checks establish dictionary
+coverage and rendered-route behavior; they do not establish native-language
+quality, learner comprehension, transfer, deployment propagation, or release
+readiness.
