@@ -574,7 +574,7 @@ review this chapter, related labs, Skills, evaluation fixtures, and site paths.
       horizontal layer plan for the same outcome.
 - [ ] I can create a checkpoint that another person can use to recover without
       trusting the prior conversation.
-- [ ] I can distinguish source, build, runtime, visual, source, security, and
+- [ ] I can distinguish source, build, runtime, visual, security, and
       user-acceptance evidence.
 - [ ] I can stop a long-running or capacity-interrupted task without calling
       silence or a repeated retry a success.
