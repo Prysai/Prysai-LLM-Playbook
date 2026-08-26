@@ -149,15 +149,23 @@ teaching contract. It checks that each registered chapter or Lab exposes an
 objective, an observable exercise, a failure or boundary, evidence, acceptance,
 transfer, source/status boundaries, and the entry navigation required by the
 current route. It also reports conservative heading and reader-text compression
-signals for non-English files. Those signals require a blind native-language
-review; they are not translation scores, proof of missing meaning, or learner
-evidence. Add `--deep` to inspect targeted concept groups for the historically
-condensed Labs and chapters (event traces, branches, evidence tables, citation
-audits, and similar teaching concepts). Deep findings are still editorial
-signals: they use concept aliases rather than literal heading parity and do not
-claim that a translation is incomplete without a native-language review. The
-companion `test_audit_semantic_contract.py` protects the audit's
-missing-versus-compressed distinction and its localized concept aliases.
+signals for non-English files, plus a structural-gap signal when an executable
+Markdown structure present in the English source (a fenced example, table, or
+acceptance checklist) disappears completely from a locale. A structural gap is
+only a prompt for human comparison: a translator may deliberately replace a
+table with prose or combine examples. Ordinary lists and links are not treated
+as gaps because they are especially easy to rewrite naturally. These signals
+require a blind native-language review; they are not translation scores, proof
+of missing meaning, or learner evidence. Add `--deep` to inspect targeted
+concept groups for the historically condensed Labs and chapters (event traces,
+branches, evidence tables, citation audits, and similar teaching concepts).
+Deep findings are still editorial signals: they use concept aliases rather than
+literal heading parity and do not claim that a translation is incomplete
+without a native-language review. Use `--fail-on-structure-missing` only when a
+release review deliberately chooses to treat a disappeared structure as a
+blocking condition. The companion `test_audit_semantic_contract.py` protects
+the audit's missing-versus-compressed distinction, structural-gap behavior, and
+localized concept aliases.
 
 Use `validate_learning_contract.py --canonical-en` to inspect only the
 English sources currently declared by the locale matrix. The full command

@@ -66,7 +66,33 @@ events.yaml run-record.yaml handoff.md
     require(audit.has_group(localized_lab006, lab006_groups["lost_response"]), "localized lost-response branch was not recognised")
     require(audit.has_group(localized_lab006, lab006_groups["transfer"]), "localized transfer was not recognised")
     require("evidence_to_keep" in {group.name for group in audit.DEEP_CONTRACTS["lab-013-l3-vertical-slice"]}, "deep contract lost evidence group")
-    print("SEMANTIC_CONTRACT_AUDIT_TESTS_OK fixtures=3")
+
+    structured_source = """
+```text
+- this list is inside code and must not count
+```
+| Field | Evidence |
+| --- | --- |
+1. Define the task
+- [ ] Keep the receipt
+- Record the boundary
+[Source](https://example.com/source)
+"""
+    structured_locale = """
+## A natural prose translation
+The translated page explains the same ideas in paragraphs.
+"""
+    source_features = audit.structural_features(structured_source)
+    locale_features = audit.structural_features(structured_locale)
+    require(source_features["code_fence_blocks"] == 1, "code fence block was not counted")
+    require(source_features["tables"] == 1, "table separator was not counted")
+    require(source_features["ordered_list_items"] == 1, "ordered list was not counted")
+    require(source_features["checklist_items"] == 1, "checklist was not counted")
+    require(source_features["inline_links"] == 1, "inline link was not counted")
+    require(locale_features["unordered_list_items"] == 0, "code-only list leaked into locale counts")
+    gaps = audit.structural_gaps(source_features, locale_features)
+    require(gaps == ["code_fence_blocks", "tables", "checklist_items"], f"unexpected structural gaps: {gaps}")
+    print("SEMANTIC_CONTRACT_AUDIT_TESTS_OK fixtures=4")
     return 0
 
 

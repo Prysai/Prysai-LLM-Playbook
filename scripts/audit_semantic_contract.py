@@ -5,8 +5,10 @@ small teaching contract that every chapter and Lab must expose: an objective,
 an observable exercise, a failure or boundary case, evidence, acceptance,
 transfer, sources, status and same-locale navigation.  It also reports likely
 compression when a localized page is substantially shorter or has fewer
-teaching headings than its English source.  A compression finding requires
-editorial review; it is never treated as proof that a translation is wrong.
+teaching headings than its English source, plus a conservative structural-gap
+signal when a structure present in the English source is entirely absent from
+the localized page.  These findings require editorial review; they are never
+treated as proof that a translation is wrong.
 
 The locale matrix is JSON-compatible YAML in this repository, so this audit
 uses only the Python standard library and remains runnable without PyYAML.
@@ -66,6 +68,9 @@ class Finding:
     source_chars: int
     localized_chars: int
     deep_missing: list[str]
+    structure_missing: list[str]
+    source_structure: dict[str, int]
+    localized_structure: dict[str, int]
 
 
 # These patterns describe concepts, not a required translation.  Keep them
@@ -269,6 +274,56 @@ def instructional_body(text: str) -> str:
     return body
 
 
+# These are the only presentation structures whose complete disappearance is
+# strong enough to flag automatically. Ordinary lists and links are too easy
+# to rewrite naturally (or to replace with reference links), so they remain
+# available as counts in local debugging but never become a release finding.
+STRUCTURAL_GAP_FEATURES = (
+    "code_fence_blocks",
+    "tables",
+    "checklist_items",
+)
+
+
+def structural_features(text: str) -> dict[str, int]:
+    """Count reader-facing Markdown structures without judging their style.
+
+    Lists and links in fenced examples do not satisfy reader-facing counts,
+    while fence markers themselves remain observable. The counts only tell an
+    editor where to compare two pages; they do not require presentation parity.
+    """
+
+    fence_pattern = re.compile(r"(?m)^[ \t]*(?:`{3,}|~{3,})[^\n]*$")
+    code_free = re.sub(r"```.*?```|~~~.*?~~~", " ", text, flags=re.DOTALL)
+    code_free = re.sub(r"<!--.*?-->", " ", code_free, flags=re.DOTALL)
+    table_separator = re.compile(
+        r"(?m)^\s*\|?\s*:?-{3,}:?\s*"
+        r"(?:\|\s*:?-{3,}:?\s*)+\|?\s*$"
+    )
+    return {
+        # A complete fence is represented by two marker lines in valid
+        # Markdown. Counting marker pairs keeps the signal about executable
+        # examples while avoiding a false distinction between languages that
+        # use one large example and languages that use several small ones.
+        "code_fence_blocks": len(fence_pattern.findall(text)) // 2,
+        "tables": len(table_separator.findall(code_free)),
+        "ordered_list_items": len(re.findall(r"(?m)^\s{0,3}\d+[.)]\s+", code_free)),
+        "unordered_list_items": len(re.findall(r"(?m)^\s{0,3}[-*+]\s+", code_free)),
+        "checklist_items": len(re.findall(r"(?m)^\s{0,3}[-*+]\s+\[[ xX]\]\s+", code_free)),
+        "inline_links": len(re.findall(r"(?m)(?<!\!)\[[^\]\n]+\]\([^\)\n]+\)", code_free)),
+    }
+
+
+def structural_gaps(source: dict[str, int], localized: dict[str, int]) -> list[str]:
+    """Return only structures that disappear entirely in a locale."""
+
+    return [
+        name
+        for name in STRUCTURAL_GAP_FEATURES
+        if source.get(name, 0) > 0 and localized.get(name, 0) == 0
+    ]
+
+
 def frontmatter_missing(text: str, kind: str) -> list[str]:
     """Return only genuinely missing structured lab fields.
 
@@ -341,6 +396,13 @@ def audit(matrix: dict[str, Any], *, include_deep: bool = False) -> tuple[list[F
         localized_heading_count = headings(text)
         source_chars = len(reader_text(source))
         localized_chars = len(reader_text(text))
+        source_structure = structural_features(source)
+        localized_structure = structural_features(text)
+        structure_missing = (
+            structural_gaps(source_structure, localized_structure)
+            if locale != "EN"
+            else []
+        )
         if kind == "chapter":
             # Use the canonical multilingual contract patterns for chapters;
             # they are maintained with the project's release validator.
@@ -384,8 +446,25 @@ def audit(matrix: dict[str, Any], *, include_deep: bool = False) -> tuple[list[F
                 compressed.append(f"reader_text_ratio={localized_chars/source_chars:.2f}")
             if source_heading_count >= 12 and localized_heading_count < max(6, int(source_heading_count * 0.55)):
                 compressed.append(f"heading_ratio={localized_heading_count}/{source_heading_count}")
-        if missing or compressed or deep_missing:
-            findings.append(Finding(content_id, kind, locale, path_text, missing, compressed, source_heading_count, localized_heading_count, source_chars, localized_chars, deep_missing))
+        if missing or compressed or deep_missing or structure_missing:
+            findings.append(
+                Finding(
+                    content_id,
+                    kind,
+                    locale,
+                    path_text,
+                    missing,
+                    compressed,
+                    source_heading_count,
+                    localized_heading_count,
+                    source_chars,
+                    localized_chars,
+                    deep_missing,
+                    structure_missing,
+                    source_structure,
+                    localized_structure,
+                )
+            )
     return findings, errors
 
 
@@ -402,6 +481,11 @@ def main() -> int:
         "--fail-on-deep-missing",
         action="store_true",
         help="return non-zero when a targeted concept group is absent",
+    )
+    parser.add_argument(
+        "--fail-on-structure-missing",
+        action="store_true",
+        help="return non-zero when an English Markdown structure disappears in a locale",
     )
     args = parser.parse_args()
     try:
@@ -427,9 +511,16 @@ def main() -> int:
                 details.append("compression=" + ",".join(finding.compressed))
             if finding.deep_missing:
                 details.append("deep_missing=" + ",".join(finding.deep_missing))
+            if finding.structure_missing:
+                details.append("structure_missing=" + ",".join(finding.structure_missing))
             print(f"ATTENTION {finding.content_id}.{finding.locale}: {finding.path} | " + " | ".join(details))
-        print(f"SUMMARY files_checked={len(locale_paths(matrix))-len(errors)} findings={len(findings)} missing_contract={sum(bool(f.missing) for f in findings)} compression_signals={sum(bool(f.compressed) for f in findings)} deep_missing={sum(bool(f.deep_missing) for f in findings)}")
-    if errors or (args.fail_on_missing and any(f.missing for f in findings)) or (args.fail_on_deep_missing and any(f.deep_missing for f in findings)):
+        print(f"SUMMARY files_checked={len(locale_paths(matrix))-len(errors)} findings={len(findings)} missing_contract={sum(bool(f.missing) for f in findings)} compression_signals={sum(bool(f.compressed) for f in findings)} structure_signals={sum(bool(f.structure_missing) for f in findings)} deep_missing={sum(bool(f.deep_missing) for f in findings)}")
+    if (
+        errors
+        or (args.fail_on_missing and any(f.missing for f in findings))
+        or (args.fail_on_deep_missing and any(f.deep_missing for f in findings))
+        or (args.fail_on_structure_missing and any(f.structure_missing for f in findings))
+    ):
         return 1
     return 0
 
