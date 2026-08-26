@@ -78,3 +78,38 @@ It does not prove learner outcomes, translation equivalence, cultural
 appropriateness, model behavior, or production readiness. No machine score or
 automated text comparison can substitute for an independent native-language
 review and a short reader comprehension check.
+
+## Current follow-up — 2026-08-26
+
+The repository now registers eight locales: the English source plus seven
+translation routes (ZH, ZHTW, ES, JA, KO, DE, and FR). The current structural
+audits report all 56 locale-matrix units and all 103 Reader content identities
+for every registered locale, with no missing locale records or files. This is
+route and file coverage only; it is not evidence that the prose is equivalent,
+native, or understood by learners.
+
+The current depth audit covers 280 locale/content pairs and reports 25 editorial
+attention items. Its character and heading ratios are triage signals, not
+translation scores. A shorter target-language page is changed only when a
+required concept, condition, example, failure branch, evidence field, or
+acceptance step is actually missing. We do not add headings, sentences, or
+visuals merely to match English length.
+
+### Precision-first editorial rule
+
+Until the five-unit beginner route has learner evidence, the project freezes
+breadth. A proposed content or visual change must satisfy all of these checks:
+
+1. It closes a named comprehension, accuracy, navigation, accessibility, or
+   evidence gap.
+2. It preserves the canonical facts, status tokens, paths, fixtures, and
+   source/licence boundaries.
+3. A reader can use it to make a decision, perform an observation, or retain a
+   bounded artifact; decoration alone is not a reason to add it.
+4. The change is reviewed in the target language in page context, not as an
+   isolated sentence or a character-count exercise.
+
+The non-English routes therefore remain `candidate`/`in-progress` until a
+named independent language review and a small comprehension check exist. Green
+validators establish structural contracts only; they do not upgrade this
+status.

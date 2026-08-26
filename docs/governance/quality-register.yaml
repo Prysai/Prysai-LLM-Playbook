@@ -87,14 +87,14 @@
       "severity": "P1",
       "owner": "localization-maintainer",
       "opened_at": "2026-08-09",
-      "next_review": "2026-08-19",
+      "next_review": "2026-09-12",
       "superseded_by": "",
       "area": "Locales",
       "finding": "Non-English records describe planned coverage, not completed translation.",
       "required_evidence": "Separate route, file, translation, and language-review states plus a generated missing-file report.",
       "status": "open",
-      "evidence_paths": ["docs/governance/locale-matrix.yaml", "scripts/validate_localization.py", "scripts/audit_locale_release_paths.py", "scripts/audit_translation_depth.py", "docs/quality/translation-depth-release-audit-2026-08-16.md"],
-      "resolution_scope": "All seven routes now contain 40 of 40 same-locale chapter and Lab files, and path checks pass. The 2026-08-16 depth audit covered the earlier six-route snapshot and flagged 51 of 200 non-English pairs for short-text or heading-count attention. The current seven-route status remains migration: the UI labels non-English coverage as local route files pending independent language review. This is routing and disclosure progress, not completed translation, native review, or learner evidence."
+      "evidence_paths": ["docs/governance/locale-matrix.yaml", "scripts/validate_localization.py", "scripts/audit_locale_content_matrix.py", "scripts/audit_reader_locale_coverage.py", "scripts/audit_locale_release_paths.py", "scripts/audit_translation_depth.py", "scripts/audit_translation_language_quality.py", "docs/quality/translation-language-audit-2026-08-19.md"],
+      "resolution_scope": "The current audits register eight locales, 56 locale-matrix units, and 103 Reader content identities with no missing locale records or files. The depth audit covers 280 locale/content pairs and reports 25 editorial attention items; these are triage signals, not translation scores. All non-English routes remain candidate or in-progress pending named independent language review and learner comprehension evidence. Structural coverage and green validators do not establish semantic equivalence, native fluency, or learner outcomes."
     },
     {
       "id": "Q-007",
