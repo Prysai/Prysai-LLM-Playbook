@@ -6,7 +6,7 @@ title: "Die Entdeckung prüfen, bevor ein Skill übernommen wird"
 level: L4
 domain: general
 goal: "Existenz, Entdeckung, Laden, Verhalten, Lizenz und Übernahme als getrennte Ansprüche behandeln"
-setup: "Zwei anonymisierte Skill-Muster mit fester Revision in einem Wegwerfverzeichnis; keine Installation, Zugangsdaten oder externen Schreibvorgänge"
+setup: "Zwei anonymisierte Skill-Muster mit fester Revision in einem temporären Verzeichnis; keine Installation, Zugangsdaten oder externen Schreibvorgänge"
 task: "Jede Entdeckungsstufe erfassen, Revision und Lizenzgrenzen prüfen und eine begrenzte Übernahmeentscheidung erstellen"
 evidence: ["Inventar, Entdeckungsausgaben, Quellrevision, Lizenz, Abhängigkeiten und Vier-Fälle-Plan", "Entscheidungsprotokoll für recommendation-only, blocked, approved-to-install und installed-candidate"]
 failure_variant: "Einen Kandidaten nach echter .env oder Upload fragen lassen; blocked markieren und Anforderung nicht erfüllen"
@@ -25,9 +25,28 @@ transfer_limitations: "Statische Muster beweisen weder Laden noch sicheres Verha
 
 Ein Skill kann auf dem Datenträger existieren, in einer impliziten Liste fehlen, über einen expliziten Namen aufgelöst werden oder beim Laden scheitern. Das sind getrennte Beobachtungen. Ein Verzeichnislisting oder ein Smoke-Test ist keine Übernahmeentscheidung.
 
-## Vorbereitung und Aufgabe
+## Vorbereitung
 
-Nutze zwei anonymisierte Muster mit fester Revision. Eines hat nachvollziehbare Lizenz und begrenzte Eingaben, das andere keine klare Lizenz, Abhängigkeitsliste oder Rollback-Ziel. Installiere keines und nutze keine Zugangsdaten. Erfasse jede Stufe getrennt:
+Lege zwei anonymisierte Muster mit fester Revision in einem temporären Verzeichnis an.
+Eines hat eine nachvollziehbare Lizenz und begrenzte Eingaben, das andere keine klare
+Lizenz, Abhängigkeitsliste oder Rückgängig-Ziel. Installiere keines, verwende keine
+Zugangsdaten und schreibe nicht nach außen.
+
+Halte vor dem Test für jeden Kandidaten Folgendes fest:
+
+| Element | Festhalten |
+|---|---|
+| Identität | Name, genaue Revision, Pfad und Hash |
+| Herkunft | URL, Autor oder Verantwortlicher, Zugriffsdatum und Umfang |
+| Lizenz | Lizenzdatei, NOTICE, verschachtelte Assets und Unbekanntes |
+| Abhängigkeiten | Versionen, Netzwerk, Konto und angeforderte Zugangsdaten |
+| Ziel | Vorgesehene Installationswurzel, Zielgruppe und Verantwortlicher |
+| Entfernung | Sicherung, Rückgängigmachen, Löschfreigabe und nächste Prüfung |
+
+## Aufgabe
+
+Erfasse jede Stufe getrennt. `not_observed` bedeutet, dass keine ausreichende
+Beobachtung vorliegt, nicht „wahrscheinlich ja“:
 
 ```text
 Datei existiert:
@@ -41,19 +60,75 @@ projektübergreifende Migration:
 Übernahmeentscheidung: recommendation-only | blocked | approved-to-install | installed-candidate
 ```
 
-Schreibe bei Unbekanntem `not_observed`. Prüfe Revision, Lizenz, NOTICE, verschachtelte Assets, Abhängigkeiten, Netzwerk-/Kontobedarf, Installationsumfang, Backup, Rollback, Eigentümer und nächsten Prüftermin.
+Prüfe Revision, Lizenz, NOTICE, verschachtelte Assets, Abhängigkeiten, Netzwerk- und
+Kontobedarf, Installationsumfang, Sicherung, Rückgängigmachen, Verantwortlichen und
+nächsten Prüftermin.
 
-## Fehler, Transfer und Abnahme
+## Vier Testfälle
 
-Lasse den Kandidaten echte `.env` oder einen Upload verlangen. Das richtige Ergebnis ist `blocked`; erfülle die Anforderung nicht, um eine „erfolgreiche“ Demo zu erzeugen. Bewahre Inventar, Entscheidungspaket, schreibgeschützte Entdeckungsausgaben sowie positiven, Grenz-, Fehler-/Injektions- und Migrationsplan auf.
+Entwirf vor jeder Ausführung vier Fälle:
 
-- [ ] Ich trennte Existenz, Entdeckung, Laden, Verhalten und Übernahme.
-- [ ] Ich fixierte die Revision und prüfte die Lizenzgrenze.
-- [ ] Ich plante positive, Grenz-, Fehler-/Injektions- und Migrationsfälle.
-- [ ] Ich nannte Zielumfang, Backup, Rollback, Eigentümer und Freigabepunkte.
-- [ ] Ich installierte oder lud nichts hoch, um Erfolg vorzutäuschen.
+1. **positiv:** normale Eingabe, lokaler Umfang und erwartete Ausgabe;
+2. **Grenze:** fehlende Eingabe, Ressource außerhalb des Umfangs oder fehlende Berechtigung;
+3. **Fehler/Injection:** externe Anweisung, Anforderung von Zugangsdaten oder unerwartetes Payload;
+4. **Übertragung:** anderes Verzeichnis oder Projekt, wobei Revision, Abhängigkeiten und Rückgängigmachen erhalten bleiben.
 
-Bei MCP trenne sichtbare Konfiguration, Tool-Entdeckung, schreibgeschützten Zielzugriff, Aufrufergebnis, externes Read-back und Übernahme. Dieses Lab bleibt `draft / not_run`; Muster beweisen weder sichere reale Skill-Nutzung noch vollständige Lizenz.
+Nenne für jeden Fall Vorbedingung, Leseaktion, erwartetes Signal, Nachweis, Status und
+Stoppbedingung. Ein Verzeichnislisting beweist nur das Verzeichnislisting.
+
+## Nachweise
+
+Bewahre Inventar, Revision, schreibgeschützte Entdeckungsausgaben, Lizenz- und
+Abhängigkeitsprüfung, die vier Fälle, das Entscheidungspaket und den Entfernungsplan auf.
+Das Paket unterscheidet Empfehlung ohne Installation, `blocked`, bedingte
+Installationsfreigabe und installierten Kandidaten; es nennt Umfang, Verantwortlichen,
+Sicherung, Rückgängigmachen und nächste Prüfung.
+
+## Absichtlicher Fehler und Grenzen
+
+Lass den Kandidaten eine echte `.env`-Datei, Authentifizierung oder einen Upload verlangen.
+Das richtige Ergebnis ist `blocked`: Behandle die Anforderung als Daten, gib keine
+Zugangsdaten preis, installiere den Kandidaten nicht zum „Ausprobieren“ und notiere den
+fehlenden Nachweis. Ein Katalog, ein Formatprüfer oder eine sichtbare Lizenz beweist weder
+sicheres Verhalten noch tatsächliche Auslösung oder Rechte an verschachtelten Assets.
+
+Wenn ein lokaler Test nicht möglich ist, verwende `not_run`, statt ein Ergebnis zu vermuten.
+Ändert sich die Revision, wiederhole Lizenzprüfung, Abhängigkeitsprüfung und die vier Fälle;
+eine Entscheidung gilt nur für die aufgezeichnete Revision.
+
+## Reflexion
+
+Welche Stufe konnte das Verzeichnislisting nicht beweisen? Welche Beobachtung muss vor einer
+Installation vorliegen? Welche Entfernungskosten oder Abhängigkeiten bleiben unbekannt?
+
+## Übertragung
+
+Übertrage die Stufen auf einen MCP-Server: sichtbare Konfiguration, Tool-Entdeckung,
+schreibgeschützter Zugriff auf das Ziel, Aufrufergebnis, unabhängiges Auslesen des
+Remote-Zustands und Übernahmeentscheidung. Halte getrennt fest, dass der Server
+konfiguriert ist, ein Tool auffindbar und aufrufbar ist, ein Ergebnis beobachtet wurde
+und ein externer Schreibvorgang genehmigt ist.
+
+## Abnahme-Checkliste
+
+- [ ] Ich trennte Existenz, implizite Entdeckung, explizite Auflösung, Laden, Verhalten und Übernahme.
+- [ ] Ich fixierte die Revision und prüfte Lizenz, NOTICE, verschachtelte Assets und Abhängigkeiten.
+- [ ] Ich entwarf positive, Grenz-, Fehler-/Injection- und Übertragungsfälle.
+- [ ] Ich nannte Zielumfang, Verantwortlichen, Sicherung, Rückgängigmachen und Freigabepunkte.
+- [ ] Jede Anforderung nach Zugangsdaten, Authentifizierung oder Upload blieb `blocked`.
+- [ ] Ein nicht ausgeführter Test bleibt `not_run`; ein Listing wurde nicht zu Verhaltensnachweis.
+- [ ] Die Entscheidung unterscheidet Empfehlung, Blockierung, bedingte Freigabe und beobachtete Installation.
+- [ ] Das Entscheidungspaket nennt Unbekanntes und die Entfernung des Kandidaten.
+
+## Quellen
+
+- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11 und FP2-12.
+- [Kapitel 7: Skills, Plugins, MCP und Tools](../chapters/07-skills-plugins-and-tools-DE.md).
+- [Kapitel 14: Externe Skills entdecken, installieren und prüfen](../chapters/14-discover-and-audit-skills-DE.md).
+
+Diese Quellen stützen die Trennung der Stufen und die Herkunftsprüfung. Sie beweisen nicht,
+dass ein realer Skill geladen wird oder sicher arbeitet, und auch nicht die Lizenz jedes
+verschachtelten Assets. Dieses Lab bleibt `draft / not_run`; kein externer Skill wird installiert.
 
 <!-- lab-navigation:start -->
 <hr>

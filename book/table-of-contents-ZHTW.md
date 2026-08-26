@@ -74,7 +74,7 @@
 | 實驗 015：證據化交付 | [開啟實驗 015](labs/lab-015-evidence-delivery-ZHTW.md) | `draft` / `not_run` |
 | 實驗 016：副作用邊界 | [開啟實驗 016](labs/lab-016-side-effect-boundary-ZHTW.md) | `draft` / `not_run` |
 | 實驗 017：採納 Skill 前審計發現過程 | [開啟實驗 017](labs/lab-017-skill-discovery-audit-ZHTW.md) | `draft` / `not_run` |
-| 實驗 018：用初學者旅行打字對話測試保持與遷移 | [開啟實驗 018](labs/lab-018-language-transfer-ZHTW.md) | `draft` / `not_run` |
+| 實驗 018：用初學者學習協調打字對話測試保持與遷移 | [開啟實驗 018](labs/lab-018-language-transfer-ZHTW.md) | `draft` / `not_run` |
 
 
 ## 閱讀與狀態邊界

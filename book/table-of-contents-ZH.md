@@ -73,7 +73,7 @@
 | 实验 015：证据化交付 | [打开实验 015](labs/lab-015-evidence-delivery-ZH.md) | `draft` / `not_run` |
 | 实验 016：副作用边界 | [打开实验 016](labs/lab-016-side-effect-boundary-ZH.md) | `draft` / `not_run` |
 | 实验 017：采纳 Skill 前审计发现过程 | [打开实验 017](labs/lab-017-skill-discovery-audit-ZH.md) | `draft` / `not_run` |
-| 实验 018：用初学者旅行打字对话测试保持与迁移 | [打开实验 018](labs/lab-018-language-transfer-ZH.md) | `draft` / `not_run` |
+| 实验 018：用初学者学习协调打字对话测试保持与迁移 | [打开实验 018](labs/lab-018-language-transfer-ZH.md) | `draft` / `not_run` |
 
 
 ## 阅读与状态边界

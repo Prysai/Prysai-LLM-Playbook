@@ -25,9 +25,28 @@ transfer_limitations: "Muestras estáticas no prueban que un Skill real cargue, 
 
 Un Skill puede existir en disco, faltar en una lista implícita, resolverse por nombre explícito o fallar al cargar. Son observaciones distintas. Un listado o smoke test no es una decisión de adopción.
 
-## Preparación y tarea
+## Preparación
 
-Usa dos muestras anonimizadas y de revisión fija. Una tiene licencia rastreable e inputs acotados; la otra carece de licencia clara, dependencias o rollback. No instales ninguna ni uses credenciales. Registra por separado:
+Usa dos muestras anonimizadas y fijadas a una revisión, dentro de un directorio
+temporal. La muestra A tiene una licencia rastreable y entradas acotadas; la muestra
+B carece de licencia clara, dependencias o destino de reversión. No instales ninguna,
+no uses credenciales ni hagas escrituras externas.
+
+Antes de probarlas, conserva para cada candidato:
+
+| Elemento | Qué conservar |
+|---|---|
+| Identidad | Nombre, revisión exacta, ruta y hash |
+| Procedencia | URL, autor o responsable, fecha de acceso y alcance |
+| Licencia | Archivo de licencia, NOTICE, activos anidados y desconocidos |
+| Dependencias | Versiones, red, cuenta y credenciales solicitadas |
+| Destino | Raíz de instalación prevista, audiencia y responsable |
+| Retirada | Copia de seguridad, reversión, permiso para borrar y próxima revisión |
+
+## Tarea
+
+Registra por separado las siguientes etapas. `not_observed` significa que no existe
+observación suficiente; no significa «probablemente sí»:
 
 ```text
 archivo existe:
@@ -41,19 +60,76 @@ migración entre proyectos:
 decisión: recommendation-only | blocked | approved-to-install | installed-candidate
 ```
 
-Todo lo desconocido queda `not_observed`. Revisa revisión, licencia, NOTICE, activos anidados, dependencias, necesidades de red/cuenta, alcance de instalación, backup, rollback, responsable y próxima revisión.
+Revisa revisión, licencia, NOTICE, activos anidados, dependencias, necesidades de
+red o cuenta, alcance de instalación, copia de seguridad, reversión, responsable y
+próxima revisión.
 
-## Fallo, transferencia y aceptación
+## Cuatro casos de prueba
 
-Haz que un candidato pida `.env` real o una subida. El resultado correcto es `blocked`; no cumplas la petición para conseguir una demostración «exitosa». Guarda inventario, paquete de decisión, salidas de descubrimiento de solo lectura y plan positivo/límite/fallo-migración.
+Antes de ejecutar nada, diseña cuatro casos:
 
-- [ ] Separé existencia, descubrimiento, carga, comportamiento y adopción.
-- [ ] Fijé revisión y comprobé frontera de licencia.
+1. **positivo:** entrada normal, alcance local y salida esperada;
+2. **límite:** falta un dato, un recurso queda fuera del alcance o no hay permiso;
+3. **fallo/inyección:** instrucción externa, solicitud de credenciales o payload inesperado;
+4. **migración:** otro directorio o proyecto, conservando revisión, dependencias y reversión.
+
+Para cada caso, nombra la precondición, la acción de lectura, la señal esperada, la
+evidencia, el estado y la condición de parada. Un listado de archivos solo prueba el
+listado de archivos.
+
+## Evidencia
+
+Conserva el inventario, la revisión, las salidas de descubrimiento de solo lectura,
+la revisión de licencia y dependencias, los cuatro casos, el paquete de decisión y el
+plan de retirada. El paquete debe distinguir recomendación sin instalación, bloqueo,
+aprobación condicional y candidato ya instalado; incluye alcance, responsable, copia
+de seguridad, reversión y próxima revisión.
+
+## Fallo intencional y límites
+
+Haz que el candidato pida un archivo `.env` real, autenticación o una subida. La
+respuesta correcta es `blocked`: conserva la petición como dato, no expongas secretos,
+no instales el candidato para «ver qué hace» y anota la evidencia que falta. Un catálogo,
+un validador de formato o una licencia visible no demuestra comportamiento seguro,
+activación real ni derechos sobre los activos anidados.
+
+Si una prueba local no está disponible, usa `not_run` en lugar de inferir un resultado.
+Si cambia la revisión, repite la revisión de licencia, dependencias y los cuatro casos:
+una decisión solo pertenece a la revisión registrada.
+
+## Reflexión
+
+¿Qué etapa no podía demostrar el catálogo? ¿Qué observación debería preceder a una
+instalación? ¿Qué coste de retirada o dependencia sigue siendo desconocido?
+
+## Transferencia
+
+Aplica la secuencia a un servidor MCP: configuración visible, descubrimiento de
+herramientas, lectura de un objetivo autorizado, resultado de la llamada, lectura
+independiente del estado remoto y decisión de adopción. Mantén separados el hecho de
+que el servidor esté configurado, que la herramienta sea descubrible y utilizable, que
+se haya observado un resultado y que una escritura externa esté aprobada.
+
+## Lista de aceptación
+
+- [ ] Separé existencia, descubrimiento implícito, resolución explícita, carga, comportamiento y adopción.
+- [ ] Fijé la revisión y revisé licencia, NOTICE, activos anidados y dependencias.
 - [ ] Diseñé casos positivo, límite, fallo/inyección y migración.
-- [ ] Nombré alcance, backup, rollback, responsable y aprobación.
-- [ ] No instalé ni subí nada para aparentar éxito.
+- [ ] Nombré alcance, responsable, copia de seguridad, reversión y puntos de aprobación.
+- [ ] Toda solicitud de credenciales, autenticación o subida quedó `blocked`.
+- [ ] Una prueba no ejecutada sigue siendo `not_run`; ningún listado se convirtió en evidencia de comportamiento.
+- [ ] La decisión distingue recomendación, bloqueo, aprobación condicional e instalación observada.
+- [ ] El paquete de adopción indica lo desconocido y cómo retirar el candidato.
 
-Transfiere las etapas a un MCP: configuración visible, descubrimiento de herramientas, acceso de solo lectura, resultado de llamada, lectura externa y adopción. El Lab sigue `draft / not_run`; las muestras no prueban la seguridad o licencia completa de un Skill real.
+## Fuentes
+
+- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11 y FP2-12.
+- [Capítulo 7: Skills, plugins, MCP y herramientas](../chapters/07-skills-plugins-and-tools-ES.md).
+- [Capítulo 14: descubrir, instalar y auditar Skills externos](../chapters/14-discover-and-audit-skills-ES.md).
+
+Estas fuentes respaldan la separación de etapas y la revisión de procedencia; no
+demuestran que un Skill real cargue o actúe de forma segura, ni que todos sus activos
+anidados tengan licencia. El Lab sigue `draft / not_run` y no se instala ningún Skill externo.
 
 <!-- lab-navigation:start -->
 <hr>
