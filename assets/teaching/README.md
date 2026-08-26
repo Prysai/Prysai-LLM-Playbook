@@ -45,6 +45,7 @@ see before the reader works through the prose.
 - [Playbook learning journey](playbook-learning-journey-red-black.svg)
 - [Capability ladder](capability-ladder-red-black.svg)
 - [First attempt to evidence receipt](first-attempt-evidence-receipt-red-black.svg)
+- [First task to evidence bridge](first-task-evidence-bridge-red-black.svg)
 - [Evidence maturity ladder](evidence-maturity-ladder-red-black.svg)
 - [Experiment record anatomy](experiment-record-anatomy-red-black.svg)
 
