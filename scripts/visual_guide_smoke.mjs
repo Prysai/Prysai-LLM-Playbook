@@ -27,6 +27,16 @@ const expectedHero = {
   'zh-tw': '先看懂方法，再閱讀細節。',
   fr: 'Voyez la méthode avant d’entrer dans le détail.',
 };
+const expectedSkillBoundaryCard = {
+  en: 'Decide whether a Skill should act',
+  zh: '先判断 Skill 是否应该行动',
+  es: 'Decide si un Skill debe actuar',
+  ja: 'Skill を動かすべきか判断する',
+  ko: 'Skill이 실행되어야 하는지 판단하기',
+  de: 'Entscheiden, ob ein Skill handeln darf',
+  'zh-tw': '先判斷 Skill 是否應該執行',
+  fr: 'Décider si un Skill doit agir',
+};
 const expectedCounts = {
   route: 11,
   goal: 4,
@@ -39,7 +49,7 @@ const expectedCounts = {
   readingLoop: 6,
   actionBoundary: 5,
   triage: 4,
-  cards: 21,
+  cards: 22,
 };
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
@@ -111,6 +121,11 @@ try {
       assert.equal(await count(selector), expectedCounts[name], `${locale} ${name} visual contract changed`);
     }
     assert.equal(await count('.visual-card img[src*="first-task-evidence-bridge-red-black.svg"]'), 1, `${locale} first-task evidence bridge is missing from the visual gallery`);
+    const skillBoundaryCard = page.locator('.visual-card:has(img[src*="skill-trigger-boundary-decision-map.svg"])');
+    assert.equal(await skillBoundaryCard.count(), 1, `${locale} Skill boundary card is missing from the visual gallery`);
+    assert.equal((await skillBoundaryCard.locator('h3').textContent() || '').trim(), expectedSkillBoundaryCard[locale], `${locale} Skill boundary card title is not localized`);
+    assert.notEqual((await skillBoundaryCard.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Skill boundary card has no alternative text`);
+    assert.notEqual((await skillBoundaryCard.locator('p').textContent() || '').trim(), '', `${locale} Skill boundary card has no localized explanation`);
     await page.locator('[data-visual-maturity-nodes] button').last().click();
     assert.equal(await page.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} maturity selection is not exposed`);
     assert.match(await page.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} maturity route lost its locale`);
