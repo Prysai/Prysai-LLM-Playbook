@@ -711,6 +711,16 @@
       'zh-tw': { title: '從證據走到判斷，再決定是否停止', body: '把紀錄與主張對照；證據或權限不足時，選擇有界線的行動、降低主張強度，或停止。', next: '這份紀錄實際允許我做出多強的判斷？', boundary: '這張圖只依紀錄排列判斷；它不能補足缺少的來源、權限或觀察。' },
       fr: { title: 'Passer des preuves à la décision, puis s’arrêter', body: 'Comparez le relevé à l’affirmation ; choisissez une action délimitée, reclassez l’affirmation ou arrêtez-vous si la preuve ou l’autorisation manque.', next: 'Quelle est la décision la plus forte que ce relevé permet réellement ?', boundary: 'La carte ordonne les décisions à partir d’un relevé ; elle ne remplace ni une source, ni une autorisation, ni une observation manquante.' },
     },
+    'evidence-maturity-ladder-red-black.svg': {
+      en: { title: 'Name the evidence stage you actually have', body: 'Separate a designed contract from a rendered page, a learner run, transfer, and independent review.', next: 'Which stage does this record support, and what evidence is still missing?', boundary: 'The ladder is a disclosure aid, not a score; it does not prove that a learner understood, transferred, or independently reviewed the method.' },
+      zh: { title: '说清你实际拥有哪一阶段的证据', body: '把已设计的契约、已呈现的页面、学习者运行、迁移和独立复核分开。', next: '这份记录支持到哪一阶段？还缺什么证据？', boundary: '这张阶梯图用于披露边界，不是评分；它不能证明学习者理解、迁移或方法已经经过独立复核。' },
+      es: { title: 'Nombra la etapa de evidencia que realmente tienes', body: 'Separa el contrato diseñado, la página publicada, la ejecución de un aprendiz, la transferencia y la revisión independiente.', next: '¿Qué etapa respalda este registro y qué evidencia falta todavía?', boundary: 'La escalera sirve para declarar límites, no para puntuar; no demuestra que un aprendiz haya entendido, transferido o revisado el método de forma independiente.' },
+      ja: { title: '実際に持っている証拠の段階を示す', body: '設計済みの契約、表示されたページ、学習者の実行、転用、独立レビューを分けます。', next: 'この記録が支える段階はどこで、まだ何が足りないか？', boundary: 'このラダーは開示の補助であり、点数ではありません。学習者の理解、転用、独立レビューを証明するものでもありません。' },
+      ko: { title: '실제로 가진 증거 단계를 밝히기', body: '설계된 계약, 렌더링된 페이지, 학습자 실행, 전이와 독립 검토를 구분합니다.', next: '이 기록이 뒷받침하는 단계는 어디이며, 아직 어떤 증거가 부족한가?', boundary: '이 단계표는 공개 범위를 설명하는 도구이지 점수가 아닙니다. 학습자의 이해·전이·독립 검토를 증명하지 않습니다.' },
+      de: { title: 'Die tatsächlich belegte Stufe benennen', body: 'Trenne den entworfenen Vertrag, die dargestellte Seite, den Lernlauf, die Übertragung und die unabhängige Prüfung.', next: 'Welche Stufe trägt dieser Beleg, und welcher Nachweis fehlt noch?', boundary: 'Die Leiter dient der Offenlegung, nicht der Bewertung. Sie belegt weder Verständnis noch Übertragung oder unabhängige Prüfung.' },
+      'zh-tw': { title: '說清楚你實際擁有哪些階段的證據', body: '把已設計的契約、已呈現的頁面、學習者執行、遷移與獨立複核分開。', next: '這份紀錄支持到哪個階段？還缺少什麼證據？', boundary: '這張階梯圖用來揭露界線，不是評分；它不能證明學習者理解、遷移或方法已經獨立複核。' },
+      fr: { title: 'Nommer le niveau de preuve réellement disponible', body: 'Séparez le contrat conçu, la page rendue, l’essai d’un apprenant, le transfert et la revue indépendante.', next: 'Quel niveau ce relevé permet-il de soutenir, et quelle preuve manque encore ?', boundary: 'Cette échelle sert à expliciter les limites, pas à attribuer une note ; elle ne prouve ni la compréhension, ni le transfert, ni une revue indépendante.' },
+    },
     'failed-interaction-recovery-red-black.svg': {
       en: { title: 'Recover from the first mismatch', body: 'Preserve the inputs and trace, classify the first mismatch, change one condition, and keep the result bounded.', next: 'What failed first, and what single safe change can test that diagnosis?', boundary: 'The board orders a recovery attempt; it does not prove that a retry worked or that the original gap is closed.' },
       zh: { title: '从第一个不匹配处开始恢复', body: '保留输入和轨迹，分类第一个不匹配，只改变一个条件，并让结论保持有边界。', next: '最先失败的是什么？哪一个单一且安全的改变能检验判断？', boundary: '这张图安排一次恢复尝试；它不能证明重试成功，也不能证明原始缺口已经消失。' },
@@ -770,6 +780,7 @@
     { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'lab-015-evidence-delivery'], visuals: [
       { path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
       { path: 'assets/teaching/evidence-to-decision-stop-map-red-black.svg', step: 3 },
+      { path: 'assets/teaching/evidence-maturity-ladder-red-black.svg', step: 3 },
     ] },
     { tokens: ['chapter-16-engineering-track', 'chapter-18-content-design-data-automation', 'chapter-19-evaluate-models-and-workflows'], visuals: [
       { path: 'assets/teaching/lifecycle-checkpoints.svg', step: 2 },
