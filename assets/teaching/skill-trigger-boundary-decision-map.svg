@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Skill trigger and boundary decision map</title>
+  <desc id="desc">A five-step decision map for a reusable Skill: name the job, check the input, verify authority, inspect the actual run, then keep the claim inside the evidence or yield and stop.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+
+  <text x="78" y="112" class="mono" font-size="22">SKILL / BOUNDARY</text>
+  <text x="78" y="174" class="ink" font-size="46" font-weight="900">TRIGGER IS NOT</text>
+  <text x="78" y="228" class="ink" font-size="46" font-weight="900">PERMISSION.</text>
+  <text x="78" y="278" class="muted" font-size="21">A reusable method earns its place by yielding safely when the fit or evidence is missing.</text>
+
+  <line x1="120" y1="356" x2="120" y2="1212" class="line"/>
+  <line x1="120" y1="454" x2="120" y2="494" class="redline"/>
+  <line x1="120" y1="624" x2="120" y2="664" class="redline"/>
+  <line x1="120" y1="794" x2="120" y2="834" class="redline"/>
+  <line x1="120" y1="964" x2="120" y2="1004" class="redline"/>
+
+  <g transform="translate(78 320)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="96" y="0" width="688" height="134" fill="#111"/>
+    <text x="124" y="38" class="mono" fill="#fff" font-size="18">TRIGGER</text>
+    <text x="124" y="73" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Name the narrow job.</text>
+    <text x="124" y="106" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">A good fit routes the task; a weak fit yields.</text>
+  </g>
+
+  <g transform="translate(78 490)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="96" y="0" width="688" height="134" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="38" class="mono" font-size="18">INPUT GATE</text>
+    <text x="124" y="73" class="ink" font-size="27" font-weight="900">Check what is actually present.</text>
+    <text x="124" y="106" class="muted" font-size="17">Provided / readable / inferred / unknown · missing input → stop.</text>
+  </g>
+
+  <g transform="translate(78 660)">
+    <circle cx="42" cy="54" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="42" y="64" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="96" y="0" width="688" height="134" fill="#d71920"/>
+    <text x="124" y="38" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="18" font-weight="700" letter-spacing="1px">AUTHORITY</text>
+    <text x="124" y="73" fill="#fff" font-size="27" font-weight="900">Separate capability from permission.</text>
+    <text x="124" y="106" fill="#fff" font-size="17">Allowed / forbidden / reversible / approval · pause before side effects.</text>
+  </g>
+
+  <g transform="translate(78 830)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="96" y="0" width="688" height="134" fill="#111"/>
+    <text x="124" y="38" class="mono" fill="#fff" font-size="18">RUN / INSPECT</text>
+    <text x="124" y="73" fill="#fff" font-size="27" font-weight="900">Look for the actual event.</text>
+    <text x="124" y="106" fill="#c8c8c2" font-size="17">Receipt · output · diff · log · test · human read-back.</text>
+  </g>
+
+  <g transform="translate(78 1000)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="96" y="0" width="688" height="134" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="38" class="mono" font-size="18">EVIDENCE BOUNDARY</text>
+    <text x="124" y="73" class="ink" font-size="27" font-weight="900">Claim only what the record supports.</text>
+    <text x="124" y="106" class="muted" font-size="17">Positive / boundary / failure / transfer · candidate or stop when proof is missing.</text>
+  </g>
+
+  <path d="M216 1134 216 1190 310 1190" class="redline"/>
+  <path d="M684 1134 684 1190 590 1190" class="redline"/>
+  <rect x="78" y="1218" width="762" height="126" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1254" class="mono" font-size="17">TWO HONEST OUTCOMES</text>
+  <text x="102" y="1291" class="ink" font-size="21" font-weight="700">ROUTE: the fit, authority, and evidence are visible.</text>
+  <text x="102" y="1324" class="ink" font-size="21" font-weight="700">YIELD: the missing fact is named and the claim stays small.</text>
+
+  <text x="78" y="1402" class="muted" font-size="16">A Skill contract explains when to act, when not to act, and what another person can inspect.</text>
+</svg>

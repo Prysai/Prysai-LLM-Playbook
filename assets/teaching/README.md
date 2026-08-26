@@ -48,6 +48,7 @@ see before the reader works through the prose.
 - [First task to evidence bridge](first-task-evidence-bridge-red-black.svg)
 - [Evidence maturity ladder](evidence-maturity-ladder-red-black.svg)
 - [Experiment record anatomy](experiment-record-anatomy-red-black.svg)
+- [Skill trigger and boundary decision map](skill-trigger-boundary-decision-map.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
