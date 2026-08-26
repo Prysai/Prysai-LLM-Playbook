@@ -232,6 +232,26 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
             )
         if receipt_locale:
             blocks.append(receipt_locale.group("body"))
+    # The first-task evidence bridge is another additive layer composed into
+    # the homepage foundation route. Keep its localized title, body, and alt
+    # text in the static audit so a valid runtime dictionary cannot be
+    # mistaken for missing UI copy.
+    bridge_copy = re.search(r"const\s+foundationBridgeCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+    if bridge_copy:
+        locale_key = rf"(?:['\"]{re.escape(language)}['\"]|{re.escape(language)})"
+        bridge_locale = re.search(
+            rf"\n\s{{2}}{locale_key}:\s*\{{(?P<body>.*?)\n\s{{2}}\}},",
+            bridge_copy.group("body"),
+            re.DOTALL,
+        )
+        if not bridge_locale:
+            bridge_locale = re.search(
+                rf"(?:^|\n)\s{{2}}{locale_key}:\s*\{{(?P<body>[^{{}}]*)\}}",
+                bridge_copy.group("body"),
+                re.DOTALL,
+            )
+        if bridge_locale:
+            blocks.append(bridge_locale.group("body"))
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 

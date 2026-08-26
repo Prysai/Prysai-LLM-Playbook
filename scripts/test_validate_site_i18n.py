@@ -93,13 +93,28 @@ def main() -> int:
     )
 
     translated = i18n.translation_keys(
-        "Object.assign(copy.es, { skillPlatformObservationName: 'Registro' });",
+        "Object.assign(copy.es, { skillPlatformObservationName: 'Registro' });\n"
+        "const foundationBridgeCopy = {\n"
+        "  es: { foundationBridgeVisualAlt: 'Puente', foundationBridgeVisualBody: 'Explicación', foundationBridgeVisualTitle: 'Título' },\n"
+        "};",
         "es",
-        {"skillPlatformObservationName", "skillPlatformObservation"},
+        {
+            "skillPlatformObservationName",
+            "skillPlatformObservation",
+            "foundationBridgeVisualAlt",
+            "foundationBridgeVisualBody",
+            "foundationBridgeVisualTitle",
+        },
     )
     require(
-        translated == {"skillPlatformObservationName"},
-        "localized dictionary extraction hid a missing public-page key",
+        translated
+        == {
+            "skillPlatformObservationName",
+            "foundationBridgeVisualAlt",
+            "foundationBridgeVisualBody",
+            "foundationBridgeVisualTitle",
+        },
+        "localized additive dictionary extraction hid a missing public-page key",
     )
 
     ordering_errors: list[str] = []
