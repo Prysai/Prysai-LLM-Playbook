@@ -33,10 +33,6 @@ Ein Skill ist weder Modell, Werkzeug, Berechtigung, Connector noch Ersatz für m
 
 Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, der Trigger passt nicht, eine Eingabe fehlt, die Lizenz ist unklar oder die Aufgabe verlangt eine weitergehende Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Auffindbarkeit, Auswahl, Laden, Ausführung und Ausgabe getrennt. Stoppe, bevor du einen externen Kandidaten als eigene Fähigkeit ausgibst.
 
-> Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine abgegrenzte Aufgabenklasse auf begrenzte Aktionen und prüfbare Evidenz abbildet.
-
-Er ist weder Modell noch Werkzeug, Berechtigung, Connector noch Ersatz für menschliche Freigabe.
-
 ## Erst den Vertrag schreiben, dann den Text
 
 ```yaml
