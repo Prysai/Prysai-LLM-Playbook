@@ -113,3 +113,19 @@ The non-English routes therefore remain `candidate`/`in-progress` until a
 named independent language review and a small comprehension check exist. Green
 validators establish structural contracts only; they do not upgrade this
 status.
+
+### Precision review slice — Japanese Chapter 15 (2026-08-26)
+
+- **Files:** `book/chapters/15-research-track-JA.md`
+- **Source revision:** English canonical content at the 2026-08-26 worktree
+  baseline; change committed as `7d4b32a`.
+- **Review type:** maintainer context review focused on native readability; no
+  independent Japanese-language sign-off.
+- **Changes:** replaced misleading or untranslated headings for the cutoff
+  scope, research card, reverse check, ten-minute research/stop records,
+  decision card, and source-owner sections. Contract field names inside fenced
+  examples remain unchanged.
+- **Unresolved boundary:** the page still contains deliberate English status
+  values, file/fixture fields, and selected technical terms. Their presence is
+  not evidence of a completed native review; a Japanese reader check remains
+  required before changing the route from `in-progress`.
