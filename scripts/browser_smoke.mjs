@@ -450,51 +450,51 @@ try {
   };
   const localizedFoundationVisuals = {
     en: {
-      heading: 'Nine foundation boards, one loop.',
-      titles: ['First visit route', 'First attempt to evidence receipt', 'The smallest safe LLM loop', 'Prompt contract: six fields', 'Observable action boundary', 'Evidence recovery ladder', 'Source check before belief', 'Claim to evidence audit', 'Evidence to decision and stop'],
-      bodies: ['Choose one goal, open the Foundation Core, make one safe attempt, check the record, then continue or stop with the unknown visible.', 'Name one result, keep safe input, save what happened, check one detail, and record the limit.', 'Define, supply context, request, check, then repair, transfer, or stop.', 'Result, context, allowed help, limits, check, and stop.', 'Proposal, authority, execution, and human read-back.', 'Match claim strength to the next smallest check.', 'Match claim, source, scope, and freshness before relying on it.', 'State the claim, scope it, name the source, check the link, and keep the limit.', 'Follow a question to an observation, a bounded decision, or a deliberate stop.'],
+      heading: 'Ten foundation boards, one loop.',
+      titles: ['First visit route', 'Make the first task checkable', 'First attempt to evidence receipt', 'The smallest safe LLM loop', 'Prompt contract: six fields', 'Observable action boundary', 'Evidence recovery ladder', 'Source check before belief', 'Claim to evidence audit', 'Evidence to decision and stop'],
+      bodies: ['Choose one goal, open the Foundation Core, make one safe attempt, check the record, then continue or stop with the unknown visible.', 'Choose one observable result, keep the input and stop boundary visible, save what happened, make one focused check, and hand off the result with its limits.', 'Name one result, keep safe input, save what happened, check one detail, and record the limit.', 'Define, supply context, request, check, then repair, transfer, or stop.', 'Result, context, allowed help, limits, check, and stop.', 'Proposal, authority, execution, and human read-back.', 'Match claim strength to the next smallest check.', 'Match claim, source, scope, and freshness before relying on it.', 'State the claim, scope it, name the source, check the link, and keep the limit.', 'Follow a question to an observation, a bounded decision, or a deliberate stop.'],
       boundary: /Project-authored English boards/i,
     },
     zh: {
-      heading: '九张基础图，串起一个闭环。',
-      titles: ['第一次访问路线', '从第一次尝试到证据回执', '最小安全 LLM 闭环', '提示词契约：六个字段', '可观察的行动边界', '证据恢复阶梯', '相信前先检查来源', '声明到证据审计', '从证据到决定与停止'],
-      bodies: ['先选一个目标，进入基础核心，做一次安全尝试，检查记录，然后继续，或在保留未知项的情况下停止。', '写清一个结果，保留安全输入，保存实际发生的内容，检查一个细节，并记录限制。', '定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工核对。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。', '写清声明，限定范围，标出来源，检查证据链，并保留限制。', '沿着问题走到观察结果、有边界的决定，或明确停止。'],
+      heading: '十张基础图，串起一个闭环。',
+      titles: ['第一次访问路线', '让第一次任务可以检查', '从第一次尝试到证据回执', '最小安全 LLM 闭环', '提示词契约：六个字段', '可观察的行动边界', '证据恢复阶梯', '相信前先检查来源', '声明到证据审计', '从证据到决定与停止'],
+      bodies: ['先选一个目标，进入基础核心，做一次安全尝试，检查记录，然后继续，或在保留未知项的情况下停止。', '选择一个可观察结果，保留输入和停止边界，保存实际发生的内容，做一次聚焦检查，再交接结果和限制。', '写清一个结果，保留安全输入，保存实际发生的内容，检查一个细节，并记录限制。', '定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工核对。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。', '写清声明，限定范围，标出来源，检查证据链，并保留限制。', '沿着问题走到观察结果、有边界的决定，或明确停止。'],
       boundary: /项目原创英文图表/,
     },
     es: {
-      heading: 'Nueve tablas, un solo bucle.',
-      titles: ['Ruta para la primera visita', 'Del primer intento al registro de evidencia', 'El bucle LLM seguro más pequeño', 'Contrato de prompt: seis campos', 'Límite de acción observable', 'Escalera de recuperación de evidencia', 'Comprobar la fuente antes de creer', 'Auditar la afirmación y la evidencia', 'De la evidencia a la decisión y la parada'],
-      bodies: ['Elige un objetivo, abre el núcleo de fundamentos, haz una prueba segura, revisa el registro y decide si continúas o paras dejando visible lo que aún no sabes.', 'Nombra un resultado, conserva datos seguros, guarda lo ocurrido, comprueba un detalle y anota el límite.', 'Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.', 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.', 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.', 'Compara afirmación, fuente, alcance y vigencia antes de confiar.', 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.', 'Sigue una pregunta hasta una observación, una decisión acotada o una parada deliberada.'],
+      heading: 'Diez tablas, un solo bucle.',
+      titles: ['Ruta para la primera visita', 'Haz comprobable la primera tarea', 'Del primer intento al registro de evidencia', 'El bucle LLM seguro más pequeño', 'Contrato de prompt: seis campos', 'Límite de acción observable', 'Escalera de recuperación de evidencia', 'Comprobar la fuente antes de creer', 'Auditar la afirmación y la evidencia', 'De la evidencia a la decisión y la parada'],
+      bodies: ['Elige un objetivo, abre el núcleo de fundamentos, haz una prueba segura, revisa el registro y decide si continúas o paras dejando visible lo que aún no sabes.', 'Elige un resultado observable, deja visibles la entrada y el límite de parada, guarda lo ocurrido, haz una comprobación concreta y entrega el resultado con sus límites.', 'Nombra un resultado, conserva datos seguros, guarda lo ocurrido, comprueba un detalle y anota el límite.', 'Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.', 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.', 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.', 'Compara afirmación, fuente, alcance y vigencia antes de confiar.', 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.', 'Sigue una pregunta hasta una observación, una decisión acotada o una parada deliberada.'],
       boundary: /Tablas originales del proyecto en inglés/,
     },
     ja: {
-      heading: '9つの基礎ボード、1つのループ。',
-      titles: ['初回訪問の学習ルート', '最初の試行から確認できる記録へ', '最小の安全なLLMループ', 'プロンプト契約：6つの項目', '観測可能な操作境界', 'エビデンス回復ラダー', '信じる前に出典を確認', '主張と証拠を監査する', '証拠から判断、停止まで'],
-      bodies: ['目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行い、記録を確認します。そのうえで、未知の点を残したまま続けるか止めます。', '結果を1つ決め、安全な入力を使い、実際に起きたことを保存し、1点を確認して限界を記録します。', '定義、コンテキスト提供、依頼、確認、その後に修正、転移、または停止。', '結果、コンテキスト、許可された支援、制約、確認、停止。', '提案、権限、実行、人による読み戻し。', '主張の強さを、次に行う最小の確認に合わせます。', '頼る前に、主張、出典、範囲、鮮度を照合します。', '主張を書き、範囲を定め、出典の責任者を示し、つながりを確認し、限界を残します。', '問いを観察結果、範囲を限定した判断、または意図した停止へつなげます。'],
+      heading: '10個の基礎ボード、1つのループ。',
+      titles: ['初回訪問の学習ルート', '最初のタスクを確認できる形にする', '最初の試行から確認できる記録へ', '最小の安全なLLMループ', 'プロンプト契約：6つの項目', '観測可能な操作境界', 'エビデンス回復ラダー', '信じる前に出典を確認', '主張と証拠を監査する', '証拠から判断、停止まで'],
+      bodies: ['目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行い、記録を確認します。そのうえで、未知の点を残したまま続けるか止めます。', '観察できる結果を1つ選び、入力と停止の境界を見えるようにし、実際に起きたことを保存します。重要な点を1つ確認し、限界と一緒に結果を引き継ぎます。', '結果を1つ決め、安全な入力を使い、実際に起きたことを保存し、1点を確認して限界を記録します。', '定義、コンテキスト提供、依頼、確認、その後に修正、転移、または停止。', '結果、コンテキスト、許可された支援、制約、確認、停止。', '提案、権限、実行、人による読み戻し。', '主張の強さを、次に行う最小の確認に合わせます。', '頼る前に、主張、出典、範囲、鮮度を照合します。', '主張を書き、範囲を定め、出典の責任者を示し、つながりを確認し、限界を残します。', '問いを観察結果、範囲を限定した判断、または意図した停止へつなげます。'],
       boundary: /プロジェクト作成の英語図/,
     },
     ko: {
-      heading: '아홉 기초 보드, 하나의 루프.',
-      titles: ['첫 방문 학습 경로', '첫 시도에서 확인 가능한 기록까지', '가장 작은 안전한 LLM 루프', '프롬프트 계약: 여섯 필드', '관찰 가능한 행동 경계', '증거 복구 사다리', '믿기 전에 출처 점검', '주장과 증거 감사', '증거에서 판단과 중지까지'],
-      bodies: ['목표 하나를 고르고 Foundation Core를 연 뒤 안전하게 한 번 시도합니다. 기록을 확인하고, 모르는 점을 남긴 채 계속할지 멈출지 결정하세요.', '결과 하나를 정하고 안전한 입력을 남기며 실제로 일어난 일을 저장하고 한 항목을 점검한 뒤 한계를 기록하세요.', '정의하고, 맥락을 제공하고, 요청하고, 점검한 다음 수정·전이하거나 멈춥니다.', '결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.', '제안, 권한, 실행, 사람의 결과 확인.', '주장의 강도를 다음 최소 점검에 맞추세요.', '의존하기 전에 주장, 출처, 범위, 최신성을 맞춰 보세요.', '주장을 적고 범위를 정하고 출처를 밝힌 뒤 연결을 점검하고 한계를 남기세요.', '질문을 관찰 결과, 범위가 정해진 판단 또는 의도적인 중지로 이어 가세요.'],
+      heading: '열 개의 기초 보드, 하나의 루프.',
+      titles: ['첫 방문 학습 경로', '첫 작업을 확인 가능한 형태로 만들기', '첫 시도에서 확인 가능한 기록까지', '가장 작은 안전한 LLM 루프', '프롬프트 계약: 여섯 필드', '관찰 가능한 행동 경계', '증거 복구 사다리', '믿기 전에 출처 점검', '주장과 증거 감사', '증거에서 판단과 중지까지'],
+      bodies: ['목표 하나를 고르고 Foundation Core를 연 뒤 안전하게 한 번 시도합니다. 기록을 확인하고, 모르는 점을 남긴 채 계속할지 멈출지 결정하세요.', '관찰 가능한 결과 하나를 정하고 입력과 중지 경계를 분명히 남깁니다. 실제로 일어난 일을 저장하고 중요한 항목 하나를 점검한 뒤 결과와 한계를 인계하세요.', '결과 하나를 정하고 안전한 입력을 남기며 실제로 일어난 일을 저장하고 한 항목을 점검한 뒤 한계를 기록하세요.', '정의하고, 맥락을 제공하고, 요청하고, 점검한 다음 수정·전이하거나 멈춥니다.', '결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.', '제안, 권한, 실행, 사람의 결과 확인.', '주장의 강도를 다음 최소 점검에 맞추세요.', '의존하기 전에 주장, 출처, 범위, 최신성을 맞춰 보세요.', '주장을 적고 범위를 정하고 출처를 밝힌 뒤 연결을 점검하고 한계를 남기세요.', '질문을 관찰 결과, 범위가 정해진 판단 또는 의도적인 중지로 이어 가세요.'],
       boundary: /프로젝트가 만든 영어 보드/,
     },
     de: {
-      heading: 'Neun Grundtafeln, ein Ablauf.',
-      titles: ['Route für den ersten Besuch', 'Vom ersten Versuch zum prüfbaren Beleg', 'Der kleinste sichere LLM-Ablauf', 'Prompt-Vertrag: sechs Felder', 'Beobachtbare Handlungsgrenze', 'Evidenz-Wiederherstellungsleiter', 'Quelle prüfen, bevor du vertraust', 'Aussage und Beleg prüfen', 'Vom Beleg zur Entscheidung und zum Stopp'],
-      bodies: ['Wähle ein Ziel, öffne den Foundation Core, mache einen sicheren Versuch, prüfe das Protokoll und entscheide dann, ob du mit sichtbaren Unklarheiten weitermachst oder stoppst.', 'Benenne ein Ergebnis, sichere die Eingaben, bewahre den tatsächlichen Ablauf, prüfe ein Detail und notiere die Grenze.', 'Definieren, Kontext liefern, anfragen, prüfen und dann reparieren, übertragen oder stoppen.', 'Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.', 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.', 'Passe die Stärke der Aussage an die nächste kleinste Prüfung an.', 'Gleiche Aussage, Quelle, Umfang und Aktualität ab, bevor du dich darauf verlässt.', 'Formuliere die Aussage, grenze sie ein, nenne die Quelle, prüfe die Verbindung und halte die Grenze fest.', 'Verfolge eine Frage bis zur Beobachtung, zur begrenzten Entscheidung oder zum bewussten Stopp.'],
+      heading: 'Zehn Grundtafeln, ein Ablauf.',
+      titles: ['Route für den ersten Besuch', 'Die erste Aufgabe prüfbar machen', 'Vom ersten Versuch zum prüfbaren Beleg', 'Der kleinste sichere LLM-Ablauf', 'Prompt-Vertrag: sechs Felder', 'Beobachtbare Handlungsgrenze', 'Evidenz-Wiederherstellungsleiter', 'Quelle prüfen, bevor du vertraust', 'Aussage und Beleg prüfen', 'Vom Beleg zur Entscheidung und zum Stopp'],
+      bodies: ['Wähle ein Ziel, öffne den Foundation Core, mache einen sicheren Versuch, prüfe das Protokoll und entscheide dann, ob du mit sichtbaren Unklarheiten weitermachst oder stoppst.', 'Wähle ein beobachtbares Ergebnis, halte Eingabe und Stoppgrenze sichtbar, sichere den tatsächlichen Ablauf, prüfe ein wichtiges Detail und übergib Ergebnis und Grenzen.', 'Benenne ein Ergebnis, sichere die Eingaben, bewahre den tatsächlichen Ablauf, prüfe ein Detail und notiere die Grenze.', 'Definieren, Kontext liefern, anfragen, prüfen und dann reparieren, übertragen oder stoppen.', 'Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.', 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.', 'Passe die Stärke der Aussage an die nächste kleinste Prüfung an.', 'Gleiche Aussage, Quelle, Umfang und Aktualität ab, bevor du dich darauf verlässt.', 'Formuliere die Aussage, grenze sie ein, nenne die Quelle, prüfe die Verbindung und halte die Grenze fest.', 'Verfolge eine Frage bis zur Beobachtung, zur begrenzten Entscheidung oder zum bewussten Stopp.'],
       boundary: /Projekt-eigene englische Tafeln/,
     },
     'zh-tw': {
-      heading: '九張基礎圖，串起一個閉環。',
-      titles: ['第一次造訪路線', '從第一次嘗試到可檢查紀錄', '最小安全 LLM 閉環', '提示詞契約：六個欄位', '可觀察的行動邊界', '證據恢復階梯', '相信前先檢查來源', '稽核主張與證據', '從證據到判斷與停止'],
-      bodies: ['先選一個目標，進入基礎核心，做一次安全嘗試，檢查紀錄，然後繼續，或在保留未知項目的情況下停止。', '寫清楚一個結果，保留安全輸入，保存實際發生的內容，檢查一個細節，並記下界線。', '定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。', '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。', '讓聲明的強度對應下一個最小檢查。', '依賴資訊前，對照聲明、來源、範圍與時效性。', '寫清楚主張，限定範圍，標出來源，檢查證據鏈，並保留限制。', '沿著問題走到觀察結果、有界線的判斷，或明確停止。'],
+      heading: '十張基礎圖，串起一個閉環。',
+      titles: ['第一次造訪路線', '讓第一次任務變得可檢查', '從第一次嘗試到可檢查紀錄', '最小安全 LLM 閉環', '提示詞契約：六個欄位', '可觀察的行動邊界', '證據恢復階梯', '相信前先檢查來源', '稽核主張與證據', '從證據到判斷與停止'],
+      bodies: ['先選一個目標，進入基礎核心，做一次安全嘗試，檢查紀錄，然後繼續，或在保留未知項目的情況下停止。', '選擇一個可觀察的結果，保留輸入與停止界線，保存實際發生的內容，做一次聚焦檢查，再連同限制交接結果。', '寫清楚一個結果，保留安全輸入，保存實際發生的內容，檢查一個細節，並記下界線。', '定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。', '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。', '讓聲明的強度對應下一個最小檢查。', '依賴資訊前，對照聲明、來源、範圍與時效性。', '寫清楚主張，限定範圍，標出來源，檢查證據鏈，並保留限制。', '沿著問題走到觀察結果、有界線的判斷，或明確停止。'],
       boundary: /專案原創英文圖表/,
     },
     fr: {
-      heading: 'Neuf tableaux de base, une seule boucle.',
-      titles: ['Parcours de première visite', 'Du premier essai au relevé vérifiable', 'La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire', 'Auditer l’affirmation et les preuves', 'Des preuves à la décision et à l’arrêt'],
-      bodies: ['Choisissez un objectif, ouvrez le Foundation Core, faites un essai sûr, vérifiez le relevé, puis continuez ou arrêtez-vous en laissant visibles les inconnues.', 'Nommez un résultat, gardez des entrées sûres, conservez ce qui s’est passé, vérifiez un point et notez la limite.', 'Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adaptez la force de l’affirmation au plus petit contrôle suivant.', 'Comparez affirmation, source, portée et actualité avant de vous y fier.', 'Écrivez l’affirmation, délimitez-la, nommez la source, vérifiez le lien et gardez la limite.', 'Suivez une question jusqu’à une observation, une décision délimitée ou un arrêt volontaire.'],
+      heading: 'Dix tableaux de base, une seule boucle.',
+      titles: ['Parcours de première visite', 'Rendre la première tâche vérifiable', 'Du premier essai au relevé vérifiable', 'La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire', 'Auditer l’affirmation et les preuves', 'Des preuves à la décision et à l’arrêt'],
+      bodies: ['Choisissez un objectif, ouvrez le Foundation Core, faites un essai sûr, vérifiez le relevé, puis continuez ou arrêtez-vous en laissant visibles les inconnues.', 'Choisissez un résultat observable, gardez visibles l’entrée et la limite d’arrêt, conservez ce qui s’est réellement passé, vérifiez un point précis, puis transmettez le résultat avec ses limites.', 'Nommez un résultat, gardez des entrées sûres, conservez ce qui s’est passé, vérifiez un point et notez la limite.', 'Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adaptez la force de l’affirmation au plus petit contrôle suivant.', 'Comparez affirmation, source, portée et actualité avant de vous y fier.', 'Écrivez l’affirmation, délimitez-la, nommez la source, vérifiez le lien et gardez la limite.', 'Suivez une question jusqu’à une observation, une décision délimitée ou un arrêt volontaire.'],
       boundary: /Tableaux anglais créés par le projet/i,
     },
   };
@@ -575,7 +575,7 @@ try {
     );
     const foundationVisuals = page.locator('#foundation-visuals');
     assert.equal(await foundationVisuals.count(), 1, `${locale} foundation teaching visual section is missing`);
-    assert.equal(await foundationVisuals.locator('.foundation-visual-card').count(), 9, `${locale} foundation teaching visual section lost a board`);
+    assert.equal(await foundationVisuals.locator('.foundation-visual-card').count(), 10, `${locale} foundation teaching visual section lost a board`);
     assert.equal(await foundationVisuals.locator('h3').innerText(), localizedFoundationVisuals[locale].heading, `${locale} foundation visual heading is not localized`);
     assert.deepEqual(
       await foundationVisuals.locator('.foundation-visual-card strong').allTextContents(),
