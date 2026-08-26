@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, rmSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { spawnSync } from 'node:child_process';
 import { createServer } from 'node:net';
@@ -18,8 +18,17 @@ const playwrightModule = process.env.PLAYWRIGHT_MODULE
 const { chromium } = playwrightModule.default ?? playwrightModule;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const artifact = path.join(root, '_site');
-const evidenceDirectory = path.join(root, '.work', 'browser-smoke');
+// Keep the Pages artifact private to this smoke process. The builder swaps a
+// sibling `._site-previous` backup, and concurrent checks otherwise race while
+// replacing or deleting each other's files.
+const temporaryRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'prysai-browser-smoke-'));
+const artifact = path.join(temporaryRoot, '_site');
+process.on('exit', () => {
+  rmSync(temporaryRoot, { recursive: true, force: true });
+});
+// Keep failure evidence separate too: parallel runs must not overwrite one
+// another's screenshot, trace, or stack while diagnosing a real regression.
+const evidenceDirectory = path.join(root, '.work', 'browser-smoke', `${process.pid}-${Date.now()}`);
 const visualEvidenceDirectory = path.join(root, 'output', 'playwright');
 const contentStatus = JSON.parse(await fs.readFile(path.join(root, 'docs', 'governance', 'content-status.yaml'), 'utf8'));
 const governedSkillCount = contentStatus?.skills?.count;
@@ -53,6 +62,7 @@ const build = spawnSync(python, ['scripts/build_pages_artifact.py', '--output', 
   encoding: 'utf8',
 });
 if (build.status !== 0) {
+  await fs.rm(temporaryRoot, { recursive: true, force: true });
   throw new Error(`Pages candidate build failed:\n${build.stdout}\n${build.stderr}`);
 }
 
@@ -2936,5 +2946,6 @@ try {
     server.kill();
     await new Promise((resolve) => server.once('exit', resolve));
   }
+  await fs.rm(temporaryRoot, { recursive: true, force: true });
   if (server.exitCode && server.exitCode !== 0) throw new Error(`Local server failed (${server.exitCode}): ${serverError}`);
 }
