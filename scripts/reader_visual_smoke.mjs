@@ -32,6 +32,16 @@ const researchLocales = [
   ['zh-tw', 'ZHTW'],
   ['fr', 'FR'],
 ];
+const firstTaskLocales = [
+  ['en', 'EN', 'Lab 001: Make the first request usable', 'Make the first task checkable'],
+  ['zh', 'ZH', '实验 001：让第一个请求变得可用', '让第一次任务可以检查'],
+  ['es', 'ES', 'Lab 001: Haz un cambio seguro de README', 'Haz comprobable la primera tarea'],
+  ['ja', 'JA', 'Lab 001: 安全な README の変更を一つ行う', '最初のタスクを確認できる形にする'],
+  ['ko', 'KO', 'Lab 001: 안전한 README 변경 하나 만들기', '첫 작업을 확인 가능한 형태로 만들기'],
+  ['de', 'DE', 'Lab 001: Eine sichere README-Änderung vornehmen', 'Die erste Aufgabe prüfbar machen'],
+  ['zh-tw', 'ZHTW', '實驗 001：讓第一個請求變得可用', '讓第一次任務變得可檢查'],
+  ['fr', 'FR', 'Lab 001 : Rendre la première demande exploitable', 'Rendre la première tâche vérifiable'],
+];
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
   cwd: root,
@@ -112,7 +122,23 @@ try {
     assert.notEqual((await related.locator('[data-reader-related-visuals-boundary]').textContent() || '').trim(), '', `${locale} Chapter 15 related visuals have no evidence boundary`);
     await noHorizontalOverflow(`${locale} Chapter 15 Reader`);
   }
-  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 research_locales=${researchLocales.length} chapter=15 mobile=390 no_horizontal_overflow=1`);
+
+  for (const [locale, suffix, heading, thesis] of firstTaskLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Flabs%2Flab-001-first-safe-task-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.equal((await page.locator('[data-reader-article] h1').innerText()).trim(), heading, `${locale} Lab 001 heading is not localized`);
+
+    const visual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await visual.count(), 1, `${locale} Lab 001 is missing its inline teaching visual`);
+    assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /first-task-evidence-bridge-red-black\.svg$/, `${locale} Lab 001 selected the wrong teaching visual`);
+    assert.equal((await visual.locator('.reader-visual-thesis').innerText()).includes(thesis), true, `${locale} Lab 001 visual thesis is not localized`);
+    assert.notEqual((await visual.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Lab 001 visual has no alternative text`);
+    assert.match(await visual.locator('img').getAttribute('src') || '', /assets\/teaching\/first-task-evidence-bridge-red-black\.svg$/, `${locale} Lab 001 visual asset is missing`);
+    assert.notEqual((await visual.locator('.reader-visual-explanation li').textContent() || '').trim(), '', `${locale} Lab 001 visual has no text explanation`);
+    assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Lab 001 visual has no evidence boundary`);
+    await noHorizontalOverflow(`${locale} Lab 001 Reader`);
+  }
+  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} chapter=15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
