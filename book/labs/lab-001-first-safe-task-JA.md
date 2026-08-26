@@ -25,20 +25,20 @@ transfer_limitations: "この Lab は低リスクなローカル境界を教え�
 
 # Lab 001: 安全な README の変更を一つ行う
 
-## README の前：file を使わない prompt 比較
+## README の前：ファイルを使わないプロンプト比較
 
-Git、Codex、terminal がなくても始められます。普段使う任意の model を開き、次の架空の
-note、または秘密を含まない自分の note を貼ります。
+Git、Codex、ターミナルがなくても始められます。普段使う任意のモデルを開き、次の架空の
+メモ、または秘密を含まない自分のメモを貼ります。
 
 ```text
 月曜：初心者向けガイドの誤字を一つ直した。
-火曜：公開 checklist を下書きした。reviewer の承認待ちである。
-水曜：正しい command が分からず、local format check は実行していない。
-次：公開前に必要な check を Maya に確認する。
+火曜：公開用チェックリストを下書きした。レビュアーの承認待ちである。
+水曜：正しいコマンドが分からず、ローカルの形式チェックは実行していない。
+次：公開前に必要なチェックを Maya に確認する。
 ```
 
-同じ model、同じ note で二つの新しい conversation を作ります。最初は「これを良い project
-update にして」と頼みます。次に以下を頼みます。
+同じモデル、同じメモで二つの新しい会話を作ります。最初は「これをよいプロジェクト更新
+にして」と頼みます。次に以下を頼みます。
 
 ```text
 task: この note を project update にする。
@@ -50,9 +50,9 @@ format: Done、Waiting、Unknown、Next step。
 書く前に、この update を変え得る不足 fact を列挙する。
 ```
 
-四つの fact が残ったか、format、unknown の明示、使えるまでの修正回数を比べます。一回の
-response から prompt や model が「より良い」とは言いません。model、history、input、criterion
-を変えたら `not_comparable` と記録します。この入口は file や service の permission を与えずに、
+四つの事実が残ったか、形式、unknown の明示、使えるまでの修正回数を比べます。一回の
+回答からプロンプトやモデルが「よりよい」とは言いません。モデル、履歴、入力、判定基準
+を変えたら `not_comparable` と記録します。この入口はファイルやサービスの権限を与えずに、
 観測できる違いを作ります。
 
 ## この Lab の目的

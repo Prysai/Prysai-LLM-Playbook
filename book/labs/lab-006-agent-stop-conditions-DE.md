@@ -131,7 +131,9 @@ begrenzten Check ist nicht „fertig“.
 - [ ] Ich las nach verlorener Antwort das Ziel vor einem erneuten Versuch zurück.
 - [ ] Die Übergabe nennt erstes Unbekanntes und kleinsten sicheren nächsten Check.
 
-Das Fixture ist lokal und künstlich. Ein Durchlauf beweist nicht, dass jedes Modell, jeder Host, jedes Tool oder jeder Dienst dieselben Ereignisse oder Stoppbedingungen bietet. Bis zu einem echten Durchlauf und unabhängiger Prüfung bleibt dieses Lab `draft / not_run`.
+## Quellen und Grenzen
+
+Das Fixture ist lokal und künstlich. Ein Durchlauf beweist nicht, dass jedes Modell, jeder Host, jedes Tool oder jeder Dienst dieselben Ereignisse oder Stoppbedingungen bietet. Die Ereignisnamen und das Retry-Budget sind Bestandteile dieses Lehr-Fixtures, keine Zusage einer bestimmten Codex-API. Aktuelle Host-, Tool- oder Berechtigungsbehauptungen müssen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und die konkrete Laufzeit geprüft werden. Bis zu einem echten Durchlauf und unabhängiger Prüfung bleibt dieses Lab `draft / not_run`.
 
 <!-- lab-navigation:start -->
 <hr>

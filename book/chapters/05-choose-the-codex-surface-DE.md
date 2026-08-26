@@ -75,6 +75,7 @@ Jeder Pfeil braucht einen eigenen Beleg. Browser-Login, Modell im Picker, schrei
 | Gemeinsames Repository editieren, uncommittete Arbeit schützen | `Worktree` | Worktree-Pfad, Branch/Commit, `.git`, Git-Status |
 | Lange parallele Änderung im genehmigten Repository | `Cloud` | Verbundenes Repo, Umgebung, Setup-/Agent-Phase, Logs, Diff |
 | Kundendaten an Connector senden | Keine automatische Wahl | Payload, Zielkonto, Freigabe, Rollback, Toolbeleg |
+| Fehlendes Tool oder unzugänglichen Pfad diagnostizieren | Zuerst die aktuelle Oberfläche nur lesend nutzen | Tool-Inventar, absoluter Pfad, Konfigurationsquelle und Fehlermeldung |
 
 ## 4. Entscheidungskarte
 
