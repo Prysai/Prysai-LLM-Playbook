@@ -655,6 +655,31 @@
     { stage: 'transfer', asset: 'understanding-to-transfer-red-black.svg', path: 'book/chapters/20-personal-codex-work-system', titles: { en: 'From understanding to transfer', zh: '从理解到迁移', es: 'De entender a transferir', ja: '理解から転用へ', ko: '이해에서 전이까지', de: 'Vom Verstehen zur Übertragung', 'zh-tw': '從理解到遷移', fr: 'De la compréhension au transfert' }, bodies: { en: 'Understand the boundary, make a bounded attempt, inspect it, repair one mismatch, vary one condition, and repeat.', zh: '理解边界，做一次有边界的尝试，检查结果，修正一个不匹配，改变一个条件，再重复方法。', es: 'Entiende el límite, haz un intento acotado, inspecciónalo, repara un desajuste, cambia una condición y repite.', ja: '境界を理解し、範囲を区切って試し、確認し、不一致を1つ直し、条件を1つ変えて繰り返します。', ko: '경계를 이해하고 범위 있는 시도를 한 뒤 점검하며 불일치 하나를 고치고 조건 하나를 바꿔 반복합니다.', de: 'Verstehe die Grenze, mache einen begrenzten Versuch, prüfe ihn, repariere eine Abweichung, ändere eine Bedingung und wiederhole.', 'zh-tw': '理解界線，做一次有界線的嘗試，檢查結果，修正一個不相符，改變一個條件，再重複方法。', fr: 'Comprenez la limite, faites un essai délimité, inspectez-le, corrigez un écart, changez une condition et recommencez.' } },
     { stage: 'transfer', asset: 'beginner-practice-loop-red-black.svg', path: 'book/chapters/20-personal-codex-work-system', titles: { en: 'Beginner practice loop', zh: '初学者练习闭环', es: 'Ciclo de práctica para principiantes', ja: '初心者の練習ループ', ko: '초보자 연습 루프', de: 'Übungszyklus für Einsteiger', 'zh-tw': '初學者練習閉環', fr: 'Boucle de pratique pour débutants' }, bodies: { en: 'Make an unaided attempt, correct one point, vary the case, and keep a bounded receipt instead of claiming mastery.', zh: '先独立尝试，修正一个要点，改变案例，再保留有边界的记录，不要直接宣称掌握。', es: 'Haz un intento sin ayuda, corrige un punto, cambia el caso y conserva un registro acotado en vez de afirmar dominio.', ja: '自力で試し、1点を直し、条件を変えて、習得を主張する代わりに範囲のある記録を残します。', ko: '도움 없이 시도하고 한 가지를 고친 뒤 사례를 바꿔 보며 숙련을 주장하는 대신 범위 있는 기록을 남깁니다.', de: 'Versuche es ohne Hilfe, korrigiere einen Punkt, verändere den Fall und bewahre einen begrenzten Beleg statt Beherrschung zu behaupten.', 'zh-tw': '先獨立嘗試，修正一個要點，改變案例，再保留有界線的紀錄，不要直接宣稱掌握。', fr: 'Essayez sans aide, corrigez un point, changez le cas et gardez un relevé limité au lieu de proclamer la maîtrise.' } },
     { stage: 'inspect', asset: 'evidence-maturity-ladder-red-black.svg', path: 'book/chapters/15-research-track', titles: { en: 'Name the evidence stage you actually have', zh: '说清你实际拥有哪一阶段的证据', es: 'Nombra la etapa de evidencia que realmente tienes', ja: '実際に持っている証拠の段階を示す', ko: '실제로 가진 증거 단계를 밝히기', de: 'Die tatsächlich belegte Stufe benennen', 'zh-tw': '說清楚你實際擁有哪些階段的證據', fr: 'Nommer le niveau de preuve réellement disponible' }, bodies: { en: 'Separate a designed contract from a rendered page, a learner run, transfer, and independent review.', zh: '把已设计的契约、已呈现的页面、学习者运行、迁移和独立复核分开。', es: 'Separa el contrato diseñado, la página publicada, la ejecución de un aprendiz, la transferencia y la revisión independiente.', ja: '設計済みの契約、表示されたページ、学習者の実行、転用、独立レビューを分けます。', ko: '설계된 계약, 렌더링된 페이지, 학습자 실행, 전이와 독립 검토를 구분합니다.', de: 'Trenne den entworfenen Vertrag, die dargestellte Seite, den Lernlauf, die Übertragung und die unabhängige Prüfung.', 'zh-tw': '把已設計的契約、已呈現的頁面、學習者執行、遷移與獨立複核分開。', fr: 'Séparez le contrat conçu, la page rendue, l’essai d’un apprenant, le transfert et la revue indépendante.' } },
+    {
+      stage: 'act',
+      asset: 'skill-trigger-boundary-decision-map.svg',
+      path: 'book/chapters/11-designing-a-skill',
+      titles: {
+        en: 'Decide whether a Skill should act',
+        zh: '先判断 Skill 是否应该行动',
+        es: 'Decide si un Skill debe actuar',
+        ja: 'Skill を動かすべきか判断する',
+        ko: 'Skill이 실행되어야 하는지 판단하기',
+        de: 'Entscheiden, ob ein Skill handeln darf',
+        'zh-tw': '先判斷 Skill 是否應該執行',
+        fr: 'Décider si un Skill doit agir',
+      },
+      bodies: {
+        en: 'Check the trigger, inputs, authority, run record, and evidence before routing a task to a Skill; an honest yield is a valid result.',
+        zh: '把任务交给 Skill 前，先检查触发条件、输入、权限、运行记录和证据；如果条件不满足，明确不行动同样是正确结果。',
+        es: 'Antes de confiar una tarea a un Skill, comprueba el disparador, las entradas, la autoridad, el registro de ejecución y la evidencia; si falta algo, no actuar también es un resultado correcto.',
+        ja: 'Skill に処理を任せる前に、発動条件、入力、権限、実行記録、証拠を確認します。条件が足りなければ、実行しないという正直な判断も正しい結果です。',
+        ko: 'Skill에 작업을 맡기기 전에 트리거, 입력, 권한, 실행 기록과 증거를 확인하세요. 조건이 맞지 않으면 실행하지 않는 것이 올바른 결과입니다.',
+        de: 'Prüfe Auslöser, Eingaben, Berechtigung, Laufprotokoll und Belege, bevor du eine Aufgabe an einen Skill routest. Wenn eine Voraussetzung fehlt, ist ein ehrliches Nicht-Ausführen das richtige Ergebnis.',
+        'zh-tw': '把任務交給 Skill 前，先檢查觸發條件、輸入、權限、執行記錄與證據；如果條件不具備，明確不執行也是正確結果。',
+        fr: 'Vérifiez les conditions de déclenchement, les entrées, l’autorisation, la trace d’exécution et les preuves avant de confier la tâche à un Skill ; si une condition manque, ne pas agir est aussi le bon résultat.',
+      },
+    },
   ];
 
   const params = new URLSearchParams(window.location.search);
