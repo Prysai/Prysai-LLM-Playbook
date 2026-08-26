@@ -175,3 +175,13 @@ status.
 - **Boundary:** this fixes one high-exposure semantic sentence; it is not a
   complete French native-language review, and the route remains a candidate
   pending independent review and learner comprehension evidence.
+
+### Precision review slice — Chinese entry language wording (2026-08-26)
+
+- **Files:** `README-ZH.md` and `README-ZHTW.md`.
+- **Change:** replaced the literal phrasing that called English the “default
+  public language target” with direct reader wording: the public entry defaults
+  to English. The two Chinese routes retain the same meaning while using
+  Simplified and Taiwan Traditional conventions respectively.
+- **Boundary:** this is a two-file entry-copy correction, not proof that either
+  Chinese route has completed native review or learner validation.
