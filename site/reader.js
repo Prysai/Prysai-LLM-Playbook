@@ -1619,10 +1619,10 @@
     const details = document.createElement('details');
     details.className = 'reader-inline-concept-map';
     details.dataset.readerInlineConceptMap = 'true';
-    // The inline map is the reader's first orientation aid. Keep it open so
-    // the visual relationship is discoverable without requiring a second
-    // interaction; the ordered list below remains the no-script fallback.
-    details.open = true;
+    // Keep the map immediately discoverable on a wide screen, while avoiding
+    // a very long first render on phones. The summary remains visible in both
+    // cases, and the ordered list below remains the no-script fallback.
+    details.open = window.matchMedia('(min-width: 821px)').matches;
     const summary = document.createElement('summary');
     summary.textContent = strings.conceptSummary;
     summary.setAttribute('aria-label', strings.conceptAria);

@@ -171,8 +171,16 @@ try {
     const related = page.locator('[data-reader-related-visuals]');
     assert.equal(await related.isVisible(), true, `${locale} Chapter 11 related visuals are not discoverable`);
     assert.equal(await related.locator('.reader-related-visual-card').count(), 2, `${locale} Chapter 11 related visual sequence changed`);
+    assert.equal(await page.locator('[data-reader-inline-concept-map]').evaluate((element) => element.open), false, `${locale} Chapter 11 concept map should start collapsed on mobile`);
     await noHorizontalOverflow(`${locale} Chapter 11 Reader`);
   }
+
+  await page.setViewportSize({ width: 1024, height: 844 });
+  await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await page.locator('[data-reader-inline-concept-map]').evaluate((element) => element.open), true, 'EN Chapter 11 concept map should start open on desktop');
+  await noHorizontalOverflow('EN Chapter 11 desktop Reader');
+  await page.setViewportSize({ width: 390, height: 844 });
   console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=11,15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
