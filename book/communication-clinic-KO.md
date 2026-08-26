@@ -8,7 +8,7 @@
 저위험·비민감 연습입니다.
 
 **LLM 기초 코어를 마친 뒤 사용하세요:** [단원 1: LLM 개념](guides/llm-fundamentals-KO.md)
-→ [단원 2: 첫 번째 범위 있는 요청](routes/universal-core-foundations-KO.md).
+→ [단원 2: 첫 번째 범위가 정해진 요청](routes/universal-core-foundations-KO.md).
 이 카드는 코어 방법을 적용하는 것이며 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
 먼저 [0장](guides/llm-fundamentals-KO.md)을 읽으세요. 이 카드는 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
 아직 코어를 마치지 않았다면 [LLM 기초 코어](routes/universal-core-foundations-KO.md)부터 시작하세요.

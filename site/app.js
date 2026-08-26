@@ -4591,7 +4591,7 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   wizardGoalLanguageOutcome: '내 답변을 기다리는 4턴 연습 프롬프트를 받습니다.',
-  wizardGoalWorkOutcome: '내가 제공한 사실을 지키는 범위 있는 업무 업데이트 프롬프트를 받습니다.',
+  wizardGoalWorkOutcome: '내가 제공한 사실을 지키는 범위가 정해진 업무 업데이트 프롬프트를 받습니다.',
   wizardGoalResearchOutcome: '증거와 추측을 구분하는 출처 확인 프롬프트를 받습니다.',
   wizardGoalInterviewOutcome: '눈에 보이는 자기 점검이 있는 시간제한 연습 프롬프트를 받습니다.',
   wizardGoalTaskOutcome: 'AI나 도구가 행동하기 전에 간결한 작업 계약을 받습니다.',
@@ -4863,7 +4863,7 @@ Object.assign(copy.ko, {
   heroRouteLessonZeroBody: '약 90~120분. 이해하고, 시도하고, 점검하고, 고친 뒤 전이합니다.',
   heroRouteChapterOne: '2 · 단원 1: LLM이란 무엇인가',
   heroRouteChapterOneBody: '토큰, 컨텍스트, 프롬프트, 도구, MCP, Agent, Skill의 역할을 구분합니다.',
-  heroRouteChapterTwo: '3 · 단원 2: 첫 번째 범위 있는 요청',
+  heroRouteChapterTwo: '3 · 단원 2: 첫 번째 범위가 정해진 요청',
   heroRouteChapterTwoBody: '목표, 컨텍스트, 제한, 답변 형식을 보이게 만드세요.',
   heroRouteUnitThree: '4 · 단원 3: 눈에 보이는 실패',
   heroRouteUnitThreeBody: '누락, 근거 없는 추가, 억지로 메운 모호함, 과도한 확신을 표시합니다.',
@@ -4940,7 +4940,7 @@ Object.assign(copy.ko, {
   heroIndex: 'LLM / 기초 시스템',
   heroEyebrow: '모델부터 이해하세요 · 그다음 확인 가능한 시도 하나',
   heroTitle: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
-  heroLede: '언어 모델이 무엇을 확인할 수 있고 무엇을 확인할 수 없는지 배우고, 범위 있는 요청을 작성하고, 답변을 점검한 뒤 새 과제에 방법을 반복하세요. Codex, 도구, Agent, Skill은 이 기초 다음에 다룹니다.',
+  heroLede: '언어 모델이 무엇을 확인할 수 있고 무엇을 확인할 수 없는지 배우고, 범위가 정해진 요청을 작성하고, 답변을 점검한 뒤 새 과제에 방법을 반복하세요. Codex, 도구, Agent, Skill은 이 기초 다음에 다룹니다.',
   heroScope: '전이 가능한 코어 다음에 플랫폼별 실습이 이어집니다. 이름을 언급한 플랫폼은 각자의 최신 출처와 실행 가능한 증거가 있어야 수업이 됩니다.',
   heroPrimary: 'LLM 기초 코어 시작하기',
   heroSecondary: '선택 사항인 5분 워밍업 해보기',
@@ -4953,7 +4953,7 @@ Object.assign(copy.de, {
   heroTitle: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
   heroLede: 'Lerne, was ein Sprachmodell feststellen kann und was nicht, formuliere eine begrenzte Anfrage, prüfe die Antwort und wende die Methode auf eine neue Aufgabe an. Codex, Werkzeuge, Agents und Skills kommen erst nach diesen Grundlagen.',
   heroScope: 'Ein übertragbarer Kern, gefolgt von plattformspezifischer Praxis. Benannte Plattformen brauchen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.',
-  heroPrimary: 'LLM-Grundlagenkern beginnen',
+  heroPrimary: 'Mit dem LLM-Grundlagenkern beginnen',
   heroSecondary: 'Optionale Fünf-Minuten-Aufwärmübung ausprobieren',
   starterProgressionAria: 'Vom LLM-Grundlagenkern fortfahren',
   starterCodexPath: 'LLM-Grundlagenkern fortsetzen',
@@ -5209,16 +5209,16 @@ Object.assign(copy.ja, {
 Object.assign(copy.ko, {
   heroPrimary: 'LLM 기초 코어 시작하기', heroSecondary: '선택 사항인 5분 예시 보기',
   heroProofStatus: '선택 사항인 예시 · 기초 레슨이 아님', heroProofLink: '아래의 선택 사항인 워밍업 보기',
-  mobileRouteNoSetup: 'LLM 기초 코어 시작하기', mobileRouteTask: 'LLM 개념 배우기', mobileRouteFixture: '첫 번째 범위 있는 요청 만들기',
+  mobileRouteNoSetup: 'LLM 기초 코어 시작하기', mobileRouteTask: 'LLM 개념 배우기', mobileRouteFixture: '첫 번째 범위가 정해진 요청 만들기',
   startEyebrow: '기초 다음 · 목적 하나 고르기', startTitle: '다음에는 모델이 무엇을 도와주면 좋겠나요?',
-  startIntro: '먼저 LLM 기초 코어를 끝내세요. 그다음 실제 목적 하나를 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에서도 점검할 수 있는 범위 있는 프롬프트를 복사하세요.',
+  startIntro: '먼저 LLM 기초 코어를 끝내세요. 그다음 실제 목적 하나를 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에서도 점검할 수 있는 범위가 정해진 프롬프트를 복사하세요.',
   wizardEyebrow: '코어 이후의 응용 연습', wizardTitle: '다음에 도움받고 싶은 일 하나를 고르세요.',
   wizardIntro: '기초를 마친 뒤 목적을 고르고 필요한 정보만 추가한 다음, 어떤 채팅 모델에서도 점검할 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
 });
 Object.assign(copy.de, {
-  heroPrimary: 'LLM-Grundlagenkern beginnen', heroSecondary: 'Optionales Fünf-Minuten-Beispiel ansehen',
+  heroPrimary: 'Mit dem LLM-Grundlagenkern beginnen', heroSecondary: 'Optionales Fünf-Minuten-Beispiel ansehen',
   heroProofStatus: 'Optionales Beispiel · nicht die Grundlagenlektion', heroProofLink: 'Optionale Aufwärmübung unten ansehen',
-  mobileRouteNoSetup: 'LLM-Grundlagenkern beginnen', mobileRouteTask: 'LLM-Konzepte lernen', mobileRouteFixture: 'Die erste begrenzte Anfrage stellen',
+  mobileRouteNoSetup: 'Mit dem LLM-Grundlagenkern beginnen', mobileRouteTask: 'LLM-Konzepte lernen', mobileRouteFixture: 'Die erste begrenzte Anfrage stellen',
   startEyebrow: 'Nach den Grundlagen · einen Zweck wählen', startTitle: 'Wobei soll dir das Modell als Nächstes helfen?',
   startIntro: 'Beende zuerst den LLM-Grundlagenkern. Wähle danach einen echten Zweck, ergänze nur die nötigen Angaben und kopiere einen begrenzten Prompt für jedes Chatmodell.',
   wizardEyebrow: 'Anwendungspraxis nach dem Kern', wizardTitle: 'Wähle eine Sache, bei der du als Nächstes Hilfe möchtest.',
@@ -5461,8 +5461,8 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   problemStartTitle: '어디서 시작해야 할지 모르겠습니다.',
-  problemStartBody: '먼저 LLM 기초 코어에서 모델의 경계, 첫 범위 있는 요청, 보이는 실패, 수정과 전이를 익힌 뒤 플랫폼 경로로 이동하세요.',
-  problemStartLink: 'LLM 기초 코어 → 첫 범위 있는 요청 시작 ↗',
+  problemStartBody: '먼저 LLM 기초 코어에서 모델의 경계, 첫 범위가 정해진 요청, 보이는 실패, 수정과 전이를 익힌 뒤 플랫폼 경로로 이동하세요.',
+  problemStartLink: 'LLM 기초 코어 → 첫 범위가 정해진 요청 시작 ↗',
   stepThreeTitle: '먼저 모델이 점검하게 하세요.',
   stepThreeBody: '편집이나 외부 행동을 허용하기 전에 관련 자료와 현재 상태를 확인하게 하세요. 범위를 보이게 유지하세요.',
   footerTagline: '언어 모델을 위한 실용적인 학습·연습 시스템.',
@@ -5861,7 +5861,7 @@ Object.assign(copy.fr, {
   "heroProofChecksLabel": "TROIS CONTRÔLES HUMAINS",
   "heroProofCheckTwo": "Les personnes qui ne peuvent pas y assister sont priées d'y répondre.",
   "heroProofCheckOne": "Vendredi à 10 heures et le repêchage reste.",
-  "heroProofCheckThree": "Aucun détail non pris en charge n'apparaît.",
+  "heroProofCheckThree": "Aucun détail sans source n’a été ajouté.",
   "heroProofReceiptLabel": "FICHE DE VÉRIFICATION DÉLIMITÉE",
   "heroProofReceipt": "Une tentative vérifiée peut être enregistrée. Cela ne prouve pas l’apprentissage, le transfert ou la performance du modèle.",
   "heroProofLink": "Voir l'échauffement optionnel ci-dessous",
@@ -6797,7 +6797,7 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   journeyTitle: '경로를 고르기 전에 Playbook 전체 흐름을 보세요.', journeyIntro: '첫 번째 실용적인 질문인 “지금 무엇을 하고, 첫 점검 결과 다음에는 어디로 가는가?”를 한눈에 보여 줍니다.', journeyAria: 'Playbook 학습 여정의 네 단계',
-  journeyStepOneTitle: 'LLM 기초 코어', journeyStepOneBody: '모델을 이해하고 요청 하나를 만든 뒤, 눈에 보이는 실패를 찾아 고치고 새 작업에서 다시 시도합니다.', journeyStepTwoTitle: '첫 번째 범위 있는 작업', journeyStepTwoBody: '결과, 맥락, 허용된 도움, 제한, 점검 방법과 중지 조건을 적습니다.', journeyStepThreeTitle: '증거 루프', journeyStepThreeBody: '변경 사항을 출처, 테스트, 로그 또는 수용 기준과 비교하고 다음 증거가 없으면 멈춥니다.', journeyStepFourTitle: '선택 실습 경로', journeyStepFourBody: '다음 층이 필요할 때만 Codex, 도구, Skill, Agent, 조사, 엔지니어링 또는 팀 실습을 고르세요.', journeyBoundary: '이 지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다. 결과물, 증거, 한계와 다음 질문을 남기세요.', journeyFigureAlt: 'LLM 기초 코어에서 첫 번째 범위 있는 작업, 증거 루프와 선택 실습 경로로 이어지는 Playbook 학습 여정', journeyFigureCaption: '프로젝트가 만든 여정 보드를 인쇄용으로 열어 보세요. 순서 목록이 텍스트 설명입니다.',
+  journeyStepOneTitle: 'LLM 기초 코어', journeyStepOneBody: '모델을 이해하고 요청 하나를 만든 뒤, 눈에 보이는 실패를 찾아 고치고 새 작업에서 다시 시도합니다.', journeyStepTwoTitle: '첫 번째 범위가 정해진 작업', journeyStepTwoBody: '결과, 맥락, 허용된 도움, 제한, 점검 방법과 중지 조건을 적습니다.', journeyStepThreeTitle: '증거 루프', journeyStepThreeBody: '변경 사항을 출처, 테스트, 로그 또는 수용 기준과 비교하고 다음 증거가 없으면 멈춥니다.', journeyStepFourTitle: '선택 실습 경로', journeyStepFourBody: '다음 층이 필요할 때만 Codex, 도구, Skill, Agent, 조사, 엔지니어링 또는 팀 실습을 고르세요.', journeyBoundary: '이 지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다. 결과물, 증거, 한계와 다음 질문을 남기세요.', journeyFigureAlt: 'LLM 기초 코어에서 첫 번째 범위가 정해진 작업, 증거 루프와 선택 실습 경로로 이어지는 Playbook 학습 여정', journeyFigureCaption: '프로젝트가 만든 여정 보드를 인쇄용으로 열어 보세요. 순서 목록이 텍스트 설명입니다.',
 });
 Object.assign(copy.de, {
   journeyTitle: 'Sieh dir das ganze Playbook an, bevor du eine Route wählst.', journeyIntro: 'Eine Karte beantwortet die erste praktische Frage: Was mache ich jetzt, und was kommt nach dem ersten geprüften Ergebnis?', journeyAria: 'Die vier Stufen der Playbook-Lernroute',

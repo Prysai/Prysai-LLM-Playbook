@@ -19,7 +19,7 @@
 | Workflow | 계획과 검증이 추가 cost를 정당화하는가 | stage log, diff, validation, rework |
 | Permission | 새 action space가 측정 가능하고 허가된 이익을 내는가 | permission 표, side effect, recovery cost |
 
-실행 전에 decision card를 만듭니다. 범위 있는 질문, owner, 실제 candidate, task version, 최소 품질, red line —비밀 노출 없음, 무허가 외부 쓰기 없음, 증거 날조 없음—, cost 상한, log 위치, action, 범위, unknown, 다음 review입니다. 실행할 수 없는 후보는 추정이 아니라 `not_run`입니다.
+실행 전에 decision card를 만듭니다. 범위가 정해진 질문, owner, 실제 candidate, task version, 최소 품질, red line —비밀 노출 없음, 무허가 외부 쓰기 없음, 증거 날조 없음—, cost 상한, log 위치, action, 범위, unknown, 다음 review입니다. 실행할 수 없는 후보는 추정이 아니라 `not_run`입니다.
 
 ## 조건 고정하기
 
