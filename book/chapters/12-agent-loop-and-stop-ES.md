@@ -174,14 +174,6 @@ En un directorio desechable crea `input.txt` con tres líneas desordenadas. La t
 4. Cambia la ruta de entrada a propósito. Debe quedar `blocked_input`, sin inventar un archivo sustituto.
 5. Tras una escritura, omite deliberadamente la lectura de salida. La entrega es `unverified` hasta que un control de lectura aporte evidencia.
 
-## Comprobación propia
-
-- [ ] Distingo propuesta, decisión del host, ejecución, observación y aceptación.
-- [ ] Puedo señalar la primera transición sin soporte en una declaración de «hecho».
-- [ ] Definí paradas para entrada, autoridad, evidencia y presupuesto.
-- [ ] Ante una respuesta perdida, leo estado y postcondición antes de repetir una escritura.
-- [ ] Mi entrega separa lo probado, lo desconocido, lo no afirmado y el siguiente paso seguro.
-
 Los nombres de eventos y permisos cambian según el host. Verifica esos hechos con documentación oficial y observación actual; los informes públicos solo ayudan a diseñar controles, no sustituyen tu ejecución.
 
 ## Reflexión

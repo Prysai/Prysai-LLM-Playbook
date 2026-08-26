@@ -170,13 +170,6 @@ variant は `not_run` と書き、流暢な出力から実行記録を作りま�
 - 差分で支えられる主張と、実行時の観察または読者の確認が必要な主張はどれか。
 - どの副作用に、新しく限定した承認が必要だったか。
 
-- [ ] edit 前に scope、non-goal、acceptance、authority、rollback を書ける。
-- [ ] 大きな request を early evidence を出す vertical slice に変えられる。
-- [ ] retry 前に last accepted checkpoint を言える。
-- [ ] build、runtime、visual、source、security、user acceptance を分けられる。
-- [ ] 求められていない install、restart、deployment、external write を止められる。
-- [ ] completed、not done、blocked、unverified を分けて handoff できる。
-
 ## 実際の中断に備える復旧パターン
 
 公開された利用者報告は有用な症状を示すことがありますが、公式の原因説明やローカル再現の

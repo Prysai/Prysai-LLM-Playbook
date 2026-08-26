@@ -173,14 +173,6 @@ Lege in einem wegwerfbaren Verzeichnis eine `input.txt` mit drei unsortierten Ze
 4. Verfälsche absichtlich den Eingabepfad. Es muss `blocked_input` entstehen, keine Ersatzdatei.
 5. Erzeuge eine Variante, in der die Ausgabe nach dem Schreiben nicht gelesen wird. Die Übergabe bleibt `unverified`, bis ein Read-only-Check Evidenz liefert.
 
-## Eigene Abnahme
-
-- [ ] Ich trenne Vorschlag, Host-Entscheidung, Ausführung, Beobachtung und Abnahme.
-- [ ] Ich kann in einer „fertig“-Behauptung den ersten unbelegten Übergang zeigen.
-- [ ] Ich habe Stoppregeln für Eingabe, Autorität, Evidenz und Budget geschrieben.
-- [ ] Bei verlorener Antwort lese ich Zustand und Nachbedingung, bevor ich erneut schreibe.
-- [ ] Meine Übergabe trennt Belegtes, Unbekanntes, Nichtbehauptetes und den nächsten sicheren Schritt.
-
 Ereignisnamen und Berechtigungen unterscheiden sich je nach Host. Prüfe sie mit offizieller Dokumentation und aktueller Beobachtung. Öffentliche Berichte helfen beim Entwurf von Checks, ersetzen aber keinen eigenen Lauf.
 
 ## Reflexion

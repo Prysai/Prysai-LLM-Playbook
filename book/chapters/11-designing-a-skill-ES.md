@@ -33,10 +33,6 @@ Una Skill no se convierte en modelo, herramienta, permiso, conector ni sustituto
 
 El fallo práctico suele ser una decisión ausente: el host no descubre la Skill, el activador no encaja, falta una entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisa el archivo, el descubrimiento, la selección, la carga, la acción y la salida por separado. Detente antes de presentar una candidata externa como capacidad propia.
 
-> Una Skill es un paquete de método que se puede descubrir y reutilizar, y que asigna una clase de tarea acotada a acciones acotadas y a evidencia comprobable.
-
-No es un modelo, una herramienta, un permiso, un conector ni un sustituto de la aprobación humana.
-
 ## Escribe el contrato antes de la prosa
 
 ```yaml
