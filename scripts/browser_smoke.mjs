@@ -472,7 +472,7 @@ try {
       boundary: /项目原创英文图表/,
     },
     es: {
-      heading: 'Diez tablas, un solo bucle.',
+      heading: 'Diez tableros de base, un solo bucle.',
       titles: ['Ruta para la primera visita', 'Haz comprobable la primera tarea', 'Del primer intento al registro de evidencia', 'El bucle LLM seguro más pequeño', 'Contrato de prompt: seis campos', 'Límite de acción observable', 'Escalera de recuperación de evidencia', 'Comprobar la fuente antes de creer', 'Auditar la afirmación y la evidencia', 'De la evidencia a la decisión y la parada'],
       bodies: ['Elige un objetivo, abre el núcleo de fundamentos, haz una prueba segura, revisa el registro y decide si continúas o paras dejando visible lo que aún no sabes.', 'Elige un resultado observable, deja visibles la entrada y el límite de parada, guarda lo ocurrido, haz una comprobación concreta y entrega el resultado con sus límites.', 'Nombra un resultado, conserva datos seguros, guarda lo ocurrido, comprueba un detalle y anota el límite.', 'Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.', 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.', 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.', 'Compara afirmación, fuente, alcance y vigencia antes de confiar.', 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.', 'Sigue una pregunta hasta una observación, una decisión acotada o una parada deliberada.'],
       boundary: /Tablas originales del proyecto en inglés/,
