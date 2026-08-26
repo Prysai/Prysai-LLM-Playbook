@@ -1,6 +1,6 @@
 <!-- content_id: project-readme | locale: DE | language: de | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
 
-# Prysai LLM Playbook — From First Task to Reliable Work
+# Prysai LLM Playbook — Von der ersten Aufgabe zu zuverlässiger Arbeit
 
 Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die Lizenzgrenze (licensing boundary document).
 > Deutscher Einstiegspunkt — die deutsche Migration der reader-facing Inhalte

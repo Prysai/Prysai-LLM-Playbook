@@ -1,4 +1,4 @@
-# Prysai LLM Playbook — From First Task to Reliable Work
+# Prysai LLM Playbook: de la primera tarea al trabajo fiable
 
 Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0; los scripts y las herramientas bajo Apache-2.0, salvo que un archivo indique otra cosa. Ver [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) y el límite de licencia (licensing boundary document).
 > Manual práctico de LLM: de la primera tarea al trabajo fiable.
