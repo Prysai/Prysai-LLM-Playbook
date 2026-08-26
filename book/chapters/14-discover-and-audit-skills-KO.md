@@ -172,7 +172,7 @@ reject, pause, adopt 이유:
 
 ### 한 번에 신뢰하지 말고 층별로 활성화하기
 
-먼저 metadata와 instruction을 읽고, 그다음 non-sensitive temporary directory에서 read-only 또는 reversible 경로를 시험합니다. result, scope, recovery를 기록한 뒤에야 write, network, install, external action이 필요한지 사람이 각각 결정합니다. 한 번의 성공은 기록한 host, version, input, task만 뒷받침하며 model, directory, account를 가로지르는 reliability를 증명하지 않습니다.
+먼저 메타데이터와 지침을 읽고, 그다음 민감하지 않은 임시 디렉터리에서 읽기 전용 또는 되돌릴 수 있는 경로를 시험합니다. 결과, 범위, 복구 방법을 기록한 뒤에야 쓰기, 네트워크, 설치, 외부 작업이 필요한지 사람이 각각 결정합니다. 한 번의 성공은 기록한 호스트, 버전, 입력, 작업만 뒷받침하며 모델·디렉터리·계정 전반의 신뢰성을 증명하지 않습니다.
 
 <!-- chapter-navigation:start -->
 <hr>

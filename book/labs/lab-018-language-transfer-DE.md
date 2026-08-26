@@ -86,15 +86,15 @@ relevanter Bewertungsdifferenz werden Behalten und Transfer nicht behauptet.
 
 ```text
 run_id | Kartenrevision | mode: typed_rehearsal | Datum | Fenster | tatsächliche Verzögerung
-Zielsprache | card_id | Hilfen | Zeitlimit | Rubrik | Scorer/Unabhängigkeit
-B1-Versuch | B1-Score | Hinweise | Lernendenkorrektur | C1-Versuch | C1-Score
-assignment_uuid | Exposition | verzögerter Versuch | Scores | Differenz | Unbekanntes | Grenzen
+Zielsprache | card_id | Hilfen | Zeitlimit | Rubrik | bewertende Person/Unabhängigkeit
+B1-Versuch | B1-Bewertung | Hinweise | Lernendenkorrektur | C1-Versuch | C1-Bewertung
+assignment_uuid | Exposition | verzögerter Versuch | Bewertungen | Differenz | Unbekanntes | Grenzen
 ```
 
 Jede bewertende Person schreibt ihre Zeilennotiz, bevor sie die andere Bewertung sieht. Bei
 mehr als einem Punkt Unterschied in einer Zeile oder Pass/Fail-Differenz beide
-Notizen sichern und `disagreement` setzen; keine Retention oder Transfer
-behaupten. Ein dritter blind gesetzter Scorer kann denselben Text und dieselbe
+Notizen sichern und `disagreement` setzen; kein Behalten und keinen Transfer
+behaupten. Eine dritte blind eingesetzte bewertende Person kann denselben Text und dieselbe
 Rubrik prüfen, validiert aber weder die Rubrik noch eine allgemeine Wirkung.
 
 Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für sprachlich fließend und
@@ -104,8 +104,8 @@ Wortschatz, Hörverstehen, spontane Interaktion, dauerhaftes Behalten oder
 Beherrschung.
 
 - [ ] B1 wurde vor Zielsprachenhinweisen versucht.
-- [ ] Zeit, Hilfen, Rubrik, Schwelle und Scorer blieben sichtbar.
-- [ ] Versuche, Hinweise, Korrekturen, Scores und Unbekanntes sind gespeichert.
+- [ ] Zeit, Hilfen, Rubrik, Schwelle und bewertende Person blieben sichtbar.
+- [ ] Versuche, Hinweise, Korrekturen, Bewertungen und Unbekanntes sind gespeichert.
 - [ ] C1 änderte Ort, Wortschatz und Mehrdeutigkeit bei gleicher Rubrik.
 - [ ] Verzögerte Karte, Fenster, tatsächliche Verzögerung, Exposition und Offenlegung sind vor einem Label gespeichert.
 - [ ] Es gibt unabhängige zweite Bewertung oder Behalten/Transfer bleiben unbehauptet.
@@ -113,16 +113,16 @@ Beherrschung.
 
 ## Evidenzpaket und Abnahme
 
-Bewahre Original und Korrektur, Hinweise, Scores, Poolrevision, Zuteilung,
+Bewahre Original und Korrektur, Hinweise, Bewertungen, Poolrevision, Zuteilung,
 Exposition, Verzögerung, Zeilennotizen, Differenz, Unbekanntes und Claim-Grenzen.
 „Ungesehen“ darf nur bei aufgezeichneter Exposition `no` verwendet werden.
 
 - [ ] B1 fand vor Unterricht oder Zielsprachenhinweisen statt.
-- [ ] Zeit, Hilfen, Leakage-Regel, Rubrik, Schwelle und Scorer sind sichtbar.
-- [ ] B1, Korrektur, C1 und verzögerte Aufgabe besitzen getrennte Records.
+- [ ] Zeit, Hilfen, Leakage-Regel, Rubrik, Schwelle und bewertende Person sind sichtbar.
+- [ ] B1, Korrektur, C1 und verzögerte Aufgabe besitzen getrennte Aufzeichnungen.
 - [ ] C1 änderte Situation, Wortschatz und Mehrdeutigkeit bei gleicher Rubrik.
 - [ ] Fenster, tatsächliche Verzögerung, Exposition und Offenlegung wurden vor Labels gespeichert.
-- [ ] Ein blinder zweiter Scorer ist vorhanden oder Retention/Transfer bleiben unbelegt.
+- [ ] Eine blinde zweite bewertende Person ist vorhanden oder Behalten/Transfer bleiben unbelegt.
 - [ ] Es gab kein Netzwerk, keine Secrets, keinen Kontakt, Kauf, Publish, Produktionsaktion oder automatische Erinnerung.
 - [ ] Ein zweiter Leser kann Instruktion und Lernendenbeleg unterscheiden.
 
@@ -130,7 +130,7 @@ Exposition, Verzögerung, Zeilennotizen, Differenz, Unbekanntes und Claim-Grenze
 
 Welche Stelle von C1 wurde ohne Hilfe abgerufen? Welche Änderung machte Wissen
 fragil? Was fehlt, wenn die verzögerte Aufgabe noch nicht ausgeführt ist? Übertrage
-das Record auf eine andere Lern- oder Projektabstimmung.
+die Aufzeichnung auf eine andere Lern- oder Projektabstimmung.
 
 Der [Learning Practice Contract](../guides/learning-practice-contract-DE.md), das
 [Beginner Practice Pack](../communication-clinic-DE.md), die [Grenze zwischen

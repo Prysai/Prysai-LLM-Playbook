@@ -88,7 +88,7 @@ Baue einen absichtlichen Fehler ein, der nur eine Variable verändert und ein si
 
 ### Vorbereitung
 
-Wähle eine lokale, nicht sensible Aufgabe, die du mindestens zweimal erledigt hast. Lege eine wegwerfbare Eingabe, klare Abnahmekriterien und eine Nur-Lesen-Grenze fest. Verwende keine Zugangsdaten, Installationen, Netzwerkzugriffe oder fremden Skill-Inhalte mit unklarer Lizenz.
+Wähle eine lokale, nicht sensible Aufgabe, die du mindestens zweimal erledigt hast. Lege eine temporäre Eingabe, klare Abnahmekriterien und eine Nur-Lesen-Grenze fest. Verwende keine Zugangsdaten, Installationen, Netzwerkzugriffe oder fremden Skill-Inhalte mit unklarer Lizenz.
 
 ### Aufgabe
 
@@ -207,7 +207,7 @@ Skill-Name und Version:
 Aufgabenlücke: konkrete Entscheidung statt „die KI besser machen“
 Quelle und Lizenz: Original / geprüfte Quelle; Lizenz und Prüfdatum
 Host und Arbeitsoberfläche dieses Versuchs: tatsächlich verwendetes Produkt, Version und Pfad
-beobachtet: Datei / Discovery / Auswahl / Laden / Aktion / Ausgabe
+beobachtet: Datei / Auffindbarkeit / Auswahl / Laden / Aktion / Ausgabe
 nicht beobachtet: jede nicht ausgeführte, nicht zurückgelesene oder nicht unabhängig geprüfte Stufe
 erlaubter Umfang: Lesen, temporäres Schreiben, Netzwerk, Installation und Veröffentlichung getrennt
 nächster sicherer Check: genau eine unbeobachtete Stufe prüfen
@@ -281,7 +281,7 @@ Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu die
 
 ## Quellen und Wartungsgrenze
 
-Die Skill-Entscheidungsmethode ist projektintern. Host-Verhalten, Discovery, Plugins, MCP, Berechtigungen und externe Kandidaten sind veränderlich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes), das [Skill-Kandidatenregister](../evidence-library-DE.md#source-notes) und die konkrete Lizenzquelle. Keiner dieser Nachweise ersetzt einen Lauf im dokumentierten Host.
+Die Skill-Entscheidungsmethode ist projektintern. Host-Verhalten, Auffindbarkeit, Plugins, MCP, Berechtigungen und externe Kandidaten sind veränderlich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes), das [Skill-Kandidatenregister](../evidence-library-DE.md#source-notes) und die konkrete Lizenzquelle. Keiner dieser Nachweise ersetzt einen Lauf im dokumentierten Host.
 
 ## Vier Fälle vor der Übernahme
 
@@ -296,7 +296,7 @@ Bereite ein minimales Set ohne Zugangsdaten und Netzwerk vor:
 
 Bewahre Skill-Version, nicht sensible Eingabe, geladene Ressourcen, Ausgabe und
 ersten Stoppunkt auf. Dass eine Datei im Verzeichnis liegt, beweist weder
-Discovery noch Laden oder Ausführung im Host. Bis diese Aufzeichnungen vorliegen,
+Auffindbarkeit noch Laden oder Ausführung im Host. Bis diese Aufzeichnungen vorliegen,
 bleiben Kapitel `candidate` und Experiment `not_run`.
 
 <!-- chapter-navigation:start -->

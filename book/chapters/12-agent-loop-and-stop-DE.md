@@ -189,7 +189,7 @@ Welche Stufe in deiner Ereigniskarte wäre am leichtesten durch einen überzeuge
 
 ## Transferaufgabe
 
-Wende dieselbe Schleife auf eine Sprachübung oder Quellenrecherche an. Bei Sprache sind Modellkorrektur, Lernendenantwort, spätere unassistierte Abrufaufgabe und Rückmeldung getrennte Ereignisse; ein flüssiger Dialog ist kein Mastery-Nachweis. Bei Recherche sind Fund, Lektüre, Quellenprüfung und Schlussfolgerung getrennt. Behalte Stoppbudgets und ehrliche Übergabe bei.
+Wende dieselbe Schleife auf eine Sprachübung oder Quellenrecherche an. Bei Sprache sind Modellkorrektur, Lernendenantwort, spätere unassistierte Abrufaufgabe und Rückmeldung getrennte Ereignisse; ein flüssiger Dialog ist kein Nachweis dafür, dass die Fähigkeit beherrscht wird. Bei Recherche sind Fund, Lektüre, Quellenprüfung und Schlussfolgerung getrennt. Behalte Stoppbudgets und ehrliche Übergabe bei.
 
 ## Abnahme-Checkliste
 

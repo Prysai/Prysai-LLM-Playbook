@@ -94,7 +94,7 @@ B1 **の前に**、前後一日を許す七日窓を宣言します。七日は�
 
 ## 印象ではなく記録を残す
 
-各 attempt は同じローカル記録に残します。項目がなければ `unknown` または `not_run` と書き、後から良く見える物語で埋めません。
+各試行は同じローカル記録に残します。項目がなければ `unknown` または `not_run` と書き、後から良く見える物語で埋めません。
 
 ```text
 run_id | date | target language | card_id | 5-minute limit | allowed aids
@@ -102,7 +102,7 @@ original attempt | 採点者の判定 | 5 行の score と根拠 | hint level | 
 first pass か | rework count | model/surface（使った場合）| unknown | status
 ```
 
-C1 は別の記録にし、修正後の B1 を新しい baseline にしません。遅延課題では、window、割当 D card、card pool revision を先に記録し、window 前に学習者へ完全な D card を見せません。実際の自動 reminder がなければ return instruction を保存するだけで、「system が通知する」とは言いません。
+C1 は別の記録にし、修正後の B1 を新しい baseline にしません。遅延課題では、課題期間、割り当てた D カード、カードプールの版を先に記録し、期間が始まる前に学習者へ D カード全体を見せません。実際の自動リマインダーがなければ、再確認の案内だけを保存し、「システムが通知する」とは言いません。
 
 ### 採点者の判定が食い違ったとき
 

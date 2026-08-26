@@ -2,7 +2,7 @@
 
 # Die erste sichere Änderung: eine Offline-Übung vor Lab 001
 
-**Inhaltsstatus:** ergänzende Route `candidate`. **Lernendendurchlauf:**
+**Inhaltsstatus:** ergänzende Route `candidate`. **Lauf für Lernende:**
 `not_run`.
 **Übersetzungsstatus:** vollständiger deutscher Entwurf; eine unabhängige
 Sprachprüfung steht noch aus.
@@ -10,7 +10,7 @@ Sprachprüfung steht noch aus.
 Dies ist die Standardsandbox für Einsteigerinnen und Einsteiger zwischen
 Kapitel 2 und Lab 001. Sie bietet ein absichtlich unvollständiges README,
 eine erlaubte lokale Änderung und eine eng gefasste Prüfung, bevor du in deinem
-eigenen Projekt arbeitest. Sie ist weder Kapitel 23 noch ein neues Skill,
+eigenen Projekt arbeitest. Sie ist weder Kapitel 23 noch ein neuer Skill,
 keine Git-Übung und kein Beleg dafür, dass ein Modell etwas erledigt hat.
 
 Wenn du zum ersten Mal einen Projektordner öffnest oder eine Prüfung ausführst,

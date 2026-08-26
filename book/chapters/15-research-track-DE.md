@@ -36,7 +36,7 @@ Absicht → Frage → Quellenplan → Abruf und Lesen
 | Phase | Artefakt | Ausstiegsbedingung |
 |---|---|---|
 | Eingrenzen | Frage, Umfang, Stoppsignale | Überdehnung ist erkennbar |
-| Planen | Prioritäten, Queries, Daten, Zugriff | Wichtige Behauptungen haben Evidenzpfade |
+| Planen | Prioritäten, Suchanfragen, Daten, Zugriff | Wichtige Behauptungen haben Evidenzpfade |
 | Extrahieren | Evidenztabelle und Fundstelle | Jede Behauptung führt zur Quelle zurück |
 | Synthese | Konflikte, Unbekanntes, Stärke | Ein Bericht wird nicht zur Universalregel |
 | Übergabe | Entwurf, Zitate, Review, Version | Andere können nachprüfen |
@@ -90,15 +90,15 @@ Lege drei zulässige öffentliche oder lokale Übungseinträge bereit: eine zug�
 
 Nutze eine zugängliche offizielle Seite, einen datierten Nutzerbericht und einen Link mit Redirect/Login/Fehler. Lade keine Logs, Cookies, Tokens, Kontakte oder privaten Dateien hoch.
 
-1. Schreibe drei Kandidatenfragen, wähle eine und bestimme Umfang, Cutoff, Zeitzone, Ein-/Ausschluss und Stopp.
+1. Schreibe drei Kandidatenfragen, wähle eine und bestimme Umfang, Stichtag, Zeitzone, Ein-/Ausschluss und Stopp.
 2. Notiere Original-/Final-URL, Zugriffsergebnis, Organisation, Datum und Fundstelle. Nicht geöffnete Seiten bleiben `inaccessible`, nicht mit Snippet ergänzt.
 3. Suche zu jeder Schlüsselbehauptung mit einer Gegenquery nach Grenze, anderer Umgebung oder Gegenbeispiel. Nicht gefunden ist kein Beweis.
-4. Bei Konflikt vergleiche Version, Surface, Konto, Region und Definition. Bleibt er bestehen, behalte beide Seiten und grenze die Übergabe ein.
+4. Bei Konflikt vergleiche Version, Arbeitsoberfläche, Konto, Region und Definition. Bleibt er bestehen, behalte beide Seiten und grenze die Übergabe ein.
 5. Übergib eine Seite `candidate` mit Bekanntem, Unbekanntem, Konflikt, Nichtbehauptetem, Stoppgrund und nächster sicherer Aktion.
 
 ### Belege
 
-Bewahre Frage, Cutoff mit Zeitzone, Queries, Original- und finale URLs, Zugriffsresultate, Fundstellen und eine atomare Behauptungstabelle auf. Ein Snippet, ein Titel oder ein Link ohne gelesene Fundstelle bleibt ein Hinweis und keine Zitation.
+Bewahre Frage, Stichtag mit Zeitzone, Suchanfragen, Original- und finale URLs, Zugriffsresultate, Fundstellen und eine atomare Behauptungstabelle auf. Ein Snippet, ein Titel oder ein Link ohne gelesene Fundstelle bleibt ein Hinweis und keine Zitation.
 
 ### Reflexion
 

@@ -147,7 +147,7 @@ unverified:
 
 ## 続ける
 
-次の登録済みユニットは[Lab 001：安全な README 変更を一つ行う](../labs/lab-001-first-safe-task-JA.md)です。
+次の学習単位は[Lab 001：安全な README 変更を一つ行う](../labs/lab-001-first-safe-task-JA.md)です。
 Lab は日本語の候補として利用できますが、状態は `draft / not_run` のままです。このルートは
 それ自体で完結した練習です。黙って別言語へ移動したり、英語の原文を日本語
 翻訳が完成しているかのように示したりしません。

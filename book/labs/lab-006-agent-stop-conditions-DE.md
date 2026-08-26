@@ -10,7 +10,7 @@ setup: "Eine wegwerfbare lokale Textaufgabe ohne Zugangsdaten, Netzwerk, Produkt
 task: "Begrenzte Fehlerzweige und eine Abstimmung nach verlorener Antwort durchlaufen und Ereignisse, Belege und Entscheidung festhalten"
 evidence:
   - "Baseline, Events und Run-Records für jeden begrenzten Zweig"
-  - "Read-back nach verlorener Antwort und eine Handoff mit erstem unbekannten Ereignis"
+  - "Read-back nach verlorener Antwort und eine Übergabe mit dem ersten unbekannten Ereignis"
 failure_variant: "Einen Write außerhalb der erlaubten Wurzel oder einen Wiederholungsversuch ohne neue Bedingung verlangen und vor der Aktion stoppen"
 reflection: "Welche Beobachtung begründet Fortsetzen, Retry oder Stop, und welcher kleinste Lesecheck reduziert die wichtigste Unbekannte?"
 status: draft

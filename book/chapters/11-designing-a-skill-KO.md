@@ -333,7 +333,7 @@ contract를 learning 또는 research task에 옮깁니다. learning Skill은 pra
 
 ## 출처 및 유지보수 경계
 
-Skill을 결정하는 방법은 프로젝트가 작성한 것입니다. host behavior, discovery, Plugin, MCP, permission, external candidate는 변합니다. 현재 claim은 [공식 사실 카드](../evidence-library-KO.md#source-notes), [Skill candidate record](../evidence-library-KO.md#source-notes), 구체 license source에서 확인합니다. 어느 것도 기록한 host의 run을 대신하지 않습니다.
+Skill을 결정하는 방법은 프로젝트가 작성한 것입니다. 호스트 동작, 탐색, 플러그인, MCP, 권한, 외부 후보는 변합니다. 현재 주장은 [공식 사실 카드](../evidence-library-KO.md#source-notes), [Skill 후보 기록](../evidence-library-KO.md#source-notes), 구체적인 라이선스 출처를 기준으로 확인합니다. 어느 것도 기록한 호스트에서 직접 실행한 결과를 대신하지 않습니다.
 
 ## 채택 전 네 가지 사례
 
