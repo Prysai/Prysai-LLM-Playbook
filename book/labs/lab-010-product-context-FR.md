@@ -25,43 +25,99 @@ transfer_limitations: "Un contexte partagé ne prouve ni la vérité ni la réac
 
 ## Objectif
 
-Le but est de séparer faits, hypothèses, positionnement et preuves manquantes.
+Le but est de séparer faits, hypothèses, décisions de positionnement et preuves
+manquantes dans une petite source de contexte que deux tâches peuvent réutiliser.
+La cohérence est utile seulement si l’incertitude reste visible : un document
+plus fluide ne transforme pas une affirmation non étayée en fait.
 
 ## Préparation
 
-Inventez un produit simple. N’utilisez aucune liste client, citation privée ou
-connexion de campagne.
+Inventez un produit simple ou utilisez des informations publiques désinfectées.
+N’incluez aucune liste client, recherche privée, donnée personnelle, revenu
+interne ou stratégie non publiée. Ne connectez ni messagerie, ni publicité, ni
+analytics, ni CRM, ni site en production.
 
-## Tâche
+Créez `product-context-v1.md` avec le minimum suivant :
 
-Écrivez produit, public, problème, action, preuves et inconnues. Demandez une
-présentation puis un plan de mesure. Changez une décision de positionnement et
-comparez les deux versions.
+```text
+product:
+audience:
+problem:
+alternative:
+difference:
+proof:
+objections:
+customer_language:
+voice:
+target_action:
+non_goals:
+```
 
-## Preuve
+Pour chaque champ, ajoutez `source`, `status: fact | assumption | decision |
+unknown`, `confidence`, `owner` et `next_review`. Une preuve vide reste vide ;
+elle ne devient pas une citation client parce qu’une phrase semble convaincante.
 
-Conservez le contexte versionné, la provenance, les sorties et la revue humaine.
+## Tâche et expérience
+
+Utilisez la même version du contexte pour deux tâches :
+
+1. rédiger une présentation concise pour le public nommé ;
+2. concevoir un plan de mesure pour une décision réelle, par exemple vérifier
+   que les lecteurs comprennent le produit avant de choisir l’étape suivante.
+
+Chaque sortie doit nommer les champs utilisés, les hypothèses et les faits à
+valider. Pour chaque métrique, notez l’action cible, la source de données, la
+fenêtre d’observation, la règle de décision et la limite d’attribution. Une
+métrique proposée est un plan, pas un résultat mesuré.
+
+Changez une décision de positionnement, incrémentez la version, écrivez la
+raison et régénérez les deux sorties. Comparez le diff du contexte et celui des
+sorties : distinguez ce que la décision a réellement changé des variations de
+style.
+
+## Paquet de preuves
+
+Conservez les deux versions, la provenance des champs, la raison du changement,
+les quatre sorties, les diffs, la carte des métriques et les champs non résolus.
+Le tableau suivant aide à rendre la réutilisation inspectable :
+
+| Élément | Version utilisée | Champ cité | Observation | Limite |
+|---|---|---|---|---|
+| Présentation |  |  |  |  |
+| Plan de mesure |  |  |  |  |
+
+Une consigne plus courte n’est pas une preuve : montrez quelles informations
+n’ont plus dû être répétées et si la seconde tâche les a utilisées correctement.
 
 ## Échec et limite
 
-Si le public ou la preuve manque, la sortie doit demander l’information ou
-réduire sa portée, jamais inventer un témoignage.
-
-## Réflexion
-
-Quel champ a porté la décision ?
-
-## Transfert
-
-Transférez le contrat à une documentation technique.
+Retirez `audience` ou `target_action`, puis demandez à nouveau les deux sorties.
+Le comportement correct est de demander la décision manquante, de réduire la
+portée ou de laisser le champ inconnu. Inventer un segment, une citation, un
+événement de conversion ou un résultat de marché échoue au Lab, même si la
+prose est élégante.
 
 ## Liste de contrôle d’acceptation
 
-- [ ] Les faits et hypothèses sont séparés.
-- [ ] La version et la provenance sont conservées.
-- [ ] Les métriques ont une limite d’attribution.
-- [ ] Les données sensibles restent exclues.
+- [ ] Faits, hypothèses, décisions et inconnues sont distingués.
+- [ ] Chaque champ matériel possède une provenance, un propriétaire et une date de revue.
+- [ ] Les deux tâches réutilisent une seule version et nomment les champs utilisés.
+- [ ] La modification de positionnement a une raison et un diff inspectable.
+- [ ] Les métriques correspondent à une décision et ne sont pas présentées comme observées.
+- [ ] Aucune publication, prise de contact, dépense, collecte ou donnée privée n’a eu lieu.
+- [ ] Le retrait d’un champ manquant produit une demande ou une sortie bornée, jamais une invention.
+
+## Réflexion et transfert
+
+Quels champs ont réellement réduit les explications répétées ? Lequel a changé
+la décision en aval ? Transférez le contrat à un outil d’ingénierie, un service
+de recherche ou un projet de documentation désinfecté. Retirez les termes
+propres au marketing et indiquez ce qui nécessite un nouveau propriétaire ou
+une nouvelle preuve.
 
 ## Sources et limite de mise à jour
 
-**Statut :** `draft` · **Exécution :** `not_run`. Produit et résultats fictifs.
+**Statut :** `draft` · **Exécution :** `not_run`. Le contexte partagé réduit la
+répétition ; il n’établit ni la vérité factuelle, ni la réaction des clients, ni
+la performance du marché, ni une approbation stratégique. Produit et résultats
+restent fictifs, et la traduction française attend une relecture indépendante.
