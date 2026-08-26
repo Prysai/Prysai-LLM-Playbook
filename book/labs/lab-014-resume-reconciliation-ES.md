@@ -21,30 +21,71 @@ transfer_limitations: "El fixture desechable no prueba continuidad de cuenta, re
 
 # Lab 014: conciliar una tarea reanudada antes de continuar
 
-## Por qué importa
+## Por qué existe este Lab
 
-Tras una interrupción, una nueva instrucción puede hacer parecer activa una tarea aunque el destino, el worktree o un efecto anterior sigan siendo inciertos. Antes de continuar, concilia el estado; no tomes una conversación reanudada como prueba de continuidad.
+Los informes públicos de campo describen agentes que vuelven a una tarea
+antigua después de una compactación del contexto, una interrupción de capacidad
+o una reanudación. Un prompt nuevo puede hacer que la ejecución parezca activa
+aunque el puntero de la tarea, el árbol de trabajo o el estado de los efectos
+externos siga siendo incierto. Este Lab enseña a conciliar el estado antes de
+continuar.
 
-## Preparación y tarea
+## Preparación
 
-Usa una copia desechable con dos archivos de texto. Crea un checkpoint con objetivo, ruta destino, rama, última acción, acción pendiente, permisos y evidencia. Simula interrupción creando una segunda tarea o sustituyendo el checkpoint por uno antiguo. No uses credenciales, red, producción ni comandos irreversibles.
+Usa una copia temporal de un repositorio pequeño o una carpeta con dos archivos
+de texto. Crea un checkpoint que nombre el objetivo, la ruta de destino, la
+rama, la última acción completada, la acción pendiente, el estado de los
+permisos y la evidencia disponible. Simula una interrupción iniciando una
+segunda tarea o sustituyendo el checkpoint por una copia antigua. No uses
+credenciales, red, archivos de producción ni comandos irreversibles.
 
-1. Registra directorio actual, raíz de repositorio, rama, archivo objetivo, hash o fecha de modificación y diff.
-2. Compáralos con el checkpoint.
-3. Marca cada campo como `matched`, `changed` o `not_observed`.
-4. Continúa solo si objetivo, destino, permiso y estado de efectos están conciliados. Si no, crea checkpoint nuevo y detente.
+## Tarea
 
-## Fallo, evidencia y aceptación
+1. Registra el directorio de trabajo actual, la raíz del repositorio, la rama,
+   el archivo de destino, su hash o fecha de modificación y el diff actual.
+2. Compara esas observaciones con el checkpoint.
+3. Clasifica cada campo como `matched`, `changed` o `not_observed`.
+4. Continúa solo si el objetivo, el destino, el permiso y el estado de los
+   efectos externos están conciliados. Si no, crea un checkpoint nuevo y
+   detente.
 
-Haz coincidir el nombre visible de tarea pero cambia raíz o archivo objetivo. Detente antes de editar e identifica el primer campo sin conciliar. No arregles el checkout equivocado solo porque permite escribir. Conserva checkpoint, comandos, salidas, diff, tabla y decisión breve.
+## Evidencia
 
-- [ ] Capturé ruta, repositorio, rama, objetivo y diff reales.
-- [ ] Comparé estado vivo y checkpoint nombrado.
-- [ ] Separé cambiado de no observado.
-- [ ] Me detuve si destino o efecto eran inciertos.
-- [ ] No llamé a un prompt reanudado prueba de continuidad.
+Conserva el checkpoint, los comandos y sus salidas, el diff, la tabla de
+clasificación y una decisión breve. Un registro de práctica satisfactorio solo
+demuestra que seguiste el procedimiento de conciliación en el fixture temporal.
 
-Transfiere el sobre a navegador o MCP sin escribir: identifica solicitud confirmada, cuenta o recurso, aprobación y riesgo de que una llamada previa haya cambiado el estado remoto. El Lab sigue `draft / not_run`; el fixture no prueba continuidad real.
+## Variante de fallo
+
+Haz que coincida el nombre visible de la tarea, pero cambia la raíz del
+repositorio o el archivo de destino. El resultado correcto es detenerse antes
+de editar e identificar el primer campo que no se pudo conciliar. No corrijas el
+checkout equivocado solo porque permite escribir.
+
+## Transferencia
+
+Aplica el mismo marco a una sesión de navegador o MCP: identifica la última
+solicitud confirmada, la cuenta o el recurso de destino, el estado de la
+aprobación y si una llamada anterior pudo haber cambiado el estado remoto.
+
+## Lista de aceptación
+
+- [ ] Capturé la ruta, el repositorio, la rama, el destino y el diff reales.
+- [ ] Comparé el estado vivo con un checkpoint identificado.
+- [ ] Separé `changed` de `not_observed`.
+- [ ] Me detuve cuando el destino o el estado de los efectos era incierto.
+- [ ] No traté un prompt reanudado como prueba de continuidad.
+
+## Reflexión
+
+Anota qué campo era más fácil dar por supuesto, qué observación cambió la
+decisión y qué parte sigue siendo `not_observed`.
+
+## Fuentes
+
+- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-01 a FP2-04 y FP2-08.
+- [Capítulo 10: planificación y cortes verticales](../chapters/10-planning-and-slicing-ES.md).
+- [Capítulo 12: bucle, estado y condiciones de parada del Agent](../chapters/12-agent-loop-and-stop-ES.md).
 
 <!-- lab-navigation:start -->
 <hr>
