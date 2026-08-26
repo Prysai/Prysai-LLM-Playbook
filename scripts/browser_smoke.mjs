@@ -867,7 +867,7 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, `${locale} evidence map lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 21, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 22, `${locale} visual guide lost a teaching board`);
     assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
     const routeCompassCard = visualGuidePage.locator('.visual-card').first();
     assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
@@ -999,7 +999,7 @@ try {
   assert.equal(await rootVisualPage.locator('html').getAttribute('lang'), 'fr', 'root visual guide does not preserve the requested language');
   assert.equal(await rootVisualPage.locator('h1').innerText(), 'Voyez la méthode avant d’entrer dans le détail.', 'root visual guide serves the wrong document');
   assert.equal(await rootVisualPage.locator('link[rel="canonical"]').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/visuals.html', 'root visual guide is missing its canonical URL');
-  assert.equal(await rootVisualPage.locator('.visual-card').count(), 21, 'root visual guide lost its teaching boards');
+  assert.equal(await rootVisualPage.locator('.visual-card').count(), 22, 'root visual guide lost its teaching boards');
   assert.equal(await rootVisualPage.locator('[data-visual-map-nodes] button').count(), 6, 'root visual guide lost its dynamic route map');
   await noHorizontalOverflow(rootVisualPage, 'root visual guide desktop');
   await rootVisualPage.close();
@@ -1025,7 +1025,7 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'mobile action boundary fallback loses a layer');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, 'mobile claim triage map loses a branch');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, 'mobile claim triage fallback loses a branch');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 21, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 22, 'mobile visual guide loses teaching boards');
   await visualGuidePage.locator('#visual-capability').scrollIntoViewIfNeeded();
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-mobile-fr.png'), fullPage: false });
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
@@ -2436,7 +2436,14 @@ try {
     assert.equal(await localizedRelatedVisuals.isVisible(), true, `${locale} related visual boards are not available`);
     assert.equal((await localizedRelatedVisuals.locator('[data-reader-related-visuals-summary]').innerText()).trim(), relatedVisualLocales[locale], `${locale} related visual label is not localized`);
     assert.equal(await localizedRelatedVisuals.locator('.reader-related-visual-card').count(), 2, `${locale} related visual boards lost a relationship`);
-    assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    const localizedInlineConceptMap = page.locator('[data-reader-inline-concept-map]');
+    assert.equal((await localizedInlineConceptMap.locator('summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    // The mobile layout intentionally collapses this map to keep the first
+    // useful action visible. Expand it before checking content inside details;
+    // innerText is empty for descendants of a closed <details> element.
+    if (await localizedInlineConceptMap.locator('summary').evaluate((summary) => !summary.parentElement?.open)) {
+      await localizedInlineConceptMap.locator('summary').click();
+    }
     assert.equal((await page.locator('.reader-inline-concept-map-detail-label').textContent()).trim(), conceptDetailLocales[locale][0], `${locale} inline concept map selected-label is not localized`);
     assert.equal((await page.locator('.reader-inline-concept-map-detail-next span').textContent()).trim().replace(/:$/, ''), conceptDetailLocales[locale][1], `${locale} inline concept map next-label is not localized`);
     assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail] > strong').innerText()).trim(), '', `${locale} inline concept map detail title is empty`);

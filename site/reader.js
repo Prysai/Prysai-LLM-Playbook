@@ -2959,7 +2959,6 @@ function canonicalChapterTitle(chapter) {
     const openingParagraph = article.querySelector(':scope > p');
     (openingParagraph || articleHeading)?.after(orientation, mobilePageToc);
     addPromptCopyControls(selection.path);
-    article.setAttribute('aria-busy', 'false');
     const effectiveLocale = selection.effective || locale;
     const renderedTitle = article.querySelector('h1')?.textContent?.trim();
     const title = effectiveLocale !== 'en' && renderedTitle
@@ -2991,6 +2990,10 @@ function canonicalChapterTitle(chapter) {
     renderReaderRecoveryMap(selection);
     renderBookNavigation(selection);
     renderTrustRecord(null);
+    // Keep the loading state active until the article's navigational and
+    // visual enhancements have been rendered. This prevents assistive tech
+    // and browser checks from observing an incomplete concept map as ready.
+    article.setAttribute('aria-busy', 'false');
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);
     document.title = `${title} · Prysai LLM Playbook`;
     document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} with source-aware navigation and explicit evidence limits.`);
