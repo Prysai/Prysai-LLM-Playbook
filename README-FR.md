@@ -2,8 +2,9 @@
 
 # Prysai LLM Playbook — De la première tâche à un travail fiable
 
-> Comprenez d’abord ce qu’un LLM peut établir. Essayez ensuite un petit résultat,
-> vérifiez-le, puis choisissez une route Codex ou une autre plateforme.
+> Comprenez d’abord ce qu’un LLM peut réellement étayer — et ce qu’il ne peut pas.
+> Essayez ensuite un petit résultat, vérifiez-le, puis choisissez une route Codex
+> ou une autre plateforme.
 
 **Statut :** `candidate`. Les contrôles structurels existent ; les essais
 d’apprenants, le transfert et la relecture française indépendante restent

@@ -165,3 +165,13 @@ status.
   content IDs, route order and status values were unchanged.
 - **Boundary:** this is a navigation and terminology consistency fix, not
   independent Korean certification or proof of learner comprehension.
+
+### Precision review slice — French project promise (2026-08-26)
+
+- **File:** `README-FR.md`.
+- **Change:** restored both sides of the opening boundary: what an LLM can
+  actually support and what it cannot. The new wording uses the evidence-aware
+  French verb `étayer` and keeps the following try/check/choose sequence.
+- **Boundary:** this fixes one high-exposure semantic sentence; it is not a
+  complete French native-language review, and the route remains a candidate
+  pending independent review and learner comprehension evidence.
