@@ -57,7 +57,7 @@
 | **起始上下文** | 自己寫的小樣本、已知事實、提供的來源或 `unknown` | 說明回答可以依賴什麼 | 對讀者或材料的有效評估 |
 | **請求的回應** | 有界的回應形式、長度或順序 | 讓讀者有東西可以儲存或拒絕 | 正確性、相關性或遵循程度 |
 | **限制** | 不應分享的資料、不應執行的動作和不需要的幫助 | 明確權限和副作用 | 完整隱私、安全或政策合規 |
-| **檢查** | 暴露不確定性的提問、來源條件或修改請求 | 防止把答案當成自我驗證 | 已驗證事實、教學質量或可靠分數 |
+| **檢查** | 暴露不確定性的提問、來源條件或修改請求 | 防止把答案當成自我驗證 | 已驗證事實、教學品質或可靠分數 |
 | **停止與回執** | 結束會話的條件和要儲存的小記錄 | 讓未完成部分和下一步可見 | 留存、遷移或真實任務已完成 |
 
 ![讓邊界可見：寫出六個首輪欄位；可見欄位不等於安全、正確或完成認證。](../../assets/teaching/first-turn-contract-card.svg)
@@ -154,19 +154,19 @@
 | O1 | official fact | OpenAI，[*Prompt engineering*][O1]，2026-08-13 | 產品範圍內關於指令、上下文、示例和提示詞評估的指導 | facts-maintainer / 2026-09-13 | 其他產品行為、輸出正確性或學習效果 |
 | O2 | official fact | Anthropic，[*Prompt engineering overview*][O2]，2026-08-13 | 產品範圍內關於成功標準和最佳化前經驗測試的指導 | facts-maintainer / 2026-09-13 | 其他產品行為、提示詞效果或學習結果 |
 | O3 | official fact | Google AI for Developers，[*Prompt design strategies*][O3]，2026-08-13 | 產品範圍內關於清晰、具體指令和示例的指導 | facts-maintainer / 2026-09-13 | 其他產品行為、來源正確性或語言結果 |
-| O4 | official fact | Microsoft Learn，[*Prompt engineering techniques*][O4]，2026-08-13 | 產品範圍內關於指令、主要內容和示例的提示工程要素 | facts-maintainer / 2026-09-13 | 其他產品行為、模型等價或研究質量 |
+| O4 | official fact | Microsoft Learn，[*Prompt engineering techniques*][O4]，2026-08-13 | 產品範圍內關於指令、主要內容和示例的提示工程要素 | facts-maintainer / 2026-09-13 | 其他產品行為、模型等價或研究品質 |
 | O5 | official fact | Meta for Developers，[*Prompt engineering*][O5]，2026-08-13 | 產品範圍內的 Meta Llama 提示指導 | facts-maintainer / 2026-09-13 | 其他產品行為、輸出正確性或初學者結果 |
 | U1 | public user report | OpenAI Community，[*Learn languages at the same time*][U1]，2024-12-03 釋出，2026-08-13 訪問 | 一位作者的語言練習目標和感知限制 | curriculum-maintainer / 2026-09-13 | 普遍性、當前產品限制、學習結果或補救辦法 |
 | U2 | public user report | OpenAI Community，[*Long instruction prompt on short input data*][U2]，2024-06-24 釋出，2026-08-13 訪問 | 一位作者反覆傳送指令的工作流擔憂 | curriculum-maintainer / 2026-09-13 | 普遍性、根因、當前行為或背書模式 |
 | P1 | project inference | 本記錄的首輪契約和兩張卡 | 一種讓第一次請求可檢查、與產品無關的寫法 | curriculum-maintainer / `not_run`，等待授權評估 | 產品等價、輸出正確性、學習效果或完成時間 |
-| L1 | local reproduction | 無；`not_run` | 沒有執行提示詞、模型、產品或學習者 | curriculum-maintainer / `not_run` | 任何行為、質量或學習結果 |
+| L1 | local reproduction | 無；`not_run` | 沒有執行提示詞、模型、產品或學習者 | curriculum-maintainer / `not_run` | 任何行為、品質或學習結果 |
 | C1 | community suggestion | 無保留專案 | 本記錄的狹窄結論不需要社群建議 | curriculum-maintainer / `not_run` | 需求、最佳實踐或有效性 |
 
 ## 停止記錄與未解決的證據缺口
 
 研究在檢查了五份分別負責的官方指南和兩份有日期、可追蹤的公開報告後停止。沒有使用帳號，沒有詢問模型，沒有收集個人資料，也沒有做跨產品比較。
 
-仍未解決的問題包括：初學者是否理解任一卡片、能否在五分鐘內完成、不同產品介面是否一致接受措辭、輸出是否準確、糾正是否合適，以及練習是否會在會話之外持續或遷移。未來評估需要授權的協議、明確的任務和環境、參與者同意與資料邊界、記錄的產品條件，以及在提出有效性或質量結論前進行適當的獨立核查。
+仍未解決的問題包括：初學者是否理解任一卡片、能否在五分鐘內完成、不同產品介面是否一致接受措辭、輸出是否準確、糾正是否合適，以及練習是否會在會話之外持續或遷移。未來評估需要授權的協議、明確的任務和環境、參與者同意與資料邊界、記錄的產品條件，以及在提出有效性或品質結論前進行適當的獨立核查。
 
 [O1]: https://developers.openai.com/api/docs/guides/prompt-engineering
 [O2]: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview

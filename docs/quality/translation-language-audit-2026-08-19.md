@@ -129,3 +129,16 @@ status.
   values, file/fixture fields, and selected technical terms. Their presence is
   not evidence of a completed native review; a Japanese reader check remains
   required before changing the route from `in-progress`.
+
+### Precision review slice — Traditional Chinese terminology (2026-08-26)
+
+- **Files:** the Traditional Chinese README, book index, evidence library,
+  learning contract, Chapters 17 and 19, Labs 002, 004, 008 and 009, and the
+  corresponding research record.
+- **Change:** replaced the cross-strait technical calque `質量` with the
+  Taiwan-appropriate `品質` when the English meaning is quality. Code tokens,
+  status values, paths and source identifiers were unchanged.
+- **Boundary:** this is a terminology correction, not a native-language sign-off
+  or evidence that the Traditional Chinese route is complete. It does not
+  establish learner comprehension, semantic equivalence or production
+  readiness.
