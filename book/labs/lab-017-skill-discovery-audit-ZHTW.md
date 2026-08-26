@@ -124,5 +124,5 @@ Skill。
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ZHTW.md">← 上一個實驗<br><strong>實驗 016 · 副作用邊界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-ZHTW.md">下一個實驗 →<br><strong>實驗 018 · 旅行打字對話的保持與遷移</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ZHTW.md">← 上一個實驗<br><strong>實驗 016 · 副作用邊界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-ZHTW.md">下一個實驗 →<br><strong>實驗 018 · 用初學者學習協調打字對話測試保持與遷移</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

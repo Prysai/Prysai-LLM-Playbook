@@ -128,5 +128,5 @@ Labは `draft / not_run` のままで、外部Skillは導入していません�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-JA.md">← 前へ<br><strong>Lab 016 · 副作用の境界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-JA.md">次へ →<br><strong>Lab 018 · 入力型の旅行会話で保持と転移を確認する</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-JA.md">← 前へ<br><strong>Lab 016 · 副作用の境界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-JA.md">次へ →<br><strong>Lab 018 · 初心者向け学習調整会話の入力練習で保持と転移を確認する</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->
