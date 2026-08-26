@@ -22,7 +22,7 @@ Der englische Grundlagenkern ist die kanonische Quelle; die deutsche
 Neuübersetzung wird noch erstellt und geprüft. Bis dahin bleibt dieser Einstieg
 vollständig auf deutsche Dateien begrenzt.
 
-Die Karten für Spanisch, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach diesem Pfad. Sie sind nicht die erste LLM-Lektion und versprechen weder Effizienz, Sprachflüssigkeit noch Kompetenzzuwachs.
+Die Karten für Spanisch, Arbeitsupdates und Recherche sind **optionale Anwendungsübungen** nach diesem Pfad. Sie sind nicht die erste LLM-Lektion und versprechen weder Effizienz, Sprachflüssigkeit noch Kompetenzzuwachs.
 
 ## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 

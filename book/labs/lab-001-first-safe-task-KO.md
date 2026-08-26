@@ -64,7 +64,7 @@ format: Done, Waiting, Unknown, Next step.
 
 ## 준비
 
-1. 폐기 가능한 프로젝트가 없으면 [첫 안전 변경 fixture](../routes/first-safe-change-KO.md)로 시작합니다. Git, 계정, 설치, 네트워크가 필요 없습니다.
+1. 폐기 가능한 프로젝트가 없으면 [첫 번째 안전한 변경 fixture](../routes/first-safe-change-KO.md)로 시작합니다. Git, 계정, 설치, 네트워크가 필요 없습니다.
 2. 절대 경로와 Git 프로젝트라면 현재 `git status`를 기록합니다. fixture에서는 저장소 정보를 지어내지 말고 `not a Git sandbox`라고 기록합니다.
 3. 원래 `README.md`를 보관하거나 깨끗한 체크포인트를 만듭니다.
 4. 로컬 실행 명령을 정의하는 실제 파일을 확인합니다. 기억이나 검색 결과로 명령을 만들지 않습니다.

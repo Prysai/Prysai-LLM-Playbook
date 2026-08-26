@@ -10,7 +10,7 @@
 
 1. [LLM 개념](guides/llm-fundamentals-KO.md).
 2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md).
-3. [첫 안전 변경](routes/first-safe-change-KO.md).
+3. [첫 번째 안전한 변경](routes/first-safe-change-KO.md).
 4. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
    → [Lab 002: 바람을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
 5. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)

@@ -142,3 +142,26 @@ status.
   or evidence that the Traditional Chinese route is complete. It does not
   establish learner comprehension, semantic equivalence or production
   readiness.
+
+### Precision review slice — Spanish and German entry agreement (2026-08-26)
+
+- **Files:** `README-ES.md`, `book/README-ES.md`, `README-DE.md`, and
+  `book/README-DE.md`.
+- **Change:** corrected plural agreement in the sentence that groups the
+  optional application exercises (`prácticas de aplicación opcionales` and
+  `optionale Anwendungsübungen`). The route order, status values, links and
+  scope claims were unchanged.
+- **Boundary:** this is a narrow copy edit, not independent Spanish or German
+  certification. The locales remain `in-progress`/`candidate` pending native
+  review and learner comprehension evidence.
+
+### Precision review slice — Korean route title consistency (2026-08-26)
+
+- **Files:** `README-KO.md`, `book/README-KO.md`,
+  `book/table-of-contents-KO.md`, `book/labs/README-KO.md`, and
+  `book/labs/lab-001-first-safe-task-KO.md`.
+- **Change:** aligned visible links for the `first-safe-change` unit with its
+  authored title, using `첫 번째 안전한 변경` consistently. File names,
+  content IDs, route order and status values were unchanged.
+- **Boundary:** this is a navigation and terminology consistency fix, not
+  independent Korean certification or proof of learner comprehension.

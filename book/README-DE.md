@@ -19,7 +19,7 @@ Der neue Grundlagenkern hat eine kanonische englische Quelle und wartet noch
 auf eine deutsche Neuübersetzung und unabhängige Prüfung. Deshalb verweisen
 die ersten Schritte hier nur auf deutsche Dateien.
 
-Karten, Sprachübungen, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach dieser Reihenfolge; sie ersetzen nicht die LLM-Grundlagen.
+Karten, Sprachübungen, Arbeitsupdates und Recherche sind **optionale Anwendungsübungen** nach dieser Reihenfolge; sie ersetzen nicht die LLM-Grundlagen.
 
 Navigation:
 

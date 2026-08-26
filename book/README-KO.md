@@ -14,7 +14,7 @@
 
 1. [LLM 개념](guides/llm-fundamentals-KO.md)
 2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md)
-3. [첫 안전 변경](routes/first-safe-change-KO.md)
+3. [첫 번째 안전한 변경](routes/first-safe-change-KO.md)
 
 새 기초 코어의 정식 원문은 영어이며 한국어판은 재번역과 독립 검토를 기다리고 있습니다.
 따라서 이 책의 입구는 한국어 파일만 가리킵니다.

@@ -16,7 +16,7 @@ La nueva versión del núcleo de fundamentos tiene una fuente canónica en ingl�
 y todavía necesita una retraducción y una revisión independiente en español.
 Por eso este libro enlaza aquí solo contenido en español.
 
-Las tarjetas, los idiomas, las actualizaciones de trabajo y la investigación son **práctica de aplicación opcional** después de esta secuencia; no sustituyen la base sobre LLM.
+Las tarjetas, los idiomas, las actualizaciones de trabajo y la investigación son **prácticas de aplicación opcionales** después de esta secuencia; no sustituyen la base sobre LLM.
 
 ## Aplicaciones opcionales después de la base
 

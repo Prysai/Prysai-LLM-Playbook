@@ -13,7 +13,7 @@
 
 1. [LLM 개념](book/guides/llm-fundamentals-KO.md)
 2. [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
-3. [첫 안전 변경](book/routes/first-safe-change-KO.md)
+3. [첫 번째 안전한 변경](book/routes/first-safe-change-KO.md)
 
 영어 기초 코어가 현재의 정식 원문이며 한국어판은 재번역과 검토를 기다리고 있습니다.
 그동안 이 입구는 한국어 파일만으로 읽을 수 있는 경로를 유지합니다.

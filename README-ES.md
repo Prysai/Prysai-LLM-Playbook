@@ -19,7 +19,7 @@ El núcleo de fundamentos en inglés es la fuente canónica que se está
 retraduciendo; esta entrada en español mantiene una ruta completamente en
 español hasta que la nueva traducción pueda revisarse.
 
-Los ciclos de español, actualización de trabajo e investigación son **práctica de aplicación opcional** después de esta ruta; no son la primera lección sobre LLM ni prometen eficiencia, fluidez o mejora de capacidad.
+Los ciclos de español, actualización de trabajo e investigación son **prácticas de aplicación opcionales** después de esta ruta; no son la primera lección sobre LLM ni prometen eficiencia, fluidez o mejora de capacidad.
 
 ## Empieza con una tarea de texto segura, sin instalación
 
