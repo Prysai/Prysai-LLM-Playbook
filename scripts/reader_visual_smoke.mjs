@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { spawnSync } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -9,7 +10,11 @@ const playwrightModule = await import('playwright');
 const { chromium } = playwrightModule.default ?? playwrightModule;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const artifact = path.join(root, '_site');
+// Keep this artifact isolated. build_pages_artifact.py swaps a sibling
+// `._site-previous` directory during publication, so concurrent smoke tests
+// must never point at the repository's shared `_site` directory.
+const temporaryRoot = await mkdtemp(path.join(tmpdir(), 'prysai-reader-visual-'));
+const artifact = path.join(temporaryRoot, '_site');
 const python = process.env.PYTHON || 'python';
 const locales = [
   ['en', 'EN', 'Lab 003: Audit a completion claim', 'Keep a lab run small enough to check'],
@@ -47,6 +52,9 @@ const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py'
   cwd: root,
   encoding: 'utf8',
 });
+if (build.status !== 0) {
+  await rm(temporaryRoot, { recursive: true, force: true });
+}
 assert.equal(build.status, 0, `Pages candidate build failed:\n${build.stdout}\n${build.stderr}`);
 
 const server = createServer((request, response) => {
@@ -142,4 +150,5 @@ try {
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
+  await rm(temporaryRoot, { recursive: true, force: true });
 }
