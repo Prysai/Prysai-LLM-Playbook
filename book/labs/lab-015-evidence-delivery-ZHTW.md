@@ -99,6 +99,11 @@ stop condition:
 
 指出哪項主張超出了證據，並寫下能補上缺口的最小檢查。
 
+## 來源
+
+- [現場問題與提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-05、FP2-06 和 FP2-20。
+- [第 9 章：驗證、疑問與復原](../chapters/09-verification-and-recovery-ZHTW.md)。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="實驗導航">

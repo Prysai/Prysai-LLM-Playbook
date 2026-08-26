@@ -65,6 +65,12 @@ transfer_limitations: "可丟棄夾具不能證明真實帳戶、遠端資源或
 
 寫下哪個欄位最容易被假定、哪條觀察改變了決策，以及哪些內容仍是 `not_observed`。
 
+## 來源
+
+- [現場問題與提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-01 至 FP2-04 和 FP2-08。
+- [第 10 章：規劃與垂直切片](../chapters/10-planning-and-slicing-ZHTW.md)。
+- [第 12 章：Agent 迴圈、狀態與停止條件](../chapters/12-agent-loop-and-stop-ZHTW.md)。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="實驗導航">

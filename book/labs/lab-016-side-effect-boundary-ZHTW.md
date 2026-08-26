@@ -68,6 +68,11 @@ transfer_limitations: "靜態矩陣不能證明真實環境有有效回滾，也
 
 記錄哪項擬議行動看似是驗證，卻會改變持久狀態，以及邊界為何成立。
 
+## 來源
+
+- [現場問題與提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-07、FP2-10、FP2-12 和 FP2-19。
+- [第 13 章：行動邊界](../chapters/13-action-boundaries-ZHTW.md)。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="實驗導航">

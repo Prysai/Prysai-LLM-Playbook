@@ -67,6 +67,11 @@ transfer_limitations: "静态矩阵不能证明真实环境有有效回滚，也
 
 记录哪项拟议行动看似是验证，却会改变持久状态，以及边界为何成立。
 
+## 来源
+
+- [现场问题与提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-07、FP2-10、FP2-12 和 FP2-19。
+- [第 13 章：行动边界](../chapters/13-action-boundaries-ZH.md)。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="实验导航">

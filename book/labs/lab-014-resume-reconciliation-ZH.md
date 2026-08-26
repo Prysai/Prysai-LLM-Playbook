@@ -64,6 +64,12 @@ transfer_limitations: "可丢弃夹具不能证明真实账户、远端资源或
 
 写下哪个字段最容易被假定、哪条观察改变了决策，以及哪些内容仍是 `not_observed`。
 
+## 来源
+
+- [现场问题与提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-01 至 FP2-04 和 FP2-08。
+- [第 10 章：规划与纵向切片](../chapters/10-planning-and-slicing-ZH.md)。
+- [第 12 章：Agent 循环、状态与停止条件](../chapters/12-agent-loop-and-stop-ZH.md)。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="实验导航">
