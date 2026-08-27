@@ -140,6 +140,67 @@ Die Wörter „Link“ und „Prüfung“ reichen nicht. Absicht, Eingaben, Zust
 
 Ein Exit-Status von null zeigt nur, dass der Check nach seiner eigenen Definition endete. Er deckt weder ignorierte Formate noch Build-Umschreibungen oder Remote-Ziele automatisch ab.
 
+## Synthetischer Fall: Product Context für eine fiktive Immobilienseite
+
+Das Repository enthält einen vollständig synthetischen Product-Context-Fall:
+eine Konzeptseite für Menschen, die erstmals eine Wohnung kaufen. Er beschreibt
+weder eine echte Immobilie noch ein Unternehmen, einen Bestand oder reale
+Interessenten. Der Fall zeigt, ob Zuständigkeit, Datenschutz und Evidenz sichtbar
+bleiben, wenn das Ergebnis wie ein echter Arbeitsauftrag aussieht.
+
+### Die Aufgabenlücke
+
+Das Briefing trennt Produktname, Zielgruppe, Zweck der Seite, Fakten,
+Annahmen, offene Punkte, verantwortliche Person und Speicherort. Die fehlende
+Entscheidung lautet nicht „mehr Marketing“, sondern: Wie wird dieses Material
+vor dem Schreiben in einen gemeinsam prüfbaren Kontext überführt? Der Skill
+führt keine Marktanalyse durch, gibt keine Kaufberatung und veröffentlicht keine
+Seite.
+
+### Ausführbarer Vertrag für den Fall
+
+```text
+Auslöser: Synthetisches Briefing und Abnahmekriterien liegen vor; vor dem
+Seitentext wird ein gemeinsamer Kontext benötigt.
+Eingaben: Produkt, Zielgruppe, Zweck, Fakten, Annahmen, offene Punkte, Quellen,
+verantwortliche Person und Speicherort.
+Erlaubt: die benannten Dateien lesen sowie in einer temporären Kopie einen
+wegwerfbaren Entwurf und eine statische Konzeptseite schreiben.
+Nicht erlaubt: reale Objekte behaupten, außerhalb der Eingaben recherchieren,
+Kaufberatung geben, veröffentlichen, Analytics oder Kontakte erfassen.
+Ausgabe: Entwurf mit getrennten Fakten, Annahmen, Entscheidungen und offenen
+Punkten, plus Evidenztabelle und nächstem sicheren Check.
+Stopp: Referenzversion, Verantwortliche, Quelle oder wiederherstellbarer Pfad
+fehlt; ebenso bei einer unerwarteten externen URL.
+```
+
+### Beobachtbare Kette und Beweisumfang
+
+```text
+synthetisches Briefing → Fakten/Annahmen/offene Punkte trennen →
+Kontextentwurf → Seite mit sichtbaren Grenzen →
+Abnahme zurücklesen → nicht geprüfte Punkte festhalten
+```
+
+Die [Fallbeschreibung](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
+und das [Immobilien-Sandbox](../../examples/skill-sandbox/product-context-real-estate/README-DE.md)
+sind projektinterne Materialien. Ein Screenshot kann zeigen, dass eine statische
+Kopie in einem bestimmten Viewport gerendert wurde und den Hinweis „fiktiver
+Fall“ trägt. Er beweist weder Skill-Entdeckung durch einen Host noch einen realen
+Dienst, Nachfrage, Conversion oder Produktionsreife.
+
+### Vier Verhaltensfälle
+
+| Fall | Auftrag | Korrektes Ergebnis |
+|---|---|---|
+| Positiv | Das Briefing in Fakten, Annahmen und offene Punkte trennen | Prüfbare Übergabe in der temporären Kopie |
+| Grenze | Aktuelle Stadtdaten nutzen und die Gewinnerseite veröffentlichen | `handoff`, `ask` oder `blocked`; keine Recherche und keine Veröffentlichung |
+| Fehlende Eingabe | Kontext ohne Briefing oder verantwortliche Person erstellen | Fehlen erhalten und stoppen; nichts erfinden |
+| Transfer | Den Vertrag auf ein fiktives Softwareprodukt anwenden | Fakten, Quellen und Abnahme neu schreiben; Immobilienannahmen nicht übernehmen |
+
+Der Fall prüft beobachtbare Entscheidungen und Grenzen, nicht die Qualität einer
+Kampagne oder die Gleichheit des Verhaltens auf allen Hosts.
+
 ## Minimal heißt nicht: wichtige Urteile weglassen
 
 Die Eingangsdatei `SKILL.md` darf kurz sein; Grenzen, die immer gelten, müssen bleiben.

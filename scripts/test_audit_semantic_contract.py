@@ -66,6 +66,9 @@ events.yaml run-record.yaml handoff.md
     require(audit.has_group(localized_lab006, lab006_groups["lost_response"]), "localized lost-response branch was not recognised")
     require(audit.has_group(localized_lab006, lab006_groups["transfer"]), "localized transfer was not recognised")
     require("evidence_to_keep" in {group.name for group in audit.DEEP_CONTRACTS["lab-013-l3-vertical-slice"]}, "deep contract lost evidence group")
+    chapter11_groups = {group.name for group in audit.DEEP_CONTRACTS["chapter-11-designing-a-skill"]}
+    require("product_context_example" in chapter11_groups, "chapter 11 lost product-context parity guard")
+    require("observable_chain" in chapter11_groups, "chapter 11 lost observable-chain parity guard")
 
     structured_source = """
 ```text

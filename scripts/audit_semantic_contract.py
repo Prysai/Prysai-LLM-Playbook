@@ -200,6 +200,8 @@ DEEP_CONTRACTS: dict[str, tuple[ContractGroup, ...]] = {
         ContractGroup("progressive_disclosure", (r"progressive disclosure|chargement progressif|carga progresiva|progressive.*Laden|段階的.*開示|점진적.*공개|渐进式加载|漸進式載入")),
         ContractGroup("permission_matrix", (r"permission matrix|matrice des permissions|matriz de permisos|Berechtigungsmatrix|権限マトリクス|권한 매트릭스|权限矩阵|權限矩陣")),
         ContractGroup("four_cases", (r"four cases|quatre cas|cuatro casos|Vier Fälle|4つのケース|네 가지 사례|四个案例|四個案例")),
+        ContractGroup("product_context_example", (r"Product Context|Product-Context|Contexto de producto|Contexte produit|Produktkontext|プロダクト.?コンテキスト|제품 맥락|产品上下文|產品脈絡")),
+        ContractGroup("observable_chain", (r"observable chain|chaîne observable|cadena observable|beobachtbare Kette|観察可能な連鎖|관찰 가능한 흐름|可观察的流程|可觀察的流程")),
         ContractGroup("intentional_failure", (r"intentional failure|échec volontaire|fallo deliberado|absichtlichen Fehler|意図的な失敗|의도적 실패|故意失败|故意失敗")),
         ContractGroup("sandbox_experiment", (r"sandbox|isolated environment|environnement isolé|entorno aislado|isolierte Umgebung|隔離環境|격리 환경|隔离环境|隔離環境")),
         ContractGroup("evidence_package", (r"evidence pack|evidence package|paquet de preuves|paquete de evidencia|Beweispaket|証拠パッケージ|증거 패키지|证据包|證據包")),

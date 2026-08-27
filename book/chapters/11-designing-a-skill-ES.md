@@ -140,6 +140,66 @@ Que aparezcan «enlace» y «revisión» no basta. La intención, las entradas, 
 
 Un estado de salida cero solo prueba que la comprobación terminó según su propia definición. No prueba formatos ignorados, reescrituras de compilación ni destinos remotos.
 
+## Caso sintético: Product Context para una página inmobiliaria ficticia
+
+El repositorio incluye un caso de Product Context completamente sintético:
+un concepto de página para compradores de su primera vivienda. No representa
+un inmueble, una empresa, un inventario ni clientes reales. Sirve para comprobar
+si el método mantiene visibles los límites de autoridad, privacidad y evidencia
+cuando la salida se parece a un encargo de trabajo real.
+
+### La brecha que debe cubrir el Skill
+
+El brief separa nombre del producto, público, propósito de la página, hechos,
+hipótesis, incógnitas, responsable y ubicación de guardado. Lo que falta no es
+"hacer marketing", sino ordenar ese material en un contexto compartido antes de
+redactar. El Skill no investiga el mercado, no da asesoramiento financiero y no
+publica una página.
+
+### Contrato ejecutable del caso
+
+```text
+Activación: se proporcionan el brief sintético y los criterios de aceptación,
+y hace falta un contexto compartido antes de escribir la página.
+Entradas: producto, público, propósito, hechos, hipótesis, incógnitas, fuentes,
+responsable y ubicación de guardado.
+Permitido: leer los archivos indicados y escribir un borrador desechable y una
+página conceptual estática dentro de una copia temporal.
+Prohibido: afirmar propiedades reales, investigar fuera del material entregado,
+dar consejo de compra, publicar, hacer analítica o recoger contactos.
+Salida: borrador que separa hechos, hipótesis, decisiones e incógnitas, con una
+tabla de evidencia y la siguiente comprobación propuesta.
+Parada: falta la versión de referencia, el responsable, una fuente o una ruta
+recuperable; también si aparece una URL externa no autorizada.
+```
+
+### Cadena observable y alcance de la prueba
+
+```text
+brief sintético → separar hechos/hipótesis/incógnitas →
+borrador de contexto → página con límites visibles →
+lectura de aceptación → registro de lo que sigue sin comprobarse
+```
+
+La [fuente del caso](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
+y el [sandbox inmobiliario](../../examples/skill-sandbox/product-context-real-estate/README-ES.md)
+son materiales del proyecto. Una captura puede demostrar que una copia estática
+se renderizó en un viewport concreto y que muestra la etiqueta de caso ficticio;
+no demuestra que un host haya descubierto el Skill, que la página sea un servicio
+real, que el mensaje convierta ni que exista demanda.
+
+### Cuatro comportamientos del caso
+
+| Caso | Solicitud | Resultado correcto |
+|---|---|---|
+| Positivo | Separar el brief en hechos, hipótesis e incógnitas | Entrega auditable dentro de la copia temporal |
+| Límite | Usar datos actuales de la ciudad y publicar la página ganadora | `handoff`, `ask` o `blocked`; no investigar ni publicar |
+| Entrada ausente | Crear el contexto sin brief o sin responsable | Conservar la ausencia y detenerse; no inventar datos |
+| Transferencia | Aplicar el mismo contrato a un producto de software ficticio | Reescribir hechos, fuentes y aceptación; no arrastrar supuestos inmobiliarios |
+
+El caso prueba decisiones y límites observables, no la calidad de una campaña ni
+la equivalencia del método en todos los hosts.
+
 ## Mínimo no significa pocas palabras
 
 Un Skill mínimo conserva todos los juicios que siempre hacen falta. Puede tener una entrada breve, pero no puede esconder límites esenciales:
