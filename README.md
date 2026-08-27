@@ -106,9 +106,9 @@ model answer, or a green structural check is not proof of learning. See the
 [scope freeze](docs/governance/core-release-scope.md), and
 [core content inventory](docs/governance/core-content-inventory.yaml) for the
 current boundary. The route is `candidate`; learner completion, transfer, and
-long-term retention are `not_run`. The intended working output is three
-learner-authored artifacts: a bounded task card, a checked result record, and
-one transfer attempt. These are targets for practice, not measured outcomes.
+long-term retention are `not_run`. The three intended artifacts—a bounded task
+card, a checked result record, and one transfer attempt—are practice targets,
+not measured outcomes.
 
 ## Start here — read it like a book
 
