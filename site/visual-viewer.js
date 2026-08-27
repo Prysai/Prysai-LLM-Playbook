@@ -36,7 +36,6 @@
   let locale = LOCALES.includes(params.get('lang')) ? params.get('lang') : 'en';
   const asset = params.get('asset') || '';
   const label = params.get('label') || '';
-  const assetUrl = `../assets/teaching/${encodeURIComponent(asset)}`;
   const image = document.querySelector('[data-viewer-image]');
   const title = document.querySelector('[data-viewer-title]');
   const caption = document.querySelector('[data-viewer-caption]');
@@ -48,6 +47,11 @@
   let zoom = 1;
 
   const strings = () => COPY[locale] || COPY.en;
+  const resolvedAsset = () => window.PRYSAI_VISUAL_ASSETS?.resolve(asset, locale) || {
+    path: `../assets/teaching/${encodeURIComponent(asset)}`,
+    sourcePath: `../assets/teaching/${encodeURIComponent(asset)}`,
+    status: 'english-fallback',
+  };
 
   function setText() {
     const copy = strings();
@@ -65,6 +69,16 @@
     document.querySelectorAll('[data-viewer-home]').forEach((link) => {
       link.href = `visuals.html?lang=${encodeURIComponent(locale)}`;
     });
+    const visual = resolvedAsset();
+    if (image && ASSETS.has(asset)) {
+      image.src = visual.path;
+      image.dataset.visualLocale = locale;
+      image.dataset.visualLocaleStatus = visual.status;
+    }
+    if (rawLink && ASSETS.has(asset)) {
+      rawLink.href = visual.path;
+      rawLink.dataset.visualLocaleStatus = visual.status;
+    }
     if (title && ASSETS.has(asset)) title.textContent = label || copy.eyebrow;
     if (caption && ASSETS.has(asset)) caption.textContent = `${label || copy.eyebrow}. ${copy.boundary}`;
     if (image && ASSETS.has(asset)) image.alt = `${label || copy.eyebrow}. ${copy.boundary}`;
@@ -94,8 +108,6 @@
   if (!ASSETS.has(asset)) {
     showError();
   } else {
-    image.src = assetUrl;
-    rawLink.href = assetUrl;
     setText();
     document.querySelector('[data-viewer-zoom-out]')?.addEventListener('click', () => setZoom(zoom - .25));
     document.querySelector('[data-viewer-zoom-in]')?.addEventListener('click', () => setZoom(zoom + .25));

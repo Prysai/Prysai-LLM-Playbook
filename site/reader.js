@@ -2222,7 +2222,12 @@ function canonicalChapterTitle(chapter) {
   }
 
   function directHref(path) {
-    return `../${path}`;
+    const normalized = String(path || '').replace(/^\.\.\//, '');
+    const marker = 'assets/teaching/';
+    if (window.PRYSAI_VISUAL_ASSETS && normalized.startsWith(marker)) {
+      return window.PRYSAI_VISUAL_ASSETS.path(normalized.slice(marker.length), uiLanguage());
+    }
+    return `../${normalized}`;
   }
 
   function visualHref(path, label = '') {
@@ -3007,6 +3012,7 @@ function canonicalChapterTitle(chapter) {
     article.setAttribute('data-reader-effective-locale', effectiveLocale);
     article.setAttribute('data-reader-fallback', selection.fallback ? 'true' : 'false');
     article.setAttribute('data-reader-translation-status', selection.translationStatus || 'source');
+    window.PRYSAI_VISUAL_ASSETS?.applyAll(document, effectiveLocale);
     sourcePathNode.textContent = selection.path;
     contentIdNode.textContent = selection.contentId || 'unindexed source';
     sourceLink.href = directHref(selection.path);

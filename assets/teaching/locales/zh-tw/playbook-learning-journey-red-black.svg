@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Prysai LLM Playbook 學習旅程</title>
+  <desc id="desc">這段四階段學習旅程先完成五個單元的 LLM 基礎核心，再做一項有界線的首項任務，將結果整理成證據並做出有意識的停止或判斷，最後選擇 Codex、工具、Skill 或團隊路線。</desc>
+  <rect width="1200" height="1600" fill="#f6f6f2"/>
+  <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
+  <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK／學習旅程</text>
+  <text x="58" y="178" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">先學會方法。</text>
+  <text x="58" y="244" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">再選擇平台。</text>
+  <text x="60" y="286" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">基礎／首項任務／證據／選擇性練習</text>
+
+  <line x1="90" y1="360" x2="90" y2="1300" stroke="#d71920" stroke-width="9"/>
+  <circle cx="90" cy="425" r="17" fill="#d71920"/>
+  <circle cx="90" cy="690" r="17" fill="#d71920"/>
+  <circle cx="90" cy="955" r="17" fill="#d71920"/>
+  <circle cx="90" cy="1220" r="17" fill="#d71920"/>
+
+  <g transform="translate(140 360)">
+    <rect width="1000" height="198" fill="#171717"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01／基礎核心</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">理解 → 開始 → 辨識 → 修正 → 遷移</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">五個單元讓模型、請求、看得見的失敗、檢查與沒看過的任務都變得清楚。</text>
+    <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">在 Codex、工具、Agent 或 Skill 之前，先從這裡開始。</text>
+  </g>
+
+  <g transform="translate(140 625)">
+    <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02／有界線的首項任務</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">提出請求前，先說清楚結果。</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">寫下目標、已提供的上下文、允許的協助、限制、回應形式與停止條件。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">使用虛構或可丟棄的任務；保留第一次請求與第一次回應。</text>
+  </g>
+
+  <g transform="translate(140 890)">
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03／證據閉環</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">觀察發生了什麼變化，保留仍然未知的部分。</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">把回應或差異和來源、測試、紀錄檔或驗收規則對照。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">只有下一項證明存在時才繼續；否則記下最小且安全的停止。</text>
+  </g>
+
+  <g transform="translate(140 1155)">
+    <rect width="1000" height="198" fill="#d71920"/>
+    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04／選擇性路線</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">選擇下一個最有用的最小層次。</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · 工具 · Skill · Agent · 研究 · 工程 · 團隊練習</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">每條路線都保留自己的來源、權限、證據、失敗案例與限制。</text>
+  </g>
+
+  <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
+  <text x="84" y="1452" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">界線／候選路線</text>
+  <text x="84" y="1492" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">地圖只顯示順序，不代表已經熟練。</text>
+  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">保留產出、證據、界線與下一個問題。</text>
+  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB／原創教學圖／先練習，再下結論</text>
+</svg>

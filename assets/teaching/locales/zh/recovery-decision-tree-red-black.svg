@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">恢复决策树</title>
+  <desc id="desc">这是一棵恢复决策树：保留请求和观察到的轨迹，找到第一个不匹配，检查权限；获准后做一次有边界的检查，如果证据仍然不足，就以候选或未知结果停下。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">恢复／决策树</text>
+  <text x="78" y="174" class="ink" font-size="43" font-weight="900">让下一次</text>
+  <text x="78" y="224" class="ink" font-size="43" font-weight="900">检查更小。</text>
+  <text x="78" y="274" class="muted" font-size="20">保留这次失配，核对权限，并让结论留在记录范围内。</text>
+
+  <line x1="112" y1="350" x2="112" y2="1230" class="line"/>
+  <line x1="112" y1="460" x2="112" y2="500" class="redline"/>
+  <line x1="112" y1="650" x2="112" y2="690" class="redline"/>
+
+  <g transform="translate(78 316)">
+    <circle cx="34" cy="54" r="30" fill="#111"/>
+    <text x="34" y="63" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">01</text>
+    <rect x="86" y="0" width="684" height="146" fill="#111"/>
+    <text x="112" y="38" class="mono" fill="#fff" font-size="17">保留</text>
+    <text x="112" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">保留请求和轨迹。</text>
+    <text x="112" y="116" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">保存原文、输入、输出、差异、状态和上一个检查点。</text>
+  </g>
+
+  <g transform="translate(78 510)">
+    <circle cx="34" cy="54" r="30" fill="#d71920"/>
+    <text x="34" y="63" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">02</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">分类</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">说清第一个不匹配。</text>
+    <text x="112" y="116" class="muted" font-size="17">分开缺少输入、范围错误、行动失败和证据薄弱。</text>
+  </g>
+
+  <g transform="translate(78 700)">
+    <circle cx="34" cy="54" r="30" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="34" y="63" class="mono" font-size="22" text-anchor="middle">03</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">权限</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">下一次检查获准了吗？</text>
+    <text x="112" y="116" class="muted" font-size="17">如果范围、许可或输入缺失，不要扩大行动。</text>
+  </g>
+
+  <path d="M112 846V916M112 916H290M112 916H650" class="redline"/>
+  <g transform="translate(78 938)">
+    <rect width="352" height="170" fill="#d71920"/>
+    <text x="24" y="40" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">是／已获准</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">执行一次安全检查。</text>
+    <text x="24" y="126" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">改变一个条件并进行对照。</text>
+    <text x="24" y="151" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">保留原始记录</text>
+  </g>
+  <g transform="translate(470 938)">
+    <rect width="352" height="170" fill="#111"/>
+    <text x="24" y="40" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">否／未获准</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">停下并记录缺口。</text>
+    <text x="24" y="126" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">标记为 candidate、blocked 或 unknown。</text>
+    <text x="24" y="151" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">不要编造成功</text>
+  </g>
+
+  <path d="M254 1108V1160H450V1200M646 1108V1160H450" class="redline"/>
+  <rect x="78" y="1208" width="744" height="132" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="104" y="1250" class="mono" font-size="17">检查之后</text>
+  <text x="104" y="1290" class="ink" font-size="26" font-weight="900">得到有支持的结果、缩小的结论，或有意识地停下。</text>
+  <text x="104" y="1320" class="muted" font-size="17">更好的重跑结果只为这次运行提供证据，不是普遍修复。</text>
+
+  <rect x="78" y="1372" width="744" height="52" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1405" class="mono" font-size="16">边界</text>
+  <text x="222" y="1405" class="ink" font-size="18" font-weight="700">没有权限或没有证据？保留未知并停下。</text>
+</svg>

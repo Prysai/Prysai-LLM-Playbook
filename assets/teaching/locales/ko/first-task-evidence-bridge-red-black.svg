@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">첫 작업에서 활용 가능한 증거까지</title>
+  <desc id="desc">관찰 가능한 결과 하나를 고르는 일에서 시작해 안전한 경계와 실제 시도를 거쳐 집중 점검과 인계 기록으로 이어지는 다섯 단계의 다리입니다. 마지막 칸은 기록이 없으면 주장을 좁혀야 한다고 말합니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">첫 작업 / 증거 다리</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">작은</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">작업 하나를 점검 가능하게 만드세요.</text>
+  <text x="78" y="282" class="muted" font-size="22">다른 사람이 경로를 살펴볼 수 있을 때만 결과를 제대로 활용할 수 있습니다.</text>
+
+  <line x1="128" y1="376" x2="128" y2="1250" class="line"/>
+  <line x1="128" y1="450" x2="128" y2="530" class="redline"/>
+  <line x1="128" y1="660" x2="128" y2="740" class="redline"/>
+  <line x1="128" y1="870" x2="128" y2="950" class="redline"/>
+  <line x1="128" y1="1080" x2="128" y2="1160" class="redline"/>
+
+  <g transform="translate(78 330)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">결과</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">관찰 가능한 결과 하나를 고르세요.</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">‘이 일을 도와주세요’만으로는 아직 점검 가능한 결과가 아닙니다.</text>
+  </g>
+
+  <g transform="translate(78 540)">
+    <circle cx="50" cy="48" r="34" fill="#d71920"/>
+    <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">경계</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">입력과 중지 조건을 보이게 하세요.</text>
+    <text x="140" y="105" class="muted" font-size="17">안전한 테스트 자료를 사용하고 무엇을 제외할지, 언제 멈출지 적으세요.</text>
+  </g>
+
+  <g transform="translate(78 750)">
+    <circle cx="50" cy="48" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="50" y="58" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">시도</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">실제로 일어난 일을 저장하세요.</text>
+    <text x="140" y="105" class="muted" font-size="17">입력, 답변, 편집, 종료 또는 반환된 자료를 남기세요. 계획만 남기지 마세요.</text>
+  </g>
+
+  <g transform="translate(78 960)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="112" y="0" width="650" height="120" fill="#d71920"/>
+    <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700" letter-spacing="1px">점검</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">중요한 세부 사항 하나를 대조하세요.</text>
+    <text x="140" y="105" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">출처, diff, 테스트, 로그 또는 수용 기준을 사용하세요.</text>
+  </g>
+
+  <g transform="translate(78 1170)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">기록</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">결과, 한계와 다음 단계를 인계하세요.</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">간결한 기록이 있으면 다른 사람도 같은 시도를 점검할 수 있습니다.</text>
+  </g>
+
+  <rect x="78" y="1345" width="762" height="72" fill="#d71920"/>
+  <text x="102" y="1375" class="mono" fill="#111" font-size="17">경계</text>
+  <text x="230" y="1375" class="ink" fill="#111" font-size="19" font-weight="700">기록이 없으면 주장을 넓히지 마세요.</text>
+  <text x="102" y="1403" class="muted" font-size="17">기록 없는 자신만만한 이야기보다 작게 멈추는 편이 낫습니다.</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Skill のトリガーと境界を決めるマップ</title>
+  <desc id="desc">再利用できる Skill の5段階を示します。仕事を定め、入力を確認し、権限を確かめ、実際の実行を調べます。証拠が支える範囲だけを主張し、合わなければ譲って止まります。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+
+  <text x="78" y="112" class="mono" font-size="22">SKILL / 境界</text>
+  <text x="78" y="174" class="ink" font-size="46" font-weight="900">トリガーは</text>
+  <text x="78" y="228" class="ink" font-size="46" font-weight="900">権限ではない。</text>
+  <text x="78" y="278" class="muted" font-size="21">再利用できる方法は、適合や証拠が足りないときに安全に譲ってこそ、残す価値を示します。</text>
+
+  <line x1="120" y1="356" x2="120" y2="1212" class="line"/>
+  <line x1="120" y1="454" x2="120" y2="494" class="redline"/>
+  <line x1="120" y1="624" x2="120" y2="664" class="redline"/>
+  <line x1="120" y1="794" x2="120" y2="834" class="redline"/>
+  <line x1="120" y1="964" x2="120" y2="1004" class="redline"/>
+
+  <g transform="translate(78 320)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="96" y="0" width="688" height="134" fill="#111"/>
+    <text x="124" y="38" class="mono" fill="#fff" font-size="18">トリガー</text>
+    <text x="124" y="73" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">狭い仕事を言葉にする。</text>
+    <text x="124" y="106" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">適合すれば課題を案内し、適合しなければ譲る。</text>
+  </g>
+
+  <g transform="translate(78 490)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="96" y="0" width="688" height="134" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="38" class="mono" font-size="18">入力ゲート</text>
+    <text x="124" y="73" class="ink" font-size="27" font-weight="900">実際にあるものを確認する。</text>
+    <text x="124" y="106" class="muted" font-size="17">提供済み / 読み取り可能 / 推定 / 不明 · 入力不足 → 停止。</text>
+  </g>
+
+  <g transform="translate(78 660)">
+    <circle cx="42" cy="54" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="42" y="64" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="96" y="0" width="688" height="134" fill="#d71920"/>
+    <text x="124" y="38" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="18" font-weight="700" letter-spacing="1px">権限</text>
+    <text x="124" y="73" fill="#fff" font-size="27" font-weight="900">能力と許可を分ける。</text>
+    <text x="124" y="106" fill="#fff" font-size="17">許可 / 禁止 / 可逆 / 承認 · 影響が出る前に一時停止。</text>
+  </g>
+
+  <g transform="translate(78 830)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="96" y="0" width="688" height="134" fill="#111"/>
+    <text x="124" y="38" class="mono" fill="#fff" font-size="18">実行 / 確認</text>
+    <text x="124" y="73" fill="#fff" font-size="27" font-weight="900">実際のイベントを探す。</text>
+    <text x="124" y="106" fill="#c8c8c2" font-size="17">記録 · 出力 · 差分 · ログ · テスト · 人による読み返し。</text>
+  </g>
+
+  <g transform="translate(78 1000)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="96" y="0" width="688" height="134" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="38" class="mono" font-size="18">証拠の境界</text>
+    <text x="124" y="73" class="ink" font-size="27" font-weight="900">記録が支えることだけを主張する。</text>
+    <text x="124" y="106" class="muted" font-size="17">肯定 / 境界 / 失敗 / 転用 · 証拠がなければ candidate または停止。</text>
+  </g>
+
+  <path d="M216 1134 216 1190 310 1190" class="redline"/>
+  <path d="M684 1134 684 1190 590 1190" class="redline"/>
+  <rect x="78" y="1218" width="762" height="126" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1254" class="mono" font-size="17">正直な2つの結果</text>
+  <text x="102" y="1291" class="ink" font-size="21" font-weight="700">案内：適合、権限、証拠が見えている。</text>
+  <text x="102" y="1324" class="ink" font-size="21" font-weight="700">譲る：足りない事実を示し、主張を小さく保つ。</text>
+
+  <text x="78" y="1402" class="muted" font-size="16">Skill の契約は、いつ行動し、いつ行動せず、何を別の人が確認できるかを説明します。</text>
+</svg>

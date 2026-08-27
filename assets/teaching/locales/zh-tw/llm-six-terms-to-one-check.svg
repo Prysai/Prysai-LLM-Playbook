@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">六個 LLM 術語，一個可檢查的結果</title>
+  <desc id="desc">這張橫向教學圖分開權杖、上下文、上下文視窗、提示、回應，以及工具或 Agent。紅色界線提醒：回應必須先和來源或驗收規則核對，才能繼續使用。</desc>
+  <rect width="1400" height="1000" fill="#f6f6f2"/>
+  <rect x="48" y="36" width="1304" height="10" fill="#161616"/>
+  <text x="48" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LLM 基礎／一次請求</text>
+  <text x="48" y="166" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">六個術語。</text>
+  <text x="48" y="236" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">一次檢查。</text>
+  <text x="48" y="282" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="17">相信回應前，先分開各層</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="48" y="354" width="196" height="290" fill="#161616"/>
+    <text x="72" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／單位</text>
+    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">權杖</text>
+    <text x="72" y="500" fill="#c4c4be" font-size="18">模型處理的</text>
+    <text x="72" y="528" fill="#c4c4be" font-size="18">一小段</text>
+    <text x="72" y="556" fill="#c4c4be" font-size="18">文字。</text>
+    <text x="72" y="610" fill="#ffffff" font-size="16" font-weight="700">它不是事實。</text>
+
+    <rect x="264" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="288" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02／材料</text>
+    <text x="288" y="452" fill="#161616" font-size="32" font-weight="900">上下文</text>
+    <text x="288" y="500" fill="#565650" font-size="18">本回合可用的</text>
+    <text x="288" y="528" fill="#565650" font-size="18">上下文</text>
+    <text x="288" y="556" fill="#565650" font-size="18">材料。</text>
+    <text x="288" y="610" fill="#161616" font-size="16" font-weight="700">缺少的上下文仍是未知。</text>
+
+    <rect x="480" y="354" width="196" height="290" fill="#d71920"/>
+    <text x="504" y="392" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03／容量</text>
+    <text x="504" y="452" fill="#ffffff" font-size="32" font-weight="900">視窗</text>
+    <text x="504" y="500" fill="#ffffff" font-size="18">一個回合能容納的</text>
+    <text x="504" y="528" fill="#ffffff" font-size="18">內容</text>
+    <text x="504" y="556" fill="#ffffff" font-size="18">上限。</text>
+    <text x="504" y="610" fill="#161616" font-size="16" font-weight="700">文字越多不一定越好。</text>
+
+    <rect x="696" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="720" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04／方向</text>
+    <text x="720" y="452" fill="#161616" font-size="32" font-weight="900">提示</text>
+    <text x="720" y="500" fill="#565650" font-size="18">你的目標、</text>
+    <text x="720" y="528" fill="#565650" font-size="18">限制條件和</text>
+    <text x="720" y="556" fill="#565650" font-size="18">輸出形式。</text>
+    <text x="720" y="610" fill="#161616" font-size="16" font-weight="700">提示用來界定工作，不會授予存取權限。</text>
+
+    <rect x="912" y="354" width="196" height="290" fill="#161616"/>
+    <text x="936" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05／候選</text>
+    <text x="936" y="452" fill="#ffffff" font-size="32" font-weight="900">回應</text>
+    <text x="936" y="500" fill="#c4c4be" font-size="18">模型提出的</text>
+    <text x="936" y="528" fill="#c4c4be" font-size="18">等待檢查的</text>
+    <text x="936" y="556" fill="#c4c4be" font-size="18">文字。</text>
+    <text x="936" y="610" fill="#ffffff" font-size="16" font-weight="700">流暢不等於證據。</text>
+
+    <rect x="1128" y="354" width="224" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="1152" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06／額外行動</text>
+    <text x="1152" y="452" fill="#161616" font-size="32" font-weight="900">工具／Agent</text>
+    <text x="1152" y="500" fill="#565650" font-size="18">產品可能</text>
+    <text x="1152" y="528" fill="#565650" font-size="18">讀取或執行，</text>
+    <text x="1152" y="556" fill="#565650" font-size="18">並擁有額外權限。</text>
+    <text x="1152" y="610" fill="#161616" font-size="16" font-weight="700">執行仍需要許可。</text>
+  </g>
+
+  <g stroke="#d71920" stroke-width="5" fill="none">
+    <path d="M244 500H258"/><path d="M460 500H474"/><path d="M676 500H690"/><path d="M892 500H906"/><path d="M1108 500H1122"/>
+  </g>
+  <g fill="#d71920">
+    <path d="M258 500l-12-8v16z"/><path d="M474 500l-12-8v16z"/><path d="M690 500l-12-8v16z"/><path d="M906 500l-12-8v16z"/><path d="M1122 500l-12-8v16z"/>
+  </g>
+
+  <rect x="48" y="718" width="1304" height="176" fill="#d71920"/>
+  <text x="76" y="760" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">檢查／不要跳過這一行</text>
+  <text x="76" y="812" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">回應 ≠ 行動 ≠ 已驗證結果</text>
+  <text x="76" y="852" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">宣稱完成前，請把結果和來源、差異、測試、紀錄或驗收規則對照。</text>
+  <text x="48" y="950" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB／原創教學圖／先分清各層</text>
+</svg>

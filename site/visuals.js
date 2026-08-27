@@ -718,7 +718,9 @@
     return `reader.html?path=${encodeURIComponent(file)}&lang=${encodeURIComponent(locale)}`;
   }
 
-  function assetHref(asset) { return `../assets/teaching/${asset}`; }
+  function assetHref(asset) {
+    return window.PRYSAI_VISUAL_ASSETS?.path(asset, locale) || `../assets/teaching/${asset}`;
+  }
 
   function viewerHref(asset, label = '') {
     const params = new URLSearchParams({ asset, lang: locale });
@@ -1051,6 +1053,7 @@
 
   function setText() {
     const strings = copy();
+    window.PRYSAI_VISUAL_ASSETS?.applyAll(document, locale);
     queryAll('[data-i18n]').forEach((element) => {
       const value = strings[element.dataset.i18n];
       if (typeof value === 'string') element.textContent = value;

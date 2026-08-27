@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Prysai LLM Playbook 학습 여정</title>
+  <desc id="desc">이 네 단계 여정은 먼저 LLM Foundation Core의 다섯 단계를 끝내고, 범위가 분명한 첫 작업을 증거와 의도적인 중지 또는 판단으로 연결한 뒤 Codex·도구·Skill·팀 연습 중 필요한 경로를 고르게 합니다.</desc>
+  <rect width="1200" height="1600" fill="#f6f6f2"/>
+  <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
+  <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / 학습 여정</text>
+  <text x="58" y="178" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">방법부터 배우세요.</text>
+  <text x="58" y="244" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">그다음 플랫폼을 고르세요.</text>
+  <text x="60" y="286" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">기초 / 첫 작업 / 증거 / 선택 연습</text>
+
+  <line x1="90" y1="360" x2="90" y2="1300" stroke="#d71920" stroke-width="9"/>
+  <circle cx="90" cy="425" r="17" fill="#d71920"/>
+  <circle cx="90" cy="690" r="17" fill="#d71920"/>
+  <circle cx="90" cy="955" r="17" fill="#d71920"/>
+  <circle cx="90" cy="1220" r="17" fill="#d71920"/>
+
+  <g transform="translate(140 360)">
+    <rect width="1000" height="198" fill="#171717"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / FOUNDATION CORE</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">이해 → 시작 → 식별 → 수정 → 전이</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">다섯 단계에서 모델, 요청, 눈에 보이는 실패, 점검과 처음 보는 작업을 분명히 합니다.</text>
+    <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Codex, 도구, Agent 또는 Skill보다 먼저 여기서 시작하세요.</text>
+  </g>
+
+  <g transform="translate(140 625)">
+    <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / 범위가 분명한 첫 작업</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">요청하기 전에 결과를 정하세요.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">목표, 제공된 맥락, 허용된 도움, 한계, 답변 형식과 중지 조건을 적으세요.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">허구 또는 폐기 가능한 작업을 사용하고 첫 요청과 첫 답변을 남기세요.</text>
+  </g>
+
+  <g transform="translate(140 890)">
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / 증거 루프</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">무엇이 바뀌었는지 관찰하고 아직 모르는 것을 남기세요.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">답변이나 diff를 출처, 테스트, 로그 또는 수용 기준과 대조하세요.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">다음 증거가 있을 때만 계속하고, 없으면 가장 작고 안전한 중지를 기록하세요.</text>
+  </g>
+
+  <g transform="translate(140 1155)">
+    <rect width="1000" height="198" fill="#d71920"/>
+    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / 선택 경로</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">다음에 필요한 가장 작은 층을 고르세요.</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · 도구 · Skill · Agent · 연구 · 엔지니어링 · 팀 연습</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">각 경로는 고유한 출처, 권한, 증거, 실패 사례와 한계를 따로 보존합니다.</text>
+  </g>
+
+  <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
+  <text x="84" y="1452" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">경계 / 후보 경로</text>
+  <text x="84" y="1492" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다.</text>
+  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">산출물, 증거, 한계와 다음 질문을 남기세요.</text>
+  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / 프로젝트 원본 교육 그림 / 주장하기 전에 연습하기</text>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">從第一項任務到可使用的證據</title>
+  <desc id="desc">這座五步驟的橋從選擇一個可觀察的結果開始，經過安全界線與實際嘗試，走到聚焦檢查與交接紀錄。最後一格提醒：沒有紀錄，就必須縮小主張。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">第一項任務／證據橋</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">讓一項小小的</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">任務變得可檢查。</text>
+  <text x="78" y="282" class="muted" font-size="22">只有別人能檢查這條路徑，結果才真正有用。</text>
+
+  <line x1="128" y1="376" x2="128" y2="1250" class="line"/>
+  <line x1="128" y1="450" x2="128" y2="530" class="redline"/>
+  <line x1="128" y1="660" x2="128" y2="740" class="redline"/>
+  <line x1="128" y1="870" x2="128" y2="950" class="redline"/>
+  <line x1="128" y1="1080" x2="128" y2="1160" class="redline"/>
+
+  <g transform="translate(78 330)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">結果</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">選擇一個可觀察的結果。</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">「請幫我處理這件事」還不是可檢查的結果。</text>
+  </g>
+
+  <g transform="translate(78 540)">
+    <circle cx="50" cy="48" r="34" fill="#d71920"/>
+    <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">界線</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">讓輸入與停止條件保持可見。</text>
+    <text x="140" y="105" class="muted" font-size="17">使用安全的測試資料；說明哪些內容不納入，以及何時暫停。</text>
+  </g>
+
+  <g transform="translate(78 750)">
+    <circle cx="50" cy="48" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="50" y="58" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">嘗試</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">保存實際發生的內容。</text>
+    <text x="140" y="105" class="muted" font-size="17">保留輸入、回應、編輯、結束或回傳的資料，不要只留下計畫。</text>
+  </g>
+
+  <g transform="translate(78 960)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="112" y="0" width="650" height="120" fill="#d71920"/>
+    <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700" letter-spacing="1px">檢查</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">對照一個重要細節。</text>
+    <text x="140" y="105" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">使用來源、差異、測試、紀錄檔或驗收規則。</text>
+  </g>
+
+  <g transform="translate(78 1170)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">紀錄</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">交接結果、限制與下一步。</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">一份精簡紀錄能讓別人檢查同一次嘗試。</text>
+  </g>
+
+  <rect x="78" y="1345" width="762" height="72" fill="#d71920"/>
+  <text x="102" y="1375" class="mono" fill="#111" font-size="17">界線</text>
+  <text x="230" y="1375" class="ink" fill="#111" font-size="19" font-weight="700">沒有紀錄，就不要擴大主張。</text>
+  <text x="102" y="1403" class="muted" font-size="17">小而清楚的停止，好過沒有紀錄卻自信滿滿的故事。</text>
+</svg>

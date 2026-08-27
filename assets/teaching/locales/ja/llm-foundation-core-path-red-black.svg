@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">LLM Foundation Core：5つのユニット</title>
+  <desc id="desc">5つのユニットで学ぶルートです。安全な試行から始め、コンテキストと指示を見えるようにし、目に見える失敗を捉え、結果を確認・修正して、初めての課題で方法を転用します。</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="42" y="34" width="816" height="10" fill="#171717"/>
+  <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FOUNDATION CORE / 5つのユニット</text>
+  <text x="42" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">方法を学ぶ</text>
+  <text x="42" y="214" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">プラットフォームを選ぶ前に</text>
+  <text x="44" y="255" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">試す / 観察する / 言葉にする / 修正する / 転用する</text>
+
+  <line x1="76" y1="330" x2="76" y2="1178" stroke="#d71920" stroke-width="8"/>
+  <circle cx="76" cy="370" r="15" fill="#d71920"/>
+  <circle cx="76" cy="540" r="15" fill="#d71920"/>
+  <circle cx="76" cy="710" r="15" fill="#d71920"/>
+  <circle cx="76" cy="880" r="15" fill="#d71920"/>
+  <circle cx="76" cy="1050" r="15" fill="#d71920"/>
+
+  <g transform="translate(122 318)">
+    <rect width="734" height="124" fill="#171717"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 試す</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">安全な試行を1回行う。</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">架空のオフライン課題を使い、最初の応答を残す。</text>
+  </g>
+  <g transform="translate(122 488)">
+    <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 枠を決める</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">コンテキストと指示を見えるようにする。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">与えられた事実、不足している事実、制約、回答の形を分ける。</text>
+  </g>
+  <g transform="translate(122 658)">
+    <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 気づく</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">目に見える失敗の型を捉える。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">抜け、作り話、無理な曖昧さ、過信を印づける。</text>
+  </g>
+  <g transform="translate(122 828)">
+    <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 修正する</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">確認し、修正し、限界を示す。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">証拠と照合し、条件を1つだけ変え、残る不足を記録する。</text>
+  </g>
+  <g transform="translate(122 998)">
+    <rect width="734" height="124" fill="#d71920"/>
+    <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / 転用する</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">未経験の課題で繰り返す。</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">保存したルートは練習にすぎない。新しい課題には別の確認が要る。</text>
+  </g>
+
+  <rect x="42" y="1192" width="816" height="132" fill="#171717"/>
+  <text x="66" y="1235" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">境界 / 候補ルート</text>
+  <text x="66" y="1278" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">1回の試行は習得ではない。</text>
+  <text x="66" y="1308" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">成果物、限界、次の問いを残す。</text>
+  <text x="42" y="1372" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / オリジナル教材図 / 主張する前に練習する</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Entscheidungsbaum für die Wiederherstellung</title>
+  <desc id="desc">Ein Entscheidungsbaum für die Wiederherstellung: Bewahre Anfrage und beobachtete Spur auf, finde die erste Abweichung, prüfe die Berechtigung und führe bei Erlaubnis einen begrenzten Check aus. Fehlt der Beleg weiterhin, stoppe mit einem Kandidaten- oder unbekannten Ergebnis.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">WIEDERHERSTELLUNG / ENTSCHEIDUNGSBAUM</text>
+  <text x="78" y="174" class="ink" font-size="43" font-weight="900">MACH DEN NÄCHSTEN</text>
+  <text x="78" y="224" class="ink" font-size="43" font-weight="900">CHECK KLEINER.</text>
+  <text x="78" y="274" class="muted" font-size="20">Bewahre den Fehlschlag auf, prüfe die Berechtigung und halte die Aussage im Protokoll.</text>
+
+  <line x1="112" y1="350" x2="112" y2="1230" class="line"/>
+  <line x1="112" y1="460" x2="112" y2="500" class="redline"/>
+  <line x1="112" y1="650" x2="112" y2="690" class="redline"/>
+
+  <g transform="translate(78 316)">
+    <circle cx="34" cy="54" r="30" fill="#111"/>
+    <text x="34" y="63" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">01</text>
+    <rect x="86" y="0" width="684" height="146" fill="#111"/>
+    <text x="112" y="38" class="mono" fill="#fff" font-size="17">BEWAHREN</text>
+    <text x="112" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">BEHALTE ANFRAGE UND SPUR.</text>
+    <text x="112" y="116" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">Sichere Wortlaut, Eingaben, Ausgabe, Diff, Zustand und den letzten Prüfpunkt.</text>
+  </g>
+
+  <g transform="translate(78 510)">
+    <circle cx="34" cy="54" r="30" fill="#d71920"/>
+    <text x="34" y="63" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">02</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">EINORDNEN</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">BENENNE DIE ERSTE ABWEICHUNG.</text>
+    <text x="112" y="116" class="muted" font-size="17">Trenne fehlende Eingabe, falschen Umfang, fehlgeschlagene Handlung und schwachen Beleg.</text>
+  </g>
+
+  <g transform="translate(78 700)">
+    <circle cx="34" cy="54" r="30" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="34" y="63" class="mono" font-size="22" text-anchor="middle">03</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">BERECHTIGUNG</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">Ist der nächste Check erlaubt?</text>
+    <text x="112" y="116" class="muted" font-size="17">Fehlt Umfang, Erlaubnis oder Eingabe, erweitere die Handlung nicht.</text>
+  </g>
+
+  <path d="M112 846V916M112 916H290M112 916H650" class="redline"/>
+  <g transform="translate(78 938)">
+    <rect width="352" height="170" fill="#d71920"/>
+    <text x="24" y="40" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">JA / ERLAUBT</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Führe einen sicheren Check aus.</text>
+    <text x="24" y="126" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">Ändere eine Bedingung und vergleiche.</text>
+    <text x="24" y="151" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">ORIGINALPROTOKOLL BEWAHREN</text>
+  </g>
+  <g transform="translate(470 938)">
+    <rect width="352" height="170" fill="#111"/>
+    <text x="24" y="40" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">NEIN / NICHT ERLAUBT</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Stoppe und notiere die Lücke.</text>
+    <text x="24" y="126" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">Markiere candidate, blocked oder unknown.</text>
+    <text x="24" y="151" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">KEINEN ERFOLG ERFINDEN</text>
+  </g>
+
+  <path d="M254 1108V1160H450V1200M646 1108V1160H450" class="redline"/>
+  <rect x="78" y="1208" width="744" height="132" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="104" y="1250" class="mono" font-size="17">NACH DEM CHECK</text>
+  <text x="104" y="1290" class="ink" font-size="26" font-weight="900">Belegtes Ergebnis, engere Aussage oder bewusster Stopp.</text>
+  <text x="104" y="1320" class="muted" font-size="17">Ein besserer erneuter Lauf belegt diesen Lauf, nicht eine universelle Lösung.</text>
+
+  <rect x="78" y="1372" width="744" height="52" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1405" class="mono" font-size="16">GRENZE</text>
+  <text x="222" y="1405" class="ink" font-size="18" font-weight="700">Keine Berechtigung oder kein Beleg? Stoppe, ohne das Unbekannte zu verdecken.</text>
+</svg>

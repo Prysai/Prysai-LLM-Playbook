@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">从第一次任务到可使用的证据</title>
+  <desc id="desc">这座五步桥从选择一个可观察结果开始，经过安全边界和实际尝试，走到一次聚焦检查与交接记录。最后一格提醒：缺少记录，就必须缩小结论。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">第一次任务／证据桥</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">让一个小</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">任务可以检查。</text>
+  <text x="78" y="282" class="muted" font-size="22">只有别人能够检查这条路径，结果才真正有用。</text>
+
+  <line x1="128" y1="376" x2="128" y2="1250" class="line"/>
+  <line x1="128" y1="450" x2="128" y2="530" class="redline"/>
+  <line x1="128" y1="660" x2="128" y2="740" class="redline"/>
+  <line x1="128" y1="870" x2="128" y2="950" class="redline"/>
+  <line x1="128" y1="1080" x2="128" y2="1160" class="redline"/>
+
+  <g transform="translate(78 330)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">结果</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">选择一个可观察的结果。</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">“帮我处理这个”还不是可检查的结果。</text>
+  </g>
+
+  <g transform="translate(78 540)">
+    <circle cx="50" cy="48" r="34" fill="#d71920"/>
+    <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">边界</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">让输入和停止条件保持可见。</text>
+    <text x="140" y="105" class="muted" font-size="17">使用安全的测试材料；说明哪些内容不放入，以及何时暂停。</text>
+  </g>
+
+  <g transform="translate(78 750)">
+    <circle cx="50" cy="48" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="50" y="58" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="112" y="0" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">尝试</text>
+    <text x="140" y="77" class="ink" font-size="28" font-weight="900">保存实际发生的内容。</text>
+    <text x="140" y="105" class="muted" font-size="17">保留输入、回答、编辑、退出或回传资料，不要只留下计划。</text>
+  </g>
+
+  <g transform="translate(78 960)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="112" y="0" width="650" height="120" fill="#d71920"/>
+    <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700" letter-spacing="1px">检查</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">对照一个重要细节。</text>
+    <text x="140" y="105" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">使用来源、差异、测试、日志或验收规则。</text>
+  </g>
+
+  <g transform="translate(78 1170)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="112" y="0" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">记录</text>
+    <text x="140" y="77" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">交接结果、限制和下一步。</text>
+    <text x="140" y="105" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">一份精简记录能让别人检查同一次尝试。</text>
+  </g>
+
+  <rect x="78" y="1345" width="762" height="72" fill="#d71920"/>
+  <text x="102" y="1375" class="mono" fill="#111" font-size="17">边界</text>
+  <text x="230" y="1375" class="ink" fill="#111" font-size="19" font-weight="700">没有记录，就不要扩大结论。</text>
+  <text x="102" y="1403" class="muted" font-size="17">小而明确的停止，好过没有记录却自信满满的故事。</text>
+</svg>

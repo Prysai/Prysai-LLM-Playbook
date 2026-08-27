@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">復旧の判断ツリー</title>
+  <desc id="desc">復旧の判断ツリーです。依頼と観察できた記録を残し、最初の不一致を見つけ、権限を確認します。許可があれば範囲を区切った確認を1つ行い、証拠が足りなければ候補または不明のまま止まります。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">復旧 / 判断ツリー</text>
+  <text x="78" y="174" class="ink" font-size="43" font-weight="900">次の確認を</text>
+  <text x="78" y="224" class="ink" font-size="43" font-weight="900">もっと小さくする。</text>
+  <text x="78" y="274" class="muted" font-size="20">失敗を残し、権限を確認し、主張を記録の範囲に収める。</text>
+
+  <line x1="112" y1="350" x2="112" y2="1230" class="line"/>
+  <line x1="112" y1="460" x2="112" y2="500" class="redline"/>
+  <line x1="112" y1="650" x2="112" y2="690" class="redline"/>
+
+  <g transform="translate(78 316)">
+    <circle cx="34" cy="54" r="30" fill="#111"/>
+    <text x="34" y="63" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">01</text>
+    <rect x="86" y="0" width="684" height="146" fill="#111"/>
+    <text x="112" y="38" class="mono" fill="#fff" font-size="17">残す</text>
+    <text x="112" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">依頼と記録を残す。</text>
+    <text x="112" y="116" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">文面、入力、出力、差分、状態、最後のチェックポイントを保存する。</text>
+  </g>
+
+  <g transform="translate(78 510)">
+    <circle cx="34" cy="54" r="30" fill="#d71920"/>
+    <text x="34" y="63" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">02</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">分類</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">最初の不一致を言葉にする。</text>
+    <text x="112" y="116" class="muted" font-size="17">不足した入力、範囲違い、行動の失敗、弱い証拠を分ける。</text>
+  </g>
+
+  <g transform="translate(78 700)">
+    <circle cx="34" cy="54" r="30" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="34" y="63" class="mono" font-size="22" text-anchor="middle">03</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">権限</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">次の確認は許可されている？</text>
+    <text x="112" y="116" class="muted" font-size="17">範囲、許可、入力のどれかが足りなければ、行動を広げない。</text>
+  </g>
+
+  <path d="M112 846V916M112 916H290M112 916H650" class="redline"/>
+  <g transform="translate(78 938)">
+    <rect width="352" height="170" fill="#d71920"/>
+    <text x="24" y="40" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">はい / 許可あり</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">安全な確認を1つ行う。</text>
+    <text x="24" y="126" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">条件を1つ変えて比較する。</text>
+    <text x="24" y="151" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">元の記録を残す</text>
+  </g>
+  <g transform="translate(470 938)">
+    <rect width="352" height="170" fill="#111"/>
+    <text x="24" y="40" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">いいえ / 許可なし</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">止まって不足を記録する。</text>
+    <text x="24" y="126" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">candidate、blocked、unknown のいずれかを付ける。</text>
+    <text x="24" y="151" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">成功を作らない</text>
+  </g>
+
+  <path d="M254 1108V1160H450V1200M646 1108V1160H450" class="redline"/>
+  <rect x="78" y="1208" width="744" height="132" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="104" y="1250" class="mono" font-size="17">確認のあと</text>
+  <text x="104" y="1290" class="ink" font-size="26" font-weight="900">裏付けのある結果、狭めた主張、または意図した停止。</text>
+  <text x="104" y="1320" class="muted" font-size="17">改善した再実行はその実行の証拠であり、万能な修正ではない。</text>
+
+  <rect x="78" y="1372" width="744" height="52" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1405" class="mono" font-size="16">境界</text>
+  <text x="222" y="1405" class="ink" font-size="18" font-weight="700">権限も証拠もない？ 不明点を残したまま止まる。</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Boucle de lecture : de la page à la pratique</title>
+  <desc id="desc">Six étapes numérotées relient le problème, le concept, l’action, la preuve, la limite et la question de transfert d’une page. La dernière étape revient vers une nouvelle tâche au lieu de déclarer la réussite.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
+      <path d="M0 0 9 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#171717; font-family:Arial,Helvetica,sans-serif; }
+      .muted { fill:#575750; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .line { stroke:#d71920; stroke-width:5; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1200" fill="#f6f6f2"/>
+  <rect x="42" y="34" width="816" height="10" fill="#171717"/>
+  <text x="42" y="94" class="mono" font-size="18">LECTEUR / DE LA PAGE À LA PRATIQUE</text>
+  <text x="42" y="158" class="ink" font-size="46" font-weight="900">LISEZ LA PAGE,</text>
+  <text x="42" y="212" class="mono" font-size="46">PUIS FAITES UN PAS.</text>
+  <text x="44" y="252" class="muted" font-size="18">Chaque étape comporte une question, une petite action et un relevé à conserver.</text>
+
+  <path d="M120 330V1020" class="line"/>
+  <path d="M120 1020H748V330" class="line"/>
+
+  <g transform="translate(78 292)">
+    <circle cx="42" cy="42" r="34" fill="#171717"/><text x="42" y="51" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="24" font-weight="700" text-anchor="middle">01</text>
+    <rect x="96" width="700" height="96" fill="#171717"/>
+    <text x="124" y="34" class="mono" fill="#fff" font-size="15">PROBLÈME</text><text x="124" y="69" fill="#fff" font-size="24" font-weight="900">Quelle situation cette page résout-elle ?</text>
+  </g>
+  <g transform="translate(78 418)">
+    <circle cx="42" cy="42" r="34" fill="#d71920"/><text x="42" y="51" class="ink" font-family="Consolas,'Courier New',monospace" font-size="24" font-weight="700" text-anchor="middle">02</text>
+    <rect x="96" width="700" height="96" fill="#fff" stroke="#171717" stroke-width="2"/>
+    <text x="124" y="34" class="mono" font-size="15">NOTION</text><text x="124" y="69" class="ink" font-size="24" font-weight="900">Quelle distinction change l’étape suivante ?</text>
+  </g>
+  <g transform="translate(78 544)">
+    <circle cx="42" cy="42" r="34" fill="#fff" stroke="#171717" stroke-width="2"/><text x="42" y="51" class="mono" font-size="24" text-anchor="middle">03</text>
+    <rect x="96" width="700" height="96" fill="#ffe5e9" stroke="#171717" stroke-width="2"/>
+    <text x="124" y="34" class="mono" font-size="15">DÉMARCHE</text><text x="124" y="69" class="ink" font-size="24" font-weight="900">Quel est le plus petit geste sûr ?</text>
+  </g>
+  <g transform="translate(78 670)">
+    <circle cx="42" cy="42" r="34" fill="#171717"/><text x="42" y="51" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="24" font-weight="700" text-anchor="middle">04</text>
+    <rect x="96" width="700" height="96" fill="#d71920"/>
+    <text x="124" y="34" class="ink" font-family="Consolas,'Courier New',monospace" font-size="15" font-weight="700">PREUVE</text><text x="124" y="69" fill="#fff" font-size="24" font-weight="900">Quel relevé me permet de vérifier le résultat ?</text>
+  </g>
+  <g transform="translate(78 796)">
+    <circle cx="42" cy="42" r="34" fill="#171717"/><text x="42" y="51" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="24" font-weight="700" text-anchor="middle">05</text>
+    <rect x="96" width="700" height="96" fill="#171717"/>
+    <text x="124" y="34" class="mono" fill="#fff" font-size="15">LIMITE</text><text x="124" y="69" fill="#fff" font-size="24" font-weight="900">Que ne peut pas prouver cette page ?</text>
+  </g>
+  <g transform="translate(78 922)">
+    <circle cx="42" cy="42" r="34" fill="#d71920"/><text x="42" y="51" class="ink" font-family="Consolas,'Courier New',monospace" font-size="24" font-weight="700" text-anchor="middle">06</text>
+    <rect x="96" width="700" height="96" fill="#fff" stroke="#171717" stroke-width="2"/>
+    <text x="124" y="34" class="mono" font-size="15">TRANSFERT</text><text x="124" y="69" class="ink" font-size="24" font-weight="900">Qu’est-ce qui change à la prochaine tâche ?</text>
+  </g>
+  <rect x="42" y="1080" width="816" height="70" fill="#171717"/>
+  <text x="66" y="1122" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="15" font-weight="700">LIMITE / UN PARCOURS N’EST PAS UN RÉSULTAT</text>
+</svg>

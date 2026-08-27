@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Six termes LLM, un résultat vérifiable</title>
+  <desc id="desc">Cette carte pédagogique horizontale sépare le token, le contexte, la fenêtre de contexte, le prompt, la réponse et l’outil ou l’Agent. La limite rouge rappelle qu’une réponse reste candidate tant qu’une personne ne l’a pas comparée à une source ou à un critère d’acceptation.</desc>
+  <rect width="1400" height="1000" fill="#f6f6f2"/>
+  <rect x="48" y="36" width="1304" height="10" fill="#161616"/>
+  <text x="48" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">BASES LLM / UNE DEMANDE</text>
+  <text x="48" y="166" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">SIX TERMES.</text>
+  <text x="48" y="236" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">UN CONTRÔLE.</text>
+  <text x="48" y="282" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="17">séparez les couches avant de faire confiance à la réponse</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="48" y="354" width="196" height="290" fill="#161616"/>
+    <text x="72" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / UNITÉ</text>
+    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">TOKEN</text>
+    <text x="72" y="500" fill="#c4c4be" font-size="18">Une petite unité</text>
+    <text x="72" y="528" fill="#c4c4be" font-size="18">de texte que</text>
+    <text x="72" y="556" fill="#c4c4be" font-size="18">le modèle traite.</text>
+    <text x="72" y="610" fill="#ffffff" font-size="16" font-weight="700">Ce n’est pas un fait.</text>
+
+    <rect x="264" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="288" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / MATIÈRE</text>
+    <text x="288" y="452" fill="#161616" font-size="32" font-weight="900">CONTEXTE</text>
+    <text x="288" y="500" fill="#565650" font-size="18">La matière</text>
+    <text x="288" y="528" fill="#565650" font-size="18">disponible</text>
+    <text x="288" y="556" fill="#565650" font-size="18">pour ce tour.</text>
+    <text x="288" y="610" fill="#161616" font-size="16" font-weight="700">Ce qui manque reste inconnu.</text>
+
+    <rect x="480" y="354" width="196" height="290" fill="#d71920"/>
+    <text x="504" y="392" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / CAPACITÉ</text>
+    <text x="504" y="452" fill="#ffffff" font-size="32" font-weight="900">FENÊTRE</text>
+    <text x="504" y="500" fill="#ffffff" font-size="18">La limite de ce</text>
+    <text x="504" y="528" fill="#ffffff" font-size="18">qui peut tenir</text>
+    <text x="504" y="556" fill="#ffffff" font-size="18">dans le tour.</text>
+    <text x="504" y="610" fill="#161616" font-size="16" font-weight="700">Plus de texte n’est pas toujours mieux.</text>
+
+    <rect x="696" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="720" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / DIRECTION</text>
+    <text x="720" y="452" fill="#161616" font-size="32" font-weight="900">PROMPT</text>
+    <text x="720" y="500" fill="#565650" font-size="18">Votre objectif,</text>
+    <text x="720" y="528" fill="#565650" font-size="18">vos contraintes</text>
+    <text x="720" y="556" fill="#565650" font-size="18">et la forme de sortie.</text>
+    <text x="720" y="610" fill="#161616" font-size="16" font-weight="700">Un prompt cadre le travail ; il n’accorde pas d’accès.</text>
+
+    <rect x="912" y="354" width="196" height="290" fill="#161616"/>
+    <text x="936" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / CANDIDATE</text>
+    <text x="936" y="452" fill="#ffffff" font-size="32" font-weight="900">RÉPONSE</text>
+    <text x="936" y="500" fill="#c4c4be" font-size="18">Texte proposé</text>
+    <text x="936" y="528" fill="#c4c4be" font-size="18">par le modèle</text>
+    <text x="936" y="556" fill="#c4c4be" font-size="18">à vérifier.</text>
+    <text x="936" y="610" fill="#ffffff" font-size="16" font-weight="700">La fluidité n’est pas une preuve.</text>
+
+    <rect x="1128" y="354" width="224" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="1152" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / ACTION SUPPLÉMENTAIRE</text>
+    <text x="1152" y="452" fill="#161616" font-size="32" font-weight="900">OUTIL / AGENT</text>
+    <text x="1152" y="500" fill="#565650" font-size="18">Un produit peut</text>
+    <text x="1152" y="528" fill="#565650" font-size="18">lire ou agir</text>
+    <text x="1152" y="556" fill="#565650" font-size="18">avec une autorité supplémentaire.</text>
+    <text x="1152" y="610" fill="#161616" font-size="16" font-weight="700">L’exécution demande toujours une autorisation.</text>
+  </g>
+
+  <g stroke="#d71920" stroke-width="5" fill="none">
+    <path d="M244 500H258"/><path d="M460 500H474"/><path d="M676 500H690"/><path d="M892 500H906"/><path d="M1108 500H1122"/>
+  </g>
+  <g fill="#d71920">
+    <path d="M258 500l-12-8v16z"/><path d="M474 500l-12-8v16z"/><path d="M690 500l-12-8v16z"/><path d="M906 500l-12-8v16z"/><path d="M1122 500l-12-8v16z"/>
+  </g>
+
+  <rect x="48" y="718" width="1304" height="176" fill="#d71920"/>
+  <text x="76" y="760" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">CONTRÔLE / NE SAUTEZ PAS CETTE LIGNE</text>
+  <text x="76" y="812" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">RÉPONSE ≠ ACTION ≠ RÉSULTAT VÉRIFIÉ</text>
+  <text x="76" y="852" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Avant de déclarer la tâche terminée, comparez le résultat à une source, un diff, un test, un journal ou un critère d’acceptation.</text>
+  <text x="48" y="950" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / CARTE ORIGINALE / COMMENCEZ PAR LES COUCHES</text>
+</svg>

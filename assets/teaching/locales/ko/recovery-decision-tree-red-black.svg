@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">복구 의사결정 트리</title>
+  <desc id="desc">복구 의사결정 트리입니다. 요청과 관찰한 기록을 보존하고 첫 불일치를 찾은 뒤 권한을 확인합니다. 허용되면 범위를 제한한 점검 하나를 수행하고, 증거가 여전히 부족하면 candidate 또는 unknown으로 멈춥니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">복구 / 의사결정 트리</text>
+  <text x="78" y="174" class="ink" font-size="43" font-weight="900">다음 점검을</text>
+  <text x="78" y="224" class="ink" font-size="43" font-weight="900">더 작게 만드세요.</text>
+  <text x="78" y="274" class="muted" font-size="20">실패를 보존하고 권한을 확인하며 주장을 기록 안에 두세요.</text>
+
+  <line x1="112" y1="350" x2="112" y2="1230" class="line"/>
+  <line x1="112" y1="460" x2="112" y2="500" class="redline"/>
+  <line x1="112" y1="650" x2="112" y2="690" class="redline"/>
+
+  <g transform="translate(78 316)">
+    <circle cx="34" cy="54" r="30" fill="#111"/>
+    <text x="34" y="63" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">01</text>
+    <rect x="86" y="0" width="684" height="146" fill="#111"/>
+    <text x="112" y="38" class="mono" fill="#fff" font-size="17">보존</text>
+    <text x="112" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">요청과 기록을 남기세요.</text>
+    <text x="112" y="116" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">문구, 입력, 출력, diff, 상태와 마지막 체크포인트를 저장하세요.</text>
+  </g>
+
+  <g transform="translate(78 510)">
+    <circle cx="34" cy="54" r="30" fill="#d71920"/>
+    <text x="34" y="63" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">02</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">분류</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">첫 불일치를 이름 붙이세요.</text>
+    <text x="112" y="116" class="muted" font-size="17">빠진 입력, 잘못된 범위, 실패한 행동과 약한 증거를 구분하세요.</text>
+  </g>
+
+  <g transform="translate(78 700)">
+    <circle cx="34" cy="54" r="30" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="34" y="63" class="mono" font-size="22" text-anchor="middle">03</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">권한</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">다음 점검이 허용되었나요?</text>
+    <text x="112" y="116" class="muted" font-size="17">범위, 허가 또는 입력이 없으면 행동을 넓히지 마세요.</text>
+  </g>
+
+  <path d="M112 846V916M112 916H290M112 916H650" class="redline"/>
+  <g transform="translate(78 938)">
+    <rect width="352" height="170" fill="#d71920"/>
+    <text x="24" y="40" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">예 / 허용됨</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">안전한 점검 하나를 수행하세요.</text>
+    <text x="24" y="126" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">조건 하나를 바꾸고 비교하세요.</text>
+    <text x="24" y="151" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">원래 기록을 보존하세요</text>
+  </g>
+  <g transform="translate(470 938)">
+    <rect width="352" height="170" fill="#111"/>
+    <text x="24" y="40" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">아니요 / 허용되지 않음</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">멈추고 빈틈을 기록하세요.</text>
+    <text x="24" y="126" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">candidate, blocked 또는 unknown으로 표시하세요.</text>
+    <text x="24" y="151" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">성공을 꾸며 내지 마세요</text>
+  </g>
+
+  <path d="M254 1108V1160H450V1200M646 1108V1160H450" class="redline"/>
+  <rect x="78" y="1208" width="744" height="132" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="104" y="1250" class="mono" font-size="17">점검 후</text>
+  <text x="104" y="1290" class="ink" font-size="26" font-weight="900">근거 있는 결과, 더 좁은 주장 또는 의도적인 중지.</text>
+  <text x="104" y="1320" class="muted" font-size="17">더 나은 재실행은 그 실행의 증거이지 만능 해결책이 아닙니다.</text>
+
+  <rect x="78" y="1372" width="744" height="52" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1405" class="mono" font-size="16">경계</text>
+  <text x="222" y="1405" class="ink" font-size="18" font-weight="700">권한이나 증거가 없나요? unknown을 그대로 둔 채 멈추세요.</text>
+</svg>

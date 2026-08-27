@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Prysai LLM Playbook 学习旅程</title>
+  <desc id="desc">这段四阶段学习旅程先完成五单元的 LLM 基础核心，再做一项有边界的首任务，把结果变成证据并有意识地停止或做决定，最后选择可选的 Codex、工具、Skill 或团队路线。</desc>
+  <rect width="1200" height="1600" fill="#f6f6f2"/>
+  <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
+  <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK／学习旅程</text>
+  <text x="58" y="178" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">先学会方法。</text>
+  <text x="58" y="244" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">再选择平台。</text>
+  <text x="60" y="286" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">基础／首任务／证据／可选练习</text>
+
+  <line x1="90" y1="360" x2="90" y2="1300" stroke="#d71920" stroke-width="9"/>
+  <circle cx="90" cy="425" r="17" fill="#d71920"/>
+  <circle cx="90" cy="690" r="17" fill="#d71920"/>
+  <circle cx="90" cy="955" r="17" fill="#d71920"/>
+  <circle cx="90" cy="1220" r="17" fill="#d71920"/>
+
+  <g transform="translate(140 360)">
+    <rect width="1000" height="198" fill="#171717"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01／基础核心</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">理解 → 开始 → 识别 → 修正 → 迁移</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">五个单元让模型、请求、可见失败、检查和未见任务都变得清楚。</text>
+    <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">在 Codex、工具、Agent 或 Skill 之前，从这里开始。</text>
+  </g>
+
+  <g transform="translate(140 625)">
+    <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02／有边界的首任务</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">先说清结果，再提出请求。</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">写出目标、已有上下文、允许的帮助、限制、回答形式和停止条件。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">使用虚构或可丢弃的任务；保留第一次请求和第一次回答。</text>
+  </g>
+
+  <g transform="translate(140 890)">
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03／证据闭环</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">观察发生了什么变化，保留仍然未知的部分。</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">用来源、测试、日志或验收规则对照回答或差异。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">只有下一项证明存在时才继续；否则记录最小的安全停止。</text>
+  </g>
+
+  <g transform="translate(140 1155)">
+    <rect width="1000" height="198" fill="#d71920"/>
+    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04／可选路线</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">选择下一个最有用的最小层级。</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · 工具 · Skill · Agent · 研究 · 工程 · 团队练习</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">每条路线都保留自己的来源、权限、证据、失败案例和限制。</text>
+  </g>
+
+  <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
+  <text x="84" y="1452" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">边界／候选路线</text>
+  <text x="84" y="1492" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">地图显示顺序，不证明掌握。</text>
+  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">保留产物、证据、限制和下一个问题。</text>
+  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB／原创教学图／先练习，再下结论</text>
+</svg>

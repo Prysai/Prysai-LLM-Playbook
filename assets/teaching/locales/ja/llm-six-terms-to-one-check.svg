@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">LLM の6つの用語、1つの確認できる結果</title>
+  <desc id="desc">この横長の教材図は、トークン、コンテキスト、コンテキストウィンドウ、プロンプト、応答、ツールまたは Agent を分けて示します。赤い境界は、応答を出典や受け入れ条件と照合するまで候補にとどめることを示します。</desc>
+  <rect width="1400" height="1000" fill="#f6f6f2"/>
+  <rect x="48" y="36" width="1304" height="10" fill="#161616"/>
+  <text x="48" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LLM の基礎 / 1つの依頼</text>
+  <text x="48" y="166" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">6つの用語。</text>
+  <text x="48" y="236" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">1つの確認。</text>
+  <text x="48" y="282" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="17">答えを信じる前に層を分ける</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="48" y="354" width="196" height="290" fill="#161616"/>
+    <text x="72" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 単位</text>
+    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">トークン</text>
+    <text x="72" y="500" fill="#c4c4be" font-size="18">モデルが処理する</text>
+    <text x="72" y="528" fill="#c4c4be" font-size="18">小さな</text>
+    <text x="72" y="556" fill="#c4c4be" font-size="18">文字のかたまり。</text>
+    <text x="72" y="610" fill="#ffffff" font-size="16" font-weight="700">事実そのものではない。</text>
+
+    <rect x="264" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="288" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 材料</text>
+    <text x="288" y="452" fill="#161616" font-size="32" font-weight="900">コンテキスト</text>
+    <text x="288" y="500" fill="#565650" font-size="18">このターンで</text>
+    <text x="288" y="528" fill="#565650" font-size="18">利用できる</text>
+    <text x="288" y="556" fill="#565650" font-size="18">材料。</text>
+    <text x="288" y="610" fill="#161616" font-size="16" font-weight="700">不足したコンテキストは不明のまま。</text>
+
+    <rect x="480" y="354" width="196" height="290" fill="#d71920"/>
+    <text x="504" y="392" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 容量</text>
+    <text x="504" y="452" fill="#ffffff" font-size="32" font-weight="900">ウィンドウ</text>
+    <text x="504" y="500" fill="#ffffff" font-size="18">1ターンに</text>
+    <text x="504" y="528" fill="#ffffff" font-size="18">収まる</text>
+    <text x="504" y="556" fill="#ffffff" font-size="18">量の上限。</text>
+    <text x="504" y="610" fill="#161616" font-size="16" font-weight="700">文章を増やせばよいとは限らない。</text>
+
+    <rect x="696" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="720" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 方向づけ</text>
+    <text x="720" y="452" fill="#161616" font-size="32" font-weight="900">プロンプト</text>
+    <text x="720" y="500" fill="#565650" font-size="18">目的、</text>
+    <text x="720" y="528" fill="#565650" font-size="18">制約、</text>
+    <text x="720" y="556" fill="#565650" font-size="18">出力の形。</text>
+    <text x="720" y="610" fill="#161616" font-size="16" font-weight="700">プロンプトは枠を決めるが、アクセス権は与えない。</text>
+
+    <rect x="912" y="354" width="196" height="290" fill="#161616"/>
+    <text x="936" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / 候補</text>
+    <text x="936" y="452" fill="#ffffff" font-size="32" font-weight="900">応答</text>
+    <text x="936" y="500" fill="#c4c4be" font-size="18">モデルが</text>
+    <text x="936" y="528" fill="#c4c4be" font-size="18">提案した</text>
+    <text x="936" y="556" fill="#c4c4be" font-size="18">確認するための文章。</text>
+    <text x="936" y="610" fill="#ffffff" font-size="16" font-weight="700">流暢さは証拠ではない。</text>
+
+    <rect x="1128" y="354" width="224" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="1152" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / 追加の操作</text>
+    <text x="1152" y="452" fill="#161616" font-size="32" font-weight="900">ツール / Agent</text>
+    <text x="1152" y="500" fill="#565650" font-size="18">製品によっては</text>
+    <text x="1152" y="528" fill="#565650" font-size="18">読み取りや操作を</text>
+    <text x="1152" y="556" fill="#565650" font-size="18">追加の権限で行える。</text>
+    <text x="1152" y="610" fill="#161616" font-size="16" font-weight="700">実行には許可が必要。</text>
+  </g>
+
+  <g stroke="#d71920" stroke-width="5" fill="none">
+    <path d="M244 500H258"/><path d="M460 500H474"/><path d="M676 500H690"/><path d="M892 500H906"/><path d="M1108 500H1122"/>
+  </g>
+  <g fill="#d71920">
+    <path d="M258 500l-12-8v16z"/><path d="M474 500l-12-8v16z"/><path d="M690 500l-12-8v16z"/><path d="M906 500l-12-8v16z"/><path d="M1122 500l-12-8v16z"/>
+  </g>
+
+  <rect x="48" y="718" width="1304" height="176" fill="#d71920"/>
+  <text x="76" y="760" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">確認 / この行を飛ばさない</text>
+  <text x="76" y="812" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">応答 ≠ 操作 ≠ 確認済みの結果</text>
+  <text x="76" y="852" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">完了と言う前に、出典、差分、テスト、ログ、受け入れ条件と結果を照合する。</text>
+  <text x="48" y="950" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / オリジナル教材図 / まず層を分ける</text>
+</svg>

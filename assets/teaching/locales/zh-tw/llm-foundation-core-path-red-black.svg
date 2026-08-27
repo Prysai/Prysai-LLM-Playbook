@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">LLM 基礎核心：五個單元</title>
+  <desc id="desc">這條五單元學習路線從一次安全嘗試開始，讓上下文與指示變得可見，辨識看得見的失敗，檢查並修正結果，最後把方法套用到沒看過的任務。</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="42" y="34" width="816" height="10" fill="#171717"/>
+  <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">基礎核心／五個單元</text>
+  <text x="42" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">先學會方法</text>
+  <text x="42" y="214" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">再選擇平台</text>
+  <text x="44" y="255" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">嘗試／觀察／命名／修正／遷移</text>
+
+  <line x1="76" y1="330" x2="76" y2="1178" stroke="#d71920" stroke-width="8"/>
+  <circle cx="76" cy="370" r="15" fill="#d71920"/>
+  <circle cx="76" cy="540" r="15" fill="#d71920"/>
+  <circle cx="76" cy="710" r="15" fill="#d71920"/>
+  <circle cx="76" cy="880" r="15" fill="#d71920"/>
+  <circle cx="76" cy="1050" r="15" fill="#d71920"/>
+
+  <g transform="translate(122 318)">
+    <rect width="734" height="124" fill="#171717"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／嘗試</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">先做一次安全嘗試。</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">使用虛構的離線任務，並保留第一次回應。</text>
+  </g>
+  <g transform="translate(122 488)">
+    <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02／框定</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">讓上下文與指示變得可見。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">分開已提供的事實、缺少的事實、限制與回應形式。</text>
+  </g>
+  <g transform="translate(122 658)">
+    <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03／辨識</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">辨識看得見的失敗模式。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">標出遺漏、捏造、被迫產生的模糊處與過度自信。</text>
+  </g>
+  <g transform="translate(122 828)">
+    <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04／修正</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">檢查、修正，並說明限制。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">和證據對照，只改變一個條件，並保留缺口。</text>
+  </g>
+  <g transform="translate(122 998)">
+    <rect width="734" height="124" fill="#d71920"/>
+    <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05／遷移</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">在沒看過的任務上重複方法。</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">保存路線只是練習；新的任務仍需要自己的檢查。</text>
+  </g>
+
+  <rect x="42" y="1192" width="816" height="132" fill="#171717"/>
+  <text x="66" y="1235" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">界線／候選路線</text>
+  <text x="66" y="1278" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">一次嘗試不等於熟練。</text>
+  <text x="66" y="1308" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">保留產出、界線與下一個問題。</text>
+  <text x="42" y="1372" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB／原創教學圖／先練習，再下結論</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">LLM 핵심 용어 여섯 가지, 확인 가능한 결과 하나</title>
+  <desc id="desc">이 가로형 교육 그림은 토큰, 맥락, 맥락 창, 프롬프트, 답변, 도구 또는 Agent를 나누어 보여 줍니다. 빨간 경계는 답변을 출처나 수용 기준과 대조하기 전까지 후보로 남겨야 함을 뜻합니다.</desc>
+  <rect width="1400" height="1000" fill="#f6f6f2"/>
+  <rect x="48" y="36" width="1304" height="10" fill="#161616"/>
+  <text x="48" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LLM 기초 / 하나의 요청</text>
+  <text x="48" y="166" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">용어 여섯 가지.</text>
+  <text x="48" y="236" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3">점검 하나.</text>
+  <text x="48" y="282" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="17">답변을 믿기 전에 층위를 나누세요</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="48" y="354" width="196" height="290" fill="#161616"/>
+    <text x="72" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 단위</text>
+    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">토큰</text>
+    <text x="72" y="500" fill="#c4c4be" font-size="18">모델이 처리하는</text>
+    <text x="72" y="528" fill="#c4c4be" font-size="18">작은</text>
+    <text x="72" y="556" fill="#c4c4be" font-size="18">텍스트 조각입니다.</text>
+    <text x="72" y="610" fill="#ffffff" font-size="16" font-weight="700">사실은 아닙니다.</text>
+
+    <rect x="264" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="288" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 자료</text>
+    <text x="288" y="452" fill="#161616" font-size="32" font-weight="900">맥락</text>
+    <text x="288" y="500" fill="#565650" font-size="18">이 턴에서</text>
+    <text x="288" y="528" fill="#565650" font-size="18">사용할 수 있는</text>
+    <text x="288" y="556" fill="#565650" font-size="18">자료입니다.</text>
+    <text x="288" y="610" fill="#161616" font-size="16" font-weight="700">빠진 맥락은 여전히 알 수 없습니다.</text>
+
+    <rect x="480" y="354" width="196" height="290" fill="#d71920"/>
+    <text x="504" y="392" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 용량</text>
+    <text x="504" y="452" fill="#ffffff" font-size="32" font-weight="900">창</text>
+    <text x="504" y="500" fill="#ffffff" font-size="18">한 턴에 담을 수 있는</text>
+    <text x="504" y="528" fill="#ffffff" font-size="18">내용의</text>
+    <text x="504" y="556" fill="#ffffff" font-size="18">한도입니다.</text>
+    <text x="504" y="610" fill="#161616" font-size="16" font-weight="700">텍스트가 많다고 늘 좋은 것은 아닙니다.</text>
+
+    <rect x="696" y="354" width="196" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="720" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 방향</text>
+    <text x="720" y="452" fill="#161616" font-size="32" font-weight="900">프롬프트</text>
+    <text x="720" y="500" fill="#565650" font-size="18">목표,</text>
+    <text x="720" y="528" fill="#565650" font-size="18">제약,</text>
+    <text x="720" y="556" fill="#565650" font-size="18">출력 형식입니다.</text>
+    <text x="720" y="610" fill="#161616" font-size="16" font-weight="700">프롬프트는 범위를 정하지만 접근 권한을 주지는 않습니다.</text>
+
+    <rect x="912" y="354" width="196" height="290" fill="#161616"/>
+    <text x="936" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / 후보</text>
+    <text x="936" y="452" fill="#ffffff" font-size="32" font-weight="900">답변</text>
+    <text x="936" y="500" fill="#c4c4be" font-size="18">모델이 제안한</text>
+    <text x="936" y="528" fill="#c4c4be" font-size="18">확인할</text>
+    <text x="936" y="556" fill="#c4c4be" font-size="18">텍스트입니다.</text>
+    <text x="936" y="610" fill="#ffffff" font-size="16" font-weight="700">유창함은 증거가 아닙니다.</text>
+
+    <rect x="1128" y="354" width="224" height="290" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="1152" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / 추가 행동</text>
+    <text x="1152" y="452" fill="#161616" font-size="32" font-weight="900">도구 / Agent</text>
+    <text x="1152" y="500" fill="#565650" font-size="18">제품은 추가 권한으로</text>
+    <text x="1152" y="528" fill="#565650" font-size="18">읽거나 행동할 수</text>
+    <text x="1152" y="556" fill="#565650" font-size="18">있습니다.</text>
+    <text x="1152" y="610" fill="#161616" font-size="16" font-weight="700">실행에는 여전히 허가가 필요합니다.</text>
+  </g>
+
+  <g stroke="#d71920" stroke-width="5" fill="none">
+    <path d="M244 500H258"/><path d="M460 500H474"/><path d="M676 500H690"/><path d="M892 500H906"/><path d="M1108 500H1122"/>
+  </g>
+  <g fill="#d71920">
+    <path d="M258 500l-12-8v16z"/><path d="M474 500l-12-8v16z"/><path d="M690 500l-12-8v16z"/><path d="M906 500l-12-8v16z"/><path d="M1122 500l-12-8v16z"/>
+  </g>
+
+  <rect x="48" y="718" width="1304" height="176" fill="#d71920"/>
+  <text x="76" y="760" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">점검 / 이 줄을 건너뛰지 마세요</text>
+  <text x="76" y="812" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">답변 ≠ 행동 ≠ 검증된 결과</text>
+  <text x="76" y="852" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">완료라고 말하기 전에 결과를 출처, diff, 테스트, 로그 또는 수용 기준과 대조하세요.</text>
+  <text x="48" y="950" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / 프로젝트 원본 교육 그림 / 층위를 먼저 나누기</text>
+</svg>
