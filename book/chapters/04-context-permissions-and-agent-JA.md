@@ -235,7 +235,7 @@ R0は説明または読み取り専用の判断、R1は復旧可能なローカ�
 <nav class="chapter-navigation" aria-label="章ナビゲーション">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-JA.md" aria-label="前の章: 第 3 章 · 願いをタスク・プロトコルに変える">← 前へ<br><strong>第 3 章 · 願いをタスク・プロトコルに変える</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-JA.md" aria-label="前の章: 第 3 章 · 曖昧な依頼をタスク・プロトコルに変える">← 前へ<br><strong>第 3 章 · 曖昧な依頼をタスク・プロトコルに変える</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-JA.md" aria-label="次の章: 第 5 章 · 適切な Codex の作業面を選ぶ">次へ →<br><strong>第 5 章 · 適切な Codex の作業面を選ぶ</strong></a></td>
     </tr>
   </table>

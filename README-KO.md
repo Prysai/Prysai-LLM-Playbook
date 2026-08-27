@@ -12,11 +12,14 @@
 처음 방문했다면 카드, Skill, 제품 중에서 고르지 마세요. 먼저 한국어 주 학습 경로를 따르세요.
 
 1. [LLM 개념](book/guides/llm-fundamentals-KO.md)
-2. [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+2. [첫 번째 LLM 작업](book/routes/universal-core-foundations-KO.md)
 3. [첫 번째 안전한 변경](book/routes/first-safe-change-KO.md)
 
 영어 기초 코어가 현재의 정식 원문이며 한국어판은 재번역과 검토를 기다리고 있습니다.
 그동안 이 입구는 한국어 파일만으로 읽을 수 있는 경로를 유지합니다.
+새 기초 코어 다섯 단원의 한국어 링크는 거버넌스에서 기존 한국어 페이지를 가리키는
+`projected-existing-page`로 기록되어 있습니다. 따라서 한국어로 읽을 입구가 있다는 뜻이지,
+다섯 단원의 독립적인 재번역, 영어 원문과의 내용 동등성, 학습 효과가 검증되었다는 뜻은 아닙니다.
 
 스페인어, 업무 업데이트, 리서치 확인 카드는 이 경로 뒤에 하는 **선택 응용 연습**입니다. LLM을 이해하는 첫 수업이 아니며 효율, 유창성, 역량 향상을 약속하지 않습니다.
 
@@ -112,7 +115,7 @@ GPT 이해 → Codex 이해 → 안전한 준비 → 작업 표현 → 컨텍스
 - [한국어 책 입구](book/README-KO.md)
 - [한국어 서문](book/preface-KO.md)
 - [한국어 책 목차](book/table-of-contents-KO.md)
-- [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+- [첫 번째 LLM 작업](book/routes/universal-core-foundations-KO.md)
 - [초보자 연습 카드](book/communication-clinic-KO.md): 언어, 업무 업데이트, 판단, 출처 확인, 공유 전 경계를 위한 바로 복사할 수 있는 일곱 가지 짧은 메시지입니다. `draft / not_run` 경로이며 유창함, 효율 또는 학습 성과를 약속하지 않습니다.
 - [한국어 Lab 목차](book/labs/README-KO.md): 저위험 실습 열여덟 개를 각각 한국어 `-KO` 파일과 경로로 열 수 있습니다.
 

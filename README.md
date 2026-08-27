@@ -14,115 +14,69 @@
 _Eight locale entry points are registered; translation review and learner evidence are still in progress._
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) and follow the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. This repository is the auditable source; the reading site is the clearer first screen.
 
-[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md)
-Optional: [try the five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [read the full English guide](README-EN.md) · [open the Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
+>
+> The route structure and engineering checks exist. Learner completion, transfer,
+> repeated evaluations, and independent review are still pending. This is a
+> transparent candidate course, not a certification or a promise of model
+> accuracy.
 
 License: curriculum text and teaching assets are CC BY 4.0; scripts and
 tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE),
 [`LICENSE-CODE`](LICENSE-CODE), and the [licensing boundary](docs/sources/licensing.md).
 
 `README.md` is GitHub's compact English entry; [`README-EN.md`](README-EN.md)
-is the detailed source. The project remains `candidate`: its structure and
-static checks exist, while learner runs, transfer runs, repeated evaluations,
-and independent review are still pending.
+is the detailed source. For the dated record of changes, see the
+[candidate changelog](CHANGELOG.md).
 
-**What changed recently:** the default entry now leads with the five-unit LLM
-foundation route, the public site exposes the same route with a no-setup
-example and an interactive evidence map, and the eight locale paths keep their
-language choice visible when a translation or review is still pending. These
-are documentation and navigation improvements; they do not change the
-project's `candidate` evidence status. See the [candidate changelog](CHANGELOG.md)
-for the dated record.
+## What this project helps you do
 
-## Why this project is useful
-
-Instead of beginning with a product, a prompt collection, or a feature list,
-this project begins with a decision: what can the model establish, what action
-is actually allowed, and what evidence would change your mind? The five-unit
-foundation turns that method into three inspectable artifacts: a bounded task
-card, a checked result record, and one transfer attempt. They are working
-targets, not measured outcomes—not a promise that one model will always be
-right.
-
-| If you are... | Start with... |
-|---|---|
-| New to LLMs or unsure what to trust | [LLM Foundation Core](book/routes/llm-foundation-core-v1-EN.md) |
-| Already using AI but checking too late | [Visible failures](book/routes/llm-core-visible-failures-EN.md) and [check and repair](book/routes/llm-core-check-repair-EN.md) |
-| Ready to use Codex on a real task | Finish the core, then read the [GPT/Codex boundary](book/chapters/01-gpt-and-codex-EN.md) |
-| Maintaining a team workflow | Use the later [team capability system](book/chapters/21-team-capability-system-EN.md) after the foundation |
-
-This is not a certification, benchmark, or catalogue of guaranteed prompts.
-Each route keeps its task boundary, evidence status, and known unknowns visible.
-
-## What this is
-
-You may have heard people mention Codex, Claude Code, Agents, or Skills and
-wondered which one you are supposed to learn first. Start one layer earlier:
-understand how a language model uses context to generate an answer, why a fluent
-answer can still be wrong, and how to inspect the result before trusting it.
-The advanced platform material remains available, but it is not a prerequisite
-for the LLM foundation.
-
-This is an independent, book-shaped curriculum for working with language
-models responsibly. Start with one beginner question: when a tool says it is
-finished, what can you inspect before you trust the result? It teaches one
-repeatable loop:
+Most AI guides begin with a product, a prompt collection, or a feature list.
+This project begins one step earlier: what can the model establish, what action
+is actually allowed, and what evidence would change your mind? The method is
+designed to travel across products and tasks:
 
 ```text
 define the task → choose a bounded action → inspect the result → keep evidence → state the limit
 ```
 
-The stable method applies beyond one product. The current default is the
-[LLM foundation core](README-EN.md#llm-foundation-core): explain, initiate,
-identify, repair, and transfer. Codex, tools, Skills, Agents, professional
-tracks, and named-platform adapters are later layers. They remain useful
-reference material, but their current structure is not learner evidence and
-does not establish cross-platform equivalence.
+The advanced Codex, tool, Agent, Skill, and professional material remains
+available, but it comes after the foundation. A platform can provide access or
+execution; it cannot replace a clear task, an authority boundary, or a human
+check.
 
-<mark>Do not stop at a plausible output.</mark> Ask what changed, what was
-checked, and what remains unproven.
+### The five-unit foundation
 
-## Evidence ledger — measured, prepared, and unknown
-
-| Evidence status | Current record | What a reader may conclude |
-|---|---|---|
-| Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
-| Captured, unscored, analysis-ineligible | [Shift Handoff output packet](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/) contains 18 de-identified fictional outputs; its [input-integrity review](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) found that the historical prompt hashes do not bind the prepared Windows prompt bytes | A model-output collection occurred. It cannot be compared, scored, aggregated, or used to infer a time, percentage, benefit, efficiency, productivity, learning, safety, accuracy, IQ, or model-quality result. |
-| Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
-
-The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
-defines task-scoped completion, rework, time, and fixed-rubric measures. Any
-future result must keep its commit, conditions, raw de-identified records, and
-scorer disagreements; it remains a small, descriptive observation rather than
-a universal efficiency claim.
-
-## LLM foundation core
-
-The core route is the only default starting path. It has five units:
-
-1. explain what an LLM is and is not;
-2. write a small request with goal, context, limits, and output shape;
-3. identify omission, invention, forced ambiguity, and overconfidence;
-4. check and minimally repair an answer while stating one limit; and
-5. repeat the method on an unseen task without a complete prompt template.
+1. Explain what an LLM is and is not.
+2. Write a small request with a goal, context, limits, and answer shape.
+3. Identify omission, invention, forced ambiguity, and overconfidence.
+4. Check and minimally repair an answer while stating one limit.
+5. Repeat the method on an unseen task without a complete prompt template.
 
 Each unit asks for a learner-authored artifact. A copied prompt, a polished
-model answer, or a green structural check is not proof of learning. See the
-[core course contract](docs/product/core-course-contract.md),
+model answer, or a green structural check is not proof of learning. The route
+remains `candidate`; learner completion, transfer, and long-term retention are
+`not_run`. See the [core course contract](docs/product/core-course-contract.md),
 [scope freeze](docs/governance/core-release-scope.md), and
-[core content inventory](docs/governance/core-content-inventory.yaml) for the
-current boundary. The route remains `candidate`; learner completion, transfer,
-and long-term retention are `not_run`.
+[core content inventory](docs/governance/core-content-inventory.yaml).
+
+### What you leave with
+
+| Practice | Working artifact |
+|---|---|
+| Define one useful result | A bounded task card with context, limits, and a stop condition |
+| Inspect what the model actually did | A checked result record with the evidence and unknowns kept visible |
+| Try the method somewhere new | One transfer attempt, including what changed and what remains unproven |
 
 ## Start here — read it like a book
 
-The full repository is a textbook and reference library, not a required menu.
-Start with the five-unit core. Do not enter Codex, Skills, or professional
-tracks until the core route says to continue.
+The full repository is a textbook and reference library, not a menu to browse at
+random. Start with the five-unit core; do not enter Codex, Skills, or
+professional tracks until the core route says to continue.
 
 1. [LLM Foundation Core v1](book/routes/llm-foundation-core-v1-EN.md) — explain,
    initiate, identify, repair, and transfer the method.
@@ -180,6 +134,20 @@ guided Codex path.
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
 
 </details>
+
+## Evidence ledger — measured, prepared, and unknown
+
+| Evidence status | Current record | What a reader may conclude |
+|---|---|---|
+| Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
+| Captured, unscored, analysis-ineligible | [Shift Handoff output packet](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/) contains 18 de-identified fictional outputs; its [input-integrity review](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) found that the historical prompt hashes do not bind the prepared Windows prompt bytes | A model-output collection occurred. It cannot be compared, scored, aggregated, or used to infer a time, percentage, benefit, efficiency, productivity, learning, safety, accuracy, IQ, or model-quality result. |
+| Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
+
+The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
+defines task-scoped completion, rework, time, and fixed-rubric measures. Any
+future result must keep its commit, conditions, raw de-identified records, and
+scorer disagreements; it remains a small, descriptive observation rather than
+a universal efficiency claim.
 
 ## See one bounded artifact
 

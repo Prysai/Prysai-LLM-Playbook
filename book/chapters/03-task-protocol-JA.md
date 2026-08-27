@@ -1,6 +1,6 @@
 <!-- content_id: chapter-03-task-protocol | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# 第3章：曖昧な願いを、実行できるタスクのプロトコルに変える
+# 第3章：曖昧な依頼を、実行可能なタスク・プロトコルに変える
 
 ![教材ボード：依頼から範囲、行動、確認を経て、境界のある引き渡しへ進む](../../assets/teaching/task-to-evidence-red-black.svg)
 

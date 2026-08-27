@@ -79,6 +79,18 @@ def item_number(content_id: str, kind: str) -> int | None:
     return None
 
 
+def canonical_title_for_locale(chapter: dict[str, Any], locale: str) -> str:
+    """Return the chapter title owned by the requested locale.
+
+    The navigation manifest stores one canonical title per locale.  Search
+    must not collapse every non-English result onto the Chinese title merely
+    because Chinese was historically the first migrated locale.
+    """
+
+    value = chapter.get(f"canonical_title_{locale}")
+    return value if isinstance(value, str) else ""
+
+
 def add_catalog_search_targets(manifest: dict[str, Any], documents: list[dict[str, Any]]) -> None:
     """Project a small, source-governed section target into the document index.
 
@@ -201,7 +213,7 @@ def build_index() -> dict[str, Any]:
             if not record or not record.get("exists"):
                 continue
             path = ROOT / record["path"]
-            canonical_title = chapter.get("canonical_title_en") if locale == "en" else chapter.get("canonical_title_zh")
+            canonical_title = canonical_title_for_locale(chapter, locale)
             title, search_text, snippet = title_and_text(
                 path.read_text(encoding="utf-8"),
                 canonical_title or "",

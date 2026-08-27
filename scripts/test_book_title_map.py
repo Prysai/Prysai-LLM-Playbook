@@ -69,10 +69,11 @@ def main() -> int:
             f"Reader did not consume canonical titles for {record['id']}",
         )
         search_record = search_by_id[reader_record["content_id"]]
-        require(
-            search_record["locales"]["en"]["title"] == record["canonical"]["en"],
-            f"Search did not consume canonical English title for {record['id']}",
-        )
+        for locale in title_map.LOCALE_KEYS:
+            require(
+                search_record["locales"][locale]["title"] == record["canonical"][locale],
+                f"Search did not consume canonical {locale} title for {record['id']}",
+            )
 
     print("BOOK_TITLE_MAP_TESTS_OK fixtures=5 surfaces=toc,reader,search")
     return 0

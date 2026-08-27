@@ -2,16 +2,18 @@
 
 # Prysai LLM Playbook: 日本語の目次
 
-これは日本語で読める入口です。正規のカタログには `candidate` の章が 22、本書の
-実験である `draft` の Lab が 18 あります。40 ユニットすべてに日本語の経路があり、
-このページのリンクはすべて対応する日本語コンテンツを指します。別の言語へは飛びません。
+これは日本語で読める入口をまとめたページです。正規のカタログには `candidate` の章が 22、
+本書の実験である `draft` の Lab が 18 あります。22章と18 Labの計40件には日本語のファイルと
+リンクがありますが、新しい基礎コアの5ユニットは、現時点では既存の日本語ページを指す
+`projected-existing-page` の入口です。独立した日本語訳として完成したものではありません。
+このページのリンクは同じ言語のファイルを指し、別の言語へは黙って移動しません。
 
 ## まずここから
 
 1. [LLM の基礎概念](guides/llm-fundamentals-JA.md)。
-2. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md)。
+2. [LLM を使う最初の課題](routes/universal-core-foundations-JA.md)。
 3. [最初の安全な変更](routes/first-safe-change-JA.md)。
-4. [第 3 章：願いをタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
+4. [第 3 章：曖昧な依頼をタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
    → [Lab 002：タスク・プロトコル](labs/lab-002-task-protocol-JA.md)。
 5. [第 4 章：コンテキスト、権限、Agent の行動境界](chapters/04-context-permissions-and-agent-JA.md)
     → [Lab 007：行動境界](labs/lab-007-action-boundaries-JA.md)。
@@ -30,7 +32,7 @@
 | --- | --- |
 | 01 — Codex を理解する前に GPT を理解する | [提供中：第 1 章](chapters/01-gpt-and-codex-JA.md) · `candidate / in-progress` |
 | 02 — 最初の安全で検証可能なタスクを完了する | [提供中：第 2 章](chapters/02-first-safe-task-JA.md) · `candidate / in-progress` |
-| 03 — 願いをタスク・プロトコルに変える | [提供中：第 3 章](chapters/03-task-protocol-JA.md) · `candidate / in-progress` |
+| 03 — 曖昧な依頼をタスク・プロトコルに変える | [提供中：第 3 章](chapters/03-task-protocol-JA.md) · `candidate / in-progress` |
 | 04 — コンテキスト、権限、Agent の行動境界 | [提供中：第 4 章](chapters/04-context-permissions-and-agent-JA.md) · `candidate / in-progress` |
 | 05 — 適切な Codex の作業面を選ぶ | [提供中：第 5 章](chapters/05-choose-the-codex-surface-JA.md) · `candidate / in-progress` |
 | 06 — モデル選択はモデル崇拝ではない | [提供中：第 6 章](chapters/06-model-selection-JA.md) · `candidate / in-progress` |
@@ -47,9 +49,9 @@
 | 17 — マーケティング・トラック：製品理解から成長実験へ | [提供中：第 17 章](chapters/17-marketing-track-JA.md) · `candidate / in-progress` |
 | 18 — コンテンツ、デザイン、データ、自動化トラック | [提供中：第 18 章](chapters/18-content-design-data-automation-JA.md) · `candidate / in-progress` |
 | 19 — モデルとワークフローを評価する | [提供中：第 19 章](chapters/19-evaluate-models-and-workflows-JA.md) · `candidate / in-progress` |
-| 20 — 個人用 Codex 作業システムを作る | [利用可能: 第20章](chapters/20-personal-codex-work-system-JA.md) · `candidate / in-progress` |
-| 21 — チーム能力システムを作る | [利用可能: 第21章](chapters/21-team-capability-system-JA.md) · `candidate / in-progress` |
-| 22 — 継続的な更新と将来への備え | [利用可能: 第22章](chapters/22-continuous-update-and-future-proofing-JA.md) · `candidate / in-progress` |
+| 20 — 個人用 Codex 作業システムを作る | [利用可能：第20章](chapters/20-personal-codex-work-system-JA.md) · `candidate / in-progress` |
+| 21 — チーム能力システムを作る | [利用可能：第21章](chapters/21-team-capability-system-JA.md) · `candidate / in-progress` |
+| 22 — 継続的な更新と将来への備え | [利用可能：第22章](chapters/22-continuous-update-and-future-proofing-JA.md) · `candidate / in-progress` |
 
 ## Lab ごとの提供状況
 

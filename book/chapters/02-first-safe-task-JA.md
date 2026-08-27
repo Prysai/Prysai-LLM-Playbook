@@ -473,7 +473,7 @@ status: passed | failed | stopped
 [現場問題の記録](../evidence-library-JA.md#source-notes)は利用者の
 報告とコミュニティの提案を含み、公式の根本原因確認ではありません。本章は `candidate`、
 実験は `draft / not_run` のままです。新しい、境界付きの実行が宣言した証拠を作るまで、
-学習者が完了したとは扱いません。次は[第3章：願いをタスク・プロトコルに変える](03-task-protocol-JA.md)
+学習者が完了したとは扱いません。次は[第3章：曖昧な依頼をタスク・プロトコルに変える](03-task-protocol-JA.md)
 です。この移動は日本語のまま行います。別言語のページを日本語版の続きとして扱わないでください。
 
 <!-- chapter-navigation:start -->
@@ -482,7 +482,7 @@ status: passed | failed | stopped
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-JA.md" aria-label="前の章: 第 1 章 · Codex を信頼する前に GPT を理解する">← 前へ<br><strong>第 1 章 · Codex を信頼する前に GPT を理解する</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-JA.md" aria-label="次の章: 第 3 章 · 願いをタスク・プロトコルに変える">次へ →<br><strong>第 3 章 · 願いをタスク・プロトコルに変える</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-JA.md" aria-label="次の章: 第 3 章 · 曖昧な依頼をタスク・プロトコルに変える">次へ →<br><strong>第 3 章 · 曖昧な依頼をタスク・プロトコルに変える</strong></a></td>
     </tr>
   </table>
 </nav>

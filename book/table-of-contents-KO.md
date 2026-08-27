@@ -2,14 +2,16 @@
 
 # Prysai LLM Playbook: 한국어 목차
 
-이 문서는 한국어로 읽을 수 있는 길잡이입니다. 정식 카탈로그에는 `candidate` 상태의
-22개 장과 `draft` 상태의 Lab 18개가 있으며, 40개 단원 모두 한국어 경로가 있습니다.
-이 페이지의 모든 링크는 대응하는 한국어 콘텐츠를 가리키며 다른 언어로 이동하지 않습니다.
+이 문서는 한국어로 읽을 수 있는 입구를 모아 둔 안내입니다. 정식 카탈로그에는 `candidate` 상태의
+장 22개와 `draft` 상태의 Lab 18개가 있습니다. 22개 장과 18개 Lab, 총 40개 항목에는 한국어 파일과
+링크가 있지만, 새 기초 코어의 다섯 단원은 현재 기존 한국어 페이지를 가리키는
+`projected-existing-page` 입구입니다. 독립적으로 다시 번역한 한국어판이 완성되었다는 뜻은 아닙니다.
+이 페이지의 링크는 같은 언어의 파일을 가리키며 다른 언어로 조용히 이동하지 않습니다.
 
 ## 여기서 시작하세요
 
 1. [LLM 개념](guides/llm-fundamentals-KO.md).
-2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md).
+2. [첫 번째 LLM 작업](routes/universal-core-foundations-KO.md).
 3. [첫 번째 안전한 변경](routes/first-safe-change-KO.md).
 4. [3장: 막연한 요청을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
    → [Lab 002: 막연한 요청을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).

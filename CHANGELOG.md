@@ -14,6 +14,15 @@ Playbook is ready for public production use.
   they do not establish learner outcomes, translation fluency, deployment
   readiness, or a release.
 
+### Navigation and search consistency (2026-08-27)
+
+- Fixed the generated search index so each locale uses its own canonical chapter
+  title instead of inheriting the Simplified Chinese title. Aligned the Japanese
+  Chapter 3 title across its source, table of contents, Reader navigation, and
+  learning-path labels, and kept the Korean `작업면` term consistent in the
+  Korean table of contents. These are discoverability and copy fixes; they do
+  not establish translation fluency or learner outcomes.
+
 ### Validation reliability (2026-08-26)
 
 - Fixed Windows test discovery to run locale validators with UTF-8 output, and

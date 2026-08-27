@@ -12,11 +12,15 @@
 初めて読むときは、カード、Skill、製品から選ばないでください。まず日本語の主線をたどります。
 
 1. [LLM の基礎概念](book/guides/llm-fundamentals-JA.md)
-2. [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
+2. [LLM を使う最初の課題](book/routes/universal-core-foundations-JA.md)
 3. [最初の安全な変更](book/routes/first-safe-change-JA.md)
 
 英語の基礎コアが現在の正規ソースで、日本語版は再翻訳とレビューを待っています。
 その間、この入口は日本語のファイルだけで読める経路を維持します。
+新しい基礎コアの5ユニットへの日本語リンクは、ガバナンス上、既存の日本語ページを指す
+`projected-existing-page` として登録されています。これは日本語で読める入口があることを
+示すだけで、5ユニットの独立した日本語翻訳、英語正典との内容同等性、学習効果を示すものでは
+ありません。
 
 スペイン語、業務報告、リサーチ確認のカードは、この主線の後に行う**任意の応用練習**です。LLM を理解する最初の授業ではなく、効率、流暢さ、能力向上も約束しません。
 
@@ -114,7 +118,7 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 - [日本語版の書籍入口](book/README-JA.md)
 - [日本語版の序文](book/preface-JA.md)
 - [日本語版の目次](book/table-of-contents-JA.md)
-- [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
+- [LLM を使う最初の課題](book/routes/universal-core-foundations-JA.md)
 - [初心者の練習カード](book/communication-clinic-JA.md)：言語、更新、判断、出典確認、共有前の境界を試すための、すぐにコピーできる七つの短いメッセージです。`draft / not_run` の経路であり、流暢さ、効率、学習成果を約束しません。
 - [日本語の Lab 目次](book/labs/README-JA.md)：低リスクの十八件の練習を、日本語の `-JA` ファイルと経路で開けます。
 
