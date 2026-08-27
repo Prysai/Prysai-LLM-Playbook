@@ -11,11 +11,13 @@
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
+_Eight locale entry points are registered; translation review and learner evidence are still in progress._
 <!-- language-switcher:end -->
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
 
-[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md)
+Optional: [try the five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [read the full English guide](README-EN.md) · [open the Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
