@@ -225,7 +225,7 @@ connector, 진입면은 변동 사실입니다. 구체적인 제품 사실을 �
 <nav class="chapter-navigation" aria-label="장 내비게이션">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-KO.md" aria-label="이전 장: 3장 · 3장: 막연한 요구를 작업 프로토콜로 바꾸기">← 이전<br><strong>3장 · 3장: 막연한 요구를 작업 프로토콜로 바꾸기</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-KO.md" aria-label="이전 장: 3장 · 3장: 막연한 요청을 작업 프로토콜로 바꾸기">← 이전<br><strong>3장 · 3장: 막연한 요청을 작업 프로토콜로 바꾸기</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-KO.md" aria-label="다음 장: 5장 · 5장: 알맞은 Codex 작업면 선택하기">다음 →<br><strong>5장 · 5장: 알맞은 Codex 작업면 선택하기</strong></a></td>
     </tr>
   </table>

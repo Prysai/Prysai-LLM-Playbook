@@ -11,8 +11,8 @@
 1. [LLM 개념](guides/llm-fundamentals-KO.md).
 2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md).
 3. [첫 번째 안전한 변경](routes/first-safe-change-KO.md).
-4. [3장: 막연한 요구를 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
-   → [Lab 002: 막연한 요구를 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
+4. [3장: 막연한 요청을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
+   → [Lab 002: 막연한 요청을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
 5. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
     → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).
 6. [5장: 알맞은 Codex 작업면 선택하기](chapters/05-choose-the-codex-surface-KO.md)
@@ -31,7 +31,7 @@
 | --- | --- |
 | 01 — Codex를 이해하기 전에 GPT 이해하기 | [제공됨: 1장](chapters/01-gpt-and-codex-KO.md) · `candidate / in-progress` |
 | 02 — 첫 안전하고 검증 가능한 작업 완료하기 | [제공됨: 2장](chapters/02-first-safe-task-KO.md) · `candidate / in-progress` |
-| 03 — 막연한 요구를 작업 프로토콜로 바꾸기 | [제공됨: 3장](chapters/03-task-protocol-KO.md) · `candidate / in-progress` |
+| 03 — 막연한 요청을 작업 프로토콜로 바꾸기 | [제공됨: 3장](chapters/03-task-protocol-KO.md) · `candidate / in-progress` |
 | 04 — 컨텍스트, 권한, Agent 행동 경계 | [제공됨: 4장](chapters/04-context-permissions-and-agent-KO.md) · `candidate / in-progress` |
 | 05 — 알맞은 Codex 작업면 선택하기 | [제공됨: 5장](chapters/05-choose-the-codex-surface-KO.md) · `candidate / in-progress` |
 | 06 — 모델 선택은 모델 숭배가 아니다 | [제공됨: 6장](chapters/06-model-selection-KO.md) · `candidate / in-progress` |

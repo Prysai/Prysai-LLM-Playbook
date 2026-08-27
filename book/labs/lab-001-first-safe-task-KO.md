@@ -204,6 +204,6 @@ status: passed | failed | stopped
 <hr>
 <nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>
 <td align="left"></td>
-<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-KO.md" aria-label="다음 Lab: Lab 002 · 막연한 요구를 작업 프로토콜로 바꾸기">다음 →<br><strong>Lab 002 · 막연한 요구를 작업 프로토콜로 바꾸기</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-KO.md" aria-label="다음 Lab: Lab 002 · 막연한 요청을 작업 프로토콜로 바꾸기">다음 →<br><strong>Lab 002 · 막연한 요청을 작업 프로토콜로 바꾸기</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->
