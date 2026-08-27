@@ -6,14 +6,14 @@
 
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-> First understand what an LLM can and cannot support. Then practise one small
-> result, check it, and only afterwards choose a Codex or other platform track.
+> Learn what an LLM can and cannot establish, make one bounded request, inspect
+> the answer, and carry the method to a new task before choosing a platform.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. The repository is the auditable source, not the recommended first screen.
 
 [Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 

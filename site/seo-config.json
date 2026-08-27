@@ -8,50 +8,50 @@
     "html_lang": "en",
     "og_locale": "en_US",
     "title": "Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work",
-    "description": "Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work before choosing a platform-specific track."
+    "description": "Learn what LLMs can establish, write one bounded request, inspect the answer, and carry the method into a new task before choosing a platform track."
   },
   "static_locale_pages": {
     "zh": {
       "html_lang": "zh-CN",
       "og_locale": "zh_CN",
       "title": "Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作",
-      "description": "从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作，再进入具体平台实践。"
+      "description": "理解大语言模型能建立什么，写出一条有边界的请求，检查答案，并把方法迁移到新任务，再决定是否进入平台实践。"
     },
     "es": {
       "html_lang": "es",
       "og_locale": "es_ES",
       "title": "Prysai LLM Playbook — guía de LLM, prompts y trabajo fiable con IA",
-      "description": "Aprende qué son los LLM, escribe prompts más claros y convierte una primera tarea de IA en trabajo acotado y comprobable."
+      "description": "Aprende qué pueden establecer los LLM, redacta una petición acotada, comprueba la respuesta y aplica el método a una tarea nueva antes de elegir una plataforma."
     },
     "ja": {
       "html_lang": "ja",
       "og_locale": "ja_JP",
       "title": "Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用",
-      "description": "LLM とは何かを学び、より明確なプロンプトを書き、最初の AI タスクを境界が明確で確認可能な仕事に変えます。"
+      "description": "LLMが何を確かめられるかを知り、範囲を区切った依頼を書き、回答を確認し、新しい課題で方法を繰り返してからプラットフォームを選びます。"
     },
     "ko": {
       "html_lang": "ko",
       "og_locale": "ko_KR",
       "title": "Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업",
-      "description": "LLM이 무엇인지 배우고 더 명확한 프롬프트를 작성하며 첫 AI 과제를 경계가 분명하고 확인 가능한 작업으로 바꾸세요."
+      "description": "LLM이 무엇을 확인할 수 있는지 이해하고, 범위가 정해진 요청을 작성해 답변을 점검한 뒤 새 과제에 방법을 적용하고 플랫폼을 선택하세요."
     },
     "de": {
       "html_lang": "de",
       "og_locale": "de_DE",
       "title": "Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit",
-      "description": "Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit."
+      "description": "Lerne, was LLMs leisten können, formuliere eine begrenzte Anfrage, prüfe die Antwort und übertrage die Methode auf eine neue Aufgabe."
     },
     "zh-tw": {
       "html_lang": "zh-TW",
       "og_locale": "zh_TW",
       "title": "Prysai 大型語言模型實戰手冊：LLM 入門、提示詞與可靠的 AI 工作",
-      "description": "從理解大型語言模型開始，學會寫出更清楚的提示詞，並把第一次 AI 任務變成有邊界、可檢查的工作。"
+      "description": "理解大型語言模型能建立什麼，寫出一份有界線的請求，檢查回答，並把方法帶到新任務，再選擇平台路線。"
     },
     "fr": {
       "html_lang": "fr",
       "og_locale": "fr_FR",
       "title": "Prysai LLM Playbook — guide des LLM, prompts et travail fiable avec l’IA",
-      "description": "Comprenez les LLM, écrivez des prompts plus clairs et transformez une première tâche d’IA en travail délimité et vérifiable."
+      "description": "Découvrez ce que les LLM peuvent établir, formulez une demande délimitée, vérifiez la réponse et réutilisez la méthode sur une nouvelle tâche."
     }
   }
 }

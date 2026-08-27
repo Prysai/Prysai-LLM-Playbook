@@ -10,8 +10,8 @@ License: curriculum text and teaching assets are CC BY 4.0; scripts and
 tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE),
 [`LICENSE-CODE`](LICENSE-CODE), and the [licensing boundary](docs/sources/licensing.md).
 
-> First understand what an LLM can and cannot support. Then practise one small
-> result, check it, and only afterwards choose a Codex or other platform track.
+> Learn what an LLM can and cannot establish, make one bounded request, inspect
+> the answer, and carry the method to a new task before choosing a platform.
 
 ## A quick welcome
 
@@ -37,7 +37,7 @@ catalogue before beginning.
 2. [LLM concepts](book/guides/llm-fundamentals-EN.md)
 3. [First bounded request](book/routes/llm-core-first-generation-EN.md)
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. This repository remains the auditable source.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. This repository remains the auditable source.
 
 [Start the LLM foundation core](#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 

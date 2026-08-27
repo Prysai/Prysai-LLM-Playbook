@@ -1291,11 +1291,14 @@ try {
   await everydayPromptDeck.locator('#spanish-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   await everydayPromptButtons.nth(2).click();
   await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
+  const heroScope = page.locator('.hero-scope');
+  assert.equal(await heroScope.locator('.hero-scope-label').textContent(), 'You leave with', 'hero value label is missing');
   assert.match(
-    await page.locator('.hero-scope').innerText(),
-    /three working artifacts[\s\S]*bounded task card[\s\S]*checked result record[\s\S]*transfer attempt[\s\S]*targets, not measured outcomes/i,
-    'hero does not state the three learner artifacts or their unmeasured status',
+    await heroScope.locator('.hero-scope-items').innerText(),
+    /bounded task card[\s\S]*checked result record[\s\S]*transfer attempt/i,
+    'hero does not list the three learner artifacts',
   );
+  assert.equal(await heroScope.locator('.hero-scope-note').textContent(), 'Targets, not measured outcomes.', 'hero evidence boundary is missing');
   const lessonZeroLink = page.getByRole('link', { name: /LLM Foundation Core/i }).first();
   assert.match(
     await lessonZeroLink.getAttribute('href'),

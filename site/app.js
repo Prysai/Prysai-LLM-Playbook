@@ -1629,14 +1629,14 @@ Object.assign(copy.zh, {
 });
 
 const localePageMeta = {
-  en: { title: 'Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work', description: 'Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work. Codex is the flagship practice track.' },
-  zh: { title: 'Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作', description: '从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作。Codex 是旗舰实践路线。' },
-  es: { title: 'Prysai LLM Playbook — guía de LLM, prompts y trabajo fiable con IA', description: 'Aprende qué son los LLM, escribe prompts más claros y convierte una primera tarea de IA en trabajo acotado y comprobable.' },
-  ja: { title: 'Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用', description: 'LLM とは何かを学び、より明確なプロンプトを書き、最初の AI タスクを境界が明確で確認可能な仕事に変えます。' },
-  ko: { title: 'Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업', description: 'LLM이 무엇인지 배우고 더 명확한 프롬프트를 작성하며 첫 AI 과제를 경계가 분명하고 확인 가능한 작업으로 바꾸세요.' },
-  de: { title: 'Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit', description: 'Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit.' },
-  'zh-tw': { title: 'Prysai 大型語言模型實戰手冊：LLM 入門、提示詞與可靠 AI 工作', description: '從理解大型語言模型開始，學習寫清楚提示詞，並把第一次 AI 任務變成有邊界、可檢查的工作。' },
-  fr: { title: 'Prysai LLM Playbook — guide des LLM, prompts et travail fiable avec l’IA', description: 'Comprenez les LLM, écrivez des prompts plus clairs et transformez une première tâche d’IA en travail délimité et vérifiable.' },
+  en: { title: 'Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work', description: 'Learn what LLMs can establish, write one bounded request, inspect the answer, and carry the method into a new task before choosing a platform track.' },
+  zh: { title: 'Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作', description: '理解大语言模型能建立什么，写出一条有边界的请求，检查答案，并把方法迁移到新任务，再决定是否进入平台实践。' },
+  es: { title: 'Prysai LLM Playbook — guía de LLM, prompts y trabajo fiable con IA', description: 'Aprende qué pueden establecer los LLM, redacta una petición acotada, comprueba la respuesta y aplica el método a una tarea nueva antes de elegir una plataforma.' },
+  ja: { title: 'Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用', description: 'LLMが何を確かめられるかを知り、範囲を区切った依頼を書き、回答を確認し、新しい課題で方法を繰り返してからプラットフォームを選びます。' },
+  ko: { title: 'Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업', description: 'LLM이 무엇을 확인할 수 있는지 이해하고, 범위가 정해진 요청을 작성해 답변을 점검한 뒤 새 과제에 방법을 적용하고 플랫폼을 선택하세요.' },
+  de: { title: 'Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit', description: 'Lerne, was LLMs leisten können, formuliere eine begrenzte Anfrage, prüfe die Antwort und übertrage die Methode auf eine neue Aufgabe.' },
+  'zh-tw': { title: 'Prysai 大型語言模型實戰手冊：LLM 入門、提示詞與可靠 AI 工作', description: '理解大型語言模型能建立什麼，寫出一份有界線的請求，檢查回答，並把方法帶到新任務，再選擇平台路線。' },
+  fr: { title: 'Prysai LLM Playbook — guide des LLM, prompts et travail fiable avec l’IA', description: 'Découvrez ce que les LLM peuvent établir, formulez une demande délimitée, vérifiez la réponse et réutilisez la méthode sur une nouvelle tâche.' },
 };
 
 const seoBaseUrl = 'https://docs.prysai.com/llm-playbook/';
@@ -6994,6 +6994,58 @@ Object.assign(copy.ko, { navVisuals: '시각 안내서' });
 Object.assign(copy.de, { navVisuals: 'Visueller Leitfaden' });
 Object.assign(copy['zh-tw'], { navVisuals: '視覺導覽' });
 Object.assign(copy.fr, { navVisuals: 'Guide visuel' });
+
+// Keep the hero value statement scannable in every interface language. The
+// short item line and its evidence note are separate so mobile readers can
+// find the takeaway without parsing a dense paragraph.
+Object.assign(copy.en, {
+  heroScopeAria: 'Foundation route deliverables: a bounded task card, a checked result record, and one transfer attempt. These are targets, not measured outcomes.',
+  heroScopeLabel: 'You leave with',
+  heroScope: 'a bounded task card · a checked result record · one transfer attempt',
+  heroScopeNote: 'Targets, not measured outcomes.',
+});
+Object.assign(copy.zh, {
+  heroScopeAria: '基础核心课的预期产出：一张有边界的任务卡、一份结果检查记录和一次迁移尝试。这些是路线目标，不是已经测得的结果。',
+  heroScopeLabel: '你会带走',
+  heroScope: '一张有边界的任务卡 · 一份结果检查记录 · 一次迁移尝试',
+  heroScopeNote: '这是路线目标，不是已测结果。',
+});
+Object.assign(copy.es, {
+  heroScopeAria: 'Lo que busca dejarte el núcleo: una ficha de tarea acotada, un registro del resultado comprobado y un intento de transferencia. Son objetivos, no resultados medidos.',
+  heroScopeLabel: 'Te llevas',
+  heroScope: 'una ficha de tarea acotada · un registro del resultado comprobado · un intento de transferencia',
+  heroScopeNote: 'Objetivos de la ruta; no resultados medidos.',
+});
+Object.assign(copy.ja, {
+  heroScopeAria: '基礎ルートで残す成果物：範囲を区切ったタスクカード、確認済みの結果記録、新しい課題での試行。いずれも目標であり、測定済みの成果ではありません。',
+  heroScopeLabel: '残すもの',
+  heroScope: '範囲を区切ったタスクカード · 確認済みの結果記録 · 新しい課題での試行',
+  heroScopeNote: '目標であり、測定済みの成果ではありません。',
+});
+Object.assign(copy.ko, {
+  heroScopeAria: '기초 경로에서 남기도록 설계한 산출물: 범위가 정해진 작업 카드, 점검 결과 기록, 새 과제에 적용한 한 번의 시도. 이는 목표일 뿐 측정된 결과는 아닙니다.',
+  heroScopeLabel: '남기게 되는 것',
+  heroScope: '범위가 정해진 작업 카드 · 점검 결과 기록 · 새 과제에 방법을 적용한 한 번의 시도',
+  heroScopeNote: '경로의 목표이며 측정된 결과는 아닙니다.',
+});
+Object.assign(copy.de, {
+  heroScopeAria: 'Artefakte des Grundlagenpfads: eine begrenzte Aufgabenkarte, ein geprüftes Ergebnisprotokoll und ein Transfer-Versuch. Das sind Ziele, keine gemessenen Ergebnisse.',
+  heroScopeLabel: 'Du nimmst mit',
+  heroScope: 'eine begrenzte Aufgabenkarte · ein geprüftes Ergebnisprotokoll · ein Transfer-Versuch',
+  heroScopeNote: 'Ziele der Route, keine gemessenen Ergebnisse.',
+});
+Object.assign(copy['zh-tw'], {
+  heroScopeAria: '基礎路線預計留下的成果：一張有界線的任務卡、一份檢查過的結果紀錄，以及一次遷移嘗試。這些是路線目標，不是已測得的成果。',
+  heroScopeLabel: '你會帶走',
+  heroScope: '一張有界線的任務卡 · 一份檢查過的結果紀錄 · 一次遷移嘗試',
+  heroScopeNote: '這是路線目標，不是已測得的成果。',
+});
+Object.assign(copy.fr, {
+  heroScopeAria: 'Ce que le parcours fondamental doit laisser : une fiche de tâche délimitée, un relevé de résultat vérifié et un essai de transfert. Ce sont des objectifs, pas des résultats mesurés.',
+  heroScopeLabel: 'Vous repartez avec',
+  heroScope: 'une fiche de tâche délimitée · un relevé de résultat vérifié · un essai de transfert',
+  heroScopeNote: 'Des objectifs de parcours, pas des résultats mesurés.',
+});
 
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

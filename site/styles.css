@@ -98,7 +98,10 @@ button, input, select, textarea { font: inherit; }
 .eyebrow { margin: 0 0 1rem; color: var(--red); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .hero h1 { max-width: 780px; margin: 0 0 .85rem; font-size: clamp(3.5rem, 6vw, 6.25rem); font-weight: 700; letter-spacing: -.09em; line-height: .9; overflow-wrap: anywhere; }
 .hero-lede { max-width: 600px; margin: 0 0 .7rem; color: #4d4d4d; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.5; }
-.hero-scope { max-width: 600px; margin: 0 0 1rem; padding: .45rem 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); color: var(--ink); font-size: .72rem; font-weight: 700; line-height: 1.4; }
+.hero-scope { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; column-gap: .8rem; row-gap: .2rem; max-width: 600px; margin: 0 0 1rem; padding: .5rem 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); color: var(--ink); font-size: .72rem; font-weight: 700; line-height: 1.4; }
+.hero-scope-label { color: var(--red); font-size: .6rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.hero-scope-items { min-width: 0; }
+.hero-scope-note { grid-column: 2; color: var(--muted); font-size: .62rem; font-weight: 500; line-height: 1.35; }
 .hero-actions, .next-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 46px; padding: .8rem 1.05rem; border: 1px solid transparent; color: var(--ink); font-size: .78rem; font-weight: 700; transition: transform .2s ease, background .2s ease, color .2s ease; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
@@ -575,7 +578,10 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .hero-copy .eyebrow { margin-bottom: .8rem; }
   .hero h1 { margin-bottom: .7rem; font-size: clamp(2.5rem, 12.1vw, 3.5rem); line-height: .93; }
   .hero-lede { margin-bottom: 1rem; line-height: 1.45; }
-  .hero-scope { margin-bottom: .8rem; padding-block: .35rem; }
+  .hero-scope { display: block; margin-bottom: .8rem; padding-block: .4rem; }
+  .hero-scope-label, .hero-scope-items { display: inline; }
+  .hero-scope-label { margin-right: .45rem; }
+  .hero-scope-note { display: block; margin-top: .2rem; }
   .hero-route-decision { margin-top: 1rem; }
   .hero-route-option small, .hero-route-continuation-list small { display: none; }
   .hero-route-option, .hero-route-option:first-child, .hero-route-option:last-child { padding-block: .7rem; }
