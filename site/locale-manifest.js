@@ -271,7 +271,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [],
-          "title": "Lab 018: 初心者向け学習調整会話の入力練習で保持と転移を試す"
+          "title": "Lab 018: 初心者向けの学習調整会話を使った入力練習で、保持と転移を試す"
         },
         "ko": {
           "path": "book/labs/lab-018-language-transfer-KO.md",

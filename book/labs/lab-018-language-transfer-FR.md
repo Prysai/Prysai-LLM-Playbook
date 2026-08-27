@@ -14,6 +14,7 @@ evidence:
 failure_variant: "Demander au modèle de déclarer une maîtrise après un seul échange"
 reflection: "Quel élément a résisté au changement de contexte ?"
 status: draft
+run_status: not_run
 last_verified: "not run"
 transfer_task: "Réaliser après un délai annoncé une tâche nouvelle avec vocabulaire et ambiguïté changés"
 transfer_domain: "apprentissage débutant et coordination de projet"

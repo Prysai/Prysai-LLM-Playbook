@@ -117,7 +117,9 @@ next_safe_action: "입력 파일 요청"
 
 ### 준비
 
-`input.txt`가 있는 local disposable directory를 준비합니다. read와 write는 그곳에서만 하고 credential, install, network, publish, delete를 사용하지 않습니다. model이 action을 제안하기 전에 goal, path boundary, acceptance, 한 번의 retry budget을 적습니다.
+`input.txt`가 있는 로컬의 일회용 디렉터리를 준비합니다. 그곳에서만 읽고 쓰며,
+자격 증명·설치·네트워크·게시·삭제는 사용하지 않습니다. 모델이 작업을 제안하기 전에
+목표, 경로 경계, 수용 조건, 한 번의 재시도 예산을 적습니다.
 
 ### 작업
 
