@@ -15,7 +15,7 @@
 2. [通用 LLM 第一次練習](routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](routes/first-safe-change-ZHTW.md)
 
-英文 Foundation Core 是規範源，繁體中文重譯完成並透過獨立審校前不在繁體中文主線中偽裝成已驗證。
+英文 Foundation Core 是規範來源。在繁體中文重譯完成並通過獨立審校前，不把它當作繁體中文主線中已完成的內容。
 提示卡、語言練習、工作更新和研究核查是主線之後的**可選應用練習**，不替代 LLM 基礎課。
 
 ## 先認識幾個常用詞

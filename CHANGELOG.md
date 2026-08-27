@@ -6,6 +6,14 @@ Playbook is ready for public production use.
 
 ## Unreleased
 
+### README and localized entry copy (2026-08-27)
+
+- Clarified that the 26 Skills are tracked candidate records rather than all
+  being project-owned, removed a repeated safe-change entry from the Chinese
+  table of contents, and polished the Simplified and Traditional Chinese
+  status wording. Updated the registry count check and its regression fixture
+  to recognize the clarified README wording.
+
 ### README and entry-point clarity (2026-08-27)
 
 - Refreshed the GitHub front door with a short, dated explanation of the

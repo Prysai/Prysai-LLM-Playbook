@@ -20,7 +20,7 @@ ROUTING_PATH = Path("docs/governance/skill-routing-contract.yaml")
 ROUTING_MATRIX_PATH = Path("docs/quality/skill-routing-matrix.md")
 FRONTDOOR_SKILL_COUNT_PATTERNS = {
     "README.md": re.compile(
-        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project-owned\s+`candidate`\s+Skills\b"
+        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+[^|]*`candidate`\s+Skills\b"
     ),
     "README-EN.md": re.compile(
         r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project\s+Skills\s+·\s+`candidate`(?:\s+\([^|]*\))?\s*\|"

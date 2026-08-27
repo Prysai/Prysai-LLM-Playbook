@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import re
 
 import validate_skill_registry as registry
 
@@ -30,10 +31,11 @@ def main() -> int:
         for path in registry.FRONTDOOR_SKILL_COUNT_PATTERNS
     }
     stale_frontdoor = dict(frontdoor_documents)
-    stale_frontdoor["README.md"] = stale_frontdoor["README.md"].replace(
-        f"{skill_count} project-owned `candidate` Skills",
-        f"{stale_count} project-owned `candidate` Skills",
-        1,
+    stale_frontdoor["README.md"] = re.sub(
+        rf"(?m)^(\|\s*Skills\s*\|\s*){skill_count}(?=\s)",
+        rf"\g<1>{stale_count}",
+        stale_frontdoor["README.md"],
+        count=1,
     )
     if not any(
         f"README.md: project Skill count must be {skill_count}, not {stale_count}" in error
