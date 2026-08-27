@@ -1,0 +1,33 @@
+schema_version: 1
+updated: 2026-08-26
+purpose: Keep visual-language coverage explicit; an absent SVG variant is never treated as translated.
+locales:
+  - en
+  - zh
+  - es
+  - ja
+  - ko
+  - de
+  - zh-tw
+  - fr
+source:
+  directory: assets/teaching
+  status: source
+localized:
+  status: localized
+  directory_pattern: assets/teaching/locales/{locale}/{asset}
+  assets:
+    - llm-six-terms-to-one-check.svg
+    - foundation-first-visit-route-red-black.svg
+    - llm-foundation-core-path-red-black.svg
+    - playbook-learning-journey-red-black.svg
+    - reader-page-reading-loop-red-black.svg
+    - first-task-evidence-bridge-red-black.svg
+    - recovery-decision-tree-red-black.svg
+    - skill-trigger-boundary-decision-map.svg
+  locale_variants: 7
+fallback:
+  status: english-fallback
+  asset_count: 36
+  rule: Every source SVG not listed under localized is served from assets/teaching/{asset} for non-English locales.
+  user_notice: The visual viewer labels this state; surrounding localized text remains the explanation baseline.

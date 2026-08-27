@@ -79,7 +79,26 @@ def main() -> int:
         errors = assets.validate(teaching, catalog, register, site_index)
         require(any("mobile teaching-board count 16 does not match 1" in error for error in errors), "stale mobile count was accepted")
 
-    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=5")
+        matrix_root = root / "matrix"
+        teaching, catalog, register, site_index = write_fixture(
+            matrix_root,
+            catalog="- [Card](card.svg)\n",
+            register="| S1 | `assets/teaching/card.svg` | original |\n",
+        )
+        for locale in assets.EXPECTED_VISUAL_LOCALES[1:]:
+            variant_dir = teaching / "locales" / locale
+            variant_dir.mkdir(parents=True)
+            (variant_dir / "card.svg").write_text(SVG, encoding="utf-8")
+        matrix = matrix_root / "docs" / "governance" / "visual-locale-matrix.yaml"
+        matrix.parent.mkdir(parents=True)
+        matrix.write_text(
+            """locales:\n  - en\n  - zh\n  - es\n  - ja\n  - ko\n  - de\n  - zh-tw\n  - fr\nlocalized:\n  assets:\n    - card.svg\n  locale_variants: 7\nfallback:\n  asset_count: 0\n""",
+            encoding="utf-8",
+        )
+        errors = assets.validate(teaching, catalog, register, site_index, matrix)
+        require(not errors, f"valid visual locale matrix was rejected: {errors}")
+
+    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=6")
     return 0
 
 

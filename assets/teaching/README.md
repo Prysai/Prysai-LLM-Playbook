@@ -54,6 +54,19 @@ The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
 [asset register](../../docs/sources/asset-register.md).
 
+## Language variants
+
+Eight high-frequency cards have reviewed SVG variants for `zh`, `es`, `ja`,
+`ko`, `de`, `zh-tw`, and `fr` under `locales/<locale>/`. The site resolves
+these files from the selected language while preserving the original English
+source for `en`. The remaining 36 cards intentionally use an explicit English
+fallback until their embedded text is reviewed; the complete machine-readable
+matrix is [`docs/governance/visual-locale-matrix.yaml`](../../docs/governance/visual-locale-matrix.yaml).
+
+Run `python scripts/build_localized_visual_assets.py` to regenerate the
+reviewed variants. The generator keeps each source `viewBox` and `<text>` node
+count stable and rejects empty or unchanged non-technical English strings.
+
 Dense boards belong in full-width reader material. A card preview must retain
 one legible thesis and one clear action at its rendered size; otherwise link to
 the full board instead of shrinking the whole lesson into a thumbnail.
