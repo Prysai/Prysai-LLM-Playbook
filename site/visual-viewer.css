@@ -161,6 +161,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .viewer-figure figcaption { max-width: 55rem; color: var(--viewer-muted); font-size: .8rem; text-align: center; }
 
+.viewer-asset-status {
+  margin: 0;
+  padding: .7rem 1rem;
+  color: var(--viewer-ink);
+  background: #fff4d6;
+  font-size: .78rem;
+}
+
+.viewer-asset-status[data-visual-locale-status="localized"] {
+  color: #14532d;
+  background: #e5f5e9;
+}
+
 .viewer-boundary { margin: 0; padding: .9rem 1rem; color: #d7d7d2; background: var(--viewer-ink); font-size: .8rem; }
 
 .viewer-error { padding: 2rem; border: 2px solid var(--viewer-red); background: var(--viewer-white); }
