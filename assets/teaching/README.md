@@ -60,8 +60,10 @@ Eight high-frequency cards have reviewed SVG variants for `zh`, `es`, `ja`,
 `ko`, `de`, `zh-tw`, and `fr` under `locales/<locale>/`. The site resolves
 these files from the selected language while preserving the original English
 source for `en`. The remaining 36 cards intentionally use an explicit English
-fallback until their embedded text is reviewed; the complete machine-readable
-matrix is [`docs/governance/visual-locale-matrix.yaml`](../../docs/governance/visual-locale-matrix.yaml).
+fallback until their embedded text is reviewed. The homepage, Reader, Visual
+Guide, and full-size viewer disclose that fallback beside the image. The
+complete machine-readable matrix is
+[`docs/governance/visual-locale-matrix.yaml`](../../docs/governance/visual-locale-matrix.yaml).
 
 Run `python scripts/build_localized_visual_assets.py` to regenerate the
 reviewed variants. The generator keeps each source `viewBox` and `<text>` node

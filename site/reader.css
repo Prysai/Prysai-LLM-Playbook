@@ -211,6 +211,18 @@ a:hover { color: var(--reader-link-hover); }
   font-weight: 700;
 }
 
+.reader-image-link .visual-locale-note {
+  display: block;
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid var(--reader-line);
+  color: var(--reader-muted);
+  font-size: .7rem;
+  line-height: 1.45;
+}
+
+.visual-locale-note[hidden] { display: none; }
+
 .reader-inline-visual figcaption {
   margin-top: 10px;
   color: var(--reader-ink);

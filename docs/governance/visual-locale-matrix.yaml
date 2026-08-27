@@ -30,4 +30,4 @@ fallback:
   status: english-fallback
   asset_count: 36
   rule: Every source SVG not listed under localized is served from assets/teaching/{asset} for non-English locales.
-  user_notice: The visual viewer labels this state; surrounding localized text remains the explanation baseline.
+  user_notice: The homepage, Reader, Visual Guide, and visual viewer label this state; surrounding localized text remains the explanation baseline.

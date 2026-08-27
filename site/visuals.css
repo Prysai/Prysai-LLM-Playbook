@@ -1062,6 +1062,8 @@ button, select { font: inherit; }
 .visual-card:hover, .visual-card:focus-within { background: #fffafb; }
 .visual-card-link { display: grid; gap: .55rem; color: inherit; text-decoration: none; }
 .visual-card-link img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; border: 1px solid var(--visual-line); background: var(--visual-paper); }
+.visual-locale-note { display: block; margin-top: .1rem; padding-top: .45rem; border-top: 1px solid var(--visual-line); color: var(--visual-muted); font-size: .66rem; line-height: 1.4; }
+.visual-locale-note[hidden] { display: none; }
 .visual-card-link:hover img, .visual-card-link:focus-visible img { border-color: var(--visual-red); }
 .visual-card-stage { color: var(--visual-red); font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .visual-card h3 { margin: 0; font-size: 1.05rem; line-height: 1.12; letter-spacing: -.02em; }

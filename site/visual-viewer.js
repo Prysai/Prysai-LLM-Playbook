@@ -82,9 +82,9 @@
     }
     if (assetStatus && ASSETS.has(asset)) {
       const languageName = document.querySelector(`#viewer-language option[value="${CSS.escape(locale)}"]`)?.textContent || locale;
-      assetStatus.textContent = visual.localized
-        ? copy.localizedStatus
-        : copy.fallbackStatus.replace('{language}', languageName);
+      assetStatus.textContent = visual.status === 'english-fallback'
+        ? copy.fallbackStatus.replace('{language}', languageName)
+        : copy.localizedStatus;
       assetStatus.dataset.visualLocaleStatus = visual.status;
     }
     if (title && ASSETS.has(asset)) title.textContent = label || copy.eyebrow;

@@ -1260,6 +1260,9 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   const strings = currentCopy();
   const metadata = localeManifest.locales[currentLanguage] || localeManifest.locales.en;
   document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';
+  // Resolve every teaching image from the selected locale. Missing variants
+  // intentionally remain marked as english-fallback by the shared resolver.
+  window.PRYSAI_VISUAL_ASSETS?.applyAll(document, currentLanguage);
   updateSeoMetadata(effectiveUiLanguage);
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const value = strings[element.dataset.i18n];

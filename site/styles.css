@@ -932,6 +932,8 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .foundation-visual-card:hover, .foundation-visual-card:focus-visible { background: #fffafb; }
 .foundation-visual-card img { display: block; width: 100%; aspect-ratio: 9 / 14; object-fit: contain; border: 1px solid var(--line); background: #f6f6f2; }
 .foundation-visual-card span { display: grid; gap: .45rem; min-width: 0; }
+.foundation-visual-card .visual-locale-note { display: block; grid-column: 1 / -1; margin-top: .2rem; padding-top: .45rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .64rem; line-height: 1.4; }
+.visual-locale-note[hidden] { display: none; }
 .foundation-visual-card strong { font-size: .85rem; line-height: 1.2; }
 .foundation-visual-card small { color: var(--muted); font-size: .7rem; line-height: 1.5; }
 .foundation-visual-card b { align-self: end; color: var(--red); font-size: 1rem; }

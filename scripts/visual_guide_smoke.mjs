@@ -17,6 +17,15 @@ const temporaryRoot = await mkdtemp(path.join(tmpdir(), 'prysai-visual-guide-'))
 const artifact = path.join(temporaryRoot, '_site');
 const python = process.env.PYTHON || 'python';
 const locales = ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw', 'fr'];
+const localizedVisualAssets = new Set([
+  'llm-six-terms-to-one-check.svg', 'foundation-first-visit-route-red-black.svg',
+  'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
+  'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
+  'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+]);
+const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
+  ? `../assets/teaching/locales/${locale}/${asset}`
+  : `../assets/teaching/${asset}`;
 const expectedHero = {
   en: 'See the method before you read the detail.',
   zh: '先看懂方法，再读具体内容。',
@@ -126,6 +135,19 @@ try {
     assert.equal((await skillBoundaryCard.locator('h3').textContent() || '').trim(), expectedSkillBoundaryCard[locale], `${locale} Skill boundary card title is not localized`);
     assert.notEqual((await skillBoundaryCard.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Skill boundary card has no alternative text`);
     assert.notEqual((await skillBoundaryCard.locator('p').textContent() || '').trim(), '', `${locale} Skill boundary card has no localized explanation`);
+    const capabilityLocaleState = await page.locator('[data-visual-capability-image]').evaluate((image) => {
+      const note = image.closest('a')?.querySelector('.visual-locale-note');
+      return { status: image.dataset.visualLocaleStatus, note: note?.textContent || '', hidden: note?.hidden ?? true };
+    });
+    assert.equal(capabilityLocaleState.status, locale === 'en' ? 'source' : 'english-fallback', `${locale} fallback visual status is not explicit`);
+    assert.equal(capabilityLocaleState.hidden, locale === 'en', `${locale} fallback note visibility is incorrect`);
+    if (locale !== 'en') assert.notEqual(capabilityLocaleState.note.trim(), '', `${locale} fallback visual has no localized disclosure`);
+    const goalLocaleState = await page.locator('[data-visual-goal-image]').evaluate((image) => ({
+      status: image.dataset.visualLocaleStatus,
+      note: image.closest('a')?.querySelector('.visual-locale-note')?.hidden ?? true,
+    }));
+    assert.equal(goalLocaleState.status, locale === 'en' ? 'source' : 'localized', `${locale} localized visual status changed`);
+    assert.equal(goalLocaleState.note, true, `${locale} localized visual unexpectedly shows fallback disclosure`);
     await page.locator('[data-visual-maturity-nodes] button').last().click();
     assert.equal(await page.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} maturity selection is not exposed`);
     assert.match(await page.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} maturity route lost its locale`);
@@ -143,6 +165,14 @@ try {
   await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
   const routeVisualHref = await page.locator('[data-visual-goal-image-link]').getAttribute('href');
   assert.match(routeVisualHref || '', /^visual\.html\?asset=[^&]+&lang=fr(?:&label=|$)/, 'visual guide goal board does not use the localized responsive viewer');
+  // Switching more than once must keep the original asset name. A localized
+  // path is an implementation detail, not a new asset identifier.
+  await page.locator('#visual-language').selectOption('zh');
+  assert.equal(await page.locator('[data-visual-goal-image]').getAttribute('src'), visualSrc('zh', 'foundation-first-visit-route-red-black.svg'), 'visual guide lost the Chinese board after the first language switch');
+  await page.locator('#visual-language').selectOption('de');
+  assert.equal(await page.locator('[data-visual-goal-image]').getAttribute('src'), visualSrc('de', 'foundation-first-visit-route-red-black.svg'), 'visual guide lost the German board after a second language switch');
+  await page.locator('#visual-language').selectOption('fr');
+  assert.equal(await page.locator('[data-visual-goal-image]').getAttribute('src'), visualSrc('fr', 'foundation-first-visit-route-red-black.svg'), 'visual guide did not restore the French board after repeated switching');
   await page.goto(`${origin}/site/visual.html?asset=prompt-contract-six-fields-red-black.svg&lang=fr&label=Contrat%20de%20prompt`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('[data-viewer-title]').innerText(), 'Contrat de prompt', 'viewer did not preserve the localized board label');
   assert.equal(await page.locator('[data-viewer-error]').isHidden(), true, 'viewer rejected an approved teaching board');

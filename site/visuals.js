@@ -1616,6 +1616,9 @@
     renderReceiptMap();
     renderGallery();
     renderBoardExplorer();
+    // Dynamic gallery/explorer cards are created after setText's first pass;
+    // apply the same locale-status disclosure to those new images as well.
+    window.PRYSAI_VISUAL_ASSETS?.applyAll(document, locale);
     if (updateUrl) {
       const nextUrl = new URL(window.location.href);
       nextUrl.searchParams.set('lang', locale);
@@ -1640,4 +1643,5 @@
   renderReceiptMap();
   renderGallery();
   renderBoardExplorer();
+  window.PRYSAI_VISUAL_ASSETS?.applyAll(document, locale);
 })();

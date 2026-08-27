@@ -29,6 +29,8 @@
 
 **新增资产记录 S154：** `assets/teaching/locales/{zh,es,ja,ko,de,zh-tw,fr}/` 与 `site/visual-assets.js`、`scripts/build_localized_visual_assets.py`、`docs/governance/visual-locale-matrix.yaml` 的 2026-08-26 更新，为八张高频原创教学图提供七种经审校的嵌入式文字变体，并在首页、Reader、Visual Guide 和单图查看器中按语言解析。变体只改写项目自有 SVG 的 `<title>`、`<desc>` 与可见 `<text>`，保持 `viewBox`、文字节点数量和技术标识稳定；没有引入外部图片、字体、图标、脚本、文案或远程请求。其余 36 张图仍登记为 `english-fallback`，网站会明确显示该状态，不把英文回退称为翻译完成。
 
+**新增页面记录 S155：** `site/visual-assets.js`、`site/styles.css`、`site/reader.css`、`site/visuals.css` 与相关浏览器检查的 2026-08-26 更新，把 `english-fallback` 状态显示在首页、Reader 和 Visual Guide 的图像旁边，并让语言切换后提示同步隐藏或更新。该提示只披露图中文字仍为英文，不声称图片已翻译；已审校的本地化图和英文源图不会显示回退提示。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

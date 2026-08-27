@@ -33,6 +33,15 @@ const visualEvidenceDirectory = path.join(root, 'output', 'playwright');
 const contentStatus = JSON.parse(await fs.readFile(path.join(root, 'docs', 'governance', 'content-status.yaml'), 'utf8'));
 const governedSkillCount = contentStatus?.skills?.count;
 assert.equal(Number.isInteger(governedSkillCount) && governedSkillCount > 0, true, 'content-status does not provide a positive Skill inventory count');
+const localizedVisualAssets = new Set([
+  'llm-six-terms-to-one-check.svg', 'foundation-first-visit-route-red-black.svg',
+  'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
+  'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
+  'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+]);
+const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
+  ? `../assets/teaching/locales/${locale}/${asset}`
+  : `../assets/teaching/${asset}`;
 const bundledPython = path.join(
   os.homedir(),
   '.cache',
@@ -643,19 +652,26 @@ try {
     assert.deepEqual(
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('src'))),
       [
-        '../assets/teaching/foundation-first-visit-route-red-black.svg',
-        '../assets/teaching/first-task-evidence-bridge-red-black.svg',
-        '../assets/teaching/first-attempt-evidence-receipt-red-black.svg',
-        '../assets/teaching/foundation-route-map-red-black.svg',
-        '../assets/teaching/prompt-contract-six-fields-red-black.svg',
-        '../assets/teaching/observable-action-boundary-red-black.svg',
-        '../assets/teaching/evidence-recovery-ladder.svg',
-        '../assets/teaching/source-check-before-belief-red-black.svg',
-        '../assets/teaching/claim-to-evidence-audit-red-black.svg',
-        '../assets/teaching/evidence-to-decision-stop-map-red-black.svg',
-      ],
+        'foundation-first-visit-route-red-black.svg',
+        'first-task-evidence-bridge-red-black.svg',
+        'first-attempt-evidence-receipt-red-black.svg',
+        'foundation-route-map-red-black.svg',
+        'prompt-contract-six-fields-red-black.svg',
+        'observable-action-boundary-red-black.svg',
+        'evidence-recovery-ladder.svg',
+        'source-check-before-belief-red-black.svg',
+        'claim-to-evidence-audit-red-black.svg',
+        'evidence-to-decision-stop-map-red-black.svg',
+      ].map((asset) => visualSrc(locale, asset)),
       `${locale} foundation visual assets changed unexpectedly`,
     );
+    const visualLocaleStates = await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => ({
+      status: image.dataset.visualLocaleStatus,
+      note: image.closest('a')?.querySelector('.visual-locale-note')?.textContent || '',
+    })));
+    assert.equal(visualLocaleStates[0].status, locale === 'en' ? 'source' : 'localized', `${locale} localized foundation board status changed`);
+    assert.equal(visualLocaleStates[3].status, locale === 'en' ? 'source' : 'english-fallback', `${locale} fallback foundation board status changed`);
+    if (locale !== 'en') assert.notEqual(visualLocaleStates[3].note.trim(), '', `${locale} fallback foundation board has no disclosure`);
     assert.deepEqual(
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('alt'))),
       {

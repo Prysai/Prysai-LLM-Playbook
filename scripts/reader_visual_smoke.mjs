@@ -27,6 +27,15 @@ const locales = [
   ['fr', 'FR', 'Lab 003 : Auditer une affirmation de fin', 'Garder un essai assez petit pour être vérifiable'],
 ];
 const documentLanguages = { zh: 'zh-CN', 'zh-tw': 'zh-TW' };
+const localizedVisualAssets = new Set([
+  'llm-six-terms-to-one-check.svg', 'foundation-first-visit-route-red-black.svg',
+  'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
+  'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
+  'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+]);
+const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
+  ? `../assets/teaching/locales/${locale}/${asset}`
+  : `../assets/teaching/${asset}`;
 const researchLocales = [
   ['en', 'EN'],
   ['zh', 'ZH'],
@@ -134,6 +143,15 @@ try {
     const related = page.locator('[data-reader-related-visuals]');
     assert.equal(await related.isVisible(), true, `${locale} Chapter 15 related visuals are not discoverable`);
     assert.equal(await related.locator('.reader-related-visual-card').count(), 2, `${locale} Chapter 15 related visual sequence changed`);
+    const inlineVisual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await inlineVisual.count(), 1, `${locale} Chapter 15 is missing its primary teaching visual`);
+    const fallbackState = await inlineVisual.locator('img').evaluate((image) => {
+      const note = image.closest('a')?.querySelector('.visual-locale-note');
+      return { status: image.dataset.visualLocaleStatus, note: note?.textContent || '', hidden: note?.hidden ?? true };
+    });
+    assert.equal(fallbackState.status, locale === 'en' ? 'source' : 'english-fallback', `${locale} Chapter 15 fallback visual status is not explicit`);
+    assert.equal(fallbackState.hidden, locale === 'en', `${locale} Chapter 15 fallback disclosure visibility is incorrect`);
+    if (locale !== 'en') assert.notEqual(fallbackState.note.trim(), '', `${locale} Chapter 15 fallback visual has no localized disclosure`);
     const maturityCard = related.locator('img[src*="evidence-maturity-ladder-red-black.svg"]');
     assert.equal(await maturityCard.count(), 1, `${locale} Chapter 15 is missing the evidence maturity ladder`);
     assert.notEqual((await maturityCard.getAttribute('alt') || '').trim(), '', `${locale} evidence maturity ladder has no localized alternative text`);
@@ -151,7 +169,7 @@ try {
     assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /first-task-evidence-bridge-red-black\.svg$/, `${locale} Lab 001 selected the wrong teaching visual`);
     assert.equal((await visual.locator('.reader-visual-thesis').innerText()).includes(thesis), true, `${locale} Lab 001 visual thesis is not localized`);
     assert.notEqual((await visual.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Lab 001 visual has no alternative text`);
-    assert.match(await visual.locator('img').getAttribute('src') || '', /assets\/teaching\/first-task-evidence-bridge-red-black\.svg$/, `${locale} Lab 001 visual asset is missing`);
+    assert.equal(await visual.locator('img').getAttribute('src'), visualSrc(locale, 'first-task-evidence-bridge-red-black.svg'), `${locale} Lab 001 visual asset is not resolved for the selected language`);
     assert.notEqual((await visual.locator('.reader-visual-explanation li').textContent() || '').trim(), '', `${locale} Lab 001 visual has no text explanation`);
     assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Lab 001 visual has no evidence boundary`);
     await noHorizontalOverflow(`${locale} Lab 001 Reader`);
@@ -165,7 +183,7 @@ try {
     assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /skill-trigger-boundary-decision-map\.svg$/, `${locale} Chapter 11 selected the wrong teaching visual`);
     assert.equal((await visual.locator('.reader-visual-thesis').innerText()).includes(thesis), true, `${locale} Chapter 11 Skill boundary thesis is not localized`);
     assert.notEqual((await visual.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Chapter 11 Skill boundary visual has no alternative text`);
-    assert.match(await visual.locator('img').getAttribute('src') || '', /assets\/teaching\/skill-trigger-boundary-decision-map\.svg$/, `${locale} Chapter 11 Skill boundary asset is missing`);
+    assert.equal(await visual.locator('img').getAttribute('src'), visualSrc(locale, 'skill-trigger-boundary-decision-map.svg'), `${locale} Chapter 11 Skill boundary asset is not resolved for the selected language`);
     assert.notEqual((await visual.locator('.reader-visual-explanation li').textContent() || '').trim(), '', `${locale} Chapter 11 Skill boundary visual has no text explanation`);
     assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Chapter 11 Skill boundary visual has no evidence boundary`);
     const related = page.locator('[data-reader-related-visuals]');

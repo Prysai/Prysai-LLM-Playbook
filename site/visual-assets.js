@@ -14,12 +14,25 @@
     'recovery-decision-tree-red-black.svg',
     'skill-trigger-boundary-decision-map.svg',
   ]);
+  const FALLBACK_NOTES = Object.freeze({
+    en: '',
+    zh: '图内文字暂为英文；旁边的本地化说明是当前语言版本。',
+    es: 'El texto de la imagen está en inglés; la explicación de al lado está en el idioma elegido.',
+    ja: '図中の文字は英語です。横の説明は選択した言語で読めます。',
+    ko: '그림 속 글자는 영어입니다. 옆 설명은 선택한 언어로 제공됩니다.',
+    de: 'Der Text im Bild ist Englisch; die Erklärung daneben ist in der gewählten Sprache.',
+    'zh-tw': '圖中文字目前為英文；旁邊的說明使用目前選擇的語言。',
+    fr: 'Le texte de l’image est en anglais ; l’explication voisine utilise la langue choisie.',
+  });
   const ASSET_MARKER = 'assets/teaching/';
 
   function normalizeAsset(value) {
     const normalized = String(value || '').replace(/^\.\.\//, '');
     if (!normalized.startsWith(ASSET_MARKER)) return '';
-    const asset = normalized.slice(ASSET_MARKER.length).split(/[?#]/, 1)[0];
+    const assetPath = normalized.slice(ASSET_MARKER.length).split(/[?#]/, 1)[0];
+    // Accept both source paths and already-resolved locale paths so repeated
+    // applyAll() calls never collapse an image to the directory itself.
+    const asset = assetPath.split('/').pop() || '';
     return /^[a-z0-9][a-z0-9._-]*\.svg$/i.test(asset) ? asset : '';
   }
 
@@ -36,12 +49,32 @@
       path: relative,
       sourcePath: `../assets/teaching/${asset}`,
       localized,
-      status: localized ? 'localized' : 'english-fallback',
+      status: selectedLocale === 'en' ? 'source' : localized ? 'localized' : 'english-fallback',
     };
   }
 
   function path(value, locale = 'en') {
     return resolve(value, locale).path;
+  }
+
+  function syncFallbackNote(image, result) {
+    // The full viewer already has a dedicated status paragraph. Inline cards
+    // need the same disclosure without duplicating that viewer message.
+    if (!image || image.matches('[data-viewer-image]')) return;
+    const host = image.closest('a[href*="assets/teaching/"]') || image.parentElement;
+    if (!host) return;
+    let note = Array.from(host.children).find((child) => child.classList?.contains('visual-locale-note'));
+    if (!note && result.status !== 'english-fallback') return;
+    if (!note) {
+      note = document.createElement('span');
+      note.className = 'visual-locale-note';
+      note.setAttribute('data-visual-locale-note', 'true');
+      host.append(note);
+    }
+    const text = result.status === 'english-fallback' ? (FALLBACK_NOTES[result.locale] || FALLBACK_NOTES.en) : '';
+    note.textContent = text;
+    note.hidden = !text;
+    note.dataset.visualLocaleStatus = result.status;
   }
 
   function apply(image, value, locale, link = null) {
@@ -51,6 +84,7 @@
     image.dataset.visualAsset = result.asset;
     image.dataset.visualLocale = result.locale;
     image.dataset.visualLocaleStatus = result.status;
+    syncFallbackNote(image, result);
     if (link) {
       link.href = result.path;
       link.dataset.visualLocaleStatus = result.status;
@@ -90,5 +124,6 @@
     path,
     apply,
     applyAll,
+    fallbackNotes: Object.freeze({ ...FALLBACK_NOTES }),
   });
 })();

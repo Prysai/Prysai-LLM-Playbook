@@ -169,7 +169,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-size: .78rem;
 }
 
-.viewer-asset-status[data-visual-locale-status="localized"] {
+.viewer-asset-status[data-visual-locale-status="localized"],
+.viewer-asset-status[data-visual-locale-status="source"] {
   color: #14532d;
   background: #e5f5e9;
 }
