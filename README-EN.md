@@ -529,7 +529,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-21**. Counts describe the
+This is a transparent snapshot as of **2026-08-27**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |

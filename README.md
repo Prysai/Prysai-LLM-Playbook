@@ -30,6 +30,14 @@ is the detailed source. The project remains `candidate`: its structure and
 static checks exist, while learner runs, transfer runs, repeated evaluations,
 and independent review are still pending.
 
+**What changed recently:** the default entry now leads with the five-unit LLM
+foundation route, the public site exposes the same route with a no-setup
+example and an interactive evidence map, and the eight locale paths keep their
+language choice visible when a translation or review is still pending. These
+are documentation and navigation improvements; they do not change the
+project's `candidate` evidence status. See the [candidate changelog](CHANGELOG.md)
+for the dated record.
+
 ## Why this project is useful
 
 Instead of beginning with a product, a prompt collection, or a feature list,

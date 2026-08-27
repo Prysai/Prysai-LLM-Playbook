@@ -6,6 +6,14 @@ Playbook is ready for public production use.
 
 ## Unreleased
 
+### README and entry-point clarity (2026-08-27)
+
+- Refreshed the GitHub front door with a short, dated explanation of the
+  foundation-first route, the public visual evidence map, and the explicit
+  eight-locale status boundary. These changes improve discovery and navigation;
+  they do not establish learner outcomes, translation fluency, deployment
+  readiness, or a release.
+
 ### Validation reliability (2026-08-26)
 
 - Fixed Windows test discovery to run locale validators with UTF-8 output, and
