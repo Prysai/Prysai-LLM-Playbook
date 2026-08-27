@@ -13,9 +13,9 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. The repository is the auditable source, not the recommended first screen.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
 
-[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -27,6 +27,26 @@ tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE)
 [`README-EN.md`](README-EN.md). The project is a candidate: its structure and
 static checks exist, but learner runs, transfer runs, repeated evaluations,
 and independent review are still pending.
+
+## Why this project is useful
+
+Instead of beginning with a product, a prompt collection, or a feature list,
+this project begins with a decision: what can the model establish, what action
+is actually allowed, and what evidence would change your mind? The five-unit
+foundation turns that method into three inspectable artifacts: a bounded task
+card, a checked result record, and one transfer attempt. They are working
+targets, not measured outcomes—not a promise that one model will always be
+right.
+
+| If you are... | Start with... |
+|---|---|
+| New to LLMs or unsure what to trust | [LLM Foundation Core](book/routes/llm-foundation-core-v1-EN.md) |
+| Already using AI but checking too late | [Visible failures](book/routes/llm-core-visible-failures-EN.md) and [check and repair](book/routes/llm-core-check-repair-EN.md) |
+| Ready to use Codex on a real task | Finish the core, then read the [GPT/Codex boundary](book/chapters/01-gpt-and-codex-EN.md) |
+| Maintaining a team workflow | Use the later [team capability system](book/chapters/21-team-capability-system-EN.md) after the foundation |
+
+This is not a certification, benchmark, or catalogue of guaranteed prompts.
+Each route keeps its task boundary, evidence status, and known unknowns visible.
 
 ## What this is
 
