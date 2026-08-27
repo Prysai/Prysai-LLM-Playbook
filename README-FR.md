@@ -23,6 +23,24 @@ d’apprenants, le transfert et la relecture française indépendante restent
 La [pratique d’application facultative](book/communication-clinic-FR.md) vient
 après les fondations. Elle ne remplace pas l’apprentissage de ce qu’est un LLM.
 
+## Ce que vous gardez après le parcours
+
+Ce projet n’a de valeur que s’il vous aide à produire quelque chose de
+vérifiable, pas à mémoriser une liste de termes liés à l’IA. Le parcours
+fondamental en cinq unités vise trois livrables rédigés par l’apprenant :
+
+- **Une fiche de tâche délimitée :** objectif, contexte fourni, aide autorisée,
+  limites, vérification et condition d’arrêt ;
+- **Un relevé du résultat vérifié :** ce que le modèle a proposé ou modifié, ce
+  que vous avez contrôlé, les éléments de preuve conservés et ce qui reste
+  inconnu ;
+- **Un essai de transfert :** appliquer la même méthode à une nouvelle tâche et
+  décider clairement de continuer, de corriger ou de s’arrêter.
+
+Ce sont des objectifs de travail, pas des résultats d’apprentissage mesurés. Le
+projet reste `candidate` ; les preuves de réussite, de transfert et de
+retenue à long terme restent `not_run`.
+
 Le [site de lecture guidée](https://docs.prysai.com/llm-playbook/?lang=fr) suit
 la même route en cinq unités. Vous pouvez commencer sans Codex, Git, terminal,
 fichier privé ni installation. Une page absente reste absente : Reader ne

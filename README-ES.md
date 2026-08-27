@@ -21,6 +21,24 @@ español hasta que la nueva traducción pueda revisarse.
 
 Los ciclos de español, actualización de trabajo e investigación son **prácticas de aplicación opcionales** después de esta ruta; no son la primera lección sobre LLM ni prometen eficiencia, fluidez o mejora de capacidad.
 
+## Qué te llevas de la ruta
+
+El valor de este proyecto no está en sumar más términos de IA, sino en dejar
+algo que puedas revisar y llevar a la siguiente tarea. La ruta de fundamentos
+de cinco unidades está diseñada para producir tres resultados escritos por el
+estudiante:
+
+- **Una ficha de tarea acotada:** objetivo, contexto aportado, ayuda permitida,
+  límites, comprobación y condición de parada;
+- **Un registro del resultado comprobado:** qué propuso o cambió el modelo, qué
+  revisaste, qué evidencia conservaste y qué sigue siendo desconocido;
+- **Un intento de transferencia:** aplicar el mismo método a una tarea nueva y
+  decidir con claridad si continuar, corregir o detenerse.
+
+Son objetivos de trabajo, no resultados de aprendizaje medidos. El proyecto
+sigue en `candidate`; la finalización, la transferencia y la retención del
+aprendizaje siguen en `not_run`.
+
 ## Empieza con una tarea de texto segura, sin instalación
 
 Si hoy solo quieres probar un chat de texto, abre la

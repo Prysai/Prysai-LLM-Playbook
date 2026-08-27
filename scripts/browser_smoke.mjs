@@ -1293,8 +1293,8 @@ try {
   await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   assert.match(
     await page.locator('.hero-scope').innerText(),
-    /One transferable foundation[\s\S]*platform-specific practice[\s\S]*current sources[\s\S]*runnable evidence/i,
-    'hero overstates named-platform coverage or omits the adapter evidence boundary',
+    /three working artifacts[\s\S]*bounded task card[\s\S]*checked result record[\s\S]*transfer attempt[\s\S]*targets, not measured outcomes/i,
+    'hero does not state the three learner artifacts or their unmeasured status',
   );
   const lessonZeroLink = page.getByRole('link', { name: /LLM Foundation Core/i }).first();
   assert.match(

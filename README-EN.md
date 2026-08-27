@@ -127,6 +127,23 @@ model answer, or a green structural check is not proof of learning. See the
 current boundary. The route is `candidate`; learner completion, transfer, and
 long-term retention are `not_run`.
 
+## What you will leave with
+
+The value of this project is not another list of AI terms. It is a small set of
+artifacts that a learner can inspect and carry to the next task. The five-unit
+foundation route is designed around:
+
+- **A bounded task card:** goal, supplied context, allowed help, limits, check,
+  and stop condition.
+- **A checked result record:** what the model proposed or changed, what you
+  inspected, the evidence you kept, and what remains unknown.
+- **A transfer attempt:** the same method on a new task, with a clear decision
+  to continue, revise, or stop.
+
+These are working targets, not measured outcomes. The project remains
+`candidate`; learner completion, transfer, and retention evidence are
+`not_run`.
+
 ## The textbook path — read it in order
 
 This project is also a book, but the complete catalogue is not the beginner

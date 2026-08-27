@@ -597,7 +597,7 @@ Object.assign(copy.zh, {
 Object.assign(copy.en, {
   heroPrimary: 'Start with a no-setup LLM check',
   heroSecondary: 'Start the Codex Practice Track',
-  heroScope: 'One transferable method, with Codex as the current flagship practice track. Named platforms need their own current sources and runnable evidence before they become lessons.',
+  heroScope: 'The route is built around three working artifacts: a bounded task card, a checked result record, and one transfer attempt. They are targets, not measured outcomes.',
   heroRouteAria: 'Choose a first route by readiness',
   heroRouteKicker: 'Choose by what you have today',
   heroRouteNoSetupTitle: 'No project or coding background? Start with one no-setup check.',
@@ -626,7 +626,7 @@ Object.assign(copy.en, {
 Object.assign(copy.zh, {
   heroPrimary: '先做一次免设置的 LLM 检查',
   heroSecondary: '开始 Codex 旗舰实践路线',
-  heroScope: '一套可迁移方法，Codex 是当前旗舰实践轨道。任何命名平台都必须先具备当前来源与可运行证据，才能成为课程。',
+  heroScope: '这条路线围绕三项可带走的产出：一张有边界的任务卡、一份结果检查记录，以及一次迁移尝试。它们是路线目标，不是已经测得的结果。',
   heroRouteAria: '按准备程度选择第一条路线',
   heroRouteKicker: '按你今天手头的条件选择',
   heroRouteNoSetupTitle: '没有项目或编程背景？先做一次免设置检查。',
@@ -2265,7 +2265,7 @@ copy.es = {
   'researchCardLink': 'Leer el límite de la investigación',
   'researchCardBoundary': 'No puede demostrar que una fuente exista, esté vigente o respalde una afirmación. Una tabla generada no es evidencia por sí misma.',
   'researchPromptText': 'Tengo cinco minutos para preparar una comprobación de investigación, no una respuesta final.\n\nPregunta: [una pregunta acotada].\nMaterial que aporté: [URLs, títulos, extractos o "ninguno"].\n\nPrimero, reformula la pregunta y nombra qué evidencia se necesitaría. Luego haz una tabla de tres filas con: posible afirmación, fuente aportada o "falta", y qué habría que comprobar. No inventes citas, no afirmes que abriste una fuente a la que no puedes acceder ni des una recomendación. Separa el hecho, el informe y la inferencia. Si el material falta, se contradice, es personal o de alto riesgo, detente y dime el siguiente paso seguro más pequeño.\n\nTermina con: fuentes realmente aportadas, incógnitas y una pregunta que debería responder antes de continuar.',
-  'heroScope': 'Un método transferible, con Codex como la vía práctica principal actual. Cada plataforma nombrada necesita fuentes actuales y evidencia reproducible antes de convertirse en una lección.',
+  'heroScope': 'La ruta se organiza en tres resultados que puedes llevarte: una ficha de tarea acotada, un registro del resultado comprobado y un intento de transferencia. Son objetivos de la ruta, no resultados medidos.',
   'heroRouteNoSetupTitle': '¿Sin proyecto ni experiencia en programación? Empieza con una comprobación sin configuración.',
   'heroRouteNoSetupBody': 'Usa cualquier modelo de chat y un mensaje ficticio. Sin archivos, herramientas, cuenta conectada ni datos privados.',
   'mobileRouteNoSetup': '¿Sin proyecto? Empieza con la comprobación sin configuración',
@@ -2872,7 +2872,7 @@ copy.ja = {
   'researchCardLink': 'リサーチの境界を読む',
   'researchCardBoundary': 'ソースが存在すること、最新であること、主張を裏付けることを証明できません。生成された表は、それ自体ではエビデンスではありません。',
   'researchPromptText': '最終回答ではなく、リサーチチェックを準備するために5分あります。\n\n質問:[1つの狭い質問]。\n私が提供した材料:[URL、タイトル、抜粋、または“なし”]。\n\nまず、質問を言い換え、どのようなエビデンスが必要かを挙げてください。次に、3行の表を作ってください:可能な主張、提供されたソースまたは“欠落”、そして確認が必要なもの。引用を捏造したり、アクセスできないソースを開いたと述べたり、推奨を与えたりしないでください。事実、レポート、推論を分けてください。材料が欠けている、矛盾している、個人情報を含む、または高リスクの場合は、停止して、最小の安全な次のステップを教えてください。\n\n最後に、実際に提供されたソース、不明な点、続ける前に私が答えるべき質問1つを示してください。',
-  'heroScope': '転用できる方法は一つで、現在の旗艦実践トラックは Codex です。名称を挙げた各プラットフォームは、現行の出典と再現可能な根拠がそろって初めてレッスンになります。',
+  'heroScope': 'このルートは、範囲を区切ったタスクカード、確認済みの結果記録、そして一度の転移の試行を成果物として残す設計です。いずれも目標であり、測定済みの成果ではありません。',
   'heroRouteNoSetupTitle': 'プロジェクトやプログラミングの経験がありませんか?セットアップ不要のチェックから始めてください。',
   'heroRouteNoSetupBody': '任意のチャットモデルと架空のメッセージを使用します。ファイル、ツール、アカウント接続、プライベートデータは不要です。',
   'mobileRouteNoSetup': 'プロジェクトがありませんか?セットアップ不要のチェックから始める',
@@ -3479,7 +3479,7 @@ copy.ko = {
   'researchCardLink': '조사 경계 읽기',
   'researchCardBoundary': '출처가 존재하거나, 최신이거나, 주장을 뒷받침한다는 것을 증명할 수 없습니다. 생성된 표는 그 자체로 증거가 아닙니다.',
   'researchPromptText': '연구 점검을 준비할 시간은 5분이며, 최종 답변을 원하는 것이 아닙니다.\n\n질문: [좁은 질문 하나].\n제가 제공한 자료: [URL, 제목, 발췌문, 또는 "없음"].\n\n먼저 질문을 다시 말하고 어떤 증거가 필요한지 밝히세요. 그런 다음 가능한 주장, 제공된 출처 또는 "누락", 확인이 필요한 것 세 열로 된 표를 만드세요. 인용을 지어내지 말고, 접근할 수 없는 출처를 열었다고 말하지 말고, 권고를 하지 마세요. 사실, 보고, 추론을 구분하세요. 자료가 없거나, 모순되거나, 개인적이거나, 고위험인 경우 멈추고 가장 작은 안전한 다음 단계를 알려주세요.\n\n마지막에 이렇게 끝내세요. 실제로 제공된 출처, 미지의 항목, 계속하기 전에 제가 답해야 할 질문 하나.',
-  'heroScope': '전이 가능한 방법은 하나이며 현재의 대표 실습 트랙은 Codex입니다. 이름을 붙인 각 플랫폼은 최신 출처와 재현 가능한 근거가 있어야 수업이 됩니다.',
+  'heroScope': '이 경로는 범위가 정해진 작업 카드, 점검 결과 기록, 전이 시도라는 세 가지 작업 산출물을 남기도록 설계되었습니다. 이는 목표일 뿐, 측정된 결과는 아닙니다.',
   'heroRouteNoSetupTitle': '프로젝트나 코딩 경험이 없으세요? 설정 없는 점검 하나로 시작하세요.',
   'heroRouteNoSetupBody': '아무 채팅 모델과 가상 메시지를 사용하세요. 파일, 도구, 계정 연결, 개인 데이터가 필요 없습니다.',
   'mobileRouteNoSetup': '프로젝트가 없으세요? 설정 없는 점검부터 시작',
@@ -4086,7 +4086,7 @@ copy.de = {
   'researchCardLink': 'Die Recherchegrenze lesen',
   'researchCardBoundary': 'Sie kann nicht beweisen, dass eine Quelle existiert, aktuell ist oder eine Behauptung stützt. Eine generierte Tabelle ist für sich genommen kein Beleg.',
   'researchPromptText': 'Ich habe fünf Minuten Zeit, um eine Rechercheprüfung vorzubereiten, keine finale Antwort.\n\nFrage: [eine enge Frage].\nVon mir geliefertes Material: [URLs, Titel, Auszüge oder "keins"].\n\nStelle zuerst die Frage neu dar und benenne, welche Belege nötig wären. Erstelle dann eine Tabelle mit drei Zeilen: mögliche Behauptung, gelieferte Quelle oder "fehlend", und was geprüft werden müsste. Erfinde keine Zitate, behaupte nicht, eine Quelle geöffnet zu haben, auf die du keinen Zugriff hast, und gib keine Empfehlung. Trenne Fakt, Bericht und Schlussfolgerung. Wenn das Material fehlt, widersprüchlich, persönlich oder risikoreich ist, stoppe und nenne mir den kleinsten sicheren nächsten Schritt.\n\nBeende mit: tatsächlich gelieferte Quellen, Unbekanntes und eine Frage, die ich beantworten sollte, bevor ich fortfahre.',
-  'heroScope': 'Eine übertragbare Methode mit Codex als aktuellem Flaggschiff-Praxispfad. Eine benannte Plattform wird erst mit aktuellen Quellen und reproduzierbarer Evidenz zu einer Lektion.',
+  'heroScope': 'Die Route ist auf drei Arbeitsartefakte ausgerichtet: eine begrenzte Aufgabenkarte, ein Prüfprotokoll für das Ergebnis und ein Transfer-Versuch. Das sind Ziele, keine gemessenen Lernergebnisse.',
   'heroRouteNoSetupTitle': 'Kein Projekt oder keine Programmiererfahrung? Beginne mit einem Check ohne Einrichtung.',
   'heroRouteNoSetupBody': 'Nutze ein beliebiges Chat-Modell und eine fiktive Nachricht. Keine Dateien, keine Werkzeuge, keine Kontoverbindung und keine privaten Daten.',
   'mobileRouteNoSetup': 'Kein Projekt? Beginne mit dem Check ohne Einrichtung',
@@ -4900,7 +4900,7 @@ Object.assign(copy.en, {
   heroEyebrow: 'Start with the model · then make one checked attempt',
   heroTitle: 'Understand LLMs before you ask them to work.',
   heroLede: 'Learn what a language model can and cannot establish, write one bounded request, inspect the answer, and repeat the method on a new task. Codex, tools, Agents, and Skills come after this foundation.',
-  heroScope: 'One transferable core, followed by platform-specific practice. Named platforms need their own current sources and runnable evidence before they become lessons.',
+  heroScope: 'The route is built around three working artifacts: a bounded task card, a checked result record, and one transfer attempt. They are targets, not measured outcomes.',
   heroPrimary: 'Start the LLM Foundation Core',
   heroSecondary: 'Try the optional five-minute warm-up',
   starterProgressionAria: 'Continue from the LLM Foundation Core',
@@ -4911,7 +4911,7 @@ Object.assign(copy.zh, {
   heroEyebrow: '先理解模型 · 再做一次可检查的尝试',
   heroTitle: '先理解 LLM，再让它开始工作。',
   heroLede: '先学会模型能建立什么、不能建立什么；写出一条有边界的请求，检查答案，再把方法迁移到新任务。Codex、工具、Agent 和 Skill 都在这条基础之后。',
-  heroScope: '一套可迁移的核心方法，之后再进入平台实践。命名平台只有在具备各自最新来源和可运行证据后，才会成为课程。',
+  heroScope: '这条路线围绕三项可带走的产出：一张有边界的任务卡、一份结果检查记录，以及一次迁移尝试。它们是路线目标，不是已经测得的结果。',
   heroPrimary: '开始 LLM 基础核心课',
   heroSecondary: '试做可选的 5 分钟热身',
   starterProgressionAria: '从 LLM 基础核心课继续',
@@ -4922,7 +4922,7 @@ Object.assign(copy.es, {
   heroEyebrow: 'Empieza por el modelo · después haz un intento comprobable',
   heroTitle: 'Entiende los LLM antes de pedirles que trabajen.',
   heroLede: 'Aprende qué puede y qué no puede establecer un modelo de lenguaje, escribe una petición acotada, inspecciona la respuesta y repite el método en una tarea nueva. Codex, las herramientas, los agentes y los Skills vienen después de estos fundamentos.',
-  heroScope: 'Un núcleo transferible seguido de práctica específica por plataforma. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.',
+  heroScope: 'La ruta se organiza en tres resultados que puedes llevarte: una ficha de tarea acotada, un registro del resultado comprobado y un intento de transferencia. Son objetivos de la ruta, no resultados medidos.',
   heroPrimary: 'Empieza el núcleo de fundamentos de LLM',
   heroSecondary: 'Prueba el calentamiento opcional de cinco minutos',
   starterProgressionAria: 'Continúa desde el núcleo de fundamentos de LLM',
@@ -4933,7 +4933,7 @@ Object.assign(copy.ja, {
   heroEyebrow: 'まずモデルを理解する · 次に確認できる試行を一つ行う',
   heroTitle: 'LLMに仕事を頼む前に、その仕組みを理解する。',
   heroLede: '言語モデルが何を確かめられ、何を確かめられないかを学び、境界のあるリクエストを書き、回答を確認し、新しい課題で方法を繰り返します。Codex、ツール、Agent、Skillはこの基礎の後です。',
-  heroScope: '移行可能なコアの後に、プラットフォーム別の練習を行います。名前を挙げるプラットフォームは、各自の最新ソースと実行可能な証拠がそろってからレッスンになります。',
+  heroScope: 'このルートは、範囲を区切ったタスクカード、確認済みの結果記録、そして一度の転移の試行を成果物として残す設計です。いずれも目標であり、測定済みの成果ではありません。',
   heroPrimary: 'LLM 基礎コアを始める',
   heroSecondary: '任意の5分間ウォームアップを試す',
   starterProgressionAria: 'LLM 基礎コアから続ける',
@@ -4944,7 +4944,7 @@ Object.assign(copy.ko, {
   heroEyebrow: '모델부터 이해하세요 · 그다음 확인 가능한 시도 하나',
   heroTitle: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
   heroLede: '언어 모델이 무엇을 확인할 수 있고 무엇을 확인할 수 없는지 배우고, 범위가 정해진 요청을 작성하고, 답변을 점검한 뒤 새 과제에 방법을 반복하세요. Codex, 도구, Agent, Skill은 이 기초 다음에 다룹니다.',
-  heroScope: '전이 가능한 코어 다음에 플랫폼별 실습이 이어집니다. 이름을 언급한 플랫폼은 각자의 최신 출처와 실행 가능한 증거가 있어야 수업이 됩니다.',
+  heroScope: '이 경로는 범위가 정해진 작업 카드, 점검 결과 기록, 전이 시도라는 세 가지 작업 산출물을 남기도록 설계되었습니다. 이는 목표일 뿐, 측정된 결과는 아닙니다.',
   heroPrimary: 'LLM 기초 코어 시작하기',
   heroSecondary: '선택 사항인 5분 워밍업 해보기',
   starterProgressionAria: 'LLM 기초 코어에서 계속하기',
@@ -4955,7 +4955,7 @@ Object.assign(copy.de, {
   heroEyebrow: 'Mit dem Modell beginnen · dann einen prüfbaren Versuch machen',
   heroTitle: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
   heroLede: 'Lerne, was ein Sprachmodell feststellen kann und was nicht, formuliere eine begrenzte Anfrage, prüfe die Antwort und wende die Methode auf eine neue Aufgabe an. Codex, Werkzeuge, Agents und Skills kommen erst nach diesen Grundlagen.',
-  heroScope: 'Ein übertragbarer Kern, gefolgt von plattformspezifischer Praxis. Benannte Plattformen brauchen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.',
+  heroScope: 'Die Route ist auf drei Arbeitsartefakte ausgerichtet: eine begrenzte Aufgabenkarte, ein Prüfprotokoll für das Ergebnis und ein Transfer-Versuch. Das sind Ziele, keine gemessenen Lernergebnisse.',
   heroPrimary: 'Mit dem LLM-Grundlagenkern beginnen',
   heroSecondary: 'Optionale Fünf-Minuten-Aufwärmübung ausprobieren',
   starterProgressionAria: 'Vom LLM-Grundlagenkern fortfahren',
@@ -5313,22 +5313,22 @@ Object.assign(copy.en, {
   first30Intro: 'Use any chat model. You will give it one small rewriting task, then check whether it preserved the facts instead of making helpful-sounding details up.'
 });
 Object.assign(copy.en, {
-  heroScope: 'One transferable foundation, followed by platform-specific practice. Named platforms need their own current sources and runnable evidence before they become lessons.'
+  heroScope: 'The route is built around three working artifacts: a bounded task card, a checked result record, and one transfer attempt. They are targets, not measured outcomes.'
 });
 Object.assign(copy.zh, {
-  heroScope: '一套可迁移的基础方法，之后再进入平台实践。命名平台在成为课程前，都需要各自最新的来源与可运行证据。'
+  heroScope: '这条路线围绕三项可带走的产出：一张有边界的任务卡、一份结果检查记录，以及一次迁移尝试。它们是路线目标，不是已经测得的结果。'
 });
 Object.assign(copy.es, {
-  heroScope: 'Un núcleo transferible seguido de práctica específica por plataforma. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.'
+  heroScope: 'La ruta se organiza en tres resultados que puedes llevarte: una ficha de tarea acotada, un registro del resultado comprobado y un intento de transferencia. Son objetivos de la ruta, no resultados medidos.'
 });
 Object.assign(copy.ja, {
-  heroScope: '移行可能な基礎の後に、プラットフォーム別の練習を行います。名前を挙げる各プラットフォームは、レッスンになる前に独自の最新ソースと実行可能な証拠を必要とします。'
+  heroScope: 'このルートは、範囲を区切ったタスクカード、確認済みの結果記録、そして一度の転移の試行を成果物として残す設計です。いずれも目標であり、測定済みの成果ではありません。'
 });
 Object.assign(copy.ko, {
-  heroScope: '전이 가능한 기초 다음에 플랫폼별 실습이 이어집니다. 이름을 언급한 플랫폼은 수업이 되기 전에 각자의 최신 출처와 실행 가능한 증거가 필요합니다.'
+  heroScope: '이 경로는 범위가 정해진 작업 카드, 점검 결과 기록, 전이 시도라는 세 가지 작업 산출물을 남기도록 설계되었습니다. 이는 목표일 뿐, 측정된 결과는 아닙니다.'
 });
 Object.assign(copy.de, {
-  heroScope: 'Ein übertragbarer Grundlagenkern, gefolgt von plattformspezifischer Praxis. Benannte Plattformen benötigen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.'
+  heroScope: 'Die Route ist auf drei Arbeitsartefakte ausgerichtet: eine begrenzte Aufgabenkarte, ein Prüfprotokoll für das Ergebnis und ein Transfer-Versuch. Das sind Ziele, keine gemessenen Lernergebnisse.'
 });
 Object.assign(copy.zh, {
   navFirst30: '5 分钟提示词练习',
@@ -6408,7 +6408,7 @@ Object.assign(copy.fr, {
   "researchCardStepThree": "Considérez ce tableau comme une préparation. Ouvrez vous-même les sources et vérifiez leur correspondance avant de vous fier à une affirmation.",
   "researchCardBoundary": "Il ne peut pas prouver qu'une source existe, est à jour ou étaye une affirmation. Un tableau généré ne constitue pas une preuve en soi.",
   "researchPromptText": "J’ai cinq minutes pour préparer une vérification de recherche, pas pour produire une réponse définitive.\n\nQuestion : [une question précise].\nMatériel fourni : [URL, titre, extrait ou « aucun »].\n\nCommencez par reformuler la question et préciser quelles preuves seraient nécessaires. Créez ensuite un tableau de trois lignes avec : l’affirmation possible, la source fournie ou « manquante », et ce qui devrait encore être vérifié. N’inventez pas de citations ; ne dites pas avoir ouvert une source à laquelle vous n’avez pas accès ; ne donnez pas de recommandation. Séparez faits, témoignages et inférences. Si le matériel manque, se contredit, est personnel ou concerne un enjeu élevé, arrêtez-vous et indiquez la prochaine étape sûre la plus petite.\n\nTerminez par les sources réellement fournies, les inconnues et une question à laquelle je dois répondre avant de continuer.",
-  "heroScope": "Une base transférable, suivie d'une pratique spécifique à la plateforme. Les plates-formes nommées ont besoin de leurs propres sources actuelles et de preuves exécutables avant de devenir des leçons.",
+  "heroScope": "Le parcours s’articule autour de trois livrables à conserver : une fiche de tâche délimitée, un relevé du résultat vérifié et un essai de transfert. Ce sont des objectifs, pas des résultats mesurés.",
   "heroRouteNoSetupTitle": "Pas d'expérience en matière de projet ou de codage ? Commencez par une vérification sans configuration.",
   "heroRouteNoSetupBody": "Utilisez n’importe quel modèle de chat et un message fictif. Pas de fichiers, d'outils, de connexion à un compte ou de données privées.",
   "mobileRouteNoSetup": "Démarrez le noyau de base LLM",

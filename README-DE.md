@@ -24,6 +24,25 @@ vollständig auf deutsche Dateien begrenzt.
 
 Die Karten für Spanisch, Arbeitsupdates und Recherche sind **optionale Anwendungsübungen** nach diesem Pfad. Sie sind nicht die erste LLM-Lektion und versprechen weder Effizienz, Sprachflüssigkeit noch Kompetenzzuwachs.
 
+## Was du aus der Route mitnimmst
+
+Der Wert dieses Projekts liegt nicht in einer weiteren Liste von KI-Begriffen,
+sondern in etwas, das sich prüfen und in die nächste Aufgabe mitnehmen lässt.
+Der fünfteilige Grundlagenpfad ist auf drei von Lernenden erstellte Artefakte
+ausgerichtet:
+
+- **Eine begrenzte Aufgabenkarte:** Ziel, bereitgestellter Kontext, erlaubte
+  Hilfe, Grenzen, Prüfung und Stop-Bedingung;
+- **Ein Prüfprotokoll für das Ergebnis:** Was das Modell vorgeschlagen oder
+  geändert hat, was du geprüft hast, welche Belege du behalten hast und was
+  unbekannt bleibt;
+- **Ein Transfer-Versuch:** Dieselbe Methode auf eine neue Aufgabe anwenden und
+  klar entscheiden, ob du fortsetzt, überarbeitest oder stoppst.
+
+Das sind Arbeitsziele, keine gemessenen Lernergebnisse. Das Projekt bleibt
+`candidate`; Belege für Abschluss, Transfer und langfristiges Behalten stehen
+weiterhin auf `not_run`.
+
 ## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 
 Wenn du heute nur einen gewöhnlichen Textchat ausprobieren möchtest, öffne
