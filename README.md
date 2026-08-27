@@ -23,9 +23,9 @@ License: curriculum text and teaching assets are CC BY 4.0; scripts and
 tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE),
 [`LICENSE-CODE`](LICENSE-CODE), and the [licensing boundary](docs/sources/licensing.md).
 
-`README.md` is GitHub's compact English entry. The detailed source is
-[`README-EN.md`](README-EN.md). The project is a candidate: its structure and
-static checks exist, but learner runs, transfer runs, repeated evaluations,
+`README.md` is GitHub's compact English entry; [`README-EN.md`](README-EN.md)
+is the detailed source. The project remains `candidate`: its structure and
+static checks exist, while learner runs, transfer runs, repeated evaluations,
 and independent review are still pending.
 
 ## Why this project is useful
@@ -106,8 +106,7 @@ model answer, or a green structural check is not proof of learning. See the
 [scope freeze](docs/governance/core-release-scope.md), and
 [core content inventory](docs/governance/core-content-inventory.yaml) for the
 current boundary. The route remains `candidate`; learner completion, transfer,
-and long-term retention are `not_run`. The three intended artifacts are
-summarized above as practice targets, not measured outcomes.
+and long-term retention are `not_run`.
 
 ## Start here — read it like a book
 
