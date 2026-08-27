@@ -14,7 +14,7 @@
 第一次来这里，不必在提示词卡、Skill 和不同产品之间做选择。先沿同一条中文主线学习：
 
 1. [LLM 基础概念](book/guides/llm-fundamentals-ZH.md)
-2. [通用 LLM 首练习](book/routes/universal-core-foundations-ZH.md)
+2. [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
 3. [第一次安全改动](book/routes/first-safe-change-ZH.md)
 
 英文基础核心课是当前的规范源文件，中文版本正在重译和复核。在此之前，

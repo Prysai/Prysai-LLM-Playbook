@@ -3167,7 +3167,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-15",
           "explicit_anchors": [],
-          "title": "Lab 002: 바람을 작업 프로토콜로 바꾸기"
+          "title": "Lab 002: 막연한 요청을 작업 프로토콜로 바꾸기"
         },
         "de": {
           "path": "book/labs/lab-002-task-protocol-DE.md",
@@ -9644,7 +9644,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_zh": "把愿望变成任务协议",
         "title_es": "Convierte un deseo en un protocolo de tarea",
         "title_ja": "願いをタスク・プロトコルに変える",
-        "title_ko": "3장: 바람을 작업 프로토콜로 바꾸기",
+        "title_ko": "3장: 막연한 요청을 작업 프로토콜로 바꾸기",
         "title_de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
         "title_zh-tw": "把願望變成任務協議",
         "title_fr": "De l’intention au protocole",
@@ -9652,7 +9652,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_zh": "把愿望变成任务协议",
         "canonical_title_es": "Convierte un deseo en un protocolo de tarea",
         "canonical_title_ja": "願いをタスク・プロトコルに変える",
-        "canonical_title_ko": "3장: 바람을 작업 프로토콜로 바꾸기",
+        "canonical_title_ko": "3장: 막연한 요청을 작업 프로토콜로 바꾸기",
         "canonical_title_de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
         "canonical_title_zh-tw": "把願望變成任務協議",
         "canonical_title_fr": "Transformer une intention en protocole de tâche",

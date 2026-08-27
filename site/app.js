@@ -4574,7 +4574,7 @@ Object.assign(copy.zh, {
   wizardGoalResearchOutcome: '得到一条来源核查提示词，区分证据与猜测。',
   wizardGoalInterviewOutcome: '得到一条带可见自检的限时演练提示词。',
   wizardGoalTaskOutcome: '在 AI 或工具行动前，得到一份简明任务协议。',
-  wizardGoalCodexOutcome: '得到一个安全的纯文字首练习，并进入编程实践路线。'
+  wizardGoalCodexOutcome: '得到一个安全的纯文字第一次练习，并进入编程实践路线。'
 });
 Object.assign(copy.es, {
   wizardGoalLanguageOutcome: 'Obtienes un prompt de práctica de cuatro turnos que espera tu respuesta.',

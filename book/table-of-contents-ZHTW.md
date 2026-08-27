@@ -8,7 +8,7 @@
 ## 先從哪裡開始
 
 - 先讀[LLM 基礎概念](guides/llm-fundamentals-ZHTW.md)。
-- 接著做[通用 LLM 首練習](routes/universal-core-foundations-ZHTW.md)。
+- 接著做[通用 LLM 第一次練習](routes/universal-core-foundations-ZHTW.md)。
 - 需要安全檔案時，開啟[第一次安全改動路線](routes/first-safe-change-ZHTW.md)。
 - 完成前三步後，如想做低風險檔案練習，進入[第一次安全改動路線](routes/first-safe-change-ZHTW.md)，再做[實驗 001](labs/lab-001-first-safe-task-ZHTW.md)。
 - [新手提示卡](communication-clinic-ZHTW.md)是主線之後的可選應用練習，不是 LLM 基礎課。

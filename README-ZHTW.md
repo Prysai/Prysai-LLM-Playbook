@@ -15,7 +15,7 @@
 第一次來這裡，不必在提示詞卡、Skill 和不同產品之間做選擇。先沿同一條中文主線學習：
 
 1. [LLM 基礎概念](book/guides/llm-fundamentals-ZHTW.md)
-2. [通用 LLM 首練習](book/routes/universal-core-foundations-ZHTW.md)
+2. [通用 LLM 第一次練習](book/routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](book/routes/first-safe-change-ZHTW.md)
 
 英文基礎核心課是當前的規範原始檔，中文版本正在重譯和複核。在此之前，
@@ -42,7 +42,7 @@
 
 ## 這是什麼專案
 
-Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在一起的目錄，也不是隻講安裝步驟的手冊。它是一套書籍式、課程式、實驗室式的 LLM 協作學習與實踐系統：先幫助學習者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的關係，再透過實驗把理解變成行動，最後把個人方法沉澱成可以評估、複用和更新的團隊能力。
+Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在一起的目錄，也不是只講安裝步驟的手冊。它是一套書籍式、課程式、實驗室式的 LLM 協作學習與實踐系統：先幫助學習者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的關係，再透過實驗把理解變成行動，最後把個人方法沉澱成可以評估、複用和更新的團隊能力。
 
 它要帶領學習者完成一條完整成長路徑：從“我聽說過 GPT”開始，到能夠安全使用 Codex、穩定完成真實任務、理解 Agent 為什麼這樣行動、選擇和設計合適的 Skill，直到建立自己的工作系統並幫助團隊共同使用。
 

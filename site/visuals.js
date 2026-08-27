@@ -78,7 +78,7 @@
     ja: { brandAria: 'Prysai LLM Playbook のホーム', navAria: 'ビジュアルガイドのナビゲーション', languageAria: 'ビジュアルガイドの言語を選択', metaDescription: 'Prysai LLM Playbook の学習ループを視覚的に案内します。アクセシブルなテキスト代替とプロジェクト作成の教材ボードを備えています。' },
     ko: { brandAria: 'Prysai LLM Playbook 홈', navAria: '시각 안내서 탐색', languageAria: '시각 안내서 언어 선택', metaDescription: '접근 가능한 텍스트 대체 설명과 프로젝트가 만든 교육 보드를 함께 제공하는 Prysai LLM Playbook 학습 루프 시각 안내서입니다.' },
     de: { brandAria: 'Startseite des Prysai LLM Playbook', navAria: 'Navigation des visuellen Leitfadens', languageAria: 'Sprache des visuellen Leitfadens wählen', metaDescription: 'Visueller Leitfaden zum Lernablauf des Prysai LLM Playbook mit zugänglichen Textalternativen und projektbezogenen Lehrtafeln.' },
-    'zh-tw': { brandAria: 'Prysai LLM Playbook 首頁', navAria: '視覺導覽導覽列', languageAria: '選擇視覺導覽語言', metaDescription: 'Prysai LLM Playbook 學習閉環的視覺導覽，提供可存取的文字替代說明與專案原創教學圖板。' },
+    'zh-tw': { brandAria: 'Prysai LLM Playbook 首頁', navAria: '視覺導覽導覽', languageAria: '選擇視覺導覽語言', metaDescription: 'Prysai LLM Playbook 學習閉環的視覺導覽，提供可存取的文字替代說明與專案原創教學圖板。' },
     fr: { brandAria: 'Accueil du Prysai LLM Playbook', navAria: 'Navigation du guide visuel', languageAria: 'Choisir la langue du guide visuel', metaDescription: 'Guide visuel de la boucle d’apprentissage du Prysai LLM Playbook, avec des alternatives textuelles accessibles et des tableaux pédagogiques créés par le projet.' },
   };
   Object.entries(ACCESSIBILITY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
