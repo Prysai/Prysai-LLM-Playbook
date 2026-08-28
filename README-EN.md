@@ -537,7 +537,7 @@ repository; they do not describe learning outcomes.
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
-| Skills | 26 `candidate` Skills tracked by the project (25 original + 1 reviewed external) | Structural checks pass; fresh-context and native-language evidence remain partial and visible in the registry |
+| Skills | 26 project Skills · `candidate` (25 original + 1 reviewed external) | Structural checks pass; fresh-context and native-language evidence remain partial and visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate`, publicly reachable | Eight localized entry URLs are registered; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
 | Locale rollout | EN source plus seven candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
