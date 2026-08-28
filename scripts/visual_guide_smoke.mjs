@@ -183,15 +183,21 @@ try {
   assert.equal(await page.locator('[data-viewer-error]').isHidden(), true, 'viewer rejected an approved teaching board');
   assert.equal(await page.locator('[data-viewer-image]').evaluate((image) => image.complete && image.naturalWidth > 0), true, 'viewer image did not load');
   assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '100%', 'viewer did not expose its initial zoom');
+  const viewerOfficialSite = page.locator('.viewer-footer-site');
+  assert.equal(await viewerOfficialSite.count(), 1, 'visual viewer footer is missing the official-site link');
+  assert.equal(await viewerOfficialSite.getAttribute('href'), 'https://prysai.com/', 'visual viewer footer official-site URL changed');
+  assert.equal((await viewerOfficialSite.textContent() || '').trim(), 'Site officiel de Prysai', 'visual viewer footer official-site label is not localized');
   await page.locator('[data-viewer-zoom-in]').click();
   assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '125%', 'viewer zoom control did not update');
   await noHorizontalOverflow('fr 360px visual viewer');
   await page.locator('#viewer-language').selectOption('zh-tw');
   assert.equal(await page.locator('html').getAttribute('lang'), 'zh-tw', 'viewer language switch did not update document language');
   assert.match(await page.locator('[data-viewer-home]').first().getAttribute('href') || '', /visuals\.html\?lang=zh-tw$/, 'viewer language switch lost the localized guide route');
+  assert.equal((await page.locator('.viewer-footer-site').textContent() || '').trim(), 'Prysai 官方網站', 'viewer footer language switch did not localize the official-site label');
   await page.goto(`${origin}/site/visual.html?asset=not-a-teaching-board.svg&lang=fr`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('.viewer-stage').isHidden(), true, 'viewer kept the stage for an unapproved asset');
   assert.equal(await page.locator('[data-viewer-error]').isHidden(), false, 'viewer did not expose the invalid-asset error');
+  assert.equal((await page.locator('.viewer-footer-site').textContent() || '').trim(), 'Site officiel de Prysai', 'invalid-asset viewer did not localize the official-site footer');
   await page.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'networkidle' });
 
   const noScriptContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
