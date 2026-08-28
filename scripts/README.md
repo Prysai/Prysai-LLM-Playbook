@@ -107,8 +107,11 @@ copies look like broken source links.
 `validate_teaching_assets.py` checks that every project-owned teaching SVG has
 an accessible title, description, and view box; is listed in the teaching-card
 catalog; has a source-register path; and matches the public mobile inventory
-count. It does not establish visual quality, reader comprehension, runtime
-behavior, or the provenance of non-teaching assets.
+count. For the reviewed locale cards it also checks the seven translated root
+README paths and any translated Markdown image references, because GitHub
+renders those files without the Reader's runtime locale resolver. It does not
+establish visual quality, reader comprehension, runtime behavior, or the
+provenance of non-teaching assets.
 
 ## Generator rule
 

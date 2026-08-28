@@ -47,10 +47,11 @@ the full guide another menu to work through.
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
-README language links switch repository entry files. The interactive showcase is
-a local contributor preview; follow [`site/README.md`](site/README.md) to serve
-it. It uses `?lang=` routes and may show an explicit fallback when a translation
-is not available.
+README language links switch repository entry files. The dependency-free
+interactive showcase is published at the [guided reading site](https://docs.prysai.com/llm-playbook/);
+contributors can serve the same files locally by following
+[`site/README.md`](site/README.md). It uses `?lang=` routes and may show an
+explicit fallback when a translation is not available.
 
 ### Actual course-language coverage
 

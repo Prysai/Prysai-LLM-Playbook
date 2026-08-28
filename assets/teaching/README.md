@@ -65,6 +65,12 @@ Guide, and full-size viewer disclose that fallback beside the image. The
 complete machine-readable matrix is
 [`docs/governance/visual-locale-matrix.yaml`](../../docs/governance/visual-locale-matrix.yaml).
 
+GitHub renders Markdown without the site's locale resolver. A translated
+Markdown page that embeds one of the eight reviewed cards must therefore use
+`assets/teaching/locales/<locale>/<asset>.svg` in its source link. The seven
+translated project READMEs use the localized first-visit route board this way;
+the asset validator checks that the path stays aligned with the file suffix.
+
 Run `python scripts/build_localized_visual_assets.py` to regenerate the
 reviewed variants. The generator keeps each source `viewBox` and `<text>` node
 count stable and rejects empty or unchanged non-technical English strings.

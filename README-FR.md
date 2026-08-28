@@ -20,6 +20,12 @@ d’apprenants, le transfert et la relecture française indépendante restent
 2. [Route universelle de première tâche](book/routes/universal-core-foundations-FR.md)
 3. [Première modification sûre](book/routes/first-safe-change-FR.md)
 
+### Voir le parcours d’un coup d’œil
+
+![Parcours de première visite vers une tâche LLM vérifiable](assets/teaching/locales/fr/foundation-first-visit-route-red-black.svg)
+
+Cette planche en cinq étapes réunit le parcours en une seule ligne : choisir un objectif, ouvrir les fondamentaux, faire un essai sûr, lire le relevé, puis continuer ou s’arrêter. Elle sert à s’orienter et ne constitue pas une preuve d’apprentissage.
+
 La [pratique d’application facultative](book/communication-clinic-FR.md) vient
 après les fondations. Elle ne remplace pas l’apprentissage de ce qu’est un LLM.
 

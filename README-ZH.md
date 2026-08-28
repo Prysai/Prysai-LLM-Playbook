@@ -17,6 +17,12 @@
 2. [通用 LLM 首练习](book/routes/universal-core-foundations-ZH.md)
 3. [第一次安全改动](book/routes/first-safe-change-ZH.md)
 
+### 先看一张路线图
+
+![第一次访问路线：完成一个可检查的 LLM 任务](assets/teaching/locales/zh/foundation-first-visit-route-red-black.svg)
+
+这张五步图把“选定目标 → 打开基础核心 → 安全尝试 → 检查记录 → 继续或停下”放在同一条线上；它帮助你先看懂路线，再决定要不要深入阅读。图是教学辅助，不代表学习效果已经验证。
+
 英文基础核心课是当前的规范源文件，中文版本正在重译和复核。在此之前，
 这个入口会保持整条路线只链接中文文件。
 

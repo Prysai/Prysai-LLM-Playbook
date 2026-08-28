@@ -15,6 +15,12 @@
 2. [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
 3. [最初の安全な変更](book/routes/first-safe-change-JA.md)
 
+### まずルートを図で確認する
+
+![初回訪問で確認できる LLM タスクへ進むルート](assets/teaching/locales/ja/foundation-first-visit-route-red-black.svg)
+
+この5段階の図は、目的を選ぶ → 基礎コアを開く → 安全に試す → 記録を確認する → 続けるか止まる、という流れを一つにまとめたものです。読み始める前の道しるべであり、学習効果を証明するものではありません。
+
 英語の基礎コアが現在の正規ソースで、日本語版は再翻訳とレビューを待っています。
 その間、この入口は日本語のファイルだけで読める経路を維持します。
 
