@@ -145,7 +145,7 @@ façon sûre. Le Lab reste `draft / not_run`. Aucun Skill externe n’est instal
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-FR.md" aria-label="Lab précédent : Lab 016 · S’arrêter à la frontière d’un effet durable">← Précédent<br><strong>Lab 016 · S’arrêter à la frontière d’un effet durable</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-FR.md" aria-label="Lab suivant : Lab 018 · Tester un échange écrit de débutant pour la rétention et le transfert">Suivant →<br><strong>Lab 018 · Tester un échange écrit de débutant pour la rétention et le transfert</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-FR.md" aria-label="Lab suivant : Lab 018 · Tester un échange écrit de niveau débutant pour la rétention et le transfert">Suivant →<br><strong>Lab 018 · Tester un échange écrit de niveau débutant pour la rétention et le transfert</strong></a></td>
     </tr>
   </table>
 </nav>

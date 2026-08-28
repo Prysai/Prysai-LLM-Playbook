@@ -137,7 +137,7 @@ decision card, input hash, output, timeline, score, first attempt, rework, compa
 
 ## 전이 과제
 
-같은 synthetic text로 language-learning dialog instruction 두 개를 비교합니다. fact fidelity, 보이는 correction, missing data의 stop만 평가하고 mastery는 주장하지 않습니다.
+같은 합성 텍스트로 언어 학습 대화 지시문 두 개를 비교합니다. 사실과의 일치도, 확인 가능한 교정, 데이터 누락 시 중지 여부만 평가하고, 숙달을 주장하지 않습니다.
 
 ## 수용 체크리스트
 
