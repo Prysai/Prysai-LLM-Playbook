@@ -93,7 +93,7 @@ plateformes.
 
 Le texte pédagogique et les supports sont sous CC BY 4.0 ; les scripts et
 outils sont sous Apache-2.0 sauf indication contraire. Voir
-[`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) et la [limite de licence](docs/sources/licensing.md).
+[`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) et la [limite de licence (locale-neutral)](docs/sources/licensing.md).
 
 Le projet enseigne une méthode de travail vérifiable. Il ne promet ni
 exactitude automatique, ni maîtrise d’une langue en quelques jours, ni
