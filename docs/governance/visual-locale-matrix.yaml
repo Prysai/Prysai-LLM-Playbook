@@ -1,6 +1,6 @@
 schema_version: 1
-updated: 2026-08-26
-purpose: Keep visual-language coverage explicit; an absent SVG variant is never treated as translated.
+updated: 2026-08-28
+purpose: Keep visual-language coverage explicit; an absent SVG variant is never treated as translated, and translated Markdown must name its reviewed locale asset directly.
 locales:
   - en
   - zh

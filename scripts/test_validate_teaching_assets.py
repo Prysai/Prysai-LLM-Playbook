@@ -35,6 +35,23 @@ def write_fixture(root: Path, *, catalog: str, register: str, site_count: int = 
     return teaching, catalog_path, register_path, site_index
 
 
+def write_localized_readmes(root: Path, *, visual_path: str, use_english_source: bool = False) -> None:
+    """Create the seven translated front doors used by the README visual gate."""
+    readme_names = {
+        "zh": "README-ZH.md",
+        "es": "README-ES.md",
+        "ja": "README-JA.md",
+        "ko": "README-KO.md",
+        "de": "README-DE.md",
+        "zh-tw": "README-ZHTW.md",
+        "fr": "README-FR.md",
+    }
+    for locale, filename in readme_names.items():
+        readme = root / filename
+        target = "assets/teaching/foundation-first-visit-route-red-black.svg" if use_english_source else visual_path.format(locale=locale)
+        readme.write_text(f"![First visit route]({target})\n", encoding="utf-8")
+
+
 def main() -> int:
     with TemporaryDirectory(prefix="prysai-teaching-asset-fixture-") as temporary:
         root = Path(temporary)
@@ -98,7 +115,52 @@ def main() -> int:
         errors = assets.validate(teaching, catalog, register, site_index, matrix)
         require(not errors, f"valid visual locale matrix was rejected: {errors}")
 
-    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=6")
+        write_localized_readmes(
+            matrix_root,
+            visual_path="assets/teaching/locales/{locale}/foundation-first-visit-route-red-black.svg",
+        )
+        require(
+            not assets.validate_localized_readme_visuals(
+                matrix_root,
+                {"foundation-first-visit-route-red-black.svg"},
+            ),
+            "locale-specific README visuals were rejected",
+        )
+        write_localized_readmes(
+            matrix_root,
+            visual_path="assets/teaching/locales/{locale}/foundation-first-visit-route-red-black.svg",
+            use_english_source=True,
+        )
+        errors = assets.validate_localized_readme_visuals(
+            matrix_root,
+            {"foundation-first-visit-route-red-black.svg"},
+        )
+        require(
+            any("uses the English source visual directly" in error for error in errors),
+            "English source visual in translated README was accepted",
+        )
+
+        markdown_root = matrix_root / "book" / "chapters"
+        markdown_root.mkdir(parents=True)
+        (markdown_root / "example-ZH.md").write_text(
+            "![Card](../../assets/teaching/locales/zh/card.svg)\n",
+            encoding="utf-8",
+        )
+        require(
+            not assets.validate_localized_markdown_visuals(matrix_root, {"card.svg"}),
+            "locale-specific Markdown visual was rejected",
+        )
+        (markdown_root / "example-ZH.md").write_text(
+            "![Card](../../assets/teaching/card.svg)\n",
+            encoding="utf-8",
+        )
+        errors = assets.validate_localized_markdown_visuals(matrix_root, {"card.svg"})
+        require(
+            any("uses English source" in error for error in errors),
+            "English source visual in translated Markdown was accepted",
+        )
+
+    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=8")
     return 0
 
 

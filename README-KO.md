@@ -15,6 +15,12 @@
 2. [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
 3. [첫 번째 안전한 변경](book/routes/first-safe-change-KO.md)
 
+### 먼저 경로를 그림으로 확인하세요
+
+![확인 가능한 LLM 작업으로 이어지는 첫 방문 경로](assets/teaching/locales/ko/foundation-first-visit-route-red-black.svg)
+
+이 다섯 단계 그림은 목표 정하기 → 기초 코어 열기 → 안전하게 한 번 시도하기 → 기록 확인하기 → 계속하거나 멈추기의 흐름을 한눈에 보여 줍니다. 읽기 전에 방향을 잡는 데 쓰는 그림이며, 학습 효과를 증명하지는 않습니다.
+
 영어 기초 코어가 현재의 정식 원문이며 한국어판은 재번역과 검토를 기다리고 있습니다.
 그동안 이 입구는 한국어 파일만으로 읽을 수 있는 경로를 유지합니다.
 

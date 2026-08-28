@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from pathlib import Path
@@ -14,6 +15,25 @@ SOURCE_REGISTER = ROOT / "docs" / "sources" / "asset-register.md"
 SITE_INDEX = ROOT / "site" / "index.html"
 VISUAL_MATRIX = ROOT / "docs" / "governance" / "visual-locale-matrix.yaml"
 EXPECTED_VISUAL_LOCALES = ["en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr"]
+LOCALIZED_README_VISUAL = "foundation-first-visit-route-red-black.svg"
+LOCALIZED_READMES = {
+    "zh": "README-ZH.md",
+    "es": "README-ES.md",
+    "ja": "README-JA.md",
+    "ko": "README-KO.md",
+    "de": "README-DE.md",
+    "zh-tw": "README-ZHTW.md",
+    "fr": "README-FR.md",
+}
+LOCALE_SUFFIXES = {
+    "ZH": "zh",
+    "ES": "es",
+    "JA": "ja",
+    "KO": "ko",
+    "DE": "de",
+    "ZHTW": "zh-tw",
+    "FR": "fr",
+}
 STABLE_VISUAL_TEXT = {
     "LLM", "Codex", "Skill", "Agent", "PRYSAI LAB", "diff", "log", "candidate",
     "blocked", "unknown", "TOKEN", "CONTEXT", "WINDOW", "PROMPT", "RESPONSE",
@@ -95,6 +115,126 @@ def _validate_visual_matrix(asset_directory: Path, matrix: Path) -> list[str]:
     return errors
 
 
+def validate_localized_readme_visuals(
+    root: Path, localized_assets: set[str] | None = None
+) -> list[str]:
+    """Require the localized first-visit board in every translated root README.
+
+    GitHub renders these Markdown files without the Reader's JavaScript locale
+    resolver.  The entry visual therefore needs an explicit locale path in the
+    source Markdown; otherwise a reader opening ``README-ZH.md`` still sees an
+    English SVG even though the Reader itself can resolve a localized variant.
+    The check is intentionally limited to one high-value orientation board so
+    the README remains a route, not an image catalogue.
+    """
+    root = root.resolve()
+    if localized_assets is not None and LOCALIZED_README_VISUAL not in localized_assets:
+        return []
+
+    errors: list[str] = []
+    for locale, filename in LOCALIZED_READMES.items():
+        readme = root / filename
+        label = readme.relative_to(root).as_posix()
+        if not readme.is_file():
+            errors.append(f"{label}: missing localized README for visual entry")
+            continue
+        try:
+            text = readme.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"{label}: cannot read localized README: {exc}")
+            continue
+
+        expected_path = f"assets/teaching/locales/{locale}/{LOCALIZED_README_VISUAL}"
+        source_path = f"assets/teaching/{LOCALIZED_README_VISUAL}"
+        if re.search(
+            rf"!\[[^\]]*\]\({re.escape(source_path)}(?:#[^)]*)?\)", text
+        ):
+            errors.append(
+                f"{label}: translated README uses the English source visual directly"
+            )
+        image_pattern = re.compile(
+            rf"!\[(?P<alt>[^\]]+)\]\({re.escape(expected_path)}(?:#[^)]*)?\)"
+        )
+        match = image_pattern.search(text)
+        if not match:
+            errors.append(
+                f"{label}: missing locale-specific visual path {expected_path}"
+            )
+            continue
+        if not match.group("alt").strip():
+            errors.append(f"{label}: localized visual has empty alt text")
+
+    return errors
+
+
+def validate_localized_markdown_visuals(
+    root: Path, localized_assets: set[str]
+) -> list[str]:
+    """Ensure translated Markdown uses an available locale SVG directly.
+
+    The Reader can swap an image at runtime, but GitHub renders Markdown
+    without that JavaScript.  Any translated chapter, route, guide, or Lab that
+    embeds one of the reviewed boards must therefore point at its own locale
+    variant in source.  Boards without a reviewed variant remain an explicit
+    English fallback and are intentionally left alone.
+    """
+    root = root.resolve()
+    if not localized_assets:
+        return []
+
+    errors: list[str] = []
+    suffix_pattern = re.compile(r"-(ZH|ES|JA|KO|DE|ZHTW|FR)\.md$", re.IGNORECASE)
+    image_pattern = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
+    ignored_directories = {".git", ".work", ".codex-temp", "node_modules", "_site", "tmp", "output", ".pytest_cache"}
+    markdown_paths: list[Path] = []
+    for current_root, directories, filenames in os.walk(root):
+        directories[:] = [directory for directory in directories if directory not in ignored_directories]
+        current = Path(current_root)
+        markdown_paths.extend(current / filename for filename in filenames if filename.endswith(".md"))
+    for path in markdown_paths:
+        match = suffix_pattern.search(path.name)
+        if not match:
+            continue
+        locale = LOCALE_SUFFIXES[match.group(1).upper()]
+        text = path.read_text(encoding="utf-8")
+        for image_match in image_pattern.finditer(text):
+            target = image_match.group(1).split("#", 1)[0].split("?", 1)[0].strip().strip("<>")
+            if not target or target.startswith(("http://", "https://", "data:")):
+                continue
+            resolved = (path.parent / target).resolve()
+            source_root = (root / "assets" / "teaching").resolve()
+            localized_root = (source_root / "locales").resolve()
+            try:
+                source_relative = resolved.relative_to(source_root)
+            except ValueError:
+                continue
+            parts = source_relative.parts
+            if not parts:
+                continue
+            if parts[0] == "locales":
+                if len(parts) < 3:
+                    continue
+                referenced_locale = parts[1]
+                asset = parts[-1]
+                expected = (localized_root / locale / asset).resolve()
+                if referenced_locale != locale and asset in localized_assets:
+                    errors.append(
+                        f"{path.relative_to(root).as_posix()}: visual {asset} uses locale {referenced_locale}, expected {locale}"
+                    )
+                elif asset in localized_assets and resolved != expected:
+                    errors.append(
+                        f"{path.relative_to(root).as_posix()}: visual {asset} does not resolve to {expected.relative_to(root).as_posix()}"
+                    )
+                continue
+            asset = parts[-1]
+            if asset in localized_assets:
+                expected = (localized_root / locale / asset).resolve()
+                errors.append(
+                    f"{path.relative_to(root).as_posix()}: visual {asset} uses English source; expected {expected.relative_to(root).as_posix()}"
+                )
+    return errors
+
+
 def validate(asset_directory: Path, catalog: Path, source_register: Path, site_index: Path, matrix: Path | None = None) -> list[str]:
     """Return catalog, source-path, site-count, and minimal SVG accessibility failures."""
     errors: list[str] = []
@@ -143,6 +283,20 @@ def validate(asset_directory: Path, catalog: Path, source_register: Path, site_i
             errors.append(f"{label}: missing SVG viewBox")
     if matrix is not None and matrix.exists():
         errors.extend(_validate_visual_matrix(asset_directory, matrix))
+        try:
+            matrix_text = matrix.read_text(encoding="utf-8")
+            _, localized_assets, _ = _matrix_values(matrix_text)
+            repository_root = asset_directory.parent.parent
+            if any((repository_root / filename).is_file() for filename in LOCALIZED_READMES.values()):
+                errors.extend(
+                    validate_localized_readme_visuals(repository_root, set(localized_assets))
+                )
+                errors.extend(
+                    validate_localized_markdown_visuals(repository_root, set(localized_assets))
+                )
+        except (OSError, UnicodeError):
+            # _validate_visual_matrix already reports an unreadable matrix.
+            pass
     return errors
 
 
