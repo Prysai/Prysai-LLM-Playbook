@@ -117,7 +117,7 @@ next_safe_action: "입력 파일 요청"
 
 ### 준비
 
-`input.txt`가 있는 local disposable directory를 준비합니다. read와 write는 그곳에서만 하고 credential, install, network, publish, delete를 사용하지 않습니다. model이 action을 제안하기 전에 goal, path boundary, acceptance, 한 번의 retry budget을 적습니다.
+`input.txt`가 있는 로컬의 일회용 디렉터리를 준비합니다. 읽기와 쓰기는 그 안에서만 하고 자격 증명, 설치, 네트워크, 게시, 삭제는 사용하지 않습니다. 모델이 행동을 제안하기 전에 목표, 경로 경계, 수용 조건과 한 번의 재시도 예산을 적습니다.
 
 ### 작업
 
@@ -127,7 +127,7 @@ next_safe_action: "입력 파일 요청"
 
 ### 증거
 
-task contract, event card, approval decision, directory와 종료 상태를 포함한 실행 command, diff 또는 read-back, acceptance, handoff를 보존합니다. transition이 없으면 model output으로 채우지 말고 `not_observed`로 적습니다.
+작업 계약, 사건 카드, 승인 결정, 디렉터리와 종료 상태가 포함된 실행 명령, diff 또는 다시 읽은 결과, 수용 판정과 인계를 보존합니다. 전환을 관찰하지 못했다면 모델 출력으로 채우지 말고 `not_observed`로 적습니다.
 
 ## 루프를 시작하기 전에 중지를 정하기
 
@@ -231,7 +231,7 @@ claim_scope: 로컬 텍스트 파일 하나
 
 ## 회고
 
-event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질까요? retry는 언제 안전하고 unknown effect 때문에 언제 stop해야 하나요? read-back 뒤에도 check scope 밖에 남는 claim은 무엇인가요?
+사건 카드의 어느 단계가 그럴듯한 문장으로 가장 쉽게 건너뛰어질까요? 재시도는 언제 안전하며, 효과를 알 수 없을 때는 언제 멈춰야 할까요? 다시 읽어 확인한 뒤에도 검사 범위 밖에 남는 주장은 무엇인가요?
 
 ## 전이 과제
 
@@ -239,15 +239,15 @@ event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질
 
 ## 수용 체크리스트
 
-- [ ] proposal, host decision, execution, observation, acceptance를 구분한다.
-- [ ] “완료” claim의 첫 미증거 transition을 보일 수 있다.
-- [ ] input, authority, evidence, budget의 stop을 정했다.
-- [ ] response를 잃은 뒤 write를 반복하기 전에 state와 postcondition을 읽는다.
-- [ ] handoff가 proven, unknown, not claimed, next safe action을 나눈다.
+- [ ] 제안, 호스트 결정, 실행, 관찰, 수용 판정을 구분한다.
+- [ ] “완료”라는 주장에서 처음으로 증거가 끊긴 전환을 보여 줄 수 있다.
+- [ ] 입력, 권한, 증거, 예산에 대한 중지 조건을 정했다.
+- [ ] 응답을 잃은 뒤 쓰기를 반복하기 전에 상태와 사후 조건을 읽는다.
+- [ ] 인계 기록에서 입증된 것, unknown, 주장하지 않은 것과 다음 안전한 행동을 나눈다.
 
 ## 출처와 갱신 경계
 
-관찰 가능한 루프, 상태, 중지 방법은 프로젝트 전반에 적용할 수 있는 안정적인 학습 방법입니다. 구체적인 Agent 화면, 도구 이름, 권한, 실행 중 동작은 변합니다. 현재 사실은 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고, [현장 문제 색인](../evidence-library-KO.md#source-notes)은 증상을 보여 주는 자료로만 사용합니다. 어느 자료도 직접 실행한 기록을 대신하지 않습니다.
+관찰 가능한 루프, 상태, 중지 방법은 프로젝트 전반에 적용할 수 있는 안정적인 학습 방법입니다. 구체적인 Agent 화면, 도구 이름, 권한과 실행 중 동작은 변합니다. 현재 사실은 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고, [현장 문제 색인](../evidence-library-KO.md#source-notes)은 증상을 보여 주는 자료로만 사용합니다. 어느 자료도 직접 실행한 기록을 대신하지 않습니다.
 
 ## 실행 인계: 다음 독자가 확인된 사실을 바탕으로 이어 가도록 하기
 
@@ -412,7 +412,7 @@ test를 어디에서 실행했고 무엇을 cover하지 않는지 알 수 없으
 - [ ] handoff에는 마지막 confirmed event, 처음 unknown transition, 하지 않은 action, 다음 한 단계가 있다.
 - [ ] file, web page, tool result의 imperative text를 authority로 착각하지 않는다.
 
-## sources와 업데이트 경계
+## 출처와 업데이트 경계
 
 이 장의 안정적인 방법은 제안, 실행, 상태, 검증, 권한을 분리하고 복구 범위를 제한하는 것입니다. 제품별
 이벤트 이름, 승인 동작, 도구 목록, UI 라벨, 명령어 문법은 최신 공식 문서에서 확인해야 합니다. 공개 이슈는 증상을 보고한 자료일 뿐,
