@@ -11,11 +11,12 @@
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
+_Eight locale entry points are registered; translation review and learner evidence remain in progress._
 <!-- language-switcher:end -->
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. The repository is the auditable source, not the recommended first screen.
 
-[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -47,7 +48,7 @@ define the task → choose a bounded action → inspect the result → keep evid
 ```
 
 The stable method applies beyond one product. The current default is the
-[LLM foundation core](README-EN.md#llm-foundation-core): explain, initiate,
+[LLM foundation core](book/routes/llm-foundation-core-v1-EN.md): explain, initiate,
 identify, repair, and transfer. Codex, tools, Skills, Agents, professional
 tracks, and named-platform adapters are later layers. They remain useful
 reference material, but their current structure is not learner evidence and
@@ -246,7 +247,7 @@ is a separate supplemental route for language, research, or a small work task.
 |---|---|---|
 | English chapters | 22 canonical sources | Reader learning, retention, or transfer |
 | Labs | 18 labs, all `draft / not_run` | Learner runs and independent reruns |
-| Skills | 26 project-owned `candidate` Skills (25 original + 1 reviewed external) | Broad trigger reliability, native-language review, or learner outcomes |
+| Skills | 26 `candidate` Skills tracked by the project (25 original + 1 reviewed external) | Broad trigger reliability, native-language review, or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
 | Locales | Eight registered locales: English source plus seven translation routes under migration | Complete, independently reviewed translations |
 | Public site | Reachable at [docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/) | Search indexing, reader acceptance, and deployment rollback evidence |

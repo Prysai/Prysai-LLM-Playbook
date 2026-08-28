@@ -22,6 +22,10 @@ will start with one small question, make one bounded attempt, and keep enough
 evidence to tell what happened. You do not need to memorise a product
 catalogue before beginning.
 
+For a goal-based entry, jump to [Start with a real outcome](#start-with-a-real-outcome)
+below. That table maps common needs to concrete starting points without making
+the full guide another menu to work through.
+
 > **Release decision:** `candidate` only. Static checks pass, but learner and
 > transfer runs, repeated evaluations, and independent review
 > evidence are still pending; two isolated first-turn observations are recorded.
@@ -39,7 +43,7 @@ catalogue before beginning.
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. This repository remains the auditable source.
 
-[Start the LLM foundation core](#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation core](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
@@ -525,7 +529,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-21**. Counts describe the
+This is a transparent snapshot as of **2026-08-27**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
@@ -533,7 +537,7 @@ repository; they do not describe learning outcomes.
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
-| Skills | 26 project Skills · `candidate` (25 original + 1 reviewed external) | Structural checks pass; fresh-context and native-language evidence remain partial and visible in the registry |
+| Skills | 26 `candidate` Skills tracked by the project (25 original + 1 reviewed external) | Structural checks pass; fresh-context and native-language evidence remain partial and visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate`, publicly reachable | Eight localized entry URLs are registered; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
 | Locale rollout | EN source plus seven candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
