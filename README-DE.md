@@ -203,7 +203,7 @@ und werden nicht künstlich in acht Kopien aufgeteilt.
 
 ## Links bleiben in derselben Sprache
 
-Ein reader-facing Link muss bei vorhandenem Ziel denselben `content_id` und
+Ein Link zu leserorientierten Inhalten muss bei vorhandenem Ziel denselben `content_id` und
 dieselbe Locale behalten. Die deutsche Navigation verlinkt daher
 `README-DE.md` mit `book/README-DE.md` und `book/preface-DE.md`, nicht mit den
 englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,

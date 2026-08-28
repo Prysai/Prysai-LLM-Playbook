@@ -142,9 +142,9 @@ redirect 뒤에는 원래 URL, 최종 URL, HTTP 상태, `Location`, 페이지 �
 
 ### 회고
 
-source, date, scope를 나누자 어떤 claim을 낮춰야 했나요? 개인 data나 새 permission 없이 할 수 있는 가장 작은 다음 check는 무엇인가요?
+출처, 날짜, 범위를 나누자 어떤 주장을 낮춰야 했나요? 개인 자료나 새 권한 없이 할 수 있는 가장 작은 다음 확인은 무엇인가요?
 
-## 실제 문제: 확인 가능한 source 없는 그럴듯한 답변
+## 실제 문제: 확인 가능한 출처가 없는 그럴듯한 답변
 
 model, 학습법, tool을 고를 때 summary는 link, version, report를 섞을 수 있습니다. 중요한 것은 문장의 설득력이 아니라 선언한 task, date, environment에 어떤 claim이 뒷받침되는가입니다.
 
@@ -291,7 +291,7 @@ known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을
 범위: 포함할 것, 제외할 것, 날짜/시간/장소의 경계.
 중지: 어떤 source, authority, definition이 빠지면 pause해야 하는가?
 ```
-### 주장마다 source owner 두기
+### 주장마다 출처 책임자 지정하기
 
 | 주장 | 예상 source owner | direct support | conflict / unknown | 다음으로 허용된 check |
 |---|---|---|---|---|
@@ -299,7 +299,7 @@ known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을
 
 forum 경험은 symptom과 질문을 발견하는 데 도움이 될 수 있지만, root cause나 모든 사용자의 경험을 자동으로 증명하지 않습니다. AI가 만든 link, title, date, citation도 original material에서 다시 확인해야 합니다.
 
-### 결론 전에 역방향 check 하기
+### 결론 전에 역방향으로 확인하기
 
 예정한 문장마다 material이 직접 말한 것인지 내가 inference한 것인지 나눕니다. 더 새로운 version, exception, conflicting source가 있는지, access date가 decision의 시간 범위 안인지, 다른 reader가 ledger에서 같은 support를 찾을 수 있는지 확인하세요. 하나라도 답할 수 없다면 문장을 좁히거나 `unknown`으로 남기며, 자신감 있는 말로 빈틈을 채우지 않습니다.
 

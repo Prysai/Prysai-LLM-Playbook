@@ -12,7 +12,7 @@
 ## 先按教材主線閱讀
 
 1. [LLM 基礎概念](guides/llm-fundamentals-ZHTW.md)
-2. [通用 LLM 首練習](routes/universal-core-foundations-ZHTW.md)
+2. [第一次通用 LLM 練習](routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](routes/first-safe-change-ZHTW.md)
 
 英文 Foundation Core 是規範源。在繁體中文重譯完成並通過獨立審校之前，繁體中文主線不會把這些內容標示為已驗證。
@@ -32,7 +32,7 @@
 - [返回繁體中文專案入口](../README-ZHTW.md)
 - [繁體中文序言](preface-ZHTW.md)
 - [繁體中文書籍目錄](table-of-contents-ZHTW.md)
-- [繁體中文通用 LLM 首練習：安全文字任務](routes/universal-core-foundations-ZHTW.md)
+- [繁體中文第一次通用 LLM 練習：安全文字任務](routes/universal-core-foundations-ZHTW.md)
 - [繁體中文新手安全路線：第一次安全改動](routes/first-safe-change-ZHTW.md)
 - [繁體中文新手提示卡：可選應用練習](communication-clinic-ZHTW.md)
 - [繁體中文工作更新六步練習](work-update-practice-loop-ZHTW.md)
@@ -69,7 +69,7 @@
 
 ## 當前閱讀入口
 
-如果你還沒有專案，也不準備讓 AI 操作檔案，先做[通用 LLM 首練習](routes/universal-core-foundations-ZHTW.md)：它只使用一則虛構通知，練習把目標、材料、檢查和停止點寫清楚。它是候選練習，不代表不同平台行為相同，也不證明學習效果。
+如果你還沒有專案，也不準備讓 AI 操作檔案，先做[第一次通用 LLM 練習](routes/universal-core-foundations-ZHTW.md)：它只使用一則虛構通知，練習把目標、材料、檢查和停止點寫清楚。它是候選練習，不代表不同平台行為相同，也不證明學習效果。
 
 如果你是第一次使用這套材料，按這一條候選路徑閱讀：
 

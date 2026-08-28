@@ -15,7 +15,7 @@
 第一次來這裡，不必在提示詞卡、Skill 和不同產品之間做選擇。先沿同一條中文主線學習：
 
 1. [LLM 基礎概念](book/guides/llm-fundamentals-ZHTW.md)
-2. [通用 LLM 首練習](book/routes/universal-core-foundations-ZHTW.md)
+2. [第一次通用 LLM 練習](book/routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](book/routes/first-safe-change-ZHTW.md)
 
 ### 先看一張路線圖
