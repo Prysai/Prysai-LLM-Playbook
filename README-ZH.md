@@ -2,7 +2,7 @@
 
 # Prysai 大模型实战手册：从第一个任务到可靠交付
 
-许可证：课程正文与教学资产采用 CC BY 4.0；脚本与工具采用 Apache-2.0，除非文件另有声明。参见 [`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE) 与许可边界文档。
+许可证：课程正文与教学资产采用 CC BY 4.0；脚本与工具采用 Apache-2.0，除非文件另有声明。参见 [`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE) 与[许可边界文档（locale-neutral）](docs/sources/licensing.md)。
 > 简体中文项目入口（`ZH`）。默认公开语言为英语（`EN`）；本文件是当前中文入口迁移的一部分。
 
 <!-- language-switcher:start -->
@@ -77,7 +77,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 
 ## 项目由哪些部分组成
 
-下表列出主要目录的职责。目录本身是结构性入口，不代表其中的每一个 reader-facing 文件都已经完成八语言迁移。
+下表列出主要目录的职责。目录本身是结构性入口，不代表其中的每一个面向读者的文件都已经完成八语言迁移。
 
 | 层 | 位置 | 保存什么 | 作用 |
 |---|---|---|---|

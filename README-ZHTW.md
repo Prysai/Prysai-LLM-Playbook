@@ -3,7 +3,7 @@
 
 # Prysai 大型語言模型實戰手冊：從第一個任務到可靠交付
 
-授權條款：課程正文與教學資產採用 CC BY 4.0；指令碼與工具採用 Apache-2.0，除非檔案另有宣告。參見 [`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE) 與授權邊界文件。
+授權條款：課程正文與教學資產採用 CC BY 4.0；指令碼與工具採用 Apache-2.0，除非檔案另有宣告。參見 [`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE) 與[授權邊界文件（locale-neutral）](docs/sources/licensing.md)。
 > 繁體中文專案入口（`ZHTW`）。預設公開語言為英文（`EN`）；本檔案是目前繁體中文入口遷移的一部分。
 
 <!-- language-switcher:start -->
@@ -78,7 +78,7 @@ Prysai LLM Playbook（Prysai 大型語言模型實戰手冊）不是把 skills �
 
 ## 專案由哪些部分組成
 
-下表列出主要目錄的職責。目錄本身是結構性入口，不代表其中的每一個 reader-facing 檔案都已經完成八語言遷移。
+下表列出主要目錄的職責。目錄本身是結構性入口，不代表其中的每一個讀者可見的檔案都已經完成八語言遷移。
 
 | 層 | 位置 | 儲存什麼 | 作用 |
 |---|---|---|---|
