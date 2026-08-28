@@ -5178,7 +5178,7 @@ Object.assign(copy.en, {
   heroProofStatus: 'Optional example · not the foundation lesson', heroProofLink: 'See the optional warm-up below',
   mobileRouteNoSetup: 'Start the LLM Foundation Core', mobileRouteTask: 'Learn the LLM concepts', mobileRouteFixture: 'Make your first bounded request',
   startEyebrow: 'After the foundation · choose one purpose', startTitle: 'What do you want the model to help you do next?',
-  startIntro: 'Finish the LLM Foundation Core first. Then choose one real purpose, add only the details that matter, and copy a bounded prompt for any chat model.',
+  startIntro: 'Finish the LLM Foundation Core first. Then choose one real purpose. The point is not a magic prompt; it is a small result you can inspect, revise, and carry to the next task.',
   wizardEyebrow: 'Application practice after the core', wizardTitle: 'Choose one thing you want help with next.',
   wizardIntro: 'After the foundation, choose a purpose, add only the details that matter, then copy a prompt you can inspect in any chat model. No account, files, or setup required.'
 });
@@ -5187,7 +5187,7 @@ Object.assign(copy.zh, {
   heroProofStatus: '可选示例 · 不是基础课程', heroProofLink: '查看下方可选热身',
   mobileRouteNoSetup: '开始 LLM 基础核心课', mobileRouteTask: '学习 LLM 基础概念', mobileRouteFixture: '提出第一条有边界请求',
   startEyebrow: '完成基础之后 · 选择一个目的', startTitle: '接下来你想让大模型帮你做什么？',
-  startIntro: '请先完成 LLM 基础核心课。之后选择一个真实目的，只补充必要信息，再复制一条可在任意聊天模型中检查的有边界提示词。',
+  startIntro: '请先完成 LLM 基础核心课。之后选择一个真实目的。重点不是找到一条万能提示词，而是做出一个能检查、能修正、能带到下一项任务的小结果。',
   wizardEyebrow: '核心课之后的应用练习', wizardTitle: '选择一件你接下来想获得帮助的事。',
   wizardIntro: '完成基础后，选择一个目的，只补充必要信息，然后复制一条可以在任意聊天模型中检查的提示词。不需要账号、文件或设置。'
 });
@@ -5196,7 +5196,7 @@ Object.assign(copy.es, {
   heroProofStatus: 'Ejemplo opcional · no es la lección de fundamentos', heroProofLink: 'Ver el calentamiento opcional abajo',
   mobileRouteNoSetup: 'Empieza el núcleo de fundamentos de LLM', mobileRouteTask: 'Aprende los conceptos de LLM', mobileRouteFixture: 'Haz tu primera petición acotada',
   startEyebrow: 'Después de los fundamentos · elige un propósito', startTitle: '¿Qué quieres que te ayude a hacer el modelo después?',
-  startIntro: 'Completa primero el núcleo de fundamentos de LLM. Después elige un propósito real, añade solo los datos necesarios y copia un prompt acotado para cualquier modelo de chat.',
+  startIntro: 'Completa primero el núcleo de fundamentos de LLM. Después elige un propósito real. La idea no es encontrar un prompt mágico, sino producir algo pequeño que puedas comprobar, corregir y llevar a la siguiente tarea.',
   wizardEyebrow: 'Práctica de aplicación después del núcleo', wizardTitle: 'Elige una cosa para la que quieras ayuda después.',
   wizardIntro: 'Después de los fundamentos, elige un propósito, añade solo los datos necesarios y copia un prompt que puedas inspeccionar en cualquier modelo de chat. No necesitas cuenta, archivos ni configuración.'
 });
@@ -5205,7 +5205,7 @@ Object.assign(copy.ja, {
   heroProofStatus: '任意の例 · 基礎レッスンではありません', heroProofLink: '下の任意のウォームアップを見る',
   mobileRouteNoSetup: 'LLM 基礎コアを始める', mobileRouteTask: 'LLM の概念を学ぶ', mobileRouteFixture: '最初の境界付きリクエストを作る',
   startEyebrow: '基礎の後 · 目的を一つ選ぶ', startTitle: '次に、モデルに何を手伝ってほしいですか？',
-  startIntro: 'まず LLM 基礎コアを終えてください。その後、実際の目的を一つ選び、必要な情報だけを加え、どのチャットモデルでも確認できる境界付きプロンプトをコピーします。',
+  startIntro: 'まず LLM 基礎コアを終えてください。その後、実際の目的を一つ選びます。魔法のようなプロンプトを探すのではなく、確認・修正でき、次の課題にも持ち込める小さな結果を作ることが目的です。',
   wizardEyebrow: 'コアの後の応用練習', wizardTitle: '次に助けてほしいことを一つ選んでください。',
   wizardIntro: '基礎の後に目的を選び、必要な情報だけを加えて、どのチャットモデルでも確認できるプロンプトをコピーします。アカウント、ファイル、設定は不要です。'
 });
@@ -5214,7 +5214,7 @@ Object.assign(copy.ko, {
   heroProofStatus: '선택 사항인 예시 · 기초 레슨이 아님', heroProofLink: '아래의 선택 사항인 워밍업 보기',
   mobileRouteNoSetup: 'LLM 기초 코어 시작하기', mobileRouteTask: 'LLM 개념 배우기', mobileRouteFixture: '첫 번째 범위가 정해진 요청 만들기',
   startEyebrow: '기초 다음 · 목적 하나 고르기', startTitle: '다음에는 모델이 무엇을 도와주면 좋겠나요?',
-  startIntro: '먼저 LLM 기초 코어를 끝내세요. 그다음 실제 목적 하나를 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에서도 점검할 수 있는 범위가 정해진 프롬프트를 복사하세요.',
+  startIntro: '먼저 LLM 기초 코어를 끝내세요. 그다음 실제 목적 하나를 고르세요. 마법의 프롬프트를 찾는 것이 아니라, 확인하고 고친 뒤 다음 과제에도 적용할 수 있는 작은 결과를 만드는 것이 목적입니다.',
   wizardEyebrow: '코어 이후의 응용 연습', wizardTitle: '다음에 도움받고 싶은 일 하나를 고르세요.',
   wizardIntro: '기초를 마친 뒤 목적을 고르고 필요한 정보만 추가한 다음, 어떤 채팅 모델에서도 점검할 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
 });
@@ -5223,7 +5223,7 @@ Object.assign(copy.de, {
   heroProofStatus: 'Optionales Beispiel · nicht die Grundlagenlektion', heroProofLink: 'Optionale Aufwärmübung unten ansehen',
   mobileRouteNoSetup: 'Mit dem LLM-Grundlagenkern beginnen', mobileRouteTask: 'LLM-Konzepte lernen', mobileRouteFixture: 'Die erste begrenzte Anfrage stellen',
   startEyebrow: 'Nach den Grundlagen · einen Zweck wählen', startTitle: 'Wobei soll dir das Modell als Nächstes helfen?',
-  startIntro: 'Beende zuerst den LLM-Grundlagenkern. Wähle danach einen echten Zweck, ergänze nur die nötigen Angaben und kopiere einen begrenzten Prompt für jedes Chatmodell.',
+  startIntro: 'Beende zuerst den LLM-Grundlagenkern. Wähle danach einen echten Zweck. Es geht nicht um einen magischen Prompt, sondern um ein kleines Ergebnis, das du prüfen, überarbeiten und auf die nächste Aufgabe übertragen kannst.',
   wizardEyebrow: 'Anwendungspraxis nach dem Kern', wizardTitle: 'Wähle eine Sache, bei der du als Nächstes Hilfe möchtest.',
   wizardIntro: 'Wähle nach den Grundlagen einen Zweck, ergänze nur die nötigen Angaben und kopiere einen Prompt, den du in jedem Chatmodell prüfen kannst. Kein Konto, keine Dateien und keine Einrichtung nötig.'
 });
@@ -5737,7 +5737,7 @@ Object.assign(copy['zh-tw'], {
   navLabs: '實驗室',
   navUpdates: '更新地圖',
   localeTitle: '八語種路線',
-  localeIntro: '倉庫已登記八種入口語言。每種語言都有 22 章和 18 個實驗的同語言路線；Skill、研究和治理資料各自保留翻譯狀態。頁面不可用時會明確說明，不會悄悄將課程正文切換為英文。',
+  localeIntro: '儲存庫已登記八種入口語言。每種語言都有 22 章和 18 個實驗的同語言路線；Skill、研究和治理資料各自保留翻譯狀態。頁面不可用時會明確說明，不會悄悄將課程正文切換為英文。',
   localeEnglish: '可用 · 預設',
   localeChinese: '可用 · 簡體中文',
   localeSpanish: '可用 · Español',
@@ -6650,7 +6650,7 @@ Object.assign(copy.fr, {
   heroRouteUnitFourFive: '5 · Unités 4 et 5 : vérifier, corriger et transférer',
   heroProofTitle: 'Un petit prompt peut changer le résultat.',
   heroProofLink: 'Voir l’exemple facultatif ci-dessous',
-  startIntro: 'Terminez d’abord les fondamentaux des LLM. Choisissez ensuite un objectif réel, ajoutez uniquement les détails utiles et copiez un prompt délimité pour le modèle de votre choix.',
+  startIntro: 'Terminez d’abord les fondamentaux des LLM. Choisissez ensuite un objectif réel. L’important n’est pas de trouver un prompt magique, mais de produire un petit résultat que vous pouvez vérifier, corriger et réutiliser pour la tâche suivante.',
   problemStartBody: 'Commencez par les fondamentaux des LLM : leurs limites, les prompts délimités, les erreurs visibles, la correction et le transfert, avant de choisir une plateforme.',
   problemStartLink: 'Commencer par les fondamentaux des LLM ↗',
   first30Eyebrow: 'Une pratique de cinq minutes sur les LLM',

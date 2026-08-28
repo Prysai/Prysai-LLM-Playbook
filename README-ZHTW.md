@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 <!-- content_id: project-readme | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress -->
 
-# Prysai 大模型實戰手冊：從第一個任務到可靠交付
+# Prysai 大型語言模型實戰手冊：從第一個任務到可靠交付
 
 授權條款：課程正文與教學資產採用 CC BY 4.0；指令碼與工具採用 Apache-2.0，除非檔案另有宣告。參見 [`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE) 與授權邊界文件。
 > 繁體中文專案入口（`ZHTW`）。預設公開語言為英文（`EN`）；本檔案是目前繁體中文入口遷移的一部分。
@@ -42,7 +42,7 @@
 
 ## 這是什麼專案
 
-Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在一起的目錄，也不是隻講安裝步驟的手冊。它是一套書籍式、課程式、實驗室式的 LLM 協作學習與實踐系統：先幫助學習者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的關係，再透過實驗把理解變成行動，最後把個人方法沉澱成可以評估、複用和更新的團隊能力。
+Prysai LLM Playbook（Prysai 大型語言模型實戰手冊）不是把 skills 平鋪在一起的目錄，也不是只講安裝步驟的手冊。它是一套書籍式、課程式、實驗室式的 LLM 協作學習與實踐系統：先幫助學習者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的關係，再透過實驗把理解變成行動，最後把個人方法沉澱成可以評估、複用和更新的團隊能力。
 
 它要帶領學習者完成一條完整成長路徑：從“我聽說過 GPT”開始，到能夠安全使用 Codex、穩定完成真實任務、理解 Agent 為什麼這樣行動、選擇和設計合適的 Skill，直到建立自己的工作系統並幫助團隊共同使用。
 
@@ -113,7 +113,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 
 ## 重要邊界
 
-- 專案維護者的原創內容與外部來源必須分開記錄；組織歸屬和治理資訊見來源臺賬。
+- 專案維護者的原創內容與外部來源必須分開記錄；組織歸屬和治理資訊見來源登錄表。
 - 模型名稱、價格、入口、額度和具體功能屬於易變事實，必須帶來源和複核日期。
 - “GPT-5.6 Luna 價效比最高”目前是需要用可重複評測驗證的產品假設，不是永久結論。
 - 任何沒有明確授權條款的材料都不直接複製進發行版。
@@ -130,7 +130,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 - [通用 LLM 第一任務](book/routes/universal-core-foundations-ZHTW.md)
 - [繁體中文新手提示卡](book/communication-clinic-ZHTW.md)
 
-術語表、治理規則、來源臺賬、評測定義、研究檔案和 Skill 說明尚未提供中文檔案。為保證這條路線始終使用中文，本入口不再把它們連結到原始語言頁面；相應內容翻譯並審校後，才會在這裡開放。
+術語表、治理規則、來源登錄表、評測定義、研究檔案和 Skill 說明尚未提供中文檔案。為保證這條路線始終使用中文，本入口不再把它們連結到原始語言頁面；相應內容翻譯並審校後，才會在這裡開放。
 
 ## 中文候選學習路徑
 
@@ -145,4 +145,4 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 
 ## 名稱說明
 
-當前對外名稱為 `Prysai LLM Playbook — From First Task to Reliable Work`，中文名稱為“Prysai 大模型實戰手冊：從第一個任務到可靠交付”。GitHub 倉庫路徑暫保持現有 slug；倉庫後設資料和舊連結遷移需要單獨決定。組織歸屬、維護責任和發行門禁記錄在治理與來源檔中，不放進產品標題。
+當前對外名稱為 `Prysai LLM Playbook — From First Task to Reliable Work`，中文名稱為「Prysai 大型語言模型實戰手冊：從第一個任務到可靠交付」。GitHub 儲存庫路徑暫保持現有 slug；儲存庫後設資料和舊連結遷移需要單獨決定。組織歸屬、維護責任和發行門禁記錄在治理與來源檔中，不放進產品標題。
