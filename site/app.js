@@ -5737,7 +5737,7 @@ Object.assign(copy['zh-tw'], {
   navLabs: '實驗室',
   navUpdates: '更新地圖',
   localeTitle: '八語種路線',
-  localeIntro: '倉庫已登記八種入口語言。每種語言都有 22 章和 18 個實驗的同語言路線；Skill、研究和治理資料各自保留翻譯狀態。頁面不可用時會明確說明，不會悄悄將課程正文切換為英文。',
+  localeIntro: '儲存庫已登記八種入口語言。每種語言都有 22 章和 18 個實驗的同語言路線；Skill、研究和治理資料各自保留翻譯狀態。頁面不可用時會明確說明，不會悄悄將課程正文切換為英文。',
   localeEnglish: '可用 · 預設',
   localeChinese: '可用 · 簡體中文',
   localeSpanish: '可用 · Español',

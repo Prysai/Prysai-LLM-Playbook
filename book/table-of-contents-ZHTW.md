@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 <!-- content_id: book-table-of-contents | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Prysai 大模型實戰手冊：中文目錄
+# Prysai 大型語言模型實戰手冊：中文目錄
 
 > 這是繁體中文（`ZHTW`）目錄。22 章和 18 個實驗均直達繁體中文檔案；共享研究、治理記錄和固定評測資料會明確標註其原始語言，不會被悄悄當作繁體中文正文。
 
