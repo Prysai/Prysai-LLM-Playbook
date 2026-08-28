@@ -253,11 +253,12 @@ behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 - Das Projekt ist ein unabhängig gepflegtes Lern- und Praxissystem, keine
   offizielle Dokumentation und keine offizielle Produktseite von OpenAI.
 
-## Umfang dieses ersten deutschen Schnitts
+## Umfang der deutschen Route
 
-Der deutsche Leseweg umfasst den Projekteinstieg, Buchleitfaden, das Vorwort,
-den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4 sowie die
-Labs 001, 007 und 011. Er macht weder die übrigen Kapitel und Labs noch Skills,
-Forschungsakten oder die öffentliche Website zu vollständigen deutschen
-Übersetzungen. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar, bis die
-jeweilige content ID tatsächlich übersetzt und geprüft wurde.
+Für alle 22 Kapitel und 18 Labs gibt es inzwischen eine deutsche `-DE`-Datei
+und einen gleichsprachigen Reader-Pfad. Diese strukturelle Abdeckung bedeutet
+jedoch nicht, dass die Texte bereits unabhängig auf Deutsch geprüft, von
+Lernenden ausgeführt oder im Browser bestätigt wurden: Die Übersetzung bleibt
+`in-progress`, Kapitel bleiben `candidate` und Labs `draft / not_run`. Skills,
+Forschungsakten, Governance-Dateien und die öffentliche Website behalten ihren
+jeweils ausgewiesenen Übersetzungs- oder Neutralstatus.
