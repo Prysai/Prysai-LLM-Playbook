@@ -18,6 +18,12 @@ Wenn du zum ersten Mal hier bist, wähle noch nicht zwischen Karten, Skills und 
 2. [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
 3. [Erste sichere Änderung](book/routes/first-safe-change-DE.md)
 
+### Den Weg auf einen Blick sehen
+
+![Erster Besuch: eine prüfbare LLM-Aufgabe beginnen](assets/teaching/locales/de/foundation-first-visit-route-red-black.svg)
+
+Diese Lehrtafel mit fünf Schritten zeigt den ganzen Einstieg in einer Linie: Ziel wählen, den Grundlagenkern öffnen, sicher versuchen, das Protokoll prüfen und weitergehen oder anhalten. Sie dient zur Orientierung und belegt keinen Lernerfolg.
+
 Der englische Grundlagenkern ist die kanonische Quelle; die deutsche
 Neuübersetzung wird noch erstellt und geprüft. Bis dahin bleibt dieser Einstieg
 vollständig auf deutsche Dateien begrenzt.

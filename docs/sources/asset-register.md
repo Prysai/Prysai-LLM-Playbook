@@ -31,6 +31,8 @@
 
 **新增页面记录 S155：** `site/visual-assets.js`、`site/styles.css`、`site/reader.css`、`site/visuals.css` 与相关浏览器检查的 2026-08-26 更新，把 `english-fallback` 状态显示在首页、Reader 和 Visual Guide 的图像旁边，并让语言切换后提示同步隐藏或更新。该提示只披露图中文字仍为英文，不声称图片已翻译；已审校的本地化图和英文源图不会显示回退提示。
 
+**新增维护记录 S156：** 七个翻译版项目入口 `README-{ZH,ES,JA,KO,DE,ZHTW,FR}.md` 的 2026-08-28 更新，在首次学习路线旁直接引用对应语言的 `foundation-first-visit-route-red-black.svg`，让 GitHub 的静态 Markdown 阅读与 Reader 的运行时图片切换保持一致。`scripts/validate_teaching_assets.py`、`scripts/test_validate_teaching_assets.py`、`assets/teaching/README.md` 与 `docs/governance/visual-locale-matrix.yaml` 同步记录并检查这一规则。改动只使用项目自有、已登记的 SVG；它改善入口可读性和语言一致性，不证明视觉质量、理解效果、学习结果或翻译已达到母语级。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

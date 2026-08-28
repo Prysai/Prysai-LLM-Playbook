@@ -15,6 +15,12 @@ Si es tu primera visita, no elijas todavía entre tarjetas, Skills o productos. 
 2. [Primera tarea universal de LLM](book/routes/universal-core-foundations-ES.md)
 3. [Primera modificación segura](book/routes/first-safe-change-ES.md)
 
+### Mira el recorrido de un vistazo
+
+![Recorrido de primera visita para una tarea LLM comprobable](assets/teaching/locales/es/foundation-first-visit-route-red-black.svg)
+
+Esta lámina de cinco pasos reúne el recorrido en una sola línea: elegir un objetivo, abrir los fundamentos, hacer un intento seguro, revisar el registro y continuar o detenerse. Es una ayuda visual para orientarse, no una prueba de aprendizaje.
+
 El núcleo de fundamentos en inglés es la fuente canónica que se está
 retraduciendo; esta entrada en español mantiene una ruta completamente en
 español hasta que la nueva traducción pueda revisarse.

@@ -18,6 +18,12 @@
 2. [通用 LLM 首練習](book/routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](book/routes/first-safe-change-ZHTW.md)
 
+### 先看一張路線圖
+
+![第一次造訪路線：完成一項可檢查的 LLM 任務](assets/teaching/locales/zh-tw/foundation-first-visit-route-red-black.svg)
+
+這張五步圖把「選定目標 → 開啟基礎核心 → 安全嘗試 → 檢查紀錄 → 繼續或停下」放在同一條線上；先看懂路線，再決定要不要深入閱讀。這是教學輔助圖，不代表學習效果已經驗證。
+
 英文基礎核心課是當前的規範原始檔，中文版本正在重譯和複核。在此之前，
 這個入口會保持整條路線只連結中文檔案。
 
