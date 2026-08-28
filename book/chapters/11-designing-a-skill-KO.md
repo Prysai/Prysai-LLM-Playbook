@@ -314,7 +314,7 @@ Skill 안에서 재사용 가능한 decision과 이 file 또는 host에만 속�
 
 ## 전이 과제
 
-contract를 learning 또는 research task에 옮깁니다. learning Skill은 practice cycle과 나중 recall task를 조직할 수 있지만 fluency나 mastery를 주장하지 않습니다. research Skill은 source와 uncertainty를 정리할 수 있지만 찾은 link를 확인된 fact로 만들지 않습니다. trigger, non-trigger, stop rule, evidence boundary는 유지합니다.
+contract를 learning 또는 research task에 옮깁니다. learning Skill은 practice cycle과 나중 recall task를 조직할 수 있지만 유창성이나 숙련을 주장하지 않습니다. research Skill은 source와 uncertainty를 정리할 수 있지만 찾은 link를 확인된 fact로 만들지 않습니다. trigger, non-trigger, stop rule, evidence boundary는 유지합니다.
 
 ## 수용 체크리스트
 
