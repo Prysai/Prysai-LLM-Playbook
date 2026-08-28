@@ -99,7 +99,7 @@ model が「処理中」と言う、同じ案を繰り返す、file が変わっ
 
 ```text
 まだ retry、edit、network、new command をしないでください。
-見えている record だけから、最後に確認できた event と最初の unknown event を示してください。
+見えている記録だけから、最後に確認できた event と最初の unknown event を示してください。
 影響した可能性がある file と、最小の read-only check は何ですか？
 この情報が無ければ blocked と書き、完了を推測しないでください。
 ```

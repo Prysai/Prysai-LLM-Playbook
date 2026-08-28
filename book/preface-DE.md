@@ -143,7 +143,7 @@ Browser-/Runtime-Bestätigung noch fehlt.
 
 ## Acht Locales und die deutsche Navigation
 
-Reader-facing Dateien folgen immer `<stabiler-stem>-<LOCALE>.md` mit den acht
+Für Leser sichtbare Dateien folgen immer `<stabiler-stem>-<LOCALE>.md` mit den acht
 Suffixen `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, `-ZHTW` und `-FR`. Ihre
 URL-Tokens sind `en`, `zh`, `es`, `ja`, `ko`, `de`, `zh-tw` und `fr`; die
 HTML-Sprachen sind `en`, `zh-CN`, `es`, `ja`, `ko`, `de`, `zh-TW` und `fr`.

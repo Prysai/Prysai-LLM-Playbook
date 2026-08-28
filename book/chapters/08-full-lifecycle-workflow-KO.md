@@ -93,7 +93,7 @@ rollback: 기록한 편집 전 복사본 또는 clean checkpoint로 돌아간다
 경과 시간, 출력, 프로세스 상태를 남깁니다. diff를 확인한 뒤 complete, partial, failed,
 unknown 중 하나로 분류합니다.
 
-**말하면 안 되는 것:** silence가 pass를 뜻하지 않으며 화면에 error가 없다고 child process가
+**말하면 안 되는 것:** 무반응이 통과를 뜻하지 않으며 화면에 오류가 없다고 하위 프로세스가
 끝난 것은 아닙니다.
 
 ### 브라우저 로그인은 성공했지만 클라이언트가 뒤에서 실패함
@@ -103,8 +103,8 @@ unknown 중 하나로 분류합니다.
 **첫 번째 안전한 대응:** 인증 페이지, 콜백, 클라이언트 교환, 처음 성공한 요청을 각각 기록합니다.
 빠진 다음 상태만 점검합니다.
 
-**말하면 안 되는 것:** browser 성공은 client authentication, account entitlement, connector approval,
-tool availability의 증거가 아닙니다.
+**말하면 안 되는 것:** 브라우저에서 로그인에 성공했다고 해서 클라이언트 인증, 계정 사용 권한,
+커넥터 승인 또는 도구 사용 가능 여부가 증명되는 것은 아닙니다.
 
 ### 검증이 영구 변경을 제안함
 
@@ -248,7 +248,7 @@ Rollback: pre-edit copy와 baseline diff
 | Maintain | owner와 next fact/check review | 미래 claim을 하지 않음 |
 
 check가 timeout되면 첫 response는 retry가 아닙니다. last output, process state, diff, target read-back을
-보관합니다. state를 모르면 `unknown`으로 두고 potentially completed write를 blind repeat하지 않습니다.
+보관합니다. 상태를 모르면 `unknown`으로 두고, 완료되었을 가능성이 있는 쓰기를 확인 없이 반복하지 않습니다.
 
 ### Truthful delivery
 

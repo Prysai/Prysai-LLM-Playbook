@@ -38,7 +38,7 @@ Product Context Skill が単独で動いたこと、物件が実在すること�
 ## 学習目標
 
 - 編集前に `scope`、`non-goal`、`acceptance`、`authority`、`rollback` を書く。
-- 大きな依頼を、早く証拠を出せる小さな縦断スライスに変える。
+- 大きな依頼を、早く証拠を出せる小さな垂直スライスに変える。
 - 最後に受け入れた状態を残し、条件を満たしたときだけ再試行する。
 - ビルド、実行時の動作、表示、ソース、セキュリティ、利用者による受け入れの証拠を区別する。
 - 完了と未完了を混ぜない引き継ぎを書く。
@@ -122,9 +122,9 @@ MCP アクションを承認境界に置いています。ワークフローに�
 [事実の影響範囲レジストリ](../../docs/governance/fact-impact-registry.yaml) は、日付のある
 製品境界を確認する入口です。
 
-## 縦断スライスとチェックポイント
+## 垂直スライスとチェックポイント
 
-横割りの `all data → all API → all UI → integration → test` は、間違った前提を最後まで隠しがちです。縦断スライスは `one input → smallest change → observable action → focused check` とし、一つの小さな結果を入力から証拠まで通します。
+横割りの `all data → all API → all UI → integration → test` は、間違った前提を最後まで隠しがちです。垂直スライスは `one input → smallest change → observable action → focused check` とし、一つの小さな結果を入力から証拠まで通します。
 
 チェックポイントにはベースライン、権限、最初の差分、検証結果、レビューを分けて残します。再試行の前には次を記録します。
 

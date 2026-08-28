@@ -117,7 +117,7 @@ Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima 
 
 ## Fuentes y límite de mantenimiento
 
-Las preguntas, las cadenas de evidencia y los registros de conflicto son métodos estables. Las páginas, los hechos de producto, los foros y las búsquedas cambian; registra la fecha de acceso, el alcance y la próxima comprobación.
+Las preguntas, las cadenas de evidencia y los registros de conflicto son métodos estables. Las páginas, los hechos de producto, los foros y las búsquedas cambian; registra la fecha de acceso, el alcance y la próxima comprobación. Consulta las [notas de fuentes de la biblioteca de evidencia](../evidence-library-ES.md#source-notes) para conservar el contexto y el estado de cada referencia.
 
 ## Comprobación propia
 
