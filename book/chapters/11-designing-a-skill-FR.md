@@ -859,7 +859,7 @@ volatils et doivent être revérifiés.
 | Symptôme de découverte | [openai/codex#31592](https://github.com/openai/codex/issues/31592) | 2026-08-11 | Rapport public, sans cause universelle ni reproduction locale. |
 | Limite MCP | [anthropics/claude-code#73185](https://github.com/anthropics/claude-code/issues/73185) · [MCP transports](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) | 2026-08-11 | Ne prouve pas le comportement Codex. |
 | Qualité des Skills | [standard](../../docs/quality/skill-quality-standard.md) · [décisions](../../docs/sources/skill-integration-decisions.md) | 2026-08-11 | Gouvernance, pas preuve d’exécution. |
-| Cas synthétique | [case record](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md) · [sandbox](../../examples/skill-sandbox/product-context-real-estate/README-FR.md) | 2026-08-11 | Fixture du projet, pas runtime Skill. |
+| Cas synthétique | [fiche de cas](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md) · [sandbox](../../examples/skill-sandbox/product-context-real-estate/README-FR.md) | 2026-08-11 | Fixture du projet, pas runtime Skill. |
 | Rapports de terrain | [patterns](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md) · [deep dive](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | Ni prévalence, ni cause, ni approbation fournisseur. |
 | Licence | [asset register](../../docs/sources/asset-register.md) | 2026-08-11 | Une licence externe ne couvre pas automatiquement médias et dépendances. |
 

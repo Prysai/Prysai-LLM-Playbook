@@ -32,7 +32,7 @@ un dossier de réponses réussies, ni une checklist propre à un seul projet.
 ## Préparation
 
 Choisissez un flux de travail sans risque déjà réalisé au moins deux fois.
-Conservez les deux comptes rendus, utilisez des entrées désinfectées et
+Conservez les deux comptes rendus, utilisez des entrées expurgées et
 travaillez dans un répertoire temporaire distinct du dossier découvrable des
 Skills. N’utilisez ni secret, ni donnée de production, ni contenu client non
 publié, ni source externe dont la licence est incertaine.
@@ -84,7 +84,7 @@ Testez quatre fixtures fixes dans un contexte vierge :
 
 | Cas | Demande | Résultat attendu |
 |---|---|---|
-| Positif | classer une note désinfectée en faits et hypothèses | le Skill est retenu et la sortie respecte le contrat |
+| Positif | classer une note expurgée en faits et hypothèses | le Skill est retenu et la sortie respecte le contrat |
 | Frontière | demander une recommandation de domaine sans note à classer | le Skill explique le non-déclenchement |
 | Échec | fournir une entrée manquante ou contradictoire | il s’arrête et conserve l’incertitude |
 | Transfert | appliquer la même forme à un autre domaine | les décisions stables survivent sans détail du premier projet |

@@ -155,11 +155,11 @@ No hagas de «inténtalo otra vez» la recuperación por defecto. Cada reintento
 
 ```yaml
 delivery_state: blocked
-last_confirmed_transition: "proposal accepted; no tool-start event observed"
-artifact_state: "target not read back; change status unknown"
+last_confirmed_transition: "propuesta aceptada; no se observó ningún evento de inicio de herramienta"
+artifact_state: "objetivo no vuelto a leer; estado del cambio desconocido"
 evidence_kept: [task-protocol.md, approval-record.md, process-status.txt]
 not_claimed: ["archivo actualizado", "pruebas superadas"]
-next_safe_action: "read the target, then decide whether another write is allowed"
+next_safe_action: "leer el objetivo y decidir después si se permite otra escritura"
 ```
 
 Esto es más útil que «se atascó»: quien recibe el trabajo sabe qué está probado, qué no puede afirmar y cómo evitar repetir un posible efecto.

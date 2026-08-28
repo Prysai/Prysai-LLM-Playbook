@@ -77,7 +77,7 @@ transferencia.
 
 ## Límites y siguientes pasos
 
-- Esta página no hace fallback silencioso a inglés, chino u otro idioma.
+- Esta página no recurre silenciosamente al inglés, al chino ni a otro idioma.
 - Los documentos de gobernanza y fuentes que aún son `locale-neutral` no se
   presentan como una traducción española. El estado actual del proyecto sigue
   siendo la fuente de los conteos y estados, pero no se abre desde esta ruta.
