@@ -27,7 +27,7 @@ transfer_limitations: "No demuestra disponibilidad de cuentas, hosts Enterprise,
 
 ## Problema y fixture
 
-Los informes públicos mezclan logged in, accesible, autorizado, ejecutado y
+Los informes públicos mezclan los estados de sesión iniciada, accesible, autorizado, ejecutado y
 verificado. Una autenticación puede fallar durante token exchange; una CLI
 Enterprise puede usar otro host que la entrada de PR; el acceso a una organización
 no instala automáticamente otra; y verificar un cambio no autoriza reinstalar un
