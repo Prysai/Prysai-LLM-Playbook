@@ -14,7 +14,7 @@
 _Eight locale entry points are registered; translation review and learner evidence remain in progress._
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. The repository is the auditable source, not the recommended first screen.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. You are working toward a bounded task card, a checked result record, and one transfer attempt; these are targets, not measured outcomes. The repository is the source you can audit; the guided site is the easier first screen.
 
 [Start the LLM foundation route](book/routes/llm-foundation-core-v1-EN.md) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
