@@ -209,10 +209,13 @@ dieselbe Locale behalten. Die deutsche Navigation verlinkt daher
 englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
 Vor-/Zurück-Links, Kapitel-Lab-Verweise und Sprachumschalter.
 
-Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel. Leserlinks bleiben
-innerhalb dieser deutschen Kursroute. Gemeinsame Forschungs-, Governance- und
-Evaluationsmaterialien behalten ihre dokumentierte Originalsprache und werden
-als Evidenzmaterial bezeichnet, nicht als deutsche Kursseiten ausgegeben.
+Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel als struktureller
+Leserpfad. Diese Datei- und Pfadabdeckung bedeutet nicht, dass alle Texte
+übersetzt oder sprachlich geprüft sind; den aktuell bearbeiteten Umfang dieses
+deutschen Schnitts nennen wir unten separat. Gemeinsame Forschungs-,
+Governance- und Evaluationsmaterialien behalten ihre dokumentierte
+Originalsprache und werden als Evidenzmaterial bezeichnet, nicht als deutsche
+Kursseiten ausgegeben.
 
 ### Deutsche Einstiege
 
