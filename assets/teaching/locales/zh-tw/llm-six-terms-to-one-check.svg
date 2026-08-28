@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
   <title id="title">六個 LLM 術語，一個可檢查的結果</title>
-  <desc id="desc">這張橫向教學圖分開權杖、上下文、上下文視窗、提示、回應，以及工具或 Agent。紅色界線提醒：回應必須先和來源或驗收規則核對，才能繼續使用。</desc>
+  <desc id="desc">這張橫向教學圖分開詞元、上下文、上下文視窗、提示、回應，以及工具或 Agent。紅色界線提醒：回應必須先和來源或驗收規則核對，才能繼續使用。</desc>
   <rect width="1400" height="1000" fill="#f6f6f2"/>
   <rect x="48" y="36" width="1304" height="10" fill="#161616"/>
   <text x="48" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LLM 基礎／一次請求</text>
@@ -11,7 +11,7 @@
   <g font-family="Arial, Helvetica, sans-serif">
     <rect x="48" y="354" width="196" height="290" fill="#161616"/>
     <text x="72" y="392" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／單位</text>
-    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">權杖</text>
+    <text x="72" y="452" fill="#ffffff" font-size="32" font-weight="900">詞元</text>
     <text x="72" y="500" fill="#c4c4be" font-size="18">模型處理的</text>
     <text x="72" y="528" fill="#c4c4be" font-size="18">一小段</text>
     <text x="72" y="556" fill="#c4c4be" font-size="18">文字。</text>
