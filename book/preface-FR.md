@@ -19,12 +19,12 @@ que lorsque le comportement est sourcé et que la limite de la comparaison est
 Une tâche réelle ne dépend pourtant pas d’une seule phrase. Il faut aussi se
 demander :
 
-- qu’est-ce que le modèle a effectivement compris ? ;
-- quels fichiers, règles et résultats précédents font partie du contexte ? ;
-- que peut faire Codex, et que doit-il demander avant de le faire ? ;
-- quel Skill réduit une omission réelle au lieu d’ajouter de la cérémonie ? ;
+- qu’est-ce que le modèle a effectivement compris ?
+- quels fichiers, règles et résultats précédents font partie du contexte ?
+- que peut faire Codex, et que doit-il demander avant de le faire ?
+- quel Skill réduit une omission réelle au lieu d’ajouter de la cérémonie ?
 - pourquoi un Agent continue-t-il, réessaie-t-il, se met-il en pause ou
-  s’arrête-t-il ? ;
+  s’arrête-t-il ?
 - quelle preuve permet de dire que le travail est terminé ?
 
 Le livre étudie cette relation entière. Lisez-le comme une conversation guidée :

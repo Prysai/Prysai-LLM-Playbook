@@ -135,7 +135,7 @@ Die Wörter „Link“ und „Prüfung“ reichen nicht. Absicht, Eingaben, Zust
 | Eingabe | Datei und Vertrag lesen | Pfad, Ausgangsversion, fehlende Eingaben | Dass ein Link defekt ist |
 | Suche | Relative Links extrahieren | Kandidatentabelle und Auflösungsregel | Dass das Ziel existiert |
 | Check | Pfade nur lesend auflösen | vorhanden/fehlend/unbekannt | Dass eine Remote-URL funktioniert |
-| Übergabe | Wegwerfbaren Bericht schreiben | Bericht, Befehl, Exit-Status | Dass das Problem behoben wurde |
+| Übergabe | Einen Bericht in ein temporäres Ausgabeverzeichnis schreiben | Bericht, Befehl, Exit-Status | Dass das Problem behoben wurde |
 | Review | Risiko- und unbekannte Fälle lesen | Entscheidung und nicht abgedeckter Umfang | Dass es für jedes Repo funktioniert |
 
 Ein Exit-Status von null zeigt nur, dass der Check nach seiner eigenen Definition endete. Er deckt weder ignorierte Formate noch Build-Umschreibungen oder Remote-Ziele automatisch ab.
@@ -265,7 +265,7 @@ Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu die
 
 ## Transferaufgabe
 
-Übertrage den Vertrag auf eine Lern- oder Rechercheaufgabe. Ein Lern-Skill darf Übungszyklen und eine spätere Abrufaufgabe organisieren, aber weder fluency noch mastery behaupten. Ein Recherche-Skill kann Quellen und Unsicherheit ordnen, aber keinen gefundenen Link als geprüfte Tatsache ausgeben. Behalte Trigger, Nicht-Trigger, Stoppregel und Evidenzgrenze bei.
+Übertrage den Vertrag auf eine Lern- oder Rechercheaufgabe. Ein Lern-Skill darf Übungszyklen und eine spätere Abrufaufgabe organisieren, aber weder Sprachflüssigkeit noch Beherrschung behaupten. Ein Recherche-Skill kann Quellen und Unsicherheit ordnen, aber keinen gefundenen Link als geprüfte Tatsache ausgeben. Behalte Trigger, Nicht-Trigger, Stoppregel und Evidenzgrenze bei.
 
 ## Abnahme-Checkliste
 

@@ -115,7 +115,7 @@ Parada: falta el archivo, la base de resolución no está clara o hace falta una
 
 El acuerdo pertenece a esta ocasión. El Skill solo contiene el método reutilizable. Si se mezclan, el siguiente encargo hereda nombres de archivo, permisos y conclusiones que ya no corresponden.
 
-### Diseña activadores y reglas para dar paso
+### Diseña activadores y reglas para ceder la tarea
 
 Un activador no es una frase publicitaria. Debe permitir decidir si este método debe hacerse cargo de la tarea.
 
