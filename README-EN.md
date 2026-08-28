@@ -659,4 +659,4 @@ constraint, leave stronger evidence, or avoid a known failure, it is not yet
 finished—regardless of how polished the prose looks.
 
 Maintained by **Prysai Lab** · Independent project · English-first · Status
-reviewed 2026-08-10
+snapshot reviewed 2026-08-27
