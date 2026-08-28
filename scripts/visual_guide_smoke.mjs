@@ -129,6 +129,10 @@ try {
     for (const [name, selector] of Object.entries(selectors)) {
       assert.equal(await count(selector), expectedCounts[name], `${locale} ${name} visual contract changed`);
     }
+    const officialSite = page.locator('.visual-footer-site');
+    assert.equal(await officialSite.count(), 1, `${locale} visual footer is missing the official-site link`);
+    assert.equal(await officialSite.getAttribute('href'), 'https://prysai.com/', `${locale} visual footer official-site URL changed`);
+    assert.notEqual((await officialSite.textContent() || '').trim(), '', `${locale} visual footer official-site label is empty`);
     assert.equal(await count('.visual-card img[src*="first-task-evidence-bridge-red-black.svg"]'), 1, `${locale} first-task evidence bridge is missing from the visual gallery`);
     const skillBoundaryCard = page.locator('.visual-card:has(img[src*="skill-trigger-boundary-decision-map.svg"])');
     assert.equal(await skillBoundaryCard.count(), 1, `${locale} Skill boundary card is missing from the visual gallery`);
@@ -158,6 +162,7 @@ try {
   await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow('fr 360px visual guide');
   assert.equal(await count('.visual-card'), expectedCounts.cards, 'fr 360px gallery lost teaching boards');
+  assert.equal(await page.locator('.visual-footer-site').getAttribute('href'), 'https://prysai.com/', 'fr 360px footer lost the official-site link');
 
   // Board links open the project-owned responsive viewer rather than a raw
   // SVG. Verify one localized route, the zoom contract, and the invalid-asset

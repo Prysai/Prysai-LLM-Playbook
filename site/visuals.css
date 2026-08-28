@@ -1083,7 +1083,9 @@ button, select { font: inherit; }
 .visual-how-figure figcaption { margin-top: .8rem; color: var(--visual-muted); font-size: .78rem; line-height: 1.5; }
 .visual-how-copy > .visual-action-link { margin-top: 1.2rem; }
 
-.visual-footer { display: flex; justify-content: space-between; gap: 1rem; width: min(1240px, calc(100% - 3rem)); margin: 0 auto; padding: 2rem 0 3rem; color: var(--visual-muted); font-size: .72rem; }
+.visual-footer { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; width: min(1240px, calc(100% - 3rem)); margin: 0 auto; padding: 2rem 0 3rem; color: var(--visual-muted); font-size: .72rem; }
+.visual-footer-site { color: var(--visual-ink); font-weight: 800; text-underline-offset: .2rem; }
+.visual-footer-site:hover, .visual-footer-site:focus-visible { color: var(--visual-red); }
 .visual-noscript { width: min(1240px, calc(100% - 3rem)); margin: 1rem auto; padding: 1rem; border-left: 4px solid var(--visual-red); background: var(--visual-red-soft); }
 
 @media (max-width: 900px) {
