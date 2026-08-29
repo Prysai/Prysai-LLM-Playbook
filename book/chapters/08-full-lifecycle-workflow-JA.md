@@ -194,8 +194,8 @@ variant は `not_run` と書き、流暢な出力から実行記録を作りま�
 経過時間、出力、プロセス状態を残します。差分を確認してから complete、partial、failed、unknown の
 いずれかに分類します。
 
-**言ってはいけないこと：** silence は pass を意味せず、画面に error がないからといって
-child process が終わったとは限りません。
+**言ってはいけないこと：** 無反応は成功を意味せず、画面にエラーがなくても
+子プロセスが終了したとは限りません。
 
 ### ブラウザのログインは成功したがクライアントが続かない
 
@@ -205,8 +205,8 @@ child process が終わったとは限りません。
 **最初の安全な対応：** 認証ページ、コールバック、クライアントとの交換、最初に成功したリクエストを
 別々の行に記録します。欠けている次の状態だけを確認します。
 
-**言ってはいけないこと：** browser の成功は client authentication、account entitlement、
-connector approval、tool availability の証明ではありません。
+**言ってはいけないこと：** ブラウザーでの成功は、クライアント認証、アカウントの利用権限、
+コネクターの承認、ツールの利用可能性を証明しません。
 
 ### 検証が永続的な変更を提案する
 
@@ -310,7 +310,7 @@ Rollback: pre-edit copy と baseline diff
 この定義を書けないなら、構築を始めません。「もっとプロらしく」は読者、対象、受け入れ条件、非目標のどれも決めていないため、
 作業の依頼になっていません。
 
-### Capability decision と plan
+### 能力の判断と計画
 
 この case に必要なのは新しい Skill、browser automation、external source ではなく、local file を
 read し一つの text edit を review する能力だけです。
@@ -322,7 +322,7 @@ read し一つの text edit を review する能力だけです。
 plan が別 file、install、network、publish を必要としたら、同じ slice ではありません。原因を記録し、
 scope を広げずに stop または別 decision に分けます。
 
-### Stage exits と recovery
+### 段階の終了条件と復旧
 
 | stage | 続けるための evidence | evidence がない場合 |
 | --- | --- | --- |
@@ -334,11 +334,11 @@ scope を広げずに stop または別 decision に分けます。
 | Deliver | changed/not changed/not proven/next を分けた note | “complete” を使わない |
 | Maintain | owner と next fact/check review | future claim をしない |
 
-check が timeout したら、first response は retry ではありません。last output、process state、diff、
-target read-back を残します。state が分からなければ `unknown` とし、potentially completed write を
-blind repeat しません。
+チェックがタイムアウトしたら、最初に行う対応は再試行ではありません。最後の出力、プロセスの状態、差分、
+対象の読み戻しを残します。状態が分からなければ `unknown` とし、完了した可能性のある書き込みを
+確認なしに繰り返しません。
 
-### Truthful delivery
+### 事実に即した納品
 
 ```text
 Completed: target Markdown の start section を一か所更新した。
@@ -348,7 +348,7 @@ Not proven: 初学者の理解、browser render、publish、他 environment の 
 Next: 必要なら一人の reader に最初の action を言えるか聞く。external action は新しい decision が必要。
 ```
 
-## maintain は次の change を安全にする
+## 保守は次の変更を安全にする
 
 workflow の終わりは「永久に正しい」ではありません。volatile な product fact、command、link、
 permission、source は owner と次の review date を持たせます。stable method は残し、product-specific

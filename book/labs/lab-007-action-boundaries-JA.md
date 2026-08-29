@@ -27,7 +27,7 @@ transfer_limitations: "実際の account、Enterprise、installation、connector
 
 ## 問題と固定 fixture
 
-公開報告では logged in、到達可能、認可済み、実行済み、検証済みが混同されます。
+公開報告ではログイン済み、到達可能、認可済み、実行済み、検証済みが混同されます。
 ブラウザ認証の後段交換失敗、Enterprise CLI と PR 入口の host 不一致、別組織の
 installation 不成立、検証を理由にした永続環境の再インストールが代表例です。
 利用者報告であり、ローカル再現や公式原因ではありません。
