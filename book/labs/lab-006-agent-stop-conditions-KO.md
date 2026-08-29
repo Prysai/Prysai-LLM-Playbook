@@ -17,8 +17,8 @@ status: draft
 last_verified: "not run"
 transfer_task: "중단 프로토콜을 임시 문서 사본의 로컬 링크 검토에 적용한다"
 transfer_domain: "문서화 또는 저위험 엔지니어링 검토"
-transfer_evidence: "사건 기록, 다시 읽은 결과, 제한된 diff, 인계 기록, 미지 항목을 보관한다"
-transfer_limitations: "로컬 fixture는 실제 제품에서 같은 사건, 권한, 중단이 가능하다는 것을 증명하지 않는다"
+transfer_evidence: "사건 기록, 다시 읽은 결과, 제한된 diff, 인수인계 기록, 미지 항목을 보관한다"
+transfer_limitations: "로컬 테스트 자료는 실제 제품에서 같은 사건, 권한, 중단이 가능하다는 것을 증명하지 않는다"
 ---
 
 # Lab 006: Agent 중단 조건 설계하기

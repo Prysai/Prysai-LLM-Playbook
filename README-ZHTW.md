@@ -15,7 +15,7 @@
 第一次來這裡，不必在提示詞卡、Skill 和不同產品之間做選擇。先沿同一條中文主線學習：
 
 1. [LLM 基礎概念](book/guides/llm-fundamentals-ZHTW.md)
-2. [通用 LLM 首練習](book/routes/universal-core-foundations-ZHTW.md)
+2. [通用 LLM 第一次練習](book/routes/universal-core-foundations-ZHTW.md)
 3. [第一次安全改動](book/routes/first-safe-change-ZHTW.md)
 
 ### 先看一張路線圖
@@ -126,7 +126,7 @@ Prysai LLM Playbook（Prysai 大型語言模型實戰手冊）不是把 skills �
 - 學會使用 Codex 的標準不是安裝了多少 Skill，而是能否在明確邊界內穩定地產出經過驗證的結果。
 - 不要把建置通過、靜態檢查通過、檔案存在或模型生成的輸出誤讀成瀏覽器、執行時、認證、外部服務或翻譯品質已經驗證。
 - 本專案是獨立維護的學習與實踐專案，不是 OpenAI 官方文件或官方產品頁面。
-- 示例、研究和實驗不得放入 token、密碼、API key、私鑰、Cookie 或 `.env` 檔案。
+- 範例、研究和實驗不得放入 token、密碼、API key、私鑰、Cookie 或 `.env` 檔案。
 
 ## 中文資料入口
 

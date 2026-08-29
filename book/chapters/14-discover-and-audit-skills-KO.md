@@ -67,9 +67,9 @@ license: 저장소, 대상 파일, NOTICE, 중첩 스크립트 / 에셋의 증�
 결정: recommendation-only / blocked / approved-to-install / installed-candidate
 ```
 
-고정 리비전, license/NOTICE, 설치 대상, 백업, 복원 후 검사 중 하나라도 없으면 `blocked`입니다. “먼저 설치”는 증거 공백을 해결하지 않습니다.
+고정 리비전, 라이선스/NOTICE, 설치 대상, 백업, 복원 후 검사 중 하나라도 없으면 `blocked`입니다. “먼저 설치”는 증거 공백을 해결하지 않습니다.
 
-`file exists`, `discovered`, `loaded`, `adopted`, `verified`를 합치지 마세요. `SKILL.md`는 첫 상태만, 설치 로그는 많아야 `installed-candidate`만 뒷받침합니다.
+`file exists`(파일이 존재함), `discovered`(발견됨), `loaded`(불러옴), `adopted`(채택됨), `verified`(검증됨)를 합치지 마세요. `SKILL.md`는 첫 상태만, 설치 로그는 많아야 `installed-candidate`만 뒷받침합니다.
 
 ## 네 단계 검토: 불분명한 후보는 먼저 멈춥니다
 
@@ -77,7 +77,7 @@ license: 저장소, 대상 파일, NOTICE, 중첩 스크립트 / 에셋의 증�
 지점에서 멈춥니다.
 
 1. **이 작업에 정말 필요한가?** 반복되고 안정적이며 빠뜨리기 쉬운 판단을 한 문장으로 적습니다. 사실이 부족하면 출처를 확인하고 목표가 모호하면 먼저 명확히 합니다.
-2. **정확히 무엇을 받는가?** 프로젝트 URL, 고정 revision, 실제 entry 경로, license/NOTICE, nested dependency를 고정합니다. 이름이나 Star 수만으로는 부족합니다.
+2. **정확히 무엇을 받는가?** 프로젝트 URL, 고정 revision, 실제 entry 경로, 라이선스/NOTICE, nested dependency를 고정합니다. 이름이나 Star 수만으로는 부족합니다.
 3. **무엇을 할 수 있는가?** 읽기, 쓰기, 설치, 네트워크, 계정, 비밀, 외부 효과를 나눕니다. 목록이 없으면 무해하다고 추측하지 않습니다.
 4. **실패 뒤 어떻게 되돌리는가?** 격리 디렉터리, 설치 전 백업, 복원 단계, 되읽기 검사를 적습니다. “폴더 삭제”만으로 복구가 증명되지는 않습니다.
 
@@ -134,8 +134,8 @@ A와 B 각각에 출처, 리비전, 실제 경로, license/NOTICE 결론, 의존
 ## 수용 체크리스트
 
 - [ ] 지식 공백, 반복 가능한 방법, 도구, 권한 문제를 구분한다.
-- [ ] 출처, 고정 리비전, 경로, license/NOTICE, 권한, 복구, 담당자를 기록한다.
-- [ ] `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 혼동하지 않는다.
+- [ ] 출처, 고정 리비전, 경로, 라이선스/NOTICE, 권한, 복구, 담당자를 기록한다.
+- [ ] `file exists`(파일이 존재함), `discovered`(발견됨), `loaded`(불러옴), `adopted`(채택됨), `verified`(검증됨)를 혼동하지 않는다.
 - [ ] 라이선스, 권한, 복구 방법이 불명확하면 설치 대신 `blocked`로 둔다.
 
 ## 출처 및 유지보수 경계
@@ -145,9 +145,9 @@ A와 B 각각에 출처, 리비전, 실제 경로, license/NOTICE 결론, 의존
 ## 스스로 확인하기
 
 - [ ] 지식 공백, 반복 방법, 도구 능력, 불분명한 작업을 구분한다.
-- [ ] URL, revision, 경로, license/NOTICE, 의존성, 권한, owner를 기록한다.
+- [ ] URL, revision, 경로, 라이선스/NOTICE, 의존성, 권한, owner를 기록한다.
 - [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/프로덕션 진입 승인을 분리한다.
-- [ ] 증거가 있을 때만 exists, discovered, loaded, adopted, verified라고 쓴다.
+- [ ] 증거가 있을 때만 `exists`(존재함), `discovered`(발견됨), `loaded`(불러옴), `adopted`(채택됨), `verified`(검증됨)라고 쓴다.
 
 ## 채택 기록: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
 
