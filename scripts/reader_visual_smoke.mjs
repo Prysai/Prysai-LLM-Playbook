@@ -37,6 +37,7 @@ const localizedVisualAssets = new Set([
   'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
   'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
   'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+  'lifecycle-checkpoints.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`
@@ -70,6 +71,10 @@ const firstTaskLocales = [
   ['de', 'DE', 'Lab 001: Eine sichere README-Änderung vornehmen', 'Die erste Aufgabe prüfbar machen'],
   ['zh-tw', 'ZHTW', '實驗 001：讓第一個請求變得可用', '讓第一次任務變得可檢查'],
   ['fr', 'FR', 'Lab 001 : Rendre la première demande exploitable', 'Rendre la première tâche vérifiable'],
+];
+const lifecycleLocales = [
+  ['en', 'EN'], ['zh', 'ZH'], ['es', 'ES'], ['ja', 'JA'],
+  ['ko', 'KO'], ['de', 'DE'], ['zh-tw', 'ZHTW'], ['fr', 'FR'],
 ];
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
@@ -187,6 +192,33 @@ try {
     await noHorizontalOverflow(`${locale} Lab 001 Reader`);
   }
 
+  for (const [locale, suffix] of lifecycleLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F08-full-lifecycle-workflow-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    const visual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await visual.count(), 1, `${locale} Chapter 8 is missing its lifecycle teaching visual`);
+    assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /lifecycle-checkpoints\.svg$/, `${locale} Chapter 8 selected the wrong teaching visual`);
+    const image = visual.locator('img');
+    assert.notEqual((await image.getAttribute('alt') || '').trim(), '', `${locale} Chapter 8 lifecycle visual has no alternative text`);
+    assert.equal(await image.getAttribute('src'), visualSrc(locale, 'lifecycle-checkpoints.svg'), `${locale} Chapter 8 lifecycle visual did not resolve to the selected locale`);
+    const imageState = await image.evaluate((element) => ({
+      complete: element.complete,
+      naturalWidth: element.naturalWidth,
+      status: element.dataset.visualLocaleStatus,
+      locale: element.dataset.visualLocale,
+      asset: element.dataset.visualAsset,
+    }));
+    assert.equal(imageState.complete, true, `${locale} Chapter 8 lifecycle visual did not finish loading`);
+    assert.ok(imageState.naturalWidth > 0, `${locale} Chapter 8 lifecycle visual has no rendered pixels`);
+    assert.equal(imageState.status, locale === 'en' ? 'source' : 'localized', `${locale} Chapter 8 lifecycle visual status is not explicit`);
+    assert.equal(imageState.locale, locale, `${locale} Chapter 8 lifecycle visual reports the wrong locale`);
+    assert.equal(imageState.asset, 'lifecycle-checkpoints.svg', `${locale} Chapter 8 lifecycle visual reports the wrong asset`);
+    assert.notEqual((await visual.locator('.reader-visual-thesis').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no localized reading thesis`);
+    assert.notEqual((await visual.locator('.reader-visual-explanation').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no text explanation`);
+    assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no evidence boundary`);
+    await noHorizontalOverflow(`${locale} Chapter 8 Reader`);
+  }
+
   for (const [locale, suffix, thesis] of skillLocales) {
     await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F11-designing-a-skill-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
@@ -211,7 +243,7 @@ try {
   assert.equal(await page.locator('[data-reader-inline-concept-map]').evaluate((element) => element.open), true, 'EN Chapter 11 concept map should start open on desktop');
   await noHorizontalOverflow('EN Chapter 11 desktop Reader');
   await page.setViewportSize({ width: 390, height: 844 });
-  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=11,15 mobile=390 no_horizontal_overflow=1`);
+  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} lifecycle_locales=${lifecycleLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=8,11,15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));

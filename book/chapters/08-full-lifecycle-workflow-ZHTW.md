@@ -25,7 +25,7 @@
 每一個箭頭都是決策點。階段完成，不是因為介面往前走了，或 Agent 說「完成」；
 而是因為該階段的證據存在，並且另一個人能夠檢查。
 
-![教學卡：工作流程把證據從定義帶到維護](../../assets/teaching/lifecycle-checkpoints.svg)
+![教學卡：工作流程把證據從定義帶到維護](../../assets/teaching/locales/zh-tw/lifecycle-checkpoints.svg)
 
 > 這是專案自有教學卡。它解釋方法的結構；它不證明某個 Skill、Agent 或外部服務
 > 已經執行了這條工作流程。

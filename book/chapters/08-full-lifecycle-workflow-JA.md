@@ -14,7 +14,7 @@ define → plan → build → verify → review → deliver → maintain
 
 各矢印は判断のポイントです。Agent が「完了」と言ったからではなく、その段階を他の人が確認できる証拠があるときだけ先へ進みます。
 
-![教案例：証拠を定義から保守まで運ぶ workflow](../../assets/teaching/lifecycle-checkpoints.svg)
+![教案例：証拠を定義から保守まで運ぶ workflow](../../assets/teaching/locales/ja/lifecycle-checkpoints.svg)
 
 > これはプロジェクトが作成した教案例です。方法の構造を説明するものであり、
 > Skill、Agent、外部サービスがこの workflow を実行した証拠ではありません。

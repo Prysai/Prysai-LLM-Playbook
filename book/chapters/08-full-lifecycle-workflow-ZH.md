@@ -24,7 +24,7 @@
 每一个箭头都是决策点。阶段完成，不是因为界面向前走了，或 Agent 说“完成”；
 而是因为该阶段的证据存在，并且另一个人能够检查。
 
-![教学卡：工作流把证据从定义带到维护](../../assets/teaching/lifecycle-checkpoints.svg)
+![教学卡：工作流把证据从定义带到维护](../../assets/teaching/locales/zh/lifecycle-checkpoints.svg)
 
 > 这是项目自有教学卡。它解释方法的结构；它不证明某个 Skill、Agent 或外部服务
 > 已经执行了这条工作流。

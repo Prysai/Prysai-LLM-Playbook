@@ -1163,6 +1163,80 @@ add_asset_locales("skill-trigger-boundary-decision-map.svg", {
 })
 
 
+add_asset_locales("lifecycle-checkpoints.svg", {
+    "zh": (
+        "工作流通过可检查的出口逐步前进",
+        "这张七阶段教学图把工作流分成两条阅读带，每个阶段都标出出口证据。缺少出口时，路径会明确分支到停止与恢复。",
+        [
+            "工作流控制／07 个阶段／08", "没有出口证据，就不能前进。", "Agent 继续行动不等于检查点；可检查的产出才是。", "A 区／框定与制作",
+            "01", "定义", "目标／范围／非目标", "出口／验收＋停止", "02", "计划", "切片／依赖／风险", "出口／有序检查点", "03", "构建", "有范围的差异／变更文件", "出口／可回退的变更", "04", "验证", "命令／退出／运行时／限制", "出口／与声明匹配的证明",
+            "B 区／判断、交接、保持现状", "05", "审查", "声明图／独立阅读／风险", "出口／接受、修改、拒绝", "06", "交付", "差异／日志／缺口／交接", "出口／有边界的回执", "07", "维护", "负责人／审查／回滚", "出口／标注下一次检查日期", "缺少出口？", "停止", "恢复", "保留最后状态",
+            "教学模型／每个出口都有声明范围／单张截图不能证明工作流已经运行",
+        ],
+    ),
+    "es": (
+        "Un flujo de trabajo avanza mediante salidas comprobables",
+        "Esta lámina de siete etapas divide el flujo en dos bandas de lectura y nombra la evidencia de salida de cada etapa. Si falta una salida, muestra una rama clara hacia parar y recuperar.",
+        [
+            "CONTROL DEL FLUJO / 07 ETAPAS / 08", "SIN EVIDENCIA DE SALIDA, NO AVANCES.", "Que el Agent siga adelante no es un punto de control; lo es un artefacto inspeccionable.", "BANDA A / ENCUADRAR Y HACER",
+            "01", "DEFINIR", "objetivo / alcance / no objetivos", "SALIDA / ACEPTACIÓN + PARADA", "02", "PLANIFICAR", "cortes / dependencias / riesgos", "SALIDA / PUNTOS DE CONTROL ORDENADOS", "03", "CONSTRUIR", "diff acotado / archivos modificados", "SALIDA / CAMBIO REVERSIBLE", "04", "VERIFICAR", "comando / salida / ejecución / límites", "SALIDA / PRUEBA AJUSTADA A LA AFIRMACIÓN",
+            "BANDA B / JUZGAR, ENTREGAR, MANTENER EL ESTADO", "05", "REVISAR", "mapa de afirmaciones / lectura independiente / riesgos", "SALIDA / ACEPTAR, CORREGIR, RECHAZAR", "06", "ENTREGAR", "diff / registros / brechas / entrega", "SALIDA / REGISTRO ACOTADO", "07", "MANTENER", "responsable / revisión / reversión", "SALIDA / PRÓXIMA COMPROBACIÓN FECHADA", "¿FALTA UNA SALIDA?", "PARA", "RECUPERA", "CONSERVA EL ÚLTIMO ESTADO",
+            "MODELO DIDÁCTICO / CADA SALIDA TIENE SU ALCANCE DE AFIRMACIÓN / UNA CAPTURA SOLA NO DEMUESTRA QUE EL FLUJO SE HAYA EJECUTADO",
+        ],
+    ),
+    "ja": (
+        "ワークフローは確認できる出口を通って進む",
+        "7段階の教材図です。ワークフローを2つの読み取り帯に分け、各段階の出口に必要な証拠を示します。出口がなければ、停止と復旧への分岐が見える形で現れます。",
+        [
+            "ワークフロー管理 / 07段階 / 08", "出口の証拠がなければ、先へ進まない。", "Agent が先へ進んでもチェックポイントではない。確認できる成果物がチェックポイントだ。", "A帯 / 枠を決めて作る",
+            "01", "定義", "目標 / 範囲 / 対象外", "出口 / 受け入れ + 停止", "02", "計画", "スライス / 依存関係 / リスク", "出口 / 順序付きチェックポイント", "03", "構築", "範囲内の差分 / 変更ファイル", "出口 / 元に戻せる変更", "04", "検証", "コマンド / 終了 / 実行時 / 制限", "出口 / 主張に対応する証拠",
+            "B帯 / 判断、引き継ぎ、現状維持", "05", "レビュー", "主張マップ / 独立した読み返し / リスク", "出口 / 受け入れ、修正、却下", "06", "引き渡し", "差分 / ログ / 抜け / 引き継ぎ", "出口 / 範囲を区切った記録", "07", "保守", "担当者 / レビュー / 復元", "出口 / 次の確認日を記す", "出口がない？", "止まる", "復旧する", "最後の状態を残す",
+            "教材モデル / 各出口には主張の範囲がある / 1枚のスクリーンショットだけではワークフローの実行を証明できない",
+        ],
+    ),
+    "ko": (
+        "워크플로는 확인 가능한 종료 지점을 거쳐 나아갑니다",
+        "이 일곱 단계 교육 그림은 워크플로를 두 개의 읽기 구간으로 나누고 각 단계의 종료 증거를 보여 줍니다. 종료 지점이 없으면 멈춤과 복구로 가는 분기가 드러납니다.",
+        [
+            "워크플로 제어 / 07단계 / 08", "종료 증거가 없으면 앞으로 나아가지 마세요.", "Agent가 계속 진행하는 것은 체크포인트가 아닙니다. 확인할 수 있는 산출물이 체크포인트입니다.", "A 구간 / 틀을 잡고 만들기",
+            "01", "정의", "목표 / 범위 / 제외할 것", "종료 / 수용 + 중지", "02", "계획", "슬라이스 / 의존성 / 위험", "종료 / 순서가 있는 체크포인트", "03", "구축", "범위가 정해진 diff / 변경 파일", "종료 / 되돌릴 수 있는 변경", "04", "검증", "명령 / 종료 / 실행 시점 / 한계", "종료 / 주장에 맞춘 증거",
+            "B 구간 / 판단, 인계, 현재 상태 유지", "05", "검토", "주장 지도 / 독립적인 재검토 / 위험", "종료 / 수용, 수정, 거부", "06", "전달", "diff / 로그 / 빈틈 / 인계", "종료 / 범위가 제한된 기록", "07", "유지보수", "담당자 / 검토 / 복구", "종료 / 다음 점검 날짜를 기록", "종료 지점이 없나요?", "멈추세요", "복구하세요", "마지막 상태를 보존하세요",
+            "교육 모델 / 각 종료 지점에는 주장의 범위가 있습니다 / 스크린샷 한 장만으로는 워크플로 실행을 증명할 수 없습니다",
+        ],
+    ),
+    "de": (
+        "Ein Workflow geht über prüfbare Ausstiege weiter",
+        "Diese Lehrgrafik mit sieben Stufen teilt den Workflow in zwei Lesebänder und benennt den Ausstiegsbeleg jeder Stufe. Fehlt ein Ausstieg, führt eine sichtbare Verzweigung zu Stopp und Wiederherstellung.",
+        [
+            "WORKFLOW-STEUERUNG / 07 STUFEN / 08", "OHNE AUSSTIEGSBELEG KEIN WEITER.", "Dass der Agent weitergeht, ist kein Checkpoint; ein prüfbares Artefakt ist es.", "BAND A / ABGRENZEN UND MACHEN",
+            "01", "DEFINIEREN", "Ziel / Umfang / Nicht-Ziele", "AUSSTIEG / ABNAHME + STOPP", "02", "PLANEN", "Slices / Abhängigkeiten / Risiken", "AUSSTIEG / GEORDNETE CHECKPOINTS", "03", "BAUEN", "begrenzter Diff / Dateien", "AUSSTIEG / UMKEHRBAR", "04", "PRÜFEN", "Befehl / Exit / Laufzeit / Grenzen", "AUSSTIEG / BELEG ZUR AUSSAGE",
+            "BAND B / BEURTEILEN, ÜBERGEBEN, STATUS HALTEN", "05", "BEGUTACHTEN", "AUSSAGENKARTE / UNABHÄNGIG PRÜFEN / RISIKEN", "AUSSTIEG / ANNEHMEN, ÜBERARBEITEN, ABLEHNEN", "06", "ÜBERGEBEN", "Diff / Logs / Lücken / Übergabe", "AUSSTIEG / BEGRENZTES PROTOKOLL", "07", "PFLEGEN", "Verantwortung / Prüfung / Rückweg", "AUSSTIEG / NÄCHSTE PRÜFUNG", "AUSSTIEG FEHLT?", "STOPP", "BEHEBEN", "STATUS SICHERN",
+            "LEHRMODELL / JEDER AUSSTIEG HAT EINEN AUSSAGENUMFANG / EIN EINZELNER SCREENSHOT BEWEIST NICHT, DASS DER WORKFLOW GELAUFEN IST",
+        ],
+    ),
+    "zh-tw": (
+        "工作流程透過可檢查的出口逐步前進",
+        "這張七階段教學圖把工作流程分成兩條閱讀帶，每個階段都標出出口證據。缺少出口時，路徑會清楚分支到停止與復原。",
+        [
+            "工作流程控制／07 個階段／08", "沒有出口證據，就不能前進。", "Agent 繼續往下走不等於檢查點；可供檢查的產出才是。", "A 區／框定與製作",
+            "01", "定義", "目標／範圍／非目標", "出口／驗收＋停止", "02", "計畫", "切片／相依性／風險", "出口／有序檢查點", "03", "建置", "有界線的差異／變更檔案", "出口／可復原的變更", "04", "驗證", "命令／結束／執行期／限制", "出口／與主張相符的證據",
+            "B 區／判斷、交接、維持現狀", "05", "審查", "主張圖／獨立閱讀／風險", "出口／接受、修訂、拒絕", "06", "交付", "差異／紀錄檔／缺口／交接", "出口／有界線的紀錄", "07", "維護", "負責人／審查／復原", "出口／標記下次檢查日期", "缺少出口？", "停止", "復原", "保留最後狀態",
+            "教學模型／每個出口都有主張範圍／單張螢幕截圖不能證明工作流程已執行",
+        ],
+    ),
+    "fr": (
+        "Un flux de travail avance par des sorties vérifiables",
+        "Cette planche en sept étapes divise le flux en deux bandes de lecture et nomme la preuve de sortie de chaque étape. Si une sortie manque, une branche visible mène à l’arrêt et à la reprise.",
+        [
+            "PILOTAGE DU FLUX / 07 ÉTAPES / 08", "SANS PREUVE DE SORTIE, N’AVANCEZ PAS.", "Le fait que l’Agent continue n’est pas un point de contrôle ; un artefact vérifiable, oui.", "BANDE A / CADRER ET PRODUIRE",
+            "01", "DÉFINIR", "objectif / périmètre / hors périmètre", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / risques", "SORTIE / POINTS DE CONTRÔLE ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
+            "BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT", "05", "RELIRE", "carte / relecture autonome / risques", "SORTIE / ACCEPTER, RÉVISER, REJETER", "06", "LIVRER", "diff / journaux / écarts / transmission", "SORTIE / RELEVÉ DÉLIMITÉ", "07", "MAINTENIR", "responsable / revue / retour", "SORTIE / CONTRÔLE DATÉ", "SORTIE ABSENTE ?", "ARRÊTEZ", "RÉTABLIR", "CONSERVER L’ÉTAT",
+            "MODÈLE PÉDAGOGIQUE / CHAQUE SORTIE A UN PÉRIMÈTRE D’AFFIRMATION / UNE SIMPLE CAPTURE D’ÉCRAN NE PROUVE PAS QUE LE FLUX A ÉTÉ EXÉCUTÉ",
+        ],
+    ),
+})
+
+
 def build() -> int:
     built = 0
     for asset, locale_specs in TRANSLATIONS.items():

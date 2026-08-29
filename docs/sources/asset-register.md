@@ -33,6 +33,8 @@
 
 **新增维护记录 S156：** 七个翻译版项目入口 `README-{ZH,ES,JA,KO,DE,ZHTW,FR}.md` 的 2026-08-28 更新，在首次学习路线旁直接引用对应语言的 `foundation-first-visit-route-red-black.svg`，让 GitHub 的静态 Markdown 阅读与 Reader 的运行时图片切换保持一致。`scripts/validate_teaching_assets.py`、`scripts/test_validate_teaching_assets.py`、`assets/teaching/README.md` 与 `docs/governance/visual-locale-matrix.yaml` 同步记录并检查这一规则。改动只使用项目自有、已登记的 SVG；它改善入口可读性和语言一致性，不证明视觉质量、理解效果、学习结果或翻译已达到母语级。
 
+**新增维护记录 S157：** 2026-08-29 为 `assets/teaching/lifecycle-checkpoints.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体，并在 Chapter 8、Chapter 10 的翻译版 Markdown 中直接引用对应 locale 路径；Reader、首页、Visual Guide 与单图查看器继续通过 `site/visual-assets.js` 解析同一组变体。每个变体保持源图的 `viewBox="0 0 1600 900"` 与 38 个 `<text>` 节点，只替换项目自有的标题、说明和可见图中文字。它们是候选教学解释，不证明图示已经执行、学习者已经理解或迁移方法，也不代表生产就绪。当前高频本地化图板为 9 个，另有 35 个图板明确使用英文回退；矩阵与 Reader 回归检查会保留这一披露边界。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

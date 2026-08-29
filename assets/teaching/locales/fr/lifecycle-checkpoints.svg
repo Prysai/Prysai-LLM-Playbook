@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Un flux de travail avance par des sorties vérifiables</title>
+  <desc id="desc">Cette planche en sept étapes divise le flux en deux bandes de lecture et nomme la preuve de sortie de chaque étape. Si une sortie manque, une branche visible mène à l’arrêt et à la reprise.</desc>
+  <rect width="1600" height="900" fill="#111315"/>
+  <rect x="0" y="0" width="34" height="900" fill="#e43b2f"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="76" fill="#e43b2f" font-size="18" font-weight="700" letter-spacing="4">PILOTAGE DU FLUX / 07 ÉTAPES / 08</text>
+    <text x="76" y="172" fill="#f0ebe1" font-size="66" font-weight="800" letter-spacing="-3">SANS PREUVE DE SORTIE, N’AVANCEZ PAS.</text>
+    <text x="80" y="218" fill="#a9adb0" font-size="21">Le fait que l’Agent continue n’est pas un point de contrôle ; un artefact vérifiable, oui.</text>
+    <path d="M76 262H1524" stroke="#f0ebe1" stroke-opacity=".28"/>
+
+    <g transform="translate(76 304)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">BANDE A / CADRER ET PRODUIRE</text>
+      <g>
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">01</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">DÉFINIR</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">objectif / périmètre / hors périmètre</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / ACCEPTATION + ARRÊT</text>
+      </g>
+      <g transform="translate(354)">
+        <rect width="334" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">02</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">PLANIFIER</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">découpage / dépendances / risques</text>
+        <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / POINTS DE CONTRÔLE ORDONNÉS</text>
+      </g>
+      <g transform="translate(708)">
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">03</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">CONSTRUIRE</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">diff délimité / fichiers</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / MODIFICATION RÉVERSIBLE</text>
+      </g>
+      <g transform="translate(1062)">
+        <rect width="386" height="176" fill="#e43b2f"/>
+        <rect width="62" height="176" fill="#151719"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">04</text>
+        <text x="86" y="48" fill="#fff8ed" font-size="25" font-weight="800">VÉRIFIER</text>
+        <text x="86" y="82" fill="#211719" font-size="16">commande / fin / exécution / limites</text>
+        <path d="M86 108H362" stroke="#151719" stroke-opacity=".38"/>
+        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">SORTIE / PREUVE LIÉE</text>
+      </g>
+    </g>
+
+    <g transform="translate(76 574)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT</text>
+      <g>
+        <rect width="406" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">05</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">RELIRE</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">carte / relecture autonome / risques</text>
+        <path d="M86 108H382" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / ACCEPTER, RÉVISER, REJETER</text>
+      </g>
+      <g transform="translate(426)">
+        <rect width="406" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">06</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">LIVRER</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">diff / journaux / écarts / transmission</text>
+        <path d="M86 108H382" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / RELEVÉ DÉLIMITÉ</text>
+      </g>
+      <g transform="translate(852)">
+        <rect width="354" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">07</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">MAINTENIR</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">responsable / revue / retour</text>
+        <path d="M86 108H330" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / CONTRÔLE DATÉ</text>
+      </g>
+      <g transform="translate(1236)">
+        <path d="M0 0H212V176H0V118H26V58H0Z" fill="#e43b2f"/>
+        <text x="28" y="45" fill="#151719" font-size="16" font-weight="800">SORTIE ABSENTE ?</text>
+        <text x="28" y="83" fill="#fff8ed" font-size="27" font-weight="800">ARRÊTEZ</text>
+        <text x="28" y="116" fill="#fff8ed" font-size="27" font-weight="800">RÉTABLIR</text>
+        <text x="28" y="151" fill="#151719" font-size="13" font-weight="700">CONSERVER L’ÉTAT</text>
+      </g>
+    </g>
+    <path d="M1385 480V544H1418V574" fill="none" stroke="#e43b2f" stroke-width="5"/>
+    <text x="76" y="836" fill="#797d80" font-size="14">MODÈLE PÉDAGOGIQUE / CHAQUE SORTIE A UN PÉRIMÈTRE D’AFFIRMATION / UNE SIMPLE CAPTURE D’ÉCRAN NE PROUVE PAS QUE LE FLUX A ÉTÉ EXÉCUTÉ</text>
+  </g>
+</svg>

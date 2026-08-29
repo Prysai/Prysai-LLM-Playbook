@@ -14,7 +14,7 @@ one input → smallest change → observable action → focused check → eviden
 
 これは一度に全部を変える口実ではありません。レビューと切り戻しができる範囲に収めながら、最も高くつくリスクを早く見つける方法です。
 
-![教案例：lifecycle checkpoint が大きな目標を証拠のある出口へ分ける](../../assets/teaching/lifecycle-checkpoints.svg)
+![教案例：lifecycle checkpoint が大きな目標を証拠のある出口へ分ける](../../assets/teaching/locales/ja/lifecycle-checkpoints.svg)
 
 > これはプロジェクトが作成した教材カードです。計画方法を説明するものであり、Agent、
 > Skill、コマンド、外部サービスが実行された証拠ではありません。

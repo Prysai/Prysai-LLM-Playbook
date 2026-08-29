@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">工作流程透過可檢查的出口逐步前進</title>
+  <desc id="desc">這張七階段教學圖把工作流程分成兩條閱讀帶，每個階段都標出出口證據。缺少出口時，路徑會清楚分支到停止與復原。</desc>
+  <rect width="1600" height="900" fill="#111315"/>
+  <rect x="0" y="0" width="34" height="900" fill="#e43b2f"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="76" fill="#e43b2f" font-size="18" font-weight="700" letter-spacing="4">工作流程控制／07 個階段／08</text>
+    <text x="76" y="172" fill="#f0ebe1" font-size="66" font-weight="800" letter-spacing="-3">沒有出口證據，就不能前進。</text>
+    <text x="80" y="218" fill="#a9adb0" font-size="21">Agent 繼續往下走不等於檢查點；可供檢查的產出才是。</text>
+    <path d="M76 262H1524" stroke="#f0ebe1" stroke-opacity=".28"/>
+
+    <g transform="translate(76 304)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">A 區／框定與製作</text>
+      <g>
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">01</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">定義</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">目標／範圍／非目標</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／驗收＋停止</text>
+      </g>
+      <g transform="translate(354)">
+        <rect width="334" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">02</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">計畫</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">切片／相依性／風險</text>
+        <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／有序檢查點</text>
+      </g>
+      <g transform="translate(708)">
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">03</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">建置</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">有界線的差異／變更檔案</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／可復原的變更</text>
+      </g>
+      <g transform="translate(1062)">
+        <rect width="386" height="176" fill="#e43b2f"/>
+        <rect width="62" height="176" fill="#151719"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">04</text>
+        <text x="86" y="48" fill="#fff8ed" font-size="25" font-weight="800">驗證</text>
+        <text x="86" y="82" fill="#211719" font-size="16">命令／結束／執行期／限制</text>
+        <path d="M86 108H362" stroke="#151719" stroke-opacity=".38"/>
+        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">出口／與主張相符的證據</text>
+      </g>
+    </g>
+
+    <g transform="translate(76 574)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">B 區／判斷、交接、維持現狀</text>
+      <g>
+        <rect width="406" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">05</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">審查</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">主張圖／獨立閱讀／風險</text>
+        <path d="M86 108H382" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／接受、修訂、拒絕</text>
+      </g>
+      <g transform="translate(426)">
+        <rect width="406" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">06</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">交付</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">差異／紀錄檔／缺口／交接</text>
+        <path d="M86 108H382" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／有界線的紀錄</text>
+      </g>
+      <g transform="translate(852)">
+        <rect width="354" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">07</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">維護</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">負責人／審查／復原</text>
+        <path d="M86 108H330" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口／標記下次檢查日期</text>
+      </g>
+      <g transform="translate(1236)">
+        <path d="M0 0H212V176H0V118H26V58H0Z" fill="#e43b2f"/>
+        <text x="28" y="45" fill="#151719" font-size="16" font-weight="800">缺少出口？</text>
+        <text x="28" y="83" fill="#fff8ed" font-size="27" font-weight="800">停止</text>
+        <text x="28" y="116" fill="#fff8ed" font-size="27" font-weight="800">復原</text>
+        <text x="28" y="151" fill="#151719" font-size="13" font-weight="700">保留最後狀態</text>
+      </g>
+    </g>
+    <path d="M1385 480V544H1418V574" fill="none" stroke="#e43b2f" stroke-width="5"/>
+    <text x="76" y="836" fill="#797d80" font-size="14">教學模型／每個出口都有主張範圍／單張螢幕截圖不能證明工作流程已執行</text>
+  </g>
+</svg>

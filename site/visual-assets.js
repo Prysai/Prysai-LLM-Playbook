@@ -13,6 +13,7 @@
     'first-task-evidence-bridge-red-black.svg',
     'recovery-decision-tree-red-black.svg',
     'skill-trigger-boundary-decision-map.svg',
+    'lifecycle-checkpoints.svg',
   ]);
   const FALLBACK_NOTES = Object.freeze({
     en: '',
