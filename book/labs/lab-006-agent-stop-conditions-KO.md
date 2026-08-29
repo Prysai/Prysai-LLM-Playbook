@@ -9,16 +9,16 @@ goal: "관찰 가능한 사건, 제한된 재시도, 인계 기록으로 Agent�
 setup: "자격 증명, 네트워크, 운영 파일, 되돌릴 수 없는 명령이 없는 폐기 가능한 로컬 텍스트 과제"
 task: "경계가 있는 실패 분기와 응답 유실 조정을 수행하고 사건, 증거, 최종 결정을 남긴다"
 evidence:
-  - "각 제한 분기의 baseline, event, run record"
-  - "응답 손실 뒤 read-back과 첫 unknown이 담긴 handoff"
-failure_variant: "허용 root 밖 write 또는 새 조건 없는 retry를 요구하고 행동 전에 중단한다"
-reflection: "계속, retry, stop을 뒷받침하는 관찰은 무엇이며 최소 read check는 어떤 unknown을 줄이는가?"
+  - "각 제한 분기의 기준선, 사건 기록, 실행 기록"
+  - "응답 손실 뒤 다시 읽은 결과와 첫 번째 미지 상태가 담긴 인계 기록"
+failure_variant: "허용된 루트 밖에 쓰거나 새 조건 없이 재시도하도록 요구하면 행동 전에 중단한다"
+reflection: "계속, 재시도, 중단을 뒷받침하는 관찰은 무엇이며 최소한의 읽기 확인으로 어떤 미지를 줄일 수 있는가?"
 status: draft
 last_verified: "not run"
-transfer_task: "중단 protocol을 버릴 수 있는 문서 사본의 로컬 link review로 옮긴다"
-transfer_domain: "documentation 또는 저위험 engineering review"
-transfer_evidence: "event log, read-back, 제한된 diff, handoff, unknown을 보관한다"
-transfer_limitations: "로컬 fixture는 실제 제품의 같은 event, permission, stop을 증명하지 않는다"
+transfer_task: "중단 프로토콜을 임시 문서 사본의 로컬 링크 검토에 적용한다"
+transfer_domain: "문서화 또는 저위험 엔지니어링 검토"
+transfer_evidence: "사건 기록, 다시 읽은 결과, 제한된 diff, 인계 기록, 미지 항목을 보관한다"
+transfer_limitations: "로컬 fixture는 실제 제품에서 같은 사건, 권한, 중단이 가능하다는 것을 증명하지 않는다"
 ---
 
 # Lab 006: Agent 중단 조건 설계하기
@@ -84,27 +84,27 @@ hard_stop: 알 수 없는 부작용, 권한 부재, 새 증거 없는 반복 실
 
 ### E — 응답 유실과 조정
 
-로컬 write의 응답을 보지 못했다고 가정하고 command, 시도, hash를 보존합니다.
-timeout만으로 재전송하지 말고 최소 read-back으로 대상을 읽어
+로컬 쓰기의 응답을 보지 못했다고 가정하고 명령, 시도, 해시를 보존합니다.
+시간 초과만으로 재전송하지 말고 최소한의 다시 읽기로 대상을 확인해
 `no_effect_observed`、`effect_matches`、`effect_differs`、`effect_unknown`으로
-분류합니다. 구별할 수 없으면 unknown을 handoff하고 안전한 다음 check 하나만
+분류합니다. 구별할 수 없으면 unknown을 인계하고 안전한 다음 확인 하나만
 남깁니다.
 
-각 분기의 `run-record.yaml`에는 `attempt_id`, 관찰 조건, action class, 증거,
-변경 조건, 중단 이유, 마지막 확인 사건, 첫 unknown, `next_safe_action`을 넣습니다.
+각 분기의 `run-record.yaml`에는 `attempt_id`, 관찰 조건, 행동 유형, 증거,
+변경된 조건, 중단 이유, 마지막 확인 사건, 첫 번째 미지 상태, `next_safe_action`을 넣습니다.
 
 ## 작업이 멈췄을 때 보내는 중단 메시지
 
-model이 “처리 중”이라고 하거나 같은 제안을 반복하거나 file이 이미 바뀌었는지 모를 때, “계속하세요”라고만 답하지 마세요. 부작용이 있는 행동을 멈추고 다음을 보냅니다.
+모델이 “처리 중”이라고 하거나 같은 제안을 반복하거나 파일이 이미 바뀌었는지 모를 때, “계속하세요”라고만 답하지 마세요. 부작용이 있는 행동을 멈추고 다음을 보냅니다.
 
 ```text
-아직 retry, edit, network 사용, 새 command 실행을 하지 마세요.
+아직 재시도, 편집, 네트워크 사용, 새 명령 실행을 하지 마세요.
 눈에 보이는 기록만 근거로 마지막 확인 이벤트와 첫 번째 미지 이벤트를 말하세요.
-영향을 받았을 수 있는 file과 가장 작은 read-only check는 무엇인가요?
+영향을 받았을 수 있는 파일과 가장 작은 읽기 전용 확인은 무엇인가요?
 이 정보가 없으면 blocked라고 쓰고, 완료되었다고 추정하지 마세요.
 ```
 
-좋은 답변은 observed와 unknown을 나누고 가장 작은 check 하나만 제안합니다. 자신 있는 말투는 write 성공의 증거가 아니며 원래 행동을 다시 보내는 것도 기본 복구가 아닙니다. 답변과 read-back을 함께 보관한 뒤에야 안전한 retry나 handoff를 시작할 수 있습니다.
+좋은 답변은 관찰된 것과 unknown을 나누고 가장 작은 확인 하나만 제안합니다. 자신 있는 말투는 쓰기 성공의 증거가 아니며 원래 행동을 다시 보내는 것도 기본 복구가 아닙니다. 답변과 다시 읽은 결과를 함께 보관한 뒤에야 안전한 retry나 인계를 시작할 수 있습니다.
 
 ## 증거 검토와 전이
 

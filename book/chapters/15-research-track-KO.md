@@ -146,7 +146,7 @@ redirect 뒤에는 원래 URL, 최종 URL, HTTP 상태, `Location`, 페이지 �
 
 ## 실제 문제: 확인 가능한 출처가 없는 그럴듯한 답변
 
-model, 학습법, tool을 고를 때 summary는 link, version, report를 섞을 수 있습니다. 중요한 것은 문장의 설득력이 아니라 선언한 task, date, environment에 어떤 claim이 뒷받침되는가입니다.
+모델, 학습법, 도구를 고를 때 요약문은 링크, 버전, 보고서를 뒤섞을 수 있습니다. 중요한 것은 문장이 설득력 있어 보이는지가 아니라, 선언한 과제·날짜·환경을 어떤 주장이 뒷받침하는가입니다.
 
 ## 전이 과제
 
@@ -206,7 +206,7 @@ model, 학습법, tool을 고를 때 summary는 link, version, report를 섞을 
 
 ## 출처 및 유지보수 경계
 
-질문, evidence chain, conflict log는 안정적인 방법입니다. page, product fact, forum, search result는 변하므로 access date, scope, next check를 기록합니다.
+질문, 증거 사슬, 충돌 기록은 안정적인 방법입니다. 웹 페이지, 제품 사실, 포럼 글, 검색 결과는 변하므로 접근 날짜, 범위, 다음 확인 시점을 기록합니다.
 
 ## 스스로 확인하기
 
