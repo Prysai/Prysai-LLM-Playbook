@@ -89,6 +89,7 @@ REQUIRED = (
     "package.json",
     "package-lock.json",
     "scripts/browser_smoke.mjs",
+    "scripts/test_run_tests.py",
     "scripts/test_build_pages_artifact.py",
     "scripts/serve_pages_candidate.py",
     "scripts/test_serve_pages_candidate.py",

@@ -7,7 +7,8 @@ turn project rules into evidence that can be rerun locally and in CI.
 
 ```powershell
 $py = (Get-Command python -ErrorAction Stop).Source
-& $py scripts\run_tests.py
+& $py scripts\run_tests.py              # bounded parallel feedback (up to four workers)
+& $py scripts\run_tests.py --jobs 1     # serial mode for order-sensitive diagnosis
 & $py scripts\validate_project.py
 & $py scripts\validate_project_structure.py
 & $py scripts\validate_content_completeness.py
@@ -64,11 +65,12 @@ node scripts/browser_smoke.mjs
 
 `run_tests.py` is the standard regression entry point. It runs every focused
 `scripts/test_*.py` fixture and then the generic `tests/test_*.py` discovery
-suite. It deliberately does not replace the validators listed below: a test
-fixture protects a validator's behavior, while a validator checks the current
-repository data. A green run is repository-contract evidence only, not proof
-of learning, translation quality, model behavior, security outcomes, or
-release readiness.
+suite. Focused commands run as independent child processes with a bounded
+worker pool (up to four by default); use `--jobs 1` for a serial diagnostic
+run. A test fixture protects a validator's behavior, while a validator checks
+the current repository data. A green run is repository-contract evidence only,
+not proof of learning, translation quality, model behavior, security outcomes,
+or release readiness.
 
 The First Win pilot command validates only the checked-in preparation contract.
 An authorized pilot authorizer can generate a separate, ignored local package
