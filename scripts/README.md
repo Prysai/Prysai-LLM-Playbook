@@ -33,7 +33,8 @@ $py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\build_shift_handoff_blind_score_packets.py --check
 & $py scripts\test_build_shift_handoff_blind_score_packets.py
 & $py scripts\validate_executable_examples.py
-& $py scripts\test_executable_examples.py
+& $py scripts\test_executable_examples.py              # bounded parallel negative fixtures
+& $py scripts\test_executable_examples.py --jobs 1     # serial diagnostic mode
 & $py scripts\test_lab_008_reference.py
 & $py scripts\test_lab_013_reference.py
 & $py scripts\test_lab_001_first_safe_change_fixture.py
