@@ -154,10 +154,10 @@ Stoppen ist nicht gleich Scheitern. Es ist ein Arbeitsergebnis, das einen unsich
 
 ```yaml
 delivery_state: blocked
-last_confirmed_transition: "proposal accepted; no tool-start event observed"
-artifact_state: "target not read back; change status unknown"
+last_confirmed_transition: "Vorschlag angenommen; kein Ereignis zum Werkzeugstart beobachtet"
+artifact_state: "Ziel nicht erneut gelesen; Änderungsstatus unbekannt"
 evidence_kept: [task-protocol.md, approval-record.md, process-status.txt]
-not_claimed: ["file updated", "tests passed"]
+not_claimed: ["Datei aktualisiert", "Tests bestanden"]
 next_safe_action: "Ziel lesen und erst dann über einen weiteren Schreibvorgang entscheiden"
 ```
 
@@ -221,13 +221,13 @@ Abnahme getrennt fest. Nicht beobachtete Übergänge bleiben `not_observed`; ein
 Modelltext darf sie nicht auffüllen.
 
 ```text
-delivery state: blocked | partial | unverified | verified
-last confirmed transition:
-first transition without evidence:
-artifacts and diff kept:
-external actions performed: none | exact list
-not claimed:
-one next safe action:
+Lieferstatus: blocked | partial | unverified | verified
+Letzter bestätigter Übergang:
+Erster Übergang ohne Beleg:
+Aufbewahrte Artefakte und Diffs:
+Ausgeführte externe Aktionen: keine | genaue Liste
+Nicht behauptet:
+Ein nächster sicherer Schritt:
 ```
 
 Die Übung beweist weder gleiches Verhalten aller Agents, Modelle oder Hosts

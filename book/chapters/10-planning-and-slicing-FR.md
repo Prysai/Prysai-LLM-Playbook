@@ -192,7 +192,7 @@ Remplacez les valeurs entre crochets ; ne collez pas ce formulaire tel quel dans
 une tâche de production.
 
 ```text
-Objectif : livrer une tranche observable pour [lecteur ou reviewer].
+Objectif : livrer une tranche observable pour [lecteur ou relecteur].
 Contexte et entrées : [chemin absolu, fichiers, baseline et hypothèses].
 Actions autorisées : [lecture/édition/contrôle et chemins exacts].
 Budget : [fichiers, commandes, délai et retries].

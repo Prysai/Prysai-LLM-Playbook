@@ -88,7 +88,7 @@ Antes de una ejecución A/B, añade al `project-map` un comando antiguo y un dir
 ## Comprobación propia
 
 - [ ] Una persona nueva encuentra objetivo, evidencia y bloqueo sin explicación oral.
-- [ ] Puedo explicar por qué un record es `stale` y cuál es la acción mínima para volver al hecho actual.
+- [ ] Puedo explicar por qué un registro está `stale` y cuál es la acción mínima para volver al hecho actual.
 - [ ] No convierto notas personales en almacén secreto, promesa de memoria de producto ni Skill verificado.
 - [ ] Distingo entre falta de entrada, ejecución posible y confirmación humana necesaria.
 

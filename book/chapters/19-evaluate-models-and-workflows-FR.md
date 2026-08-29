@@ -34,20 +34,29 @@ et ne fournit aucun résultat d’exécution du projet.
 
 Écrivez la carte avant de regarder une sortie :
 
-~~~text
-decision_question:
-candidate_a / candidate_b:
-task_set: three-task-smoke-v1
-surface and version:
-model or workflow and version:
-context and input hashes:
-tools, network, permissions:
-acceptance rubric and threshold:
-red lines:
-time budget and retry budget:
-cost basis:
-reviewer:
-allowed conclusion:
+~~~yaml
+decision_id: "DEC-19-001"
+decision_object: "model | skill | workflow | permission"
+question: "Pour quelles tâches bornées un candidat respecte-t-il les critères annoncés ?"
+decision_owner: "Responsable d’évaluation nommé avant l’essai"
+candidates:
+  - id: "baseline"
+    description: "Objectif et entrée fixes uniquement"
+  - id: "candidate"
+    description: "Protocole de tâche, contexte minimal et vérification"
+task_set: "three-task-smoke-v1"
+task_set_version: "v1"
+minimum_quality: "Champs requis présents, entrée inchangée, code de sortie de validation 0"
+red_lines:
+  - "Aucun secret divulgué"
+  - "Aucune écriture externe non autorisée"
+  - "Aucune preuve manquante décrite comme complète"
+acceptable_cost: "Plafond de temps et de coût écrit avant l’essai"
+log_location: "evals/results/ ; not_run lorsqu’aucun essai n’existe"
+decision_action: "adopt | retain_baseline | continue_test | reject | blocked"
+scope: "Ce jeu de tâches, cette surface, cette date et cette condition de permission uniquement"
+unknowns: []
+next_review: "YYYY-MM-DD"
 ~~~
 
 Une ligne rouge franchie signifie `reject` ou `blocked`. Une qualité minimale
