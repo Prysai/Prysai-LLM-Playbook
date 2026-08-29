@@ -235,7 +235,7 @@ Rollback: pre-edit copy와 baseline diff
 계획에 다른 파일, 설치, 네트워크, 게시가 필요하면 같은 슬라이스가 아닙니다. 원인을 기록하고 범위를
 넓히지 않은 채 멈추거나 별도의 결정으로 나눕니다.
 
-### Stage exits와 recovery
+### 단계 종료 조건과 복구
 
 | stage | 계속하기 위한 evidence | evidence가 없을 때 |
 | --- | --- | --- |
@@ -250,7 +250,7 @@ Rollback: pre-edit copy와 baseline diff
 check가 timeout되면 첫 response는 retry가 아닙니다. last output, process state, diff, target read-back을
 보관합니다. 상태를 모르면 `unknown`으로 두고, 완료되었을 가능성이 있는 쓰기를 확인 없이 반복하지 않습니다.
 
-### Truthful delivery
+### 사실에 맞는 전달
 
 ```text
 Completed: target Markdown의 start section 한 곳을 업데이트했다.
@@ -260,7 +260,7 @@ Not proven: 초보자 이해, browser render, publish, 다른 environment의 run
 Next: 필요하면 reader 한 명에게 첫 action을 말할 수 있는지 묻는다. external action은 새 decision이 필요하다.
 ```
 
-## maintain은 다음 change를 안전하게 만든다
+## 유지보수는 다음 변경을 안전하게 만든다
 
 workflow의 끝은 “영원히 맞다”가 아닙니다. volatile product fact, command, link, permission, source에는
 owner와 다음 review date가 필요합니다. stable method는 남기고 product-specific instruction은 source,

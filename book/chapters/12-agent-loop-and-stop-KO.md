@@ -326,7 +326,7 @@ side_effect_status: "local file changed; no external action"
 이 한 줄이 증명하는 것은 이름 붙인 local effect가 관찰되었다는 데까지입니다. user 만족,
 production 안전성, 다른 host에서 같은 event 이름이 나타난다는 뜻은 아닙니다.
 
-## retry budget과 부작용 대조
+## 재시도 예산과 부작용 대조
 
 재시도는 실패를 지우기 위한 행동이 아니라, **바뀐 조건에서 새로운 증거를 얻기 위한** 판단입니다.
 시작 전에 다음처럼 수치나 명확한 상한을 적습니다.
@@ -371,7 +371,7 @@ Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 �
 되풀이할 수 있는지 확인합니다. report가 만들어진 뒤에도 별도 read-back으로 각 path를 확인합니다.
 그럴듯한 Markdown은 acceptance가 아닙니다.
 
-## failure에서 recovery 고르기
+## 실패 시 복구 선택하기
 
 | 첫 문제 | 올바른 recovery | 잘못된 recovery |
 | --- | --- | --- |
@@ -386,7 +386,7 @@ Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 �
 read-only check 또는 human decision을 고르고, (6) budget과 state를 갱신합니다. recover는 “무조건
 계속”이 아니라 다음 결정을 안전하게 할 만큼 known state를 되찾는 일입니다.
 
-## claim과 evidence 대응시키기
+## 주장과 증거 대응시키기
 
 | claim | 필요한 evidence | 흔한 overclaim |
 | --- | --- | --- |

@@ -144,7 +144,7 @@ redirect 뒤에는 원래 URL, 최종 URL, HTTP 상태, `Location`, 페이지 �
 
 source, date, scope를 나누자 어떤 claim을 낮춰야 했나요? 개인 data나 새 permission 없이 할 수 있는 가장 작은 다음 check는 무엇인가요?
 
-## 실제 문제: 확인 가능한 source 없는 그럴듯한 답변
+## 실제 문제: 확인 가능한 출처가 없는 그럴듯한 답변
 
 model, 학습법, tool을 고를 때 summary는 link, version, report를 섞을 수 있습니다. 중요한 것은 문장의 설득력이 아니라 선언한 task, date, environment에 어떤 claim이 뒷받침되는가입니다.
 
