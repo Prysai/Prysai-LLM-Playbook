@@ -45,6 +45,8 @@
 
 **新增维护记录 S162：** 2026-08-29 复核 `evidence-maturity-ladder-red-black.svg` 的本地化渲染后，为西语、德语和法语中确实会超出固定卡片的文字加入 `textLength` 与 `lengthAdjust="spacingAndGlyphs"` 几何约束，并在 `scripts/build_localized_visual_assets.py`、`scripts/test_validate_teaching_assets.py` 与 `scripts/visual_asset_geometry_smoke.mjs` 中固定其内边界。约束只作用于受影响的本地化节点，其他语言保持自然字宽；所有变体保留 31 个可访问文字节点和源图 `viewBox`。西语、德语、法语及其余语言的宽屏与窄屏渲染均重新检查，避免长译文越出卡片。它只说明可见性修正，不证明翻译达到母语级、学习者理解、迁移或生产就绪。
 
+**新增维护记录 S163：** 2026-08-29 重新按 SVG 变换矩阵检查 `evidence-maturity-ladder-red-black.svg` 后，发现德语第 03、04 阶段的长句仍会越过卡片右缘；为这两个节点补充 `textLength="646"`，并让 `scripts/visual_asset_geometry_smoke.mjs` 将变换后的文字边界还原到根 `viewBox` 后再检查。回归测试覆盖 8 个语言版本、31 个文字节点和固定内容边界。该记录只说明德语可见性与检测准确性修正，不证明翻译达到母语级、学习者理解、迁移或生产就绪。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

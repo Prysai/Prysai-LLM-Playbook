@@ -43,17 +43,30 @@ try {
       : `assets/teaching/locales/${locale}/${asset}`;
     await page.goto(`${origin}/${relative}`, { waitUntil: 'load' });
     const geometry = await page.locator('text').evaluateAll((nodes) => {
+      const root = nodes[0].ownerSVGElement;
+      const rootInverse = root.getScreenCTM().inverse();
       const boxes = nodes.map((node, index) => {
         const box = node.getBBox();
-        return { index: index + 1, left: box.x, right: box.x + box.width };
+        const matrix = node.getScreenCTM();
+        const points = [
+          new DOMPoint(box.x, box.y),
+          new DOMPoint(box.x + box.width, box.y),
+          new DOMPoint(box.x, box.y + box.height),
+          new DOMPoint(box.x + box.width, box.y + box.height),
+        ].map((point) => point.matrixTransform(matrix).matrixTransform(rootInverse));
+        return {
+          index: index + 1,
+          left: Math.min(...points.map((point) => point.x)),
+          right: Math.max(...points.map((point) => point.x)),
+        };
       });
       return {
         count: boxes.length,
         minLeft: Math.min(...boxes.map((box) => box.left)),
         maxRight: Math.max(...boxes.map((box) => box.right)),
-        // getBBox() reports each text node in its own SVG user space. The
-        // source ladder's outer content edge is x=858; checking that same
-        // edge catches both top-level copy and transformed card copy.
+        // getBBox() reports each text node in its own SVG user space. Convert
+        // every corner back through its screen transform so translated nodes
+        // inside <g transform="..."> are checked in the root viewBox too.
         overflowing: boxes.filter((box) => box.left < 0 || box.right > 858).map((box) => box.index),
       };
     });

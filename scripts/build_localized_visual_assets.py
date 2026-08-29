@@ -33,7 +33,9 @@ LOCALIZED_TEXT_MAX_WIDTHS = {
         },
         "de": {
             4: 762,  # x=78; card right edge=858
-            27: 648,  # translated card starts at x=202 after its group transform
+            17: 646,  # x=202 after the stage group; keep the long stage-03 line inside the frame
+            22: 646,  # x=202 after the stage group; keep the long stage-04 line inside the frame
+            27: 648,  # x=202 after its group transform
         },
         "fr": {
             4: 762,  # x=78; card right edge=858

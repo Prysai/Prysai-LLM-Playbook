@@ -24,6 +24,7 @@ def test_localized_maturity_text_fit() -> None:
     fixture = "<svg>" + "".join(f"<text>{index}</text>" for index in range(1, 32)) + "</svg>"
     fitted = builder.constrain_localized_text(fixture, asset, "de")
     require('textLength="762"' in fitted, "node 4 lost its fixed-card width")
+    require(fitted.count('textLength="646"') == 2, "German stage lines lost their fixed-card widths")
     require('textLength="648"' in fitted, "node 27 lost its fixed-card width")
     require('lengthAdjust="spacingAndGlyphs"' in fitted, "localized fitting lost its SVG fit mode")
     french = builder.constrain_localized_text(fixture, asset, "fr")
