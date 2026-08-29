@@ -226,7 +226,7 @@ oder der Name vertraut wirkt. Prüfe mindestens:
 2. ob die obere Lizenz benötigten Code, Skripte, Assets und verschachtelte Abhängigkeiten abdeckt;
 3. was gelesen, geschrieben, installiert, verbunden oder versendet werden könnte;
 4. ob die Aufgabenlücke dies wirklich braucht statt einer kleineren eigenen Methode; und
-5. was mit einem nicht sensiblen temporären Fixture geprüft wurde und was nicht lief.
+5. was mit einem nicht sensiblen temporären Fixture geprüft wurde und was nicht ausgeführt wurde.
 
 Fehlt eine Antwort, bleiben nur Link und Forschungsnotiz erhalten. Das Material
 wird weder als eigener Skill kopiert noch als übernommene Fähigkeit bezeichnet.

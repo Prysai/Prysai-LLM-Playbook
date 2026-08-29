@@ -232,7 +232,7 @@ Para comparar «pide al modelo que edite» con «escribe primero el protocolo»,
 
 ### Preparación
 
-En una carpeta desechable, sin remoto, secretos ni datos de clientes, guarda un texto inicial, una pregunta de aceptación y un punto de control local. Acordad de antemano un límite de espera y una forma segura de interrumpir. No instales nada, no inicies sesión ni envíes nada a terceros.
+En una carpeta desechable, sin remoto, secretos ni datos de clientes, guarda un texto inicial, una pregunta de aceptación y un punto de control local. Acuerda de antemano un límite de espera y una forma segura de interrumpir. No instales nada, no inicies sesión ni envíes nada a terceros.
 
 ### Tarea
 
