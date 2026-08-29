@@ -27,7 +27,7 @@
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">PLANEN</text>
         <text x="86" y="82" fill="#b8b6b0" font-size="16">Slices / Abhängigkeiten / Risiken</text>
         <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
-        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">AUSSTIEG / GEORDNETE CHECKPOINTS</text>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">AUSSTIEG / CHECKPOINT-REIHE</text>
       </g>
       <g transform="translate(708)">
         <rect width="334" height="176" fill="#f0ebe1"/>
@@ -45,7 +45,7 @@
         <text x="86" y="48" fill="#fff8ed" font-size="25" font-weight="800">PRÜFEN</text>
         <text x="86" y="82" fill="#211719" font-size="16">Befehl / Exit / Laufzeit / Grenzen</text>
         <path d="M86 108H362" stroke="#151719" stroke-opacity=".38"/>
-        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">AUSSTIEG / BELEG ZUR AUSSAGE</text>
+        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">AUSSTIEG / AUSSAGE-BELEG</text>
       </g>
     </g>
 
@@ -56,9 +56,9 @@
         <rect width="62" height="176" fill="#303438"/>
         <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">05</text>
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">BEGUTACHTEN</text>
-        <text x="86" y="82" fill="#b8b6b0" font-size="16">AUSSAGENKARTE / UNABHÄNGIG PRÜFEN / RISIKEN</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">AUSSAGEN / SELBST PRÜFEN / RISIKEN</text>
         <path d="M86 108H382" stroke="#f0ebe1" stroke-opacity=".18"/>
-        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">AUSSTIEG / ANNEHMEN, ÜBERARBEITEN, ABLEHNEN</text>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">AUSSTIEG / ANNEHMEN / ÄNDERN / ABLEHNEN</text>
       </g>
       <g transform="translate(426)">
         <rect width="406" height="176" fill="#f0ebe1"/>

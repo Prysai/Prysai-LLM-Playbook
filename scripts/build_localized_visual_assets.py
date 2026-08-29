@@ -1209,8 +1209,8 @@ add_asset_locales("lifecycle-checkpoints.svg", {
         "Diese Lehrgrafik mit sieben Stufen teilt den Workflow in zwei Lesebänder und benennt den Ausstiegsbeleg jeder Stufe. Fehlt ein Ausstieg, führt eine sichtbare Verzweigung zu Stopp und Wiederherstellung.",
         [
             "WORKFLOW-STEUERUNG / 07 STUFEN / 08", "OHNE AUSSTIEGSBELEG KEIN WEITER.", "Dass der Agent weitergeht, ist kein Checkpoint; ein prüfbares Artefakt ist es.", "BAND A / ABGRENZEN UND MACHEN",
-            "01", "DEFINIEREN", "Ziel / Umfang / Nicht-Ziele", "AUSSTIEG / ABNAHME + STOPP", "02", "PLANEN", "Slices / Abhängigkeiten / Risiken", "AUSSTIEG / GEORDNETE CHECKPOINTS", "03", "BAUEN", "begrenzter Diff / Dateien", "AUSSTIEG / UMKEHRBAR", "04", "PRÜFEN", "Befehl / Exit / Laufzeit / Grenzen", "AUSSTIEG / BELEG ZUR AUSSAGE",
-            "BAND B / BEURTEILEN, ÜBERGEBEN, STATUS HALTEN", "05", "BEGUTACHTEN", "AUSSAGENKARTE / UNABHÄNGIG PRÜFEN / RISIKEN", "AUSSTIEG / ANNEHMEN, ÜBERARBEITEN, ABLEHNEN", "06", "ÜBERGEBEN", "Diff / Logs / Lücken / Übergabe", "AUSSTIEG / BEGRENZTES PROTOKOLL", "07", "PFLEGEN", "Verantwortung / Prüfung / Rückweg", "AUSSTIEG / NÄCHSTE PRÜFUNG", "AUSSTIEG FEHLT?", "STOPP", "BEHEBEN", "STATUS SICHERN",
+            "01", "DEFINIEREN", "Ziel / Umfang / Nicht-Ziele", "AUSSTIEG / ABNAHME + STOPP", "02", "PLANEN", "Slices / Abhängigkeiten / Risiken", "AUSSTIEG / CHECKPOINT-REIHE", "03", "BAUEN", "begrenzter Diff / Dateien", "AUSSTIEG / UMKEHRBAR", "04", "PRÜFEN", "Befehl / Exit / Laufzeit / Grenzen", "AUSSTIEG / AUSSAGE-BELEG",
+            "BAND B / BEURTEILEN, ÜBERGEBEN, STATUS HALTEN", "05", "BEGUTACHTEN", "AUSSAGEN / SELBST PRÜFEN / RISIKEN", "AUSSTIEG / ANNEHMEN / ÄNDERN / ABLEHNEN", "06", "ÜBERGEBEN", "Diff / Logs / Lücken / Übergabe", "AUSSTIEG / BEGRENZTES PROTOKOLL", "07", "PFLEGEN", "Verantwortung / Prüfung / Rückweg", "AUSSTIEG / NÄCHSTE PRÜFUNG", "AUSSTIEG FEHLT?", "STOPP", "BEHEBEN", "STATUS SICHERN",
             "LEHRMODELL / JEDER AUSSTIEG HAT EINEN AUSSAGENUMFANG / EIN EINZELNER SCREENSHOT BEWEIST NICHT, DASS DER WORKFLOW GELAUFEN IST",
         ],
     ),
@@ -1229,8 +1229,8 @@ add_asset_locales("lifecycle-checkpoints.svg", {
         "Cette planche en sept étapes divise le flux en deux bandes de lecture et nomme la preuve de sortie de chaque étape. Si une sortie manque, une branche visible mène à l’arrêt et à la reprise.",
         [
             "PILOTAGE DU FLUX / 07 ÉTAPES / 08", "SANS PREUVE DE SORTIE, N’AVANCEZ PAS.", "Le fait que l’Agent continue n’est pas un point de contrôle ; un artefact vérifiable, oui.", "BANDE A / CADRER ET PRODUIRE",
-            "01", "DÉFINIR", "objectif / périmètre / hors périmètre", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / risques", "SORTIE / POINTS DE CONTRÔLE ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
-            "BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT", "05", "RELIRE", "carte / relecture autonome / risques", "SORTIE / ACCEPTER, RÉVISER, REJETER", "06", "LIVRER", "diff / journaux / écarts / transmission", "SORTIE / RELEVÉ DÉLIMITÉ", "07", "MAINTENIR", "responsable / revue / retour", "SORTIE / CONTRÔLE DATÉ", "SORTIE ABSENTE ?", "ARRÊTEZ", "RÉTABLIR", "CONSERVER L’ÉTAT",
+            "01", "DÉFINIR", "objectif / périmètre / exclusions", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / risques", "SORTIE / CONTRÔLES ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
+            "BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT", "05", "RELIRE", "carte / revue autonome / risques", "SORTIE / ACCEPTER, RÉVISER, REJETER", "06", "LIVRER", "diff / journaux / écarts / transmission", "SORTIE / RELEVÉ DÉLIMITÉ", "07", "MAINTENIR", "responsable / revue / retour", "SORTIE / CONTRÔLE DATÉ", "SORTIE ABSENTE ?", "ARRÊTEZ", "RÉTABLIR", "CONSERVER L’ÉTAT",
             "MODÈLE PÉDAGOGIQUE / CHAQUE SORTIE A UN PÉRIMÈTRE D’AFFIRMATION / UNE SIMPLE CAPTURE D’ÉCRAN NE PROUVE PAS QUE LE FLUX A ÉTÉ EXÉCUTÉ",
         ],
     ),
