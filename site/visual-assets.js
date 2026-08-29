@@ -15,6 +15,7 @@
     'skill-trigger-boundary-decision-map.svg',
     'lifecycle-checkpoints.svg',
     'skill-to-observable-output.svg',
+    'evidence-recovery-ladder.svg',
   ]);
   const FALLBACK_NOTES = Object.freeze({
     en: '',

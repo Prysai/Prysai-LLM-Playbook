@@ -393,6 +393,80 @@ def add_asset_locales(asset, entries):
         add(asset, locale, title, desc, nodes)
 
 
+add_asset_locales("evidence-recovery-ladder.svg", {
+    "zh": (
+        "恢复卡／证据优先",
+        "这张恢复卡先保留断言与实际记录，找到第一个缺失证据，再选择一项获准的检查或明确停下。它不会把未知变成证明。",
+        [
+            "恢复卡／证据优先", "在第一个", "缺失证明处停下。", "流畅的总结不是回执。让第一个缺口保持可见，", "再选择一项获准的检查——否则就停下，不要编造成功。",
+            "01 / 断言", "说清“完成”意味着什么。", "文件、回答、测试、交付或决定——不是自信的句子。", "02 / 记录", "检查实际轨迹。", "阅读差异、退出码、来源、截图、日志或审查备注。",
+            "03 / 第一个缺口", "标出缺少的内容。", "使用 partial、unverified、blocked 或 unknown；不要推断已验收。", "04 / 下一项决定", "做一次安全检查——或停下。", "只改变一个条件。不要扩大权限来让结果通过。",
+            "保留回执", "保留错误、范围、", "状态和最后一个检查点。", "这份记录只能支持范围狭窄的下一步，不能把未知变成证明。", "恢复卡是决策辅助，不是任务、模型或学习者成功的证据。",
+        ],
+    ),
+    "es": (
+        "Tarjeta de recuperación / evidencia primero",
+        "Esta tarjeta conserva la afirmación y el rastro real, encuentra la primera prueba que falta y elige una comprobación permitida o una parada clara. No convierte lo desconocido en evidencia.",
+        [
+            "TARJETA DE RECUPERACIÓN / EVIDENCIA PRIMERO", "DETENTE ANTE LA", "PRIMERA PRUEBA AUSENTE.", "Un resumen pulido no es un comprobante. Deja visible la primera brecha,", "luego elige una comprobación permitida o detente sin inventar un éxito.",
+            "01 / AFIRMACIÓN", "DEFINE QUÉ SIGNIFICA «HECHO».", "Un archivo, respuesta, prueba, entrega o decisión; no una frase segura.", "02 / REGISTRO", "INSPECCIONA EL RASTRO REAL.", "Lee el diff, código de salida, fuente, captura, log o nota de revisión.",
+            "03 / PRIMERA BRECHA", "SEÑALA LO QUE FALTA.", "Usa parcial, no verificado, bloqueado o desconocido. No supongas aceptación.", "04 / PRÓXIMA DECISIÓN", "HAZ UN CONTROL SEGURO O DETENTE.", "Cambia una sola condición. No amplíes la autoridad para hacer que pase.",
+            "CONSERVA EL COMPROBANTE", "CONSERVA EL ERROR, EL ALCANCE,", "EL ESTADO Y EL ÚLTIMO PUNTO DE CONTROL.", "El registro permite un siguiente paso acotado; no convierte lo desconocido en prueba.", "Esta tarjeta orienta decisiones; no demuestra el éxito de una tarea, un modelo o un aprendiz.",
+        ],
+    ),
+    "ja": (
+        "復旧カード / 証拠を先に",
+        "依頼と実際の記録を残し、最初に足りない証拠を見つけます。許可された確認を1つ行うか、成功を作らずに止まるための判断カードです。",
+        [
+            "復旧カード / 証拠を先に", "最初の", "証拠不足で止まる。", "きれいな要約は記録ではない。最初の不足を見えるまま残し、", "許可された確認を1つ選ぶ。成功を作らずに止まる選択もある。",
+            "01 / 主張", "「完了」の意味を決める。", "ファイル、回答、テスト、引き渡し、判断。自信のある一文ではない。", "02 / 記録", "実際の記録を確認する。", "差分、終了コード、出典、スクリーンショット、ログ、レビュー記録を読む。",
+            "03 / 最初の不足", "足りないものを示す。", "部分的、未検証、blocked、unknown と記す。受け入れを推測しない。", "04 / 次の判断", "安全な確認を1つ行うか、止まる。", "条件は1つだけ変える。通すために権限を広げない。",
+            "記録を残す", "エラー、範囲、", "状態、最後のチェックポイントを保存する。", "この記録が支えるのは範囲を絞った次の一手だけ。不明を証拠にはできない。", "復旧カードは判断を助けるもの。タスク、モデル、学習者の成功を示す証拠ではない。",
+        ],
+    ),
+    "ko": (
+        "복구 카드 / 증거 우선",
+        "이 카드는 주장과 실제 기록을 보존하고 첫 번째 증거 누락을 찾은 뒤 허용된 점검 하나를 선택하거나 분명히 멈추게 합니다. 알 수 없음을 증거로 바꾸지는 않습니다.",
+        [
+            "복구 카드 / 증거 우선", "첫 번째 증거 누락에서", "멈추세요.", "매끄러운 요약은 기록이 아닙니다. 첫 빈틈을 보이게 남기고,", "허용된 점검 하나를 고르거나 성공을 꾸미지 말고 멈추세요.",
+            "01 / 주장", "‘완료’의 의미를 정하세요.", "파일, 답변, 테스트, 전달 또는 결정이지 자신감 있는 한 문장이 아닙니다.", "02 / 기록", "실제 흔적을 점검하세요.", "diff, 종료 코드, 출처, 스크린샷, 로그 또는 검토 메모를 읽으세요.",
+            "03 / 첫 빈틈", "빠진 것을 표시하세요.", "부분적·미검증·차단됨·알 수 없음으로 표시하세요. 수용을 추정하지 마세요.", "04 / 다음 결정", "안전한 점검 하나를 하거나 멈추세요.", "조건 하나만 바꾸세요. 결과를 통과시키려고 권한을 넓히지 마세요.",
+            "기록을 보존하세요", "오류, 범위,", "상태와 마지막 체크포인트를 보존하세요.", "이 기록은 범위가 좁은 다음 단계를 뒷받침할 뿐, unknown을 증거로 바꾸지 않습니다.", "복구 카드는 판단을 돕는 자료이지 작업, 모델 또는 학습자의 성공을 증명하는 증거가 아닙니다.",
+        ],
+    ),
+    "de": (
+        "Wiederherstellungskarte / Beleg zuerst",
+        "Diese Karte bewahrt Aussage und echte Spur, findet den ersten fehlenden Beleg und wählt einen erlaubten Check oder einen klaren Stopp. Unbekanntes wird dadurch nicht zum Beleg.",
+        [
+            "WIEDERHERSTELLUNGSKARTE / BELEG ZUERST", "BEIM ERSTEN", "FEHLENDEN BELEG STOPPEN.", "Eine glatte Zusammenfassung ist kein Protokoll. Lass die erste Lücke sichtbar,", "dann wähle einen erlaubten Check – oder stoppe, ohne Erfolg zu erfinden.",
+            "01 / AUSSAGE", "SAG, WAS „FERTIG“ HEISST.", "Datei, Antwort, Test, Übergabe oder Entscheidung – kein selbstsicherer Satz.", "02 / PROTOKOLL", "PRÜFE DIE ECHTE SPUR.", "Lies Diff, Exit-Code, Quelle, Screenshot, Log oder Prüfnotiz.",
+            "03 / ERSTE LÜCKE", "BENENNE, WAS FEHLT.", "Fehlende Belege markieren: teilweise, ungeprüft, blockiert, unbekannt.", "04 / NÄCHSTE ENTSCHEIDUNG", "SICHER PRÜFEN – ODER STOPP.", "Ändere nur eine Bedingung. Erweitere keine Berechtigung, damit es klappt.",
+            "PROTOKOLL BEWAHREN", "FEHLER, UMFANG,", "ZUSTAND UND LETZTEN CHECKPOINT SICHERN.", "Das Protokoll stützt nur den nächsten begrenzten Schritt. Unbekanntes wird kein Beleg.", "Entscheidungshilfe, kein Erfolgsbeleg für Aufgabe, Modell oder Lernende.",
+        ],
+    ),
+    "zh-tw": (
+        "復原卡／證據優先",
+        "這張復原卡先保留主張與實際紀錄，找出第一個缺少的證據，再選一項獲准的檢查或明確停下。它不會把未知變成證據。",
+        [
+            "復原卡／證據優先", "在第一個", "缺少證據處停止。", "流暢的摘要不是紀錄。讓第一個缺口保持可見，", "再選一項獲准的檢查；否則就停下，不要捏造成功。",
+            "01／主張", "說清楚「完成」代表什麼。", "檔案、回應、測試、交付或決定——不是自信滿滿的一句話。", "02／紀錄", "檢查實際軌跡。", "閱讀差異、結束代碼、來源、螢幕截圖、紀錄檔或審查備註。",
+            "03／第一個缺口", "標出缺少的內容。", "標示為部分完成、未驗證、blocked 或 unknown；不要自行推斷已驗收。", "04／下一個決定", "執行一次安全檢查，或停下。", "只改變一個條件。不要為了讓結果通過而擴大權限。",
+            "保留紀錄", "保留錯誤、範圍、", "狀態與最後一個檢查點。", "這份紀錄只能支持範圍精簡的下一步，不能把未知變成證據。", "復原卡是決策輔助，不是任務、模型或學習者成功的證據。",
+        ],
+    ),
+    "fr": (
+        "Carte de reprise / la preuve d’abord",
+        "Cette carte conserve l’affirmation et la trace réelle, repère le premier manque de preuve, puis choisit un contrôle autorisé ou un arrêt clair. Elle ne transforme pas l’inconnu en preuve.",
+        [
+            "CARTE DE REPRISE / LA PREUVE D’ABORD", "ARRÊTEZ-VOUS AU", "PREMIER MANQUE DE PREUVE.", "Un résumé bien tourné n’est pas un relevé. Gardez le premier manque visible,", "puis choisissez un contrôle autorisé — ou arrêtez-vous sans inventer de réussite.",
+            "01 / AFFIRMATION", "DITES CE QUE « TERMINÉ » VEUT DIRE.", "Fichier, réponse, test, livraison ou décision — pas une certitude.", "02 / RELEVÉ", "EXAMINEZ LA TRACE RÉELLE.", "Lisez le diff, le code de sortie, la source, la capture, le journal ou la relecture.",
+            "03 / PREMIER MANQUE", "NOMMEZ CE QUI MANQUE.", "Marquez partiel, non vérifié, bloqué ou inconnu. N’inférez pas l’acceptation.", "04 / DÉCISION SUIVANTE", "CONTRÔLE SÛR — OU ARRÊT.", "Une seule condition. N’élargissez pas l’autorité pour faire passer le résultat.",
+            "GARDEZ LE RELEVÉ", "CONSERVEZ L’ERREUR, LE PÉRIMÈTRE,", "L’ÉTAT ET LE DERNIER POINT DE CONTRÔLE.", "Le relevé peut soutenir une prochaine étape délimitée ; il ne transforme pas l’inconnu en preuve.", "Carte de reprise : aide à décider, sans prouver la réussite d’une tâche, d’un modèle ou d’un apprenant.",
+        ],
+    ),
+})
+
+
 add_asset_locales("foundation-first-visit-route-red-black.svg", {
     "zh": (
         "第一次造访路线：完成一个可检查的 LLM 任务",
@@ -1274,8 +1348,8 @@ add_asset_locales("lifecycle-checkpoints.svg", {
         "Esta lámina de siete etapas divide el flujo en dos bandas de lectura y nombra la evidencia de salida de cada etapa. Si falta una salida, muestra una rama clara hacia parar y recuperar.",
         [
             "CONTROL DEL FLUJO / 07 ETAPAS / 08", "SIN EVIDENCIA DE SALIDA, NO AVANCES.", "Que el Agent siga adelante no es un punto de control; lo es un artefacto inspeccionable.", "BANDA A / ENCUADRAR Y HACER",
-            "01", "DEFINIR", "objetivo / alcance / no objetivos", "SALIDA / ACEPTACIÓN + PARADA", "02", "PLANIFICAR", "cortes / dependencias / riesgos", "SALIDA / PUNTOS DE CONTROL ORDENADOS", "03", "CONSTRUIR", "diff acotado / archivos modificados", "SALIDA / CAMBIO REVERSIBLE", "04", "VERIFICAR", "comando / salida / ejecución / límites", "SALIDA / PRUEBA AJUSTADA A LA AFIRMACIÓN",
-            "BANDA B / JUZGAR, ENTREGAR, MANTENER EL ESTADO", "05", "REVISAR", "mapa de afirmaciones / lectura independiente / riesgos", "SALIDA / ACEPTAR, CORREGIR, RECHAZAR", "06", "ENTREGAR", "diff / registros / brechas / entrega", "SALIDA / REGISTRO ACOTADO", "07", "MANTENER", "responsable / revisión / reversión", "SALIDA / PRÓXIMA COMPROBACIÓN FECHADA", "¿FALTA UNA SALIDA?", "PARA", "RECUPERA", "CONSERVA EL ÚLTIMO ESTADO",
+            "01", "DEFINIR", "objetivo / alcance / no objetivos", "SALIDA / ACEPTACIÓN + PARADA", "02", "PLANIFICAR", "cortes / dependencias / riesgos", "SALIDA / CONTROLES ORDENADOS", "03", "CONSTRUIR", "diff acotado / archivos modificados", "SALIDA / CAMBIO REVERSIBLE", "04", "VERIFICAR", "comando / salida / ejecución / límites", "SALIDA / PRUEBA VINCULADA",
+            "BANDA B / JUZGAR, ENTREGAR, MANTENER EL ESTADO", "05", "REVISAR", "afirmaciones / lectura / riesgos", "SALIDA / ACEPTAR, CORREGIR, RECHAZAR", "06", "ENTREGAR", "diff / registros / brechas / entrega", "SALIDA / REGISTRO ACOTADO", "07", "MANTENER", "responsable / revisión / reversión", "SALIDA / PRÓXIMO CONTROL FECHADO", "¿FALTA UNA SALIDA?", "PARA", "RECUPERA", "CONSERVA EL ÚLTIMO ESTADO",
             "MODELO DIDÁCTICO / CADA SALIDA TIENE SU ALCANCE DE AFIRMACIÓN / UNA CAPTURA SOLA NO DEMUESTRA QUE EL FLUJO SE HAYA EJECUTADO",
         ],
     ),
@@ -1324,7 +1398,7 @@ add_asset_locales("lifecycle-checkpoints.svg", {
         "Cette planche en sept étapes divise le flux en deux bandes de lecture et nomme la preuve de sortie de chaque étape. Si une sortie manque, une branche visible mène à l’arrêt et à la reprise.",
         [
             "PILOTAGE DU FLUX / 07 ÉTAPES / 08", "SANS PREUVE DE SORTIE, N’AVANCEZ PAS.", "Le fait que l’Agent continue n’est pas un point de contrôle ; un artefact vérifiable, oui.", "BANDE A / CADRER ET PRODUIRE",
-            "01", "DÉFINIR", "objectif / périmètre / exclusions", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / risques", "SORTIE / CONTRÔLES ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
+            "01", "DÉFINIR", "objectif / périmètre / exclusions", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / aléas", "SORTIE / CONTRÔLES ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
             "BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT", "05", "RELIRE", "carte / revue autonome / risques", "SORTIE / ACCEPTER, RÉVISER, REJETER", "06", "LIVRER", "diff / journaux / écarts / transmission", "SORTIE / RELEVÉ DÉLIMITÉ", "07", "MAINTENIR", "responsable / revue / retour", "SORTIE / CONTRÔLE DATÉ", "SORTIE ABSENTE ?", "ARRÊTEZ", "RÉTABLIR", "CONSERVER L’ÉTAT",
             "MODÈLE PÉDAGOGIQUE / CHAQUE SORTIE A UN PÉRIMÈTRE D’AFFIRMATION / UNE SIMPLE CAPTURE D’ÉCRAN NE PROUVE PAS QUE LE FLUX A ÉTÉ EXÉCUTÉ",
         ],

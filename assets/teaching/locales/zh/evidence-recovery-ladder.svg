@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">恢复卡／证据优先</title>
+  <desc id="desc">这张恢复卡先保留断言与实际记录，找到第一个缺失证据，再选择一项获准的检查或明确停下。它不会把未知变成证明。</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="96" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="2">恢复卡／证据优先</text>
+  <text x="40" y="162" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">在第一个</text>
+  <text x="40" y="216" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">缺失证明处停下。</text>
+  <text x="40" y="258" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">流畅的总结不是回执。让第一个缺口保持可见，</text>
+  <text x="40" y="290" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">再选择一项获准的检查——否则就停下，不要编造成功。</text>
+  <line x1="82" y1="360" x2="82" y2="1128" stroke="#d71920" stroke-width="8"/>
+  <g transform="translate(126 338)"><rect width="734" height="150" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 断言</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">说清“完成”意味着什么。</text><text x="24" y="116" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="20">文件、回答、测试、交付或决定——不是自信的句子。</text></g>
+  <g transform="translate(126 510)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 记录</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">检查实际轨迹。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">阅读差异、退出码、来源、截图、日志或审查备注。</text></g>
+  <g transform="translate(126 682)"><rect width="734" height="150" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 第一个缺口</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">标出缺少的内容。</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">使用 partial、unverified、blocked 或 unknown；不要推断已验收。</text></g>
+  <g transform="translate(126 854)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 下一项决定</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">做一次安全检查——或停下。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">只改变一个条件。不要扩大权限来让结果通过。</text></g>
+  <rect x="40" y="1086" width="820" height="184" fill="#161616"/><rect x="40" y="1086" width="14" height="184" fill="#d71920"/>
+  <text x="82" y="1132" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">保留回执</text><text x="82" y="1176" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">保留错误、范围、</text><text x="82" y="1210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">状态和最后一个检查点。</text><text x="82" y="1248" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="19">这份记录只能支持范围狭窄的下一步，不能把未知变成证明。</text>
+  <text x="40" y="1344" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="18">恢复卡是决策辅助，不是任务、模型或学习者成功的证据。</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">復旧カード / 証拠を先に</title>
+  <desc id="desc">依頼と実際の記録を残し、最初に足りない証拠を見つけます。許可された確認を1つ行うか、成功を作らずに止まるための判断カードです。</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="96" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="2">復旧カード / 証拠を先に</text>
+  <text x="40" y="162" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">最初の</text>
+  <text x="40" y="216" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">証拠不足で止まる。</text>
+  <text x="40" y="258" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">きれいな要約は記録ではない。最初の不足を見えるまま残し、</text>
+  <text x="40" y="290" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">許可された確認を1つ選ぶ。成功を作らずに止まる選択もある。</text>
+  <line x1="82" y1="360" x2="82" y2="1128" stroke="#d71920" stroke-width="8"/>
+  <g transform="translate(126 338)"><rect width="734" height="150" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 主張</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">「完了」の意味を決める。</text><text x="24" y="116" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="20">ファイル、回答、テスト、引き渡し、判断。自信のある一文ではない。</text></g>
+  <g transform="translate(126 510)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 記録</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">実際の記録を確認する。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">差分、終了コード、出典、スクリーンショット、ログ、レビュー記録を読む。</text></g>
+  <g transform="translate(126 682)"><rect width="734" height="150" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 最初の不足</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">足りないものを示す。</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">部分的、未検証、blocked、unknown と記す。受け入れを推測しない。</text></g>
+  <g transform="translate(126 854)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 次の判断</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">安全な確認を1つ行うか、止まる。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">条件は1つだけ変える。通すために権限を広げない。</text></g>
+  <rect x="40" y="1086" width="820" height="184" fill="#161616"/><rect x="40" y="1086" width="14" height="184" fill="#d71920"/>
+  <text x="82" y="1132" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">記録を残す</text><text x="82" y="1176" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">エラー、範囲、</text><text x="82" y="1210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">状態、最後のチェックポイントを保存する。</text><text x="82" y="1248" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="19">この記録が支えるのは範囲を絞った次の一手だけ。不明を証拠にはできない。</text>
+  <text x="40" y="1344" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="18">復旧カードは判断を助けるもの。タスク、モデル、学習者の成功を示す証拠ではない。</text>
+</svg>

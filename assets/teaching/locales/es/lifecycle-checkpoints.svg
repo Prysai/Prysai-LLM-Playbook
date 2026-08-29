@@ -27,7 +27,7 @@
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">PLANIFICAR</text>
         <text x="86" y="82" fill="#b8b6b0" font-size="16">cortes / dependencias / riesgos</text>
         <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
-        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SALIDA / PUNTOS DE CONTROL ORDENADOS</text>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SALIDA / CONTROLES ORDENADOS</text>
       </g>
       <g transform="translate(708)">
         <rect width="334" height="176" fill="#f0ebe1"/>
@@ -45,7 +45,7 @@
         <text x="86" y="48" fill="#fff8ed" font-size="25" font-weight="800">VERIFICAR</text>
         <text x="86" y="82" fill="#211719" font-size="16">comando / salida / ejecución / límites</text>
         <path d="M86 108H362" stroke="#151719" stroke-opacity=".38"/>
-        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">SALIDA / PRUEBA AJUSTADA A LA AFIRMACIÓN</text>
+        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">SALIDA / PRUEBA VINCULADA</text>
       </g>
     </g>
 
@@ -56,7 +56,7 @@
         <rect width="62" height="176" fill="#303438"/>
         <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">05</text>
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">REVISAR</text>
-        <text x="86" y="82" fill="#b8b6b0" font-size="16">mapa de afirmaciones / lectura independiente / riesgos</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">afirmaciones / lectura / riesgos</text>
         <path d="M86 108H382" stroke="#f0ebe1" stroke-opacity=".18"/>
         <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SALIDA / ACEPTAR, CORREGIR, RECHAZAR</text>
       </g>
@@ -76,7 +76,7 @@
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">MANTENER</text>
         <text x="86" y="82" fill="#b8b6b0" font-size="16">responsable / revisión / reversión</text>
         <path d="M86 108H330" stroke="#f0ebe1" stroke-opacity=".18"/>
-        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SALIDA / PRÓXIMA COMPROBACIÓN FECHADA</text>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SALIDA / PRÓXIMO CONTROL FECHADO</text>
       </g>
       <g transform="translate(1236)">
         <path d="M0 0H212V176H0V118H26V58H0Z" fill="#e43b2f"/>

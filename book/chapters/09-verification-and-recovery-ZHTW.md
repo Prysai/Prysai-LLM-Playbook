@@ -13,7 +13,7 @@ Agent 可能會為錯誤、超出範圍、從未執行，或在錯誤環境中�
 完成摘要。可靠的做法不是盲信，也不是永遠懷疑；而是把摘要拆成一條條宣告，並為每條宣告
 分配在其範圍內足以支撐它的最小證據。
 
-![教學卡：在第一份缺失證據處停止，並用一項安全檢查復原](../../assets/teaching/evidence-recovery-ladder.svg)
+![教學卡：在第一份缺失證據處停止，並用一項安全檢查復原](../../assets/teaching/locales/zh-tw/evidence-recovery-ladder.svg)
 
 > 這是專案自有的教學卡。它解釋一種審查方法；不證明某個 Skill、Agent、工具或外部服務
 > 曾執行任何動作。

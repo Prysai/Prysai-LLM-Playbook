@@ -25,7 +25,7 @@
         <rect width="62" height="176" fill="#303438"/>
         <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">02</text>
         <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">PLANIFIER</text>
-        <text x="86" y="82" fill="#b8b6b0" font-size="16">découpage / dépendances / risques</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">découpage / dépendances / aléas</text>
         <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
         <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">SORTIE / CONTRÔLES ORDONNÉS</text>
       </g>

@@ -11,7 +11,7 @@ diagnostics officiels ou preuves de production. Les états de travail (`verified
 `partial`, `unverified`, `blocked`, `not_run`) décrivent ici la portée de la
 preuve ; ils ne classent pas une personne ni un fournisseur.
 
-![Carte pédagogique : s’arrêter à la première preuve manquante et récupérer avec une vérification sûre](../../assets/teaching/evidence-recovery-ladder.svg)
+![Carte pédagogique : s’arrêter à la première preuve manquante et récupérer avec une vérification sûre](../../assets/teaching/locales/fr/evidence-recovery-ladder.svg)
 
 > Cette carte appartient au projet. Elle décrit une méthode de revue ; elle ne
 > prouve pas l’exécution d’un Skill, Agent, outil ou service externe.
