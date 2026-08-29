@@ -59,8 +59,8 @@
 | 第 17 章：行銷軌——從產品理解到成長實驗 | [閱讀第 17 章](chapters/17-marketing-track-ZHTW.md) | `candidate` / `in-progress` |
 | 第 18 章：內容、設計、資料與自動化 | [閱讀第 18 章](chapters/18-content-design-data-automation-ZHTW.md) | `candidate` / `in-progress` |
 | 第 19 章：評估模型與工作流——從印象走向證據 | [閱讀第 19 章](chapters/19-evaluate-models-and-workflows-ZHTW.md) | `candidate` / `in-progress` |
-| 第 20 章：構建個人 Codex 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
-| 第 21 章：構建團隊能力系統 | [閱讀第 21 章](chapters/21-team-capability-system-ZHTW.md) | `candidate` / `in-progress` |
+| 第 20 章：建立個人 Codex 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
+| 第 21 章：建立團隊能力系統 | [閱讀第 21 章](chapters/21-team-capability-system-ZHTW.md) | `candidate` / `in-progress` |
 | 第 22 章：持續更新與面向未來 | [閱讀第 22 章](chapters/22-continuous-update-and-future-proofing-ZHTW.md) | `candidate` / `in-progress` |
 
 以下中文實驗已經提供，可在完成前兩篇之後按你的任務選擇：

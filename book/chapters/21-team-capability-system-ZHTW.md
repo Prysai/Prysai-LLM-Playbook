@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 <!-- content_id: chapter-21-team-capability-system | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# 第 21 章：構建團隊能力系統
+# 第 21 章：建立團隊能力系統
 
 > `content_status: candidate`
 > `experiment_status: draft / not_run`
@@ -200,7 +200,7 @@ status: "pass | fail | blocked | not_run"
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZHTW.md" aria-label="上一章：第 20 章 · 構建個人 Codex 工作系統">← 上一章<br><strong>第 20 章 · 構建個人 Codex 工作系統</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZHTW.md" aria-label="上一章：第 20 章 · 建立個人 Codex 工作系統">← 上一章<br><strong>第 20 章 · 建立個人 Codex 工作系統</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZHTW.md" aria-label="下一章：第 22 章 · 持續更新與面向未來">下一章 →<br><strong>第 22 章 · 持續更新與面向未來</strong></a></td>
     </tr>
   </table>
