@@ -161,15 +161,15 @@ Das Projekt registriert acht Locales:
 | FR | `-FR` | `fr` | `fr` | Français |
 
 Jede translatierbare Datei folgt `<stabiler-stem>-<LOCALE>.md`, auch die
-englische Quelle. Wenn das Ziel existiert, bleibt ein reader-facing Link in
-derselben Locale und beim selben `content_id`: Von dieser Datei geht es also
-zu `preface-DE.md`, nicht zu `preface-EN.md` oder `preface-ZH.md`.
+englische Quelle. Wenn das Ziel existiert, führen Links zu für Leser sichtbaren
+Inhalten in dieselbe Locale und zur selben `content_id`: Von dieser Datei geht
+es also zu `preface-DE.md`, nicht zu `preface-EN.md` oder `preface-ZH.md`.
 
 Locale-neutrale Governance-, Quellen- und Validator-Dateien können während der
 Migration verlinkt werden. Leserinnen und Leser müssen dann im Linktext sehen,
 dass die deutsche Migration noch läuft und der aktuelle Pfad locale-neutral
 ist. Für ein fehlendes `-DE`-Ziel gibt es keinen stillen Rückfall auf Englisch
-oder auf ein altes unsuffixiertes reader-facing Dokument.
+oder auf ein altes Dokument ohne Locale-Suffix.
 
 ## Lesen und Statusgrenzen
 
