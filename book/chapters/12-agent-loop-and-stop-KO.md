@@ -171,7 +171,7 @@ next_safe_action: "target을 읽고 나서 새 쓰기를 허용할지 결정"
 - [ ] “완료” 선언에서 처음으로 근거 없는 전환을 찾을 수 있다.
 - [ ] 입력, 권한, 증거, 예산에 대한 중지 규칙을 썼다.
 - [ ] 응답이 사라지면 쓰기를 반복하기 전에 상태와 사후 조건을 읽는다.
-- [ ] 인계문이 proven, unknown, not claimed, next safe action을 구분한다.
+- [ ] 인계문이 입증된 것, `unknown`, 주장하지 않은 것과 다음 안전 행동을 구분한다.
 
 이벤트 이름과 권한은 host마다 달라집니다. 공식 문서와 현재 관찰로 확인하세요. 공개 보고서는 점검 설계에 도움을 줄 뿐, 자신의 실행을 대신하지 않습니다.
 
@@ -207,7 +207,7 @@ one next safe action:
 ```
 
 이 연습은 모든 Agent, 모델, 호스트가 같은 행동을 한다거나 효율을 증명하지 않습니다. 설득력
-있는 대화를 실행이 이루어졌다는 주장으로 바꾸지 않는 방법을 연습합니다. 기록과 검토가
+있는 대화만으로 실행이 이루어졌다고 주장하지 않는 방법을 연습합니다. 기록과 검토가
 마련되기 전까지 이 장은 `candidate`, 실험은 `not_run`입니다.
 
 ## 사건 기록으로 요약 검토하기
@@ -322,8 +322,8 @@ artifact_hash_or_diff: "evidence/diff-attempt-02.txt"
 side_effect_status: "local file changed; no external action"
 ```
 
-이 한 줄이 증명하는 것은 이름 붙인 local effect가 관찰되었다는 데까지입니다. user 만족,
-production 안전성, 다른 host에서 같은 event 이름이 나타난다는 뜻은 아닙니다.
+이 한 줄이 증명하는 것은 이름을 지정한 로컬 효과가 관찰되었다는 데까지입니다. 사용자 만족,
+프로덕션 안전성, 다른 host에서 같은 이벤트 이름이 나타난다는 뜻은 아닙니다.
 
 ## 재시도 예산과 부작용 대조
 
@@ -331,10 +331,10 @@ production 안전성, 다른 host에서 같은 event 이름이 나타난다는 �
 시작 전에 다음처럼 수치나 명확한 상한을 적습니다.
 
 ```text
-attempts: 최대 2회. 두 번째는 새 input, approval, 또는 read-back이 있을 때만.
-time: command 하나는 90초 안에 event를 확인한다. 확인하지 못하면 pause한다.
-scope: named sandbox와 named artifact 밖을 읽거나 쓰지 않는다.
-side effects: network, publish, message, install, delete는 0회.
+attempts: 최대 2회. 두 번째는 새 입력, 승인, 또는 되읽기가 있을 때만.
+time: 명령 하나는 90초 안에 이벤트를 확인한다. 확인하지 못하면 pause한다.
+scope: 지정한 sandbox와 산출물 밖을 읽거나 쓰지 않는다.
+side effects: 네트워크, 게시, 메시지, 설치, 삭제는 0회.
 ```
 
 특히 응답을 잃은 쓰기는 위험합니다. 먼저 대상을 다시 읽고 기준 상태와 사후 조건을
@@ -356,14 +356,14 @@ side effects: network, publish, message, install, delete는 0회.
 Agent에게 작업을 맡기기 전에 대화의 흐름이 아니라 작업 계약을 기준으로 적습니다. 다음은 로컬 텍스트 작업의 예입니다.
 
 ```text
-Goal: docs/guide/ 안에서 존재하지 않는 local file을 가리키는 link를 report한다.
-Read scope: <named disposable copy>/docs/guide/만.
-Write scope: <named disposable copy>/evidence/missing-links.md만.
-Do not: source docs 편집, network 사용, install, publish, delete, message 전송.
-Acceptance: 각 report row에는 source path, raw link, resolved local target, missing 판단 근거가 있다.
-Retry: read-only scan은 최대 두 번. 첫 번째와 조건이 같은 retry는 하지 않는다.
-Stop: working directory/root가 contract와 다르거나 target이 모호하거나 required path가 없다.
-Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 나누어 쓴다.
+Goal: docs/guide/ 안에서 존재하지 않는 로컬 파일을 가리키는 링크를 보고한다.
+Read scope: <지정한 임시 복사본>/docs/guide/만.
+Write scope: <지정한 임시 복사본>/evidence/missing-links.md만.
+Do not: 원본 문서 편집, 네트워크 사용, 설치, 게시, 삭제, 메시지 전송.
+Acceptance: 각 보고 행에는 원본 경로, 원시 링크, 확인한 로컬 대상, 누락 판단 근거가 있다.
+Retry: 읽기 전용 검사는 최대 두 번. 첫 번째와 조건이 같은 재시도는 하지 않는다.
+Stop: 작업 디렉터리 또는 루트가 계약과 다르거나 대상이 모호하거나 필수 경로가 없다.
+Delivery: 변경됨 / verified / blocked / unverified를 증거와 미확인 사항으로 나누어 쓴다.
 ```
 
 실행을 허용하기 전에 Agent의 plan이 read root, write root, missing의 정의, check, stop condition을
