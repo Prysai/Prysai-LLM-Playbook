@@ -16,7 +16,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from serve_pages_candidate import CandidateArtifactHandler  # noqa: E402
 from serve_pages_candidate import main as serve_main  # noqa: E402
-from build_pages_artifact import build  # noqa: E402
 from http.server import ThreadingHTTPServer  # noqa: E402
 
 
@@ -49,19 +48,19 @@ def main() -> int:
 
     with TemporaryDirectory(prefix="pages-candidate-cli-") as temporary:
         artifact = Path(temporary) / "artifact"
-        build(artifact)
         original_server = serve_pages_candidate.http.server.ThreadingHTTPServer
         original_output = serve_pages_candidate.DEFAULT_OUTPUT
         original_args = sys.argv
         cli_port = free_loopback_port()
         serve_pages_candidate.http.server.ThreadingHTTPServer = InspectingServer
         serve_pages_candidate.DEFAULT_OUTPUT = artifact
-        sys.argv = ["serve_pages_candidate.py", "--skip-build", "--port", str(cli_port)]
+        sys.argv = ["serve_pages_candidate.py", "--port", str(cli_port)]
         try:
             if serve_main() != 0:
                 raise AssertionError("preview CLI did not exit cleanly after shutdown")
             (artifact / ".nojekyll").unlink()
             try:
+                sys.argv = ["serve_pages_candidate.py", "--skip-build", "--port", str(cli_port)]
                 serve_main()
             except SystemExit as exc:
                 if "not a valid Pages candidate" not in str(exc):

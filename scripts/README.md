@@ -188,8 +188,9 @@ reachable.
 
 `serve_pages_candidate.py` is the local preview companion. It rebuilds the
 bounded `_site/` artifact, serves only that directory on `127.0.0.1`, and
-disables directory listings. `--skip-build` validates the existing artifact
-before serving it. It is not a deployment command. Run
+disables directory listings. A fresh build is already validated by
+`build_pages_artifact.py`; `--skip-build` validates an existing artifact before
+serving it. It is not a deployment command. Run
 `test_build_pages_artifact.py` and `test_serve_pages_candidate.py` to check the
 artifact boundary, credential-signature and symlink guards, loopback binding,
 artifact root, listing boundary, and path-traversal boundary.

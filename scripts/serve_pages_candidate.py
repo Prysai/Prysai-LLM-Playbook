@@ -48,14 +48,18 @@ def main() -> int:
     args = parse_args()
     if not 1 <= args.port <= 65535:
         raise SystemExit("--port must be between 1 and 65535")
-    if not args.skip_build:
+    built_here = not args.skip_build
+    if built_here:
         build_artifact()
     if not DEFAULT_OUTPUT.is_dir():
         raise SystemExit("_site artifact is missing; run without --skip-build")
-    try:
-        validate_artifact(DEFAULT_OUTPUT)
-    except (OSError, UnicodeError, ValueError) as exc:
-        raise SystemExit(f"_site artifact is not a valid Pages candidate: {exc}") from exc
+    # build_pages_artifact.py validates the fresh artifact before returning.
+    # Revalidate only when --skip-build asks us to trust an existing directory.
+    if not built_here:
+        try:
+            validate_artifact(DEFAULT_OUTPUT)
+        except (OSError, UnicodeError, ValueError) as exc:
+            raise SystemExit(f"_site artifact is not a valid Pages candidate: {exc}") from exc
 
     handler = functools.partial(CandidateArtifactHandler, directory=str(DEFAULT_OUTPUT))
     server = http.server.ThreadingHTTPServer(("127.0.0.1", args.port), handler)
