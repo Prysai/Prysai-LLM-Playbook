@@ -27,6 +27,11 @@ const locales = [
   ['fr', 'FR', 'Lab 003 : Auditer une affirmation de fin', 'Garder un essai assez petit pour être vérifiable'],
 ];
 const documentLanguages = { zh: 'zh-CN', 'zh-tw': 'zh-TW' };
+const readerOfficialSiteLabels = {
+  en: 'Prysai official website', zh: 'Prysai 官网', es: 'Sitio web oficial de Prysai',
+  ja: 'Prysai 公式サイト', ko: 'Prysai 공식 웹사이트', de: 'Offizielle Prysai-Website',
+  'zh-tw': 'Prysai 官方網站', fr: 'Site officiel de Prysai',
+};
 const localizedVisualAssets = new Set([
   'llm-six-terms-to-one-check.svg', 'foundation-first-visit-route-red-black.svg',
   'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
@@ -118,6 +123,13 @@ try {
     await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
     assert.equal(await page.locator('html').getAttribute('lang'), documentLanguages[locale] || locale, `${locale} Reader changed the document language`);
     assert.equal((await page.locator('[data-reader-article] h1').innerText()).trim(), heading, `${locale} Lab 003 heading is not localized`);
+
+    const officialSite = page.locator('.reader-footer-site');
+    assert.equal(await officialSite.count(), 1, `${locale} Reader footer is missing the official-site link`);
+    assert.equal(await officialSite.getAttribute('href'), 'https://prysai.com/', `${locale} Reader footer official-site URL changed`);
+    assert.equal((await officialSite.textContent() || '').trim(), readerOfficialSiteLabels[locale], `${locale} Reader footer official-site label is not localized`);
+    assert.equal(await officialSite.getAttribute('target'), '_blank', `${locale} Reader footer official-site link should open separately`);
+    assert.equal(await officialSite.getAttribute('rel'), 'noreferrer', `${locale} Reader footer official-site link is missing its referrer boundary`);
 
     const visual = page.locator('[data-reader-inline-visual]');
     assert.equal(await visual.count(), 1, `${locale} Lab 003 is missing its inline teaching visual`);

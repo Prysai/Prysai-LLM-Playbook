@@ -1150,6 +1150,8 @@ a:hover { color: var(--reader-link-hover); }
 .reader-footer { border-top: 1px solid var(--reader-ink); color: #fff; background: var(--reader-ink); }
 .reader-footer-inner { display: flex; justify-content: space-between; gap: 18px; padding: 18px 0; color: #b5b5b0; font-size: .76rem; }
 .reader-footer-brand { display: inline-flex; align-items: center; gap: .55rem; color: #fff; }
+.reader-footer-site { color: #fff; font-weight: 800; text-underline-offset: .2rem; }
+.reader-footer-site:hover, .reader-footer-site:focus-visible { color: var(--reader-highlight-lime); }
 .reader-brand-logo-light { width: 30px; height: 30px; }
 
 @media (forced-colors: active) {
