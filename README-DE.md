@@ -256,11 +256,14 @@ behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 - Das Projekt ist ein unabhängig gepflegtes Lern- und Praxissystem, keine
   offizielle Dokumentation und keine offizielle Produktseite von OpenAI.
 
-## Umfang dieses ersten deutschen Schnitts
+## Sichtbarer deutscher Pfad und redaktioneller Ausschnitt
 
-Der deutsche Leseweg umfasst den Projekteinstieg, Buchleitfaden, das Vorwort,
-den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4 sowie die
-Labs 001, 007 und 011. Er macht weder die übrigen Kapitel und Labs noch Skills,
-Forschungsakten oder die öffentliche Website zu vollständigen deutschen
-Übersetzungen. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar, bis die
-jeweilige content ID tatsächlich übersetzt und geprüft wurde.
+Die oben genannte Datei- und Pfadabdeckung stellt den deutschen Leserpfad und
+seine Links bereit. Der derzeit redaktionell ausgearbeitete erste deutsche
+Ausschnitt ist kleiner: Er umfasst den Projekteinstieg, den Buchleitfaden, das
+Vorwort, den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4
+sowie die Labs 001, 007 und 011. Die übrigen `-DE`-Dateien bleiben für das
+Routing sichtbar, sind aber nicht als vollständige deutsche Übersetzung oder
+Sprachprüfung zu verstehen. Das gilt ebenso für Skills, Forschungsakten und
+die öffentliche Website. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar,
+bis die jeweilige content ID tatsächlich übersetzt und geprüft wurde.
