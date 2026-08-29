@@ -22,7 +22,7 @@ define → plan → build → verify → review → deliver → maintain
 - 빌드, 실행 시 동작, 화면, 소스, 보안, 사용자 수용에 관한 증거를 구분한다.
 - 완료한 일과 완료하지 못한 일을 섞지 않고 인수인계 내용을 작성한다.
 
-## 실제 문제: 보이는 성공 사이에서 workflow가 깨질 수 있다
+## 실제 문제: 두 화면 사이에서 작업 흐름이 끊길 수 있다
 
 로그인, 모델 선택기, 시작된 검사는 다음 단계에 필요한 상태가 빠져 있어도 진행 중인 것처럼 보일 수 있습니다. 아래의 공개 증상은 이번 실행을 재현한 것도, 제품을 진단한 것도 아닙니다. 중단 뒤 경로와 diff를 확인하고, 브라우저 로그인 뒤의 클라이언트 교환을 분리하고, 영구 변경 전에 새 승인을 요청하는 등 첫 번째 안전한 관찰을 고르는 데 쓰는 자료입니다.
 
@@ -30,13 +30,13 @@ define → plan → build → verify → review → deliver → maintain
 
 | 단계 | 종료 증거 | 멈출 때 |
 |---|---|---|
-| Define | 작업 프로토콜과 수용 조건 | 입력 부족이 범위, 위험, 권한을 바꾼다 |
-| Plan | 슬라이스와 검사가 있는 계획 | 확인 가능한 결과 없는 수평 계획 |
-| Build | diff, 변경 파일, 체크포인트 | 범위를 벗어나거나 복구 방법이 불명확하다 |
-| Verify | 명령, 종료 코드, 출력, 환경 | 멈춤, 잘못된 대상, 증거 부족 |
-| Review | 주장-증거 표와 열린 위험 | 주장이 증거보다 넓다 |
-| Deliver | 요약과 산출물 경로 | 게시됨 또는 운영 중이라고 과장하게 된다 |
-| Maintain | 담당자, 검토, 복구 기록 | 담당자나 복구 방법이 없다 |
+| 정의(Define) | 작업 프로토콜과 수용 조건 | 입력 부족으로 범위, 위험, 권한이 달라진다 |
+| 계획(Plan) | 슬라이스와 검사가 있는 계획 | 확인 가능한 결과가 없는 수평 계획 |
+| 구축(Build) | diff, 변경 파일, 체크포인트 | 범위를 벗어나거나 복구 방법이 불명확하다 |
+| 검증(Verify) | 명령, 종료 코드, 출력, 환경 | 멈춤, 잘못된 대상, 증거 부족 |
+| 검토(Review) | 주장-증거 표와 열린 위험 | 주장이 증거보다 넓다 |
+| 전달(Deliver) | 요약과 산출물 경로 | 게시됨 또는 운영 중이라고 과장하게 된다 |
+| 유지보수(Maintain) | 담당자, 검토, 복구 기록 | 담당자나 복구 방법이 없다 |
 
 종료 조건이 빠지면 `blocked` 또는 `unverified`로 남깁니다. 단계를 더 늘린다고 해서 빠진 권한, 파일, 검사를 대신할 수는 없습니다.
 
@@ -47,7 +47,7 @@ define → plan → build → verify → review → deliver → maintain
 | 소스가 바뀌었다 | 지정 경로의 diff | 변경이 맞다는 것 |
 | 검사를 실행했다 | 명령, 폴더, 종료 코드, 출력 | 애플리케이션 동작 |
 | 애플리케이션이 동작한다 | 지정 입력과 환경의 실행 관찰 | 모든 계정과 OS에서의 동작 |
-| 페이지가 보기 좋다 | viewport와 기준을 남긴 렌더 검사 | 수요, 완전한 접근성, 배포 |
+| 페이지가 보기 좋다 | 뷰포트와 기준을 남긴 렌더링 검토 | 수요, 완전한 접근성, 배포 |
 | 기능을 출시했다 | 저장소 또는 배포 상태와 후속 검사 | 모든 사용자 도달 |
 
 빌드 통과는 유용하지만, 실행 결과나 화면 품질, 보안, 사용자 수용에 관한 증거가 자동으로 생기는 것은 아닙니다.
@@ -148,39 +148,40 @@ handoff: 바꾼 것, 바꾸지 않은 것, check 결과, 남은 unknown.
 
 ### 증거
 
-각 시도에서 고정 input과 수용 조건, 허용 행동, checkpoint 번호, 요청 또는 protocol, 변경 path, diff, directory와 종료 코드를 포함한 command, review note, 빠진 관찰을 보존합니다. 실행하지 않은 variant는 `not_run`으로 기록하며, 유창한 output에서 실행 기록을 만들어 내지 않습니다.
+각 시도에서 고정된 입력과 수용 조건, 허용된 행동, 체크포인트 번호, 요청 또는 프로토콜, 변경 경로, diff, 디렉터리와 종료 코드를 포함한 명령, 검토 메모, 누락된 관찰을 보존합니다. 실행하지 않은 변형은 `not_run`으로 기록하며, 유창한 출력만으로 실행 기록을 만들어 내지 않습니다.
 
 ### 회고
 
-- 어느 checkpoint에서 state를 실제로 알았고 어디부터 추정했는가?
-- diff가 뒷받침하는 주장과 runtime 또는 reader가 필요한 주장은 무엇인가?
-- 어떤 side effect가 새롭고 제한된 승인을 필요로 했는가?
+- 어느 체크포인트에서 상태를 실제로 알았고 어디부터 추정했는가?
+- diff가 뒷받침하는 주장과 실행 환경 또는 독자 확인이 필요한 주장은 무엇인가?
+- 어떤 부작용이 새롭고 제한된 승인을 필요로 했는가?
 
 ## 체크포인트를 가지고 한 바퀴 돌기
 
 짧은 작업도 중간에 무엇이 확정됐는지 남겨야 합니다. 다음 사람이 대화 기록을 읽지 않아도 이어갈 수 있는지가 기준입니다.
 
 ```text
-CP0: original text, target path, 허용 scope, rollback source
-CP1: goal과 acceptance 확인; 아직 edit하지 않음
-CP2: 한 곳만 edit; before/after와 diff 보관
-CP3: named check 실행 또는 stop; output과 limit 보관
-CP4: claim과 evidence 검토; handoff와 next action 작성
+run_id: chapter-review-001
+CP0: 깨끗하거나 의도적으로 변경된 기준선, 상태, 대상 해시, 복구 출처
+CP1: 정의 승인; 계획과 권한 확정; 아직 편집하지 않음
+CP2: 첫 슬라이스 변경; diff와 변경 파일 목록 보관
+CP3: 집중 검사 완료 또는 중단; 출력과 미검증 항목 보관
+CP4: 독립 검토 완료; 전달 상태와 다음 검토 기록
 ```
 
 각 체크포인트에 마지막으로 확인한 것, 바뀌었을 수 있는 파일, 부족한 증거, 다음 안전한
 행동 하나를 적습니다. `CP2`가 없으면 모델이 “바꿨다”고 해도 변경을 전달 내용에 넣지 않습니다.
-`CP3`가 timeout되면 침묵을 통과로 보지 않고 출력, 프로세스 상태, diff를 남겨
+`CP3`가 시간 초과되면 침묵을 통과로 보지 않고 출력, 프로세스 상태, diff를 남겨
 `unverified` 또는 `blocked`로 둡니다.
 
 ## 주장마다 검사를 고르기
 
-| 주장 | 필요한 evidence | 아직 증명하지 않는 것 |
+| 주장 | 필요한 증거 | 아직 증명하지 않는 것 |
 |---|---|---|
-| text를 바꿨다 | named path의 before/after 또는 diff | 독자가 이해한다는 것 |
-| local check가 통과했다 | command, directory, exit code, output | 다른 environment의 동작 |
-| page가 보인다 | recorded viewport의 render review | accessibility, demand, deployment |
-| external change를 보냈다 | target 쪽 read-back | 모든 사람이 볼 수 있다는 것 |
+| 텍스트를 바꿨다 | 지정 경로의 변경 전후 또는 diff | 독자가 이해한다는 것 |
+| 로컬 검사가 통과했다 | 명령, 디렉터리, 종료 코드, 출력 | 다른 환경에서의 동작 |
+| 페이지가 보인다 | 기록한 뷰포트에서 렌더링 검토 | 접근성, 수요, 배포 |
+| 외부 변경을 보냈다 | 대상 측에서 다시 확인한 결과 | 모든 사람이 볼 수 있다는 것 |
 
 하나의 통과한 검사 결과를 모든 주장에 재사용하지 않습니다. 특히 diff는 변경의 증거일 뿐 사용자 가치나
 게시의 증거가 아닙니다. 증거가 없으면 문장을 더 좁게 씁니다.
@@ -203,21 +204,21 @@ next: 안전한 행동 하나
 
 ## 응용 과제
 
-같은 워크플로를 비기술 작업에 적용합니다. 자신의 짧은 글을 고치거나, 작은 소스 목록을 확인하거나, 언어 연습을 계획합니다. 목표, 허용 입력, 금지된 부작용, 체크포인트, 인수인계는 유지합니다. 수용 조건만 분야에 맞게 바꿉니다. 예를 들어 독자의 이해, 조사 자료와 미확인 사항, 언어 연습에서 시간을 둔 뒤 도움 없이 떠올리는 능력입니다. 이 연습으로 증명할 수 없는 것도 적습니다.
+같은 작업 흐름을 비기술 작업에 적용합니다. 자신의 짧은 글을 고치거나, 작은 소스 목록을 확인하거나, 언어 연습을 계획합니다. 목표, 허용 입력, 금지된 부작용, 체크포인트, 인수인계는 유지합니다. 수용 조건만 분야에 맞게 바꿉니다. 예를 들어 독자의 이해, 조사 자료와 미확인 사항, 언어 연습에서 시간을 둔 뒤 도움 없이 떠올리는 능력입니다. 이 연습으로 증명할 수 없는 것도 적습니다.
 
 ## 예시: Markdown 장 하나 검토하기
 
-운영 리포지터리가 아니라 버려도 되는 복사본에서 일곱 단계를 한 바퀴 도는 예입니다. 목표는 “글을
+운영 리포지터리가 아니라 폐기 가능한 복사본에서 일곱 단계를 한 바퀴 도는 예입니다. 목표는 “글을
 더 좋아 보이게” 하는 것이 아니라 독자가 로컬에서 시작하는 단계와 검사 방법을 구분해 읽게 하는 것입니다.
 
 ```text
-Reader: 처음 local copy를 연 사람
-Goal: named Markdown file의 start section에 첫 action과 check를 하나씩 명시한다
-Fixed input: target file, project rule, supplied acceptance note 하나
-Allowed: read, plan, target file만 text edit, existing local link check
-Not allowed: link rewrite, install, network, commit, push, publish, 다른 file edit
-Acceptance: 두 heading과 지정한 local command text가 있다. broken local link를 늘리지 않는다
-Rollback: pre-edit copy와 baseline diff
+Reader: 처음 로컬 복사본을 연 사람
+Goal: 이름을 지정한 Markdown 파일의 시작 섹션에 첫 조치와 검사를 하나씩 명시한다
+Fixed input: 대상 파일, 프로젝트 규칙, 제공된 수용 메모 하나
+Allowed: 읽기, 계획 수립, 대상 파일만 텍스트 편집, 기존 로컬 링크 검사
+Not allowed: 링크 재작성, 설치, 네트워크 사용, commit, push, publish, 다른 파일 편집
+Acceptance: 두 개의 제목과 지정한 로컬 명령어 텍스트가 있다. 깨진 로컬 링크를 늘리지 않는다
+Rollback: 편집 전 복사본과 기준선 diff
 ```
 
 이 정의를 쓸 수 없다면 빌드를 시작하지 않습니다. “더 전문적으로”라는 말은 독자, 대상,
@@ -237,54 +238,54 @@ Rollback: pre-edit copy와 baseline diff
 
 ### 단계 종료 조건과 복구
 
-| stage | 계속하기 위한 evidence | evidence가 없을 때 |
+| 단계 | 허용된 행동 | 종료 증거 |
 | --- | --- | --- |
-| Define | target, reader, acceptance, allowed scope | question 하나로 좁혀 ask |
-| Plan | proposed diff와 named check | edit를 허용하지 않음 |
-| Build | target만 바꾼 actual diff | scope를 review하고 rollback 결정 |
-| Verify | directory를 포함한 check output 또는 manual read-back | `unverified`로 handoff |
-| Review | claim이 diff/check scope를 넘지 않음 | claim을 downgrade |
-| Deliver | changed/not changed/not proven/next를 나눈 note | “complete”를 쓰지 않음 |
-| Maintain | owner와 next fact/check review | 미래 claim을 하지 않음 |
+| 정의(Define) | 규칙, 대상, 결함 목록 읽기 | 작업 카드, 입력 목록, 허용 범위 |
+| 계획(Plan) | 두세 개의 로컬 편집 순서 정하기 | 계획, 의존성 순서, 가정 |
+| 구축(Build) | `docs/guide.md`만 편집 | diff, 체크포인트, 변경 파일 목록 |
+| 검증(Verify) | 기존 로컬 검사 실행 | 명령, 종료 코드, 출력, 한계 |
+| 검토(Review) | 목표와 대조해 diff 읽기 | 검토 기록과 주장-증거 표 |
+| 전달(Deliver) | 로컬 검토 자료 준비 | commit/push 여부를 밝힌 요약 |
 
-check가 timeout되면 첫 response는 retry가 아닙니다. last output, process state, diff, target read-back을
-보관합니다. 상태를 모르면 `unknown`으로 두고, 완료되었을 가능성이 있는 쓰기를 확인 없이 반복하지 않습니다.
+검사가 시간 초과되면 첫 대응은 재시도가 아닙니다. 마지막 출력, 프로세스 상태, diff, 대상 파일을
+다시 읽은 결과를 보관합니다. 상태를 모르면 `unknown`으로 두고, 완료되었을 가능성이 있는 쓰기를
+확인 없이 반복하지 않습니다.
 
 ### 사실에 맞는 전달
 
 ```text
-Completed: target Markdown의 start section 한 곳을 업데이트했다.
-Evidence: baseline과 exact diff, <named command> output, working directory.
-Not changed: code, dependencies, external service, repository history.
-Not proven: 초보자 이해, browser render, publish, 다른 environment의 runtime.
-Next: 필요하면 reader 한 명에게 첫 action을 말할 수 있는지 묻는다. external action은 새 decision이 필요하다.
+Completed: 대상 Markdown의 시작 섹션 한 곳을 업데이트했다.
+Evidence: 기준선과 정확한 diff, <named command> 출력, 작업 디렉터리.
+Not changed: 코드, 의존성, 외부 서비스, 저장소 이력.
+Not proven: 초보자 이해, 브라우저 렌더링, 게시, 다른 환경에서의 실행.
+Next: 필요하면 독자 한 명에게 첫 조치를 말할 수 있는지 묻는다. 외부 조치에는 새 결정이 필요하다.
 ```
 
 ## 유지보수는 다음 변경을 안전하게 만든다
 
-workflow의 끝은 “영원히 맞다”가 아닙니다. volatile product fact, command, link, permission, source에는
-owner와 다음 review date가 필요합니다. stable method는 남기고 product-specific instruction은 source,
-access date, scope와 함께 업데이트합니다. 오래된 fact를 발견하면 전체 corpus를 기계적으로 바꾸지 말고,
-affected reader path, acceptance, permission, license, rollback을 하나씩 review합니다.
+작업 흐름의 끝은 “영원히 맞다”가 아닙니다. 변하기 쉬운 제품 사실, 명령, 링크, 권한, 출처에는
+담당자와 다음 검토일이 필요합니다. 안정적인 방법은 남기고 제품별 지침은 출처, 확인 날짜, 범위와
+함께 업데이트합니다. 오래된 사실을 발견하면 전체 자료를 기계적으로 바꾸지 말고, 영향을 받는 독자
+경로, 수용 조건, 권한, 라이선스, 복구 방법을 하나씩 검토합니다.
 
-- [ ] case의 각 stage에 실제 exit evidence 또는 stop record가 있다.
-- [ ] one local check를 reader outcome, security, publish evidence로 쓰지 않았다.
-- [ ] timeout 뒤 마지막 accepted checkpoint를 확인했다.
-- [ ] delivery가 changed, not changed, not proven, next를 나눈다.
-- [ ] future maintenance에 owner와 review trigger가 있다.
+- [ ] 사례의 각 단계에 실제 종료 증거 또는 중단 기록이 있다.
+- [ ] 로컬 검사 하나를 독자 결과, 보안, 게시 증거로 사용하지 않았다.
+- [ ] 시간 초과 뒤 마지막으로 수용한 체크포인트를 확인했다.
+- [ ] 전달 기록에서 변경됨, 변경하지 않음, 아직 증명하지 못함, 다음 단계를 나눈다.
+- [ ] 향후 유지보수에 담당자와 검토 조건이 있다.
 
 ## 수용 체크리스트
 
-- [ ] 편집 전에 scope, non-goal, acceptance, authority, rollback을 쓸 수 있다.
-- [ ] 큰 request를 early evidence가 나오는 vertical slice로 바꿀 수 있다.
-- [ ] retry 전에 last accepted checkpoint를 말할 수 있다.
-- [ ] build, runtime, visual, source, security, user acceptance를 구분할 수 있다.
-- [ ] 요청받지 않은 install, restart, deployment, external write를 중단할 수 있다.
-- [ ] completed, not done, blocked, unverified를 나누어 handoff할 수 있다.
+- [ ] 편집 전에 범위, 비목표, 수용 조건, 권한, 복구 방법을 쓸 수 있다.
+- [ ] 큰 요청을 조기에 증거가 나오는 수직 슬라이스로 바꿀 수 있다.
+- [ ] 재시도 전에 마지막으로 수용한 체크포인트를 말할 수 있다.
+- [ ] 빌드, 실행 시 동작, 화면, 출처, 보안, 사용자 수용을 구분할 수 있다.
+- [ ] 요청받지 않은 설치, 재시작, 배포, 외부 쓰기를 중단할 수 있다.
+- [ ] 완료, 미완료, 차단됨, 검증되지 않음을 나누어 인수인계할 수 있다.
 
 ## 출처 및 유지보수 경계
 
-workflow 순서, checkpoint, claim과 evidence의 분리는 이 프로젝트의 안정적인 교육 방법입니다. 제품 작업면, account와 tool 동작, model 가용성, community symptom은 변하는 사실입니다. 현재 제품 주장을 채택하기 전 날짜가 있는 [공식 사실 카드](../evidence-library-KO.md#source-notes)와 [현장 문제 색인](../evidence-library-KO.md#source-notes)을 확인하세요. 둘 다 local run이나 독립 학습 관찰을 대신하지 않습니다.
+작업 흐름의 순서, 체크포인트, 주장과 증거를 분리하는 방식은 이 프로젝트의 안정적인 교육 방법입니다. 제품 화면, 계정과 도구의 동작, 모델 가용성, 커뮤니티에서 보고된 증상은 변하는 사실입니다. 현재 제품 주장을 채택하기 전 날짜가 있는 [공식 사실 카드](../evidence-library-KO.md#source-notes)와 [현장 문제 색인](../evidence-library-KO.md#source-notes)을 확인하세요. 둘 다 로컬 실행이나 독립적인 학습 관찰을 대신하지 않습니다.
 
 <!-- chapter-navigation:start -->
 <hr>
