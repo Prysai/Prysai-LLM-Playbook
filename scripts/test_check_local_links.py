@@ -12,11 +12,20 @@ def write_broken_markdown(directory: Path) -> None:
     (directory / "broken.md").write_text("[broken](missing.md)\n", encoding="utf-8")
 
 
+def write_visible_fixture(directory: Path) -> None:
+    (directory / "target.md").write_text("# target\n", encoding="utf-8")
+    (directory / "visible.md").write_text("[target](target.md)\n", encoding="utf-8")
+
+
 def main() -> int:
     for prefix in ("._site-build-link-fixture-", "._site-previous-link-fixture-"):
-        with TemporaryDirectory(prefix=prefix, dir=links.ROOT) as temporary:
-            write_broken_markdown(Path(temporary))
-            if links.main() != 0:
+        with TemporaryDirectory(prefix="local-links-fixture-") as temporary:
+            fixture_root = Path(temporary)
+            transient = fixture_root / f"{prefix}case"
+            transient.mkdir()
+            write_broken_markdown(transient)
+            write_visible_fixture(fixture_root)
+            if links.main(fixture_root) != 0:
                 raise AssertionError(f"transient Pages directory was scanned: {prefix}")
     print("LOCAL_LINKS_TESTS_OK fixtures=2")
     return 0
