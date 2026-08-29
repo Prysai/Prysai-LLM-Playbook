@@ -297,12 +297,12 @@ PRÜFUNG / DIESE ZEILE NICHT ÜBERSPRINGEN
 ANTWORT ≠ AKTION ≠ VERIFIZIERTES ERGEBNIS
 Vergleiche das Ergebnis mit Quelle, Diff, Test, Log oder Abnahmeregel, bevor du die Aufgabe als erledigt bezeichnest.
 PRYSAI LAB / ORIGINALE LEHRGRAFIK / BEGINNE MIT DEN EBENEN""")
-add("llm-six-terms-to-one-check.svg", "zh-tw", "六個 LLM 術語，一個可檢查的結果", "這張橫向教學圖分開權杖、上下文、上下文視窗、提示、回應，以及工具或 Agent。紅色界線提醒：回應必須先和來源或驗收規則核對，才能繼續使用。", """LLM 基礎／一次請求
+add("llm-six-terms-to-one-check.svg", "zh-tw", "六個 LLM 術語，一個可檢查的結果", "這張橫向教學圖分開詞元、上下文、上下文視窗、提示、回應，以及工具或 Agent。紅色界線提醒：回應必須先和來源或驗收規則核對，才能繼續使用。", """LLM 基礎／一次請求
 六個術語。
 一次檢查。
 相信回應前，先分開各層
 01／單位
-權杖
+詞元
 模型處理的
 一小段
 文字。

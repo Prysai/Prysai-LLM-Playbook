@@ -135,7 +135,7 @@ Die Wörter „Link“ und „Prüfung“ reichen nicht. Absicht, Eingaben, Zust
 | Eingabe | Datei und Vertrag lesen | Pfad, Ausgangsversion, fehlende Eingaben | Dass ein Link defekt ist |
 | Suche | Relative Links extrahieren | Kandidatentabelle und Auflösungsregel | Dass das Ziel existiert |
 | Check | Pfade nur lesend auflösen | vorhanden/fehlend/unbekannt | Dass eine Remote-URL funktioniert |
-| Übergabe | Wegwerfbaren Bericht schreiben | Bericht, Befehl, Exit-Status | Dass das Problem behoben wurde |
+| Übergabe | Einen Bericht in ein temporäres Ausgabeverzeichnis schreiben | Bericht, Befehl, Exit-Status | Dass das Problem behoben wurde |
 | Review | Risiko- und unbekannte Fälle lesen | Entscheidung und nicht abgedeckter Umfang | Dass es für jedes Repo funktioniert |
 
 Ein Exit-Status von null zeigt nur, dass der Check nach seiner eigenen Definition endete. Er deckt weder ignorierte Formate noch Build-Umschreibungen oder Remote-Ziele automatisch ab.
@@ -168,8 +168,8 @@ Erstelle ein temporäres Beispiel und ändere nur eine Variable: Ein Link zeigt 
 ```text
 BROKEN: [Installationshinweis] (guides/install.md)
 resolved: docs/guides/install.md
-check: path does not exist
-scope: local relative path only; remote availability not checked
+check: Pfad existiert nicht
+scope: nur lokale relative Pfade; Remote-Verfügbarkeit nicht geprüft
 ```
 
 Danach folgt ein Grenzfall mit einem `https://`-Link. Der Skill soll ihn ohne Netzverbindung als außerhalb des Umfangs oder unbekannt ausweisen. Fehlt die Link-Basis, ist Fragen oder Stoppen richtig, nicht das Erraten der Struktur.
@@ -265,7 +265,7 @@ Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu die
 
 ## Transferaufgabe
 
-Übertrage den Vertrag auf eine Lern- oder Rechercheaufgabe. Ein Lern-Skill darf Übungszyklen und eine spätere Abrufaufgabe organisieren, aber weder fluency noch mastery behaupten. Ein Recherche-Skill kann Quellen und Unsicherheit ordnen, aber keinen gefundenen Link als geprüfte Tatsache ausgeben. Behalte Trigger, Nicht-Trigger, Stoppregel und Evidenzgrenze bei.
+Übertrage den Vertrag auf eine Lern- oder Rechercheaufgabe. Ein Lern-Skill darf Übungszyklen und eine spätere Abrufaufgabe organisieren, aber weder Sprachflüssigkeit noch allgemeine Beherrschung behaupten. Ein Recherche-Skill kann Quellen und Unsicherheit ordnen, aber keinen gefundenen Link als geprüfte Tatsache ausgeben. Behalte Trigger, Nicht-Trigger, Stoppregel und Evidenzgrenze bei.
 
 ## Abnahme-Checkliste
 

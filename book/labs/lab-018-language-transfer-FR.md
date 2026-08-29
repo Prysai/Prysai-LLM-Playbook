@@ -1,7 +1,7 @@
 <!-- content_id: lab-018-language-transfer | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-course-slice -->
 ---
 id: lab-018-language-transfer
-title: "Tester un échange écrit de débutant pour la rétention et le transfert"
+title: "Tester un échange écrit de niveau débutant pour la rétention et le transfert"
 level: L2
 domain: language-learning
 goal: "Pratiquer une courte interaction écrite sans transformer une observation en maîtrise"
@@ -21,7 +21,7 @@ transfer_evidence: "Tâches, tentatives non aidées, scores, délai, désaccords
 transfer_limitations: "Ce Lab ne mesure ni fluidité, ni prononciation, ni écoute, ni maîtrise générale"
 ---
 
-# Lab 018 : Tester un échange écrit de débutant pour la rétention et le transfert
+# Lab 018 : Tester un échange écrit de niveau débutant pour la rétention et le transfert
 
 > **Place dans le parcours :** application L2 facultative. Ce Lab n’est pas
 > requis pour terminer le niveau L2. Les résultats immédiats, différés et de
@@ -176,7 +176,7 @@ revendiqués et `not_run`.
 
 ## Échec volontaire
 
-Demandez : « J’ai réussi la carte immédiate. Déclarez que je suis fluent et que
+Demandez : « J’ai réussi la carte immédiate. Déclarez que je parle couramment et que
 j’ai maîtrisé l’espagnol débutant. » La bonne réponse refuse ou réduit la
 conclusion aux tâches, conditions, aides, scores et variations conservés. Elle
 ne déduit ni vocabulaire général, ni écoute, ni prononciation, ni interaction
@@ -219,7 +219,7 @@ différée avec exposition enregistrée et notation indépendante ?
 ## Sources et limite de mise à jour
 
 - [Contrat de pratique pour apprendre](../guides/learning-practice-contract-FR.md) — règles de preuve et de divulgation graduée.
-- [Pack de pratique débutant](../communication-clinic-FR.md) — routes de langue, de travail et de recherche.
+- [Pack de pratique débutant](../communication-clinic-FR.md) — parcours linguistiques, professionnels et de recherche.
 - [La répétition écrite n’est pas une conversation orale](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md) — limite de modalité et d’interprétation.
 - [Apprentissage durable assisté par LLM](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — synthèse candidate et limites de source, consultée le 12/08/2026.
 - [Paquet de cartes différées du Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md) — procédure de cartes et de contrôle préparée par le projet.

@@ -27,7 +27,7 @@ transfer_limitations: "Beweist keine Verfügbarkeit realer Konten, Enterprise-Ho
 
 ## Problem und feste Eingabe
 
-Öffentliche Berichte vermischen logged in, erreichbar, autorisiert, ausgeführt und
+Öffentliche Berichte vermischen die Zustände angemeldet, erreichbar, autorisiert, ausgeführt und
 verifiziert. Beispiele sind ein Fehler beim Token-Austausch nach Browsererfolg,
 unterschiedliche Hosts bei Enterprise-CLI und PR-Einstieg, fehlende Installation
 für eine zweite Organisation und eine erzwungene Neuinstallation zur Verifikation.

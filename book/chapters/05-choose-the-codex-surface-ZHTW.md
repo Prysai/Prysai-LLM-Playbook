@@ -62,7 +62,7 @@ CLI、IDE、桌面端和網頁端不是 Local、Worktree、Cloud 的可互換別
 
 閱讀[現場問題索引](../evidence-library-ZHTW.md#source-notes)、
 [工作面研究](../evidence-library-ZHTW.md#source-notes)和
-[論壇研究](../evidence-library-ZHTW.md#source-notes)，獲取原始連結和日期。
+[論壇研究](../evidence-library-ZHTW.md#source-notes)，取得原始連結和日期。
 研究記錄刻意寫明本專案沒有復現什麼。
 
 ### 現場案例：第一次寫入前先核驗目標

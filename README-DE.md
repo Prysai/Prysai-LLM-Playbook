@@ -2,8 +2,8 @@
 
 # Prysai LLM Playbook — Von der ersten Aufgabe zu zuverlässiger Arbeit
 
-Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die Lizenzgrenze (licensing boundary document).
-> Deutscher Einstiegspunkt — die deutsche Migration der reader-facing Inhalte
+Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die [Lizenzgrenze (locale-neutral)](docs/sources/licensing.md).
+> Deutscher Einstiegspunkt — die Migration der für Leser sichtbaren Inhalte
 > ist in Arbeit.
 
 <!-- language-switcher:start -->
@@ -203,7 +203,7 @@ und werden nicht künstlich in acht Kopien aufgeteilt.
 
 ## Links bleiben in derselben Sprache
 
-Ein reader-facing Link muss bei vorhandenem Ziel denselben `content_id` und
+Ein Link zu leserorientierten Inhalten muss bei vorhandenem Ziel denselben `content_id` und
 dieselbe Locale behalten. Die deutsche Navigation verlinkt daher
 `README-DE.md` mit `book/README-DE.md` und `book/preface-DE.md`, nicht mit den
 englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
@@ -253,11 +253,12 @@ behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 - Das Projekt ist ein unabhängig gepflegtes Lern- und Praxissystem, keine
   offizielle Dokumentation und keine offizielle Produktseite von OpenAI.
 
-## Umfang dieses ersten deutschen Schnitts
+## Umfang der deutschen Route
 
-Der deutsche Leseweg umfasst den Projekteinstieg, Buchleitfaden, das Vorwort,
-den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4 sowie die
-Labs 001, 007 und 011. Er macht weder die übrigen Kapitel und Labs noch Skills,
-Forschungsakten oder die öffentliche Website zu vollständigen deutschen
-Übersetzungen. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar, bis die
-jeweilige content ID tatsächlich übersetzt und geprüft wurde.
+Für alle 22 Kapitel und 18 Labs gibt es inzwischen eine deutsche `-DE`-Datei
+und einen gleichsprachigen Reader-Pfad. Diese strukturelle Abdeckung bedeutet
+jedoch nicht, dass die Texte bereits unabhängig auf Deutsch geprüft, von
+Lernenden ausgeführt oder im Browser bestätigt wurden: Die Übersetzung bleibt
+`in-progress`, Kapitel bleiben `candidate` und Labs `draft / not_run`. Skills,
+Forschungsakten, Governance-Dateien und die öffentliche Website behalten ihren
+jeweils ausgewiesenen Übersetzungs- oder Neutralstatus.

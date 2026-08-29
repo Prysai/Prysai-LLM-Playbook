@@ -311,7 +311,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 018 : Tester un échange écrit de débutant pour la rétention et le transfert"
+          "title": "Lab 018 : Tester un échange écrit de niveau débutant pour la rétention et le transfert"
         }
       }
     },

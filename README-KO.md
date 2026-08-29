@@ -1,6 +1,6 @@
 # Prysai LLM Playbook — 첫 번째 작업부터 신뢰할 수 있는 업무까지
 
-라이선스: 강의 본문과 교육 자료는 CC BY 4.0, 스크립트와 도구는 Apache-2.0입니다(파일이 달리 명시하지 않는 한). [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) 및 라이선스 경계(licensing boundary document)를 참조하세요.
+라이선스: 강의 본문과 교육 자료는 CC BY 4.0, 스크립트와 도구는 Apache-2.0입니다(파일이 달리 명시하지 않는 한). [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) 및 [라이선스 경계(locale-neutral)](docs/sources/licensing.md)를 참조하세요.
 > LLM 실전 플레이북: 첫 번째 작업에서 신뢰할 수 있는 업무까지
 
 <!-- language-switcher:start -->

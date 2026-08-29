@@ -6,7 +6,7 @@ title: "Auditer une affirmation de fin"
 level: L3
 domain: general
 goal: "Séparer affirmation, preuve directe, inférence et vérification manquante"
-setup: "Trois comptes rendus de livraison désinfectés et une grille de correction conservée à part"
+setup: "Trois comptes rendus de livraison expurgés de toute donnée sensible et une grille de correction conservée à part"
 task: "Associer chaque affirmation à sa portée, sa preuve et son prochain contrôle"
 evidence:
   - "Les trois comptes rendus fixes et la grille de correction"

@@ -32,7 +32,7 @@ plus fluide ne transforme pas une affirmation non étayée en fait.
 
 ## Préparation
 
-Inventez un produit simple ou utilisez des informations publiques désinfectées.
+Inventez un produit simple ou utilisez des informations publiques expurgées de toute donnée sensible.
 N’incluez aucune liste client, recherche privée, donnée personnelle, revenu
 interne ou stratégie non publiée. Ne connectez ni messagerie, ni publicité, ni
 analytics, ni CRM, ni site en production.
@@ -111,7 +111,7 @@ prose est élégante.
 
 Quels champs ont réellement réduit les explications répétées ? Lequel a changé
 la décision en aval ? Transférez le contrat à un outil d’ingénierie, un service
-de recherche ou un projet de documentation désinfecté. Retirez les termes
+de recherche ou un projet de documentation expurgé de toute donnée sensible. Retirez les termes
 propres au marketing et indiquez ce qui nécessite un nouveau propriétaire ou
 une nouvelle preuve.
 

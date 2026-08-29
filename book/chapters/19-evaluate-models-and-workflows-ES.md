@@ -51,7 +51,7 @@ red_lines: ["no inventar hechos", "no secretos", "no escritura externa no autori
 action_if_incomplete: continue_test
 ```
 
-Un candidato que no corre es `not_run`; una impresión, página de precio o predicción no rellena un run record.
+Un candidato que no corre es `not_run`; una impresión, una página de precios o una predicción no completa un registro de ejecución.
 
 ### Registro mínimo de un run
 

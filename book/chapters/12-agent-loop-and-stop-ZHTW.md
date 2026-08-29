@@ -33,7 +33,7 @@
 
 > 模型的輸出是提議。工具的結果是觀察。經過驗證的交付，是一種由目標環境中的證據支援的宣告。
 
-這條規則無論面對的是 Codex、自訂 API 宿主、桌面客戶端、CLI，還是其他程式設計 Agent 產品都成立。具體的事件名稱和權限控制因宿主而異；把事件區分開來的必要性則不會變。
+這條規則無論面對的是 Codex、自訂 API 宿主、桌面用戶端、CLI，還是其他程式設計 Agent 產品都成立。具體的事件名稱和權限控制因宿主而異；把事件區分開來的必要性則不會變。
 
 ## 學習目標
 
@@ -149,7 +149,7 @@ delivery:   記錄產物、diff、命令、結果與剩餘限制
 ## 值得遷移的架構模式
 
 審查過的 [`claude-code-from-source` 研究](../evidence-library-ZHTW.md#source-notes)
-只是參考材料，不是官方實現記錄。把其中可遷移的設計問題重新寫成跨平臺
+只是參考材料，不是官方實作記錄。把其中可遷移的設計問題重新寫成跨平臺
 課程後，可以保留以下原則：
 
 - **把每次工具呼叫寫成契約。** 執行前說明輸入結構、目標與範圍、副作用
@@ -735,7 +735,7 @@ owner: 當前操作者
 | 結果、中斷、歷史與可恢復狀態 | [OpenAI: Agent results](https://developers.openai.com/api/docs/guides/agents/results) | 2026-08-10 | 適用於文件化的 OpenAI Agents 結果模型；泛化之前先檢查實際整合 | `curriculum-maintainer` / 2026-09-10 |
 | 審批與護欄 | [OpenAI: Guardrails and approvals](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) | 2026-08-10 | 記錄了一個審批邊界；它不能證明某次執行中審批被展示或授予 | `curriculum-maintainer` / 2026-09-10 |
 | 間接指令與工具/資料信任邊界 | [OpenAI: Agent Builder safety](https://developers.openai.com/api/docs/guides/agent-builder-safety) | 2026-08-10 | 安全指南與威脅邊界，不是 Agent 阻止每種注入變體的證明 | `curriculum-maintainer` / 2026-09-10 |
-| 對比工具與上下文行為 | [Anthropic: Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md) 與 [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | 用於比較可觀察階段的產品專用參考；不是 Codex 實現契約 | `curriculum-maintainer` / 2026-09-10 |
+| 對比工具與上下文行為 | [Anthropic: Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md) 與 [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | 用於比較可觀察階段的產品專用參考；不是 Codex 實作契約 | `curriculum-maintainer` / 2026-09-10 |
 | 真實使用者報告的失敗邊界 | [現場問題與 prompt 模式](../evidence-library-ZHTW.md#source-notes) | 2026-08-11 | 公開報告與原始總結；無本地復現、無普適根因、無供應商背書 | `curriculum-maintainer` / 2026-09-11 |
 | 跨案例狀態與恢復綜合 | [現場問題深度分析](../evidence-library-ZHTW.md#source-notes) | 2026-08-11 | 從公開報告得出的教學推斷；issue 狀態與產品行為可能變化 | `curriculum-maintainer` / 2026-09-11 |
 | 教程結構與實驗設計 | [實用 Agent 指南基準](../evidence-library-ZHTW.md#source-notes) | 2026-08-10 | 對公開教程的原始比較；不是學習成果的證據 | `curriculum-maintainer` / 2026-09-10 |

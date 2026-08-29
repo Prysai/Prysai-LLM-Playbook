@@ -31,8 +31,8 @@ après les fondations. Elle ne remplace pas l’apprentissage de ce qu’est un 
 
 ## Ce que vous gardez après le parcours
 
-Ce projet n’a de valeur que s’il vous aide à produire quelque chose de
-vérifiable, pas à mémoriser une liste de termes liés à l’IA. Le parcours
+La valeur de ce projet ne tient pas à une nouvelle liste de termes liés à l’IA ;
+elle tient à ce qu’il vous aide à produire quelque chose de vérifiable. Le parcours
 fondamental en cinq unités vise trois livrables rédigés par l’apprenant :
 
 - **Une fiche de tâche délimitée :** objectif, contexte fourni, aide autorisée,
@@ -61,7 +61,7 @@ Skills, Agents et la vérification des résultats. Il contient actuellement :
 - 18 Labs `draft / not_run` ;
 - 26 Skills `candidate` (25 méthodes Prysai et 1 Skill externe examinée) ;
 - 40 fixtures d’évaluation `candidate / not_run` ;
-- huit routes de langue enregistrées : EN, ZH, ES, JA, KO, DE, ZHTW et FR.
+- huit locales sont enregistrées : EN, ZH, ES, JA, KO, DE, ZHTW et FR.
 
 Les 22 chapitres et 18 Labs disposent d’un fichier candidat en français, avec
 des liens qui restent dans la même langue. Les Skills, recherches, registres et
@@ -93,7 +93,7 @@ plateformes.
 
 Le texte pédagogique et les supports sont sous CC BY 4.0 ; les scripts et
 outils sont sous Apache-2.0 sauf indication contraire. Voir
-[`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) et le registre de licences.
+[`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) et la [limite de licence (locale-neutral)](docs/sources/licensing.md).
 
 Le projet enseigne une méthode de travail vérifiable. Il ne promet ni
 exactitude automatique, ni maîtrise d’une langue en quelques jours, ni
