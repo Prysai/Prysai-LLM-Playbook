@@ -65,17 +65,37 @@ def run_case(index: int, case: dict, temp: str) -> str | None:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+
+    def record_case(index: int, mutate) -> dict:
+        """Build a minimal manifest for one negative record.
+
+        Negative fixtures only need the record whose contract is being
+        mutated. Keeping unrelated valid records out of the fixture prevents
+        every subprocess from replaying an expensive reference packet that
+        cannot affect the expected failure.
+        """
+
+        case = copy.deepcopy(data)
+        record = case["records"][index]
+        case["records"] = [record]
+        mutate(record)
+        return case
+
     cases = []
-    missing_source = copy.deepcopy(data); missing_source["records"][0]["source_path"] = "examples/missing"; cases.append(missing_source)
-    overclaim = copy.deepcopy(data); overclaim["records"][0]["verification_classes"].append("human_reviewed"); cases.append(overclaim)
-    no_assert = copy.deepcopy(data); no_assert["records"][0]["verification_classes"].remove("asserted"); cases.append(no_assert)
-    no_limits = copy.deepcopy(data); no_limits["records"][0]["known_blind_spots"] = []; cases.append(no_limits)
-    bad_digest = copy.deepcopy(data); bad_digest["records"][0]["replay"]["fixture_manifest_sha256"] = "0" * 64; cases.append(bad_digest)
-    second_bad_digest = copy.deepcopy(data); second_bad_digest["records"][1]["replay"]["fixture_manifest_sha256"] = "0" * 64; cases.append(second_bad_digest)
-    missing_runner = copy.deepcopy(data); missing_runner["records"][0]["replay"]["runner_argv"][1] = "scripts/missing.py"; cases.append(missing_runner)
-    fixture_drift = copy.deepcopy(data); fixture_drift["records"][0]["negative_fixtures"] = ["invented-fixture"]; cases.append(fixture_drift)
-    unsafe_output = copy.deepcopy(data); unsafe_output["records"][0]["replay"]["output_subdir"] = "../escape"; cases.append(unsafe_output)
-    packet_drift = copy.deepcopy(data); packet_drift["records"][0]["replay"]["packet_attestation_sha256"] = "0" * 64; cases.append(packet_drift)
+    cases.extend(
+        [
+            record_case(0, lambda record: record.__setitem__("source_path", "examples/missing")),
+            record_case(0, lambda record: record["verification_classes"].append("human_reviewed")),
+            record_case(0, lambda record: record["verification_classes"].remove("asserted")),
+            record_case(0, lambda record: record.__setitem__("known_blind_spots", [])),
+            record_case(0, lambda record: record["replay"].__setitem__("fixture_manifest_sha256", "0" * 64)),
+            record_case(1, lambda record: record["replay"].__setitem__("fixture_manifest_sha256", "0" * 64)),
+            record_case(0, lambda record: record["replay"]["runner_argv"].__setitem__(1, "scripts/missing.py")),
+            record_case(0, lambda record: record.__setitem__("negative_fixtures", ["invented-fixture"])),
+            record_case(0, lambda record: record["replay"].__setitem__("output_subdir", "../escape")),
+            record_case(0, lambda record: record["replay"].__setitem__("packet_attestation_sha256", "0" * 64)),
+        ]
+    )
     failures: list[str] = []
     with tempfile.TemporaryDirectory(prefix="example-manifest-") as temp:
         if args.jobs == 1:

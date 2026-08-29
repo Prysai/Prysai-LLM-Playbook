@@ -280,10 +280,13 @@ A `completed_reference_run` registration must also carry a safe output path,
 the frozen fixture-tree digest, runner command, packet-validator command, and
 fixture-test command. The validator reconciles those commands with the release
 evidence matrix and asks each test script for its named negative-fixture
-inventory only after the suite actually passes. It then replays the runner in
-a fresh `.work` directory, validates the packet, and compares a normalized
-semantic attestation digest that excludes timestamps and temporary-path IDs. A
-label, source directory, or prose evidence path cannot certify a run by itself.
+inventory only after the record's static contract passes. It then replays the
+runner in a fresh `.work` directory, validates the packet, and compares a
+normalized semantic attestation digest that excludes timestamps and
+temporary-path IDs. Invalid records stop before subprocess replay, so a broken
+manifest cannot spend time rebuilding an evidence packet that will be rejected
+anyway. A label, source directory, or prose evidence path cannot certify a run
+by itself.
 
 `test_lab_001_first_safe_change_fixture.py` checks the synthetic novice fixture:
 its seeded README fails first, exactly one declared README correction passes,

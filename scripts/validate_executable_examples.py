@@ -63,6 +63,9 @@ def main() -> int:
         errors.append("manifest needs classes and records")
     seen: set[str] = set()
     for record in records:
+        # Keep errors local to this record so one malformed example does not
+        # suppress replay validation for a different, otherwise valid record.
+        record_error_start = len(errors)
         rid = record.get("id")
         if not isinstance(rid, str) or not rid: errors.append("record id missing"); continue
         if rid in seen: errors.append(f"duplicate record id: {rid}")
@@ -74,6 +77,10 @@ def main() -> int:
         classes = set(record.get("verification_classes", []))
         if not classes or not classes <= allowed: errors.append(f"{rid}: invalid verification classes")
         if "human_reviewed" in classes and record.get("learner_run_status") == "not_run": errors.append(f"{rid}: human review overclaims learner evidence")
+        environment = record.get("environment", {})
+        for field in ("toolchain", "platform", "network", "permissions"):
+            if not isinstance(environment.get(field), str) or not environment[field]: errors.append(f"{rid}: environment.{field} missing")
+        if not record.get("known_blind_spots"): errors.append(f"{rid}: blind spots missing")
         if record.get("run_status") == "completed_reference_run":
             required = {"executed", "asserted"}
             if not required <= classes: errors.append(f"{rid}: completed reference run needs executed and asserted")
@@ -99,7 +106,17 @@ def main() -> int:
                 for field, argv in (("runner_argv", runner), ("validator_argv", validator), ("fixture_test_argv", fixture_test)):
                     if argv is None:
                         errors.append(f"{rid}: {field} is invalid or references a missing script")
-                if relative_output and runner and validator and fixture_test:
+                # Fixture inventory and packet replay are dynamic checks. If
+                # the record already failed a static contract check, skip both
+                # subprocesses: the record is invalid regardless of their
+                # result, and the diagnostics above are more actionable.
+                if (
+                    relative_output
+                    and runner
+                    and validator
+                    and fixture_test
+                    and len(errors) == record_error_start
+                ):
                     release_output = "{evidence_dir}/" + relative_output.as_posix()
                     expected_release = {
                         tuple(release_output if item == "{output_dir}" else item for item in runner),
@@ -109,25 +126,31 @@ def main() -> int:
                     missing = expected_release - registered_release_commands
                     if missing:
                         errors.append(f"{rid}: replay commands are not all registered in release evidence")
-                    listed = subprocess.run(
-                        [sys.executable, str(ROOT / fixture_test[1]), "--list-fixtures"],
-                        cwd=ROOT,
-                        text=True,
-                        encoding="utf-8",
-                        errors="replace",
-                        capture_output=True,
-                        check=False,
-                    )
-                    try:
-                        observed_fixtures = json.loads(listed.stdout) if listed.returncode == 0 else None
-                    except json.JSONDecodeError:
-                        observed_fixtures = None
-                    if observed_fixtures != negative_fixtures:
-                        errors.append(f"{rid}: declared negative fixtures do not match the test inventory")
                     expected_attestation = replay.get("packet_attestation_sha256")
                     if not isinstance(expected_attestation, str) or len(expected_attestation) != 64:
                         errors.append(f"{rid}: packet attestation digest missing")
-                    else:
+                    if len(errors) == record_error_start:
+                        listed = subprocess.run(
+                            [sys.executable, str(ROOT / fixture_test[1]), "--list-fixtures"],
+                            cwd=ROOT,
+                            text=True,
+                            encoding="utf-8",
+                            errors="replace",
+                            capture_output=True,
+                            check=False,
+                        )
+                        try:
+                            observed_fixtures = json.loads(listed.stdout) if listed.returncode == 0 else None
+                        except json.JSONDecodeError:
+                            observed_fixtures = None
+                        if observed_fixtures != negative_fixtures:
+                            errors.append(f"{rid}: declared negative fixtures do not match the test inventory")
+                    # Replay is the expensive part of this validator: it
+                    # executes both the reference runner and its validator.
+                    # A failed inventory or command-registration check already
+                    # proves this record invalid, so do not repeat work that
+                    # cannot change the result.
+                    if len(errors) == record_error_start:
                         work_root = ROOT / ".work"
                         work_root.mkdir(exist_ok=True)
                         with tempfile.TemporaryDirectory(prefix="executable-example-replay-", dir=work_root) as temp:
@@ -140,10 +163,6 @@ def main() -> int:
                             match = next((line.split("sha256=", 1)[1] for line in checked.stdout.splitlines() if "_PACKET_ATTESTATION sha256=" in line), None)
                             if generated.returncode != 0 or checked.returncode != 0 or match != expected_attestation:
                                 errors.append(f"{rid}: reconstructed packet attestation mismatch")
-        environment = record.get("environment", {})
-        for field in ("toolchain", "platform", "network", "permissions"):
-            if not isinstance(environment.get(field), str) or not environment[field]: errors.append(f"{rid}: environment.{field} missing")
-        if not record.get("known_blind_spots"): errors.append(f"{rid}: blind spots missing")
     if errors:
         print("EXECUTABLE_EXAMPLES_FAILED")
         for error in errors: print(f"- {error}")
