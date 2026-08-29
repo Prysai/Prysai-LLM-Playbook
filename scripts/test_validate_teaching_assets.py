@@ -15,6 +15,28 @@ SITE_INDEX = (
 )
 
 
+def test_localized_maturity_text_fit() -> None:
+    """Only the affected Spanish, German, and French ladder lines get fit constraints."""
+    import build_localized_visual_assets as builder
+
+    asset = "evidence-maturity-ladder-red-black.svg"
+    fixture = "<svg>" + "".join(f"<text>{index}</text>" for index in range(1, 32)) + "</svg>"
+    fitted = builder.constrain_localized_text(fixture, asset, "de")
+    require('textLength="762"' in fitted, "node 4 lost its fixed-card width")
+    require('textLength="648"' in fitted, "node 27 lost its fixed-card width")
+    require('lengthAdjust="spacingAndGlyphs"' in fitted, "localized fitting lost its SVG fit mode")
+    french = builder.constrain_localized_text(fixture, asset, "fr")
+    require('textLength="762"' in french, "French node 4 lost its fixed-card width")
+    require('textLength="648"' not in french, "French ladder received an unrelated German fit constraint")
+    require('textLength="762"' in fitted, "German node 4 lost its fixed-card width")
+    spanish = builder.constrain_localized_text(fixture, asset, "es")
+    require('textLength="762"' in spanish, "Spanish node 4 lost its fixed-card width")
+    require('textLength="648"' not in spanish, "Spanish ladder received an unrelated German fit constraint")
+    japanese = builder.constrain_localized_text(fixture, asset, "ja")
+    require("textLength=" not in japanese, "unaffected locale received a fit constraint")
+    require("textLength=" not in builder.constrain_localized_text(fixture, asset, "en"), "English source was unexpectedly constrained")
+
+
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
@@ -53,6 +75,7 @@ def write_localized_readmes(root: Path, *, visual_path: str, use_english_source:
 
 
 def main() -> int:
+    test_localized_maturity_text_fit()
     with TemporaryDirectory(prefix="prysai-teaching-asset-fixture-") as temporary:
         root = Path(temporary)
         teaching, catalog, register, site_index = write_fixture(

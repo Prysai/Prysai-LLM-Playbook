@@ -8,6 +8,7 @@
     "test": "python scripts/run_tests.py",
     "test:browser": "node scripts/browser_smoke.mjs",
     "test:reader-visuals": "node scripts/reader_visual_smoke.mjs",
+    "test:visual-geometry": "node scripts/visual_asset_geometry_smoke.mjs",
     "test:visuals": "node scripts/visual_guide_smoke.mjs",
     "audit:translations": "python -X utf8 scripts/audit_translation_language_quality.py --verbose"
   },

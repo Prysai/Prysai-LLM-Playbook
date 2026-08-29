@@ -22,6 +22,25 @@ STABLE = {
     "PROMPT", "RESPONSE", "TOOL / AGENT", "MATERIAL", "02 / MATERIAL", "04 / DIRECTION",
 }
 
+# The maturity ladder uses fixed-width cards. Long translations can therefore
+# overflow even when the source keeps one text node per visual line. These
+# widths reserve a small inset inside the card's right edge while preserving
+# the text as one accessible SVG node.
+LOCALIZED_TEXT_MAX_WIDTHS = {
+    "evidence-maturity-ladder-red-black.svg": {
+        "es": {
+            4: 762,  # x=78; card right edge=858
+        },
+        "de": {
+            4: 762,  # x=78; card right edge=858
+            27: 648,  # translated card starts at x=202 after its group transform
+        },
+        "fr": {
+            4: 762,  # x=78; card right edge=858
+        },
+    },
+}
+
 
 def spec(title, desc, nodes):
     """Return one reviewed SVG translation contract.
@@ -45,6 +64,31 @@ def replace_nodes(source, nodes):
         chunks.append(source[cursor:match.start(2)])
         chunks.append(html.escape(value.strip(), quote=False))
         cursor = match.end(2)
+    chunks.append(source[cursor:])
+    return "".join(chunks)
+
+
+def constrain_localized_text(source, asset, locale):
+    """Keep fixed-card localized lines inside the source SVG geometry."""
+    if locale == "en":
+        return source
+    limits = LOCALIZED_TEXT_MAX_WIDTHS.get(asset, {}).get(locale, {})
+    if not limits:
+        return source
+    matches = list(TEXT_RE.finditer(source))
+    if any(index < 1 or index > len(matches) for index in limits):
+        raise ValueError("{}: text-fit index is outside the SVG text nodes".format(asset))
+
+    chunks = []
+    cursor = 0
+    for index, match in enumerate(matches, 1):
+        opening = match.group(1)
+        if index in limits:
+            opening = re.sub(r'\s+(?:textLength|lengthAdjust)="[^"]*"', "", opening)
+            opening = opening[:-1] + ' textLength="{}" lengthAdjust="spacingAndGlyphs">'.format(limits[index])
+        chunks.append(source[cursor:match.start(1)])
+        chunks.append(opening)
+        cursor = match.end(1)
     chunks.append(source[cursor:])
     return "".join(chunks)
 
@@ -1525,6 +1569,7 @@ def build() -> int:
                 ):
                     raise ValueError("{} / {} node {} is still English: {!r}".format(asset, locale, index, original))
             localized = replace_nodes(source, nodes)
+            localized = constrain_localized_text(localized, asset, locale)
             localized = replace_one(localized, TITLE_RE, spec_value["title"], "title")
             localized = replace_one(localized, DESC_RE, spec_value["desc"], "description")
             if VIEWBOX_RE.search(localized).group(1) != source_viewbox.group(1):
