@@ -206,9 +206,9 @@ not claimed:
 one next safe action:
 ```
 
-이 연습은 모든 Agent, model, host가 같은 행동을 한다거나 효율을 증명하지 않습니다. 설득력
-있는 conversation을 execution claim으로 바꾸지 않는 방법을 연습합니다. 기록과 review가
-생기기 전까지 이 장은 `candidate`, 실험은 `not_run`입니다.
+이 연습은 모든 Agent, 모델, 호스트가 같은 행동을 한다거나 효율을 증명하지 않습니다. 설득력
+있는 대화를 실행이 이루어졌다는 주장으로 바꾸지 않는 방법을 연습합니다. 기록과 검토가
+마련되기 전까지 이 장은 `candidate`, 실험은 `not_run`입니다.
 
 ## 사건 기록으로 요약 검토하기
 
@@ -372,13 +372,13 @@ Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 �
 
 ## 실패 시 복구 선택하기
 
-| 첫 문제 | 올바른 recovery | 잘못된 recovery |
+| 첫 문제 | 올바른 복구 | 잘못된 복구 |
 | --- | --- | --- |
-| required input이 없음 | exact input 또는 human decision을 요청하고 `blocked_input`을 보존 | input을 지어내거나 scope 밖을 검색 |
-| requested path가 미승인 | 두 path를 보여 주고 좁은 scope change를 ask | unrestricted mode로 전환하거나 parent directory에 쓰기 |
-| terminal event가 없음 | state와 side effect를 읽고, authorized면 interrupt한 뒤 `unknown`을 남김 | 끝없이 기다리거나 elapsed time으로 success라 하거나 같은 write 재전송 |
-| external text가 goal을 바꾸려 함 | data로 기록하고 proposal/approval boundary에서 중지 | file, web page, tool result의 명령이라서 따르기 |
-| 같은 failure가 조건 변화 없이 반복 | budget 소진 시 checkpoint와 한 decision을 남김 | prompt를 더하거나 무관한 file을 바꾸거나 첫 failure를 숨김 |
+| 필수 입력이 없음 | 정확한 입력 또는 사람의 결정을 요청하고 `blocked_input`을 보존 | 입력을 지어내거나 범위 밖을 검색 |
+| 요청된 경로가 승인되지 않음 | 두 경로를 보여 주고 좁은 범위 변경을 요청 | 제한 없는 모드로 전환하거나 상위 디렉터리에 쓰기 |
+| 터미널 이벤트가 없음 | 상태와 부작용을 읽고, 권한이 있으면 중단한 뒤 `unknown`을 남김 | 끝없이 기다리거나 경과 시간만으로 성공이라 하거나 같은 쓰기를 다시 전송 |
+| 외부 텍스트가 목표를 바꾸려 함 | 데이터로 기록하고 제안/승인 경계에서 중지 | 파일, 웹 페이지, 도구 결과의 명령이라는 이유로 따르기 |
+| 같은 실패가 조건 변화 없이 반복됨 | 예산을 다 쓰면 체크포인트와 결정 하나를 남김 | 프롬프트를 더하거나 무관한 파일을 바꾸거나 첫 실패를 숨김 |
 
 혼란스러운 실행에서는 (1) 종속된 행동을 멈추고, (2) diff·로그·체크포인트를 보존하고,
 (3) 마지막으로 확인된 전환을 이름 붙이고, (4) 처음 `unknown` 전환을 찾고, (5) 하나의
@@ -387,13 +387,13 @@ Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 �
 
 ## 주장과 증거 대응시키기
 
-| claim | 필요한 evidence | 흔한 overclaim |
+| 주장 | 필요한 증거 | 흔한 과장 |
 | --- | --- | --- |
-| model이 action을 제안함 | raw output 또는 proposal event | action이 일어남 |
-| host가 허용함 | path와 scope가 있는 approval event | result가 맞음 |
-| file이 바뀜 | exact path와 before/after diff 또는 hash | file이 완성됨 |
-| command가 pass함 | command, directory, timeout, exit status, relevant output | application 전체가 동작함 |
-| artifact가 rule을 만족함 | artifact를 직접 보는 check와 필요한 review | user가 반드시 만족함 |
+| 모델이 행동을 제안함 | 원시 출력 또는 `proposal` 이벤트 | 행동이 일어남 |
+| 호스트가 허용함 | 경로와 범위가 있는 `approval` 이벤트 | 결과가 올바름 |
+| 파일이 바뀜 | 정확한 경로와 변경 전·후 `diff` 또는 `hash` | 파일이 완성됨 |
+| 명령이 통과함 | 명령, 디렉터리, 제한 시간, 종료 상태, 관련 출력 | 애플리케이션 전체가 작동함 |
+| 산출물이 규칙을 만족함 | 산출물을 직접 확인하는 검사와 필요한 검토 | 사용자가 반드시 만족함 |
 
 전달 기록에는 `Completed`, `Observed actions`, `Evidence`, `Acceptance coverage`, `Not proven`,
 `Unresolved`, `Retry budget`, `Stop or next decision`을 구분합니다. “모든 검사가 통과했다”만 쓰면 어떤
