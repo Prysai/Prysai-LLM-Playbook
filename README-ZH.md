@@ -14,7 +14,7 @@
 第一次来这里，不必在提示词卡、Skill 和不同产品之间做选择。先沿同一条中文主线学习：
 
 1. [LLM 基础概念](book/guides/llm-fundamentals-ZH.md)
-2. [通用 LLM 首练习](book/routes/universal-core-foundations-ZH.md)
+2. [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
 3. [第一次安全改动](book/routes/first-safe-change-ZH.md)
 
 ### 先看一张路线图
@@ -133,7 +133,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 - [中文书籍导读](book/README-ZH.md)
 - [中文前言](book/preface-ZH.md)
 - [中文书籍目录](book/table-of-contents-ZH.md)
-- [通用 LLM 第一任务](book/routes/universal-core-foundations-ZH.md)
+- [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
 - [中文新手提示卡](book/communication-clinic-ZH.md)
 
 术语表、治理规则、来源台账、评测定义、研究档案和 Skill 说明尚未提供中文文件。为保证这条路线始终使用中文，本入口不再把它们链接到原始语言页面；相应内容翻译并审校后，才会在这里开放。

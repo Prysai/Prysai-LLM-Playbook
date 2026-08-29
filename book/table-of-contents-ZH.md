@@ -7,7 +7,7 @@
 ## 先从哪里开始
 
 - 先读[LLM 基础概念](guides/llm-fundamentals-ZH.md)。
-- 接着做[通用 LLM 首练习](routes/universal-core-foundations-ZH.md)。
+- 接着做[通用 LLM 第一次练习](routes/universal-core-foundations-ZH.md)。
 - 需要安全文件时，打开[第一次安全改动路线](routes/first-safe-change-ZH.md)。
 - 完成前三步后，如想做低风险文件练习，进入[第一次安全改动路线](routes/first-safe-change-ZH.md)，再做[实验 001](labs/lab-001-first-safe-task-ZH.md)。
 - [新手提示卡](communication-clinic-ZH.md)是主线之后的可选应用练习，不是 LLM 基础课。

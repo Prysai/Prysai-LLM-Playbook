@@ -11,7 +11,7 @@
 ## 先按教材主线阅读
 
 1. [LLM 基础概念](guides/llm-fundamentals-ZH.md)
-2. [通用 LLM 首练习](routes/universal-core-foundations-ZH.md)
+2. [通用 LLM 第一次练习](routes/universal-core-foundations-ZH.md)
 3. [第一次安全改动](routes/first-safe-change-ZH.md)
 
 英文版基础核心课（Foundation Core）是规范源文件；中文重译完成并通过独立审校前，不在中文主线中伪装成已完成版本。
@@ -31,7 +31,7 @@
 - [返回中文项目入口](../README-ZH.md)
 - [中文序言](preface-ZH.md)
 - [中文书籍目录](table-of-contents-ZH.md)
-- [中文通用 LLM 首练习：安全文字任务](routes/universal-core-foundations-ZH.md)
+- [中文通用 LLM 第一次练习：安全文字任务](routes/universal-core-foundations-ZH.md)
 - [中文新手安全路线：第一次安全改动](routes/first-safe-change-ZH.md)
 - [中文新手提示卡：可选应用练习](communication-clinic-ZH.md)
 - [中文工作更新六步练习](work-update-practice-loop-ZH.md)
@@ -68,7 +68,7 @@
 
 ## 当前阅读入口
 
-如果你还没有项目，也不准备让 AI 操作文件，先做[通用 LLM 首练习](routes/universal-core-foundations-ZH.md)：它只使用一则虚构通知，练习把目标、材料、检查和停止点写清楚。它是候选练习，不代表不同平台行为相同，也不证明学习效果。
+如果你还没有项目，也不准备让 AI 操作文件，先做[通用 LLM 第一次练习](routes/universal-core-foundations-ZH.md)：它只使用一则虚构通知，练习把目标、材料、检查和停止点写清楚。它是候选练习，不代表不同平台行为相同，也不证明学习效果。
 
 如果你是第一次使用这套材料，按这一条候选路径阅读：
 

@@ -213,6 +213,7 @@ action: keep | narrow | remove | request_source
 ## 來源與維護邊界
 
 問題設計、證據鏈和衝突記錄是穩定方法。網頁可存取性、產品事實、論壇貼文和搜尋結果會變化；記錄查閱日期、範圍和下一次檢查，不把它們寫成永久事實。
+可在[繁體中文證據庫](../evidence-library-ZHTW.md#source-notes)查閱相關來源的脈絡、狀態和原始連結。
 
 ## 失敗案例與驗收
 
