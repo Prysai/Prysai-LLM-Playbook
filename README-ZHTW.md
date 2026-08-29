@@ -133,7 +133,7 @@ Prysai LLM Playbook（Prysai 大型語言模型實戰手冊）不是把 skills �
 - [繁體中文書籍導讀](book/README-ZHTW.md)
 - [繁體中文前言](book/preface-ZHTW.md)
 - [繁體中文書籍目錄](book/table-of-contents-ZHTW.md)
-- [通用 LLM 第一任務](book/routes/universal-core-foundations-ZHTW.md)
+- [通用 LLM 第一次練習](book/routes/universal-core-foundations-ZHTW.md)
 - [繁體中文新手提示卡](book/communication-clinic-ZHTW.md)
 
 術語表、治理規則、來源登錄表、評測定義、研究檔案和 Skill 說明尚未提供中文檔案。為保證這條路線始終使用中文，本入口不再把它們連結到原始語言頁面；相應內容翻譯並審校後，才會在這裡開放。
