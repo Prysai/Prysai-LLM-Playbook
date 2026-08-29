@@ -66,7 +66,7 @@ complete machine-readable matrix is
 [`docs/governance/visual-locale-matrix.yaml`](../../docs/governance/visual-locale-matrix.yaml).
 
 GitHub renders Markdown without the site's locale resolver. A translated
-Markdown page that embeds one of the eleven reviewed cards must therefore use
+Markdown page that embeds one of the twelve reviewed cards must therefore use
 `assets/teaching/locales/<locale>/<asset>.svg` in its source link. The seven
 translated project READMEs use the localized first-visit route board this way;
 the asset validator checks that the path stays aligned with the file suffix.
