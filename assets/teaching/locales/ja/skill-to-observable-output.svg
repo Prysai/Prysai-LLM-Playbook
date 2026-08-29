@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Skill の契約を確認できる成果物につなぐ</title>
+  <desc id="desc">この赤と黒の教材図は、Skill の4つの判断を確認できる成果物へつなぎます。トリガー、入力ゲート、範囲を区切った方法、確認できる成果物を示し、下の検証レールで肯定・境界・失敗・転用の4ケースを求めます。</desc>
+  <rect width="1600" height="900" fill="#f3f0e9"/>
+  <rect width="1600" height="116" fill="#11151a"/>
+  <rect x="64" y="46" width="18" height="18" fill="#d62828"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="106" y="68" fill="#f3f0e9" font-size="32" font-weight="700" letter-spacing="1">SKILL の契約 → 確認できる成果物</text>
+    <text x="1536" y="68" fill="#f3f0e9" font-size="16" font-weight="700" text-anchor="end" letter-spacing="2">方法 / 魔法ではない</text>
+
+    <text x="64" y="190" fill="#11151a" font-size="58" font-weight="800" letter-spacing="-2">4つの判断。1つの確認できる結果。</text>
+    <text x="64" y="232" fill="#4f555a" font-size="21">問いに合わせて範囲を決め、引き継ぎごとに権限を見えるようにする。</text>
+
+    <rect x="64" y="290" width="270" height="292" fill="#11151a"/>
+    <text x="88" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">01 / トリガー</text>
+    <text x="88" y="393" fill="#f3f0e9" font-size="35" font-weight="700">仕事を決める。</text>
+    <text x="88" y="448" fill="#c9cccf" font-size="20">この方法が</text>
+    <text x="88" y="480" fill="#c9cccf" font-size="20">最も合うのはいつ？</text>
+    <line x1="88" y1="528" x2="310" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="88" y="559" fill="#f3f0e9" font-size="16" font-weight="700">出力：案内または譲る</text>
+
+    <rect x="350" y="290" width="318" height="292" fill="#f3f0e9" stroke="#11151a" stroke-width="3"/>
+    <text x="374" y="330" fill="#d62828" font-size="18" font-weight="700" letter-spacing="2">02 / 入力ゲート</text>
+    <text x="374" y="393" fill="#11151a" font-size="32" font-weight="700">まず確認する。</text>
+    <text x="374" y="448" fill="#4f555a" font-size="20">何がそろっていればよい？</text>
+    <text x="374" y="480" fill="#4f555a" font-size="20">何が足りないと止める？</text>
+    <line x1="374" y1="528" x2="644" y2="528" stroke="#d62828" stroke-width="4"/>
+    <text x="374" y="559" fill="#11151a" font-size="16" font-weight="700">入力不足 → 停止</text>
+
+    <rect x="684" y="290" width="380" height="292" fill="#d62828"/>
+    <text x="708" y="330" fill="#11151a" font-size="18" font-weight="700" letter-spacing="2">03 / 範囲を区切った方法</text>
+    <text x="708" y="393" fill="#ffffff" font-size="32" font-weight="700">行動を分ける。</text>
+    <text x="708" y="448" fill="#ffffff" font-size="20">許可 / 禁止 / 元に戻せる</text>
+    <text x="708" y="480" fill="#ffffff" font-size="20">対象 / 担当 / 停止 / 復旧</text>
+    <line x1="708" y1="528" x2="1040" y2="528" stroke="#11151a" stroke-width="4"/>
+    <text x="708" y="559" fill="#11151a" font-size="16" font-weight="700">能力 ≠ 権限</text>
+
+    <rect x="1080" y="290" width="456" height="292" fill="#11151a"/>
+    <text x="1104" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">04 / 確認できる成果物</text>
+    <text x="1104" y="393" fill="#f3f0e9" font-size="35" font-weight="700">別の人が確認できる</text>
+    <text x="1104" y="434" fill="#f3f0e9" font-size="35" font-weight="700">証拠を残す。</text>
+    <text x="1104" y="480" fill="#c9cccf" font-size="20">ファイル・差分・ログ・スクリーンショット</text>
+    <line x1="1104" y1="528" x2="1512" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="1104" y="559" fill="#f3f0e9" font-size="16" font-weight="700">成果物 + 限界 + 状態</text>
+
+    <text x="64" y="654" fill="#d62828" font-size="17" font-weight="700" letter-spacing="2">検証レール</text>
+    <line x1="64" y1="690" x2="1536" y2="690" stroke="#11151a" stroke-width="3"/>
+    <rect x="64" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="440" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="816" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="1192" y="676" width="18" height="28" fill="#d62828"/>
+    <text x="64" y="748" fill="#11151a" font-size="27" font-weight="700">肯定</text>
+    <text x="440" y="748" fill="#11151a" font-size="27" font-weight="700">境界</text>
+    <text x="816" y="748" fill="#11151a" font-size="27" font-weight="700">失敗</text>
+    <text x="1192" y="748" fill="#11151a" font-size="27" font-weight="700">転用</text>
+    <text x="64" y="784" fill="#4f555a" font-size="17">指定した仕事で機能する</text>
+    <text x="440" y="784" fill="#4f555a" font-size="17">範囲外では譲る</text>
+    <text x="816" y="784" fill="#4f555a" font-size="17">正直に停止または復旧する</text>
+    <text x="1192" y="784" fill="#4f555a" font-size="17">変えた例でも持ちこたえる</text>
+
+    <text x="64" y="854" fill="#11151a" font-size="15" font-weight="700">プロジェクト作成 · 外部メディアなし</text>
+    <text x="1536" y="854" fill="#11151a" font-size="15" font-weight="700" text-anchor="end">PRYSAI LAB / candidate</text>
+  </g>
+</svg>

@@ -37,6 +37,8 @@
 
 **新增维护记录 S158：** 2026-08-29 复核生命周期图的本地化渲染后，缩短德语与法语 `lifecycle-checkpoints.svg` 中会超出固定卡片宽度的出口标签，并同步更新 `scripts/build_localized_visual_assets.py` 的生成源。德语标签改为更短的 `CHECKPOINT-REIHE`、`AUSSAGE-BELEG`、`AUSSAGEN / SELBST PRÜFEN` 等表达；法语标签改为 `exclusions`、`CONTRÔLES ORDONNÉS`、`carte / revue` 等表达。修正保持每个 SVG 的 `viewBox` 与 38 个文字节点不变，并在默认宽屏和窄屏阅读尺寸重新检查文字边界；本记录只说明可见性修正，不证明视觉可访问性或学习效果。
 
+**新增维护记录 S159：** 2026-08-29 为 `assets/teaching/skill-to-observable-output.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体，并将法语 Chapter 11 的 Markdown 引用切换到 `assets/teaching/locales/fr/skill-to-observable-output.svg`。变体由 `scripts/build_localized_visual_assets.py` 根据项目自有文案生成，只替换标题、说明和可见文字，保持 `viewBox="0 0 1600 900"` 与 35 个 `<text>` 节点稳定；宽屏截图复核后又收紧了德语、西语、法语等固定卡片内的长标签，避免文字被相邻背景遮挡。没有引入外部媒体、字体、图标、脚本、文案或远程请求。该图与周边替代文字、说明和静态回退一样，只是 candidate 教学辅助，不证明图示已经执行、学习者已经理解、翻译达到母语级、学习或迁移效果、权限、安全或生产就绪。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

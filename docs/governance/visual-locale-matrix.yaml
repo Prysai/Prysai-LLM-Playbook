@@ -26,9 +26,10 @@ localized:
     - recovery-decision-tree-red-black.svg
     - skill-trigger-boundary-decision-map.svg
     - lifecycle-checkpoints.svg
+    - skill-to-observable-output.svg
   locale_variants: 7
 fallback:
   status: english-fallback
-  asset_count: 35
+  asset_count: 34
   rule: Every source SVG not listed under localized is served from assets/teaching/{asset} for non-English locales.
   user_notice: The homepage, Reader, Visual Guide, and visual viewer label this state; surrounding localized text remains the explanation baseline.

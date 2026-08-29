@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Skill 契约如何留下可检查的产出</title>
+  <desc id="desc">这张红黑教学图把 Skill 的四个决定连到可检查的产出：触发、输入关卡、有边界的方法和可观察回执。下方验证轨道要求正面、边界、失败和迁移四类案例。</desc>
+  <rect width="1600" height="900" fill="#f3f0e9"/>
+  <rect width="1600" height="116" fill="#11151a"/>
+  <rect x="64" y="46" width="18" height="18" fill="#d62828"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="106" y="68" fill="#f3f0e9" font-size="32" font-weight="700" letter-spacing="1">SKILL 契约 → 可观察产出</text>
+    <text x="1536" y="68" fill="#f3f0e9" font-size="16" font-weight="700" text-anchor="end" letter-spacing="2">方法 / 不是魔法</text>
+
+    <text x="64" y="190" fill="#11151a" font-size="58" font-weight="800" letter-spacing="-2">四个决定。一个可检查的结果。</text>
+    <text x="64" y="232" fill="#4f555a" font-size="21">问题决定范围；每次交接都要看得见权限。</text>
+
+    <rect x="64" y="290" width="270" height="292" fill="#11151a"/>
+    <text x="88" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">01 / 触发</text>
+    <text x="88" y="393" fill="#f3f0e9" font-size="35" font-weight="700">说清任务。</text>
+    <text x="88" y="448" fill="#c9cccf" font-size="20">这个方法何时</text>
+    <text x="88" y="480" fill="#c9cccf" font-size="20">最适合这项工作？</text>
+    <line x1="88" y1="528" x2="310" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="88" y="559" fill="#f3f0e9" font-size="16" font-weight="700">产出：路由或让出</text>
+
+    <rect x="350" y="290" width="318" height="292" fill="#f3f0e9" stroke="#11151a" stroke-width="3"/>
+    <text x="374" y="330" fill="#d62828" font-size="18" font-weight="700" letter-spacing="2">02 / 输入关卡</text>
+    <text x="374" y="393" fill="#11151a" font-size="32" font-weight="700">先检查。</text>
+    <text x="374" y="448" fill="#4f555a" font-size="20">必须有什么？</text>
+    <text x="374" y="480" fill="#4f555a" font-size="20">缺少哪项事实就要停下？</text>
+    <line x1="374" y1="528" x2="644" y2="528" stroke="#d62828" stroke-width="4"/>
+    <text x="374" y="559" fill="#11151a" font-size="16" font-weight="700">缺少输入 → 停下</text>
+
+    <rect x="684" y="290" width="380" height="292" fill="#d62828"/>
+    <text x="708" y="330" fill="#11151a" font-size="18" font-weight="700" letter-spacing="2">03 / 有边界的方法</text>
+    <text x="708" y="393" fill="#ffffff" font-size="32" font-weight="700">分开各项行动。</text>
+    <text x="708" y="448" fill="#ffffff" font-size="20">允许 / 禁止 / 可回退</text>
+    <text x="708" y="480" fill="#ffffff" font-size="20">目标 / 负责人 / 停止 / 回滚</text>
+    <line x1="708" y1="528" x2="1040" y2="528" stroke="#11151a" stroke-width="4"/>
+    <text x="708" y="559" fill="#11151a" font-size="16" font-weight="700">能力 ≠ 权限</text>
+
+    <rect x="1080" y="290" width="456" height="292" fill="#11151a"/>
+    <text x="1104" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">04 / 可观察产出</text>
+    <text x="1104" y="393" fill="#f3f0e9" font-size="35" font-weight="700">留下别人可以</text>
+    <text x="1104" y="434" fill="#f3f0e9" font-size="35" font-weight="700">检查的证据。</text>
+    <text x="1104" y="480" fill="#c9cccf" font-size="20">文件 · 差异 · 日志 · 截图</text>
+    <line x1="1104" y1="528" x2="1512" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="1104" y="559" fill="#f3f0e9" font-size="16" font-weight="700">产出 + 限制 + 状态</text>
+
+    <text x="64" y="654" fill="#d62828" font-size="17" font-weight="700" letter-spacing="2">验证轨道</text>
+    <line x1="64" y1="690" x2="1536" y2="690" stroke="#11151a" stroke-width="3"/>
+    <rect x="64" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="440" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="816" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="1192" y="676" width="18" height="28" fill="#d62828"/>
+    <text x="64" y="748" fill="#11151a" font-size="27" font-weight="700">正面</text>
+    <text x="440" y="748" fill="#11151a" font-size="27" font-weight="700">边界</text>
+    <text x="816" y="748" fill="#11151a" font-size="27" font-weight="700">失败</text>
+    <text x="1192" y="748" fill="#11151a" font-size="27" font-weight="700">迁移</text>
+    <text x="64" y="784" fill="#4f555a" font-size="17">适用于指定任务</text>
+    <text x="440" y="784" fill="#4f555a" font-size="17">超出范围时让出</text>
+    <text x="816" y="784" fill="#4f555a" font-size="17">诚实地停止或恢复</text>
+    <text x="1192" y="784" fill="#4f555a" font-size="17">面对变式仍然有效</text>
+
+    <text x="64" y="854" fill="#11151a" font-size="15" font-weight="700">项目原创图形 · 不含外部媒体</text>
+    <text x="1536" y="854" fill="#11151a" font-size="15" font-weight="700" text-anchor="end">PRYSAI LAB / 候选</text>
+  </g>
+</svg>

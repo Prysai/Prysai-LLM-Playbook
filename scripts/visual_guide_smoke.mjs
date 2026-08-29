@@ -22,6 +22,7 @@ const localizedVisualAssets = new Set([
   'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
   'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
   'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+  'skill-to-observable-output.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`

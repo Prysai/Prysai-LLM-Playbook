@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Un contrat de Skill mène à un résultat vérifiable</title>
+  <desc id="desc">Cette planche rouge et noire relie quatre décisions d’un Skill à un résultat vérifiable : déclencheur, filtre d’entrée, méthode délimitée et résultat observable. Le rail inférieur exige quatre cas : positif, limite, échec et transfert.</desc>
+  <rect width="1600" height="900" fill="#f3f0e9"/>
+  <rect width="1600" height="116" fill="#11151a"/>
+  <rect x="64" y="46" width="18" height="18" fill="#d62828"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="106" y="68" fill="#f3f0e9" font-size="32" font-weight="700" letter-spacing="1">CONTRAT DE SKILL → RÉSULTAT VÉRIFIABLE</text>
+    <text x="1536" y="68" fill="#f3f0e9" font-size="16" font-weight="700" text-anchor="end" letter-spacing="2">MÉTHODE / PAS DE MAGIE</text>
+
+    <text x="64" y="190" fill="#11151a" font-size="58" font-weight="800" letter-spacing="-2">Quatre décisions. Un résultat vérifiable.</text>
+    <text x="64" y="232" fill="#4f555a" font-size="21">La question fixe le périmètre ; l’autorité reste visible à chaque transmission.</text>
+
+    <rect x="64" y="290" width="270" height="292" fill="#11151a"/>
+    <text x="88" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">01 / DÉCLENCHEUR</text>
+    <text x="88" y="393" fill="#f3f0e9" font-size="35" font-weight="700">Nommez-la.</text>
+    <text x="88" y="448" fill="#c9cccf" font-size="20">Quand cette méthode</text>
+    <text x="88" y="480" fill="#c9cccf" font-size="20">est-elle la plus adaptée ?</text>
+    <line x1="88" y1="528" x2="310" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="88" y="559" fill="#f3f0e9" font-size="16" font-weight="700">SORTIE : ORIENTER OU CÉDER</text>
+
+    <rect x="350" y="290" width="318" height="292" fill="#f3f0e9" stroke="#11151a" stroke-width="3"/>
+    <text x="374" y="330" fill="#d62828" font-size="18" font-weight="700" letter-spacing="2">02 / FILTRE D’ENTRÉE</text>
+    <text x="374" y="393" fill="#11151a" font-size="32" font-weight="700">Vérifiez d’abord.</text>
+    <text x="374" y="448" fill="#4f555a" font-size="20">Que faut-il avoir ?</text>
+    <text x="374" y="480" fill="#4f555a" font-size="20">Quelle absence l’arrête ?</text>
+    <line x1="374" y1="528" x2="644" y2="528" stroke="#d62828" stroke-width="4"/>
+    <text x="374" y="559" fill="#11151a" font-size="16" font-weight="700">ENTRÉE MANQUANTE → ARRÊT</text>
+
+    <rect x="684" y="290" width="380" height="292" fill="#d62828"/>
+    <text x="708" y="330" fill="#11151a" font-size="18" font-weight="700" letter-spacing="2">03 / MÉTHODE DÉLIMITÉE</text>
+    <text x="708" y="393" fill="#ffffff" font-size="32" font-weight="700">Séparez les actions.</text>
+    <text x="708" y="448" fill="#ffffff" font-size="20">Autorisé / interdit / réversible</text>
+    <text x="708" y="480" fill="#ffffff" font-size="20">Cible / responsable / arrêt / reprise</text>
+    <line x1="708" y1="528" x2="1040" y2="528" stroke="#11151a" stroke-width="4"/>
+    <text x="708" y="559" fill="#11151a" font-size="16" font-weight="700">CAPACITÉ ≠ AUTORITÉ</text>
+
+    <rect x="1080" y="290" width="456" height="292" fill="#11151a"/>
+    <text x="1104" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">04 / RÉSULTAT VÉRIFIABLE</text>
+    <text x="1104" y="393" fill="#f3f0e9" font-size="35" font-weight="700">Laissez une preuve</text>
+    <text x="1104" y="434" fill="#f3f0e9" font-size="35" font-weight="700">qu’un tiers puisse vérifier.</text>
+    <text x="1104" y="480" fill="#c9cccf" font-size="20">Fichier · diff · journal · capture</text>
+    <line x1="1104" y1="528" x2="1512" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="1104" y="559" fill="#f3f0e9" font-size="16" font-weight="700">RÉSULTAT + LIMITE + STATUT</text>
+
+    <text x="64" y="654" fill="#d62828" font-size="17" font-weight="700" letter-spacing="2">RAIL DE VÉRIFICATION</text>
+    <line x1="64" y1="690" x2="1536" y2="690" stroke="#11151a" stroke-width="3"/>
+    <rect x="64" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="440" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="816" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="1192" y="676" width="18" height="28" fill="#d62828"/>
+    <text x="64" y="748" fill="#11151a" font-size="27" font-weight="700">POSITIF</text>
+    <text x="440" y="748" fill="#11151a" font-size="27" font-weight="700">LIMITE</text>
+    <text x="816" y="748" fill="#11151a" font-size="27" font-weight="700">ÉCHEC</text>
+    <text x="1192" y="748" fill="#11151a" font-size="27" font-weight="700">TRANSFERT</text>
+    <text x="64" y="784" fill="#4f555a" font-size="17">fonctionne pour le travail nommé</text>
+    <text x="440" y="784" fill="#4f555a" font-size="17">cède hors de son périmètre</text>
+    <text x="816" y="784" fill="#4f555a" font-size="17">s’arrête ou reprend honnêtement</text>
+    <text x="1192" y="784" fill="#4f555a" font-size="17">résiste à un exemple différent</text>
+
+    <text x="64" y="854" fill="#11151a" font-size="15" font-weight="700">GRAPHIQUE ORIGINAL DU PROJET · SANS MÉDIA EXTERNE</text>
+    <text x="1536" y="854" fill="#11151a" font-size="15" font-weight="700" text-anchor="end">PRYSAI LAB / CANDIDAT</text>
+  </g>
+</svg>

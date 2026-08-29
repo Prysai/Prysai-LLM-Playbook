@@ -1163,6 +1163,101 @@ add_asset_locales("skill-trigger-boundary-decision-map.svg", {
 })
 
 
+add_asset_locales("skill-to-observable-output.svg", {
+    "zh": (
+        "Skill 契约如何留下可检查的产出",
+        "这张红黑教学图把 Skill 的四个决定连到可检查的产出：触发、输入关卡、有边界的方法和可观察回执。下方验证轨道要求正面、边界、失败和迁移四类案例。",
+        [
+            "SKILL 契约 → 可观察产出", "方法 / 不是魔法", "四个决定。一个可检查的结果。", "问题决定范围；每次交接都要看得见权限。",
+            "01 / 触发", "说清任务。", "这个方法何时", "最适合这项工作？", "产出：路由或让出",
+            "02 / 输入关卡", "先检查。", "必须有什么？", "缺少哪项事实就要停下？", "缺少输入 → 停下",
+            "03 / 有边界的方法", "分开各项行动。", "允许 / 禁止 / 可回退", "目标 / 负责人 / 停止 / 回滚", "能力 ≠ 权限",
+            "04 / 可观察产出", "留下别人可以", "检查的证据。", "文件 · 差异 · 日志 · 截图", "产出 + 限制 + 状态",
+            "验证轨道", "正面", "边界", "失败", "迁移", "适用于指定任务", "超出范围时让出", "诚实地停止或恢复", "面对变式仍然有效",
+            "项目原创图形 · 不含外部媒体", "PRYSAI LAB / 候选",
+        ],
+    ),
+    "es": (
+        "Un Skill convierte un contrato en un resultado comprobable",
+        "Esta lámina roja y negra conecta cuatro decisiones de un Skill con un resultado comprobable: activación, filtro de entrada, método acotado y comprobante observable. El carril inferior exige casos positivos, de límite, de fallo y de transferencia.",
+        [
+            "CONTRATO DE SKILL → RESULTADO COMPROBABLE", "MÉTODO / NO MAGIA", "Cuatro decisiones. Un resultado inspeccionable.", "El alcance sigue a la pregunta; la autoridad queda visible en cada entrega.",
+            "01 / ACTIVACIÓN", "Di la tarea.", "¿Cuándo encaja", "mejor este método?", "SALIDA: DIRIGIR O CEDER",
+            "02 / FILTRO DE ENTRADA", "Comprueba primero.", "¿Qué debe estar presente?", "¿Qué falta lo detiene?", "ENTRADA AUSENTE → PARAR",
+            "03 / MÉTODO ACOTADO", "Separa las acciones.", "Permitido / prohibido / reversible", "Meta / dueño / parar / revertir", "CAPACIDAD ≠ AUTORIDAD",
+            "04 / RESULTADO INSPECCIONABLE", "Deja una prueba", "que otra persona revise.", "Archivo · diff · registro · captura", "RESULTADO + LÍMITE + ESTADO",
+            "CARRIL DE VERIFICACIÓN", "POSITIVO", "LÍMITE", "FALLO", "TRANSFERENCIA", "funciona en el trabajo nombrado", "cede fuera de su alcance", "se detiene o recupera con honestidad", "resiste un ejemplo distinto",
+            "PROYECTO ORIGINAL · SIN MEDIOS EXTERNOS", "PRYSAI LAB / CANDIDATO",
+        ],
+    ),
+    "ja": (
+        "Skill の契約を確認できる成果物につなぐ",
+        "この赤と黒の教材図は、Skill の4つの判断を確認できる成果物へつなぎます。トリガー、入力ゲート、範囲を区切った方法、確認できる成果物を示し、下の検証レールで肯定・境界・失敗・転用の4ケースを求めます。",
+        [
+            "SKILL の契約 → 確認できる成果物", "方法 / 魔法ではない", "4つの判断。1つの確認できる結果。", "問いに合わせて範囲を決め、引き継ぎごとに権限を見えるようにする。",
+            "01 / トリガー", "仕事を決める。", "この方法が", "最も合うのはいつ？", "出力：案内または譲る",
+            "02 / 入力ゲート", "まず確認する。", "何がそろっていればよい？", "何が足りないと止める？", "入力不足 → 停止",
+            "03 / 範囲を区切った方法", "行動を分ける。", "許可 / 禁止 / 元に戻せる", "対象 / 担当 / 停止 / 復旧", "能力 ≠ 権限",
+            "04 / 確認できる成果物", "別の人が確認できる", "証拠を残す。", "ファイル・差分・ログ・スクリーンショット", "成果物 + 限界 + 状態",
+            "検証レール", "肯定", "境界", "失敗", "転用", "指定した仕事で機能する", "範囲外では譲る", "正直に停止または復旧する", "変えた例でも持ちこたえる",
+            "プロジェクト作成 · 外部メディアなし", "PRYSAI LAB / candidate",
+        ],
+    ),
+    "ko": (
+        "Skill 계약에서 확인 가능한 산출물로",
+        "이 빨강·검정 교육 그림은 Skill의 네 가지 결정을 확인 가능한 산출물로 연결합니다. 트리거, 입력 관문, 범위가 정해진 방법과 확인 가능한 산출물을 보여 주고, 아래 검증 레일에서 긍정·경계·실패·전이 네 가지 사례를 요구합니다.",
+        [
+            "SKILL 계약 → 확인 가능한 산출물", "방법 / 마법이 아닙니다", "네 가지 결정. 하나의 점검 가능한 결과.", "질문에 맞춰 범위를 정하고 인계할 때마다 권한을 드러냅니다.",
+            "01 / 트리거", "작업 정하기.", "이 방법이", "언제 가장 잘 맞나요?", "출력: 연결 또는 양보",
+            "02 / 입력 관문", "먼저 확인하세요.", "무엇이 있어야 하나요?", "무엇이 없으면 멈추나요?", "입력 누락 → 중지",
+            "03 / 범위가 정해진 방법", "행동을 분리하세요.", "허용 / 금지 / 되돌릴 수 있음", "대상 / 담당자 / 중지 / 복구", "능력 ≠ 권한",
+            "04 / 확인 가능한 산출물", "다른 사람이 확인할", "증거를 남기세요.", "파일 · diff · 로그 · 스크린샷", "산출물 + 한계 + 상태",
+            "검증 레일", "긍정", "경계", "실패", "전이", "지정한 작업에서 작동", "범위를 벗어나면 양보", "정직하게 중지하거나 복구", "바뀐 예에서도 견딤",
+            "프로젝트 원본 도형 · 외부 미디어 없음", "PRYSAI LAB / candidate",
+        ],
+    ),
+    "de": (
+        "Ein Skill-Vertrag führt zu einem prüfbaren Ergebnis",
+        "Diese Lehrgrafik in Rot und Schwarz verbindet vier Entscheidungen eines Skills mit einem prüfbaren Ergebnis: Auslöser, Eingabeprüfung, begrenzte Methode und prüfbarer Beleg. Die untere Prüfschiene verlangt positive, begrenzte, fehlerhafte und übertragene Fälle.",
+        [
+            "SKILL-VERTRAG → PRÜFBARES ERGEBNIS", "METHODE / KEINE MAGIE", "Vier Entscheidungen. Ein prüfbares Ergebnis.", "Die Frage bestimmt den Umfang; bei jeder Übergabe bleibt die Berechtigung sichtbar.",
+            "01 / AUSLÖSER", "Nenne sie.", "Wann passt diese", "Methode am engsten?", "AUSGABE: WEITER ODER ABGEBEN",
+            "02 / EINGABEPRÜFUNG", "Zuerst prüfen.", "Was muss vorhanden sein?", "Welche Lücke stoppt sie?", "EINGABE FEHLT → STOPP",
+            "03 / BEGRENZTE METHODE", "Trenne die Aktionen.", "Erlaubt / verboten / umkehrbar", "Ziel / Verantwortung / Stopp / Rückweg", "FÄHIGKEIT ≠ BERECHTIGUNG",
+            "04 / PRÜFBARES ERGEBNIS", "Lass einen Beleg da,", "den andere prüfen können.", "Datei · Diff · Log · Screenshot", "ERGEBNIS + GRENZE + STATUS",
+            "PRÜFRAIL", "POSITIV", "GRENZE", "FEHLER", "ÜBERTRAGUNG", "funktioniert bei der benannten Aufgabe", "gibt außerhalb des Umfangs ab", "stoppt oder stellt ehrlich wieder her", "hält ein verändertes Beispiel aus",
+            "PROJEKTEIGENE GRAFIK · KEINE EXTERNEN MEDIEN", "PRYSAI LAB / KANDIDAT",
+        ],
+    ),
+    "zh-tw": (
+        "Skill 契約如何留下可檢查的產出",
+        "這張紅黑教學圖把 Skill 的四個決定連到可檢查的產出：觸發、輸入關卡、有界線的方法和可觀察紀錄。下方驗證軌道要求正面、界線、失敗和遷移四類案例。",
+        [
+            "SKILL 契約 → 可觀察產出", "方法／不是魔法", "四個決定。一個可檢查的結果。", "問題決定範圍；每次交接都要讓權限保持可見。",
+            "01／觸發", "說清楚工作。", "這個方法何時", "最適合這項工作？", "產出：導向或讓出",
+            "02／輸入關卡", "先檢查。", "必須具備什麼？", "缺少哪個事實就要停下？", "缺少輸入 → 停止",
+            "03／有界線的方法", "分開各項行動。", "允許／禁止／可復原", "目標／負責人／停止／回滾", "能力 ≠ 權限",
+            "04／可觀察產出", "留下別人可以", "檢查的證據。", "檔案・差異・紀錄・截圖", "產出＋限制＋狀態",
+            "驗證軌道", "正面", "界線", "失敗", "遷移", "適用於指定工作", "超出範圍時讓出", "誠實地停止或復原", "面對變式仍然有效",
+            "專案原創圖形・不含外部媒體", "PRYSAI LAB／候選",
+        ],
+    ),
+    "fr": (
+        "Un contrat de Skill mène à un résultat vérifiable",
+        "Cette planche rouge et noire relie quatre décisions d’un Skill à un résultat vérifiable : déclencheur, filtre d’entrée, méthode délimitée et résultat observable. Le rail inférieur exige quatre cas : positif, limite, échec et transfert.",
+        [
+            "CONTRAT DE SKILL → RÉSULTAT VÉRIFIABLE", "MÉTHODE / PAS DE MAGIE", "Quatre décisions. Un résultat vérifiable.", "La question fixe le périmètre ; l’autorité reste visible à chaque transmission.",
+            "01 / DÉCLENCHEUR", "Nommez-la.", "Quand cette méthode", "est-elle la plus adaptée ?", "SORTIE : ORIENTER OU CÉDER",
+            "02 / FILTRE D’ENTRÉE", "Vérifiez d’abord.", "Que faut-il avoir ?", "Quelle absence l’arrête ?", "ENTRÉE MANQUANTE → ARRÊT",
+            "03 / MÉTHODE DÉLIMITÉE", "Séparez les actions.", "Autorisé / interdit / réversible", "Cible / responsable / arrêt / reprise", "CAPACITÉ ≠ AUTORITÉ",
+            "04 / RÉSULTAT VÉRIFIABLE", "Laissez une preuve", "qu’un tiers puisse vérifier.", "Fichier · diff · journal · capture", "RÉSULTAT + LIMITE + STATUT",
+            "RAIL DE VÉRIFICATION", "POSITIF", "LIMITE", "ÉCHEC", "TRANSFERT", "fonctionne pour le travail nommé", "cède hors de son périmètre", "s’arrête ou reprend honnêtement", "résiste à un exemple différent",
+            "GRAPHIQUE ORIGINAL DU PROJET · SANS MÉDIA EXTERNE", "PRYSAI LAB / CANDIDAT",
+        ],
+    ),
+})
+
+
 add_asset_locales("lifecycle-checkpoints.svg", {
     "zh": (
         "工作流通过可检查的出口逐步前进",
