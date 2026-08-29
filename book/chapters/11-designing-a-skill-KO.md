@@ -124,7 +124,7 @@ Markdown 링크 검토, 조사 보고서 출처 확인, 릴리스 인계처럼 �
 
 ### 증거
 
-contract, version, 비민감 input, expected와 actual output, stop point, 로드한 resource, host/surface의 정확한 observation을 보존합니다. 관찰하지 않은 layer는 `not_observed`로 적고 directory만으로 execution record를 만들지 않습니다.
+계약, 버전, 비민감한 입력, 예상·실제 출력, 중단 지점, 불러온 리소스, 호스트/작업 화면의 정확한 관찰을 보존합니다. 관찰하지 않은 단계는 `not_observed`로 적고 디렉터리만으로 실행 기록을 만들지 않습니다.
 
 ## 관찰 가능한 설계 흐름
 
@@ -314,7 +314,7 @@ Skill 안에서 재사용 가능한 decision과 이 file 또는 host에만 속�
 
 ## 전이 과제
 
-contract를 learning 또는 research task에 옮깁니다. learning Skill은 practice cycle과 나중 recall task를 조직할 수 있지만 fluency나 mastery를 주장하지 않습니다. research Skill은 source와 uncertainty를 정리할 수 있지만 찾은 link를 확인된 fact로 만들지 않습니다. trigger, non-trigger, stop rule, evidence boundary는 유지합니다.
+계약을 학습 또는 연구 과제에 적용합니다. 학습 Skill은 연습 주기와 이후 회상 과제를 구성할 수 있지만 유창성이나 숙달을 주장하지 않습니다. 연구 Skill은 출처와 불확실성을 정리할 수 있지만 찾은 링크를 확인된 사실로 만들지는 않습니다. trigger, non-trigger, stop rule, evidence boundary는 유지합니다.
 
 ## 수용 체크리스트
 

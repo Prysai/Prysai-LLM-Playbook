@@ -252,7 +252,7 @@ one next safe action:
 
 ## 出典と更新境界
 
-観測できるループ、状態、停止方法は、このプロジェクトの安定した教え方です。具体的な Agent の作業面、ツール名、権限、実行時の挙動は変わります。現在の事実は[公式ファクトカード](../evidence-library-JA.md#source-notes)で確認し、[field-problem index](../evidence-library-JA.md#source-notes)は症状の資料としてだけ使います。どちらも、記録した自分の実行の代わりにはなりません。
+観測できるループ、状態、停止方法は、このプロジェクトの安定した教え方です。具体的な Agent の作業面、ツール名、権限、実行時の挙動は変わります。現在の事実は[公式ファクトカード](../evidence-library-JA.md#source-notes)で確認し、[現場問題インデックス](../evidence-library-JA.md#source-notes)は症状の資料としてだけ使います。どちらも、記録した自分の実行の代わりにはなりません。
 
 ## 実行の引き継ぎ：次の読者が確認済みの事実をもとに続けられるように
 

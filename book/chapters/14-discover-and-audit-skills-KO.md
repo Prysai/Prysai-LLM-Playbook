@@ -136,7 +136,7 @@ A와 B 각각에 출처, 리비전, 실제 경로, license/NOTICE 결론, 의존
 - [ ] 지식 공백, 반복 가능한 방법, 도구, 권한 문제를 구분한다.
 - [ ] 출처, 고정 리비전, 경로, license/NOTICE, 권한, 복구, 담당자를 기록한다.
 - [ ] `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 혼동하지 않는다.
-- [ ] license, permission, recovery가 불명확하면 설치 대신 `blocked`로 둔다.
+- [ ] 라이선스, 권한, 복구 방법이 불명확하면 설치 대신 `blocked`로 둔다.
 
 ## 출처 및 유지보수 경계
 

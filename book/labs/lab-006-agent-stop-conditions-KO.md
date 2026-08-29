@@ -99,7 +99,7 @@ model이 “처리 중”이라고 하거나 같은 제안을 반복하거나 fi
 
 ```text
 아직 retry, edit, network 사용, 새 command 실행을 하지 마세요.
-보이는 record만 근거로 마지막 confirmed event와 첫 unknown event를 말하세요.
+눈에 보이는 기록만 근거로 마지막 확인 이벤트와 첫 번째 미지 이벤트를 말하세요.
 영향을 받았을 수 있는 file과 가장 작은 read-only check는 무엇인가요?
 이 정보가 없으면 blocked라고 쓰고, 완료되었다고 추정하지 마세요.
 ```
