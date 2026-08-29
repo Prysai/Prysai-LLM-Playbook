@@ -40,6 +40,7 @@ const localizedVisualAssets = new Set([
   'lifecycle-checkpoints.svg',
   'skill-to-observable-output.svg',
   'evidence-recovery-ladder.svg',
+  'evidence-maturity-ladder-red-black.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`
@@ -173,6 +174,8 @@ try {
     if (locale !== 'en') assert.notEqual(fallbackState.note.trim(), '', `${locale} Chapter 15 fallback visual has no localized disclosure`);
     const maturityCard = related.locator('img[src*="evidence-maturity-ladder-red-black.svg"]');
     assert.equal(await maturityCard.count(), 1, `${locale} Chapter 15 is missing the evidence maturity ladder`);
+    assert.equal(await maturityCard.getAttribute('src'), visualSrc(locale, 'evidence-maturity-ladder-red-black.svg'), `${locale} Chapter 15 maturity ladder did not resolve to the selected locale`);
+    assert.equal(await maturityCard.getAttribute('data-visual-locale-status'), locale === 'en' ? 'source' : 'localized', `${locale} Chapter 15 maturity ladder status is not explicit`);
     assert.notEqual((await maturityCard.getAttribute('alt') || '').trim(), '', `${locale} evidence maturity ladder has no localized alternative text`);
     assert.notEqual((await related.locator('[data-reader-related-visuals-boundary]').textContent() || '').trim(), '', `${locale} Chapter 15 related visuals have no evidence boundary`);
     await noHorizontalOverflow(`${locale} Chapter 15 Reader`);

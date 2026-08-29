@@ -28,9 +28,10 @@ localized:
     - lifecycle-checkpoints.svg
     - skill-to-observable-output.svg
     - evidence-recovery-ladder.svg
+    - evidence-maturity-ladder-red-black.svg
   locale_variants: 7
 fallback:
   status: english-fallback
-  asset_count: 33
+  asset_count: 32
   rule: Every source SVG not listed under localized is served from assets/teaching/{asset} for non-English locales.
   user_notice: The homepage, Reader, Visual Guide, and visual viewer label this state; surrounding localized text remains the explanation baseline.

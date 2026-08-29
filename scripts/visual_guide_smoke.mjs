@@ -24,6 +24,7 @@ const localizedVisualAssets = new Set([
   'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
   'skill-to-observable-output.svg',
   'evidence-recovery-ladder.svg',
+  'evidence-maturity-ladder-red-black.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`
@@ -108,6 +109,14 @@ const noHorizontalOverflow = async (label) => {
   }));
   assert.ok(metrics.scrollWidth <= metrics.innerWidth, `${label} has horizontal overflow: ${JSON.stringify(metrics)}`);
 };
+const waitForImagePixels = async (locator, label) => {
+  await locator.scrollIntoViewIfNeeded();
+  const loaded = await locator.evaluate((image) => image.complete && image.naturalWidth > 0 ? true : new Promise((resolve) => {
+    image.addEventListener('load', () => resolve(true), { once: true });
+    image.addEventListener('error', () => resolve(false), { once: true });
+  }));
+  assert.equal(loaded, true, `${label} did not load`);
+};
 
 try {
   for (const locale of locales) {
@@ -154,6 +163,19 @@ try {
     }));
     assert.equal(goalLocaleState.status, locale === 'en' ? 'source' : 'localized', `${locale} localized visual status changed`);
     assert.equal(goalLocaleState.note, true, `${locale} localized visual unexpectedly shows fallback disclosure`);
+    await waitForImagePixels(page.locator('[data-visual-maturity-image]'), `${locale} evidence maturity image`);
+    const maturityLocaleState = await page.locator('[data-visual-maturity-image]').evaluate((image) => ({
+      src: image.getAttribute('src'),
+      status: image.dataset.visualLocaleStatus,
+      locale: image.dataset.visualLocale,
+      complete: image.complete,
+      naturalWidth: image.naturalWidth,
+    }));
+    assert.equal(maturityLocaleState.src, visualSrc(locale, 'evidence-maturity-ladder-red-black.svg'), `${locale} evidence maturity image did not resolve to the selected locale`);
+    assert.equal(maturityLocaleState.status, locale === 'en' ? 'source' : 'localized', `${locale} evidence maturity image status is not explicit`);
+    assert.equal(maturityLocaleState.locale, locale, `${locale} evidence maturity image reports the wrong locale`);
+    assert.equal(maturityLocaleState.complete, true, `${locale} evidence maturity image did not finish loading`);
+    assert.ok(maturityLocaleState.naturalWidth > 0, `${locale} evidence maturity image has no rendered pixels`);
     await page.locator('[data-visual-maturity-nodes] button').last().click();
     assert.equal(await page.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} maturity selection is not exposed`);
     assert.match(await page.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} maturity route lost its locale`);

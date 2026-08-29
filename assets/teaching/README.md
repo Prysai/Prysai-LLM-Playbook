@@ -56,10 +56,10 @@ ownership, and reuse boundary are recorded in the
 
 ## Language variants
 
-Eleven high-frequency cards have reviewed SVG variants for `zh`, `es`, `ja`,
+Twelve high-frequency cards have reviewed SVG variants for `zh`, `es`, `ja`,
 `ko`, `de`, `zh-tw`, and `fr` under `locales/<locale>/`. The site resolves
 these files from the selected language while preserving the original English
-source for `en`. The remaining 33 cards intentionally use an explicit English
+source for `en`. The remaining 32 cards intentionally use an explicit English
 fallback until their embedded text is reviewed. The homepage, Reader, Visual
 Guide, and full-size viewer disclose that fallback beside the image. The
 complete machine-readable matrix is

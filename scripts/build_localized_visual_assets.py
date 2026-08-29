@@ -1406,6 +1406,101 @@ add_asset_locales("lifecycle-checkpoints.svg", {
 })
 
 
+add_asset_locales("evidence-maturity-ladder-red-black.svg", {
+    "zh": (
+        "证据成熟度阶梯",
+        "这张五阶段阶梯图从已设计的教学契约走到独立复核。每一阶段都说明它能支持什么、不能支持什么，以及进入下一阶段需要保留的证据。",
+        [
+            "证据／成熟度", "不要跳过", "证据。", "页面写完，不等于方法有人练过、迁移过或复核过。",
+            "01", "已设计", "契约已经写下。", "可以支持：一套清楚的预期方法。", "不能支持：任何人都能使用它的结论。",
+            "02", "已呈现", "页面和路线可以使用。", "可以支持：读者能够到达材料。", "不能支持：读者已经理解或使用了材料。",
+            "03", "已练习", "学习者实际运行了任务。", "可以支持：一次可观察的尝试及其结果。", "不能支持：在新任务上的可靠表现。",
+            "04", "已迁移", "方法经得起任务变化。", "可以支持：超出首个示例的复用证据。", "不能支持：普遍或永久有效的技能结论。",
+            "05", "已独立复核", "另一个人重新运行并检查。", "可以支持：在明确范围内得到交叉验证的结果。", "不能支持：超出已复核条件的结论。",
+            "下一项证据", "说清你已有的阶段，只收集能推动它前进的证据。",
+        ],
+    ),
+    "es": (
+        "Escalera de madurez de la evidencia",
+        "Esta escalera de cinco etapas va desde un contrato didáctico diseñado hasta una revisión independiente. Cada etapa indica qué permite afirmar, qué no permite afirmar y qué evidencia hace falta para avanzar.",
+        [
+            "EVIDENCIA / MADUREZ", "NO TE SALTES", "LA EVIDENCIA.", "Una página completa no equivale a un método practicado, transferido y revisado.",
+            "01", "DISEÑADO", "El contrato está escrito.", "Permite afirmar: un método previsto y claro.", "No permite afirmar: que cualquiera pueda usarlo.",
+            "02", "RENDERIZADO", "La página y la ruta funcionan.", "Permite afirmar: que un lector puede llegar al material.", "No permite afirmar: que lo haya entendido o usado.",
+            "03", "PRACTICADO", "Un aprendiz ejecuta la tarea.", "Permite afirmar: un intento observado y su resultado.", "No permite afirmar: un rendimiento fiable en una tarea nueva.",
+            "04", "TRANSFERIDO", "El método resiste una tarea distinta.", "Permite afirmar: evidencia de reutilización más allá del primer ejemplo.", "No permite afirmar: una capacidad universal o permanente.",
+            "05", "REVISADO DE FORMA INDEPENDIENTE", "Otra persona lo repite y lo comprueba.", "Permite afirmar: un resultado corroborado dentro de un alcance definido.", "No permite afirmar: conclusiones fuera de las condiciones revisadas.",
+            "PRÓXIMA EVIDENCIA", "Nombra la etapa que tienes y reúne solo lo que la haga avanzar.",
+        ],
+    ),
+    "ja": (
+        "証拠の成熟度ラダー",
+        "この5段階のラダーは、設計した教材契約から独立レビューまでを示します。各段階で言えること、言えないこと、次へ進むために必要な証拠を分けます。",
+        [
+            "証拠 / 成熟度", "飛ばさない", "証拠。", "ページが完成していても、方法が実践・転用・レビュー済みとは限らない。",
+            "01", "設計済み", "契約が書かれている。", "支えられること：意図した方法が明確である。", "支えられないこと：誰でも使えるという主張。",
+            "02", "表示済み", "ページとルートが機能する。", "支えられること：読者が教材にたどり着ける。", "支えられないこと：読者が理解・使用したという主張。",
+            "03", "実践済み", "学習者が課題を実行する。", "支えられること：観察できる試行と結果。", "支えられないこと：新しい課題で安定して実行できること。",
+            "04", "転用済み", "方法が変化した課題でも通用する。", "支えられること：最初の例を越えた再利用の証拠。", "支えられないこと：普遍的・永続的なスキルの主張。",
+            "05", "独立レビュー済み", "別の人が再実行して確認する。", "支えられること：明示した範囲で裏付けられた結果。", "支えられないこと：レビュー条件の外にある主張。",
+            "次の証拠", "今ある段階を示し、前に進める証拠だけを集める。",
+        ],
+    ),
+    "ko": (
+        "증거 성숙도 단계표",
+        "이 다섯 단계는 설계한 교육 계약에서 독립 검토까지 이어집니다. 각 단계가 뒷받침하는 것과 뒷받침하지 못하는 것, 다음 단계에 필요한 증거를 나눠 보여 줍니다.",
+        [
+            "증거 / 성숙도", "건너뛰지 마세요", "증거를.", "페이지가 완성됐다고 해서 방법을 연습·전이·검토했다는 뜻은 아닙니다.",
+            "01", "설계됨", "계약이 작성되었습니다.", "말할 수 있는 것: 의도한 방법이 분명하다는 사실.", "말할 수 없는 것: 누구나 사용할 수 있다는 주장.",
+            "02", "렌더링됨", "페이지와 경로가 작동합니다.", "말할 수 있는 것: 독자가 자료에 도달할 수 있다는 사실.", "말할 수 없는 것: 독자가 이해했거나 사용했다는 주장.",
+            "03", "연습됨", "학습자가 작업을 실행합니다.", "말할 수 있는 것: 관찰된 시도와 그 결과.", "말할 수 없는 것: 새 작업에서도 안정적으로 수행한다는 주장.",
+            "04", "전이됨", "작업이 바뀌어도 방법이 유지됩니다.", "말할 수 있는 것: 첫 사례를 넘어 재사용했다는 증거.", "말할 수 없는 것: 보편적이거나 영구적인 숙련 주장.",
+            "05", "독립 검토됨", "다른 사람이 다시 실행하고 확인합니다.", "말할 수 있는 것: 명시한 범위에서 재확인된 결과.", "말할 수 없는 것: 검토한 조건 밖의 주장.",
+            "다음 증거", "현재 가진 단계를 밝히고, 그 단계를 앞으로 옮길 증거만 모으세요.",
+        ],
+    ),
+    "de": (
+        "Leiter der Belegreife",
+        "Diese Leiter mit fünf Stufen führt vom entworfenen Lehrvertrag bis zur unabhängigen Prüfung. Jede Stufe nennt, was sie trägt, was sie nicht trägt und welcher Beleg den nächsten Schritt ermöglicht.",
+        [
+            "BELEG / REIFE", "NICHT ÜBERSPRINGEN", "DIE BELEGE.", "Eine fertige Seite ist nicht dasselbe wie eine geübte, übertragene und geprüfte Methode.",
+            "01", "ENTWORFEN", "Der Vertrag ist geschrieben.", "Trägt: eine klare beabsichtigte Methode.", "Trägt nicht: die Aussage, dass jeder sie nutzen kann.",
+            "02", "DARGESTELLT", "Seite und Route funktionieren.", "Trägt: Leser können das Material erreichen.", "Trägt nicht: dass Leser es verstanden oder genutzt haben.",
+            "03", "GEÜBT", "Eine lernende Person führt die Aufgabe aus.", "Trägt: einen beobachteten Versuch und sein Ergebnis.", "Trägt nicht: zuverlässige Leistung bei einer neuen Aufgabe.",
+            "04", "ÜBERTRAGEN", "Die Methode hält eine veränderte Aufgabe aus.", "Trägt: Belege für Wiederverwendung über das erste Beispiel hinaus.", "Trägt nicht: eine universelle oder dauerhafte Kompetenzbehauptung.",
+            "05", "UNABHÄNGIG GEPRÜFT", "Eine andere Person führt sie erneut aus und prüft sie.", "Trägt: ein bestätigtes Ergebnis innerhalb eines benannten Umfangs.", "Trägt nicht: Aussagen außerhalb der geprüften Bedingungen.",
+            "NÄCHSTER BELEG", "Nenne die vorhandene Stufe und sammle nur, was sie weiterbringt.",
+        ],
+    ),
+    "zh-tw": (
+        "證據成熟度階梯",
+        "這張五階段階梯圖從已設計的教學契約走到獨立複核。每個階段都說明能支持什麼、不能支持什麼，以及進入下一階段需要保留的證據。",
+        [
+            "證據／成熟度", "不要跳過", "證據。", "頁面完成，不代表方法有人練習過、遷移過或經過複核。",
+            "01", "已設計", "契約已經寫下。", "可以支持：一套清楚的預期方法。", "不能支持：任何人都能使用它的主張。",
+            "02", "已呈現", "頁面和路線可以使用。", "可以支持：讀者能夠到達教材。", "不能支持：讀者已經理解或使用教材。",
+            "03", "已練習", "學習者實際執行了任務。", "可以支持：一次可觀察的嘗試及其結果。", "不能支持：在新任務上的可靠表現。",
+            "04", "已遷移", "方法經得起任務變化。", "可以支持：超出第一個範例的再利用證據。", "不能支持：普遍或永久有效的技能主張。",
+            "05", "已獨立複核", "另一個人重新執行並檢查。", "可以支持：在明確範圍內得到交叉驗證的結果。", "不能支持：超出已複核條件的主張。",
+            "下一項證據", "說清楚你已有的階段，只收集能推動它前進的證據。",
+        ],
+    ),
+    "fr": (
+        "Échelle de maturité des preuves",
+        "Cette échelle en cinq étapes va du contrat pédagogique conçu à la revue indépendante. Chaque étape précise ce qu’elle permet d’affirmer, ce qu’elle ne permet pas d’affirmer et la preuve nécessaire pour avancer.",
+        [
+            "PREUVES / MATURITÉ", "NE SAUTEZ PAS", "LES PREUVES.", "Une page complète ne signifie pas que la méthode a été pratiquée, transférée et relue.",
+            "01", "CONÇU", "Le contrat est écrit.", "Permet d’affirmer : une méthode prévue et claire.", "Ne permet pas d’affirmer : que chacun peut l’utiliser.",
+            "02", "RENDU", "La page et le parcours fonctionnent.", "Permet d’affirmer : qu’un lecteur peut atteindre le contenu.", "Ne permet pas d’affirmer : qu’il l’a compris ou utilisé.",
+            "03", "PRATIQUÉ", "Un apprenant exécute la tâche.", "Permet d’affirmer : un essai observé et son résultat.", "Ne permet pas d’affirmer : une performance fiable sur une nouvelle tâche.",
+            "04", "TRANSFÉRÉ", "La méthode résiste à une tâche différente.", "Permet d’affirmer : une preuve de réutilisation au-delà du premier exemple.", "Ne permet pas d’affirmer : une compétence universelle ou permanente.",
+            "05", "RELU INDÉPENDAMMENT", "Une autre personne la rejoue et la vérifie.", "Permet d’affirmer : un résultat corroboré dans un périmètre nommé.", "Ne permet pas d’affirmer : des conclusions hors des conditions relues.",
+            "PROCHAINE PREUVE", "Nommez l’étape que vous avez et réunissez seulement ce qui la fait avancer.",
+        ],
+    ),
+})
+
+
 def build() -> int:
     built = 0
     for asset, locale_specs in TRANSLATIONS.items():
