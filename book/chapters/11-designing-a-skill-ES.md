@@ -60,6 +60,29 @@ stop_when: "falta entrada, autoridad, fuente o destino recuperable"
 
 Un disparador debe incluir intención, entradas necesarias, propiedad del método y riesgo aceptable. Una coincidencia de palabra no basta. Definir en qué situaciones no debe activarse evita que la Skill se apropie de una tarea vecina.
 
+### Leer y revisar cada campo del contrato
+
+`purpose` debe nombrar una decisión repetible. `trigger` y `non_trigger`
+delimitan la responsabilidad del método; `required_inputs` impide completar
+vacíos con suposiciones. `allowed_actions` separa lectura, escritura,
+ejecución y red. `stop_when` convierte la duda en una parada observable, y
+`output` y `evidence` indican qué puede comprobar el siguiente revisor. Añade
+siempre una persona responsable, una versión y una fecha o condición de
+revisión: sin dueño, una Skill se vuelve obsoleta sin que nadie lo note.
+
+No mezcles el encargo actual con el método reutilizable:
+
+```text
+tarea actual   → objetivo, audiencia, plazo y alcance de este encargo
+reglas estables → vocabulario, licencia y política del proyecto
+Skill          → decisiones, comprobaciones, paradas y formato reutilizable
+herramientas   → acciones realmente disponibles en esta sesión
+evidencia      → lo que ocurrió en esta ejecución y lo que sigue incierto
+```
+
+Una ruta absoluta, un brief de cliente o una conclusión de esta sesión son
+datos de entrada, no contenido permanente de la Skill.
+
 ## Divide método, datos y ejecución
 
 - `SKILL.md` guarda propósito, límites, pasos, parada y evidencia que siempre aplican.
@@ -68,6 +91,49 @@ Un disparador debe incluir intención, entradas necesarias, propiedad del métod
 - `assets/` solo contienen recursos estáticos declarados.
 
 No ocultes reglas de seguridad críticas en una referencia opcional. Un archivo existente tampoco prueba descubrimiento; descubrimiento no prueba carga; carga no prueba adopción; adopción no prueba comportamiento.
+
+## Carga progresiva y límites de recursos
+
+```text
+metadatos / descripción
+        ↓ si la solicitud encaja
+SKILL.md → contrato, método, límites, salida y paradas
+        ↓ solo si la rama lo necesita
+references/ → hechos extensos y versiones
+scripts/    → comprobaciones deterministas
+assets/     → recursos estáticos declarados y licenciados
+```
+
+Las reglas esenciales de seguridad y parada permanecen en `SKILL.md`; una
+referencia opcional no puede ampliar permisos. Cada recurso debe declarar su
+propósito, condición de carga, entradas, salidas y respuesta ante fallos. Si
+dos fuentes discrepan, conserva ambas observaciones y detén la adopción hasta
+identificar cuál tiene autoridad.
+
+## Fronteras de entrada, permisos y secretos
+
+Clasifica cada entrada como `provided`, `readable`, `inferred` o `unknown`.
+Distingue lectura, escritura temporal, escritura permanente, red, instalación,
+transferencia, publicación y borrado. «Puede modificar archivos» no es un
+permiso suficientemente preciso. No guardes tokens, cookies, contraseñas,
+claves, `.env` ni datos personales en el paquete, fixtures, capturas o logs.
+
+| Acción | Evidencia mínima previa |
+|---|---|
+| Leer | ruta exacta y alcance autorizado |
+| Escribir una copia temporal | destino desechable y línea base |
+| Escribir un archivo existente | aprobación y diff revisable |
+| Red, instalación o publicación | alcance, responsable y rollback explícitos |
+
+## Ejemplo trabajado: contexto de producto sintético
+
+Imagina una página ficticia de alquiler de viviendas. La necesidad no es
+«hacer marketing con IA», sino convertir hechos suministrados (zona, precio,
+audiencia, restricciones y fuentes) en un contexto versionado para la persona
+que redactará después. La Skill verifica campos y señala incógnitas; no
+investiga el mercado, promete disponibilidad ni publica la página. Su salida
+mínima es un borrador con mapa `afirmación → fuente`, supuestos, campos
+faltantes y handoff.
 
 ## Evalúa cuatro casos
 
@@ -174,6 +240,12 @@ alcance: solo rutas relativas locales; no se comprobó la red
 ```
 
 Después usa un caso límite con un enlace `https://`: debe quedar como fuera de alcance o desconocido, sin conectarse. Con una base de resolución ausente, la respuesta correcta es preguntar o detenerse, no adivinar la estructura.
+
+Antes de recuperar un fallo, conserva `run_id`, revisión, archivos, comando,
+primer fallo y último checkpoint. El rollback solo puede actuar sobre el destino
+y la línea base registrados; después vuelve a leer y compara con esa línea
+base. Que el comando termine con código cero no demuestra que el estado original
+se haya restaurado.
 
 ## Experimento pequeño y límite
 
