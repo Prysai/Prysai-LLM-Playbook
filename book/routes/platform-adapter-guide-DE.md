@@ -33,8 +33,8 @@ Behauptung über eine Plattform weitergibst, stelle drei Fragen:
 Wenn du nicht alle drei beantworten kannst, behandle die Behauptung als
 `unknown` und notiere die nächste Prüfung. Die Pflegemethode hinter dieser
 Regel beschreiben der
-Platform Adapter Review Skill
-und der Platform Fact Watch.
+[Platform Adapter Review Skill (locale-neutral)](../../skills/prysai-platform-adapter-review/SKILL.md)
+und [Platform Fact Watch (locale-neutral)](../../skills/prysai-platform-fact-watch/SKILL.md).
 
 ## Die Plattformübersicht auf einer Seite
 
@@ -169,9 +169,9 @@ dir die Gewohnheit vertraut ist, erst zu prüfen und dann zu bearbeiten.
 - Du willst den Flaggschiff-Übungsstrang mit Dateien und Werkzeugen in der
   Tiefe: [First Safe Change](first-safe-change-DE.md).
 - Du willst zuerst das plattformneutrale Fundament: [Universal Core Foundations](universal-core-foundations-DE.md).
-- Du willst zwei Plattformen fair vergleichen: LLM Comparison Protocol.
+- Du willst zwei Plattformen fair vergleichen: [LLM Comparison Protocol (locale-neutral)](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - Du willst wissen, ob eine Plattform-Lektion in den Lehrplan gehört:
-  Platform Adapter Review.
+  [Platform Adapter Review (locale-neutral)](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## Belegstand und Grenzen
 
