@@ -219,3 +219,15 @@ transfer_limitations: "この実験で学ぶのは観測可能な境界である
 これは独自に作成された実験です。外部のプロンプト、ログ、認証情報、Skill の指示をコピーしていません。
 実際の製品画面を使う前に、変動しやすい製品事実を再確認してください。宣言された証拠が存在するまで、
 状態は引き続き `draft` です。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-010-product-context-JA.md" aria-label="前の Lab：Lab 010 · 二つのタスクに使い回せる共有プロダクト文脈を作る">← 前の Lab<br><strong>Lab 010 · 二つのタスクに使い回せる共有プロダクト文脈を作る</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-012-team-capability-migration-JA.md" aria-label="次の Lab：Lab 012 · 個人の方法をチーム能力に変える">次へ →<br><strong>Lab 012 · 個人の方法をチーム能力に変える</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->
