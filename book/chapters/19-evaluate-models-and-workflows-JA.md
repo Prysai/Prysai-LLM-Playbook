@@ -203,7 +203,7 @@ B の `markdown-02` 実行中に、capacity error、permission block、input cha
 - schema check は fixture が正しい形かを確認するだけで、model が実行されたことや学習者が方法を習得したことを示さない。
 - 条件が変わったら新しい decision-card version を作るか、run を比較不能にする。古い結論をそのまま使い続けない。
 
-## Transfer exercise
+## 転移課題
 
 同じ記録形式を、research question、marketing experiment、team skill の選択に適用します。run ID、input hash、score、decision card を残します。どの metric が移植でき、リスクに合わせてどれを変える必要があるか、少なくとも一つの「移植できない結論」を書きます。
 
@@ -244,11 +244,11 @@ B の `markdown-02` 実行中に、capacity error、permission block、input cha
 
 maintenance owner は、公式 model page、task-set version、evaluation fixture、account scope、cost basis、runtime surface を、それらのいずれかが変わったとき、遅くとも 2026-11-09 までに再確認します。指定された run log、独立 review、comparability check、evidence package がそろって初めて、結果を `verified` とします。さらに operational、security、permission、rollback、user-acceptance check がそろって初めて `production-ready` です。
 
-## Evidence を越えない handoff の練習
+## 証拠を越えない引き継ぎの練習
 
 評価 run の後で [Lab 015：完了という一文ではなく、evidence を渡す](../labs/lab-015-evidence-delivery-JA.md) を使います。Lab 003 は独立した claim adjudication を担当し、Lab 015 はその結果を使って、添付 evidence を越えない簡潔な handoff を作ります。
 
-## 5分比較カード：model の IQ ではなく、一つの instruction を試す
+## 5分比較カード：モデルの IQ ではなく、一つの指示を試す
 
 account 接続なしで、一つの model、offline の text、短時間で実行できます。短い公開済みまたは架空の status note を選びます。text、model、surface、time limit、reviewer を固定し、変えるのは instruction だけにします。
 
