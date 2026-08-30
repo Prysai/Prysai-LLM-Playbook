@@ -18,10 +18,13 @@ def ignored_directory(name: str) -> bool:
     return name in IGNORED_PARTS or name.startswith(IGNORED_TRANSIENT_PREFIXES)
 
 
-def main() -> int:
+def main(root: Path | str | None = None) -> int:
+    """Check links below ``root``; default to the repository workspace."""
+
+    scan_root = Path(root).resolve() if root is not None else ROOT.resolve()
     missing: list[str] = []
     checked = 0
-    for directory, subdirectories, filenames in os.walk(ROOT):
+    for directory, subdirectories, filenames in os.walk(scan_root):
         subdirectories[:] = sorted(
             name for name in subdirectories if not ignored_directory(name)
         )
@@ -39,12 +42,12 @@ def main() -> int:
                 checked += 1
                 resolved = (markdown.parent / target_path).resolve()
                 try:
-                    resolved.relative_to(ROOT.resolve())
+                    resolved.relative_to(scan_root)
                 except ValueError:
-                    missing.append(f"{markdown.relative_to(ROOT)} -> outside workspace: {target}")
+                    missing.append(f"{markdown.relative_to(scan_root)} -> outside workspace: {target}")
                     continue
                 if not resolved.exists():
-                    missing.append(f"{markdown.relative_to(ROOT)} -> missing: {target}")
+                    missing.append(f"{markdown.relative_to(scan_root)} -> missing: {target}")
 
     if missing:
         print("LOCAL_LINKS_FAILED")

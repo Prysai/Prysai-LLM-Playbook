@@ -22,6 +22,27 @@ STABLE = {
     "PROMPT", "RESPONSE", "TOOL / AGENT", "MATERIAL", "02 / MATERIAL", "04 / DIRECTION",
 }
 
+# The maturity ladder uses fixed-width cards. Long translations can therefore
+# overflow even when the source keeps one text node per visual line. These
+# widths reserve a small inset inside the card's right edge while preserving
+# the text as one accessible SVG node.
+LOCALIZED_TEXT_MAX_WIDTHS = {
+    "evidence-maturity-ladder-red-black.svg": {
+        "es": {
+            4: 762,  # x=78; card right edge=858
+        },
+        "de": {
+            4: 762,  # x=78; card right edge=858
+            17: 646,  # x=202 after the stage group; keep the long stage-03 line inside the frame
+            22: 646,  # x=202 after the stage group; keep the long stage-04 line inside the frame
+            27: 648,  # x=202 after its group transform
+        },
+        "fr": {
+            4: 762,  # x=78; card right edge=858
+        },
+    },
+}
+
 
 def spec(title, desc, nodes):
     """Return one reviewed SVG translation contract.
@@ -45,6 +66,31 @@ def replace_nodes(source, nodes):
         chunks.append(source[cursor:match.start(2)])
         chunks.append(html.escape(value.strip(), quote=False))
         cursor = match.end(2)
+    chunks.append(source[cursor:])
+    return "".join(chunks)
+
+
+def constrain_localized_text(source, asset, locale):
+    """Keep fixed-card localized lines inside the source SVG geometry."""
+    if locale == "en":
+        return source
+    limits = LOCALIZED_TEXT_MAX_WIDTHS.get(asset, {}).get(locale, {})
+    if not limits:
+        return source
+    matches = list(TEXT_RE.finditer(source))
+    if any(index < 1 or index > len(matches) for index in limits):
+        raise ValueError("{}: text-fit index is outside the SVG text nodes".format(asset))
+
+    chunks = []
+    cursor = 0
+    for index, match in enumerate(matches, 1):
+        opening = match.group(1)
+        if index in limits:
+            opening = re.sub(r'\s+(?:textLength|lengthAdjust)="[^"]*"', "", opening)
+            opening = opening[:-1] + ' textLength="{}" lengthAdjust="spacingAndGlyphs">'.format(limits[index])
+        chunks.append(source[cursor:match.start(1)])
+        chunks.append(opening)
+        cursor = match.end(1)
     chunks.append(source[cursor:])
     return "".join(chunks)
 
@@ -391,6 +437,80 @@ def add_asset_locales(asset, entries):
     """Register the reviewed locale strings for one fixed-geometry board."""
     for locale, (title, desc, nodes) in entries.items():
         add(asset, locale, title, desc, nodes)
+
+
+add_asset_locales("evidence-recovery-ladder.svg", {
+    "zh": (
+        "恢复卡／证据优先",
+        "这张恢复卡先保留断言与实际记录，找到第一个缺失证据，再选择一项获准的检查或明确停下。它不会把未知变成证明。",
+        [
+            "恢复卡／证据优先", "在第一个", "缺失证明处停下。", "流畅的总结不是回执。让第一个缺口保持可见，", "再选择一项获准的检查——否则就停下，不要编造成功。",
+            "01 / 断言", "说清“完成”意味着什么。", "文件、回答、测试、交付或决定——不是自信的句子。", "02 / 记录", "检查实际轨迹。", "阅读差异、退出码、来源、截图、日志或审查备注。",
+            "03 / 第一个缺口", "标出缺少的内容。", "使用 partial、unverified、blocked 或 unknown；不要推断已验收。", "04 / 下一项决定", "做一次安全检查——或停下。", "只改变一个条件。不要扩大权限来让结果通过。",
+            "保留回执", "保留错误、范围、", "状态和最后一个检查点。", "这份记录只能支持范围狭窄的下一步，不能把未知变成证明。", "恢复卡是决策辅助，不是任务、模型或学习者成功的证据。",
+        ],
+    ),
+    "es": (
+        "Tarjeta de recuperación / evidencia primero",
+        "Esta tarjeta conserva la afirmación y el rastro real, encuentra la primera prueba que falta y elige una comprobación permitida o una parada clara. No convierte lo desconocido en evidencia.",
+        [
+            "TARJETA DE RECUPERACIÓN / EVIDENCIA PRIMERO", "DETENTE ANTE LA", "PRIMERA PRUEBA AUSENTE.", "Un resumen pulido no es un comprobante. Deja visible la primera brecha,", "luego elige una comprobación permitida o detente sin inventar un éxito.",
+            "01 / AFIRMACIÓN", "DEFINE QUÉ SIGNIFICA «HECHO».", "Un archivo, respuesta, prueba, entrega o decisión; no una frase segura.", "02 / REGISTRO", "INSPECCIONA EL RASTRO REAL.", "Lee el diff, código de salida, fuente, captura, log o nota de revisión.",
+            "03 / PRIMERA BRECHA", "SEÑALA LO QUE FALTA.", "Usa parcial, no verificado, bloqueado o desconocido. No supongas aceptación.", "04 / PRÓXIMA DECISIÓN", "HAZ UN CONTROL SEGURO O DETENTE.", "Cambia una sola condición. No amplíes la autoridad para hacer que pase.",
+            "CONSERVA EL COMPROBANTE", "CONSERVA EL ERROR, EL ALCANCE,", "EL ESTADO Y EL ÚLTIMO PUNTO DE CONTROL.", "El registro permite un siguiente paso acotado; no convierte lo desconocido en prueba.", "Esta tarjeta orienta decisiones; no demuestra el éxito de una tarea, un modelo o un aprendiz.",
+        ],
+    ),
+    "ja": (
+        "復旧カード / 証拠を先に",
+        "依頼と実際の記録を残し、最初に足りない証拠を見つけます。許可された確認を1つ行うか、成功を作らずに止まるための判断カードです。",
+        [
+            "復旧カード / 証拠を先に", "最初の", "証拠不足で止まる。", "きれいな要約は記録ではない。最初の不足を見えるまま残し、", "許可された確認を1つ選ぶ。成功を作らずに止まる選択もある。",
+            "01 / 主張", "「完了」の意味を決める。", "ファイル、回答、テスト、引き渡し、判断。自信のある一文ではない。", "02 / 記録", "実際の記録を確認する。", "差分、終了コード、出典、スクリーンショット、ログ、レビュー記録を読む。",
+            "03 / 最初の不足", "足りないものを示す。", "部分的、未検証、blocked、unknown と記す。受け入れを推測しない。", "04 / 次の判断", "安全な確認を1つ行うか、止まる。", "条件は1つだけ変える。通すために権限を広げない。",
+            "記録を残す", "エラー、範囲、", "状態、最後のチェックポイントを保存する。", "この記録が支えるのは範囲を絞った次の一手だけ。不明を証拠にはできない。", "復旧カードは判断を助けるもの。タスク、モデル、学習者の成功を示す証拠ではない。",
+        ],
+    ),
+    "ko": (
+        "복구 카드 / 증거 우선",
+        "이 카드는 주장과 실제 기록을 보존하고 첫 번째 증거 누락을 찾은 뒤 허용된 점검 하나를 선택하거나 분명히 멈추게 합니다. 알 수 없음을 증거로 바꾸지는 않습니다.",
+        [
+            "복구 카드 / 증거 우선", "첫 번째 증거 누락에서", "멈추세요.", "매끄러운 요약은 기록이 아닙니다. 첫 빈틈을 보이게 남기고,", "허용된 점검 하나를 고르거나 성공을 꾸미지 말고 멈추세요.",
+            "01 / 주장", "‘완료’의 의미를 정하세요.", "파일, 답변, 테스트, 전달 또는 결정이지 자신감 있는 한 문장이 아닙니다.", "02 / 기록", "실제 흔적을 점검하세요.", "diff, 종료 코드, 출처, 스크린샷, 로그 또는 검토 메모를 읽으세요.",
+            "03 / 첫 빈틈", "빠진 것을 표시하세요.", "부분적·미검증·차단됨·알 수 없음으로 표시하세요. 수용을 추정하지 마세요.", "04 / 다음 결정", "안전한 점검 하나를 하거나 멈추세요.", "조건 하나만 바꾸세요. 결과를 통과시키려고 권한을 넓히지 마세요.",
+            "기록을 보존하세요", "오류, 범위,", "상태와 마지막 체크포인트를 보존하세요.", "이 기록은 범위가 좁은 다음 단계를 뒷받침할 뿐, unknown을 증거로 바꾸지 않습니다.", "복구 카드는 판단을 돕는 자료이지 작업, 모델 또는 학습자의 성공을 증명하는 증거가 아닙니다.",
+        ],
+    ),
+    "de": (
+        "Wiederherstellungskarte / Beleg zuerst",
+        "Diese Karte bewahrt Aussage und echte Spur, findet den ersten fehlenden Beleg und wählt einen erlaubten Check oder einen klaren Stopp. Unbekanntes wird dadurch nicht zum Beleg.",
+        [
+            "WIEDERHERSTELLUNGSKARTE / BELEG ZUERST", "BEIM ERSTEN", "FEHLENDEN BELEG STOPPEN.", "Eine glatte Zusammenfassung ist kein Protokoll. Lass die erste Lücke sichtbar,", "dann wähle einen erlaubten Check – oder stoppe, ohne Erfolg zu erfinden.",
+            "01 / AUSSAGE", "SAG, WAS „FERTIG“ HEISST.", "Datei, Antwort, Test, Übergabe oder Entscheidung – kein selbstsicherer Satz.", "02 / PROTOKOLL", "PRÜFE DIE ECHTE SPUR.", "Lies Diff, Exit-Code, Quelle, Screenshot, Log oder Prüfnotiz.",
+            "03 / ERSTE LÜCKE", "BENENNE, WAS FEHLT.", "Fehlende Belege markieren: teilweise, ungeprüft, blockiert, unbekannt.", "04 / NÄCHSTE ENTSCHEIDUNG", "SICHER PRÜFEN – ODER STOPP.", "Ändere nur eine Bedingung. Erweitere keine Berechtigung, damit es klappt.",
+            "PROTOKOLL BEWAHREN", "FEHLER, UMFANG,", "ZUSTAND UND LETZTEN CHECKPOINT SICHERN.", "Das Protokoll stützt nur den nächsten begrenzten Schritt. Unbekanntes wird kein Beleg.", "Entscheidungshilfe, kein Erfolgsbeleg für Aufgabe, Modell oder Lernende.",
+        ],
+    ),
+    "zh-tw": (
+        "復原卡／證據優先",
+        "這張復原卡先保留主張與實際紀錄，找出第一個缺少的證據，再選一項獲准的檢查或明確停下。它不會把未知變成證據。",
+        [
+            "復原卡／證據優先", "在第一個", "缺少證據處停止。", "流暢的摘要不是紀錄。讓第一個缺口保持可見，", "再選一項獲准的檢查；否則就停下，不要捏造成功。",
+            "01／主張", "說清楚「完成」代表什麼。", "檔案、回應、測試、交付或決定——不是自信滿滿的一句話。", "02／紀錄", "檢查實際軌跡。", "閱讀差異、結束代碼、來源、螢幕截圖、紀錄檔或審查備註。",
+            "03／第一個缺口", "標出缺少的內容。", "標示為部分完成、未驗證、blocked 或 unknown；不要自行推斷已驗收。", "04／下一個決定", "執行一次安全檢查，或停下。", "只改變一個條件。不要為了讓結果通過而擴大權限。",
+            "保留紀錄", "保留錯誤、範圍、", "狀態與最後一個檢查點。", "這份紀錄只能支持範圍精簡的下一步，不能把未知變成證據。", "復原卡是決策輔助，不是任務、模型或學習者成功的證據。",
+        ],
+    ),
+    "fr": (
+        "Carte de reprise / la preuve d’abord",
+        "Cette carte conserve l’affirmation et la trace réelle, repère le premier manque de preuve, puis choisit un contrôle autorisé ou un arrêt clair. Elle ne transforme pas l’inconnu en preuve.",
+        [
+            "CARTE DE REPRISE / LA PREUVE D’ABORD", "ARRÊTEZ-VOUS AU", "PREMIER MANQUE DE PREUVE.", "Un résumé bien tourné n’est pas un relevé. Gardez le premier manque visible,", "puis choisissez un contrôle autorisé — ou arrêtez-vous sans inventer de réussite.",
+            "01 / AFFIRMATION", "DITES CE QUE « TERMINÉ » VEUT DIRE.", "Fichier, réponse, test, livraison ou décision — pas une certitude.", "02 / RELEVÉ", "EXAMINEZ LA TRACE RÉELLE.", "Lisez le diff, le code de sortie, la source, la capture, le journal ou la relecture.",
+            "03 / PREMIER MANQUE", "NOMMEZ CE QUI MANQUE.", "Marquez partiel, non vérifié, bloqué ou inconnu. N’inférez pas l’acceptation.", "04 / DÉCISION SUIVANTE", "CONTRÔLE SÛR — OU ARRÊT.", "Une seule condition. N’élargissez pas l’autorité pour faire passer le résultat.",
+            "GARDEZ LE RELEVÉ", "CONSERVEZ L’ERREUR, LE PÉRIMÈTRE,", "L’ÉTAT ET LE DERNIER POINT DE CONTRÔLE.", "Le relevé peut soutenir une prochaine étape délimitée ; il ne transforme pas l’inconnu en preuve.", "Carte de reprise : aide à décider, sans prouver la réussite d’une tâche, d’un modèle ou d’un apprenant.",
+        ],
+    ),
+})
 
 
 add_asset_locales("foundation-first-visit-route-red-black.svg", {
@@ -1163,6 +1283,270 @@ add_asset_locales("skill-trigger-boundary-decision-map.svg", {
 })
 
 
+add_asset_locales("skill-to-observable-output.svg", {
+    "zh": (
+        "Skill 契约如何留下可检查的产出",
+        "这张红黑教学图把 Skill 的四个决定连到可检查的产出：触发、输入关卡、有边界的方法和可观察回执。下方验证轨道要求正面、边界、失败和迁移四类案例。",
+        [
+            "SKILL 契约 → 可观察产出", "方法 / 不是魔法", "四个决定。一个可检查的结果。", "问题决定范围；每次交接都要看得见权限。",
+            "01 / 触发", "说清任务。", "这个方法何时", "最适合这项工作？", "产出：路由或让出",
+            "02 / 输入关卡", "先检查。", "必须有什么？", "缺少哪项事实就要停下？", "缺少输入 → 停下",
+            "03 / 有边界的方法", "分开各项行动。", "允许 / 禁止 / 可回退", "目标 / 负责人 / 停止 / 回滚", "能力 ≠ 权限",
+            "04 / 可观察产出", "留下别人可以", "检查的证据。", "文件 · 差异 · 日志 · 截图", "产出 + 限制 + 状态",
+            "验证轨道", "正面", "边界", "失败", "迁移", "适用于指定任务", "超出范围时让出", "诚实地停止或恢复", "面对变式仍然有效",
+            "项目原创图形 · 不含外部媒体", "PRYSAI LAB / 候选",
+        ],
+    ),
+    "es": (
+        "Un Skill convierte un contrato en un resultado comprobable",
+        "Esta lámina roja y negra conecta cuatro decisiones de un Skill con un resultado comprobable: activación, filtro de entrada, método acotado y comprobante observable. El carril inferior exige casos positivos, de límite, de fallo y de transferencia.",
+        [
+            "CONTRATO DE SKILL → RESULTADO COMPROBABLE", "MÉTODO / NO MAGIA", "Cuatro decisiones. Un resultado inspeccionable.", "El alcance sigue a la pregunta; la autoridad queda visible en cada entrega.",
+            "01 / ACTIVACIÓN", "Di la tarea.", "¿Cuándo encaja", "mejor este método?", "SALIDA: DIRIGIR O CEDER",
+            "02 / FILTRO DE ENTRADA", "Comprueba primero.", "¿Qué debe estar presente?", "¿Qué falta lo detiene?", "ENTRADA AUSENTE → PARAR",
+            "03 / MÉTODO ACOTADO", "Separa las acciones.", "Permitido / prohibido / reversible", "Meta / dueño / parar / revertir", "CAPACIDAD ≠ AUTORIDAD",
+            "04 / RESULTADO INSPECCIONABLE", "Deja una prueba", "que otra persona revise.", "Archivo · diff · registro · captura", "RESULTADO + LÍMITE + ESTADO",
+            "CARRIL DE VERIFICACIÓN", "POSITIVO", "LÍMITE", "FALLO", "TRANSFERENCIA", "funciona en el trabajo nombrado", "cede fuera de su alcance", "se detiene o recupera con honestidad", "resiste un ejemplo distinto",
+            "PROYECTO ORIGINAL · SIN MEDIOS EXTERNOS", "PRYSAI LAB / CANDIDATO",
+        ],
+    ),
+    "ja": (
+        "Skill の契約を確認できる成果物につなぐ",
+        "この赤と黒の教材図は、Skill の4つの判断を確認できる成果物へつなぎます。トリガー、入力ゲート、範囲を区切った方法、確認できる成果物を示し、下の検証レールで肯定・境界・失敗・転用の4ケースを求めます。",
+        [
+            "SKILL の契約 → 確認できる成果物", "方法 / 魔法ではない", "4つの判断。1つの確認できる結果。", "問いに合わせて範囲を決め、引き継ぎごとに権限を見えるようにする。",
+            "01 / トリガー", "仕事を決める。", "この方法が", "最も合うのはいつ？", "出力：案内または譲る",
+            "02 / 入力ゲート", "まず確認する。", "何がそろっていればよい？", "何が足りないと止める？", "入力不足 → 停止",
+            "03 / 範囲を区切った方法", "行動を分ける。", "許可 / 禁止 / 元に戻せる", "対象 / 担当 / 停止 / 復旧", "能力 ≠ 権限",
+            "04 / 確認できる成果物", "別の人が確認できる", "証拠を残す。", "ファイル・差分・ログ・スクリーンショット", "成果物 + 限界 + 状態",
+            "検証レール", "肯定", "境界", "失敗", "転用", "指定した仕事で機能する", "範囲外では譲る", "正直に停止または復旧する", "変えた例でも持ちこたえる",
+            "プロジェクト作成 · 外部メディアなし", "PRYSAI LAB / candidate",
+        ],
+    ),
+    "ko": (
+        "Skill 계약에서 확인 가능한 산출물로",
+        "이 빨강·검정 교육 그림은 Skill의 네 가지 결정을 확인 가능한 산출물로 연결합니다. 트리거, 입력 관문, 범위가 정해진 방법과 확인 가능한 산출물을 보여 주고, 아래 검증 레일에서 긍정·경계·실패·전이 네 가지 사례를 요구합니다.",
+        [
+            "SKILL 계약 → 확인 가능한 산출물", "방법 / 마법이 아닙니다", "네 가지 결정. 하나의 점검 가능한 결과.", "질문에 맞춰 범위를 정하고 인계할 때마다 권한을 드러냅니다.",
+            "01 / 트리거", "작업 정하기.", "이 방법이", "언제 가장 잘 맞나요?", "출력: 연결 또는 양보",
+            "02 / 입력 관문", "먼저 확인하세요.", "무엇이 있어야 하나요?", "무엇이 없으면 멈추나요?", "입력 누락 → 중지",
+            "03 / 범위가 정해진 방법", "행동을 분리하세요.", "허용 / 금지 / 되돌릴 수 있음", "대상 / 담당자 / 중지 / 복구", "능력 ≠ 권한",
+            "04 / 확인 가능한 산출물", "다른 사람이 확인할", "증거를 남기세요.", "파일 · diff · 로그 · 스크린샷", "산출물 + 한계 + 상태",
+            "검증 레일", "긍정", "경계", "실패", "전이", "지정한 작업에서 작동", "범위를 벗어나면 양보", "정직하게 중지하거나 복구", "바뀐 예에서도 견딤",
+            "프로젝트 원본 도형 · 외부 미디어 없음", "PRYSAI LAB / candidate",
+        ],
+    ),
+    "de": (
+        "Ein Skill-Vertrag führt zu einem prüfbaren Ergebnis",
+        "Diese Lehrgrafik in Rot und Schwarz verbindet vier Entscheidungen eines Skills mit einem prüfbaren Ergebnis: Auslöser, Eingabeprüfung, begrenzte Methode und prüfbarer Beleg. Die untere Prüfschiene verlangt positive, begrenzte, fehlerhafte und übertragene Fälle.",
+        [
+            "SKILL-VERTRAG → PRÜFBARES ERGEBNIS", "METHODE / KEINE MAGIE", "Vier Entscheidungen. Ein prüfbares Ergebnis.", "Die Frage bestimmt den Umfang; bei jeder Übergabe bleibt die Berechtigung sichtbar.",
+            "01 / AUSLÖSER", "Nenne sie.", "Wann passt diese", "Methode am engsten?", "AUSGABE: WEITER ODER ABGEBEN",
+            "02 / EINGABEPRÜFUNG", "Zuerst prüfen.", "Was muss vorhanden sein?", "Welche Lücke stoppt sie?", "EINGABE FEHLT → STOPP",
+            "03 / BEGRENZTE METHODE", "Trenne die Aktionen.", "Erlaubt / verboten / umkehrbar", "Ziel / Verantwortung / Stopp / Rückweg", "FÄHIGKEIT ≠ BERECHTIGUNG",
+            "04 / PRÜFBARES ERGEBNIS", "Lass einen Beleg da,", "den andere prüfen können.", "Datei · Diff · Log · Screenshot", "ERGEBNIS + GRENZE + STATUS",
+            "PRÜFRAIL", "POSITIV", "GRENZE", "FEHLER", "ÜBERTRAGUNG", "funktioniert bei der benannten Aufgabe", "gibt außerhalb des Umfangs ab", "stoppt oder stellt ehrlich wieder her", "hält ein verändertes Beispiel aus",
+            "PROJEKTEIGENE GRAFIK · KEINE EXTERNEN MEDIEN", "PRYSAI LAB / KANDIDAT",
+        ],
+    ),
+    "zh-tw": (
+        "Skill 契約如何留下可檢查的產出",
+        "這張紅黑教學圖把 Skill 的四個決定連到可檢查的產出：觸發、輸入關卡、有界線的方法和可觀察紀錄。下方驗證軌道要求正面、界線、失敗和遷移四類案例。",
+        [
+            "SKILL 契約 → 可觀察產出", "方法／不是魔法", "四個決定。一個可檢查的結果。", "問題決定範圍；每次交接都要讓權限保持可見。",
+            "01／觸發", "說清楚工作。", "這個方法何時", "最適合這項工作？", "產出：導向或讓出",
+            "02／輸入關卡", "先檢查。", "必須具備什麼？", "缺少哪個事實就要停下？", "缺少輸入 → 停止",
+            "03／有界線的方法", "分開各項行動。", "允許／禁止／可復原", "目標／負責人／停止／回滾", "能力 ≠ 權限",
+            "04／可觀察產出", "留下別人可以", "檢查的證據。", "檔案・差異・紀錄・截圖", "產出＋限制＋狀態",
+            "驗證軌道", "正面", "界線", "失敗", "遷移", "適用於指定工作", "超出範圍時讓出", "誠實地停止或復原", "面對變式仍然有效",
+            "專案原創圖形・不含外部媒體", "PRYSAI LAB／候選",
+        ],
+    ),
+    "fr": (
+        "Un contrat de Skill mène à un résultat vérifiable",
+        "Cette planche rouge et noire relie quatre décisions d’un Skill à un résultat vérifiable : déclencheur, filtre d’entrée, méthode délimitée et résultat observable. Le rail inférieur exige quatre cas : positif, limite, échec et transfert.",
+        [
+            "CONTRAT DE SKILL → RÉSULTAT VÉRIFIABLE", "MÉTHODE / PAS DE MAGIE", "Quatre décisions. Un résultat vérifiable.", "La question fixe le périmètre ; l’autorité reste visible à chaque transmission.",
+            "01 / DÉCLENCHEUR", "Nommez-la.", "Quand cette méthode", "est-elle la plus adaptée ?", "SORTIE : ORIENTER OU CÉDER",
+            "02 / FILTRE D’ENTRÉE", "Vérifiez d’abord.", "Que faut-il avoir ?", "Quelle absence l’arrête ?", "ENTRÉE MANQUANTE → ARRÊT",
+            "03 / MÉTHODE DÉLIMITÉE", "Séparez les actions.", "Autorisé / interdit / réversible", "Cible / responsable / arrêt / reprise", "CAPACITÉ ≠ AUTORITÉ",
+            "04 / RÉSULTAT VÉRIFIABLE", "Laissez une preuve", "qu’un tiers puisse vérifier.", "Fichier · diff · journal · capture", "RÉSULTAT + LIMITE + STATUT",
+            "RAIL DE VÉRIFICATION", "POSITIF", "LIMITE", "ÉCHEC", "TRANSFERT", "fonctionne pour le travail nommé", "cède hors de son périmètre", "s’arrête ou reprend honnêtement", "résiste à un exemple différent",
+            "GRAPHIQUE ORIGINAL DU PROJET · SANS MÉDIA EXTERNE", "PRYSAI LAB / CANDIDAT",
+        ],
+    ),
+})
+
+
+add_asset_locales("lifecycle-checkpoints.svg", {
+    "zh": (
+        "工作流通过可检查的出口逐步前进",
+        "这张七阶段教学图把工作流分成两条阅读带，每个阶段都标出出口证据。缺少出口时，路径会明确分支到停止与恢复。",
+        [
+            "工作流控制／07 个阶段／08", "没有出口证据，就不能前进。", "Agent 继续行动不等于检查点；可检查的产出才是。", "A 区／框定与制作",
+            "01", "定义", "目标／范围／非目标", "出口／验收＋停止", "02", "计划", "切片／依赖／风险", "出口／有序检查点", "03", "构建", "有范围的差异／变更文件", "出口／可回退的变更", "04", "验证", "命令／退出／运行时／限制", "出口／与声明匹配的证明",
+            "B 区／判断、交接、保持现状", "05", "审查", "声明图／独立阅读／风险", "出口／接受、修改、拒绝", "06", "交付", "差异／日志／缺口／交接", "出口／有边界的回执", "07", "维护", "负责人／审查／回滚", "出口／标注下一次检查日期", "缺少出口？", "停止", "恢复", "保留最后状态",
+            "教学模型／每个出口都有声明范围／单张截图不能证明工作流已经运行",
+        ],
+    ),
+    "es": (
+        "Un flujo de trabajo avanza mediante salidas comprobables",
+        "Esta lámina de siete etapas divide el flujo en dos bandas de lectura y nombra la evidencia de salida de cada etapa. Si falta una salida, muestra una rama clara hacia parar y recuperar.",
+        [
+            "CONTROL DEL FLUJO / 07 ETAPAS / 08", "SIN EVIDENCIA DE SALIDA, NO AVANCES.", "Que el Agent siga adelante no es un punto de control; lo es un artefacto inspeccionable.", "BANDA A / ENCUADRAR Y HACER",
+            "01", "DEFINIR", "objetivo / alcance / no objetivos", "SALIDA / ACEPTACIÓN + PARADA", "02", "PLANIFICAR", "cortes / dependencias / riesgos", "SALIDA / CONTROLES ORDENADOS", "03", "CONSTRUIR", "diff acotado / archivos modificados", "SALIDA / CAMBIO REVERSIBLE", "04", "VERIFICAR", "comando / salida / ejecución / límites", "SALIDA / PRUEBA VINCULADA",
+            "BANDA B / JUZGAR, ENTREGAR, MANTENER EL ESTADO", "05", "REVISAR", "afirmaciones / lectura / riesgos", "SALIDA / ACEPTAR, CORREGIR, RECHAZAR", "06", "ENTREGAR", "diff / registros / brechas / entrega", "SALIDA / REGISTRO ACOTADO", "07", "MANTENER", "responsable / revisión / reversión", "SALIDA / PRÓXIMO CONTROL FECHADO", "¿FALTA UNA SALIDA?", "PARA", "RECUPERA", "CONSERVA EL ÚLTIMO ESTADO",
+            "MODELO DIDÁCTICO / CADA SALIDA TIENE SU ALCANCE DE AFIRMACIÓN / UNA CAPTURA SOLA NO DEMUESTRA QUE EL FLUJO SE HAYA EJECUTADO",
+        ],
+    ),
+    "ja": (
+        "ワークフローは確認できる出口を通って進む",
+        "7段階の教材図です。ワークフローを2つの読み取り帯に分け、各段階の出口に必要な証拠を示します。出口がなければ、停止と復旧への分岐が見える形で現れます。",
+        [
+            "ワークフロー管理 / 07段階 / 08", "出口の証拠がなければ、先へ進まない。", "Agent が先へ進んでもチェックポイントではない。確認できる成果物がチェックポイントだ。", "A帯 / 枠を決めて作る",
+            "01", "定義", "目標 / 範囲 / 対象外", "出口 / 受け入れ + 停止", "02", "計画", "スライス / 依存関係 / リスク", "出口 / 順序付きチェックポイント", "03", "構築", "範囲内の差分 / 変更ファイル", "出口 / 元に戻せる変更", "04", "検証", "コマンド / 終了 / 実行時 / 制限", "出口 / 主張に対応する証拠",
+            "B帯 / 判断、引き継ぎ、現状維持", "05", "レビュー", "主張マップ / 独立した読み返し / リスク", "出口 / 受け入れ、修正、却下", "06", "引き渡し", "差分 / ログ / 抜け / 引き継ぎ", "出口 / 範囲を区切った記録", "07", "保守", "担当者 / レビュー / 復元", "出口 / 次の確認日を記す", "出口がない？", "止まる", "復旧する", "最後の状態を残す",
+            "教材モデル / 各出口には主張の範囲がある / 1枚のスクリーンショットだけではワークフローの実行を証明できない",
+        ],
+    ),
+    "ko": (
+        "워크플로는 확인 가능한 종료 지점을 거쳐 나아갑니다",
+        "이 일곱 단계 교육 그림은 워크플로를 두 개의 읽기 구간으로 나누고 각 단계의 종료 증거를 보여 줍니다. 종료 지점이 없으면 멈춤과 복구로 가는 분기가 드러납니다.",
+        [
+            "워크플로 제어 / 07단계 / 08", "종료 증거가 없으면 앞으로 나아가지 마세요.", "Agent가 계속 진행하는 것은 체크포인트가 아닙니다. 확인할 수 있는 산출물이 체크포인트입니다.", "A 구간 / 틀을 잡고 만들기",
+            "01", "정의", "목표 / 범위 / 제외할 것", "종료 / 수용 + 중지", "02", "계획", "슬라이스 / 의존성 / 위험", "종료 / 순서가 있는 체크포인트", "03", "구축", "범위가 정해진 diff / 변경 파일", "종료 / 되돌릴 수 있는 변경", "04", "검증", "명령 / 종료 / 실행 시점 / 한계", "종료 / 주장에 맞춘 증거",
+            "B 구간 / 판단, 인계, 현재 상태 유지", "05", "검토", "주장 지도 / 독립적인 재검토 / 위험", "종료 / 수용, 수정, 거부", "06", "전달", "diff / 로그 / 빈틈 / 인계", "종료 / 범위가 제한된 기록", "07", "유지보수", "담당자 / 검토 / 복구", "종료 / 다음 점검 날짜를 기록", "종료 지점이 없나요?", "멈추세요", "복구하세요", "마지막 상태를 보존하세요",
+            "교육 모델 / 각 종료 지점에는 주장의 범위가 있습니다 / 스크린샷 한 장만으로는 워크플로 실행을 증명할 수 없습니다",
+        ],
+    ),
+    "de": (
+        "Ein Workflow geht über prüfbare Ausstiege weiter",
+        "Diese Lehrgrafik mit sieben Stufen teilt den Workflow in zwei Lesebänder und benennt den Ausstiegsbeleg jeder Stufe. Fehlt ein Ausstieg, führt eine sichtbare Verzweigung zu Stopp und Wiederherstellung.",
+        [
+            "WORKFLOW-STEUERUNG / 07 STUFEN / 08", "OHNE AUSSTIEGSBELEG KEIN WEITER.", "Dass der Agent weitergeht, ist kein Checkpoint; ein prüfbares Artefakt ist es.", "BAND A / ABGRENZEN UND MACHEN",
+            "01", "DEFINIEREN", "Ziel / Umfang / Nicht-Ziele", "AUSSTIEG / ABNAHME + STOPP", "02", "PLANEN", "Slices / Abhängigkeiten / Risiken", "AUSSTIEG / CHECKPOINT-REIHE", "03", "BAUEN", "begrenzter Diff / Dateien", "AUSSTIEG / UMKEHRBAR", "04", "PRÜFEN", "Befehl / Exit / Laufzeit / Grenzen", "AUSSTIEG / AUSSAGE-BELEG",
+            "BAND B / BEURTEILEN, ÜBERGEBEN, STATUS HALTEN", "05", "BEGUTACHTEN", "AUSSAGEN / SELBST PRÜFEN / RISIKEN", "AUSSTIEG / ANNEHMEN / ÄNDERN / ABLEHNEN", "06", "ÜBERGEBEN", "Diff / Logs / Lücken / Übergabe", "AUSSTIEG / BEGRENZTES PROTOKOLL", "07", "PFLEGEN", "Verantwortung / Prüfung / Rückweg", "AUSSTIEG / NÄCHSTE PRÜFUNG", "AUSSTIEG FEHLT?", "STOPP", "BEHEBEN", "STATUS SICHERN",
+            "LEHRMODELL / JEDER AUSSTIEG HAT EINEN AUSSAGENUMFANG / EIN EINZELNER SCREENSHOT BEWEIST NICHT, DASS DER WORKFLOW GELAUFEN IST",
+        ],
+    ),
+    "zh-tw": (
+        "工作流程透過可檢查的出口逐步前進",
+        "這張七階段教學圖把工作流程分成兩條閱讀帶，每個階段都標出出口證據。缺少出口時，路徑會清楚分支到停止與復原。",
+        [
+            "工作流程控制／07 個階段／08", "沒有出口證據，就不能前進。", "Agent 繼續往下走不等於檢查點；可供檢查的產出才是。", "A 區／框定與製作",
+            "01", "定義", "目標／範圍／非目標", "出口／驗收＋停止", "02", "計畫", "切片／相依性／風險", "出口／有序檢查點", "03", "建置", "有界線的差異／變更檔案", "出口／可復原的變更", "04", "驗證", "命令／結束／執行期／限制", "出口／與主張相符的證據",
+            "B 區／判斷、交接、維持現狀", "05", "審查", "主張圖／獨立閱讀／風險", "出口／接受、修訂、拒絕", "06", "交付", "差異／紀錄檔／缺口／交接", "出口／有界線的紀錄", "07", "維護", "負責人／審查／復原", "出口／標記下次檢查日期", "缺少出口？", "停止", "復原", "保留最後狀態",
+            "教學模型／每個出口都有主張範圍／單張螢幕截圖不能證明工作流程已執行",
+        ],
+    ),
+    "fr": (
+        "Un flux de travail avance par des sorties vérifiables",
+        "Cette planche en sept étapes divise le flux en deux bandes de lecture et nomme la preuve de sortie de chaque étape. Si une sortie manque, une branche visible mène à l’arrêt et à la reprise.",
+        [
+            "PILOTAGE DU FLUX / 07 ÉTAPES / 08", "SANS PREUVE DE SORTIE, N’AVANCEZ PAS.", "Le fait que l’Agent continue n’est pas un point de contrôle ; un artefact vérifiable, oui.", "BANDE A / CADRER ET PRODUIRE",
+            "01", "DÉFINIR", "objectif / périmètre / exclusions", "SORTIE / ACCEPTATION + ARRÊT", "02", "PLANIFIER", "découpage / dépendances / aléas", "SORTIE / CONTRÔLES ORDONNÉS", "03", "CONSTRUIRE", "diff délimité / fichiers", "SORTIE / MODIFICATION RÉVERSIBLE", "04", "VÉRIFIER", "commande / fin / exécution / limites", "SORTIE / PREUVE LIÉE",
+            "BANDE B / JUGER, TRANSMETTRE, MAINTENIR L’ÉTAT", "05", "RELIRE", "carte / revue autonome / risques", "SORTIE / ACCEPTER, RÉVISER, REJETER", "06", "LIVRER", "diff / journaux / écarts / transmission", "SORTIE / RELEVÉ DÉLIMITÉ", "07", "MAINTENIR", "responsable / revue / retour", "SORTIE / CONTRÔLE DATÉ", "SORTIE ABSENTE ?", "ARRÊTEZ", "RÉTABLIR", "CONSERVER L’ÉTAT",
+            "MODÈLE PÉDAGOGIQUE / CHAQUE SORTIE A UN PÉRIMÈTRE D’AFFIRMATION / UNE SIMPLE CAPTURE D’ÉCRAN NE PROUVE PAS QUE LE FLUX A ÉTÉ EXÉCUTÉ",
+        ],
+    ),
+})
+
+
+add_asset_locales("evidence-maturity-ladder-red-black.svg", {
+    "zh": (
+        "证据成熟度阶梯",
+        "这张五阶段阶梯图从已设计的教学契约走到独立复核。每一阶段都说明它能支持什么、不能支持什么，以及进入下一阶段需要保留的证据。",
+        [
+            "证据／成熟度", "不要跳过", "证据。", "页面写完，不等于方法有人练过、迁移过或复核过。",
+            "01", "已设计", "契约已经写下。", "可以支持：一套清楚的预期方法。", "不能支持：任何人都能使用它的结论。",
+            "02", "已呈现", "页面和路线可以使用。", "可以支持：读者能够到达材料。", "不能支持：读者已经理解或使用了材料。",
+            "03", "已练习", "学习者实际运行了任务。", "可以支持：一次可观察的尝试及其结果。", "不能支持：在新任务上的可靠表现。",
+            "04", "已迁移", "方法经得起任务变化。", "可以支持：超出首个示例的复用证据。", "不能支持：普遍或永久有效的技能结论。",
+            "05", "已独立复核", "另一个人重新运行并检查。", "可以支持：在明确范围内得到交叉验证的结果。", "不能支持：超出已复核条件的结论。",
+            "下一项证据", "说清你已有的阶段，只收集能推动它前进的证据。",
+        ],
+    ),
+    "es": (
+        "Escalera de madurez de la evidencia",
+        "Esta escalera de cinco etapas va desde un contrato didáctico diseñado hasta una revisión independiente. Cada etapa indica qué permite afirmar, qué no permite afirmar y qué evidencia hace falta para avanzar.",
+        [
+            "EVIDENCIA / MADUREZ", "NO TE SALTES", "LA EVIDENCIA.", "Una página completa no equivale a un método practicado, transferido y revisado.",
+            "01", "DISEÑADO", "El contrato está escrito.", "Permite afirmar: un método previsto y claro.", "No permite afirmar: que cualquiera pueda usarlo.",
+            "02", "RENDERIZADO", "La página y la ruta funcionan.", "Permite afirmar: que un lector puede llegar al material.", "No permite afirmar: que lo haya entendido o usado.",
+            "03", "PRACTICADO", "Un aprendiz ejecuta la tarea.", "Permite afirmar: un intento observado y su resultado.", "No permite afirmar: un rendimiento fiable en una tarea nueva.",
+            "04", "TRANSFERIDO", "El método resiste una tarea distinta.", "Permite afirmar: evidencia de reutilización más allá del primer ejemplo.", "No permite afirmar: una capacidad universal o permanente.",
+            "05", "REVISADO DE FORMA INDEPENDIENTE", "Otra persona lo repite y lo comprueba.", "Permite afirmar: un resultado corroborado dentro de un alcance definido.", "No permite afirmar: conclusiones fuera de las condiciones revisadas.",
+            "PRÓXIMA EVIDENCIA", "Nombra la etapa que tienes y reúne solo lo que la haga avanzar.",
+        ],
+    ),
+    "ja": (
+        "証拠の成熟度ラダー",
+        "この5段階のラダーは、設計した教材契約から独立レビューまでを示します。各段階で言えること、言えないこと、次へ進むために必要な証拠を分けます。",
+        [
+            "証拠 / 成熟度", "飛ばさない", "証拠。", "ページが完成していても、方法が実践・転用・レビュー済みとは限らない。",
+            "01", "設計済み", "契約が書かれている。", "支えられること：意図した方法が明確である。", "支えられないこと：誰でも使えるという主張。",
+            "02", "表示済み", "ページとルートが機能する。", "支えられること：読者が教材にたどり着ける。", "支えられないこと：読者が理解・使用したという主張。",
+            "03", "実践済み", "学習者が課題を実行する。", "支えられること：観察できる試行と結果。", "支えられないこと：新しい課題で安定して実行できること。",
+            "04", "転用済み", "方法が変化した課題でも通用する。", "支えられること：最初の例を越えた再利用の証拠。", "支えられないこと：普遍的・永続的なスキルの主張。",
+            "05", "独立レビュー済み", "別の人が再実行して確認する。", "支えられること：明示した範囲で裏付けられた結果。", "支えられないこと：レビュー条件の外にある主張。",
+            "次の証拠", "今ある段階を示し、前に進める証拠だけを集める。",
+        ],
+    ),
+    "ko": (
+        "증거 성숙도 단계표",
+        "이 다섯 단계는 설계한 교육 계약에서 독립 검토까지 이어집니다. 각 단계가 뒷받침하는 것과 뒷받침하지 못하는 것, 다음 단계에 필요한 증거를 나눠 보여 줍니다.",
+        [
+            "증거 / 성숙도", "건너뛰지 마세요", "증거를.", "페이지가 완성됐다고 해서 방법을 연습·전이·검토했다는 뜻은 아닙니다.",
+            "01", "설계됨", "계약이 작성되었습니다.", "말할 수 있는 것: 의도한 방법이 분명하다는 사실.", "말할 수 없는 것: 누구나 사용할 수 있다는 주장.",
+            "02", "렌더링됨", "페이지와 경로가 작동합니다.", "말할 수 있는 것: 독자가 자료에 도달할 수 있다는 사실.", "말할 수 없는 것: 독자가 이해했거나 사용했다는 주장.",
+            "03", "연습됨", "학습자가 작업을 실행합니다.", "말할 수 있는 것: 관찰된 시도와 그 결과.", "말할 수 없는 것: 새 작업에서도 안정적으로 수행한다는 주장.",
+            "04", "전이됨", "작업이 바뀌어도 방법이 유지됩니다.", "말할 수 있는 것: 첫 사례를 넘어 재사용했다는 증거.", "말할 수 없는 것: 보편적이거나 영구적인 숙련 주장.",
+            "05", "독립 검토됨", "다른 사람이 다시 실행하고 확인합니다.", "말할 수 있는 것: 명시한 범위에서 재확인된 결과.", "말할 수 없는 것: 검토한 조건 밖의 주장.",
+            "다음 증거", "현재 가진 단계를 밝히고, 그 단계를 앞으로 옮길 증거만 모으세요.",
+        ],
+    ),
+    "de": (
+        "Leiter der Belegreife",
+        "Diese Leiter mit fünf Stufen führt vom entworfenen Lehrvertrag bis zur unabhängigen Prüfung. Jede Stufe nennt, was sie trägt, was sie nicht trägt und welcher Beleg den nächsten Schritt ermöglicht.",
+        [
+            "BELEG / REIFE", "NICHT ÜBERSPRINGEN", "DIE BELEGE.", "Eine fertige Seite ist nicht dasselbe wie eine geübte, übertragene und geprüfte Methode.",
+            "01", "ENTWORFEN", "Der Vertrag ist geschrieben.", "Trägt: eine klare beabsichtigte Methode.", "Trägt nicht: die Aussage, dass jeder sie nutzen kann.",
+            "02", "DARGESTELLT", "Seite und Route funktionieren.", "Trägt: Leser können das Material erreichen.", "Trägt nicht: dass Leser es verstanden oder genutzt haben.",
+            "03", "GEÜBT", "Eine lernende Person führt die Aufgabe aus.", "Trägt: einen beobachteten Versuch und sein Ergebnis.", "Trägt nicht: zuverlässige Leistung bei einer neuen Aufgabe.",
+            "04", "ÜBERTRAGEN", "Die Methode hält eine veränderte Aufgabe aus.", "Trägt: Belege für Wiederverwendung über das erste Beispiel hinaus.", "Trägt nicht: eine universelle oder dauerhafte Kompetenzbehauptung.",
+            "05", "UNABHÄNGIG GEPRÜFT", "Eine andere Person führt sie erneut aus und prüft sie.", "Trägt: ein bestätigtes Ergebnis innerhalb eines benannten Umfangs.", "Trägt nicht: Aussagen außerhalb der geprüften Bedingungen.",
+            "NÄCHSTER BELEG", "Nenne die vorhandene Stufe und sammle nur, was sie weiterbringt.",
+        ],
+    ),
+    "zh-tw": (
+        "證據成熟度階梯",
+        "這張五階段階梯圖從已設計的教學契約走到獨立複核。每個階段都說明能支持什麼、不能支持什麼，以及進入下一階段需要保留的證據。",
+        [
+            "證據／成熟度", "不要跳過", "證據。", "頁面完成，不代表方法有人練習過、遷移過或經過複核。",
+            "01", "已設計", "契約已經寫下。", "可以支持：一套清楚的預期方法。", "不能支持：任何人都能使用它的主張。",
+            "02", "已呈現", "頁面和路線可以使用。", "可以支持：讀者能夠到達教材。", "不能支持：讀者已經理解或使用教材。",
+            "03", "已練習", "學習者實際執行了任務。", "可以支持：一次可觀察的嘗試及其結果。", "不能支持：在新任務上的可靠表現。",
+            "04", "已遷移", "方法經得起任務變化。", "可以支持：超出第一個範例的再利用證據。", "不能支持：普遍或永久有效的技能主張。",
+            "05", "已獨立複核", "另一個人重新執行並檢查。", "可以支持：在明確範圍內得到交叉驗證的結果。", "不能支持：超出已複核條件的主張。",
+            "下一項證據", "說清楚你已有的階段，只收集能推動它前進的證據。",
+        ],
+    ),
+    "fr": (
+        "Échelle de maturité des preuves",
+        "Cette échelle en cinq étapes va du contrat pédagogique conçu à la revue indépendante. Chaque étape précise ce qu’elle permet d’affirmer, ce qu’elle ne permet pas d’affirmer et la preuve nécessaire pour avancer.",
+        [
+            "PREUVES / MATURITÉ", "NE SAUTEZ PAS", "LES PREUVES.", "Une page complète ne signifie pas que la méthode a été pratiquée, transférée et relue.",
+            "01", "CONÇU", "Le contrat est écrit.", "Permet d’affirmer : une méthode prévue et claire.", "Ne permet pas d’affirmer : que chacun peut l’utiliser.",
+            "02", "RENDU", "La page et le parcours fonctionnent.", "Permet d’affirmer : qu’un lecteur peut atteindre le contenu.", "Ne permet pas d’affirmer : qu’il l’a compris ou utilisé.",
+            "03", "PRATIQUÉ", "Un apprenant exécute la tâche.", "Permet d’affirmer : un essai observé et son résultat.", "Ne permet pas d’affirmer : une performance fiable sur une nouvelle tâche.",
+            "04", "TRANSFÉRÉ", "La méthode résiste à une tâche différente.", "Permet d’affirmer : une preuve de réutilisation au-delà du premier exemple.", "Ne permet pas d’affirmer : une compétence universelle ou permanente.",
+            "05", "RELU INDÉPENDAMMENT", "Une autre personne la rejoue et la vérifie.", "Permet d’affirmer : un résultat corroboré dans un périmètre nommé.", "Ne permet pas d’affirmer : des conclusions hors des conditions relues.",
+            "PROCHAINE PREUVE", "Nommez l’étape que vous avez et réunissez seulement ce qui la fait avancer.",
+        ],
+    ),
+})
+
+
 def build() -> int:
     built = 0
     for asset, locale_specs in TRANSLATIONS.items():
@@ -1187,6 +1571,7 @@ def build() -> int:
                 ):
                     raise ValueError("{} / {} node {} is still English: {!r}".format(asset, locale, index, original))
             localized = replace_nodes(source, nodes)
+            localized = constrain_localized_text(localized, asset, locale)
             localized = replace_one(localized, TITLE_RE, spec_value["title"], "title")
             localized = replace_one(localized, DESC_RE, spec_value["desc"], "description")
             if VIEWBOX_RE.search(localized).group(1) != source_viewbox.group(1):

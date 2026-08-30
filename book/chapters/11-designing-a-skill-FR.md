@@ -31,7 +31,7 @@ Le travail difficile n’est pas d’ajouter des instructions. Il consiste à
 déterminer ce qui est assez stable pour être réutilisé sans créer un second
 gestionnaire de tâches impossible à contrôler.
 
-![Un contrat de Skill relie un déclencheur à un résultat observable](../../assets/teaching/skill-to-observable-output.svg)
+![Un contrat de Skill relie un déclencheur à un résultat observable](../../assets/teaching/locales/fr/skill-to-observable-output.svg)
 
 > Cette carte appartient au projet. Elle explique le lien entre contrat et
 > preuve ; elle ne représente pas une exécution réelle d’un Skill.

@@ -7,7 +7,8 @@ turn project rules into evidence that can be rerun locally and in CI.
 
 ```powershell
 $py = (Get-Command python -ErrorAction Stop).Source
-& $py scripts\run_tests.py
+& $py scripts\run_tests.py              # bounded parallel feedback (up to four workers)
+& $py scripts\run_tests.py --jobs 1     # serial mode for order-sensitive diagnosis
 & $py scripts\validate_project.py
 & $py scripts\validate_project_structure.py
 & $py scripts\validate_content_completeness.py
@@ -32,7 +33,8 @@ $py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\build_shift_handoff_blind_score_packets.py --check
 & $py scripts\test_build_shift_handoff_blind_score_packets.py
 & $py scripts\validate_executable_examples.py
-& $py scripts\test_executable_examples.py
+& $py scripts\test_executable_examples.py              # bounded parallel negative fixtures
+& $py scripts\test_executable_examples.py --jobs 1     # serial diagnostic mode
 & $py scripts\test_lab_008_reference.py
 & $py scripts\test_lab_013_reference.py
 & $py scripts\test_lab_001_first_safe_change_fixture.py
@@ -64,11 +66,12 @@ node scripts/browser_smoke.mjs
 
 `run_tests.py` is the standard regression entry point. It runs every focused
 `scripts/test_*.py` fixture and then the generic `tests/test_*.py` discovery
-suite. It deliberately does not replace the validators listed below: a test
-fixture protects a validator's behavior, while a validator checks the current
-repository data. A green run is repository-contract evidence only, not proof
-of learning, translation quality, model behavior, security outcomes, or
-release readiness.
+suite. Focused commands run as independent child processes with a bounded
+worker pool (up to four by default); use `--jobs 1` for a serial diagnostic
+run. A test fixture protects a validator's behavior, while a validator checks
+the current repository data. A green run is repository-contract evidence only,
+not proof of learning, translation quality, model behavior, security outcomes,
+or release readiness.
 
 The First Win pilot command validates only the checked-in preparation contract.
 An authorized pilot authorizer can generate a separate, ignored local package
@@ -185,8 +188,9 @@ reachable.
 
 `serve_pages_candidate.py` is the local preview companion. It rebuilds the
 bounded `_site/` artifact, serves only that directory on `127.0.0.1`, and
-disables directory listings. `--skip-build` validates the existing artifact
-before serving it. It is not a deployment command. Run
+disables directory listings. A fresh build is already validated by
+`build_pages_artifact.py`; `--skip-build` validates an existing artifact before
+serving it. It is not a deployment command. Run
 `test_build_pages_artifact.py` and `test_serve_pages_candidate.py` to check the
 artifact boundary, credential-signature and symlink guards, loopback binding,
 artifact root, listing boundary, and path-traversal boundary.
@@ -276,10 +280,13 @@ A `completed_reference_run` registration must also carry a safe output path,
 the frozen fixture-tree digest, runner command, packet-validator command, and
 fixture-test command. The validator reconciles those commands with the release
 evidence matrix and asks each test script for its named negative-fixture
-inventory only after the suite actually passes. It then replays the runner in
-a fresh `.work` directory, validates the packet, and compares a normalized
-semantic attestation digest that excludes timestamps and temporary-path IDs. A
-label, source directory, or prose evidence path cannot certify a run by itself.
+inventory only after the record's static contract passes. It then replays the
+runner in a fresh `.work` directory, validates the packet, and compares a
+normalized semantic attestation digest that excludes timestamps and
+temporary-path IDs. Invalid records stop before subprocess replay, so a broken
+manifest cannot spend time rebuilding an evidence packet that will be rejected
+anyway. A label, source directory, or prose evidence path cannot certify a run
+by itself.
 
 `test_lab_001_first_safe_change_fixture.py` checks the synthetic novice fixture:
 its seeded README fails first, exactly one declared README correction passes,

@@ -8,7 +8,7 @@
 ## 先從哪裡開始
 
 - 先讀[LLM 基礎概念](guides/llm-fundamentals-ZHTW.md)。
-- 接著做[第一次通用 LLM 練習](routes/universal-core-foundations-ZHTW.md)。
+- 接著做[通用 LLM 第一次練習](routes/universal-core-foundations-ZHTW.md)。
 - 需要安全檔案時，開啟[第一次安全改動路線](routes/first-safe-change-ZHTW.md)。
 - 完成前三步後，如想做低風險檔案練習，進入[第一次安全改動路線](routes/first-safe-change-ZHTW.md)，再做[實驗 001](labs/lab-001-first-safe-task-ZHTW.md)。
 - [新手提示卡](communication-clinic-ZHTW.md)是主線之後的可選應用練習，不是 LLM 基礎課。
@@ -59,8 +59,8 @@
 | 第 17 章：行銷軌——從產品理解到成長實驗 | [閱讀第 17 章](chapters/17-marketing-track-ZHTW.md) | `candidate` / `in-progress` |
 | 第 18 章：內容、設計、資料與自動化 | [閱讀第 18 章](chapters/18-content-design-data-automation-ZHTW.md) | `candidate` / `in-progress` |
 | 第 19 章：評估模型與工作流——從印象走向證據 | [閱讀第 19 章](chapters/19-evaluate-models-and-workflows-ZHTW.md) | `candidate` / `in-progress` |
-| 第 20 章：構建個人 Codex 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
-| 第 21 章：構建團隊能力系統 | [閱讀第 21 章](chapters/21-team-capability-system-ZHTW.md) | `candidate` / `in-progress` |
+| 第 20 章：建立個人 Codex 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
+| 第 21 章：建立團隊能力系統 | [閱讀第 21 章](chapters/21-team-capability-system-ZHTW.md) | `candidate` / `in-progress` |
 | 第 22 章：持續更新與面向未來 | [閱讀第 22 章](chapters/22-continuous-update-and-future-proofing-ZHTW.md) | `candidate` / `in-progress` |
 
 以下中文實驗已經提供，可在完成前兩篇之後按你的任務選擇：

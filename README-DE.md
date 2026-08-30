@@ -3,7 +3,7 @@
 # Prysai LLM Playbook — Von der ersten Aufgabe zu zuverlässiger Arbeit
 
 Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die [Lizenzgrenze (locale-neutral)](docs/sources/licensing.md).
-> Deutscher Einstiegspunkt — die Migration der für Leser sichtbaren Inhalte
+> Deutscher Einstiegspunkt — die deutsche Migration der für Leser sichtbaren Inhalte
 > ist in Arbeit.
 
 <!-- language-switcher:start -->
@@ -203,16 +203,19 @@ und werden nicht künstlich in acht Kopien aufgeteilt.
 
 ## Links bleiben in derselben Sprache
 
-Ein Link zu leserorientierten Inhalten muss bei vorhandenem Ziel denselben `content_id` und
+Ein Link zu für Leser sichtbaren Inhalten muss bei vorhandenem Ziel denselben `content_id` und
 dieselbe Locale behalten. Die deutsche Navigation verlinkt daher
 `README-DE.md` mit `book/README-DE.md` und `book/preface-DE.md`, nicht mit den
 englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
 Vor-/Zurück-Links, Kapitel-Lab-Verweise und Sprachumschalter.
 
-Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel. Leserlinks bleiben
-innerhalb dieser deutschen Kursroute. Gemeinsame Forschungs-, Governance- und
-Evaluationsmaterialien behalten ihre dokumentierte Originalsprache und werden
-als Evidenzmaterial bezeichnet, nicht als deutsche Kursseiten ausgegeben.
+Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel als struktureller
+Leserpfad. Diese Datei- und Pfadabdeckung bedeutet nicht, dass alle Texte
+übersetzt oder sprachlich geprüft sind; den aktuell bearbeiteten Umfang dieses
+deutschen Schnitts nennen wir unten separat. Gemeinsame Forschungs-,
+Governance- und Evaluationsmaterialien behalten ihre dokumentierte
+Originalsprache und werden als Evidenzmaterial bezeichnet, nicht als deutsche
+Kursseiten ausgegeben.
 
 ### Deutsche Einstiege
 
@@ -253,12 +256,14 @@ behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 - Das Projekt ist ein unabhängig gepflegtes Lern- und Praxissystem, keine
   offizielle Dokumentation und keine offizielle Produktseite von OpenAI.
 
-## Umfang der deutschen Route
+## Sichtbarer deutscher Pfad und redaktioneller Ausschnitt
 
-Für alle 22 Kapitel und 18 Labs gibt es inzwischen eine deutsche `-DE`-Datei
-und einen gleichsprachigen Reader-Pfad. Diese strukturelle Abdeckung bedeutet
-jedoch nicht, dass die Texte bereits unabhängig auf Deutsch geprüft, von
-Lernenden ausgeführt oder im Browser bestätigt wurden: Die Übersetzung bleibt
-`in-progress`, Kapitel bleiben `candidate` und Labs `draft / not_run`. Skills,
-Forschungsakten, Governance-Dateien und die öffentliche Website behalten ihren
-jeweils ausgewiesenen Übersetzungs- oder Neutralstatus.
+Die oben genannte Datei- und Pfadabdeckung stellt den deutschen Leserpfad und
+seine Links bereit. Der derzeit redaktionell ausgearbeitete erste deutsche
+Ausschnitt ist kleiner: Er umfasst den Projekteinstieg, den Buchleitfaden, das
+Vorwort, den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4
+sowie die Labs 001, 007 und 011. Die übrigen `-DE`-Dateien bleiben für das
+Routing sichtbar, sind aber nicht als vollständige deutsche Übersetzung oder
+Sprachprüfung zu verstehen. Das gilt ebenso für Skills, Forschungsakten und
+die öffentliche Website. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar,
+bis die jeweilige content ID tatsächlich übersetzt und geprüft wurde.

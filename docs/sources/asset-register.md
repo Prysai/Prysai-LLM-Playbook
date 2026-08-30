@@ -33,6 +33,20 @@
 
 **新增维护记录 S156：** 七个翻译版项目入口 `README-{ZH,ES,JA,KO,DE,ZHTW,FR}.md` 的 2026-08-28 更新，在首次学习路线旁直接引用对应语言的 `foundation-first-visit-route-red-black.svg`，让 GitHub 的静态 Markdown 阅读与 Reader 的运行时图片切换保持一致。`scripts/validate_teaching_assets.py`、`scripts/test_validate_teaching_assets.py`、`assets/teaching/README.md` 与 `docs/governance/visual-locale-matrix.yaml` 同步记录并检查这一规则。改动只使用项目自有、已登记的 SVG；它改善入口可读性和语言一致性，不证明视觉质量、理解效果、学习结果或翻译已达到母语级。
 
+**新增维护记录 S157：** 2026-08-29 为 `assets/teaching/lifecycle-checkpoints.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体，并在 Chapter 8、Chapter 10 的翻译版 Markdown 中直接引用对应 locale 路径；Reader、首页、Visual Guide 与单图查看器继续通过 `site/visual-assets.js` 解析同一组变体。每个变体保持源图的 `viewBox="0 0 1600 900"` 与 38 个 `<text>` 节点，只替换项目自有的标题、说明和可见图中文字。它们是候选教学解释，不证明图示已经执行、学习者已经理解或迁移方法，也不代表生产就绪。当前高频本地化图板为 9 个，另有 35 个图板明确使用英文回退；矩阵与 Reader 回归检查会保留这一披露边界。
+
+**新增维护记录 S158：** 2026-08-29 复核生命周期图的本地化渲染后，缩短德语与法语 `lifecycle-checkpoints.svg` 中会超出固定卡片宽度的出口标签，并同步更新 `scripts/build_localized_visual_assets.py` 的生成源。德语标签改为更短的 `CHECKPOINT-REIHE`、`AUSSAGE-BELEG`、`AUSSAGEN / SELBST PRÜFEN` 等表达；法语标签改为 `exclusions`、`CONTRÔLES ORDONNÉS`、`carte / revue` 等表达。修正保持每个 SVG 的 `viewBox` 与 38 个文字节点不变，并在默认宽屏和窄屏阅读尺寸重新检查文字边界；本记录只说明可见性修正，不证明视觉可访问性或学习效果。
+
+**新增维护记录 S159：** 2026-08-29 为 `assets/teaching/skill-to-observable-output.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体，并将法语 Chapter 11 的 Markdown 引用切换到 `assets/teaching/locales/fr/skill-to-observable-output.svg`。变体由 `scripts/build_localized_visual_assets.py` 根据项目自有文案生成，只替换标题、说明和可见文字，保持 `viewBox="0 0 1600 900"` 与 35 个 `<text>` 节点稳定；宽屏截图复核后又收紧了德语、西语、法语等固定卡片内的长标签，避免文字被相邻背景遮挡。没有引入外部媒体、字体、图标、脚本、文案或远程请求。该图与周边替代文字、说明和静态回退一样，只是 candidate 教学辅助，不证明图示已经执行、学习者已经理解、翻译达到母语级、学习或迁移效果、权限、安全或生产就绪。
+
+**新增维护记录 S160：** 2026-08-29 为 `assets/teaching/evidence-recovery-ladder.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体，并将中文、繁体中文与法语 Chapter 9 的 Markdown 引用切换到对应 locale 路径。变体由 `scripts/build_localized_visual_assets.py` 根据项目自有文案生成，只替换标题、说明和可见文字，保持 `viewBox="0 0 900 1400"` 与 22 个 `<text>` 节点稳定；Reader、首页、Visual Guide 与单图查看器继续通过 `site/visual-assets.js` 解析同一组变体。没有引入外部媒体、字体、图标、脚本、文案或远程请求。该图是候选证据恢复教学辅助，不证明恢复成功、学习者理解、翻译达到母语级或生产就绪；当前高频本地化图板为 11 个，另有 33 个图板明确使用英文回退。
+
+**新增维护记录 S161：** 2026-08-29 为 `assets/teaching/evidence-maturity-ladder-red-black.svg` 增加 `zh`、`es`、`ja`、`ko`、`de`、`zh-tw`、`fr` 七个项目自有语言变体。每个变体由 `scripts/build_localized_visual_assets.py` 从项目原创文案生成，只替换 `<title>`、`<desc>` 和 31 个可见 `<text>` 节点，保持 `viewBox="0 0 900 1500"`、节点顺序与阶段契约（designed、rendered、practiced、transferred、independently reviewed）稳定；`site/visual-assets.js`、Visual Guide、Reader 与单图查看器会把选定语言解析为 `localized` 状态，英语仍使用 source SVG。没有引入外部媒体、字体、图标、脚本、文案或远程请求。该阶梯图是候选披露辅助，不是评分表；它不证明学习者运行、理解、迁移、独立复核、翻译达到母语级或生产就绪。
+
+**新增维护记录 S162：** 2026-08-29 复核 `evidence-maturity-ladder-red-black.svg` 的本地化渲染后，为西语、德语和法语中确实会超出固定卡片的文字加入 `textLength` 与 `lengthAdjust="spacingAndGlyphs"` 几何约束，并在 `scripts/build_localized_visual_assets.py`、`scripts/test_validate_teaching_assets.py` 与 `scripts/visual_asset_geometry_smoke.mjs` 中固定其内边界。约束只作用于受影响的本地化节点，其他语言保持自然字宽；所有变体保留 31 个可访问文字节点和源图 `viewBox`。西语、德语、法语及其余语言的宽屏与窄屏渲染均重新检查，避免长译文越出卡片。它只说明可见性修正，不证明翻译达到母语级、学习者理解、迁移或生产就绪。
+
+**新增维护记录 S163：** 2026-08-29 重新按 SVG 变换矩阵检查 `evidence-maturity-ladder-red-black.svg` 后，发现德语第 03、04 阶段的长句仍会越过卡片右缘；为这两个节点补充 `textLength="646"`，并让 `scripts/visual_asset_geometry_smoke.mjs` 将变换后的文字边界还原到根 `viewBox` 后再检查。回归测试覆盖 8 个语言版本、31 个文字节点和固定内容边界。该记录只说明德语可见性与检测准确性修正，不证明翻译达到母语级、学习者理解、迁移或生产就绪。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

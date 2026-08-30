@@ -27,11 +27,20 @@ const locales = [
   ['fr', 'FR', 'Lab 003 : Auditer une affirmation de fin', 'Garder un essai assez petit pour être vérifiable'],
 ];
 const documentLanguages = { zh: 'zh-CN', 'zh-tw': 'zh-TW' };
+const readerOfficialSiteLabels = {
+  en: 'Prysai official website', zh: 'Prysai 官网', es: 'Sitio web oficial de Prysai',
+  ja: 'Prysai 公式サイト', ko: 'Prysai 공식 웹사이트', de: 'Offizielle Prysai-Website',
+  'zh-tw': 'Prysai 官方網站', fr: 'Site officiel de Prysai',
+};
 const localizedVisualAssets = new Set([
   'llm-six-terms-to-one-check.svg', 'foundation-first-visit-route-red-black.svg',
   'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
   'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
   'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+  'lifecycle-checkpoints.svg',
+  'skill-to-observable-output.svg',
+  'evidence-recovery-ladder.svg',
+  'evidence-maturity-ladder-red-black.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`
@@ -65,6 +74,10 @@ const firstTaskLocales = [
   ['de', 'DE', 'Lab 001: Eine sichere README-Änderung vornehmen', 'Die erste Aufgabe prüfbar machen'],
   ['zh-tw', 'ZHTW', '實驗 001：讓第一個請求變得可用', '讓第一次任務變得可檢查'],
   ['fr', 'FR', 'Lab 001 : Rendre la première demande exploitable', 'Rendre la première tâche vérifiable'],
+];
+const lifecycleLocales = [
+  ['en', 'EN'], ['zh', 'ZH'], ['es', 'ES'], ['ja', 'JA'],
+  ['ko', 'KO'], ['de', 'DE'], ['zh-tw', 'ZHTW'], ['fr', 'FR'],
 ];
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
@@ -119,6 +132,13 @@ try {
     assert.equal(await page.locator('html').getAttribute('lang'), documentLanguages[locale] || locale, `${locale} Reader changed the document language`);
     assert.equal((await page.locator('[data-reader-article] h1').innerText()).trim(), heading, `${locale} Lab 003 heading is not localized`);
 
+    const officialSite = page.locator('.reader-footer-site');
+    assert.equal(await officialSite.count(), 1, `${locale} Reader footer is missing the official-site link`);
+    assert.equal(await officialSite.getAttribute('href'), 'https://prysai.com/', `${locale} Reader footer official-site URL changed`);
+    assert.equal((await officialSite.textContent() || '').trim(), readerOfficialSiteLabels[locale], `${locale} Reader footer official-site label is not localized`);
+    assert.equal(await officialSite.getAttribute('target'), '_blank', `${locale} Reader footer official-site link should open separately`);
+    assert.equal(await officialSite.getAttribute('rel'), 'noreferrer', `${locale} Reader footer official-site link is missing its referrer boundary`);
+
     const visual = page.locator('[data-reader-inline-visual]');
     assert.equal(await visual.count(), 1, `${locale} Lab 003 is missing its inline teaching visual`);
     assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /experiment-record-anatomy-red-black\.svg$/, `${locale} Lab 003 selected the wrong teaching visual`);
@@ -154,6 +174,8 @@ try {
     if (locale !== 'en') assert.notEqual(fallbackState.note.trim(), '', `${locale} Chapter 15 fallback visual has no localized disclosure`);
     const maturityCard = related.locator('img[src*="evidence-maturity-ladder-red-black.svg"]');
     assert.equal(await maturityCard.count(), 1, `${locale} Chapter 15 is missing the evidence maturity ladder`);
+    assert.equal(await maturityCard.getAttribute('src'), visualSrc(locale, 'evidence-maturity-ladder-red-black.svg'), `${locale} Chapter 15 maturity ladder did not resolve to the selected locale`);
+    assert.equal(await maturityCard.getAttribute('data-visual-locale-status'), locale === 'en' ? 'source' : 'localized', `${locale} Chapter 15 maturity ladder status is not explicit`);
     assert.notEqual((await maturityCard.getAttribute('alt') || '').trim(), '', `${locale} evidence maturity ladder has no localized alternative text`);
     assert.notEqual((await related.locator('[data-reader-related-visuals-boundary]').textContent() || '').trim(), '', `${locale} Chapter 15 related visuals have no evidence boundary`);
     await noHorizontalOverflow(`${locale} Chapter 15 Reader`);
@@ -173,6 +195,33 @@ try {
     assert.notEqual((await visual.locator('.reader-visual-explanation li').textContent() || '').trim(), '', `${locale} Lab 001 visual has no text explanation`);
     assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Lab 001 visual has no evidence boundary`);
     await noHorizontalOverflow(`${locale} Lab 001 Reader`);
+  }
+
+  for (const [locale, suffix] of lifecycleLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F08-full-lifecycle-workflow-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    const visual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await visual.count(), 1, `${locale} Chapter 8 is missing its lifecycle teaching visual`);
+    assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /lifecycle-checkpoints\.svg$/, `${locale} Chapter 8 selected the wrong teaching visual`);
+    const image = visual.locator('img');
+    assert.notEqual((await image.getAttribute('alt') || '').trim(), '', `${locale} Chapter 8 lifecycle visual has no alternative text`);
+    assert.equal(await image.getAttribute('src'), visualSrc(locale, 'lifecycle-checkpoints.svg'), `${locale} Chapter 8 lifecycle visual did not resolve to the selected locale`);
+    const imageState = await image.evaluate((element) => ({
+      complete: element.complete,
+      naturalWidth: element.naturalWidth,
+      status: element.dataset.visualLocaleStatus,
+      locale: element.dataset.visualLocale,
+      asset: element.dataset.visualAsset,
+    }));
+    assert.equal(imageState.complete, true, `${locale} Chapter 8 lifecycle visual did not finish loading`);
+    assert.ok(imageState.naturalWidth > 0, `${locale} Chapter 8 lifecycle visual has no rendered pixels`);
+    assert.equal(imageState.status, locale === 'en' ? 'source' : 'localized', `${locale} Chapter 8 lifecycle visual status is not explicit`);
+    assert.equal(imageState.locale, locale, `${locale} Chapter 8 lifecycle visual reports the wrong locale`);
+    assert.equal(imageState.asset, 'lifecycle-checkpoints.svg', `${locale} Chapter 8 lifecycle visual reports the wrong asset`);
+    assert.notEqual((await visual.locator('.reader-visual-thesis').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no localized reading thesis`);
+    assert.notEqual((await visual.locator('.reader-visual-explanation').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no text explanation`);
+    assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Chapter 8 lifecycle visual has no evidence boundary`);
+    await noHorizontalOverflow(`${locale} Chapter 8 Reader`);
   }
 
   for (const [locale, suffix, thesis] of skillLocales) {
@@ -199,7 +248,7 @@ try {
   assert.equal(await page.locator('[data-reader-inline-concept-map]').evaluate((element) => element.open), true, 'EN Chapter 11 concept map should start open on desktop');
   await noHorizontalOverflow('EN Chapter 11 desktop Reader');
   await page.setViewportSize({ width: 390, height: 844 });
-  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=11,15 mobile=390 no_horizontal_overflow=1`);
+  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} lifecycle_locales=${lifecycleLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=8,11,15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));

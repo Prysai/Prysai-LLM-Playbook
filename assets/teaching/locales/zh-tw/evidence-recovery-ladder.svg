@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">復原卡／證據優先</title>
+  <desc id="desc">這張復原卡先保留主張與實際紀錄，找出第一個缺少的證據，再選一項獲准的檢查或明確停下。它不會把未知變成證據。</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="96" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="2">復原卡／證據優先</text>
+  <text x="40" y="162" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">在第一個</text>
+  <text x="40" y="216" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">缺少證據處停止。</text>
+  <text x="40" y="258" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">流暢的摘要不是紀錄。讓第一個缺口保持可見，</text>
+  <text x="40" y="290" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">再選一項獲准的檢查；否則就停下，不要捏造成功。</text>
+  <line x1="82" y1="360" x2="82" y2="1128" stroke="#d71920" stroke-width="8"/>
+  <g transform="translate(126 338)"><rect width="734" height="150" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／主張</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">說清楚「完成」代表什麼。</text><text x="24" y="116" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="20">檔案、回應、測試、交付或決定——不是自信滿滿的一句話。</text></g>
+  <g transform="translate(126 510)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02／紀錄</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">檢查實際軌跡。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">閱讀差異、結束代碼、來源、螢幕截圖、紀錄檔或審查備註。</text></g>
+  <g transform="translate(126 682)"><rect width="734" height="150" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03／第一個缺口</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">標出缺少的內容。</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">標示為部分完成、未驗證、blocked 或 unknown；不要自行推斷已驗收。</text></g>
+  <g transform="translate(126 854)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04／下一個決定</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">執行一次安全檢查，或停下。</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">只改變一個條件。不要為了讓結果通過而擴大權限。</text></g>
+  <rect x="40" y="1086" width="820" height="184" fill="#161616"/><rect x="40" y="1086" width="14" height="184" fill="#d71920"/>
+  <text x="82" y="1132" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">保留紀錄</text><text x="82" y="1176" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">保留錯誤、範圍、</text><text x="82" y="1210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">狀態與最後一個檢查點。</text><text x="82" y="1248" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="19">這份紀錄只能支持範圍精簡的下一步，不能把未知變成證據。</text>
+  <text x="40" y="1344" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="18">復原卡是決策輔助，不是任務、模型或學習者成功的證據。</text>
+</svg>

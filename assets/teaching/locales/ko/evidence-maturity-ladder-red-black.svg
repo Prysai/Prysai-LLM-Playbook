@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">증거 성숙도 단계표</title>
+  <desc id="desc">이 다섯 단계는 설계한 교육 계약에서 독립 검토까지 이어집니다. 각 단계가 뒷받침하는 것과 뒷받침하지 못하는 것, 다음 단계에 필요한 증거를 나눠 보여 줍니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">증거 / 성숙도</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">건너뛰지 마세요</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">증거를.</text>
+  <text x="78" y="282" class="muted" font-size="22">페이지가 완성됐다고 해서 방법을 연습·전이·검토했다는 뜻은 아닙니다.</text>
+
+  <line x1="120" y1="366" x2="120" y2="1268" class="line"/>
+  <line x1="120" y1="452" x2="120" y2="508" class="redline"/>
+  <line x1="120" y1="636" x2="120" y2="692" class="redline"/>
+  <line x1="120" y1="820" x2="120" y2="876" class="redline"/>
+  <line x1="120" y1="1004" x2="120" y2="1060" class="redline"/>
+
+  <g transform="translate(78 320)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="96" y="0" width="688" height="148" fill="#111"/>
+    <text x="124" y="42" class="mono" fill="#fff" font-size="19">설계됨</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">계약이 작성되었습니다.</text>
+    <text x="124" y="111" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 있는 것: 의도한 방법이 분명하다는 사실.</text>
+    <text x="124" y="135" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 없는 것: 누구나 사용할 수 있다는 주장.</text>
+  </g>
+
+  <g transform="translate(78 504)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="96" y="0" width="688" height="148" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="42" class="mono" font-size="19">렌더링됨</text>
+    <text x="124" y="78" class="ink" font-size="28" font-weight="900">페이지와 경로가 작동합니다.</text>
+    <text x="124" y="111" class="muted" font-size="17">말할 수 있는 것: 독자가 자료에 도달할 수 있다는 사실.</text>
+    <text x="124" y="135" class="muted" font-size="17">말할 수 없는 것: 독자가 이해했거나 사용했다는 주장.</text>
+  </g>
+
+  <g transform="translate(78 688)">
+    <circle cx="42" cy="54" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="42" y="64" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="96" y="0" width="688" height="148" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="42" class="mono" font-size="19">연습됨</text>
+    <text x="124" y="78" class="ink" font-size="28" font-weight="900">학습자가 작업을 실행합니다.</text>
+    <text x="124" y="111" class="muted" font-size="17">말할 수 있는 것: 관찰된 시도와 그 결과.</text>
+    <text x="124" y="135" class="muted" font-size="17">말할 수 없는 것: 새 작업에서도 안정적으로 수행한다는 주장.</text>
+  </g>
+
+  <g transform="translate(78 872)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="96" y="0" width="688" height="148" fill="#d71920"/>
+    <text x="124" y="42" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700" letter-spacing="1px">전이됨</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">작업이 바뀌어도 방법이 유지됩니다.</text>
+    <text x="124" y="111" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 있는 것: 첫 사례를 넘어 재사용했다는 증거.</text>
+    <text x="124" y="135" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 없는 것: 보편적이거나 영구적인 숙련 주장.</text>
+  </g>
+
+  <g transform="translate(78 1056)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="96" y="0" width="688" height="148" fill="#111"/>
+    <text x="124" y="42" class="mono" fill="#fff" font-size="19">독립 검토됨</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">다른 사람이 다시 실행하고 확인합니다.</text>
+    <text x="124" y="111" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 있는 것: 명시한 범위에서 재확인된 결과.</text>
+    <text x="124" y="135" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">말할 수 없는 것: 검토한 조건 밖의 주장.</text>
+  </g>
+
+  <path d="M694 1258 790 1258 790 1174" class="redline"/>
+  <rect x="78" y="1308" width="762" height="92" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1342" class="mono" font-size="17">다음 증거</text>
+  <text x="102" y="1372" class="ink" font-size="19" font-weight="700">현재 가진 단계를 밝히고, 그 단계를 앞으로 옮길 증거만 모으세요.</text>
+</svg>

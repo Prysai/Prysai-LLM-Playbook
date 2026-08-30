@@ -9,7 +9,7 @@
 Ein Modell zu starten ist nicht dasselbe wie nutzbare Arbeit zu Ende zu bringen. Ein Ziel kann vage sein, der Umfang wachsen oder ein Check das falsche Ziel prüfen, während die Oberfläche scheinbar problemlos funktioniert.
 
 ```text
-define → plan → build → verify → review → deliver → maintain
+definieren → planen → bauen → verifizieren → prüfen → übergeben → pflegen
 ```
 
 Jeder Übergang verlangt eine Entscheidung. Eine Phase endet nicht deshalb, weil ein Agent „fertig“ meldet, sondern erst, wenn andere den zugehörigen Beleg prüfen können.

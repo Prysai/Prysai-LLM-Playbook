@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">証拠の成熟度ラダー</title>
+  <desc id="desc">この5段階のラダーは、設計した教材契約から独立レビューまでを示します。各段階で言えること、言えないこと、次へ進むために必要な証拠を分けます。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">証拠 / 成熟度</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">飛ばさない</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">証拠。</text>
+  <text x="78" y="282" class="muted" font-size="22">ページが完成していても、方法が実践・転用・レビュー済みとは限らない。</text>
+
+  <line x1="120" y1="366" x2="120" y2="1268" class="line"/>
+  <line x1="120" y1="452" x2="120" y2="508" class="redline"/>
+  <line x1="120" y1="636" x2="120" y2="692" class="redline"/>
+  <line x1="120" y1="820" x2="120" y2="876" class="redline"/>
+  <line x1="120" y1="1004" x2="120" y2="1060" class="redline"/>
+
+  <g transform="translate(78 320)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="96" y="0" width="688" height="148" fill="#111"/>
+    <text x="124" y="42" class="mono" fill="#fff" font-size="19">設計済み</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">契約が書かれている。</text>
+    <text x="124" y="111" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられること：意図した方法が明確である。</text>
+    <text x="124" y="135" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられないこと：誰でも使えるという主張。</text>
+  </g>
+
+  <g transform="translate(78 504)">
+    <circle cx="42" cy="54" r="34" fill="#d71920"/>
+    <text x="42" y="64" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="96" y="0" width="688" height="148" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="42" class="mono" font-size="19">表示済み</text>
+    <text x="124" y="78" class="ink" font-size="28" font-weight="900">ページとルートが機能する。</text>
+    <text x="124" y="111" class="muted" font-size="17">支えられること：読者が教材にたどり着ける。</text>
+    <text x="124" y="135" class="muted" font-size="17">支えられないこと：読者が理解・使用したという主張。</text>
+  </g>
+
+  <g transform="translate(78 688)">
+    <circle cx="42" cy="54" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="42" y="64" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="96" y="0" width="688" height="148" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="124" y="42" class="mono" font-size="19">実践済み</text>
+    <text x="124" y="78" class="ink" font-size="28" font-weight="900">学習者が課題を実行する。</text>
+    <text x="124" y="111" class="muted" font-size="17">支えられること：観察できる試行と結果。</text>
+    <text x="124" y="135" class="muted" font-size="17">支えられないこと：新しい課題で安定して実行できること。</text>
+  </g>
+
+  <g transform="translate(78 872)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="96" y="0" width="688" height="148" fill="#d71920"/>
+    <text x="124" y="42" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700" letter-spacing="1px">転用済み</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">方法が変化した課題でも通用する。</text>
+    <text x="124" y="111" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられること：最初の例を越えた再利用の証拠。</text>
+    <text x="124" y="135" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられないこと：普遍的・永続的なスキルの主張。</text>
+  </g>
+
+  <g transform="translate(78 1056)">
+    <circle cx="42" cy="54" r="34" fill="#111"/>
+    <text x="42" y="64" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="96" y="0" width="688" height="148" fill="#111"/>
+    <text x="124" y="42" class="mono" fill="#fff" font-size="19">独立レビュー済み</text>
+    <text x="124" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="900">別の人が再実行して確認する。</text>
+    <text x="124" y="111" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられること：明示した範囲で裏付けられた結果。</text>
+    <text x="124" y="135" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">支えられないこと：レビュー条件の外にある主張。</text>
+  </g>
+
+  <path d="M694 1258 790 1258 790 1174" class="redline"/>
+  <rect x="78" y="1308" width="762" height="92" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1342" class="mono" font-size="17">次の証拠</text>
+  <text x="102" y="1372" class="ink" font-size="19" font-weight="700">今ある段階を示し、前に進める証拠だけを集める。</text>
+</svg>

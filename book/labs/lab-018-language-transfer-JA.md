@@ -90,7 +90,7 @@ B1 **の前に**、前後一日を許す七日窓を宣言します。七日は�
 
 後の回では、目標言語の助けなしにカードを公開します。実際の遅延、カード ID、プール版、割当元、カード作成者、公開時刻、許可した補助、学習者の曝露を記録します。公開リポジトリのカードは技術的に秘密にはなりません。曝露が `yes` または `unknown` なら **変更済み遅延課題** とだけ呼び、未見とは呼びません。B1 と C1 の文は再利用しません。
 
-二人の独立採点が通過し、遅延と曝露の条件を保存できたときだけ、`retained_at_7_days` と `transferred_to_unseen-class-discussion-preparation` を別々に報告できます。曝露が未見ラベルを妨げる場合は `transferred_to_changed_delayed-class-discussion-preparation` だけです。通過は宣言条件下の一観察であり、広い言語学習の結論ではありません。未実行なら `not_run` のままです。
+二人の独立した採点者がともに合格判定を出し、遅延と曝露の条件を保存できたときだけ、`retained_at_7_days` と `transferred_to_unseen-class-discussion-preparation` を別々に報告できます。曝露が未見ラベルを妨げる場合は `transferred_to_changed_delayed-class-discussion-preparation` だけです。通過は宣言条件下の一観察であり、広い言語学習の結論ではありません。未実行なら `not_run` のままです。
 
 ## 印象ではなく記録を残す
 

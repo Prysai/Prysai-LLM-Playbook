@@ -196,8 +196,8 @@ neutres. Un ancien lien sans suffixe n’est utilisé que lorsqu’il est marqu�
 explicitement comme migration en cours. Consultez la [décision sur les suffixes
 de locale (locale-neutral)](../docs/adr/0010-locale-suffixed-content.md).
 
-Les huit locales sont désormais exposées pour les 22 chapitres et les 18 Labs.
-Cette couverture ne prouve ni la relecture native indépendante, ni
+Les huit locales sont désormais exposées pour les 22 chapitres et les
+18 Labs. Cette couverture ne prouve ni la relecture native indépendante, ni
 l’équivalence sémantique, ni les résultats d’apprenants, ni le comportement
 d’une plateforme. La traduction française reste `in-progress`.
 

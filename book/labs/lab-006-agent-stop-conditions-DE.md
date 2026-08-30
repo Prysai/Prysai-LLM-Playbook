@@ -7,7 +7,7 @@ level: L5
 domain: general
 goal: "Mit beobachtbaren Ereignissen, begrenzten Wiederholungen und einer Übergabe entscheiden, ob ein Agent fortsetzt, fragt, wiederherstellt oder stoppt"
 setup: "Eine wegwerfbare lokale Textaufgabe ohne Zugangsdaten, Netzwerk, Produktionsdateien oder irreversible Befehle"
-task: "Begrenzte Fehlerzweige und eine Abstimmung nach verlorener Antwort durchlaufen und Ereignisse, Belege und Entscheidung festhalten"
+task: "Begrenzte Fehlerzweige und einen Abgleich nach verlorener Antwort durchlaufen und Ereignisse, Belege und Entscheidung festhalten"
 evidence:
   - "Baseline, Events und Run-Records für jeden begrenzten Zweig"
   - "Read-back nach verlorener Antwort und eine Übergabe mit dem ersten unbekannten Ereignis"

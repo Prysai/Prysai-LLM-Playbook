@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -13,6 +14,71 @@ SITE_INDEX = (
     '<a href="../assets/teaching/README.md"><strong>{count}</strong>'
     '<span data-i18n="mobileIndexVisuals">teaching boards</span></a>\n'
 )
+
+
+def test_localized_maturity_text_fit() -> None:
+    """Only the affected Spanish, German, and French ladder lines get fit constraints."""
+    import build_localized_visual_assets as builder
+
+    asset = "evidence-maturity-ladder-red-black.svg"
+    fixture = "<svg>" + "".join(f"<text>{index}</text>" for index in range(1, 32)) + "</svg>"
+    fitted = builder.constrain_localized_text(fixture, asset, "de")
+    require('textLength="762"' in fitted, "node 4 lost its fixed-card width")
+    require(fitted.count('textLength="646"') == 2, "German stage lines lost their fixed-card widths")
+    require('textLength="648"' in fitted, "node 27 lost its fixed-card width")
+    require('lengthAdjust="spacingAndGlyphs"' in fitted, "localized fitting lost its SVG fit mode")
+    french = builder.constrain_localized_text(fixture, asset, "fr")
+    require('textLength="762"' in french, "French node 4 lost its fixed-card width")
+    require('textLength="648"' not in french, "French ladder received an unrelated German fit constraint")
+    require('textLength="762"' in fitted, "German node 4 lost its fixed-card width")
+    spanish = builder.constrain_localized_text(fixture, asset, "es")
+    require('textLength="762"' in spanish, "Spanish node 4 lost its fixed-card width")
+    require('textLength="648"' not in spanish, "Spanish ladder received an unrelated German fit constraint")
+    japanese = builder.constrain_localized_text(fixture, asset, "ja")
+    require("textLength=" not in japanese, "unaffected locale received a fit constraint")
+    require("textLength=" not in builder.constrain_localized_text(fixture, asset, "en"), "English source was unexpectedly constrained")
+
+
+def _chinese_number(value: int) -> str:
+    digits = "零一二三四五六七八九"
+    if value < 10:
+        return digits[value]
+    if value < 20:
+        return "十" if value == 10 else f"十{digits[value - 10]}"
+    tens, ones = divmod(value, 10)
+    return f"{digits[tens]}十" if ones == 0 else f"{digits[tens]}十{digits[ones]}"
+
+
+def test_documented_visual_counts_match_current_sources() -> None:
+    """Keep the two public visual inventories tied to their source data."""
+    root = assets.ROOT
+    matrix_text = (root / "docs/governance/visual-locale-matrix.yaml").read_text(encoding="utf-8")
+    _, localized_assets, _ = assets._matrix_values(matrix_text)
+    localized_count = len(localized_assets)
+    number_words = {
+        1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
+        7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven",
+        12: "twelve",
+    }
+    word = number_words.get(localized_count)
+    require(word is not None, f"add an English number-word fixture for {localized_count}")
+    catalog = (root / "assets/teaching/README.md").read_text(encoding="utf-8")
+    require(
+        re.search(rf"\b{word}\s+high-frequency cards\b", catalog, re.IGNORECASE),
+        "teaching catalog localized count drifted",
+    )
+    require(
+        re.search(rf"\b{word}\s+reviewed cards\b", catalog, re.IGNORECASE),
+        "teaching catalog reviewed-card count drifted",
+    )
+
+    visuals = (root / "site/visuals.js").read_text(encoding="utf-8")
+    start = visuals.index("  const CARDS = [")
+    end = visuals.index("\n  ];", start)
+    card_count = len(re.findall(r"\basset:\s*'[^']+'", visuals[start:end]))
+    site_readme = (root / "site/README.md").read_text(encoding="utf-8")
+    expected_phrase = f"{_chinese_number(card_count)}张项目原创教学图"
+    require(site_readme.count(expected_phrase) >= 1, "site README Visual Guide card count drifted")
 
 
 def require(condition: bool, message: str) -> None:
@@ -53,6 +119,8 @@ def write_localized_readmes(root: Path, *, visual_path: str, use_english_source:
 
 
 def main() -> int:
+    test_localized_maturity_text_fit()
+    test_documented_visual_counts_match_current_sources()
     with TemporaryDirectory(prefix="prysai-teaching-asset-fixture-") as temporary:
         root = Path(temporary)
         teaching, catalog, register, site_index = write_fixture(
@@ -160,7 +228,7 @@ def main() -> int:
             "English source visual in translated Markdown was accepted",
         )
 
-    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=8")
+    print("TEACHING_ASSET_CATALOG_TESTS_OK fixtures=9")
     return 0
 
 

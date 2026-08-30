@@ -90,7 +90,7 @@ B1 **전에** 앞뒤 하루를 허용하는 7일 창을 선언합니다. 7일은
 
 나중의 점검에서 목표 언어 도움 없이 카드를 공개합니다. 실제 지연, 카드 ID, 카드 풀 판본, 배정 출처, 카드 작성자, 공개 시각, 허용 보조, 학습자 노출을 기록합니다. 공개 저장소의 카드는 기술적으로 비밀이 될 수 없습니다. 노출이 `yes` 또는 `unknown`이면 **변경된 지연 과제**라고만 부르고 미확인 과제라고 부르지 않습니다. B1과 C1 문장을 재사용하지 않습니다.
 
-두 독립 채점이 통과하고 지연·노출 조건이 보존되었을 때만 `retained_at_7_days`와 `transferred_to_unseen-class-discussion-preparation`을 분리해 보고할 수 있습니다. 노출 때문에 미확인 라벨이 불가능하면 `transferred_to_changed_delayed-class-discussion-preparation`만 씁니다. 통과는 선언 조건 아래 한 번의 관찰일 뿐, 폭넓은 언어 학습 결론이 아닙니다. 실행하지 않았다면 `not_run`으로 둡니다.
+두 명의 독립적인 채점자가 모두 합격 판정을 내리고 지연·노출 조건이 보존되었을 때에만 `retained_at_7_days`와 `transferred_to_unseen-class-discussion-preparation`을 분리해 보고할 수 있습니다. 노출 때문에 미확인 라벨이 불가능하면 `transferred_to_changed_delayed-class-discussion-preparation`만 씁니다. 통과는 선언 조건 아래 한 번의 관찰일 뿐, 폭넓은 언어 학습 결론이 아닙니다. 실행하지 않았다면 `not_run`으로 둡니다.
 
 ## 인상이 아니라 기록 남기기
 

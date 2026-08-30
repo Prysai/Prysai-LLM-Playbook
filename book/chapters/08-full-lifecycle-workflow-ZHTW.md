@@ -25,7 +25,7 @@
 每一個箭頭都是決策點。階段完成，不是因為介面往前走了，或 Agent 說「完成」；
 而是因為該階段的證據存在，並且另一個人能夠檢查。
 
-![教學卡：工作流程把證據從定義帶到維護](../../assets/teaching/lifecycle-checkpoints.svg)
+![教學卡：工作流程把證據從定義帶到維護](../../assets/teaching/locales/zh-tw/lifecycle-checkpoints.svg)
 
 > 這是專案自有教學卡。它解釋方法的結構；它不證明某個 Skill、Agent 或外部服務
 > 已經執行了這條工作流程。
@@ -156,7 +156,7 @@ delivery: local review packet; state whether commit and push were not performed
 切片。它可以只包含一個英文正文、一條目錄連結、一次本機連結檢查和一次狀態邊界
 審查；雖然小，卻走過了完整路徑。
 
-| 切片欄位 | 示例 |
+| 切片欄位 | 範例 |
 |---|---|
 | 結果 | 從英文目錄開啟一章 |
 | 輸入 | 章節源、目錄項、語言矩陣和連結檢查器 |
@@ -328,7 +328,7 @@ next_review: after the source or chapter structure changes
 
 **不得宣告：** 原始碼 diff、單元測試通過和安裝成功是同一種狀態。
 
-## 9. 示例：審查一個 Markdown 章節
+## 9. 範例：審查一個 Markdown 章節
 
 這個案例刻意做得很小，用來展示任務協議、Skill、Agent 和行動邊界中的欄位如何銜接。
 它是填好的教學範例，不是一次有執行記錄的任務。

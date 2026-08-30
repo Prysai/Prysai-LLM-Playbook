@@ -22,6 +22,9 @@ const localizedVisualAssets = new Set([
   'llm-foundation-core-path-red-black.svg', 'playbook-learning-journey-red-black.svg',
   'reader-page-reading-loop-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
   'recovery-decision-tree-red-black.svg', 'skill-trigger-boundary-decision-map.svg',
+  'skill-to-observable-output.svg',
+  'evidence-recovery-ladder.svg',
+  'evidence-maturity-ladder-red-black.svg',
 ]);
 const visualSrc = (locale, asset) => locale !== 'en' && localizedVisualAssets.has(asset)
   ? `../assets/teaching/locales/${locale}/${asset}`
@@ -106,6 +109,14 @@ const noHorizontalOverflow = async (label) => {
   }));
   assert.ok(metrics.scrollWidth <= metrics.innerWidth, `${label} has horizontal overflow: ${JSON.stringify(metrics)}`);
 };
+const waitForImagePixels = async (locator, label) => {
+  await locator.scrollIntoViewIfNeeded();
+  const loaded = await locator.evaluate((image) => image.complete && image.naturalWidth > 0 ? true : new Promise((resolve) => {
+    image.addEventListener('load', () => resolve(true), { once: true });
+    image.addEventListener('error', () => resolve(false), { once: true });
+  }));
+  assert.equal(loaded, true, `${label} did not load`);
+};
 
 try {
   for (const locale of locales) {
@@ -152,6 +163,19 @@ try {
     }));
     assert.equal(goalLocaleState.status, locale === 'en' ? 'source' : 'localized', `${locale} localized visual status changed`);
     assert.equal(goalLocaleState.note, true, `${locale} localized visual unexpectedly shows fallback disclosure`);
+    await waitForImagePixels(page.locator('[data-visual-maturity-image]'), `${locale} evidence maturity image`);
+    const maturityLocaleState = await page.locator('[data-visual-maturity-image]').evaluate((image) => ({
+      src: image.getAttribute('src'),
+      status: image.dataset.visualLocaleStatus,
+      locale: image.dataset.visualLocale,
+      complete: image.complete,
+      naturalWidth: image.naturalWidth,
+    }));
+    assert.equal(maturityLocaleState.src, visualSrc(locale, 'evidence-maturity-ladder-red-black.svg'), `${locale} evidence maturity image did not resolve to the selected locale`);
+    assert.equal(maturityLocaleState.status, locale === 'en' ? 'source' : 'localized', `${locale} evidence maturity image status is not explicit`);
+    assert.equal(maturityLocaleState.locale, locale, `${locale} evidence maturity image reports the wrong locale`);
+    assert.equal(maturityLocaleState.complete, true, `${locale} evidence maturity image did not finish loading`);
+    assert.ok(maturityLocaleState.naturalWidth > 0, `${locale} evidence maturity image has no rendered pixels`);
     await page.locator('[data-visual-maturity-nodes] button').last().click();
     assert.equal(await page.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} maturity selection is not exposed`);
     assert.match(await page.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} maturity route lost its locale`);
@@ -183,15 +207,21 @@ try {
   assert.equal(await page.locator('[data-viewer-error]').isHidden(), true, 'viewer rejected an approved teaching board');
   assert.equal(await page.locator('[data-viewer-image]').evaluate((image) => image.complete && image.naturalWidth > 0), true, 'viewer image did not load');
   assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '100%', 'viewer did not expose its initial zoom');
+  const viewerOfficialSite = page.locator('.viewer-footer-site');
+  assert.equal(await viewerOfficialSite.count(), 1, 'visual viewer footer is missing the official-site link');
+  assert.equal(await viewerOfficialSite.getAttribute('href'), 'https://prysai.com/', 'visual viewer footer official-site URL changed');
+  assert.equal((await viewerOfficialSite.textContent() || '').trim(), 'Site officiel de Prysai', 'visual viewer footer official-site label is not localized');
   await page.locator('[data-viewer-zoom-in]').click();
   assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '125%', 'viewer zoom control did not update');
   await noHorizontalOverflow('fr 360px visual viewer');
   await page.locator('#viewer-language').selectOption('zh-tw');
   assert.equal(await page.locator('html').getAttribute('lang'), 'zh-tw', 'viewer language switch did not update document language');
   assert.match(await page.locator('[data-viewer-home]').first().getAttribute('href') || '', /visuals\.html\?lang=zh-tw$/, 'viewer language switch lost the localized guide route');
+  assert.equal((await page.locator('.viewer-footer-site').textContent() || '').trim(), 'Prysai 官方網站', 'viewer footer language switch did not localize the official-site label');
   await page.goto(`${origin}/site/visual.html?asset=not-a-teaching-board.svg&lang=fr`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('.viewer-stage').isHidden(), true, 'viewer kept the stage for an unapproved asset');
   assert.equal(await page.locator('[data-viewer-error]').isHidden(), false, 'viewer did not expose the invalid-asset error');
+  assert.equal((await page.locator('.viewer-footer-site').textContent() || '').trim(), 'Site officiel de Prysai', 'invalid-asset viewer did not localize the official-site footer');
   await page.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'networkidle' });
 
   const noScriptContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });

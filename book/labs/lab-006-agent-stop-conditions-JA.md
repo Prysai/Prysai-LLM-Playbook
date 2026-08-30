@@ -83,7 +83,7 @@ hard_stop: 不明な副作用、権限不足、または新しい証拠のない
 
 ### E — 応答喪失後の照合
 
-ローカル write の応答が見えなかったと仮定し、command、試行、hash を保存して
+ローカル書き込みの応答が見えなかったと仮定し、command、試行、hash を保存して
 timeout だけで再送しません。対象を最小の read-back で読み、
 `no_effect_observed`、`effect_matches`、`effect_differs`、`effect_unknown` に
 分類します。判別できなければ未知の状態を handoff し、次の安全な確認は一つだけ
@@ -99,7 +99,7 @@ model が「処理中」と言う、同じ案を繰り返す、file が変わっ
 
 ```text
 まだ retry、edit、network、new command をしないでください。
-見えている record だけから、最後に確認できた event と最初の unknown event を示してください。
+見えている記録だけから、最後に確認できた event と最初の unknown event を示してください。
 影響した可能性がある file と、最小の read-only check は何ですか？
 この情報が無ければ blocked と書き、完了を推測しないでください。
 ```

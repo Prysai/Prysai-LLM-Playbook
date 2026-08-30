@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 <!-- content_id: chapter-20-personal-codex-work-system | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# 第 20 章：構建個人 Codex 工作系統
+# 第 20 章：建立個人 Codex 工作系統
 
 > `content_status: candidate`
 > `experiment_status: draft / not_run`
@@ -189,7 +189,7 @@ status: "pass | fail | not_comparable | blocked | not_run"
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZHTW.md" aria-label="上一章：第 19 章 · 評估模型與工作流——從印象走向證據">← 上一章<br><strong>第 19 章 · 評估模型與工作流——從印象走向證據</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZHTW.md" aria-label="下一章：第 21 章 · 構建團隊能力系統">下一章 →<br><strong>第 21 章 · 構建團隊能力系統</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZHTW.md" aria-label="下一章：第 21 章 · 建立團隊能力系統">下一章 →<br><strong>第 21 章 · 建立團隊能力系統</strong></a></td>
     </tr>
   </table>
 </nav>

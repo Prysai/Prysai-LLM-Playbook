@@ -2485,7 +2485,7 @@ copy.ja = {
   'chapter07': 'Skill、Plugin、MCP、ツールがどのように仕事を分担するか',
   'chapter08': '定義から納品までの完全なライフサイクル',
   'chapter09': '検証、疑念、そして回復',
-  'chapter10': '計画と縦断スライス',
+  'chapter10': '計画と垂直スライス',
   'chapter11': '居場所に値する Skill を設計する',
   'chapter12': 'Agent のループ、状態、停止条件',
   'chapter13': 'ファイル、ターミナル、ブラウザ、GitHub をまたぐ行動境界',
@@ -2694,7 +2694,7 @@ copy.ja = {
   'routeStatusC': 'C · 能力の5章を表示中。',
   'routeStatusD': 'D · チーム実践の4章を表示中。',
   'featuredLab': '注目の Lab',
-  'lab13Title': '監査可能な縦断スライス',
+  'lab13Title': '監査可能な垂直スライス',
   'lab13Body': 'プロトコルとベースラインから、チェックポイント、diff、集中的なチェック、失敗、転移まで、1つのローカル Markdown 変更を実行する。',
   'lab14Title': '再開時の整合',
   'lab14Body': '続行する前に、タスクポインター、ターゲット、ブランチ、権限、副作用の状態を整合させる。',
@@ -4574,7 +4574,7 @@ Object.assign(copy.zh, {
   wizardGoalResearchOutcome: '得到一条来源核查提示词，区分证据与猜测。',
   wizardGoalInterviewOutcome: '得到一条带可见自检的限时演练提示词。',
   wizardGoalTaskOutcome: '在 AI 或工具行动前，得到一份简明任务协议。',
-  wizardGoalCodexOutcome: '得到一个安全的纯文字首练习，并进入编程实践路线。'
+  wizardGoalCodexOutcome: '得到一次安全的纯文字入门练习，并进入编程实践路线。'
 });
 Object.assign(copy.es, {
   wizardGoalLanguageOutcome: 'Obtienes un prompt de práctica de cuatro turnos que espera tu respuesta.',

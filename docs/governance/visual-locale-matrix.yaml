@@ -1,5 +1,5 @@
 schema_version: 1
-updated: 2026-08-28
+updated: 2026-08-29
 purpose: Keep visual-language coverage explicit; an absent SVG variant is never treated as translated, and translated Markdown must name its reviewed locale asset directly.
 locales:
   - en
@@ -25,9 +25,13 @@ localized:
     - first-task-evidence-bridge-red-black.svg
     - recovery-decision-tree-red-black.svg
     - skill-trigger-boundary-decision-map.svg
+    - lifecycle-checkpoints.svg
+    - skill-to-observable-output.svg
+    - evidence-recovery-ladder.svg
+    - evidence-maturity-ladder-red-black.svg
   locale_variants: 7
 fallback:
   status: english-fallback
-  asset_count: 36
+  asset_count: 32
   rule: Every source SVG not listed under localized is served from assets/teaching/{asset} for non-English locales.
   user_notice: The homepage, Reader, Visual Guide, and visual viewer label this state; surrounding localized text remains the explanation baseline.

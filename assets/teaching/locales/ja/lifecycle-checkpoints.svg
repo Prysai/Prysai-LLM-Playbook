@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ワークフローは確認できる出口を通って進む</title>
+  <desc id="desc">7段階の教材図です。ワークフローを2つの読み取り帯に分け、各段階の出口に必要な証拠を示します。出口がなければ、停止と復旧への分岐が見える形で現れます。</desc>
+  <rect width="1600" height="900" fill="#111315"/>
+  <rect x="0" y="0" width="34" height="900" fill="#e43b2f"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="76" fill="#e43b2f" font-size="18" font-weight="700" letter-spacing="4">ワークフロー管理 / 07段階 / 08</text>
+    <text x="76" y="172" fill="#f0ebe1" font-size="66" font-weight="800" letter-spacing="-3">出口の証拠がなければ、先へ進まない。</text>
+    <text x="80" y="218" fill="#a9adb0" font-size="21">Agent が先へ進んでもチェックポイントではない。確認できる成果物がチェックポイントだ。</text>
+    <path d="M76 262H1524" stroke="#f0ebe1" stroke-opacity=".28"/>
+
+    <g transform="translate(76 304)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">A帯 / 枠を決めて作る</text>
+      <g>
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">01</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">定義</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">目標 / 範囲 / 対象外</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 受け入れ + 停止</text>
+      </g>
+      <g transform="translate(354)">
+        <rect width="334" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">02</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">計画</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">スライス / 依存関係 / リスク</text>
+        <path d="M86 108H310" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 順序付きチェックポイント</text>
+      </g>
+      <g transform="translate(708)">
+        <rect width="334" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">03</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">構築</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">範囲内の差分 / 変更ファイル</text>
+        <path d="M86 108H310" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 元に戻せる変更</text>
+      </g>
+      <g transform="translate(1062)">
+        <rect width="386" height="176" fill="#e43b2f"/>
+        <rect width="62" height="176" fill="#151719"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">04</text>
+        <text x="86" y="48" fill="#fff8ed" font-size="25" font-weight="800">検証</text>
+        <text x="86" y="82" fill="#211719" font-size="16">コマンド / 終了 / 実行時 / 制限</text>
+        <path d="M86 108H362" stroke="#151719" stroke-opacity=".38"/>
+        <text x="86" y="140" fill="#151719" font-size="13" font-weight="800">出口 / 主張に対応する証拠</text>
+      </g>
+    </g>
+
+    <g transform="translate(76 574)">
+      <text x="0" y="-18" fill="#777b7e" font-size="14" font-weight="700" letter-spacing="3">B帯 / 判断、引き継ぎ、現状維持</text>
+      <g>
+        <rect width="406" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">05</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">レビュー</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">主張マップ / 独立した読み返し / リスク</text>
+        <path d="M86 108H382" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 受け入れ、修正、却下</text>
+      </g>
+      <g transform="translate(426)">
+        <rect width="406" height="176" fill="#f0ebe1"/>
+        <rect width="62" height="176" fill="#e43b2f"/>
+        <text x="31" y="50" text-anchor="middle" fill="#fff8ed" font-size="20" font-weight="800">06</text>
+        <text x="86" y="48" fill="#151719" font-size="25" font-weight="800">引き渡し</text>
+        <text x="86" y="82" fill="#55595c" font-size="16">差分 / ログ / 抜け / 引き継ぎ</text>
+        <path d="M86 108H382" stroke="#151719" stroke-opacity=".2"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 範囲を区切った記録</text>
+      </g>
+      <g transform="translate(852)">
+        <rect width="354" height="176" fill="#202326" stroke="#55595c"/>
+        <rect width="62" height="176" fill="#303438"/>
+        <text x="31" y="50" text-anchor="middle" fill="#e43b2f" font-size="20" font-weight="800">07</text>
+        <text x="86" y="48" fill="#f0ebe1" font-size="25" font-weight="800">保守</text>
+        <text x="86" y="82" fill="#b8b6b0" font-size="16">担当者 / レビュー / 復元</text>
+        <path d="M86 108H330" stroke="#f0ebe1" stroke-opacity=".18"/>
+        <text x="86" y="140" fill="#e43b2f" font-size="13" font-weight="700">出口 / 次の確認日を記す</text>
+      </g>
+      <g transform="translate(1236)">
+        <path d="M0 0H212V176H0V118H26V58H0Z" fill="#e43b2f"/>
+        <text x="28" y="45" fill="#151719" font-size="16" font-weight="800">出口がない？</text>
+        <text x="28" y="83" fill="#fff8ed" font-size="27" font-weight="800">止まる</text>
+        <text x="28" y="116" fill="#fff8ed" font-size="27" font-weight="800">復旧する</text>
+        <text x="28" y="151" fill="#151719" font-size="13" font-weight="700">最後の状態を残す</text>
+      </g>
+    </g>
+    <path d="M1385 480V544H1418V574" fill="none" stroke="#e43b2f" stroke-width="5"/>
+    <text x="76" y="836" fill="#797d80" font-size="14">教材モデル / 各出口には主張の範囲がある / 1枚のスクリーンショットだけではワークフローの実行を証明できない</text>
+  </g>
+</svg>

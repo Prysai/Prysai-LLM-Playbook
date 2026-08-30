@@ -28,7 +28,7 @@ Chaque flèche est un point de décision. Une étape n’est pas terminée parce
 l’interface a avancé ou que l’Agent a dit « terminé ». Elle l’est lorsque la
 preuve de sortie existe et qu’une autre personne peut la relire.
 
-![Carte pédagogique : un flux de travail transporte les preuves de la définition à la maintenance](../../assets/teaching/lifecycle-checkpoints.svg)
+![Carte pédagogique : un flux de travail transporte les preuves de la définition à la maintenance](../../assets/teaching/locales/fr/lifecycle-checkpoints.svg)
 
 > Cette carte appartient au projet. Elle explique une méthode ; elle ne prouve
 > pas qu’un Skill, un Agent ou un service externe a exécuté ce flux.

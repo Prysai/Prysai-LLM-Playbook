@@ -16,7 +16,7 @@ evidence:
   - "症狀卡、最小排查順序、停止條件和最終證據表"
   - "本地副本和 Worktree 的差異與回滾入口，以及第二工作面的風險說明"
   - "把同一套邊界方法遷移到文件、研究或釋出準備任務的記錄"
-failure_variant: "把瀏覽器成功當成 token exchange，把一個已認證 host 當成目標 host，把一個組織的訪問當成另一個組織已安裝，或把驗證當成強制重灌權限"
+failure_variant: "把瀏覽器成功當成 token exchange，把一個已認證 host 當成目標 host，把一個組織的存取當成另一個組織已完成安裝，或把驗證當成強制重灌權限"
 reflection: "哪種狀態最容易被‘已經登入’掩蓋？哪項檢查能增加證據而不擴大權限？三個工作面如何改變回滾和審查？"
 status: draft
 last_verified: "not run（not_run）；尚未由學習者執行；真實三工作面實驗待執行；本檔案定義練習契約"
@@ -28,9 +28,9 @@ transfer_limitations: "本實驗不證明真實帳戶、Enterprise host、組織
 
 ## 現實問題
 
-公開報告常把登入、可訪問、獲准、已執行和已驗證壓縮成一個詞。常見跳躍
+公開報告常把登入、可存取、獲准、已執行和已驗證壓縮成一個詞。常見跳躍
 包括：瀏覽器認證成功但後續 token exchange 失敗；Enterprise CLI 已認證但
-PR 入口探測 github.com；能訪問一個組織卻無法在第二個組織建立 installation；
+PR 入口探測 github.com；能存取一個組織卻無法在第二個組織建立 installation；
 以及 Agent 為了驗證而強制重灌持久環境。這些是使用者報告，不是本地復現或官方
 根因。本實驗訓練的反應是定位階段、做最小檢查、在需要更大權限時停止。
 
@@ -95,7 +95,7 @@ Enterprise、connector、remote 或網路服務。重新評估可見性、協作
 |---|---|---|---|---|
 | S-02 | 瀏覽器認證成功但 token exchange 失敗 | 只有瀏覽器階段成功 | 已完整登入或根因已知 | 拆分階段並記錄脫敏錯誤，不重試真實登入 |
 | S-03 | Enterprise CLI 已認證但 PR 入口探測 github.com 並返回 401 | CLI host 和應用 host 可能不同 | GitHub 全部可用或 401 必然是倉庫權限 | 只讀比較 host、remote 和入口 |
-| S-04 | 能訪問一個組織但不能為第二個組織建立 installation | 身份、組織、installation、倉庫訪問是不同狀態 | 管理員權限自動包含 installation | 記錄四個狀態，不申請安裝 |
+| S-04 | 能存取一個組織但不能為第二個組織建立 installation | 身份、組織、installation、儲存庫存取是不同狀態 | 管理員權限自動包含 installation | 記錄四個狀態，不申請安裝 |
 | S-11 | 驗證擴大為 force reinstall 或持久環境替換 | 驗證與安裝授權是兩件事 | 技術上能執行就代表獲准 | 儲存 diff，改用隔離/靜態檢查 |
 
 每張卡都加註：來源是使用者報告；本地復現未做；官方根因未確認。原始 URL

@@ -21,7 +21,7 @@ preuve jusqu’à la fin. L’unité utile n’est donc pas une ligne de todo, m
 un résultat, conserve sa preuve, dit ce qu’il ne prouve pas et laisse un relais
 sûr à la tranche suivante.
 
-![Carte pédagogique : les checkpoints transforment un grand objectif en sorties porteuses de preuves](../../assets/teaching/lifecycle-checkpoints.svg)
+![Carte pédagogique : les checkpoints transforment un grand objectif en sorties porteuses de preuves](../../assets/teaching/locales/fr/lifecycle-checkpoints.svg)
 
 > Cette carte appartient au projet. Elle illustre une méthode de planification ;
 > elle ne prouve pas l’exécution d’un Agent, d’un Skill ou d’un service.

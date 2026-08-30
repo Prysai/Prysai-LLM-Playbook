@@ -219,7 +219,7 @@ différée avec exposition enregistrée et notation indépendante ?
 ## Sources et limite de mise à jour
 
 - [Contrat de pratique pour apprendre](../guides/learning-practice-contract-FR.md) — règles de preuve et de divulgation graduée.
-- [Pack de pratique débutant](../communication-clinic-FR.md) — parcours linguistiques, professionnels et de recherche.
+- [Pack de pratique débutant](../communication-clinic-FR.md) — parcours de pratique linguistique, de travail et de recherche.
 - [La répétition écrite n’est pas une conversation orale](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md) — limite de modalité et d’interprétation.
 - [Apprentissage durable assisté par LLM](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — synthèse candidate et limites de source, consultée le 12/08/2026.
 - [Paquet de cartes différées du Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md) — procédure de cartes et de contrôle préparée par le projet.

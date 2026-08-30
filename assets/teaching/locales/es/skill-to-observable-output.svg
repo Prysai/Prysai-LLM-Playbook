@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Un Skill convierte un contrato en un resultado comprobable</title>
+  <desc id="desc">Esta lámina roja y negra conecta cuatro decisiones de un Skill con un resultado comprobable: activación, filtro de entrada, método acotado y comprobante observable. El carril inferior exige casos positivos, de límite, de fallo y de transferencia.</desc>
+  <rect width="1600" height="900" fill="#f3f0e9"/>
+  <rect width="1600" height="116" fill="#11151a"/>
+  <rect x="64" y="46" width="18" height="18" fill="#d62828"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="106" y="68" fill="#f3f0e9" font-size="32" font-weight="700" letter-spacing="1">CONTRATO DE SKILL → RESULTADO COMPROBABLE</text>
+    <text x="1536" y="68" fill="#f3f0e9" font-size="16" font-weight="700" text-anchor="end" letter-spacing="2">MÉTODO / NO MAGIA</text>
+
+    <text x="64" y="190" fill="#11151a" font-size="58" font-weight="800" letter-spacing="-2">Cuatro decisiones. Un resultado inspeccionable.</text>
+    <text x="64" y="232" fill="#4f555a" font-size="21">El alcance sigue a la pregunta; la autoridad queda visible en cada entrega.</text>
+
+    <rect x="64" y="290" width="270" height="292" fill="#11151a"/>
+    <text x="88" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">01 / ACTIVACIÓN</text>
+    <text x="88" y="393" fill="#f3f0e9" font-size="35" font-weight="700">Di la tarea.</text>
+    <text x="88" y="448" fill="#c9cccf" font-size="20">¿Cuándo encaja</text>
+    <text x="88" y="480" fill="#c9cccf" font-size="20">mejor este método?</text>
+    <line x1="88" y1="528" x2="310" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="88" y="559" fill="#f3f0e9" font-size="16" font-weight="700">SALIDA: DIRIGIR O CEDER</text>
+
+    <rect x="350" y="290" width="318" height="292" fill="#f3f0e9" stroke="#11151a" stroke-width="3"/>
+    <text x="374" y="330" fill="#d62828" font-size="18" font-weight="700" letter-spacing="2">02 / FILTRO DE ENTRADA</text>
+    <text x="374" y="393" fill="#11151a" font-size="32" font-weight="700">Comprueba primero.</text>
+    <text x="374" y="448" fill="#4f555a" font-size="20">¿Qué debe estar presente?</text>
+    <text x="374" y="480" fill="#4f555a" font-size="20">¿Qué falta lo detiene?</text>
+    <line x1="374" y1="528" x2="644" y2="528" stroke="#d62828" stroke-width="4"/>
+    <text x="374" y="559" fill="#11151a" font-size="16" font-weight="700">ENTRADA AUSENTE → PARAR</text>
+
+    <rect x="684" y="290" width="380" height="292" fill="#d62828"/>
+    <text x="708" y="330" fill="#11151a" font-size="18" font-weight="700" letter-spacing="2">03 / MÉTODO ACOTADO</text>
+    <text x="708" y="393" fill="#ffffff" font-size="32" font-weight="700">Separa las acciones.</text>
+    <text x="708" y="448" fill="#ffffff" font-size="20">Permitido / prohibido / reversible</text>
+    <text x="708" y="480" fill="#ffffff" font-size="20">Meta / dueño / parar / revertir</text>
+    <line x1="708" y1="528" x2="1040" y2="528" stroke="#11151a" stroke-width="4"/>
+    <text x="708" y="559" fill="#11151a" font-size="16" font-weight="700">CAPACIDAD ≠ AUTORIDAD</text>
+
+    <rect x="1080" y="290" width="456" height="292" fill="#11151a"/>
+    <text x="1104" y="330" fill="#ef4444" font-size="18" font-weight="700" letter-spacing="2">04 / RESULTADO INSPECCIONABLE</text>
+    <text x="1104" y="393" fill="#f3f0e9" font-size="35" font-weight="700">Deja una prueba</text>
+    <text x="1104" y="434" fill="#f3f0e9" font-size="35" font-weight="700">que otra persona revise.</text>
+    <text x="1104" y="480" fill="#c9cccf" font-size="20">Archivo · diff · registro · captura</text>
+    <line x1="1104" y1="528" x2="1512" y2="528" stroke="#ef4444" stroke-width="4"/>
+    <text x="1104" y="559" fill="#f3f0e9" font-size="16" font-weight="700">RESULTADO + LÍMITE + ESTADO</text>
+
+    <text x="64" y="654" fill="#d62828" font-size="17" font-weight="700" letter-spacing="2">CARRIL DE VERIFICACIÓN</text>
+    <line x1="64" y1="690" x2="1536" y2="690" stroke="#11151a" stroke-width="3"/>
+    <rect x="64" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="440" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="816" y="676" width="18" height="28" fill="#d62828"/>
+    <rect x="1192" y="676" width="18" height="28" fill="#d62828"/>
+    <text x="64" y="748" fill="#11151a" font-size="27" font-weight="700">POSITIVO</text>
+    <text x="440" y="748" fill="#11151a" font-size="27" font-weight="700">LÍMITE</text>
+    <text x="816" y="748" fill="#11151a" font-size="27" font-weight="700">FALLO</text>
+    <text x="1192" y="748" fill="#11151a" font-size="27" font-weight="700">TRANSFERENCIA</text>
+    <text x="64" y="784" fill="#4f555a" font-size="17">funciona en el trabajo nombrado</text>
+    <text x="440" y="784" fill="#4f555a" font-size="17">cede fuera de su alcance</text>
+    <text x="816" y="784" fill="#4f555a" font-size="17">se detiene o recupera con honestidad</text>
+    <text x="1192" y="784" fill="#4f555a" font-size="17">resiste un ejemplo distinto</text>
+
+    <text x="64" y="854" fill="#11151a" font-size="15" font-weight="700">PROYECTO ORIGINAL · SIN MEDIOS EXTERNOS</text>
+    <text x="1536" y="854" fill="#11151a" font-size="15" font-weight="700" text-anchor="end">PRYSAI LAB / CANDIDATO</text>
+  </g>
+</svg>
