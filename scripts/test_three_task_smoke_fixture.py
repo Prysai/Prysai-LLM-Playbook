@@ -23,6 +23,12 @@ def load_validator():
     return module
 
 
+def canonical_fixture_bytes(path: Path) -> bytes:
+    """Hash text fixtures independently of the checkout's newline style."""
+
+    return path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
 def main() -> int:
     fixture = json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
     assert fixture["task_set_id"] == "three-task-smoke-v1"
@@ -39,7 +45,7 @@ def main() -> int:
             expected_path = FIXTURE_ROOT / task["expected_path"]
             assert input_path.is_file()
             assert expected_path.is_file()
-            assert hashlib.sha256(input_path.read_bytes()).hexdigest() == task["input_sha256"]
+            assert hashlib.sha256(canonical_fixture_bytes(input_path)).hexdigest() == task["input_sha256"]
             submission = temporary_path / expected_path.name
             submission.write_bytes(expected_path.read_bytes())
             ok, detail = validator.validate(task["id"], submission)
