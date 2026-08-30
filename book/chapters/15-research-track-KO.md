@@ -293,7 +293,7 @@ known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을
 ```
 ### 주장마다 출처 책임자 지정하기
 
-| 주장 | 예상 source owner | direct support | conflict / unknown | 다음으로 허용된 check |
+| 주장 | 예상 출처 담당자 | 직접 뒷받침 | 충돌 / 미확인 | 다음으로 허용된 확인 |
 |---|---|---|---|---|
 | [확인 가능한 한 문장] | official page / primary research / law or policy / first-party data / named institution | quote 또는 passage | 지지되지 않는 부분·다른 version | 작은 check 하나 |
 

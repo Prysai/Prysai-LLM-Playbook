@@ -83,7 +83,7 @@ hard_stop: 不明な副作用、権限不足、または新しい証拠のない
 
 ### E — 応答喪失後の照合
 
-ローカル write の応答が見えなかったと仮定し、command、試行、hash を保存して
+ローカル書き込みの応答が見えなかったと仮定し、command、試行、hash を保存して
 timeout だけで再送しません。対象を最小の read-back で読み、
 `no_effect_observed`、`effect_matches`、`effect_differs`、`effect_unknown` に
 分類します。判別できなければ未知の状態を handoff し、次の安全な確認は一つだけ
