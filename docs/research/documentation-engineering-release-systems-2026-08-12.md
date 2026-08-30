@@ -72,9 +72,12 @@ is reviewable in one place. A date-based transition from `supported` to
 `maintenance` is not manually repeated across every language page.
 
 This repository already follows the same principle for learning-path data,
-locale manifests, search, navigation, and content status. The gap is that the
-top-level release decision is still prose in `docs/release-checklist.md` plus a
-human interpretation of `docs/quality/quality-register.md`.
+locale manifests, search, navigation, and content status. At the time of this
+2026-08-12 study, the top-level release decision was still described as prose
+in `docs/release-checklist.md` plus a human interpretation of
+`docs/quality/quality-register.md`. The repository checklist was later removed
+from the public tree under ADR-0049; the machine-readable readiness and
+evidence contracts now own the public boundary.
 
 **Transferable rule:** a fact displayed in more than one place should have one
 structured owner and generated projections. A release claim is also a fact.
