@@ -8,7 +8,7 @@ import json
 import re
 import shutil
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from tempfile import TemporaryDirectory
 from urllib.parse import quote
 from xml.sax.saxutils import escape as xml_escape
@@ -356,9 +356,34 @@ def source_path_label(path: Path, fallback_root: Path) -> str:
 
 
 def forbidden_publish_paths(root: Path = ROOT) -> list[str]:
-    """Return exact source or artifact paths that must never be published."""
+    """Return forbidden source or artifact paths using normalized matching.
 
-    return [relative for relative in FORBIDDEN_PUBLISH_PATHS if (root / relative).exists()]
+    Publish checks run on Linux and Windows, while repository paths are
+    case-sensitive on the former and commonly case-insensitive on the latter.
+    Walk only the explicitly denied path components so this guard does not scan
+    unrelated working directories or Git objects.
+    """
+
+    matches: list[str] = []
+    for relative in FORBIDDEN_PUBLISH_PATHS:
+        candidates = [root]
+        for component in PurePosixPath(relative).parts:
+            next_candidates: list[Path] = []
+            for parent in candidates:
+                if not parent.is_dir():
+                    continue
+                next_candidates.extend(
+                    child
+                    for child in parent.iterdir()
+                    if child.name.casefold() == component.casefold()
+                )
+            candidates = next_candidates
+        matches.extend(
+            candidate.relative_to(root).as_posix()
+            for candidate in candidates
+            if candidate.is_file()
+        )
+    return sorted(set(matches), key=str.casefold)
 
 
 def artifact_secret_findings(output: Path) -> list[str]:
