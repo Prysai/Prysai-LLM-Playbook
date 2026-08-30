@@ -86,7 +86,7 @@ exit code 0은 script가 자신의 정의로 끝났다는 뜻일 뿐 field mappi
 | sheet | formula, filter, empty, unit, recalculate | formula 덮어쓰기 |
 | flow | schema, log, batch, key, read-back | timeout 뒤 중복 write |
 
-## 작은 실험: 오프라인 report flow와 두 failure
+## 작은 실험: 오프라인 보고 흐름과 두 가지 실패
 
 1. normal, empty, `count` 누락, negative, extreme 합성 input을 만듭니다. 실제 customer/personal/production data는 쓰지 않습니다.
 2. Markdown report를 만들고 window, total, category, empty state를 확인합니다. PDF/PNG를 render하면 final form을 검사합니다.
