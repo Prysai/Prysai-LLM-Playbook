@@ -152,7 +152,8 @@ def main() -> int:
             # the production symlink scan on every platform.
             pass
         else:
-            require(source_symlinks([source]) == ["source/outside-link.txt"], "published source symlink was not found")
+            expected_link = f"{source.name}/outside-link.txt"
+            require(source_symlinks([source]) == [expected_link], "published source symlink was not found")
 
     print(f"PAGES_ARTIFACT_TESTS_OK fixtures=13 secret-patterns=3 symlink=guarded sitemap={len(urls)}")
     return 0
