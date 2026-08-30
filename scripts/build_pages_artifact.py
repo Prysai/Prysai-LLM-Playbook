@@ -381,7 +381,7 @@ def forbidden_publish_paths(root: Path = ROOT) -> list[str]:
         matches.extend(
             candidate.relative_to(root).as_posix()
             for candidate in candidates
-            if candidate.is_file()
+            if candidate.exists() or candidate.is_symlink()
         )
     return sorted(set(matches), key=str.casefold)
 

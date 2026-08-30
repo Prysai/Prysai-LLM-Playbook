@@ -130,6 +130,22 @@ def main() -> int:
             else:
                 raise AssertionError(f"validate_artifact accepted forbidden path spelling: {spelling}")
 
+        directory_source = Path(temporary) / "directory-source"
+        forbidden_directory = directory_source / "docs" / "release-checklist.md"
+        forbidden_directory.mkdir(parents=True)
+        require(
+            forbidden_publish_paths(directory_source) == ["docs/release-checklist.md"],
+            "source boundary accepted a forbidden directory path",
+        )
+
+        directory_artifact = Path(temporary) / "directory-artifact"
+        forbidden_artifact_directory = directory_artifact / "docs" / "release-checklist.md"
+        forbidden_artifact_directory.mkdir(parents=True)
+        require(
+            forbidden_publish_paths(directory_artifact) == ["docs/release-checklist.md"],
+            "artifact boundary accepted a forbidden directory path",
+        )
+
         with patch.object(build_pages_artifact, "forbidden_publish_paths", return_value=["docs/release-checklist.md"]):
             try:
                 build_pages_artifact.validate_source()
