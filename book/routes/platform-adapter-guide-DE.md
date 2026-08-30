@@ -92,7 +92,7 @@ oben aus. Notiere dann einen Plattform-Unterschied, den du tatsächlich
 beobachtest: Erwähnt die Antwort Browsing, Speicher oder einen Share-Link?
 Halte fest, was du gesehen hast, nicht was du annimmst. Für eine
 quellengestützte Prüfung einer ChatGPT-Behauptung nutze den
-Source Investigator Skill –
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md) –
 die offiziellen OpenAI-Hilfeseiten sind der Eigentümer der Produktfakten.
 
 <span id="claude-code-first-task"></span>
