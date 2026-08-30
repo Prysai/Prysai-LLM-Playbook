@@ -166,12 +166,12 @@
 가정해 보겠습니다. 목표를 “과정 전체 개선”이 아니라 다음처럼 줄입니다.
 
 ```text
-Outcome: 처음 읽는 사람이 두 제목을 찾고 첫 action 하나를 말할 수 있다.
-Fixed input: disposable copy의 named chapter file 하나.
-Allowed change: 그 file의 local text만. edit 전에는 proposal만.
-Acceptance: “What changed”와 “How to check”가 있고 둘 다 120단어 안 section에 있다.
-Evidence: baseline, exact diff, manual read-back, not-proven list.
-Stop: 다른 file, link, publish, install 또는 reader data가 필요해진다.
+Outcome: 처음 읽는 사람이 두 제목을 찾고 첫 조치 하나를 말할 수 있다.
+Fixed input: 이름을 지정한 장 파일 하나가 있는 임시 복사본.
+Allowed change: 해당 파일의 로컬 텍스트만 수정한다. 편집 전에는 제안만 한다.
+Acceptance: “What changed”와 “How to check” 두 제목이 120단어 이내의 섹션에 있다.
+Evidence: 기준선, 정확한 diff, 다시 읽은 기록, 미증명 목록.
+Stop: 다른 파일, 링크, 게시, 설치 또는 독자 데이터가 필요해진다.
 ```
 
 이 슬라이스의 가치는 과정 전체를 완성하는 데 있지 않습니다. 작업 계약이 충분한지, 대상이 맞는지,
