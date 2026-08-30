@@ -638,7 +638,14 @@ def candidate_files() -> tuple[list[Path], list[str]]:
         return [], [f"cannot list repository candidate files: {exc}"]
     if result.returncode != 0:
         return [], ["git ls-files failed while checking repository security"]
-    files = [ROOT / Path(value) for value in result.stdout.decode("utf-8", errors="replace").split("\0") if value]
+    # `git ls-files -c` also reports tracked paths deleted in the working tree.
+    # They are not candidate bytes to scan; skip them so a deliberate removal
+    # does not turn the security check into a false failure.
+    files = [
+        ROOT / Path(value)
+        for value in result.stdout.decode("utf-8", errors="replace").split("\0")
+        if value and (ROOT / Path(value)).is_file()
+    ]
     return files, []
 
 
