@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Superseded by [ADR-0049: keep maintainer-only release controls out of public artifacts](0049-maintainer-only-release-controls.md)
 
 ## Date
 
@@ -16,6 +16,12 @@ It intentionally leaves the current metadata as `unreleased` and
 `unavailable`. The release checklist also names versioning, a changelog, an
 immutable tag, a rollback target, and a rehearsal, but it is a human checklist
 rather than a semantic contract.
+
+The final paragraph of this ADR originally kept that human checklist in the
+public repository. ADR-0049 supersedes that publication choice: the checklist
+was maintainer-only operational material and is no longer a repository or
+Pages source. The machine-readable contract and the dated evidence records
+remain the public, reviewable boundary.
 
 This leaves a professional-looking failure mode: arbitrary non-empty version
 and rollback strings satisfy the release-evidence schema, while a changelog,
@@ -46,9 +52,10 @@ the direct release gap and remains unresolved.
 5. Run the validator and fixtures inside commit-bound release evidence. The
    resulting green gate proves the record is honest and internally consistent;
    while its decision is `not_ready`, it does not prove release readiness.
-6. Keep the release checklist as the human review sequence and the evidence
-   packet as exact-run output. Neither duplicates or replaces the readiness
-   decision.
+6. Keep the evidence packet as exact-run output. It does not duplicate or
+   replace the readiness decision. The former repository checklist is removed
+   under ADR-0049; public contributors should use the readiness and evidence
+   contracts instead.
 
 ## Alternatives considered
 
