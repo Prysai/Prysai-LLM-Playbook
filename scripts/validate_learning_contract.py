@@ -121,7 +121,7 @@ CHAPTER_CONTRACT = {
     "transfer": re.compile(
         r"(?m)^(?:##|###)\s+(?:迁移|遷移|迁移练习|遷移練習|遷移任務|Transfer|Transfer task|"
         r"Transfer exercise|Transferaufgabe|Tarea de transferencia|"
-        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|転移タスク|別の分野へ移す|移行と振り返り|応用課題|応用|전환|전이 과제|응용 과제|Transfert|Exercice de transfert)(?:\s+.*)?$",
+        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|転移タスク|転移課題|別の分野へ移す|移行と振り返り|応用課題|応用|전환|전이 과제|응용 과제|Transfert|Exercice de transfert)(?:\s+.*)?$",
         re.IGNORECASE,
     ),
     "acceptance": re.compile(
