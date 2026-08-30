@@ -11,6 +11,15 @@ tmp-*.ipynb
 _site/
 output/
 
+# Root-only audit and agent reports. These are local working files, not
+# reproducible project inputs; keep them out of accidental commits without
+# hiding files in documented subdirectories.
+/.audit-*
+/.efficiency-*
+/.tmp-*
+/.codex-*
+/CON
+
 # Secrets and machine-local configuration.
 .env
 .env.*
