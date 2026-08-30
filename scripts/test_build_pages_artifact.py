@@ -12,6 +12,7 @@ import build_site_locale_manifest
 from build_pages_artifact import (
     SPACE_README_FRONTMATTER,
     artifact_secret_findings,
+    forbidden_publish_paths,
     load_seo_config,
     root_index,
     pages_reader_alias,
@@ -100,6 +101,24 @@ def main() -> int:
 
         source = Path(temporary) / "source"
         source.mkdir()
+        internal_source = source / "docs" / "release-checklist.md"
+        internal_source.parent.mkdir()
+        internal_source.write_text("maintainer-only", encoding="utf-8")
+        require(
+            forbidden_publish_paths(source) == ["docs/release-checklist.md"],
+            "reintroduced maintainer checklist was not rejected at the source boundary",
+        )
+
+        artifact_copy = Path(temporary) / "artifact-with-internal-path"
+        artifact_copy.mkdir()
+        internal_artifact = artifact_copy / "docs" / "release-checklist.md"
+        internal_artifact.parent.mkdir()
+        internal_artifact.write_text("maintainer-only", encoding="utf-8")
+        require(
+            forbidden_publish_paths(artifact_copy) == ["docs/release-checklist.md"],
+            "maintainer checklist was not rejected at the artifact boundary",
+        )
+
         outside = Path(temporary) / "outside.txt"
         outside.write_text("outside", encoding="utf-8")
         link = source / "outside-link.txt"
