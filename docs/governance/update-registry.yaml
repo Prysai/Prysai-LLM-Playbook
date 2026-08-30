@@ -195,7 +195,7 @@
     },
     {
       "area": "release-and-rollback",
-      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", ".github/workflows/quality.yml", ".github/workflows/release-gate.yml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md", "docs/adr/0040-clean-checkout-release-evidence.md", "docs/adr/0042-separate-candidate-quality-from-release-gate.md"],
+      "canonical_paths": ["docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", ".github/workflows/quality.yml", ".github/workflows/release-gate.yml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md", "docs/adr/0040-clean-checkout-release-evidence.md", "docs/adr/0042-separate-candidate-quality-from-release-gate.md"],
       "owner": "release-maintainer",
       "triggers": ["release-candidate", "public-site-change", "high-risk-content-change", "quality-policy-change", "evidence-dimension-change", "rollback-needed"],
       "required_inputs": ["candidate-sha", "diff", "gate-logs", "reviewer", "known-gaps", "source-freshness", "version-decision", "changelog", "reviewed-tag", "reviewed-release-evidence", "rollback-target", "rollback-rehearsal", "user-approval"],
