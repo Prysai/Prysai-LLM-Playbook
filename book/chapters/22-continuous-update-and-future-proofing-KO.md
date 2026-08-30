@@ -105,7 +105,7 @@ impact analysis, status, rollback은 안정된 방법입니다. 이름, permissi
 
 제품 이름, 권한, 동작은 변합니다. 최신 공식 자료를 확인하십시오. 이 장은 `candidate`이며 실험은 운영 동작이나 팀 효과를 증명하지 않습니다.
 
-## 게시 전 최소 update card
+## 게시 전 최소 업데이트 카드
 
 새 이름이나 페이지 screenshot을 보았다고 책 전체를 일괄 치환하지 않습니다. 먼저 rollback 가능한 card로 변경 범위를 좁힙니다. 무엇을 바꾸는지, 왜 그것만 바꾸는지, 아직 어떤 결론을 말할 수 없는지 다음 maintainer가 알 수 있게 합니다.
 
