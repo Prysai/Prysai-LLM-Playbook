@@ -194,6 +194,15 @@ ni tarif, ni contact, ni promesse, ni nouvel horaire.
 Arrêt : ne naviguez pas, n’envoyez rien, ne publiez rien et n’inventez aucun détail.
 ```
 
+Conservez la première demande et la première réponse, puis vérifiez chaque
+proposition :
+
+| Vérification | Question |
+|---|---|
+| Correspondance avec la source | Pouvez-vous retrouver chaque fait dans l’avis ? |
+| Forme | La réponse comporte-t-elle deux phrases et la liste des faits conservés ? |
+| Élément inconnu | Le numéro de salle est-il resté `[inconnu]` plutôt que d’être inventé ? |
+
 Marquez chaque proposition `PASS`, `FAIL` ou `UNSURE`. Si un numéro de salle
 apparaît, l’observation est `FAIL` pour cette affirmation ; elle ne prouve pas
 que tous les modèles se comporteront toujours ainsi.
