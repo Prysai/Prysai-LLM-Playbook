@@ -13,9 +13,9 @@ Superseded by [ADR-0049: keep maintainer-only release controls out of public art
 The commit-bound release evidence packet records gates for an exact candidate
 SHA, active quality findings, freshness, blind spots, and a rollback boundary.
 It intentionally leaves the current metadata as `unreleased` and
-`unavailable`. The release checklist also names versioning, a changelog, an
-immutable tag, a rollback target, and a rehearsal, but it is a human checklist
-rather than a semantic contract.
+`unavailable`. An internal maintainer checklist also names versioning, a
+changelog, an immutable tag, a rollback target, and a rehearsal, but it is a
+human checklist rather than a semantic contract.
 
 The final paragraph of this ADR originally kept that human checklist in the
 public repository. ADR-0049 supersedes that publication choice: the checklist
