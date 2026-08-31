@@ -6995,6 +6995,17 @@ Object.assign(copy.de, { navVisuals: 'Visueller Leitfaden' });
 Object.assign(copy['zh-tw'], { navVisuals: '視覺導覽' });
 Object.assign(copy.fr, { navVisuals: 'Guide visuel' });
 
+// Keep the homepage's external Prysai destination discoverable in every
+// supported interface language. The URL and brand name remain unchanged.
+Object.assign(copy.en, { officialSite: 'Prysai official website' });
+Object.assign(copy.zh, { officialSite: 'Prysai 官方网站' });
+Object.assign(copy.es, { officialSite: 'Sitio web oficial de Prysai' });
+Object.assign(copy.ja, { officialSite: 'Prysai 公式サイト' });
+Object.assign(copy.ko, { officialSite: 'Prysai 공식 웹사이트' });
+Object.assign(copy.de, { officialSite: 'Offizielle Prysai-Website' });
+Object.assign(copy['zh-tw'], { officialSite: 'Prysai 官方網站' });
+Object.assign(copy.fr, { officialSite: 'Site officiel de Prysai' });
+
 // Keep the hero value statement scannable in every interface language. The
 // short item line and its evidence note are separate so mobile readers can
 // find the takeaway without parsing a dense paragraph.
