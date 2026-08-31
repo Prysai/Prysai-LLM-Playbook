@@ -136,8 +136,10 @@ Skills, Agents et vérification. Commencez par la
 - Pour le parcours approfondi avec fichiers et outils : [première modification sûre](first-safe-change-FR.md).
 - Pour le socle indépendant des plateformes : [fondations universelles](universal-core-foundations-FR.md).
 - Pour comparer deux plateformes : commencez par la [bibliothèque des
-  preuves](../evidence-library-FR.md#source-notes), puis consultez la version
-  actuelle du protocole du dépôt uniquement après avoir confirmé son périmètre.
+  preuves](../evidence-library-FR.md#source-notes), puis consultez, après avoir
+  confirmé leur périmètre, le [LLM Comparison Protocol (locale-neutral)](../../skills/prysai-llm-comparison-protocol/SKILL.md)
+  et le [Platform Adapter Review (locale-neutral)](../../skills/prysai-platform-adapter-review/SKILL.md)
+  du dépôt.
 
 ## État des preuves et limites
 
