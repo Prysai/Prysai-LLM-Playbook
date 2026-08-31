@@ -117,7 +117,7 @@ Welche Aussage wurde schwächer, als du Quelle, Zeitpunkt oder Umfang getrennt h
 
 ## Quellen und Wartungsgrenze
 
-Fragen, Belegketten und Konfliktprotokolle sind stabile Methoden. Erreichbare Seiten, Produktfakten, Forenbeiträge und Suchergebnisse ändern sich; protokolliere Zugriffstag, Umfang und nächste Prüfung, statt sie als zeitlose Fakten zu behandeln. Die [Quellennotizen der Evidenzbibliothek](../evidence-library-DE.md#source-notes) halten Kontext und Status der jeweiligen Referenz fest.
+Fragen, Belegketten und Konfliktprotokolle sind stabile Methoden. Erreichbare Seiten, Produktfakten, Forenbeiträge und Suchergebnisse ändern sich; protokolliere Zugriffstag, Umfang und nächste Prüfung, statt sie als zeitlose Fakten zu behandeln. Die [Quellennotizen der Evidenzbibliothek](../evidence-library-DE.md#source-notes) halten Kontext und Status der jeweiligen Referenz fest. Für die in diesem Kapitel verwendeten Fälle und Grenzen sind außerdem das [Register der Feldprobleme](../../docs/research/field-problems-codex.md), die [Prüfung offizieller Fakten](../../docs/research/official-facts-gap-review-2026-08-10.md) und das [Register für Assets und Lizenzen](../../docs/sources/asset-register.md) die ersten Anlaufstellen.
 
 ## Eigene Abnahme
 
