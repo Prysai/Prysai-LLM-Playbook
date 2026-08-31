@@ -2,13 +2,9 @@ name: Prysai LLM Playbook CodeQL
 
 on:
   pull_request:
-    paths:
-      - "**.py"
-      - "**.js"
-      - "**.mjs"
-      - "**.ts"
-      - "**.tsx"
-      - ".github/workflows/codeql.yml"
+    # The repository Ruleset requires a CodeQL result for every PR. Do not
+    # path-filter this event: documentation-only PRs still need a completed
+    # result rather than a permanently pending required check.
   push:
     branches: [main]
     paths:
