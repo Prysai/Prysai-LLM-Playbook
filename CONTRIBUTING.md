@@ -93,12 +93,19 @@ State all of the following in the pull request:
 8. rollback or recovery for behavior, contract, or release changes.
 
 The pull-request template is paired with the read-only `pull-request-contract`
-workflow. That check verifies the required disclosure headings, the exact PR
-head SHA it inspected, and a valid DCO sign-off on every commit. It makes the
-objective parts of the intake repeatable; it does not judge learning value,
-source accuracy, security impact, or whether a reviewer should approve the
-change. CODEOWNERS requests the relevant maintainer, and the active Ruleset is
-the source of truth for which checks and approvals block a merge.
+workflow. For new PRs, that check verifies the required disclosure headings,
+the exact PR head SHA it inspected, and a valid DCO sign-off on every commit.
+PRs opened before the one-time rollout cutoff (`2026-08-31T00:14:52Z`, when PR
+#66 was merged) use a migration path that still verifies the current head,
+non-empty commit history, and a valid GitHub cryptographic signature on every
+commit, without retroactively rewriting their metadata or commit messages. The
+migration path does not certify a historical DCO trailer and does not remove
+the Ruleset, required checks, signatures, resolved threads, or human-review
+requirements. The check makes objective intake fields repeatable; it does not
+judge learning value, source accuracy, security impact, or whether a reviewer
+should approve the change. CODEOWNERS requests the relevant maintainer, and
+the active Ruleset is the source of truth for which checks and approvals block
+a merge.
 
 For the fast test-material route, also link the `contribution.json` receipt,
 state the reviewer role requested, and sign off each commit to attest that you

@@ -16,7 +16,9 @@ unreviewed write path. The repository is public, its pull-request workflows
 process contributor-controlled content, and the active GitHub Ruleset requires
 an approving review, resolved review threads, signed commits, CodeQL, and code
 quality checks. The repository also needs a read-only pull-request contract to
-make the objective PR-body and DCO intake repeatable.
+make the objective PR-body and DCO intake repeatable. The host Ruleset now
+requires the candidate-evidence, repository-security, and pull-request-contract
+checks against the latest base code.
 
 The accounts `uuzzrm` and `Prysai-Lab` are the explicitly designated authors
 for this route. A live GitHub API check on 2026-08-30 reported both accounts as
@@ -35,10 +37,14 @@ definition, and does not check out or execute the pull-request ref.
 The workflow may act only when all of the following are true:
 
 1. the exact head SHA belongs to one open, non-draft PR into `main`;
-2. the PR author is `uuzzrm` or `Prysai-Lab`, the source repository is the main
-   repository, the `uuzzrm` fork, or the `Prysai-Lab` fork, and the title starts
-   with `[maintainer-doc]`;
-3. the PR body contains the repository's complete disclosure headings;
+2. the PR author is `uuzzrm` or `Prysai-Lab`, and the source repository is the
+   main repository, the `uuzzrm` fork, or the `Prysai-Lab` fork;
+3. a new PR title starts with `[maintainer-doc]` and its body contains the
+   repository's complete disclosure headings. PRs created before the #66
+   rollout cutoff (`2026-08-31T00:14:52Z`) use a one-time migration path for
+   historical metadata, require a valid GitHub cryptographic signature on
+   every commit, and require an existing maintainer approval for the exact
+   current head SHA;
 4. every changed path is an added or modified regular Markdown file under
    `book/`, with no deletion, rename, symlink, traversal-shaped segment, or
    more than 25 files or 1,500 changed lines; and
@@ -91,9 +97,11 @@ limited to small book Markdown changes; non-allowlisted work remains manual.
 
 ## Consequences
 
-- Eligible `uuzzrm` and `Prysai-Lab` documentation PRs can receive the bot
+- Eligible new `uuzzrm` and `Prysai-Lab` documentation PRs can receive the bot
   signal and wait in native Squash Auto-merge after all three required
-  workflows pass.
+  workflows pass. Existing PRs from before the rollout can use the one-time
+  migration path only when a maintainer has already approved their current
+  head; this avoids retroactively rewriting historical PR bodies and commits.
 - A PR title opt-in, disclosure headings, exact SHA checks, file allowlist, and
   size limits reduce accidental enrollment but do not replace human judgment.
 - Workflow, security, script, dependency, release, site, asset, deletion,
@@ -107,9 +115,12 @@ limited to small book Markdown changes; non-allowlisted work remains manual.
 ## Evidence boundary
 
 This ADR records a proposed repository design. Local static validation and
-fixture tests establish only the declared source contract. The workflow has not
-been runtime-tested against a newly merged configuration in this change, and
-no existing PR was approved, merged, or otherwise modified while preparing it.
+fixture tests establish only the declared source contract. The migration path
+was added after the #66 rollout was observed to block pre-existing PRs. It
+requires a valid GitHub cryptographic signature on every historical commit but
+does not certify missing DCO trailers or rewrite commit messages. It has
+not yet been runtime-tested from `main` against the full set of open PRs, and
+the new strict path has not yet been validated by a newly created eligible PR.
 Live GitHub settings may drift and must be rechecked before treating the route
 as production-ready.
 

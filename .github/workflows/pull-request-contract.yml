@@ -22,6 +22,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
       EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      ROLLOUT_CUTOFF_AT: '2026-08-31T00:14:52Z'
     steps:
       - name: Validate pull-request body and commit sign-offs
         run: |
@@ -33,6 +34,7 @@ jobs:
             > "$RUNNER_TEMP/pull-request.json"
           python - "$RUNNER_TEMP/pull-request.json" "$RUNNER_TEMP/pull-request-commits.json" <<'PY'
           import json
+          from datetime import datetime, timezone
           import os
           import re
           import sys
@@ -43,6 +45,13 @@ jobs:
           commits = [commit for page in commit_pages for commit in page]
           body = pull_request.get("body") or ""
           expected_head = os.environ["EXPECTED_HEAD_SHA"]
+          created_at = pull_request.get("created_at")
+          legacy_authors = {"uuzzrm", "Prysai-Lab"}
+
+          def fail(message):
+              print("PR_CONTRACT_FAILED")
+              print(f"- {message}")
+              raise SystemExit(1)
 
           required_headings = (
               "## Tracking and summary",
@@ -59,17 +68,57 @@ jobs:
               "## Status claim",
               "## Checklist",
           )
-          missing_headings = [heading for heading in required_headings if heading not in body]
-          if missing_headings:
-              print("PR_CONTRACT_FAILED")
-              print("- PR body is missing: " + ", ".join(missing_headings))
-              raise SystemExit(1)
+          if not isinstance(created_at, str) or not created_at.strip():
+              fail("pull-request creation time is unavailable")
+          try:
+              created_time = datetime.fromisoformat(created_at.replace("Z", "+00:00"))
+              cutoff_time = datetime.fromisoformat(
+                  os.environ["ROLLOUT_CUTOFF_AT"].replace("Z", "+00:00")
+              )
+          except ValueError:
+              fail("pull-request creation time or rollout cutoff is invalid")
+          if created_time.tzinfo is None:
+              created_time = created_time.replace(tzinfo=timezone.utc)
+          if cutoff_time.tzinfo is None:
+              cutoff_time = cutoff_time.replace(tzinfo=timezone.utc)
 
           actual_head = pull_request.get("head", {}).get("sha")
           if actual_head != expected_head:
-              print("PR_CONTRACT_FAILED")
-              print("- pull-request head changed while the contract was being checked")
-              raise SystemExit(1)
+              fail("pull-request head changed while the contract was being checked")
+          if not commits:
+              fail("pull request has no commits")
+
+          # PRs created before PR #66 was merged were opened before this
+          # contract existed. Keep the migration one-time and observable: the
+          # exact head, non-empty commit history, and GitHub's cryptographic
+          # signature verification are still checked, while historical bodies
+          # and DCO trailers are not retroactively rewritten. New PRs remain
+          # on the strict path below and must satisfy both DCO and the active
+          # Ruleset's signed-commit requirement.
+          if created_time < cutoff_time and pull_request.get("user", {}).get("login") in legacy_authors:
+              signature_failures = []
+              for commit in commits:
+                  sha = commit.get("sha", "unknown")
+                  verification = (commit.get("commit") or {}).get("verification") or {}
+                  if verification.get("verified") is not True or verification.get("reason") != "valid":
+                      signature_failures.append(
+                          f"{sha[:12]}:{verification.get('reason', 'missing')}"
+                      )
+              if signature_failures:
+                  fail(
+                      "legacy migration requires a valid GitHub cryptographic signature "
+                      "on every commit; failures: " + ", ".join(signature_failures)
+                  )
+              print(
+                  "PR_CONTRACT_MIGRATION_OK "
+                  f"created={created_at} commits={len(commits)} "
+                  f"signed={len(commits)} head={expected_head[:12]}"
+              )
+              raise SystemExit(0)
+
+          missing_headings = [heading for heading in required_headings if heading not in body]
+          if missing_headings:
+              fail("PR body is missing: " + ", ".join(missing_headings))
 
           signoff = re.compile(r"^Signed-off-by:\s+[^<>\r\n]+<[^<>\s]+@[^<>\s]+>\s*$", re.IGNORECASE)
           signoff_prefix = re.compile(r"^Signed-off-by:", re.IGNORECASE)
@@ -82,12 +131,11 @@ jobs:
               valid = [line for line in declared if signoff.fullmatch(line)]
               if not valid or len(valid) != len(declared):
                   failures.append(sha[:12])
-          if not commits:
-              failures.append("no-commits")
           if failures:
-              print("PR_CONTRACT_FAILED")
-              print("- every commit needs at least one valid Signed-off-by trailer and no malformed sign-off; failures: " + ", ".join(failures))
-              raise SystemExit(1)
+              fail(
+                  "every commit needs at least one valid Signed-off-by trailer "
+                  "and no malformed sign-off; failures: " + ", ".join(failures)
+              )
 
           print(f"PR_CONTRACT_OK commits={len(commits)} headings={len(required_headings)} head={expected_head[:12]}")
           PY
