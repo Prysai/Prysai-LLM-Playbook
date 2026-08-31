@@ -196,3 +196,15 @@ v3 のプロトコルを、書いた本人ではない人に渡します。元�
 レビューは、学習者が Lab を完了したこと、または安全性、生産性、効率、学習能力が変わった
 ことを証明しません。準備ができたら[第4章：コンテキスト、権限、Agent の行動境界](../chapters/04-context-permissions-and-agent-JA.md)
 へ進みます。この経路は日本語のままです。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-001-first-safe-task-JA.md" aria-label="前の Lab：Lab 001 · 安全な README の変更を一つ行う">← 前の Lab<br><strong>Lab 001 · 安全な README の変更を一つ行う</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-003-evidence-review-JA.md" aria-label="次の Lab：Lab 003 · 完了宣言を監査する">次へ →<br><strong>Lab 003 · 完了宣言を監査する</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

@@ -103,3 +103,15 @@ A には「この内容を完了状態として整理して」とだけ渡しま
 ## 振り返りと転移
 
 どの段階が重大な問題を最初に見つけましたか。結果を変えず儀式だけを増やした段階は何ですか。役立つ確認点だけを別の可逆的課題へ移し、比較可能かどうかを説明します。三つの小課題は一般的なコスト、品質、モデル順位を証明せず、ローカルチェックもデプロイやユーザー受容を証明しません。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-008-research-question-JA.md" aria-label="前の Lab：Lab 008 · 大きなテーマを答えられる調査の問いに絞る">← 前の Lab<br><strong>Lab 008 · 大きなテーマを答えられる調査の問いに絞る</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-010-product-context-JA.md" aria-label="次の Lab：Lab 010 · 二つのタスクに使い回せる共有プロダクト文脈を作る">次へ →<br><strong>Lab 010 · 二つのタスクに使い回せる共有プロダクト文脈を作る</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->
