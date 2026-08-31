@@ -631,8 +631,10 @@ stored in this repository. Pass `--archive-dir <directory>` to the archive audit
 `PRYSAI_INPUT_ARCHIVE_DIR`. A missing archive means that audit is incomplete;
 it does not remove the source and license review requirement.
 
-See the [contribution model](docs/governance/contribution-model.md) and
-[release checklist](docs/release-checklist.md) for the full review boundary.
+See the [contribution model](docs/governance/contribution-model.md),
+[release-readiness contract](docs/governance/release-readiness.yaml), and
+[release-evidence contract](docs/governance/release-evidence.yaml) for the full
+review boundary.
 
 ## Safety boundary
 

@@ -110,7 +110,7 @@ external service への接続、account authorization、message の送信、cust
 3. B は読んだもの、実行した action、停止した箇所、output diff、validation、permission の判断、暗黙知の gap を記録します。
 4. A は一層だけを修正し、version を `0.1.1` に上げ、変更理由を記録します。B は `B-02` として再実行します。
 
-### Evidence gate
+### 証拠ゲート
 
 evidence package には次を含めます。
 
@@ -158,7 +158,7 @@ gap を shared language、method、evidence、governance のどれに分類し�
 - release、permission change、secret handling には別の approval が必要です。実験は自動的に権限を与えません。
 - configured capability、成功した build、宣言した team package だけでは runtime behavior、team outcome、deployment、user acceptance を証明できません。
 
-## Transfer task
+## 転移課題
 
 一つの capability package を personal project から organizational project へ移します。name、license、branding、data scope、permission、owner、reviewer、release target、rollback を再確認します。移植後も残る assumption と、捨てるべき assumption を一つずつ書きます。名前が似ているという理由だけで approve しません。
 
