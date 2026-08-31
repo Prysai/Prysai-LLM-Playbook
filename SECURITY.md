@@ -88,20 +88,26 @@ Synthetic test examples are assembled at runtime and
 covered by focused negative fixtures rather than being whitelisted as arbitrary
 repository prose. These are useful tripwires, not a substitute for a human
 review, a dependency audit, security testing, secret rotation, runtime HTTP
-headers, or deployment configuration review.
+headers, or deployment configuration review. PRs opened before the one-time
+contract rollout cutoff (`2026-08-31T00:14:52Z`, when PR #66 was merged) use a
+limited migration path; it verifies the immutable current head, commit
+presence, and a valid GitHub cryptographic signature on every commit, but does
+not waive the active Ruleset or silently approve changes.
 
 The live GitHub API reported an active repository Ruleset on 2026-08-30. It
 blocks deletion and non-fast-forward updates, requires signed commits, requires
-one approving review with resolved threads, and carries CodeQL/code-quality
-rules. Its live bypass-actor list is empty, so ordinary repository writes must
-follow the protected review path. The repository policy records the observed
-Ruleset, Secret Scanning, Push Protection, environment, and Actions
-SHA-pinning boundaries.
+one approving review with resolved threads, carries CodeQL/code-quality rules,
+and now requires the `candidate-evidence`, `repository-security`, and
+`pull-request-contract` status checks against the latest base code. Its live
+bypass-actor list is empty, so ordinary repository writes must follow the
+protected review path. The repository policy records the observed Ruleset,
+Secret Scanning, Push Protection, environment, and Actions SHA-pinning
+boundaries.
 
 ## Maintainer documentation auto-merge route
 
 The repository has one narrow automation route for low-risk documentation
-updates. A PR enters it only when all of these conditions hold:
+updates. A new PR enters it only when all of these conditions hold:
 
 - the author is one of the explicit `uuzzrm` or `Prysai-Lab` allowlisted
   accounts and the base is `main`;
@@ -113,6 +119,13 @@ updates. A PR enters it only when all of these conditions hold:
 - the change is at most 25 files and 1,500 added-plus-deleted lines; and
 - the quality, security, and pull-request contract workflows completed
   successfully for the exact PR head SHA.
+
+An existing PR opened before the rollout cutoff can enter the migration route
+only when it has the explicit allowlisted author, the same low-risk `book/`
+Markdown file boundary, and an existing maintainer approval for its current
+head SHA. This one-time route exists to prevent PR #66's contract from
+retroactively invalidating already-open work; it does not apply to newly
+opened PRs and does not bypass the active Ruleset.
 
 When eligible, the trusted `workflow_run` job submits a labeled bot approval,
 then requests GitHub's native Squash Auto-merge. GitHub still evaluates the
