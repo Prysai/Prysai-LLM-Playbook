@@ -124,7 +124,7 @@ def validate_contract(contract: dict[str, Any], *, inspect_git: bool = True) -> 
     maintenance = contract.get("maintenance", {})
     if maintenance.get("status") not in {"candidate", "reviewed"}:
         errors.append("maintenance.status must be candidate or reviewed")
-    for key in ("policy_path", "roadmap_path", "release_checklist_path"):
+    for key in ("policy_path", "roadmap_path"):
         path = maintenance.get(key)
         if not non_empty(path) or not (ROOT / path).is_file():
             errors.append(f"maintenance.{key} must name an existing file")

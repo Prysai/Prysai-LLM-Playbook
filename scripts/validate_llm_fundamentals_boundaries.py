@@ -85,7 +85,7 @@ ACCURACY_MARKERS = {
     "KO": ("유한한 context window", "cutoff만으로 판단하지 말고"),
     "DE": ("endliches Kontextfenster", "ein Cutoff allein entscheidet die Frage nicht"),
     "ZHTW": ("有限的上下文視窗", "不能只憑截止日期下結論"),
-    "FR": ("fenêtre de contexte finie", "plutôt que de se fier uniquement à la date de coupure"),
+    "FR": ("fenêtre de contexte finie", "plutôt que de vous fier uniquement à la date de coupure"),
 }
 
 MICRO_EXPERIMENT_MARKERS = {
