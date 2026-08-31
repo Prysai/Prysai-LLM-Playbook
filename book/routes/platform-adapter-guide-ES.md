@@ -87,7 +87,7 @@ arriba. Después anota una diferencia de plataforma que puedas observar de
 verdad: ¿la respuesta menciona la navegación, la memoria o un enlace de uso
 compartido? Registra lo que viste, no lo que supongas. Para una comprobación
 respaldada por fuentes de una afirmación sobre ChatGPT, usa la
-Source Investigator Skill
+[Source Investigator Skill (locale-neutral)](../../skills/prysai-source-investigator/SKILL.md)
 con las páginas de ayuda oficiales de OpenAI como propietarias de los hechos
 del producto.
 
