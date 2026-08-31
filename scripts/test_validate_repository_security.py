@@ -209,6 +209,66 @@ permissions:
         )
         fixtures += 1
 
+        maintainer_automerge = policy.MAINTAINER_AUTOMERGE_WORKFLOW.read_text(encoding="utf-8")
+        require(
+            not policy.validate_maintainer_automerge_workflow(
+                maintainer_automerge,
+                ".github/workflows/maintainer-pr-automerge.yml",
+            ),
+            "constrained maintainer auto-merge workflow was rejected",
+        )
+        fixtures += 1
+        require(
+            "'uuzzrm'," in maintainer_automerge and "'Prysai-Lab'," in maintainer_automerge,
+            "maintainer auto-merge workflow did not retain both explicit author allowlist entries",
+        )
+        fixtures += 1
+        require(
+            not policy.validate_workflow_text(maintainer_automerge, ".github/workflows/maintainer-pr-automerge.yml"),
+            "constrained maintainer auto-merge workflow was rejected by the general workflow validator",
+        )
+        fixtures += 1
+
+        missing_opt_in = maintainer_automerge.replace(
+            "pullRequest.title?.startsWith('[maintainer-doc]')",
+            "pullRequest.title?.startsWith('[missing-opt-in]')",
+        )
+        require(
+            any("pullRequest.title?.startsWith('[maintainer-doc]')" in error for error in policy.validate_maintainer_automerge_workflow(missing_opt_in, ".github/workflows/maintainer-pr-automerge.yml")),
+            "maintainer auto-merge workflow without title opt-in was accepted",
+        )
+        fixtures += 1
+
+        extra_maintainer_permission = maintainer_automerge.replace(
+            "  pull-requests: write\n",
+            "  pull-requests: write\n  id-token: write\n",
+        )
+        require(
+            any("exactly actions: read" in error for error in policy.validate_maintainer_automerge_workflow(extra_maintainer_permission, ".github/workflows/maintainer-pr-automerge.yml")),
+            "maintainer auto-merge workflow with an extra permission was accepted",
+        )
+        fixtures += 1
+
+        direct_pull_request_trigger = maintainer_automerge.replace(
+            "  workflow_run:\n",
+            "  pull_request:\n",
+        )
+        require(
+            any("must use workflow_run" in error for error in policy.validate_maintainer_automerge_workflow(direct_pull_request_trigger, ".github/workflows/maintainer-pr-automerge.yml")),
+            "maintainer auto-merge workflow with a direct pull_request trigger was accepted",
+        )
+        fixtures += 1
+
+        unpinned_script_action = maintainer_automerge.replace(
+            "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3",
+            "actions/github-script@v9",
+        )
+        require(
+            any("full commit SHA" in error for error in policy.validate_workflow_text(unpinned_script_action, ".github/workflows/maintainer-pr-automerge.yml")),
+            "maintainer auto-merge workflow with an unpinned GitHub Script action was accepted",
+        )
+        fixtures += 1
+
         extra_docs_permission = secure_docs_deploy.replace(
             "      actions: read\n",
             "      actions: read\n      contents: write\n",
