@@ -195,6 +195,12 @@ try {
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/', 'the footer logo does not point to the canonical Docs site');
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('target'), '_top', 'the footer logo does not return the top-level window to the canonical Docs site');
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('rel'), null, 'the footer logo carries an unexpected external-link relationship');
+  const officialSiteLink = page.locator('.site-footer .footer-site-link');
+  assert.equal(await officialSiteLink.count(), 1, 'the homepage footer is missing the official-site link');
+  assert.equal(await officialSiteLink.getAttribute('href'), 'https://prysai.com/', 'the homepage footer official-site URL changed');
+  assert.equal(await officialSiteLink.getAttribute('target'), '_blank', 'the homepage footer official-site link should open separately');
+  assert.equal(await officialSiteLink.getAttribute('rel'), 'noreferrer', 'the homepage footer official-site link is missing its referrer boundary');
+  assert.equal((await officialSiteLink.textContent() || '').trim(), 'Prysai official website', 'the English homepage footer official-site label is not localized');
   // Hugging Face Static Spaces wrap the site in a sandboxed iframe that does
   // not allow top-level navigation. Verify the hosted fallback changes only
   // the brand links to a user-initiated, escaped popup and that the popup is
@@ -435,6 +441,11 @@ try {
     en: /Hi, the workshop changed/, zh: /你好，工作坊改期了/, es: /El taller cambió/,
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
     'zh-tw': /嗨，工作坊改期了/, fr: /Bonjour, l’atelier a changé/,
+  };
+  const localizedOfficialSiteLabels = {
+    en: 'Prysai official website', zh: 'Prysai 官方网站', es: 'Sitio web oficial de Prysai',
+    ja: 'Prysai 公式サイト', ko: 'Prysai 공식 웹사이트', de: 'Offizielle Prysai-Website',
+    'zh-tw': 'Prysai 官方網站', fr: 'Site officiel de Prysai',
   };
   const localizedHeroTitles = {
     en: 'Understand LLMs before you ask them to work.',
@@ -1662,6 +1673,12 @@ try {
     assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
     const expectedHtmlLang = locale === 'zh' ? 'zh-CN' : locale === 'zh-tw' ? 'zh-TW' : locale;
     assert.equal(await localePage.locator('html').getAttribute('lang'), expectedHtmlLang, `${locale} static entry does not render in its selected document language`);
+    const localizedOfficialSite = localePage.locator('.site-footer .footer-site-link');
+    assert.equal(await localizedOfficialSite.count(), 1, `${locale} homepage footer is missing the official-site link`);
+    assert.equal(await localizedOfficialSite.getAttribute('href'), 'https://prysai.com/', `${locale} homepage footer official-site URL changed`);
+    assert.equal(await localizedOfficialSite.getAttribute('target'), '_blank', `${locale} homepage footer official-site link should open separately`);
+    assert.equal(await localizedOfficialSite.getAttribute('rel'), 'noreferrer', `${locale} homepage footer official-site link is missing its referrer boundary`);
+    assert.equal((await localizedOfficialSite.textContent() || '').trim(), localizedOfficialSiteLabels[locale], `${locale} homepage footer official-site label is not localized`);
     const structuredData = JSON.parse(await localePage.locator('#site-structured-data').textContent());
     assert.equal(structuredData.alternateName, 'LLMPlaybook', `${locale} structured data omits the LLMPlaybook discovery alias`);
     assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);

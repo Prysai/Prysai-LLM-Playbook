@@ -97,10 +97,25 @@ def main() -> int:
         valid_codeowners = templates.CODEOWNERS.read_text(encoding="utf-8")
         require(not templates.validate_codeowners_text(valid_codeowners), "current CODEOWNERS routing was rejected")
         require(
-            any("evals/contributions" in error for error in templates.validate_codeowners_text(valid_codeowners.replace("/evals/contributions/ @Prysai", ""))),
+            any("evals/contributions" in error for error in templates.validate_codeowners_text(valid_codeowners.replace("/evals/contributions/ @Prysai-Lab", ""))),
             "CODEOWNERS accepted a missing evidence route",
         )
-        fixtures += 4
+        require(not templates.validate_dco(), "current DCO policy was rejected")
+        require(
+            templates.validate_dco_path(Path("missing-DCO.md")) == ["missing missing-DCO.md"],
+            "missing DCO policy was accepted",
+        )
+        with TemporaryDirectory(prefix="dco-fixture-") as temporary:
+            dco = Path(temporary) / "DCO.md"
+            dco.write_text("Developer Certificate of Origin\n", encoding="utf-8")
+            require(any("Signed-off-by:" in error for error in templates.validate_dco_path(dco)), "incomplete DCO policy was accepted")
+            dco.write_text(
+                "Developer Certificate of Origin\nhttps://developercertificate.org/\n"
+                "Signed-off-by:\nverified GitHub commit signature\nCLA\n",
+                encoding="utf-8",
+            )
+            require(not templates.validate_dco_path(dco), "complete DCO policy fixture was rejected")
+        fixtures += 7
 
         token = "fixture-secret-token"
         seen_authorization: list[str] = []
