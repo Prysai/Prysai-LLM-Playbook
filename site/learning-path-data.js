@@ -623,7 +623,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "컨텍스트, 권한, Agent 경계",
             "de": "Kontext, Berechtigungen und Agent-Grenzen",
             "zh-tw": "上下文、權限與 Agent 邊界",
-            "fr": "Contexte, autorisations et limites Agent"
+            "fr": "Contexte, autorisations et limites de l’Agent"
           },
           "href": "../book/chapters/04-context-permissions-and-agent-EN.md",
           "relation": "primary"
@@ -2148,7 +2148,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "Agent 루프, 상태, 중지 조건",
             "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
             "zh-tw": "Agent 的循環、狀態與停止條件",
-            "fr": "Conditions de boucle, d'état et d'arrêt du Agent"
+            "fr": "Conditions de boucle, d'état et d'arrêt de l’Agent"
           },
           "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
@@ -2457,7 +2457,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "Agent 루프, 상태, 중지 조건",
             "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
             "zh-tw": "Agent 的循環、狀態與停止條件",
-            "fr": "Conditions de boucle, d'état et d'arrêt du Agent"
+            "fr": "Conditions de boucle, d'état et d'arrêt de l’Agent"
           },
           "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
