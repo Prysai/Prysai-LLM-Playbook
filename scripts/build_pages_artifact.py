@@ -32,6 +32,10 @@ PUBLISH_ROOT_FILES = (
     "CONTEXT.md",
 )
 FORBIDDEN_NAMES = (".git", ".work", ".codex-temp", "tmp", ".pytest_cache")
+# Maintainer-only operational material must never be copied to a public
+# artifact. Keep this deny-list explicit so a future reintroduction fails
+# closed at the source and artifact validation boundaries.
+FORBIDDEN_PUBLISH_PATHS = ("docs/release-checklist.md",)
 REQUIRED_PUBLISH_FILES = (
     "assets/branding/prysai-lab-mark-black-96.png",
     "assets/branding/prysai-lab-mark-white-96.png",
@@ -244,6 +248,9 @@ def validate_source() -> None:
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing Pages source files: " + ", ".join(missing))
+    forbidden = forbidden_publish_paths()
+    if forbidden:
+        raise ValueError("forbidden internal source paths are not publishable: " + ", ".join(forbidden))
 
 
 def load_seo_config() -> dict[str, object]:
@@ -348,6 +355,12 @@ def source_path_label(path: Path, fallback_root: Path) -> str:
         return path.relative_to(fallback_root).as_posix()
 
 
+def forbidden_publish_paths(root: Path = ROOT) -> list[str]:
+    """Return exact source or artifact paths that must never be published."""
+
+    return [relative for relative in FORBIDDEN_PUBLISH_PATHS if (root / relative).exists()]
+
+
 def artifact_secret_findings(output: Path) -> list[str]:
     """Find high-confidence credential signatures without exposing their values."""
     findings: list[str] = []
@@ -369,6 +382,9 @@ def space_readme(source: str) -> str:
 
 
 def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
+    forbidden = forbidden_publish_paths(output)
+    if forbidden:
+        raise ValueError("forbidden internal paths leaked into Pages artifact: " + ", ".join(forbidden))
     expected = (
         output / "index.html",
         output / "reader.html",
