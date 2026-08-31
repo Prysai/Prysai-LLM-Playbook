@@ -1,14 +1,20 @@
-# Candidate review routing only. GitHub requests review from these owners when
-# an applicable pull request targets the branch that contains this file. A
-# Ruleset is still required before code-owner approval becomes enforceable.
+# Review routing. `@Prysai-Lab` is an explicit GitHub user with write access;
+# the organization account `@Prysai` cannot be used as a code owner. These
+# entries request review. The active Ruleset separately controls whether a
+# code-owner approval is a merge requirement.
 
-/evals/contributions/ @Prysai
-/LICENSE @Prysai
-/CONTRIBUTING.md @Prysai
-/SECURITY.md @Prysai
-/docs/quality/ @Prysai
-/docs/governance/ @Prysai
-/docs/sources/ @Prysai
-/docs/strategy/ @Prysai
-/.github/ @Prysai
-/scripts/ @Prysai
+/book/ @Prysai-Lab
+/skills/ @Prysai-Lab
+/site/ @Prysai-Lab
+/evals/contributions/ @Prysai-Lab
+/LICENSE @Prysai-Lab
+/LICENSE-CODE @Prysai-Lab
+/CONTRIBUTING.md @Prysai-Lab
+/SECURITY.md @Prysai-Lab
+/DCO.md @Prysai-Lab
+/docs/quality/ @Prysai-Lab
+/docs/governance/ @Prysai-Lab
+/docs/sources/ @Prysai-Lab
+/docs/strategy/ @Prysai-Lab
+/.github/ @Prysai-Lab
+/scripts/ @Prysai-Lab
