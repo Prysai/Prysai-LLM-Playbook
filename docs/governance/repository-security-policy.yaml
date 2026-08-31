@@ -3,8 +3,8 @@
   "policy_id": "repository-security-policy",
   "status": "candidate",
   "owner": "governance-maintainer",
-  "reviewed_at": "2026-08-18",
-  "next_review": "2026-09-18",
+  "reviewed_at": "2026-08-30",
+  "next_review": "2026-09-30",
   "scope": {
     "included": [
       "tracked and unignored candidate repository files",
@@ -27,7 +27,7 @@
     "forbidden_workflow_features": [
       "pull_request_target",
       "secrets context in untrusted pull_request workflows",
-      "write-scoped token permissions on pull_request workflows except the controlled CodeQL exception below",
+      "write-scoped token permissions on untrusted pull_request workflows; any write-scoped workflow_run exception must be explicitly listed below",
       "persisted checkout credentials on pull_request workflows",
       "unpinned third-party GitHub Actions"
     ],
@@ -41,11 +41,20 @@
           "security-events": "write"
         },
         "reason": "CodeQL must upload its own pull-request analysis results without receiving any other write scope"
+      },
+      {
+        "workflow_path": ".github/workflows/maintainer-pr-automerge.yml",
+        "permissions": {
+          "actions": "read",
+          "contents": "write",
+          "pull-requests": "write"
+        },
+        "reason": "A trusted workflow_run may submit a clearly labeled bot approval and enable native squash auto-merge only for the explicit uuzzrm or Prysai-Lab book-Markdown route"
       }
     ],
     "checks": [
       "pull-request event, explicit least-privileged permission, and checkout credential boundary",
-      "CodeQL pull-request upload permission is restricted to the exact controlled exception",
+      "CodeQL and maintainer auto-merge write permissions are restricted to their exact controlled exceptions",
       "full-SHA Action pinning",
       "tracked credential-shaped files",
       "common token and private-key markers",
@@ -58,7 +67,9 @@
       "pinned binary-only Python validation dependency",
       "same-origin static-site Content-Security-Policy meta contract",
       "secret-bearing Docs deployment consumes only the validated Pages artifact",
-      "policy fixture tests, including synthetic-path false-positive boundaries"
+      "policy fixture tests, including synthetic-path false-positive boundaries",
+      "read-only pull-request contract headings, exact-head check, and per-commit DCO sign-offs",
+      "maintainer documentation auto-merge workflow boundary and permission exception"
     ],
     "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."
   },
@@ -67,8 +78,13 @@
       "bounded change description",
       "source and license disclosure",
       "safety and external-effect disclosure",
+      "pull-request contract headings and exact-head check",
+      "valid DCO sign-off on every commit",
       "commands and evidence actually produced",
       "unverified scope"
+    ],
+    "migration_exceptions": [
+      "Pull requests created before 2026-08-31T00:14:52Z by uuzzrm or Prysai-Lab may use the one-time contract migration path: the exact current head, non-empty commit history, and a valid GitHub cryptographic signature on every commit remain required, while historical PR headings and DCO trailers are not retroactively rewritten. The active Ruleset, required checks, resolved threads, and maintainer approval remain required."
     ],
     "heightened_review_paths": [
       ".github/workflows/**",
@@ -76,14 +92,15 @@
       "package-lock.json",
       "package.json",
       "SECURITY.md",
+      "DCO.md",
       "docs/governance/repository-security-policy.yaml",
       "docs/security/**"
     ],
-    "heightened_review_rule": "A maintainer must review the diff, requested permission change, supply-chain source, rollback path, and declared evidence before merge. Automation may flag a change but must not approve, merge, comment on, or modify a pull request on its own."
+    "heightened_review_rule": "A maintainer must review the diff, requested permission change, supply-chain source, rollback path, and declared evidence before merge. The constrained maintainer documentation route may submit a clearly labeled bot approval and enable native squash auto-merge only after its trusted workflow_run checks pass; this does not establish independent human review, dynamically authorize every administrator, or bypass the active Ruleset."
   },
   "host_ruleset": {
     "status": "active",
-    "observed_at": "2026-08-18",
+    "observed_at": "2026-08-30",
     "observation_phase": "post-final-mutation",
     "repository": "Prysai/Prysai-LLM-Playbook",
     "ruleset_id": 20903386,
@@ -98,22 +115,30 @@
       "required_signatures",
       "CodeQL high_or_higher security alerts and errors_and_warnings alert threshold",
       "code quality errors",
-      "one approving review, stale-review dismissal, and resolved review threads"
+      "one approving review, stale-review dismissal, and resolved review threads",
+      "required status checks: candidate-evidence, repository-security, and pull-request-contract",
+      "strict required status checks against the latest base code"
     ],
     "bypass_list": [],
-    "evidence_limit": "Live GitHub API verification on 2026-08-18 observed an empty bypass-actor list after the final host-side mutation. This repository policy still does not treat a passing workflow as proof that every future write used a pull request; recheck the host before each release."
+    "required_status_checks": [
+      "candidate-evidence",
+      "repository-security",
+      "pull-request-contract"
+    ],
+    "strict_required_status_checks": true,
+    "evidence_limit": "Live GitHub API verification on 2026-08-30 observed an active Ruleset with the listed required status checks, strict latest-base evaluation, and an empty bypass-actor list after the final host-side mutation. This repository policy still does not treat a passing workflow as proof that every future write used a pull request; recheck the host before each release."
   },
   "host_deployment_environment": {
     "name": "docs-prysai-production",
-    "observed_at": "2026-08-18",
+    "observed_at": "2026-08-30",
     "required_reviewers": ["uuzzrm"],
     "can_admins_bypass": false,
     "deployment_branch_policy": "custom",
     "allowed_branches": ["main"],
-    "evidence_limit": "Live GitHub API verification on 2026-08-18 observed a required uuzzrm reviewer, can_admins_bypass=false, and a custom branch policy whose only allowed branch is main. This is host-side evidence and may drift independently of repository files."
+    "evidence_limit": "Live GitHub API verification on 2026-08-30 observed a required uuzzrm reviewer, can_admins_bypass=false, and a custom branch policy whose only allowed branch is main. This is host-side evidence and may drift independently of repository files."
   },
   "host_security_controls": {
-    "observed_at": "2026-08-18",
+    "observed_at": "2026-08-30",
     "secret_scanning": "enabled",
     "secret_scanning_non_provider_patterns": "disabled",
     "secret_scanning_push_protection": "enabled",
@@ -152,6 +177,20 @@
       "scope": "official Ruleset options for pull requests, required checks, force pushes, and deletion restrictions",
       "owner": "governance-maintainer",
       "next_review": "2026-09-14"
+    },
+    {
+      "url": "https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run",
+      "accessed_at": "2026-08-30",
+      "scope": "trusted workflow_run trigger boundary and default-branch execution behavior",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-30"
+    },
+    {
+      "url": "https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/automatically-merging-a-pull-request",
+      "accessed_at": "2026-08-30",
+      "scope": "native pull-request auto-merge and required-check behavior",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-30"
     }
   ]
 }

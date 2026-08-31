@@ -34,8 +34,7 @@
   "maintenance": {
     "status": "candidate",
     "policy_path": "docs/governance/content-lifecycle.md",
-    "roadmap_path": "docs/roadmap.md",
-    "release_checklist_path": "docs/release-checklist.md"
+    "roadmap_path": "docs/roadmap.md"
   },
   "known_gaps": [
     "The current main candidate may be newer than the last successful workflow evidence and is not itself a release.",
