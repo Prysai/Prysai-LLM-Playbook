@@ -277,7 +277,7 @@ Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu die
 
 ## Quellen und Wartungsgrenze
 
-Die Skill-Entscheidungsmethode ist projektintern. Host-Verhalten, Auffindbarkeit, Plugins, MCP, Berechtigungen und externe Kandidaten sind veränderlich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes), das [Skill-Kandidatenregister](../evidence-library-DE.md#source-notes) und die konkrete Lizenzquelle. Keiner dieser Nachweise ersetzt einen Lauf im dokumentierten Host.
+Die Skill-Entscheidungsmethode ist projektintern. Host-Verhalten, Auffindbarkeit, Plugins, MCP, Berechtigungen und externe Kandidaten sind veränderlich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes), das [Skill-Kandidatenregister](../evidence-library-DE.md#source-notes) und die [konkrete Lizenzquelle](../../docs/sources/licensing.md). Keiner dieser Nachweise ersetzt einen Lauf im dokumentierten Host.
 
 ## Vier Fälle vor der Übernahme
 
