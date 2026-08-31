@@ -114,7 +114,7 @@ timeout、retry、backoff、idempotency key; log、trace ID、error 分類;
 
 level は、低リスクのローカル読み取り、可逆な project work、承認と log を持つ制御済み外部接続、明示的許可・privacy/license review・preview・rollback・online verification を持つ本番書込み／公開の四つです。上位に移るには新しい理由、permission、risk、evidence、回復計画が必要です。
 
-## automation contract：action より先に data を定義する
+## 自動化契約：アクションより先にデータを定義する
 
 offline の「aggregate count から一ページ report を作る」例です。synthetic JSON を読み、使い捨て directory に書くだけで、network、login、send はしません。
 
@@ -144,7 +144,7 @@ exit code 0 が示すのは script が自身の定義で終了したことだけ
 
 A–D 表、最終 render、data dictionary、validation、無効入力への応答、log、permission、retry、sandbox 状態、公開がなかった証拠を残します。模擬書込み後 timeout なら trace を保存して部分状態を照会し、非冪等操作を繰り返しません。実際の最終形の証拠と独立 review までは `candidate / not_run` です。
 
-## 小実験：offline report flow と二つの failure
+## 小実験：オフラインのレポートフローと二つの失敗
 
 ### 準備
 
