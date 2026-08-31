@@ -426,6 +426,8 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .footer-inner > p { margin: 0; color: #aaa; font-size: .75rem; }
 .footer-meta { color: #777; font-size: .68rem; }
+.footer-site-link { max-width: 100%; color: #fff; font-size: .72rem; font-weight: 800; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .2rem; }
+.footer-site-link:hover, .footer-site-link:focus-visible { color: var(--red); }
 
 /* The emphasis is semantic HTML so it survives GitHub Markdown, the reader,
    and future renderers. Keep it sparse: mark decisions, boundaries, and
