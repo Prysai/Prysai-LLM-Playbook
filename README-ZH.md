@@ -136,7 +136,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 - [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
 - [中文新手提示卡](book/communication-clinic-ZH.md)
 
-术语表、治理规则、来源台账、评测定义、研究档案和 Skill 说明尚未提供中文文件。为保证这条路线始终使用中文，本入口不再把它们链接到原始语言页面；相应内容翻译并审校后，才会在这里开放。
+术语表、治理规则、来源台账和评测定义目前仍以 locale-neutral 记录为主；部分研究档案和 Skill 说明已有中文候选文件，但尚未完成独立语言审校，因此本入口暂不把它们作为已完成中文正文开放。
 
 ## 中文候选学习路径
 
