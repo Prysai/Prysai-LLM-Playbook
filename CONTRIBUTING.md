@@ -53,7 +53,18 @@ learner result, model transcript, private material, a status change,
 license change, workflow/security change, or a claim of improved model quality,
 learning, safety, productivity, efficiency, or IQ. Those changes use the
 restricted-evidence or standard review path and may need independent reviewers.
-No route promises a merge time or automatic approval.
+The maintainer documentation route is the one explicit exception: a non-draft
+PR titled `[maintainer-doc]`, authored by the explicit `uuzzrm` or `Prysai-Lab`
+allowlist, targeting `main`, and limited to added/modified `book/**/*.md` files
+can be automatically approved by a clearly labeled bot and placed into native
+Squash Auto-merge after the quality, security, and pull-request contract
+workflows pass for the exact head SHA. It must still survive the active
+Ruleset. The bot signal is not
+independent human review. All other routes, including workflow, script,
+security, dependency, release, site, asset, deletion, rename, symlink, and
+other non-allowlisted changes, remain manual. The route uses a reviewed
+explicit allowlist rather than dynamically inferring authorization from
+organization-admin status and does not use an admin bypass or direct merge.
 
 ## Find the canonical source
 
@@ -80,6 +91,21 @@ State all of the following in the pull request:
 6. what remains `not_run`, unreviewed, or outside scope;
 7. the requested maturity/status change, if any, and evidence supporting it;
 8. rollback or recovery for behavior, contract, or release changes.
+
+The pull-request template is paired with the read-only `pull-request-contract`
+workflow. For new PRs, that check verifies the required disclosure headings,
+the exact PR head SHA it inspected, and a valid DCO sign-off on every commit.
+PRs opened before the one-time rollout cutoff (`2026-08-31T00:14:52Z`, when PR
+#66 was merged) use a migration path that still verifies the current head,
+non-empty commit history, and a valid GitHub cryptographic signature on every
+commit, without retroactively rewriting their metadata or commit messages. The
+migration path does not certify a historical DCO trailer and does not remove
+the Ruleset, required checks, signatures, resolved threads, or human-review
+requirements. The check makes objective intake fields repeatable; it does not
+judge learning value, source accuracy, security impact, or whether a reviewer
+should approve the change. CODEOWNERS requests the relevant maintainer, and
+the active Ruleset is the source of truth for which checks and approvals block
+a merge.
 
 For the fast test-material route, also link the `contribution.json` receipt,
 state the reviewer role requested, and sign off each commit to attest that you
