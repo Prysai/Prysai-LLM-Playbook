@@ -20,7 +20,7 @@ the private path described there, not through a public issue or pull request.
 | Contract change | Navigation, locale, status, generated data, quality policy | [Governance contracts](docs/governance/README.md) | Proposal or ADR when costly to reverse, generator, validator, and migration evidence |
 | Behavior change | Skill, evaluation, automation | [Skill standard](docs/quality/skill-quality-standard.md) or [evaluation framework](docs/quality/evaluation-framework.md) | Positive, boundary, failure, and transfer evidence; fresh-context/runtime records when claiming verification |
 | Test material | Original fictional evaluation fixture or safe text-only protocol | [Community evidence contribution protocol](docs/quality/community-evidence-contribution-protocol-v1.md) | `contribution.json`, a positive and boundary/failure case, no personal or raw model data, and an explicit non-claim boundary |
-| Release change | Version, license, publication, maturity, rollback | [Release checklist](docs/release-checklist.md) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
+| Release change | Version, license, publication, maturity, rollback | [Release-readiness contract](docs/governance/release-readiness.yaml) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
 | Field report | First-task friction, platform difference, reader problem | [Field Report form](.github/ISSUE_TEMPLATE/field-report.yml) | Sanitized observation, scope, reproduction status, privacy confirmation, and a clear unknowns boundary |
 
 Open an issue before investing in a large rewrite, a new project-wide term, a
@@ -53,7 +53,18 @@ learner result, model transcript, private material, a status change,
 license change, workflow/security change, or a claim of improved model quality,
 learning, safety, productivity, efficiency, or IQ. Those changes use the
 restricted-evidence or standard review path and may need independent reviewers.
-No route promises a merge time or automatic approval.
+The maintainer documentation route is the one explicit exception: a non-draft
+PR titled `[maintainer-doc]`, authored by the explicit `uuzzrm` or `Prysai-Lab`
+allowlist, targeting `main`, and limited to added/modified `book/**/*.md` files
+can be automatically approved by a clearly labeled bot and placed into native
+Squash Auto-merge after the quality, security, and pull-request contract
+workflows pass for the exact head SHA. It must still survive the active
+Ruleset. The bot signal is not
+independent human review. All other routes, including workflow, script,
+security, dependency, release, site, asset, deletion, rename, symlink, and
+other non-allowlisted changes, remain manual. The route uses a reviewed
+explicit allowlist rather than dynamically inferring authorization from
+organization-admin status and does not use an admin bypass or direct merge.
 
 ## Find the canonical source
 
@@ -80,6 +91,14 @@ State all of the following in the pull request:
 6. what remains `not_run`, unreviewed, or outside scope;
 7. the requested maturity/status change, if any, and evidence supporting it;
 8. rollback or recovery for behavior, contract, or release changes.
+
+The pull-request template is paired with the read-only `pull-request-contract`
+workflow. That check verifies the required disclosure headings, the exact PR
+head SHA it inspected, and a valid DCO sign-off on every commit. It makes the
+objective parts of the intake repeatable; it does not judge learning value,
+source accuracy, security impact, or whether a reviewer should approve the
+change. CODEOWNERS requests the relevant maintainer, and the active Ruleset is
+the source of truth for which checks and approvals block a merge.
 
 For the fast test-material route, also link the `contribution.json` receipt,
 state the reviewer role requested, and sign off each commit to attest that you
