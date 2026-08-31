@@ -112,7 +112,7 @@ Items to triage:
 3. 各 path を二回ずつ実行します。各 run の前に同じ input と temporary-copy baseline を復元します。`run-id` は `20-personal-system-triage-v1-A-01`、`A-02`、`B-01`、`B-02` を使います。
 4. 接続、write、公開、secret の読み取りはしません。task がそれを必要とするなら run を `blocked` とし、simulation から usability を推測しません。
 
-### Evidence gate
+### 証拠ゲート
 
 run ごとに一つの record を保存します。
 
@@ -165,7 +165,7 @@ project map に、意図的に stale な command と古い directory を一つ�
 - 独立した再現、failure set、transfer evidence がなければ、Skill は `candidate` のままです。
 - 設定された product feature、覚えている conversation、成功した build だけでは、現在の runtime behavior、team impact、deployment、user acceptance を証明できません。
 
-## Transfer task
+## 転移課題
 
 安定した個人 workflow を別の member に渡します。二人目は project map、task protocol、evidence index だけを使い、口頭補足なしで破棄可能な copy 上で作業します。input hash、run log、diff、acceptance result、missing-evidence list を保存します。書かれていなかった暗黙知を記録し、どの asset を修正するか決めます。
 
