@@ -83,6 +83,9 @@
       "commands and evidence actually produced",
       "unverified scope"
     ],
+    "migration_exceptions": [
+      "Pull requests created before 2026-08-31T00:14:52Z by uuzzrm or Prysai-Lab may use the one-time contract migration path: the exact current head, non-empty commit history, and a valid GitHub cryptographic signature on every commit remain required, while historical PR headings and DCO trailers are not retroactively rewritten. The active Ruleset, required checks, resolved threads, and maintainer approval remain required."
+    ],
     "heightened_review_paths": [
       ".github/workflows/**",
       "scripts/**",
@@ -112,10 +115,18 @@
       "required_signatures",
       "CodeQL high_or_higher security alerts and errors_and_warnings alert threshold",
       "code quality errors",
-      "one approving review, stale-review dismissal, and resolved review threads"
+      "one approving review, stale-review dismissal, and resolved review threads",
+      "required status checks: candidate-evidence, repository-security, and pull-request-contract",
+      "strict required status checks against the latest base code"
     ],
     "bypass_list": [],
-    "evidence_limit": "Live GitHub API verification on 2026-08-30 observed an empty bypass-actor list after the final host-side mutation. This repository policy still does not treat a passing workflow as proof that every future write used a pull request; recheck the host before each release."
+    "required_status_checks": [
+      "candidate-evidence",
+      "repository-security",
+      "pull-request-contract"
+    ],
+    "strict_required_status_checks": true,
+    "evidence_limit": "Live GitHub API verification on 2026-08-30 observed an active Ruleset with the listed required status checks, strict latest-base evaluation, and an empty bypass-actor list after the final host-side mutation. This repository policy still does not treat a passing workflow as proof that every future write used a pull request; recheck the host before each release."
   },
   "host_deployment_environment": {
     "name": "docs-prysai-production",

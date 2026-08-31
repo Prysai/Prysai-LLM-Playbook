@@ -112,6 +112,11 @@ MAINTAINER_AUTOMERGE_ALLOWED_PERMISSIONS = {
     "contents": "write",
     "pull-requests": "write",
 }
+REQUIRED_HOST_STATUS_CHECKS = (
+    "candidate-evidence",
+    "repository-security",
+    "pull-request-contract",
+)
 MAINTAINER_AUTOMERGE_REQUIRED_FRAGMENTS = (
     "workflow_run:",
     "types: [completed]",
@@ -288,8 +293,15 @@ PULL_REQUEST_CONTRACT_REQUIRED_FRAGMENTS = (
     "pull-requests: read",
     "gh api --paginate --slurp",
     "EXPECTED_HEAD_SHA",
+    "ROLLOUT_CUTOFF_AT",
     "Signed-off-by:",
     "required_headings =",
+    "created_time < cutoff_time",
+    "verification = (commit.get(\"commit\") or {}).get(\"verification\")",
+    "verification.get(\"verified\") is not True",
+    "verification.get(\"reason\") != \"valid\"",
+    "legacy migration requires a valid GitHub cryptographic signature",
+    "PR_CONTRACT_MIGRATION_OK",
     "PR_CONTRACT_OK",
 )
 
@@ -477,6 +489,14 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
         errors.append("host_ruleset must honestly record the currently active host Ruleset")
     elif host_ruleset.get("bypass_list") != []:
         errors.append("host_ruleset.bypass_list must record the verified empty bypass list")
+    else:
+        if host_ruleset.get("required_status_checks") != list(REQUIRED_HOST_STATUS_CHECKS):
+            errors.append(
+                "host_ruleset.required_status_checks must require candidate-evidence, "
+                "repository-security, and pull-request-contract"
+            )
+        if host_ruleset.get("strict_required_status_checks") is not True:
+            errors.append("host_ruleset.strict_required_status_checks must be true")
 
     deployment_environment = policy.get("host_deployment_environment")
     if not isinstance(deployment_environment, dict):

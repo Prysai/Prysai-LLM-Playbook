@@ -5,17 +5,22 @@ contributions. The canonical DCO text is maintained at
 <https://developercertificate.org/>. This project does not copy or modify that
 text, and this file is not legal advice.
 
-By adding the following trailer to every commit in a pull request, a
-contributor makes the certification described by the DCO:
+For pull requests created on or after the repository contract rollout, adding
+the following trailer to every commit makes the certification described by the
+DCO:
 
 ```text
 Signed-off-by: Full Name <email@example.com>
 ```
 
 Use `git commit -s` when creating or amending a commit. The repository's
-`pull-request-contract` check reads every commit in the pull request and fails
-when a commit has no valid sign-off. A checked box in the pull request body is
-not evidence by itself.
+`pull-request-contract` check reads every commit in new pull requests and
+fails when a commit has no valid sign-off. A checked box in the pull request
+body is not evidence by itself. Pull requests opened before the one-time
+contract rollout cutoff (`2026-08-31T00:14:52Z`, when PR #66 was merged) use a
+limited migration path that requires GitHub to report a valid cryptographic
+signature on every commit; that exception does not certify or rewrite their
+historical DCO trailers or commit messages.
 
 The DCO sign-off is separate from a verified GitHub commit signature. A verified
 SSH, GPG, or S/MIME signature proves control of a signing key; it does not

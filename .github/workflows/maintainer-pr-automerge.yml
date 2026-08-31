@@ -49,6 +49,7 @@ jobs:
               'Prysai LLM Playbook security',
               'Prysai pull-request contract',
             ];
+            const rolloutCutoff = Date.parse('2026-08-31T00:14:52Z');
             const maxFiles = 25;
             const maxChangedLines = 1500;
 
@@ -111,7 +112,8 @@ jobs:
               return skip(`expected one eligible open PR, found ${matchingPullRequests.length}`);
             }
             const pullRequest = matchingPullRequests[0];
-            if (!pullRequest.title?.startsWith('[maintainer-doc]')) {
+            const legacyMigration = Date.parse(pullRequest.created_at) < rolloutCutoff;
+            if (!legacyMigration && !pullRequest.title?.startsWith('[maintainer-doc]')) {
               return skip('PR title must opt into the maintainer documentation route');
             }
             const requiredBodyMarkers = [
@@ -130,7 +132,7 @@ jobs:
               '## Checklist',
             ];
             const missingBodyMarkers = requiredBodyMarkers.filter((marker) => !pullRequest.body?.includes(marker));
-            if (missingBodyMarkers.length > 0) {
+            if (!legacyMigration && missingBodyMarkers.length > 0) {
               return skip(`PR body is missing required disclosure headings: ${missingBodyMarkers.join(', ')}`);
             }
 
@@ -197,12 +199,17 @@ jobs:
             const hasCurrentApproval = reviews.some((review) => (
               review.state === 'APPROVED' && review.commit_id === headSha
             ));
+            if (legacyMigration && !hasCurrentApproval) {
+              return skip('legacy migration PR requires an existing approval for the current head SHA');
+            }
 
             core.info(`AUTOMERGE_ELIGIBLE: PR #${pullRequest.number} ${headSha}`);
+            core.info(`AUTOMERGE_MIGRATION: ${legacyMigration ? 'legacy' : 'strict'}`);
             core.info(`AUTOMERGE_SCOPE: ${changedPaths.join(', ')}`);
             core.setOutput('eligible', 'true');
             core.setOutput('pull-request-number', String(pullRequest.number));
-            core.setOutput('needs-approval', hasCurrentApproval ? 'false' : 'true');
+            core.setOutput('legacy-migration', legacyMigration ? 'true' : 'false');
+            core.setOutput('needs-approval', legacyMigration || hasCurrentApproval ? 'false' : 'true');
 
       - name: Submit constrained bot approval
         if: steps.eligibility.outputs.eligible == 'true' && steps.eligibility.outputs.needs-approval == 'true'
@@ -233,6 +240,7 @@ jobs:
             const { owner, repo } = context.repo;
             const pullNumber = Number('${{ steps.eligibility.outputs.pull-request-number }}');
             const expectedHeadSha = context.payload.workflow_run.head_sha;
+            const legacyMigration = '${{ steps.eligibility.outputs.legacy-migration }}' === 'true';
             const allowedAuthors = new Set([
               'uuzzrm',
               'Prysai-Lab',
@@ -270,8 +278,8 @@ jobs:
               pullRequest.base?.repo?.full_name !== `${owner}/${repo}` ||
               !allowedHeadRepositories.has(pullRequest.head?.repo?.full_name) ||
               pullRequest.draft === true ||
-              !pullRequest.title?.startsWith('[maintainer-doc]') ||
-              requiredBodyMarkers.some((marker) => !pullRequest.body?.includes(marker))
+              (!legacyMigration && !pullRequest.title?.startsWith('[maintainer-doc]')) ||
+              (!legacyMigration && requiredBodyMarkers.some((marker) => !pullRequest.body?.includes(marker)))
             ) {
               core.setFailed('pull-request identity or head SHA changed after eligibility checks');
             }
