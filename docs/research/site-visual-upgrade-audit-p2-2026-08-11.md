@@ -503,7 +503,7 @@ zoom, print, forced-colors, screen-reader reading order, 320px reflow, or the
 reader's complete keyboard loop. The existing dated review is scoped and
 candidate, not a release sign-off.
 
-**Recommendation.** Add a release checklist or script output (without making
+**Recommendation.** Add a release-readiness validator or script output (without making
 the audit itself claim it has passed) covering:
 
 | View | Required observation |

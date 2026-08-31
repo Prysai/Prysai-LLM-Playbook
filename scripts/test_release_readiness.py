@@ -75,7 +75,7 @@ def main() -> int:
     mismatch["decision"] = "ready"
     mismatch["known_gaps"] = []
     mismatch["version"] = {"status": "declared", "value": "1.0.0"}
-    mismatch["changelog"] = {"status": "current", "path": "docs/release-checklist.md"}
+    mismatch["changelog"] = {"status": "current", "path": "CHANGELOG.md"}
     mismatch["release_tag"] = {
         "status": "reviewed", "name": "v1.0.0", "commit_sha": "a" * 40,
         "reviewed_by": "fixture-reviewer", "reviewed_at": "2026-08-12",
@@ -86,7 +86,7 @@ def main() -> int:
     }
     mismatch["rollback"] = {
         "status": "rehearsed", "target": "v0.9.0",
-        "rehearsal_record": "docs/release-checklist.md",
+        "rehearsal_record": "docs/quality/rollback-rehearsal-v0.1.0-alpha-2026-08-17.md",
         "rehearsed_at": "2026-08-12", "reviewed_by": "fixture-reviewer",
     }
     mismatch["maintenance"]["status"] = "reviewed"
