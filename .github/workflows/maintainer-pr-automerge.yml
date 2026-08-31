@@ -1,0 +1,285 @@
+name: Prysai maintainer documentation auto-merge
+
+on:
+  workflow_run:
+    workflows:
+      - Prysai LLM Playbook quality
+      - Prysai LLM Playbook security
+      - Prysai pull-request contract
+    types: [completed]
+
+# This is a trusted workflow_run boundary. It never checks out or executes the
+# pull-request ref. The write permissions are limited to this workflow and are
+# used only after the eligibility script has accepted a narrow documentation PR.
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: maintainer-documentation-automerge-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: true
+
+jobs:
+  approve-and-enable-automerge:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check pull-request eligibility
+        id: eligibility
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const run = context.payload.workflow_run;
+            const headSha = run.head_sha;
+            const baseRepository = `${owner}/${repo}`;
+            const allowedAuthors = new Set([
+              'uuzzrm',
+              'Prysai-Lab',
+            ]);
+            const allowedHeadRepositories = new Set([
+              baseRepository,
+              'uuzzrm/Prysai-LLM-Playbook',
+              'Prysai-Lab/Prysai-LLM-Playbook',
+            ]);
+            const requiredWorkflowNames = [
+              'Prysai LLM Playbook quality',
+              'Prysai LLM Playbook security',
+              'Prysai pull-request contract',
+            ];
+            const maxFiles = 25;
+            const maxChangedLines = 1500;
+
+            const skip = (reason) => {
+              core.info(`AUTOMERGE_SKIPPED: ${reason}`);
+              core.setOutput('eligible', 'false');
+            };
+
+            if (run.repository?.full_name !== baseRepository) {
+              return skip('workflow run is not from the target repository');
+            }
+            if (run.event !== 'pull_request') {
+              return skip('workflow run was not produced by a pull request event');
+            }
+            if (!/^[0-9a-f]{40}$/i.test(headSha)) {
+              return skip('workflow run has no immutable commit SHA');
+            }
+            if (!requiredWorkflowNames.includes(run.name)) {
+              return skip('workflow run is outside the required-check set');
+            }
+
+            for (const workflow of [
+              { name: requiredWorkflowNames[0], file: 'quality.yml' },
+              { name: requiredWorkflowNames[1], file: 'security-policy.yml' },
+              { name: requiredWorkflowNames[2], file: 'pull-request-contract.yml' },
+            ]) {
+              const response = await github.rest.actions.listWorkflowRuns({
+                owner,
+                repo,
+                workflow_id: workflow.file,
+                event: 'pull_request',
+                head_sha: headSha,
+                per_page: 100,
+              });
+              const latest = response.data.workflow_runs
+                .filter((candidate) => candidate.name === workflow.name && candidate.head_sha === headSha)
+                .sort((left, right) => Date.parse(right.created_at) - Date.parse(left.created_at))[0];
+              if (!latest || latest.status !== 'completed' || latest.conclusion !== 'success') {
+                return skip(`${workflow.name} is not successful for ${headSha}`);
+              }
+            }
+
+            const openPullRequests = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: 'open',
+              base: 'main',
+              per_page: 100,
+            });
+            const matchingPullRequests = openPullRequests.filter((pullRequest) => (
+              pullRequest.head?.sha === headSha &&
+              allowedAuthors.has(pullRequest.user?.login) &&
+              pullRequest.base?.ref === 'main' &&
+              pullRequest.base?.repo?.full_name === baseRepository &&
+              allowedHeadRepositories.has(pullRequest.head?.repo?.full_name) &&
+              pullRequest.draft !== true
+            ));
+
+            if (matchingPullRequests.length !== 1) {
+              return skip(`expected one eligible open PR, found ${matchingPullRequests.length}`);
+            }
+            const pullRequest = matchingPullRequests[0];
+            if (!pullRequest.title?.startsWith('[maintainer-doc]')) {
+              return skip('PR title must opt into the maintainer documentation route');
+            }
+            const requiredBodyMarkers = [
+              '## Tracking and summary',
+              '## Implementation or editorial approach',
+              '## Change class',
+              '## Contribution declaration',
+              '## Source, authorship, and license',
+              '## Safety and external effects',
+              '## Security review',
+              '## Contribution route and review request',
+              '## AI assistance',
+              '## Validation and evidence',
+              '## Unverified and out of scope',
+              '## Status claim',
+              '## Checklist',
+            ];
+            const missingBodyMarkers = requiredBodyMarkers.filter((marker) => !pullRequest.body?.includes(marker));
+            if (missingBodyMarkers.length > 0) {
+              return skip(`PR body is missing required disclosure headings: ${missingBodyMarkers.join(', ')}`);
+            }
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner,
+              repo,
+              pull_number: pullRequest.number,
+              per_page: 100,
+            });
+            if (files.length === 0 || files.length > maxFiles) {
+              return skip(`changed file count is outside 1-${maxFiles}`);
+            }
+            const changedPaths = [];
+            let changedLines = 0;
+            for (const file of files) {
+              if (!['added', 'modified'].includes(file.status)) {
+                return skip(`file ${file.filename} is not an added or modified Markdown file`);
+              }
+              const pathParts = file.filename.split('/');
+              if (
+                pathParts[0] !== 'book' ||
+                pathParts.length < 2 ||
+                pathParts.some((part) => part === '' || part === '.' || part === '..' || part.includes('\\')) ||
+                !file.filename.toLowerCase().endsWith('.md')
+              ) {
+                return skip(`file ${file.filename} is outside the low-risk book Markdown allowlist`);
+              }
+              changedPaths.push(file.filename);
+              changedLines += (file.additions ?? 0) + (file.deletions ?? 0);
+            }
+            if (changedLines > maxChangedLines) {
+              return skip(`changed line count exceeds ${maxChangedLines}`);
+            }
+
+            const [headOwner, headRepo] = pullRequest.head.repo.full_name.split('/', 2);
+            const commit = await github.rest.git.getCommit({
+              owner: headOwner,
+              repo: headRepo,
+              commit_sha: headSha,
+            });
+            const tree = await github.rest.git.getTree({
+              owner: headOwner,
+              repo: headRepo,
+              tree_sha: commit.data.tree.sha,
+              recursive: 'true',
+            });
+            if (tree.data.truncated) {
+              return skip('commit tree is truncated and file modes cannot be verified');
+            }
+            const entries = new Map(tree.data.tree.map((entry) => [entry.path, entry]));
+            for (const path of changedPaths) {
+              const entry = entries.get(path);
+              if (!entry || entry.type !== 'blob' || entry.mode === '120000') {
+                return skip(`file ${path} is not a regular blob`);
+              }
+            }
+
+            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+              owner,
+              repo,
+              pull_number: pullRequest.number,
+              per_page: 100,
+            });
+            const hasCurrentApproval = reviews.some((review) => (
+              review.state === 'APPROVED' && review.commit_id === headSha
+            ));
+
+            core.info(`AUTOMERGE_ELIGIBLE: PR #${pullRequest.number} ${headSha}`);
+            core.info(`AUTOMERGE_SCOPE: ${changedPaths.join(', ')}`);
+            core.setOutput('eligible', 'true');
+            core.setOutput('pull-request-number', String(pullRequest.number));
+            core.setOutput('needs-approval', hasCurrentApproval ? 'false' : 'true');
+
+      - name: Submit constrained bot approval
+        if: steps.eligibility.outputs.eligible == 'true' && steps.eligibility.outputs.needs-approval == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const pullNumber = Number('${{ steps.eligibility.outputs.pull-request-number }}');
+            const headSha = context.payload.workflow_run.head_sha;
+            await github.rest.pulls.createReview({
+              owner,
+              repo,
+              pull_number: pullNumber,
+              commit_id: headSha,
+              event: 'APPROVE',
+              body: [
+                'Automated approval for the constrained maintainer documentation route.',
+                'This is a workflow signal, not an independent human review.',
+              ].join(' '),
+            });
+
+      - name: Recheck pull-request head before enabling auto-merge
+        id: recheck
+        if: steps.eligibility.outputs.eligible == 'true'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const pullNumber = Number('${{ steps.eligibility.outputs.pull-request-number }}');
+            const expectedHeadSha = context.payload.workflow_run.head_sha;
+            const allowedAuthors = new Set([
+              'uuzzrm',
+              'Prysai-Lab',
+            ]);
+            const allowedHeadRepositories = new Set([
+              `${owner}/${repo}`,
+              'uuzzrm/Prysai-LLM-Playbook',
+              'Prysai-Lab/Prysai-LLM-Playbook',
+            ]);
+            const requiredBodyMarkers = [
+              '## Tracking and summary',
+              '## Implementation or editorial approach',
+              '## Change class',
+              '## Contribution declaration',
+              '## Source, authorship, and license',
+              '## Safety and external effects',
+              '## Security review',
+              '## Contribution route and review request',
+              '## AI assistance',
+              '## Validation and evidence',
+              '## Unverified and out of scope',
+              '## Status claim',
+              '## Checklist',
+            ];
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: pullNumber,
+            });
+            if (
+              pullRequest.state !== 'open' ||
+              pullRequest.head?.sha !== expectedHeadSha ||
+              !allowedAuthors.has(pullRequest.user?.login) ||
+              pullRequest.base?.ref !== 'main' ||
+              pullRequest.base?.repo?.full_name !== `${owner}/${repo}` ||
+              !allowedHeadRepositories.has(pullRequest.head?.repo?.full_name) ||
+              pullRequest.draft === true ||
+              !pullRequest.title?.startsWith('[maintainer-doc]') ||
+              requiredBodyMarkers.some((marker) => !pullRequest.body?.includes(marker))
+            ) {
+              core.setFailed('pull-request identity or head SHA changed after eligibility checks');
+            }
+
+      - name: Enable native squash auto-merge
+        if: steps.eligibility.outputs.eligible == 'true' && steps.recheck.outcome == 'success'
+        uses: peter-evans/enable-pull-request-automerge@a660677d5469627102a1c1e11409dd063606628d # v3.0.0
+        with:
+          token: ${{ github.token }}
+          pull-request-number: ${{ steps.eligibility.outputs.pull-request-number }}
+          merge-method: squash
