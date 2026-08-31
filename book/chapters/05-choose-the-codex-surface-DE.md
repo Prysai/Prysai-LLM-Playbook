@@ -111,7 +111,7 @@ reviewer:
 
 Setup darf Abhängigkeiten mit Netzwerkzugriff installieren; der Agent ist normalerweise offline, sofern die Umgebung nicht anders konfiguriert ist. Ein Geheimnis kann im Setup vorhanden und vor der Agent-Phase entfernt sein. „Paket installiert“ belegt Setup, nicht den Agent-Zugriff. Externe Aufrufe bleiben pausiert, bis Phase und Datenweg belegt sind.
 
-## Experiment: beobachtbares Mini-Experiment
+## 6. Experiment: beobachtbares Mini-Experiment
 
 **Experimentstatus:** `not_run`. Dies ist ein Übungsentwurf, kein Bericht über einen Lauf dieses Repositories in Local, Worktree oder Cloud.
 
