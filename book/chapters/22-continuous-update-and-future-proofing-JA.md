@@ -122,7 +122,7 @@ maintainer が「action X の公開説明が変わった」という notice を�
 
 decision card には `decision_owner`、`delivery_target`（この演習では temporary copy のみ）、`reviewer`、`rollback_target` を含めます。どれかが欠けたら `blocked` のままです。紙上の status 変更は、update loop 完了の証拠ではありません。
 
-### Evidence gate
+### 証拠ゲート
 
 evidence package には claim YAML、source snapshot または unavailable-source record、access date と scope、impact matrix、before/after hash、diff、check output、status transition の理由、unverified-items list、owner、next review、rollback instructions を含めます。必須十項目は次のとおりです：claim、source、scope、owner、`next_review`、baseline hash、after hash/diff、impact matrix、validation log、unverified list。どれか一つ欠ければ update loop は完了していません。
 
@@ -145,7 +145,7 @@ task set、scope、source、permission、migration note を更新せず、新し
 - `claim_status: current` は宣言された scope 内に current source があるという意味だけです。chapter、Skill、experiment、deployment、runtime が `verified` という意味ではありません。
 - successful build、準備済み package、文書化された migration は、実際の evidence がない限り production behavior や team effect の証拠ではありません。
 
-## Transfer task
+## 転移課題
 
 実在するが redacted な外部 Skill candidate を一つ選びます。claim record と impact matrix を使い、unreviewed から `blocked` または adaptation candidate へ移します。license、dependency、trigger、permission、risk、owner、evaluation evidence の何が不足しているかを書きます。名前が適切に見えるだけで approve しません。
 
@@ -189,7 +189,7 @@ lifecycle、impact matrix、rollback、evidence gate は project methodology で
 
 この project の update process は [`docs/governance/content-lifecycle.md`](../evidence-library-JA.md#method-and-status) にも記録されています。この章は `candidate`、演習は `draft / not_run` のままです。上の `claim_status` はどちらの結論も変更しません。
 
-## 公開前の最小 update card
+## 公開前の最小更新カード
 
 新しい名前や page screenshot を見つけても、書籍全体を一括置換しません。rollback できる card で変更を狭め、なぜその範囲だけを変えるのか、まだ何を言えないのかを次の maintainer に渡します。
 
