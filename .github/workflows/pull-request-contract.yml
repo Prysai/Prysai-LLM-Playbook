@@ -1,0 +1,93 @@
+name: Prysai pull-request contract
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, edited]
+
+# This check reads pull-request metadata and commit messages only. It does not
+# check out or execute the pull-request ref and has no write or secret access.
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: pull-request-contract-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+  cancel-in-progress: true
+
+jobs:
+  pull-request-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Validate pull-request body and commit sign-offs
+        run: |
+          set -euo pipefail
+          gh api --paginate --slurp \
+            "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/commits?per_page=100" \
+            > "$RUNNER_TEMP/pull-request-commits.json"
+          gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" \
+            > "$RUNNER_TEMP/pull-request.json"
+          python - "$RUNNER_TEMP/pull-request.json" "$RUNNER_TEMP/pull-request-commits.json" <<'PY'
+          import json
+          import os
+          import re
+          import sys
+          from pathlib import Path
+
+          pull_request = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          commit_pages = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+          commits = [commit for page in commit_pages for commit in page]
+          body = pull_request.get("body") or ""
+          expected_head = os.environ["EXPECTED_HEAD_SHA"]
+
+          required_headings = (
+              "## Tracking and summary",
+              "## Implementation or editorial approach",
+              "## Change class",
+              "## Contribution route and review request",
+              "## Contribution declaration",
+              "## Source, authorship, and license",
+              "## Safety and external effects",
+              "## Security review",
+              "## AI assistance",
+              "## Validation and evidence",
+              "## Unverified and out of scope",
+              "## Status claim",
+              "## Checklist",
+          )
+          missing_headings = [heading for heading in required_headings if heading not in body]
+          if missing_headings:
+              print("PR_CONTRACT_FAILED")
+              print("- PR body is missing: " + ", ".join(missing_headings))
+              raise SystemExit(1)
+
+          actual_head = pull_request.get("head", {}).get("sha")
+          if actual_head != expected_head:
+              print("PR_CONTRACT_FAILED")
+              print("- pull-request head changed while the contract was being checked")
+              raise SystemExit(1)
+
+          signoff = re.compile(r"^Signed-off-by:\s+[^<>\r\n]+<[^<>\s]+@[^<>\s]+>\s*$", re.IGNORECASE)
+          signoff_prefix = re.compile(r"^Signed-off-by:", re.IGNORECASE)
+          failures = []
+          for commit in commits:
+              sha = commit.get("sha", "unknown")
+              message = ((commit.get("commit") or {}).get("message") or "")
+              lines = message.splitlines()
+              declared = [line for line in lines if signoff_prefix.match(line)]
+              valid = [line for line in declared if signoff.fullmatch(line)]
+              if not valid or len(valid) != len(declared):
+                  failures.append(sha[:12])
+          if not commits:
+              failures.append("no-commits")
+          if failures:
+              print("PR_CONTRACT_FAILED")
+              print("- every commit needs at least one valid Signed-off-by trailer and no malformed sign-off; failures: " + ", ".join(failures))
+              raise SystemExit(1)
+
+          print(f"PR_CONTRACT_OK commits={len(commits)} headings={len(required_headings)} head={expected_head[:12]}")
+          PY

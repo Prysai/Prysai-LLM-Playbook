@@ -65,3 +65,4 @@ Current entry points:
 - [ADR-0047: record the post-mutation host boundary receipt](0047-post-mutation-host-boundary-receipt.md)
 - [ADR-0048: verify the public Docs host after artifact publication](0048-post-publish-public-artifact-check.md)
 - [ADR-0049: keep maintainer-only release controls out of public artifacts](0049-maintainer-only-release-controls.md)
+- [ADR-0050: constrain maintainer documentation auto-merge](0050-constrained-maintainer-documentation-auto-merge.md)

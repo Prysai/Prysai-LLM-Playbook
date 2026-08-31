@@ -9,7 +9,7 @@
       "role": "Repository automation and quality gates.",
       "entry": ".github/workflows/quality.yml",
       "first_read": ".github/workflows/quality.yml",
-      "canonical_sources": [".github/workflows/quality.yml", ".github/workflows/release-gate.yml", ".github/workflows/pages.yml"],
+      "canonical_sources": [".github/workflows/quality.yml", ".github/workflows/pull-request-contract.yml", ".github/workflows/maintainer-pr-automerge.yml", ".github/workflows/release-gate.yml", ".github/workflows/pages.yml"],
       "generated_outputs": []
     },
     {
@@ -125,6 +125,7 @@
     {"path": "README-EN.md", "role": "Detailed English project entry.", "canonical_source": "README-EN.md"},
     {"path": "AGENTS.md", "role": "Working rules for contributors and agents.", "canonical_source": "AGENTS.md"},
     {"path": "CONTRIBUTING.md", "role": "Public contributor front door and change-class router.", "canonical_source": "docs/governance/contribution-model.md"},
+    {"path": "DCO.md", "role": "Contributor sign-off policy and distinction from verified commit signatures or a CLA.", "canonical_source": "DCO.md"},
     {"path": "CONTEXT.md", "role": "Stable project vocabulary and boundaries.", "canonical_source": "CONTEXT.md"},
     {"path": "package.json", "role": "Private Node toolchain contract for browser verification.", "canonical_source": "package.json"},
     {"path": "package-lock.json", "role": "Pinned npm dependency graph generated from package.json; do not hand-edit.", "canonical_source": "package.json"}
