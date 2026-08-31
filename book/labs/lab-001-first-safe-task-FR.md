@@ -111,7 +111,7 @@ de lecture de secrets. Si une condition est floue, arrêtez-vous avec le statut
 |---|---|---|---|
 | Où le travail se déroule-t-il ? | sandbox déclarée, répertoire observé, racine Git et branche/`HEAD` (ou « pas une sandbox Git » pour la fixture) | le répertoire observé est dedans et les identifiants désignent la même copie | un chemin ou une identité est absent, ambigu ou contradictoire |
 | Qu’est-ce qui peut changer ? | `README.md` uniquement | le fichier est identifiable dans la sandbox | un second chemin devient nécessaire |
-| Quelles actions sont permises ? | lire, proposer un plan, puis éditer après confirmation | l’action reste locale et réversible | elle demande identité, installation, réseau ou écriture externe |
+| Quelles actions sont permises ? | lire, proposer un plan, puis éditer après confirmation | l’action reste locale et réversible | elle demande des identifiants, une installation, un accès réseau ou une écriture externe |
 | Quel est le reçu ? | état initial, plan, diff, source de la commande, sortie et inconnues | chaque élément peut être conservé et relu | il ne resterait qu’un message « terminé » |
 
 Ces réponses ne sont pas une formalité : une réponse vide ou `unknown` est un
@@ -131,7 +131,7 @@ Reçu : état initial, plan, diff exact, source de commande, contrôle ciblé,
 et liste explicite des éléments non vérifiés.
 Avant l’édition : montrer la cible, l’état observé et le plan.
 Après l’édition : afficher le diff et exécuter uniquement le contrôle approuvé.
-Si un chemin, une commande ou une permission est flou : demander et s’arrêter.
+En cas de doute sur le chemin, la commande ou la permission, arrêtez-vous et demandez.
 ```
 
 La carte est un contrat de travail, pas une preuve que l’action a eu lieu.
