@@ -210,9 +210,9 @@ englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
 Vor-/Zurück-Links, Kapitel-Lab-Verweise und Sprachumschalter.
 
 Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel als struktureller
-Leserpfad. Diese Datei- und Pfadabdeckung bedeutet nicht, dass alle Texte
-übersetzt oder sprachlich geprüft sind; den aktuell bearbeiteten Umfang dieses
-deutschen Schnitts nennen wir unten separat. Gemeinsame Forschungs-,
+Leserpfad. Das ist eine Aussage über Dateien und Routing, nicht über den
+redaktionellen oder sprachlich geprüften Umfang: Den aktuell bearbeiteten
+deutschen Ausschnitt nennen wir unten separat. Gemeinsame Forschungs-,
 Governance- und Evaluationsmaterialien behalten ihre dokumentierte
 Originalsprache und werden als Evidenzmaterial bezeichnet, nicht als deutsche
 Kursseiten ausgegeben.
@@ -256,7 +256,7 @@ behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 - Das Projekt ist ein unabhängig gepflegtes Lern- und Praxissystem, keine
   offizielle Dokumentation und keine offizielle Produktseite von OpenAI.
 
-## Sichtbarer deutscher Pfad und redaktioneller Ausschnitt
+## Datei- und Pfadabdeckung sowie redaktioneller deutscher Ausschnitt
 
 Die oben genannte Datei- und Pfadabdeckung stellt den deutschen Leserpfad und
 seine Links bereit. Der derzeit redaktionell ausgearbeitete erste deutsche
@@ -265,5 +265,6 @@ Vorwort, den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4
 sowie die Labs 001, 007 und 011. Die übrigen `-DE`-Dateien bleiben für das
 Routing sichtbar, sind aber nicht als vollständige deutsche Übersetzung oder
 Sprachprüfung zu verstehen. Das gilt ebenso für Skills, Forschungsakten und
-die öffentliche Website. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar,
-bis die jeweilige content ID tatsächlich übersetzt und geprüft wurde.
+die öffentliche Website. Datei-/Pfadabdeckung und redaktioneller Ausschnitt
+sind daher getrennte Angaben. Fehlende `-DE`-Ziele bleiben im Buchindex
+sichtbar, bis die jeweilige content ID tatsächlich übersetzt und geprüft wurde.
