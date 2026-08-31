@@ -6,8 +6,10 @@ import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from urllib.parse import parse_qs, urlparse
 
+import build_pages_artifact
 import build_site_locale_manifest
 from build_pages_artifact import (
     SPACE_README_FRONTMATTER,
@@ -21,6 +23,7 @@ from build_pages_artifact import (
     sitemap_urls,
     source_symlinks,
     space_readme,
+    validate_artifact,
 )
 
 
@@ -99,25 +102,60 @@ def main() -> int:
             require(all(value not in item for item in findings), f"{rule} finding exposed the credential value")
             fixture.unlink()
 
-        source = Path(temporary) / "source"
-        source.mkdir()
-        internal_source = source / "docs" / "release-checklist.md"
-        internal_source.parent.mkdir()
-        internal_source.write_text("maintainer-only", encoding="utf-8")
+        for index, spelling in enumerate(("release-checklist.md", "Release-Checklist.md", "release-Checklist.md"), start=1):
+            source = Path(temporary) / f"source-{index}"
+            internal_source = source / "DoCs" / spelling
+            internal_source.parent.mkdir(parents=True)
+            internal_source.write_text("maintainer-only", encoding="utf-8")
+            require(
+                forbidden_publish_paths(source) == [f"DoCs/{spelling}"],
+                f"source boundary accepted forbidden path spelling: {spelling}",
+            )
+
+            artifact_copy = Path(temporary) / f"artifact-{index}"
+            internal_artifact = artifact_copy / "dOcS" / spelling
+            internal_artifact.parent.mkdir(parents=True)
+            internal_artifact.write_text("maintainer-only", encoding="utf-8")
+            require(
+                forbidden_publish_paths(artifact_copy) == [f"dOcS/{spelling}"],
+                f"artifact boundary accepted forbidden path spelling: {spelling}",
+            )
+            try:
+                validate_artifact(artifact_copy)
+            except ValueError as error:
+                require(
+                    str(error).startswith("forbidden internal paths leaked into Pages artifact:"),
+                    f"artifact validator raised the wrong error for {spelling}: {error}",
+                )
+            else:
+                raise AssertionError(f"validate_artifact accepted forbidden path spelling: {spelling}")
+
+        directory_source = Path(temporary) / "directory-source"
+        forbidden_directory = directory_source / "docs" / "release-checklist.md"
+        forbidden_directory.mkdir(parents=True)
         require(
-            forbidden_publish_paths(source) == ["docs/release-checklist.md"],
-            "reintroduced maintainer checklist was not rejected at the source boundary",
+            forbidden_publish_paths(directory_source) == ["docs/release-checklist.md"],
+            "source boundary accepted a forbidden directory path",
         )
 
-        artifact_copy = Path(temporary) / "artifact-with-internal-path"
-        artifact_copy.mkdir()
-        internal_artifact = artifact_copy / "docs" / "release-checklist.md"
-        internal_artifact.parent.mkdir()
-        internal_artifact.write_text("maintainer-only", encoding="utf-8")
+        directory_artifact = Path(temporary) / "directory-artifact"
+        forbidden_artifact_directory = directory_artifact / "docs" / "release-checklist.md"
+        forbidden_artifact_directory.mkdir(parents=True)
         require(
-            forbidden_publish_paths(artifact_copy) == ["docs/release-checklist.md"],
-            "maintainer checklist was not rejected at the artifact boundary",
+            forbidden_publish_paths(directory_artifact) == ["docs/release-checklist.md"],
+            "artifact boundary accepted a forbidden directory path",
         )
+
+        with patch.object(build_pages_artifact, "forbidden_publish_paths", return_value=["docs/release-checklist.md"]):
+            try:
+                build_pages_artifact.validate_source()
+            except ValueError as error:
+                require(
+                    str(error).startswith("forbidden internal source paths are not publishable:"),
+                    f"source validator raised the wrong error: {error}",
+                )
+            else:
+                raise AssertionError("validate_source did not enforce the forbidden-path guard")
 
         outside = Path(temporary) / "outside.txt"
         outside.write_text("outside", encoding="utf-8")
@@ -130,9 +168,10 @@ def main() -> int:
             # the production symlink scan on every platform.
             pass
         else:
-            require(source_symlinks([source]) == ["source/outside-link.txt"], "published source symlink was not found")
+            expected_link = f"{source.name}/outside-link.txt"
+            require(source_symlinks([source]) == [expected_link], "published source symlink was not found")
 
-    print(f"PAGES_ARTIFACT_TESTS_OK fixtures=10 secret-patterns=3 symlink=guarded sitemap={len(urls)}")
+    print(f"PAGES_ARTIFACT_TESTS_OK fixtures=13 secret-patterns=3 symlink=guarded sitemap={len(urls)}")
     return 0
 
 
