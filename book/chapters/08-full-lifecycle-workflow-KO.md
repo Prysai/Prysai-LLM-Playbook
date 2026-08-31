@@ -14,6 +14,18 @@ define → plan → build → verify → review → deliver → maintain
 
 각 화살표는 판단 지점입니다. Agent가 “완료”라고 말해서가 아니라, 다른 사람이 확인할 증거가 있을 때만 다음 단계로 갑니다. 이 장을 마치면 편집 전에 범위·제외 사항·수용 조건·권한·복구 방법을 적고, 큰 요청을 빠르게 증거를 얻을 수 있는 수직 슬라이스로 나누며, 마지막으로 수용한 상태를 확인한 뒤 조건부로 재시도할 수 있어야 합니다.
 
+![정의부터 유지보수까지 증거를 이어 주는 작업 흐름](../../assets/teaching/locales/ko/lifecycle-checkpoints.svg)
+
+> 이 이미지는 프로젝트가 소유한 교육 카드입니다. 방법의 구조를 설명할 뿐, Skill·Agent 또는 외부 서비스가 이 작업 흐름을 실행했다는 증거는 아닙니다.
+
+### 경계가 보이는 결과 하나 보기
+
+이 저장소에는 같은 원칙을 비기술 산출물에 적용한 프로젝트 소유 사례도 있습니다. 사례는 가상의 첫 주택 구매자 안내 페이지이며, 실제 매물이나 고객 작업을 기록한 것이 아닙니다. 먼저 [사례 기록](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)을 읽으세요. 기록에는 합성 입력, 로컬 렌더링 명령, 기록된 뷰포트, 그리고 이미지가 증명할 수 없는 주장이 적혀 있습니다.
+
+[![합성 첫 주택 구매자 안내 페이지의 로컬 렌더링](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
+
+이 이미지는 기록된 뷰포트에서 한 번 로컬로 렌더링한 결과의 증거일 뿐입니다. Product Context Skill이 독립적으로 실행되었다거나, 매물이 실제라거나, 페이지가 신뢰·문의·전환·판매를 개선한다는 증거는 아닙니다. [샌드박스 소스](../../examples/skill-sandbox/product-context-real-estate/README-KO.md)는 인증 정보나 외부 요청 없이 검토하고 다시 실행할 수 있도록 작게 유지했습니다.
+
 ## 학습 목표
 
 - 편집 전에 범위, 제외, 수용, 권한, 복구를 적는다.
