@@ -50,7 +50,7 @@ English link as `migration pending` when its localized source is not present.
 | Repository security, PR automation, or a suspected vulnerability | `SECURITY.md`, then `docs/governance/repository-security-policy.yaml` | Security policy, PR template, workflow, and validator | Least-privileged permissions, source and pin decision, manual review path, rollback, and stated limits | Repository-security validator, fixtures, project check, and human review; do not claim host-side protection while Rulesets remain unenforceable |
 | The public page | `site/README.md`, `site/content-catalog.json`, `scripts/build_learning_path_site.py` | `site/index.html`, `site/app.js`, `site/styles.css`, generated `site/learning-path-data.js` | Counts, links, language coverage, accessibility behavior, status wording, generated learning-path data | `build_learning_path_site.py --check`, local link check, i18n check, and desktop/320px/390px browser review |
 | The current status of the whole project | `docs/governance/content-status.yaml` | The status source and its validator | Counts, artifact status, run status, owner, review date, and evidence paths | `validate_content_status.py`; do not infer maturity from file presence |
-| A release or rollback | `docs/release-checklist.md` | Release record and change log | Diff, validation output, reviewer, known gaps, rollback target | User-approved commit/push and a recoverable reference |
+| A release or rollback | `docs/governance/release-readiness.yaml` | Release record and change log | Diff, validation output, reviewer, known gaps, rollback target | User-approved commit/push and a recoverable reference |
 
 ## Status vocabulary
 

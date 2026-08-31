@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ISSUE_DIR = ROOT / ".github/ISSUE_TEMPLATE"
 PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
 CODEOWNERS = ROOT / ".github/CODEOWNERS"
+DCO = ROOT / "DCO.md"
 FIELD_REPORT = ISSUE_DIR / "field-report.yml"
 FEEDBACK_CONTRACT = ROOT / "docs/quality/public-beta-feedback-contract-v1.md"
 ALLOWED_TYPES = {"markdown", "input", "textarea", "dropdown", "checkboxes"}
@@ -34,12 +35,16 @@ FEEDBACK_BOUNDARIES = {
     "single-report evidence limit": ("root cause", "prevalence", "verified fix"),
 }
 REQUIRED_PR_HEADINGS = {
-    "## Problem and bounded change",
+    "## Tracking and summary",
+    "## Implementation or editorial approach",
     "## Change class",
     "## Contribution route and review request",
+    "## Contribution declaration",
     "## Source, authorship, and license",
     "## Safety and external effects",
-    "## Evidence actually produced",
+    "## Security review",
+    "## AI assistance",
+    "## Validation and evidence",
     "## Unverified and out of scope",
     "## Status claim",
     "## Checklist",
@@ -48,20 +53,33 @@ REQUIRED_PR_ROUTE_TEXT = (
     "Test material (fast route",
     "Fast material review",
     "contribution.json",
-    "Commit sign-off:",
+    "DCO:",
+    "Signed-off-by:",
 )
 REQUIRED_CODEOWNER_LINES = {
-    "/evals/contributions/ @Prysai",
-    "/LICENSE @Prysai",
-    "/CONTRIBUTING.md @Prysai",
-    "/SECURITY.md @Prysai",
-    "/docs/quality/ @Prysai",
-    "/docs/governance/ @Prysai",
-    "/docs/sources/ @Prysai",
-    "/docs/strategy/ @Prysai",
-    "/.github/ @Prysai",
-    "/scripts/ @Prysai",
+    "/book/ @Prysai-Lab",
+    "/skills/ @Prysai-Lab",
+    "/site/ @Prysai-Lab",
+    "/evals/contributions/ @Prysai-Lab",
+    "/LICENSE @Prysai-Lab",
+    "/LICENSE-CODE @Prysai-Lab",
+    "/CONTRIBUTING.md @Prysai-Lab",
+    "/SECURITY.md @Prysai-Lab",
+    "/DCO.md @Prysai-Lab",
+    "/docs/quality/ @Prysai-Lab",
+    "/docs/governance/ @Prysai-Lab",
+    "/docs/sources/ @Prysai-Lab",
+    "/docs/strategy/ @Prysai-Lab",
+    "/.github/ @Prysai-Lab",
+    "/scripts/ @Prysai-Lab",
 }
+DCO_REQUIRED_FRAGMENTS = (
+    "Developer Certificate of Origin",
+    "https://developercertificate.org/",
+    "Signed-off-by:",
+    "verified GitHub commit signature",
+    "CLA",
+)
 
 
 def load_yaml(path: Path) -> Any:
@@ -315,6 +333,17 @@ def validate_pr_template() -> list[str]:
     return validate_pr_template_text(PR_TEMPLATE.read_text(encoding="utf-8"))
 
 
+def validate_dco() -> list[str]:
+    return validate_dco_path(DCO)
+
+
+def validate_dco_path(path: Path) -> list[str]:
+    if not path.is_file():
+        return [f"missing {path.name}"]
+    text = path.read_text(encoding="utf-8")
+    return [f"{path.name} is missing contribution boundary: {fragment}" for fragment in DCO_REQUIRED_FRAGMENTS if fragment not in text]
+
+
 def validate_codeowners_text(text: str) -> list[str]:
     lines = {line.strip() for line in text.splitlines() if line.strip() and not line.lstrip().startswith("#")}
     missing = sorted(REQUIRED_CODEOWNER_LINES - lines)
@@ -357,6 +386,7 @@ def main(argv: list[str] | None = None) -> int:
         except (OSError, UnicodeError, yaml.YAMLError) as exc:
             errors.append(f"cannot parse .github/ISSUE_TEMPLATE/config.yml: {exc}")
     errors.extend(validate_pr_template())
+    errors.extend(validate_dco())
     errors.extend(validate_codeowners())
     labels: list[str] = []
     try:
