@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import tempfile
+import copy
 from pathlib import Path
 
 import validate_repository_security as policy
@@ -19,6 +20,33 @@ def main() -> int:
         current_policy, policy_load_errors = policy.load_policy()
         require(not policy_load_errors and current_policy is not None, "repository security policy could not be loaded")
         require(not policy.validate_policy(current_policy), "repository security policy failed its live-boundary contract")
+        fixtures += 1
+        migration_exceptions = current_policy.get("review_requirements", {}).get("migration_exceptions", [])
+        require(
+            any(
+                "2026-08-31T00:14:52Z" in exception
+                and "valid GitHub cryptographic signature" in exception
+                and "DCO trailers" in exception
+                for exception in migration_exceptions
+            ),
+            "repository security policy did not record the bounded legacy migration exception",
+        )
+        fixtures += 1
+
+        missing_required_status_check = copy.deepcopy(current_policy)
+        missing_required_status_check["host_ruleset"]["required_status_checks"] = ["candidate-evidence", "repository-security"]
+        require(
+            any("host_ruleset.required_status_checks" in error for error in policy.validate_policy(missing_required_status_check)),
+            "host Ruleset without the PR contract check was accepted",
+        )
+        fixtures += 1
+
+        non_strict_status_checks = copy.deepcopy(current_policy)
+        non_strict_status_checks["host_ruleset"]["strict_required_status_checks"] = False
+        require(
+            any("strict_required_status_checks" in error for error in policy.validate_policy(non_strict_status_checks)),
+            "non-strict host status checks were accepted",
+        )
         fixtures += 1
 
         valid_workflow = """on:
@@ -224,6 +252,13 @@ permissions:
         )
         fixtures += 1
         require(
+            "const rolloutCutoff = Date.parse('2026-08-31T00:14:52Z');" in maintainer_automerge
+            and "const legacyMigration = Date.parse(pullRequest.created_at) < rolloutCutoff;" in maintainer_automerge
+            and "if (legacyMigration && !hasCurrentApproval)" in maintainer_automerge,
+            "maintainer auto-merge workflow did not retain the bounded legacy migration gate",
+        )
+        fixtures += 1
+        require(
             not policy.validate_workflow_text(maintainer_automerge, ".github/workflows/maintainer-pr-automerge.yml"),
             "constrained maintainer auto-merge workflow was rejected by the general workflow validator",
         )
@@ -266,6 +301,19 @@ permissions:
         require(
             any("full commit SHA" in error for error in policy.validate_workflow_text(unpinned_script_action, ".github/workflows/maintainer-pr-automerge.yml")),
             "maintainer auto-merge workflow with an unpinned GitHub Script action was accepted",
+        )
+        fixtures += 1
+
+        pull_request_contract = policy.PULL_REQUEST_CONTRACT_WORKFLOW.read_text(encoding="utf-8")
+        require(
+            "legacy_authors = {\"uuzzrm\", \"Prysai-Lab\"}" in pull_request_contract
+            and "created_time < cutoff_time" in pull_request_contract
+            and "verification = (commit.get(\"commit\") or {}).get(\"verification\")" in pull_request_contract
+            and "verification.get(\"verified\") is not True" in pull_request_contract
+            and "verification.get(\"reason\") != \"valid\"" in pull_request_contract
+            and "legacy migration requires a valid GitHub cryptographic signature" in pull_request_contract
+            and "PR_CONTRACT_MIGRATION_OK" in pull_request_contract,
+            "pull-request contract did not retain the bounded legacy migration gate",
         )
         fixtures += 1
 
