@@ -14,16 +14,20 @@ ROOT = Path(__file__).resolve().parents[1]
 POLICY_PATH = ROOT / "docs/governance/repository-security-policy.yaml"
 SECURITY_PATH = ROOT / "SECURITY.md"
 PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
+DCO_PATH = ROOT / "DCO.md"
 WORKFLOW_DIR = ROOT / ".github/workflows"
 SITE_ENTRYPOINTS = (ROOT / "site/index.html", ROOT / "site/reader.html")
 QUALITY_WORKFLOW = WORKFLOW_DIR / "quality.yml"
 PAGES_WORKFLOW = WORKFLOW_DIR / "pages.yml"
 CODEQL_WORKFLOW = WORKFLOW_DIR / "codeql.yml"
+MAINTAINER_AUTOMERGE_WORKFLOW = WORKFLOW_DIR / "maintainer-pr-automerge.yml"
+PULL_REQUEST_CONTRACT_WORKFLOW = WORKFLOW_DIR / "pull-request-contract.yml"
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$", re.IGNORECASE)
 USES_RE = re.compile(r"^\s*(?:-\s*)?uses:\s*([^@\s]+)@([^\s#]+)", re.MULTILINE)
 PULL_REQUEST_TARGET_RE = re.compile(r"^\s*pull_request_target\s*:", re.MULTILINE)
 PULL_REQUEST_RE = re.compile(r"^\s*pull_request\s*:", re.MULTILINE)
+WORKFLOW_RUN_RE = re.compile(r"^\s*workflow_run\s*:", re.MULTILINE)
 WORKFLOW_DISPATCH_RE = re.compile(r"^\s*workflow_dispatch\s*:", re.MULTILINE)
 MAIN_REF_GUARD_RE = re.compile(r"github\.ref\s*==\s*['\"]refs/heads/main['\"]")
 PERMISSIONS_BLOCK_RE = re.compile(r"^permissions:\s*\n((?:^  [a-z-]+:\s*[a-z-]+\s*$\n?)+)", re.MULTILINE)
@@ -103,6 +107,56 @@ CODEQL_PR_ALLOWED_PERMISSIONS = {
     "packages": "read",
     "security-events": "write",
 }
+MAINTAINER_AUTOMERGE_ALLOWED_PERMISSIONS = {
+    "actions": "read",
+    "contents": "write",
+    "pull-requests": "write",
+}
+MAINTAINER_AUTOMERGE_REQUIRED_FRAGMENTS = (
+    "workflow_run:",
+    "types: [completed]",
+    "github.event.workflow_run.conclusion == 'success'",
+    "run.event !== 'pull_request'",
+    "Prysai LLM Playbook quality",
+    "Prysai LLM Playbook security",
+    "workflow_id: workflow.file",
+    "event: 'pull_request'",
+    "head_sha: headSha",
+    "const allowedAuthors = new Set([",
+    "'Prysai-Lab',",
+    "allowedAuthors.has(pullRequest.user?.login)",
+    "pullRequest.base?.ref === 'main'",
+    "pullRequest.base?.repo?.full_name === baseRepository",
+    "allowedHeadRepositories.has(pullRequest.head?.repo?.full_name)",
+    "'Prysai-Lab/Prysai-LLM-Playbook',",
+    "pullRequest.draft !== true",
+    "pullRequest.title?.startsWith('[maintainer-doc]')",
+    "## Source, authorship, and license",
+    "## Safety and external effects",
+    "## Security review",
+    "## Change class",
+    "## Contribution route and review request",
+    "## Validation and evidence",
+    "## Unverified and out of scope",
+    "## Status claim",
+    "pathParts[0] !== 'book'",
+    "pathParts.some((part) => part === '' || part === '.' || part === '..' || part.includes('\\\\'))",
+    "!file.filename.toLowerCase().endsWith('.md')",
+    "const maxFiles = 25",
+    "const maxChangedLines = 1500",
+    "file.status",
+    "entry.mode === '120000'",
+    "review.commit_id === headSha",
+    "pulls.createReview",
+    "Recheck pull-request head before enabling auto-merge",
+    "pullRequest.head?.sha !== expectedHeadSha",
+    "pullRequest.base?.repo?.full_name !== `${owner}/${repo}`",
+    "requiredBodyMarkers.some((marker) => !pullRequest.body?.includes(marker))",
+    "steps.recheck.outcome == 'success'",
+    "peter-evans/enable-pull-request-automerge@a660677d5469627102a1c1e11409dd063606628d",
+    "merge-method: squash",
+    "This is a workflow signal, not an independent human review.",
+)
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
     re.compile(r"\bgithub_pat_[A-Za-z0-9_]{40,}\b"),
@@ -218,10 +272,26 @@ REQUIRED_PR_HEADINGS = {
     "## Source, authorship, and license",
     "## Safety and external effects",
     "## Security review",
+    "## Change class",
     "## Contribution route and review request",
-    "## Evidence actually produced",
+    "## Tracking and summary",
+    "## Implementation or editorial approach",
+    "## Contribution declaration",
+    "## AI assistance",
+    "## Validation and evidence",
     "## Unverified and out of scope",
+    "## Status claim",
+    "## Checklist",
 }
+PULL_REQUEST_CONTRACT_REQUIRED_FRAGMENTS = (
+    "pull_request:",
+    "pull-requests: read",
+    "gh api --paginate --slurp",
+    "EXPECTED_HEAD_SHA",
+    "Signed-off-by:",
+    "required_headings =",
+    "PR_CONTRACT_OK",
+)
 
 
 def relative(path: Path) -> str:
@@ -381,7 +451,7 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
         required_forbidden = {
             "pull_request_target",
             "secrets context in untrusted pull_request workflows",
-            "write-scoped token permissions on pull_request workflows except the controlled CodeQL exception below",
+            "write-scoped token permissions on untrusted pull_request workflows; any write-scoped workflow_run exception must be explicitly listed below",
             "persisted checkout credentials on pull_request workflows",
         }
         if not isinstance(forbidden, list) or not required_forbidden.issubset(forbidden):
@@ -392,10 +462,15 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
                 "workflow_path": ".github/workflows/codeql.yml",
                 "permissions": CODEQL_PR_ALLOWED_PERMISSIONS,
                 "reason": "CodeQL must upload its own pull-request analysis results without receiving any other write scope",
-            }
+            },
+            {
+                "workflow_path": ".github/workflows/maintainer-pr-automerge.yml",
+                "permissions": MAINTAINER_AUTOMERGE_ALLOWED_PERMISSIONS,
+                "reason": "A trusted workflow_run may submit a clearly labeled bot approval and enable native squash auto-merge only for the explicit uuzzrm or Prysai-Lab book-Markdown route",
+            },
         ]
         if controlled_permissions != expected_controlled_permissions:
-            errors.append("automation must declare the exact CodeQL pull-request permission exception")
+            errors.append("automation must declare the exact controlled write-permission exceptions")
 
     host_ruleset = policy.get("host_ruleset")
     if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "active":
@@ -489,6 +564,8 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
                     errors.append(f"{label}: pull-request workflow may grant only read-only contents or pull-requests permissions")
                 if WRITE_PERMISSION_RE.search(text):
                     errors.append(f"{label}: pull-request workflow must not grant write-scoped permissions")
+    if WORKFLOW_RUN_RE.search(text) and label != relative(MAINTAINER_AUTOMERGE_WORKFLOW) and WRITE_PERMISSION_RE.search(text):
+        errors.append(f"{label}: only the controlled maintainer auto-merge workflow may grant workflow_run write permissions")
     if "actions/checkout@" in text and "persist-credentials: false" not in text:
         errors.append(f"{label}: every checkout must disable persisted checkout credentials")
     return errors
@@ -585,6 +662,40 @@ def validate_codeql_workflow(text: str, label: str) -> list[str]:
     return errors
 
 
+def validate_maintainer_automerge_workflow(text: str, label: str) -> list[str]:
+    """Keep the only approval/auto-merge workflow narrow and auditable."""
+
+    errors = []
+    if not WORKFLOW_RUN_RE.search(text):
+        errors.append(f"{label}: maintainer auto-merge workflow must use workflow_run")
+    for fragment in MAINTAINER_AUTOMERGE_REQUIRED_FRAGMENTS:
+        if fragment not in text:
+            errors.append(f"{label}: maintainer auto-merge workflow is missing required boundary: {fragment}")
+    permission_match = re.search(
+        r"(?ms)^permissions:\s*\n(?P<body>(?:^  [a-z-]+:\s*[a-z-]+\s*$\n?)+)",
+        text,
+    )
+    permissions = dict(PERMISSION_LINE_RE.findall(permission_match.group("body"))) if permission_match else {}
+    if permissions != MAINTAINER_AUTOMERGE_ALLOWED_PERMISSIONS:
+        errors.append(
+            f"{label}: maintainer auto-merge workflow must declare exactly "
+            "actions: read, contents: write, and pull-requests: write"
+        )
+    return errors
+
+
+def validate_pull_request_contract_workflow(text: str, label: str) -> list[str]:
+    """Keep the contributor contract check read-only and metadata-based."""
+
+    errors = []
+    for fragment in PULL_REQUEST_CONTRACT_REQUIRED_FRAGMENTS:
+        if fragment not in text:
+            errors.append(f"{label}: pull-request contract workflow is missing required boundary: {fragment}")
+    if WRITE_PERMISSION_RE.search(text) or SECRETS_CONTEXT_RE.search(text):
+        errors.append(f"{label}: pull-request contract workflow must not use write permissions or secrets")
+    return errors
+
+
 def validate_workflows() -> tuple[int, list[str]]:
     errors: list[str] = []
     workflows = sorted(WORKFLOW_DIR.glob("*.y*ml"))
@@ -623,6 +734,24 @@ def validate_workflows() -> tuple[int, list[str]]:
         errors.append("missing .github/workflows/codeql.yml")
     else:
         errors.extend(validate_codeql_workflow(CODEQL_WORKFLOW.read_text(encoding="utf-8"), relative(CODEQL_WORKFLOW)))
+    if not MAINTAINER_AUTOMERGE_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/maintainer-pr-automerge.yml")
+    else:
+        errors.extend(
+            validate_maintainer_automerge_workflow(
+                MAINTAINER_AUTOMERGE_WORKFLOW.read_text(encoding="utf-8"),
+                relative(MAINTAINER_AUTOMERGE_WORKFLOW),
+            )
+        )
+    if not PULL_REQUEST_CONTRACT_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/pull-request-contract.yml")
+    else:
+        errors.extend(
+            validate_pull_request_contract_workflow(
+                PULL_REQUEST_CONTRACT_WORKFLOW.read_text(encoding="utf-8"),
+                relative(PULL_REQUEST_CONTRACT_WORKFLOW),
+            )
+        )
     return len(workflows), errors
 
 
@@ -638,7 +767,14 @@ def candidate_files() -> tuple[list[Path], list[str]]:
         return [], [f"cannot list repository candidate files: {exc}"]
     if result.returncode != 0:
         return [], ["git ls-files failed while checking repository security"]
-    files = [ROOT / Path(value) for value in result.stdout.decode("utf-8", errors="replace").split("\0") if value]
+    # `git ls-files -c` also reports tracked paths deleted in the working tree.
+    # They are not candidate bytes to scan; skip them so a deliberate removal
+    # does not turn the security check into a false failure.
+    files = [
+        ROOT / Path(value)
+        for value in result.stdout.decode("utf-8", errors="replace").split("\0")
+        if value and (ROOT / Path(value)).is_file()
+    ]
     return files, []
 
 
@@ -684,6 +820,13 @@ def validate_contributor_docs() -> list[str]:
         text = PR_TEMPLATE.read_text(encoding="utf-8")
         for heading in sorted(REQUIRED_PR_HEADINGS - set(re.findall(r"(?m)^## .+$", text))):
             errors.append(f"pull-request template is missing {heading}")
+    if not DCO_PATH.is_file():
+        errors.append("missing DCO.md")
+    else:
+        dco = DCO_PATH.read_text(encoding="utf-8")
+        for fragment in ("Developer Certificate of Origin", "https://developercertificate.org/", "Signed-off-by:"):
+            if fragment not in dco:
+                errors.append(f"DCO.md is missing {fragment}")
     return errors
 
 
