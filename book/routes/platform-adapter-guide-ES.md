@@ -31,8 +31,8 @@ sobre una plataforma, hazte tres preguntas:
 
 Si no puedes responder a las tres, deja la afirmación como `unknown` y anota la
 siguiente comprobación. Consulta la
-Platform Adapter Review Skill
-y Platform Fact Watch para
+[Platform Adapter Review Skill (locale-neutral)](../../skills/prysai-platform-adapter-review/SKILL.md)
+y [Platform Fact Watch (locale-neutral)](../../skills/prysai-platform-fact-watch/SKILL.md) para
 conocer el método de mantenimiento que hay detrás de esta regla.
 
 ## El mapa de plataformas en una página
@@ -164,9 +164,9 @@ hábito de inspeccionar antes de editar te resulte cómodo.
 - Quieres una práctica inicial solo de texto: [Beginner Practice Pack](../communication-clinic-ES.md).
 - Quieres la ruta insignia en profundidad con archivos y herramientas: [First Safe Change](first-safe-change-ES.md).
 - Quieres primero la base neutral de plataforma: [Universal Core Foundations](universal-core-foundations-ES.md).
-- Quieres comparar dos plataformas de forma justa: LLM Comparison Protocol.
+- Quieres comparar dos plataformas de forma justa: [LLM Comparison Protocol (locale-neutral)](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - Quieres saber si una lección de plataforma pertenece al plan de estudios:
-  Platform Adapter Review.
+  [Platform Adapter Review (locale-neutral)](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## Estado de la evidencia y límite
 
