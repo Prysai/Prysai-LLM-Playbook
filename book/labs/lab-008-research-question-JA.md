@@ -93,3 +93,15 @@ transfer_limitations: "公開 source は不完全、古い、偏っている可�
 ## 限界
 
 開ける公開資料でも不完全、古い、偏っている、法律・医療・金融・組織の判断に不向きな場合があります。学習者の実行と独立レビューができるまで、この Lab は `draft / not_run` のままです。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-007-action-boundaries-JA.md" aria-label="前の Lab：Lab 007 · 一つの README タスクを三つの行動境界に置く">← 前の Lab<br><strong>Lab 007 · 一つの README タスクを三つの行動境界に置く</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-009-engineering-lifecycle-JA.md" aria-label="次の Lab：Lab 009 · 直接実装と完全なエンジニアリング・ライフサイクルを比べる">次へ →<br><strong>Lab 009 · 直接実装と完全なエンジニアリング・ライフサイクルを比べる</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->
