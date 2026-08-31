@@ -10,13 +10,13 @@ Accepted
 
 ## Context
 
-`docs/release-checklist.md` was tracked in the open repository and was copied
-by the Pages builder because the builder publishes the declared `docs/`
-directory recursively. The same artifact is mirrored to the public Docs host.
-The file contained maintainer release gates, rollback and approval procedure,
-license review, and security checks. A static scan found no credential value,
-but the operational procedure itself was not reader-facing curriculum and did
-not need to be distributed as a public source file.
+An internal maintainer release-control file was tracked in the open repository
+and copied by the Pages builder because the builder publishes the declared
+`docs/` directory recursively. The same artifact is mirrored to the public Docs
+host. The file contained maintainer release gates, rollback and approval
+procedure, license review, and security checks. A static scan found no
+credential value, but the operational procedure itself was not reader-facing
+curriculum and did not need to be distributed as a public source file.
 
 Leaving a public link to a removed file would also create broken contributor
 guidance. The repository already has a machine-readable release boundary and
@@ -24,15 +24,16 @@ exact-run evidence contracts that are suitable for public review.
 
 ## Decision
 
-1. Remove `docs/release-checklist.md` from the repository and from future
+1. Remove the internal release-control file from the repository and from future
    Pages/Docs artifacts.
 2. Use [`docs/governance/release-readiness.yaml`](../governance/release-readiness.yaml)
    and [`docs/governance/release-evidence.yaml`](../governance/release-evidence.yaml)
    as the public release-state and evidence boundaries, with `CHANGELOG.md`
    and the quality register as their declared supporting records.
-3. Keep an explicit deny-list for the former path in
+3. Keep an explicit, normalized deny-list for the former path in
    `scripts/build_pages_artifact.py`. The builder fails closed if the path is
-   reintroduced in either the source tree or a staged artifact.
+   reintroduced in either the source tree or a staged artifact, including
+   case-variant spellings on case-sensitive hosts.
 4. Cover the deny-list with a negative fixture so a future refactor cannot
    silently publish the path again.
 5. If maintainers need a private operational checklist, store it in an
