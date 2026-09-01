@@ -91,9 +91,10 @@ push to `main` builds the bounded artifact, deploys it to GitHub
 Pages, syncs the optional Hugging Face Space when `HF_TOKEN` is configured,
 and requests the atomic Docs mirror publish. Manual dispatch defaults to
 `deploy: true`; choosing `false` builds only the bounded review artifact.
-The GitHub Pages, Hugging Face, and Docs mirror jobs are separate observable
-jobs. A green build alone does not prove any public origin now serves the new
-files.
+GitHub Pages, Hugging Face, and the Docs mirror remain separately observable
+publication surfaces. Docs publication and its public-byte verification run
+sequentially in one protected job. A green build alone does not prove any
+public origin now serves the new files.
 
 ## Search metadata and public URL
 

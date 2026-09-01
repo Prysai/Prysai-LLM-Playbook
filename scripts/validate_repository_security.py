@@ -74,6 +74,9 @@ DOCS_DEPLOY_REQUIRED_FRAGMENTS = (
     "name: pages-candidate-${{ github.sha }}",
     "path: _site",
     "github-token: ${{ github.token }}",
+    "name: docs-verifier-${{ github.sha }}",
+    "path: docs-verifier",
+    "python docs-verifier/check_deployed_site.py",
 )
 DOCS_DEPLOY_ALLOWED_PERMISSIONS = {"actions": "read"}
 LEGACY_NODE20_ACTION_PINS = (
@@ -691,8 +694,8 @@ def validate_pages_post_merge_orchestration(text: str, label: str) -> list[str]:
         if re.search(r"(?m)^    paths(?:-ignore)?:\s*$", push_body):
             errors.append(f"{label}: Pages push trigger must not filter paths after a merge")
 
-    if text.count("group: docs-prysai-production") < 2:
-        errors.append(f"{label}: Docs publication and public verification must share their serialized host group")
+    if text.count("group: docs-prysai-production") < 1:
+        errors.append(f"{label}: Docs publication must use the protected serialized host group")
     return errors
 
 

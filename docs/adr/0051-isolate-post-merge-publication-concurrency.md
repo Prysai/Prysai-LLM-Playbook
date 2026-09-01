@@ -36,9 +36,11 @@ could have completed.
    concurrency group is independent of Pages and Docs.
 4. Keep GitHub Pages in its own serialized deployment group. Keep Hugging Face
    in its own serialized publication group so a provider upload is not
-   canceled mid-mutation. Keep both the Docs deployment and its public-byte
-   verifier in the protected `docs-prysai-production` group with the existing
-   reviewer and artifact-only secret boundary.
+   canceled mid-mutation. Keep Docs publication and its public-byte verifier
+   in one protected `docs-prysai-production` job. The build job supplies the
+   verifier as a separate, non-public artifact, so the secret-bearing job does
+   not check out or execute repository source while it publishes and then
+   verifies the same Pages candidate.
 5. Treat the GitHub repository UI as a direct view of `main`; it needs no
    separate deployment job. `prysai.com` is a separately owned public host and
    is not changed by this workflow.
@@ -67,8 +69,9 @@ the one validated Pages candidate artifact instead.
 - Pages and Hugging Face can finish while Docs waits for its required review.
 - A newer build supersedes an older in-progress build; each external
   publication group remains serialized so an approved transfer or provider
-  upload is not interrupted mid-mutation. Docs verification is serialized with
-  the publish step to avoid comparing an old artifact after a newer one is live.
+  upload is not interrupted mid-mutation. Docs verification runs immediately
+  after its publish step in the same protected job, avoiding cross-workflow
+  ordering races between a verifier and a newer publication.
 - A successful workflow still does not prove that the external host is serving
   the candidate until the post-publish public verifier succeeds.
 

@@ -71,6 +71,21 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+      - name: Package the public Docs verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/docs-verifier"
+          cp scripts/check_deployed_site.py "$RUNNER_TEMP/docs-verifier/check_deployed_site.py"
+
+      - name: Upload the public Docs verifier
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: docs-verifier-${{ github.sha }}
+          path: ${{ runner.temp }}/docs-verifier
+          if-no-files-found: error
+          retention-days: 14
+
       - name: Archive Pages deployment artifact
         if: ${{ (inputs.deploy || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
         shell: bash
@@ -186,6 +201,13 @@ jobs:
           path: _site
           github-token: ${{ github.token }}
 
+      - name: Download the trusted public verifier
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: docs-verifier-${{ github.sha }}
+          path: docs-verifier
+          github-token: ${{ github.token }}
+
       - name: Configure the restricted deployment key
         env:
           DOCS_DEPLOY_SSH_KEY: ${{ secrets.DOCS_DEPLOY_SSH_KEY }}
@@ -206,41 +228,9 @@ jobs:
           -o UserKnownHostsFile="$HOME/.ssh/known_hosts"
           prysai-docs-deploy@docs.prysai.com
 
-  verify-docs-prysai-public:
-    needs: docs-prysai-deploy
-    if: ${{ needs.docs-prysai-deploy.result == 'success' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    permissions:
-      actions: read
-      contents: read
-    # Serialize verification with Docs publication. Otherwise a newer Docs
-    # publish could change the public bytes while this job is still comparing
-    # the previous run's artifact, producing a false failure.
-    concurrency:
-      group: docs-prysai-production
-      cancel-in-progress: false
-    steps:
-      - name: Check out deployment verifier
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Download the validated Pages artifact
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        with:
-          name: pages-candidate-${{ github.sha }}
-          path: _site
-          github-token: ${{ github.token }}
-
-      - name: Set up Python for the public verifier
-        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: "3.12"
-
       - name: Verify the public Docs site matches this artifact
         run: >-
-          python scripts/check_deployed_site.py
+          python docs-verifier/check_deployed_site.py
           --artifact _site
           --base-url https://docs.prysai.com/llm-playbook/
           --attempts 18

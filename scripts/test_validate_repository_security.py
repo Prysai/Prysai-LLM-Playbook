@@ -168,6 +168,12 @@ jobs:
           name: pages-candidate-${{ github.sha }}
           path: _site
           github-token: ${{ github.token }}
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: docs-verifier-${{ github.sha }}
+          path: docs-verifier
+          github-token: ${{ github.token }}
+      - run: python docs-verifier/check_deployed_site.py --artifact _site
   another-job:
     runs-on: ubuntu-latest
 """
