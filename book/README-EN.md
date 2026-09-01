@@ -102,8 +102,6 @@ and [Lab 006](labs/lab-006-agent-stop-conditions-EN.md), which show the
 state, stop-condition, recovery, and handoff model used by the later learning
 path.
 
-<!-- automation-contract-test: 2026-08-31 -->
-
 ## The learning path
 
 The book develops two abilities at the same time.
