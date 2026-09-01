@@ -55,10 +55,12 @@ The pull-request contract requires a valid DCO trailer on every contributor
 commit. It has one narrowly defined exception for a GitHub-generated,
 cryptographically verified merge made while updating a trusted maintainer PR
 from `main`: the commit must be authored by `uuzzrm` or `Prysai-Lab`, committed
-by `web-flow`, have the current base SHA as its second parent, and use GitHub's
-`Merge branch 'main' into <branch>` headline. This recognizes the host's
-branch-update operation without treating an arbitrary signed merge commit as a
-DCO declaration.
+by `web-flow`, have a second parent in the current `main` commit history, and
+use GitHub's `Merge branch 'main' into <branch>` headline. The check reads the
+full reachable history from the PR's current base SHA, so repeated host branch
+updates remain valid when an earlier update used an older `main` ancestor. This
+recognizes the host's branch-update operation without treating an arbitrary
+signed merge commit as a DCO declaration.
 
 After the eligibility checks, the workflow submits a clearly labeled bot
 approval if the current head lacks one, re-reads the PR to confirm that the
