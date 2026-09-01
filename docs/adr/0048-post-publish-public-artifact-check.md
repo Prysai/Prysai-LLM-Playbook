@@ -16,15 +16,17 @@ can make a newly published language route undiscoverable.
 
 ## Decision
 
-After the atomic Docs publish, the workflow runs
-`scripts/check_deployed_site.py` against the public
+After the atomic Docs publish, the protected deployment job runs a trusted
+copy of `scripts/check_deployed_site.py` against the public
 `https://docs.prysai.com/llm-playbook/` base URL. The check compares the
 generated root, discovery files, all static locale entry pages, and every
-versioned Reader/homepage asset with the downloaded artifact. It runs in a
-separate, secret-free verification job after the publish job. A bounded retry
-window and build-SHA query parameter reduce false negatives from normal
-propagation and cache delay. A persistent HTTP error or byte mismatch fails
-the deployment workflow.
+versioned Reader/homepage asset with the downloaded artifact. The verifier is
+packaged by the read-only build job as a separate, non-public artifact; the
+secret-bearing deployment job does not check out repository source or rebuild
+the site. Running publish and verification sequentially in one protected job
+avoids cross-workflow concurrency races. A bounded retry window and build-SHA
+query parameter reduce false negatives from normal propagation and cache
+delay. A persistent HTTP error or byte mismatch fails the deployment workflow.
 
 The check reports deployment-integrity evidence only. It does not establish
 translation quality, learning outcomes, uptime, or release readiness.

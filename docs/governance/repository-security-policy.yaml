@@ -67,6 +67,7 @@
       "pinned binary-only Python validation dependency",
       "same-origin static-site Content-Security-Policy meta contract",
       "secret-bearing Docs deployment consumes only the validated Pages artifact",
+      "post-merge Pages, Docs, and Hugging Face publication jobs keep independent concurrency boundaries",
       "policy fixture tests, including synthetic-path false-positive boundaries",
       "read-only pull-request contract headings, exact-head check, and per-commit DCO sign-offs",
       "maintainer documentation auto-merge workflow boundary and permission exception"
