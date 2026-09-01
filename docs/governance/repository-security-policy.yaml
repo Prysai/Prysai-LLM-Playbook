@@ -69,7 +69,7 @@
       "secret-bearing Docs deployment consumes only the validated Pages artifact",
       "post-merge Pages, Docs, and Hugging Face publication jobs keep independent concurrency boundaries",
       "policy fixture tests, including synthetic-path false-positive boundaries",
-      "read-only pull-request contract headings, exact-head check, and per-commit DCO sign-offs",
+      "read-only pull-request contract headings, exact-head check, per-contributor-commit DCO sign-offs, and the narrow verified GitHub branch-sync exception",
       "maintainer documentation auto-merge workflow boundary and permission exception"
     ],
     "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."
@@ -80,12 +80,12 @@
       "source and license disclosure",
       "safety and external-effect disclosure",
       "pull-request contract headings and exact-head check",
-      "valid DCO sign-off on every commit",
+      "valid DCO sign-off on every contributor commit, with only the verified GitHub main-branch sync merge exception",
       "commands and evidence actually produced",
       "unverified scope"
     ],
     "migration_exceptions": [
-      "Pull requests created before 2026-08-31T00:14:52Z by uuzzrm or Prysai-Lab may use the one-time contract migration path: the exact current head, non-empty commit history, and a valid GitHub cryptographic signature on every commit remain required, while historical PR headings and DCO trailers are not retroactively rewritten. The active Ruleset, required checks, resolved threads, and maintainer approval remain required."
+      "Pull requests created before 2026-08-31T00:14:52Z by uuzzrm or Prysai-Lab may use the one-time contract migration path: the exact current head, non-empty commit history, and a valid GitHub cryptographic signature on every commit remain required, while historical PR headings and DCO trailers are not retroactively rewritten. New PRs may omit a DCO trailer only on a GitHub-generated, cryptographically verified main-branch sync merge commit authored by uuzzrm or Prysai-Lab, committed by web-flow, and carrying the current base SHA as its second parent; ordinary merge commits remain subject to DCO. The active Ruleset, required checks, resolved threads, and maintainer approval remain required."
     ],
     "heightened_review_paths": [
       ".github/workflows/**",
