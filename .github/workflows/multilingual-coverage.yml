@@ -1,0 +1,113 @@
+name: Prysai multilingual coverage audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  schedule:
+    - cron: "29 4 * * 1"
+  workflow_dispatch:
+
+# This workflow is read-only. It records coverage and editorial signals; it
+# does not publish files, change status, or infer native-language quality.
+permissions:
+  contents: read
+
+concurrency:
+  group: multilingual-coverage-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Run eight-locale coverage and maintenance audits
+        id: audits
+        continue-on-error: true
+        env:
+          AUDIT_DIR: ${{ runner.temp }}/multilingual-coverage
+        run: |
+          set -uo pipefail
+          mkdir -p "$AUDIT_DIR"
+          status=0
+
+          run_audit() {
+            name="$1"
+            shift
+            if "$@" >"$AUDIT_DIR/$name.txt" 2>&1; then
+              echo "AUDIT_OK name=$name"
+            else
+              status=1
+              echo "AUDIT_FAILED name=$name"
+            fi
+            cat "$AUDIT_DIR/$name.txt"
+          }
+
+          run_audit locale-matrix \
+            python -X utf8 scripts/audit_locale_content_matrix.py --fail-on-incomplete
+          run_audit reader-coverage \
+            python -X utf8 scripts/audit_reader_locale_coverage.py \
+            --fail-on-invalid --fail-on-not-started
+          run_audit semantic-contract \
+            python -X utf8 scripts/audit_semantic_contract.py --deep \
+            --fail-on-missing --fail-on-deep-missing --fail-on-structure-missing
+          run_audit localization \
+            python -X utf8 scripts/validate_localization.py
+          run_audit book-navigation \
+            python -X utf8 scripts/validate_book_navigation.py
+          run_audit textbook-entry-path \
+            python -X utf8 scripts/validate_textbook_entry_path.py
+          run_audit content-completeness \
+            python -X utf8 scripts/validate_content_completeness.py
+          run_audit learning-contract \
+            python -X utf8 scripts/validate_learning_contract.py --canonical-en
+          run_audit update-registry \
+            python -X utf8 scripts/validate_update_registry.py
+          run_audit local-links \
+            python -X utf8 scripts/check_local_links.py
+          run_audit translation-signals \
+            python -X utf8 scripts/audit_translation_language_quality.py --verbose
+
+          exit "$status"
+
+      - name: Upload multilingual audit reports
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: multilingual-coverage-${{ github.sha }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/multilingual-coverage
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish audit summary
+        if: always()
+        env:
+          AUDIT_DIR: ${{ runner.temp }}/multilingual-coverage
+        run: |
+          {
+            echo "## Multilingual coverage audit"
+            echo
+            echo "This run checks eight-locale route/file identity, Reader coverage, semantic contracts, navigation, links, and translation-language signals. It does not establish native-level quality, independent review, learner outcomes, runtime behavior, or release readiness."
+            for report in "$AUDIT_DIR"/*.txt; do
+              [ -f "$report" ] || continue
+              echo
+              echo "### $(basename "$report")"
+              grep -E '^(LOCALE_|READER_|SEMANTIC_|LOCALIZATION_|BOOK_|TEXTBOOK_|CONTENT_|LEARNING_|VALIDATION_|LOCAL_LINKS_|TRANSLATION_)' "$report" | tail -n 4 || tail -n 4 "$report"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Enforce audit results
+        if: steps.audits.outcome != 'success'
+        run: exit 1

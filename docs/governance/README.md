@@ -10,6 +10,7 @@ book, site, translations, status, and maintenance records aligned.
 | Add or reorder a chapter | [`book-navigation.yaml`](book-navigation.yaml) | Chapter footers and TOCs |
 | Add or reorder a Lab in catalog navigation | [`lab-navigation.yaml`](lab-navigation.yaml) | English Lab footers and Reader pagination; learning progression remains separate |
 | Change a locale identity or translation state | [`locale-matrix.yaml`](locale-matrix.yaml) | Localized links and migration checks |
+| Run the recurring multilingual coverage audit | [`update-registry.yaml`](update-registry.yaml), [workflow](../../.github/workflows/multilingual-coverage.yml) | Eight-locale route/file identity, Reader coverage, semantic contracts, navigation, links, and translation-language signals |
 | Change which chapters/labs can be routed by the public site | [`content-status.yaml`](content-status.yaml) | Regenerate [`site/locale-manifest.js`](../../site/locale-manifest.js) |
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Change the beginner course promise or default scope | [`../product/core-course-contract.md`](../product/core-course-contract.md) and [`core-release-scope.md`](core-release-scope.md) | Core-course route, inventory, rubric, and focused validator |

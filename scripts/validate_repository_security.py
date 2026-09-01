@@ -313,6 +313,12 @@ PULL_REQUEST_CONTRACT_REQUIRED_FRAGMENTS = (
     "verification.get(\"reason\") != \"valid\"",
     "legacy migration requires a valid GitHub cryptographic signature",
     "PR_CONTRACT_MIGRATION_OK",
+    "branch_sync_authors = {\"uuzzrm\", \"Prysai-Lab\"}",
+    "branch_sync_committer = \"web-flow\"",
+    "parents[1].get(\"sha\") == base.get(\"sha\")",
+    "and committer.get(\"login\") == branch_sync_committer",
+    "branch_sync_headline = re.compile",
+    "branch_sync_exemptions",
     "PR_CONTRACT_OK",
 )
 
