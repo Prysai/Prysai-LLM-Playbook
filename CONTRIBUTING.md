@@ -96,7 +96,11 @@ State all of the following in the pull request:
 
 The pull-request template is paired with the read-only `pull-request-contract`
 workflow. For new PRs, that check verifies the required disclosure headings,
-the exact PR head SHA it inspected, and a valid DCO sign-off on every commit.
+the exact PR head SHA it inspected, and a valid DCO sign-off on every
+contributor commit. The only DCO exception is a GitHub-generated,
+cryptographically verified `main` branch-sync merge commit by the explicitly
+trusted maintainer accounts, with `web-flow` as committer and the current base
+SHA as its second parent; ordinary merge commits still need a DCO trailer.
 PRs opened before the one-time rollout cutoff (`2026-08-31T00:14:52Z`, when PR
 #66 was merged) use a migration path that still verifies the current head,
 non-empty commit history, and a valid GitHub cryptographic signature on every

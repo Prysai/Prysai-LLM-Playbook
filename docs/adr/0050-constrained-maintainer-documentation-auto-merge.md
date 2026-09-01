@@ -51,6 +51,15 @@ The workflow may act only when all of the following are true:
 5. the quality, security, and pull-request contract workflows completed
    successfully for that exact SHA.
 
+The pull-request contract requires a valid DCO trailer on every contributor
+commit. It has one narrowly defined exception for a GitHub-generated,
+cryptographically verified merge made while updating a trusted maintainer PR
+from `main`: the commit must be authored by `uuzzrm` or `Prysai-Lab`, committed
+by `web-flow`, have the current base SHA as its second parent, and use GitHub's
+`Merge branch 'main' into <branch>` headline. This recognizes the host's
+branch-update operation without treating an arbitrary signed merge commit as a
+DCO declaration.
+
 After the eligibility checks, the workflow submits a clearly labeled bot
 approval if the current head lacks one, re-reads the PR to confirm that the
 identity and exact head SHA have not changed, then requests GitHub's native
@@ -118,7 +127,10 @@ This ADR records a proposed repository design. Local static validation and
 fixture tests establish only the declared source contract. The migration path
 was added after the #66 rollout was observed to block pre-existing PRs. It
 requires a valid GitHub cryptographic signature on every historical commit but
-does not certify missing DCO trailers or rewrite commit messages. It has
+does not certify missing DCO trailers or rewrite commit messages. The strict
+path now has a narrow, host-generated branch-sync exception: it does not waive
+DCO for ordinary merge commits, and it still requires the Ruleset's signed
+commit rule. It has
 not yet been runtime-tested from `main` against the full set of open PRs, and
 the new strict path has not yet been validated by a newly created eligible PR.
 Live GitHub settings may drift and must be rechecked before treating the route

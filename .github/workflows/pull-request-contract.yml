@@ -47,6 +47,8 @@ jobs:
           expected_head = os.environ["EXPECTED_HEAD_SHA"]
           created_at = pull_request.get("created_at")
           legacy_authors = {"uuzzrm", "Prysai-Lab"}
+          branch_sync_authors = {"uuzzrm", "Prysai-Lab"}
+          branch_sync_committer = "web-flow"
 
           def fail(message):
               print("PR_CONTRACT_FAILED")
@@ -122,12 +124,40 @@ jobs:
 
           signoff = re.compile(r"^Signed-off-by:\s+[^<>\r\n]+<[^<>\s]+@[^<>\s]+>\s*$", re.IGNORECASE)
           signoff_prefix = re.compile(r"^Signed-off-by:", re.IGNORECASE)
+          branch_sync_headline = re.compile(r"^Merge branch 'main' into .+$")
+
+          def is_trusted_branch_sync_commit(commit):
+              verification = (commit.get("commit") or {}).get("verification") or {}
+              author = commit.get("author") or {}
+              committer = commit.get("committer") or {}
+              parents = commit.get("parents") or []
+              base = pull_request.get("base") or {}
+              message = ((commit.get("commit") or {}).get("message") or "")
+              headline = message.splitlines()[0] if message.splitlines() else ""
+              return (
+                  pull_request.get("user", {}).get("login") in branch_sync_authors
+                  and base.get("ref") == "main"
+                  and (base.get("repo") or {}).get("full_name") == os.environ.get("GITHUB_REPOSITORY")
+                  and isinstance(base.get("sha"), str)
+                  and len(parents) == 2
+                  and parents[1].get("sha") == base.get("sha")
+                  and author.get("login") in branch_sync_authors
+                  and committer.get("login") == branch_sync_committer
+                  and verification.get("verified") is True
+                  and verification.get("reason") == "valid"
+                  and branch_sync_headline.fullmatch(headline)
+              )
+
           failures = []
+          branch_sync_exemptions = []
           for commit in commits:
               sha = commit.get("sha", "unknown")
               message = ((commit.get("commit") or {}).get("message") or "")
               lines = message.splitlines()
               declared = [line for line in lines if signoff_prefix.match(line)]
+              if not declared and is_trusted_branch_sync_commit(commit):
+                  branch_sync_exemptions.append(sha[:12])
+                  continue
               valid = [line for line in declared if signoff.fullmatch(line)]
               if not valid or len(valid) != len(declared):
                   failures.append(sha[:12])
@@ -137,5 +167,8 @@ jobs:
                   "and no malformed sign-off; failures: " + ", ".join(failures)
               )
 
-          print(f"PR_CONTRACT_OK commits={len(commits)} headings={len(required_headings)} head={expected_head[:12]}")
+          print(
+              f"PR_CONTRACT_OK commits={len(commits)} headings={len(required_headings)} "
+              f"branch_sync_exemptions={len(branch_sync_exemptions)} head={expected_head[:12]}"
+          )
           PY

@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
-import tempfile
 import copy
+import json
+import os
+import subprocess
+import tempfile
+import textwrap
 from pathlib import Path
 
 import validate_repository_security as policy
@@ -12,6 +16,99 @@ import validate_repository_security as policy
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
+
+
+def run_contract_fixture(
+    *,
+    sync_author: str = "Prysai-Lab",
+    sync_committer: str = "web-flow",
+    sync_parent: str = "base-sha",
+) -> subprocess.CompletedProcess[str]:
+    workflow = policy.PULL_REQUEST_CONTRACT_WORKFLOW.read_text(encoding="utf-8")
+    marker = "          python - \"$RUNNER_TEMP/pull-request.json\" \"$RUNNER_TEMP/pull-request-commits.json\" <<'PY'\n"
+    start = workflow.index(marker) + len(marker)
+    end = workflow.index("          PY\n", start)
+    contract_script = textwrap.dedent(workflow[start:end])
+    headings = [
+        "## Tracking and summary",
+        "## Implementation or editorial approach",
+        "## Change class",
+        "## Contribution route and review request",
+        "## Contribution declaration",
+        "## Source, authorship, and license",
+        "## Safety and external effects",
+        "## Security review",
+        "## AI assistance",
+        "## Validation and evidence",
+        "## Unverified and out of scope",
+        "## Status claim",
+        "## Checklist",
+    ]
+    pull_request = {
+        "created_at": "2026-09-01T00:00:00Z",
+        "user": {"login": "uuzzrm"},
+        "head": {"sha": "head-sha"},
+        "base": {
+            "ref": "main",
+            "sha": "base-sha",
+            "repo": {"full_name": "Prysai/Prysai-LLM-Playbook"},
+        },
+        "body": "\n".join(headings),
+    }
+    commits = [
+        {
+            "sha": "contributor-sha",
+            "author": {"login": "uuzzrm"},
+            "committer": {"login": "uuzzrm"},
+            "commit": {
+                "message": "docs: fixture\n\nSigned-off-by: uuzzrm <uuzzrm@users.noreply.github.com>",
+                "verification": {"verified": True, "reason": "valid"},
+            },
+            "parents": [{"sha": "base-sha"}],
+        },
+        {
+            "sha": "sync-sha",
+            "author": {"login": sync_author},
+            "committer": {"login": sync_committer},
+            "commit": {
+                "message": "Merge branch 'main' into uuzzrm/fixture",
+                "verification": {"verified": True, "reason": "valid"},
+            },
+            "parents": [
+                {"sha": "contributor-sha"},
+                {"sha": sync_parent},
+            ],
+        },
+    ]
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        pull_request_path = root / "pull-request.json"
+        commits_path = root / "pull-request-commits.json"
+        pull_request_path.write_text(json.dumps(pull_request), encoding="utf-8")
+        commits_path.write_text(json.dumps([commits]), encoding="utf-8")
+        environment = os.environ.copy()
+        environment.update(
+            {
+                "EXPECTED_HEAD_SHA": "head-sha",
+                "ROLLOUT_CUTOFF_AT": "2026-08-31T00:14:52Z",
+                "GITHUB_REPOSITORY": "Prysai/Prysai-LLM-Playbook",
+                "PR_NUMBER": "999",
+            }
+        )
+        return subprocess.run(
+            [
+                os.fspath(Path(os.sys.executable)),
+                "-c",
+                contract_script,
+                os.fspath(pull_request_path),
+                os.fspath(commits_path),
+            ],
+            cwd=policy.ROOT,
+            env=environment,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
 
 
 def main() -> int:
@@ -345,6 +442,40 @@ permissions:
             and "legacy migration requires a valid GitHub cryptographic signature" in pull_request_contract
             and "PR_CONTRACT_MIGRATION_OK" in pull_request_contract,
             "pull-request contract did not retain the bounded legacy migration gate",
+        )
+        fixtures += 1
+
+        require(
+            "branch_sync_authors = {\"uuzzrm\", \"Prysai-Lab\"}" in pull_request_contract
+            and "branch_sync_committer = \"web-flow\"" in pull_request_contract
+            and "parents[1].get(\"sha\") == base.get(\"sha\")" in pull_request_contract
+            and "and committer.get(\"login\") == branch_sync_committer" in pull_request_contract
+            and "branch_sync_headline = re.compile" in pull_request_contract
+            and "branch_sync_exemptions" in pull_request_contract,
+            "pull-request contract did not retain the narrow signed branch-sync DCO exception",
+        )
+        fixtures += 1
+
+        branch_sync = run_contract_fixture()
+        require(
+            branch_sync.returncode == 0
+            and "PR_CONTRACT_OK" in branch_sync.stdout
+            and "branch_sync_exemptions=1" in branch_sync.stdout,
+            "verified GitHub main branch-sync merge was not accepted as the narrow DCO exception",
+        )
+        fixtures += 1
+
+        untrusted_branch_sync = run_contract_fixture(sync_committer="attacker")
+        require(
+            untrusted_branch_sync.returncode != 0 and "failures: sync-sha" in untrusted_branch_sync.stdout,
+            "arbitrary signed branch-sync-shaped merge was accepted without a DCO trailer",
+        )
+        fixtures += 1
+
+        stale_branch_sync = run_contract_fixture(sync_parent="different-base-sha")
+        require(
+            stale_branch_sync.returncode != 0 and "failures: sync-sha" in stale_branch_sync.stdout,
+            "branch-sync merge for a different base was accepted without a DCO trailer",
         )
         fixtures += 1
 
