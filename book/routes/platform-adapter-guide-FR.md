@@ -5,7 +5,7 @@
 **Statut :** `candidate`. **Exécution :** `not_run`.
 
 ChatGPT, Claude, Gemini, DeepSeek, Grok et Codex dialoguent tous avec vous,
-mais ce ne sont pas le même produit. Cette page conserve le socle commun et
+mais ce ne sont pas les mêmes produits. Cette page conserve le socle commun et
 ajoute un adaptateur à la fois : ce qui diffère réellement, ce que vous pouvez
 essayer sans risque aujourd’hui et ce qu’il faut vérifier dans une source
 officielle avant de reprendre une affirmation propre à une plateforme.
