@@ -90,5 +90,5 @@ the one validated Pages candidate artifact instead.
 | Source | Accessed | Scope | Owner | Next review |
 | --- | --- | --- | --- | --- |
 | [GitHub Actions concurrency](https://docs.github.com/en/actions/using-jobs/using-concurrency) | 2026-08-31 | Job and workflow concurrency groups, pending-run behavior, and cancellation semantics | governance-maintainer | 2026-09-30 |
-| [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-actions) | 2026-08-31 | Pages artifact deployment workflow and deployment action boundary | governance-maintainer | 2026-09-30 |
+| [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) | 2026-08-31 | Pages artifact deployment workflow and deployment action boundary | governance-maintainer | 2026-09-30 |
 | [`workflow_run` security boundary](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_run) | 2026-08-31 | Trusted workflow event and default-branch execution considerations | governance-maintainer | 2026-09-30 |
