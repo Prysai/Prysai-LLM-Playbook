@@ -1,0 +1,83 @@
+name: Maintenance review
+description: Record one bounded recurring review for content, sources, translations, automation, or public documentation.
+title: "[Maintenance]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to plan or record one recurring maintenance review.
+        It is an intake record, not approval, verification, or a release decision.
+        Do not include secrets, private data, raw learner work, private logs,
+        credentials, or unlicensed third-party material.
+  - type: dropdown
+    id: maintenance_area
+    attributes:
+      label: Maintenance area
+      description: Choose the smallest area that needs review.
+      options:
+        - Volatile product or source fact
+        - Chapter, Lab, or translation
+        - Public site, navigation, or visual asset
+        - Skill, evaluation, or executable example
+        - Governance, automation, or release process
+    validations:
+      required: true
+  - type: textarea
+    id: affected_scope
+    attributes:
+      label: Bounded scope and canonical paths
+      description: Name the exact content identity, files, page, or registry rows in scope, and state what is out of scope.
+      placeholder: "In scope: docs/governance/fact-impact-registry.yaml and the named Chapter 06 claims. Out of scope: other product facts and translations."
+    validations:
+      required: true
+  - type: textarea
+    id: observed_change
+    attributes:
+      label: What needs review?
+      description: Describe the trigger, observed change, reader problem, or upcoming review date without claiming a root cause.
+    validations:
+      required: true
+  - type: textarea
+    id: sources_and_ownership
+    attributes:
+      label: Sources, owner, and dates
+      description: Provide authoritative URLs or local source records, access dates, responsible owner, last review date, and proposed next review date.
+      placeholder: "Source: https://example.com/... (accessed YYYY-MM-DD); owner: fact-maintainer; last reviewed: YYYY-MM-DD; next review: YYYY-MM-DD."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_plan
+    attributes:
+      label: Evidence and stop condition
+      description: State the positive, boundary or failure, and transfer checks; the focused validator or runtime check; and what would stop or reject the update.
+    validations:
+      required: true
+  - type: textarea
+    id: safety_and_effects
+    attributes:
+      label: Safety and external effects
+      description: State whether secrets, network access, dependencies, publication, deletion, external messages, or elevated permissions are involved. Write none if absent.
+    validations:
+      required: true
+  - type: dropdown
+    id: requested_outcome
+    attributes:
+      label: Requested outcome
+      options:
+        - Review and record findings only
+        - Prepare one focused correction or update
+        - Mark the item stale, disputed, or retired
+        - Request a separate proposal before implementation
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: I kept this request to one coherent maintenance scope.
+          required: true
+        - label: I did not include secrets, credentials, private data, raw learner or model material, or unclear-license content.
+          required: true
+        - label: I understand this issue does not establish verification, maturity, learner outcomes, or release readiness.
+          required: true

@@ -11,7 +11,7 @@ assignees: ""
 Before filing:
 - Read CONTRIBUTING.md and the source/license boundary in docs/sources/licensing.md.
 - Use the form templates when they fit: correction, change proposal, field report,
-  evidence intake request, or translation review.
+  evidence intake request, translation review, or maintenance review.
 - Never paste secrets, tokens, private chats, customer data, credentials,
   unpublished files, or production content.
 -->

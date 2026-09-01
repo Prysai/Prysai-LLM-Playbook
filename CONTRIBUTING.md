@@ -22,10 +22,12 @@ the private path described there, not through a public issue or pull request.
 | Test material | Original fictional evaluation fixture or safe text-only protocol | [Community evidence contribution protocol](docs/quality/community-evidence-contribution-protocol-v1.md) | `contribution.json`, a positive and boundary/failure case, no personal or raw model data, and an explicit non-claim boundary |
 | Release change | Version, license, publication, maturity, rollback | [Release-readiness contract](docs/governance/release-readiness.yaml) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
 | Field report | First-task friction, platform difference, reader problem | [Field Report form](.github/ISSUE_TEMPLATE/field-report.yml) | Sanitized observation, scope, reproduction status, privacy confirmation, and a clear unknowns boundary |
+| Maintenance review | Recurring fact, content, translation, site, or governance review | [Maintenance Review form](.github/ISSUE_TEMPLATE/maintenance-review.yml) and [update registry](docs/governance/update-registry.yaml) | Bounded scope, source and access date, owner, next review, evidence plan, safety boundary, and stop condition |
 
-Open an issue before investing in a large rewrite, a new project-wide term, a
-schema or maturity change, a new external dependency, a high-risk workflow, or
-a release decision. Small corrections and clearly bounded source updates can go
+Open a Maintenance Review issue before a recurring review or refresh, and open a
+proposal before investing in a large rewrite, a new project-wide term, a schema
+or maturity change, a new external dependency, a high-risk workflow, or a
+release decision. Small corrections and clearly bounded source updates can go
 directly to a pull request. One pull request should solve one coherent problem.
 
 A Field Report is an intake record, not a support channel, diagnosis, accepted
