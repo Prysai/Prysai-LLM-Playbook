@@ -124,6 +124,16 @@
       "next_review": "2026-09-12"
     },
     {
+      "area": "multilingual-coverage",
+      "canonical_paths": [".github/workflows/multilingual-coverage.yml", "docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml", "docs/governance/book-navigation.yaml", "docs/governance/lab-navigation.yaml", "scripts/audit_locale_content_matrix.py", "scripts/audit_reader_locale_coverage.py", "scripts/audit_semantic_contract.py", "scripts/validate_localization.py", "scripts/validate_book_navigation.py", "scripts/validate_textbook_entry_path.py", "scripts/validate_content_completeness.py", "scripts/validate_learning_contract.py", "scripts/check_local_links.py", "scripts/audit_translation_language_quality.py"],
+      "owner": "localization-maintainer",
+      "triggers": ["locale-file-change", "locale-matrix-change", "navigation-change", "content-status-change", "translation-review-cycle"],
+      "required_inputs": ["locale-matrix", "reader-coverage", "semantic-contract", "navigation", "link-check", "translation-status", "audit-run-id"],
+      "validation_commands": ["scripts/audit_locale_content_matrix.py --fail-on-incomplete", "scripts/audit_reader_locale_coverage.py --fail-on-invalid --fail-on-not-started", "scripts/audit_semantic_contract.py --deep --fail-on-missing --fail-on-deep-missing --fail-on-structure-missing", "scripts/validate_localization.py", "scripts/validate_book_navigation.py", "scripts/validate_textbook_entry_path.py", "scripts/validate_content_completeness.py", "scripts/validate_learning_contract.py --canonical-en", "scripts/check_local_links.py", "scripts/audit_translation_language_quality.py --verbose"],
+      "status_fields": ["audit_status", "coverage_status", "semantic_status", "translation_status", "owner", "last_run", "next_review"],
+      "next_review": "2026-09-09"
+    },
+    {
       "area": "repository-security",
       "canonical_paths": ["SECURITY.md", "DCO.md", "docs/governance/repository-security-policy.yaml", ".github/workflows/security-policy.yml", ".github/workflows/codeql.yml", ".github/workflows/pull-request-contract.yml", ".github/workflows/maintainer-pr-automerge.yml", ".github/PULL_REQUEST_TEMPLATE.md", "site/index.html", "site/reader.html", "site/reader.js", "scripts/validate_repository_security.py", "scripts/test_validate_repository_security.py", "scripts/test_validate_github_templates.py", "docs/adr/0036-repository-security-policy-and-pr-gate.md", "docs/adr/0043-expand-repository-sensitive-information-tripwires.md", "docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md", "docs/adr/0045-deploy-only-validated-pages-artifact.md", "docs/adr/0046-reader-source-boundary-and-codeql-v4.md", "docs/adr/0047-post-mutation-host-boundary-receipt.md", "docs/adr/0049-maintainer-only-release-controls.md", "docs/adr/0050-constrained-maintainer-documentation-auto-merge.md", "docs/security/sensitive-information-audit-2026-08-18.md"],
       "owner": "governance-maintainer",
