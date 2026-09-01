@@ -74,6 +74,9 @@ DOCS_DEPLOY_REQUIRED_FRAGMENTS = (
     "name: pages-candidate-${{ github.sha }}",
     "path: _site",
     "github-token: ${{ github.token }}",
+    "name: docs-verifier-${{ github.sha }}",
+    "path: docs-verifier",
+    "python docs-verifier/check_deployed_site.py",
 )
 DOCS_DEPLOY_ALLOWED_PERMISSIONS = {"actions": "read"}
 LEGACY_NODE20_ACTION_PINS = (
@@ -86,6 +89,14 @@ PAGES_CANDIDATE_ARTIFACT_REQUIRED = (
     "name: pages-candidate-${{ github.sha }}",
     "path: _site",
     "include-hidden-files: true",
+)
+PAGES_POST_MERGE_REQUIRED_FRAGMENTS = (
+    "workflow_dispatch:",
+    "sync-huggingface:",
+    "group: pages-build-${{ github.ref }}",
+    "group: huggingface-publication",
+    "group: github-pages-deployment",
+    "group: docs-prysai-production",
 )
 DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
     "actions/checkout@",
@@ -660,6 +671,34 @@ def validate_pages_candidate_artifact(text: str, label: str) -> list[str]:
     return errors
 
 
+def validate_pages_post_merge_orchestration(text: str, label: str) -> list[str]:
+    """Keep every main push deployable without cross-surface queue blocking."""
+
+    errors = []
+    if re.search(r"(?m)^concurrency:\s*$", text):
+        errors.append(f"{label}: Pages workflow must not use workflow-wide concurrency")
+    for fragment in PAGES_POST_MERGE_REQUIRED_FRAGMENTS:
+        if fragment not in text:
+            errors.append(f"{label}: post-merge publication contract is missing: {fragment}")
+
+    push_match = re.search(
+        r"(?ms)^  push:\s*\n(?P<body>.*?)(?=^  workflow_dispatch:\s*$|^permissions:\s*$|\Z)",
+        text,
+    )
+    if not push_match:
+        errors.append(f"{label}: Pages workflow must define a push trigger for main")
+    else:
+        push_body = push_match.group("body")
+        if not re.search(r"(?m)^    branches:\s*\[main\]\s*$", push_body):
+            errors.append(f"{label}: Pages push trigger must target main")
+        if re.search(r"(?m)^    paths(?:-ignore)?:\s*$", push_body):
+            errors.append(f"{label}: Pages push trigger must not filter paths after a merge")
+
+    if text.count("group: docs-prysai-production") < 1:
+        errors.append(f"{label}: Docs publication must use the protected serialized host group")
+    return errors
+
+
 def validate_codeql_workflow(text: str, label: str) -> list[str]:
     """Keep CodeQL analysis pinned, secret-free, and limited to trusted refs."""
 
@@ -750,6 +789,7 @@ def validate_workflows() -> tuple[int, list[str]]:
         pages_text = PAGES_WORKFLOW.read_text(encoding="utf-8")
         errors.extend(validate_docs_deploy_workflow(pages_text, relative(PAGES_WORKFLOW)))
         errors.extend(validate_pages_candidate_artifact(pages_text, relative(PAGES_WORKFLOW)))
+        errors.extend(validate_pages_post_merge_orchestration(pages_text, relative(PAGES_WORKFLOW)))
     if not CODEQL_WORKFLOW.is_file():
         errors.append("missing .github/workflows/codeql.yml")
     else:

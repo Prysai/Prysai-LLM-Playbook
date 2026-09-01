@@ -69,9 +69,10 @@ and high-confidence credential signatures. The project-root entry uses the same
 the local `/site/` route useful for development and prevents static hosts from
 treating fragment navigation as a directory request.
 
-On qualifying pushes to `main`, the workflow builds the artifact and requests
-a GitHub Pages deployment. GitHub Pages must remain enabled in the repository
-settings for the deployment job to publish it. A successful workflow is
+Every push to `main` (including a merged pull request) runs the workflow. It
+builds the artifact and requests a GitHub Pages deployment. GitHub Pages must
+remain enabled in the repository settings for the deployment job to publish
+it. A successful workflow is
 deployment evidence for that run, but it is not proof that the public URL is
 currently reachable to readers, indexed, or ranked; check the deployment URL
 and a fresh HTTP request separately.
@@ -79,18 +80,21 @@ and a fresh HTTP request separately.
 ## Docs mirror
 
 The same bounded artifact is also mirrored to
-`https://docs.prysai.com/llm-playbook/` after a qualifying push to `main`.
+`https://docs.prysai.com/llm-playbook/` after each push to `main`.
 The mirror is served by a restricted deployment account: it accepts a static
 archive only, validates its paths and file types, and atomically changes the
 published release. The deployment key is stored as the protected
 `DOCS_DEPLOY_SSH_KEY` GitHub Environment secret and is never committed here.
 
-The workflow is named **Build and publish Prysai LLM Playbook site**. A
-qualifying push to `main` builds the bounded artifact, deploys it to GitHub
-Pages, and requests the atomic Docs mirror publish. Manual dispatch defaults
-to `deploy: true`; choosing `false` builds only the bounded review artifact.
-The GitHub Pages and Docs mirror jobs are separate observable jobs. A green
-build alone does not prove either public origin now serves the new files.
+The workflow is named **Build and publish Prysai LLM Playbook site**. Every
+push to `main` builds the bounded artifact, deploys it to GitHub
+Pages, syncs the optional Hugging Face Space when `HF_TOKEN` is configured,
+and requests the atomic Docs mirror publish. Manual dispatch defaults to
+`deploy: true`; choosing `false` builds only the bounded review artifact.
+GitHub Pages, Hugging Face, and the Docs mirror remain separately observable
+publication surfaces. Docs publication and its public-byte verification run
+sequentially in one protected job. A green build alone does not prove any
+public origin now serves the new files.
 
 ## Search metadata and public URL
 

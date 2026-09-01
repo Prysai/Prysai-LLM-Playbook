@@ -168,6 +168,12 @@ jobs:
           name: pages-candidate-${{ github.sha }}
           path: _site
           github-token: ${{ github.token }}
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: docs-verifier-${{ github.sha }}
+          path: docs-verifier
+          github-token: ${{ github.token }}
+      - run: python docs-verifier/check_deployed_site.py --artifact _site
   another-job:
     runs-on: ubuntu-latest
 """
@@ -186,6 +192,31 @@ jobs:
         require(
             any("include hidden files" in error for error in policy.validate_pages_candidate_artifact(candidate_artifact.replace("include-hidden-files: true\n", ""), "pages.yml")),
             "Pages candidate artifact without hidden files was accepted",
+        )
+        fixtures += 1
+
+        pages_workflow = policy.PAGES_WORKFLOW.read_text(encoding="utf-8")
+        require(
+            not policy.validate_pages_post_merge_orchestration(pages_workflow, "pages.yml"),
+            "Pages workflow did not retain the post-merge publication boundary",
+        )
+        fixtures += 1
+        workflow_wide_concurrency = pages_workflow.replace(
+            "# Keep concurrency at the publication boundary. The Docs job is protected by\n# a required environment review and must not hold the build, Pages, or\n# Hugging Face jobs in a workflow-wide queue.\n",
+            "concurrency:\n  group: pages\n  cancel-in-progress: false\n",
+        )
+        require(
+            any("workflow-wide concurrency" in error for error in policy.validate_pages_post_merge_orchestration(workflow_wide_concurrency, "pages.yml")),
+            "Pages workflow with a workflow-wide concurrency group was accepted",
+        )
+        fixtures += 1
+        filtered_main_push = pages_workflow.replace(
+            "  push:\n    branches: [main]\n",
+            "  push:\n    branches: [main]\n    paths:\n      - \"site/**\"\n",
+        )
+        require(
+            any("must not filter paths" in error for error in policy.validate_pages_post_merge_orchestration(filtered_main_push, "pages.yml")),
+            "Pages workflow with a post-merge path filter was accepted",
         )
         fixtures += 1
 
