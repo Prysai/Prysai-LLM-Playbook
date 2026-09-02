@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">Recorrido de primera visita para una tarea LLM comprobable</title>
-  <desc id="desc">Esta lámina de cinco pasos guía la primera visita: elige un objetivo, abre el LLM Foundation Core, haz un intento seguro, revisa el registro y continúa por otra ruta o detente dejando visible lo que se desconoce.</desc>
+  <desc id="desc">Esta lámina de cinco pasos guía la primera visita: elige un objetivo, abre el LLM Foundation Core, haz un intento seguro y revisa el registro; continúa solo si existe la siguiente prueba, o detente dejando visible lo desconocido.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
       <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
@@ -18,7 +18,7 @@
   <text x="78" y="112" class="mono" font-size="22">INICIO / PRIMERA VISITA</text>
   <text x="78" y="174" class="ink" font-size="48" font-weight="900">UN RECORRIDO SEGURO.</text>
   <text x="78" y="230" class="ink" font-size="48" font-weight="900">ANTES DEL CATÁLOGO.</text>
-  <text x="78" y="282" class="muted" font-size="22">Elige un objetivo, haz un intento pequeño y conserva el registro.</text>
+  <text x="78" y="282" class="muted" font-size="22">Elige un objetivo. Haz un intento pequeño. Conserva el registro.</text>
 
   <line x1="128" y1="362" x2="128" y2="1154" class="line"/>
   <line x1="128" y1="480" x2="128" y2="538" class="redline"/>
@@ -32,7 +32,7 @@
     <rect x="112" width="650" height="120" fill="#111"/>
     <text x="140" y="44" class="mono" fill="#fff" font-size="19">ELEGIR</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Nombra un resultado.</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">Entiende, practica o comprueba una sola cosa pequeña.</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">Comprende, practica o comprueba una sola cosa pequeña.</text>
   </g>
 
   <g transform="translate(78 482)">
@@ -40,8 +40,8 @@
     <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
     <rect x="112" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">ABRIR</text>
-    <text x="140" y="78" class="ink" font-size="28" font-weight="900">Empieza por el LLM Foundation Core.</text>
-    <text x="140" y="106" class="muted" font-size="17">Conoce el límite del modelo antes de elegir plataforma.</text>
+    <text x="140" y="78" class="ink" font-size="28" font-weight="900">Empieza por el Foundation Core.</text>
+    <text x="140" y="106" class="muted" font-size="17">Conoce primero el límite del modelo.</text>
   </g>
 
   <g transform="translate(78 644)">
@@ -50,7 +50,7 @@
     <rect x="112" width="650" height="120" fill="#ffe5e9" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">PROBAR</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">Haz un intento seguro.</text>
-    <text x="140" y="106" class="muted" font-size="17">Usa material ficticio o local, sin datos sensibles.</text>
+    <text x="140" y="106" class="muted" font-size="17">Usa material ficticio, local y no sensible.</text>
   </g>
 
   <g transform="translate(78 806)">
@@ -59,21 +59,21 @@
     <rect x="112" width="650" height="120" fill="#d71920"/>
     <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700">COMPROBAR</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Lee el registro real.</text>
-    <text x="140" y="106" fill="#fff" font-size="17">Compara la respuesta, el diff, la fuente, la prueba o el registro.</text>
+    <text x="140" y="106" fill="#fff" font-size="17">Compara respuesta, diff, fuente, prueba o registro.</text>
   </g>
 
   <g transform="translate(78 968)">
     <circle cx="50" cy="48" r="34" fill="#111"/>
     <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
     <rect x="112" width="650" height="120" fill="#111"/>
-    <text x="140" y="44" class="mono" fill="#fff" font-size="19">CONTINUAR / PARAR</text>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">DECIDIR / PARAR</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Elige el siguiente recorrido acotado.</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">Si falta la próxima prueba, deja visible lo que no sabes.</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">Continúa solo cuando exista la próxima prueba.</text>
   </g>
 
   <rect x="78" y="1160" width="762" height="116" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
-  <text x="102" y="1200" class="mono" font-size="17">LÍMITE</text>
-  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">El catálogo ofrece opciones; no es la primera tarea.</text>
-  <text x="102" y="1264" class="muted" font-size="17">Este recorrido orienta al visitante; no demuestra aprendizaje ni dominio.</text>
-  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB / TABLERO ORIGINAL / EMPIEZA PEQUEÑO, COMPRUEBA LO IMPORTANTE</text>
+  <text x="102" y="1200" class="mono" font-size="17">EVIDENCIA / PARAR</text>
+  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">Si falta la prueba, detente y deja visible lo desconocido.</text>
+  <text x="102" y="1264" class="muted" font-size="17">Este mapa orienta al visitante; no demuestra aprendizaje.</text>
+  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB / TABLERO ORIGINAL / PRACTICA ANTES DE AFIRMAR</text>
 </svg>

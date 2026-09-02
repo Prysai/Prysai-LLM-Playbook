@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
   <title id="title">Die Lernreise des Prysai LLM Playbook</title>
-  <desc id="desc">Diese Reise in vier Phasen führt zuerst durch die fünf Einheiten des LLM Foundation Core. Danach wird eine begrenzte erste Aufgabe zu Belegen und einem bewussten Stopp oder einer Entscheidung; anschließend folgen optionale Wege mit Codex, Tools, Skills oder im Team.</desc>
+  <desc id="desc">Diese Reise in vier Phasen führt zuerst durch fünf Core-Einheiten, prüft eine erste begrenzte Aufgabe und bietet erst danach optionale Wege an.</desc>
   <rect width="1200" height="1600" fill="#f6f6f2"/>
   <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
   <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / LERNREISE</text>
@@ -17,8 +17,8 @@
   <g transform="translate(140 360)">
     <rect width="1000" height="198" fill="#171717"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / FOUNDATION CORE</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Verstehen → beginnen → erkennen → reparieren → übertragen</text>
-    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Fünf Einheiten machen Modell, Anfrage, sichtbare Fehler, Prüfung und unbekannte Aufgabe ausdrücklich.</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Beende zuerst die fünf Core-Einheiten.</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Lerne Modell, Anfrage, Fehler, Prüfung und Übertragung.</text>
     <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Beginne hier, bevor du Codex, Tools, Agents oder Skills wählst.</text>
   </g>
 
@@ -26,24 +26,24 @@
     <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / ERSTE BEGRENZTE AUFGABE</text>
     <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Benenne das Ergebnis, bevor du fragst.</text>
-    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Halte Ziel, vorhandenen Kontext, erlaubte Hilfe, Grenzen, Antwortform und Stoppbedingung fest.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Nutze eine fiktive oder wegwerfbare Aufgabe; bewahre erste Anfrage und erste Antwort auf.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Halte Ziel, Kontext, Hilfe, Grenzen, Antwortform und Stopp fest.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Nutze eine fiktive Aufgabe; bewahre Anfrage und Antwort auf.</text>
   </g>
 
   <g transform="translate(140 890)">
     <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / BELEG-SCHLEIFE</text>
-    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Beobachte, was sich geändert hat, und halte Unbekanntes fest.</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900" textLength="930" lengthAdjust="spacingAndGlyphs">Beobachte die Änderung und halte Unbekanntes fest.</text>
     <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Vergleiche Antwort oder Diff mit Quelle, Test, Log oder Abnahmeregel.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Mach nur weiter, wenn der nächste Beleg vorhanden ist; sonst notiere den kleinsten sicheren Stopp.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Mach nur weiter, wenn der nächste Beleg vorhanden ist.</text>
   </g>
 
   <g transform="translate(140 1155)">
-    <rect width="1000" height="198" fill="#d71920"/>
-    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / OPTIONALE WEGE</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Wähle die kleinste nützliche nächste Ebene.</text>
-    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · Tools · Skills · Agents · Recherche · Engineering · Teampraxis</text>
-    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Jeder Weg bewahrt eigene Quellen, Berechtigungen, Belege, Fehlerfälle und Grenzen.</text>
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / OPTIONALE WEGE</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Wähle die kleinste nützliche nächste Ebene.</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · Tools · Skills · Agents · Recherche · Team</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Jeder Weg bewahrt Berechtigungen, Belege und Grenzen.</text>
   </g>
 
   <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>

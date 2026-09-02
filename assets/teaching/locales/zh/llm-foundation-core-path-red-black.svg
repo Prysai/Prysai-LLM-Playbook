@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">LLM 基础核心：五个单元</title>
-  <desc id="desc">这条五单元学习路线从一次安全尝试开始，让上下文和指令可见，识别可见失败，检查并修正结果，最后把方法重复到未见过的任务上。</desc>
+  <desc id="desc">这条五单元路线从安全尝试开始，让任务字段可见，命名可见失败，检查并修正结果，最后在未见任务上重复方法。</desc>
   <rect width="900" height="1400" fill="#f6f6f2"/>
   <rect x="42" y="34" width="816" height="10" fill="#171717"/>
   <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">基础核心／五个单元</text>
@@ -19,31 +19,31 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／尝试</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">先做一次安全尝试。</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">使用虚构的离线任务，并保留第一次回答。</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">保留第一次回答，作为基线。</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02／框定</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">让上下文和指令可见。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">分开已提供事实、缺失事实、限制条件和回答形式。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">让任务字段可见。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">目标、上下文、限制和回答形式。</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03／识别</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">识别可见的失败模式。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">标出遗漏、编造、强行制造的歧义和过度自信。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">说出可见的失败。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">遗漏、编造、歧义或过度自信。</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04／修正</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">检查、修正，并说明限制。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">用证据对照，只改变一个条件，并保留缺口。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">用证据检查并修正。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">对照证据。只改变一个条件。</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05／迁移</text>
-    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">在未见过的任务上重复方法。</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">保存路线只是练习；新任务仍需单独检查。</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">在未见任务上重复方法。</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">新任务仍需单独检查。</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>
