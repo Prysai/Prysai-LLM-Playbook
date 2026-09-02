@@ -710,6 +710,35 @@
     },
   ];
 
+  // Reserve each board's real viewBox ratio before lazy images finish loading.
+  // The card grid can still use a consistent thumbnail crop without making a
+  // landscape board claim portrait dimensions in the document.
+  const VISUAL_DIMENSIONS = Object.freeze({
+    'reader-route-compass-red-black.svg': [1200, 780],
+    'llm-six-terms-to-one-check.svg': [1400, 1000],
+    'response-claim-triage-red-black.svg': [900, 1500],
+    'goal-entry-decision-map-red-black.svg': [900, 1400],
+    'model-choice-is-a-test.svg': [1600, 900],
+    'first-task-evidence-bridge-red-black.svg': [900, 1500],
+    'first-attempt-evidence-receipt-red-black.svg': [900, 1400],
+    'experiment-record-anatomy-red-black.svg': [900, 1500],
+    'prompt-contract-six-fields-red-black.svg': [900, 1400],
+    'first-turn-contract-card.svg': [900, 1500],
+    'conversation-safety-card-red-black.svg': [900, 1450],
+    'side-effect-boundary-decision-map.svg': [900, 1400],
+    'task-to-evidence-red-black.svg': [900, 1400],
+    'claim-to-evidence-audit-red-black.svg': [900, 1500],
+    'source-check-before-belief-red-black.svg': [900, 1400],
+    'evidence-to-decision-stop-map-red-black.svg': [900, 1500],
+    'failed-interaction-recovery-red-black.svg': [1600, 900],
+    'recovery-decision-tree-red-black.svg': [900, 1500],
+    'understanding-to-transfer-red-black.svg': [900, 1400],
+    'beginner-practice-loop-red-black.svg': [900, 1400],
+    'evidence-maturity-ladder-red-black.svg': [900, 1500],
+    'skill-trigger-boundary-decision-map.svg': [900, 1500],
+  });
+  const visualDimensions = (asset) => VISUAL_DIMENSIONS[asset] || [900, 1500];
+
   const params = new URLSearchParams(window.location.search);
   const requestedLocale = params.get('lang');
   let locale = Object.prototype.hasOwnProperty.call(LOCALES, requestedLocale) ? requestedLocale : 'en';
@@ -1524,6 +1553,7 @@
       const image = document.createElement('img');
       image.src = assetHref(card.asset);
       image.loading = 'lazy';
+      [image.width, image.height] = visualDimensions(card.asset);
       image.alt = `${localized(card.titles)} — ${localized(card.bodies)}`;
       link.append(image);
       const stageLabel = document.createElement('span');
@@ -1612,6 +1642,7 @@
     if (title) title.textContent = localized(card.titles);
     if (image) {
       image.src = assetHref(card.asset);
+      [image.width, image.height] = visualDimensions(card.asset);
       image.alt = `${localized(card.titles)} — ${localized(card.bodies)}`;
     }
     if (imageLink) {

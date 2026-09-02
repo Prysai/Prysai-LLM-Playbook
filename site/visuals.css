@@ -145,7 +145,7 @@ h3 { text-wrap: balance; }
   grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr);
   gap: 2rem;
   align-items: start;
-  padding: clamp(2.2rem, 5vw, 4rem) 0 clamp(2.4rem, 5vw, 4.25rem);
+  padding: clamp(1.9rem, 4vw, 3.25rem) 0 clamp(2.2rem, 4.5vw, 3.75rem);
   border-bottom: 1px solid var(--visual-line);
   border-top: 5px solid var(--visual-red);
 }
@@ -260,29 +260,6 @@ h3 { text-wrap: balance; }
   background: var(--visual-red);
 }
 
-.visual-primary-section {
-  padding-top: clamp(4.75rem, 8vw, 6rem);
-  border-top: 4px solid var(--visual-red);
-}
-
-.visual-primary-section .visual-section-heading > * { min-width: 0; }
-
-.visual-primary-section .visual-section-number {
-  color: var(--visual-red);
-  font-size: .78rem;
-}
-
-.visual-gallery-section.visual-primary-section {
-  padding-top: clamp(3.2rem, 5vw, 4.25rem);
-  border-top-color: var(--visual-ink);
-}
-
-.visual-gallery-section .visual-section-heading h2 {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-}
-
-.visual-gallery-section .visual-section-heading > p { font-size: .86rem; }
-
 .visual-entry-card strong,
 .visual-entry-card span,
 .visual-entry-card em,
@@ -293,7 +270,7 @@ h3 { text-wrap: balance; }
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 2rem;
-  padding: clamp(4.25rem, 6vw, 5.5rem) 0 clamp(3.25rem, 5vw, 4.5rem);
+  padding: clamp(3.25rem, 4.5vw, 4rem) 0 clamp(2rem, 3vw, 2.75rem);
   border-bottom: 1px solid var(--visual-line);
 }
 
@@ -310,10 +287,10 @@ h3 { text-wrap: balance; }
 
 .visual-hero-index strong { color: var(--visual-ink); font-size: 3.5rem; line-height: .9; letter-spacing: -.08em; }
 
-.visual-hero-copy { max-width: 50rem; }
+.visual-hero-copy { max-width: 64rem; }
 
 .visual-hero h1 {
-  max-width: 16ch;
+  max-width: 20ch;
   margin: .9rem 0 1.2rem;
   font-size: clamp(3rem, 7vw, 6.4rem);
   line-height: .92;
@@ -343,6 +320,16 @@ h3 { text-wrap: balance; }
 .visual-receipt-section,
 .visual-gallery-section,
 .visual-how-section { padding: 4.25rem 0; border-bottom: 1px solid var(--visual-line); }
+
+/* Keep the route-first hierarchy after the shared section rhythm is declared. */
+.visual-primary-section { padding-top: clamp(4.75rem, 8vw, 6rem); }
+.visual-gallery-section.visual-primary-section { padding-top: clamp(3.2rem, 5vw, 4.25rem); }
+.visual-primary-section { border-top: 4px solid var(--visual-red); }
+.visual-primary-section .visual-section-heading > * { min-width: 0; }
+.visual-primary-section .visual-section-number { color: var(--visual-red); font-size: .78rem; }
+.visual-gallery-section.visual-primary-section { border-top-color: var(--visual-ink); }
+.visual-gallery-section .visual-section-heading h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+.visual-gallery-section .visual-section-heading > p { font-size: .86rem; }
 
 .visual-section-heading {
   display: grid;
@@ -1275,19 +1262,19 @@ h3 { text-wrap: balance; }
   .visual-nav { gap: .7rem; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
   .visual-language-label { display: none; }
   .visual-language { min-width: 8rem; }
-  .visual-hero { grid-template-columns: 1fr; gap: .8rem; padding: 1.35rem 0 1.35rem; }
+  .visual-hero { grid-template-columns: 1fr; gap: .65rem; padding: 1rem 0; }
   /* Keep the first useful choice in view even when a locale needs more lines. */
   .visual-hero-copy { max-width: none; }
-  .visual-hero h1 { font-size: clamp(2.4rem, 12vw, 4.35rem); line-height: .88; }
-  .visual-hero .visual-lede { line-height: 1.4; }
-  .visual-hero .visual-boundary { line-height: 1.35; }
+  .visual-hero h1 { font-size: clamp(2.35rem, 11vw, 4.2rem); line-height: .9; }
+  .visual-hero .visual-lede { line-height: 1.32; }
+  .visual-hero .visual-boundary { line-height: 1.3; }
   .visual-hero-index { display: flex; align-items: baseline; gap: .6rem; }
   .visual-hero-index strong { font-size: 2.4rem; }
-  .visual-hero h1 { max-width: 12ch; font-size: clamp(2.65rem, 13vw, 4.8rem); }
-  .visual-lede { font-size: 1rem; }
-  .visual-boundary { margin-top: .7rem; padding-top: .55rem; font-size: .76rem; }
-  .visual-hero-actions { margin-top: .75rem; }
-  .visual-entry-nav { padding: 1.1rem 0 2.75rem; }
+  .visual-hero h1 { max-width: 12ch; margin: .65rem 0 .75rem; }
+  .visual-lede { font-size: .95rem; }
+  .visual-boundary { margin-top: .55rem; padding-top: .45rem; font-size: .75rem; }
+  .visual-hero-actions { margin-top: .55rem; }
+  .visual-entry-nav { padding: .9rem 0 2.5rem; }
   .visual-entry-heading { gap: .35rem; margin-bottom: .4rem; }
   .visual-entry-heading h2 { font-size: 1.9rem; line-height: .92; }
   .visual-entry-heading > p { font-size: .78rem; line-height: 1.35; }
@@ -1296,6 +1283,8 @@ h3 { text-wrap: balance; }
   .visual-entry-card:hover, .visual-entry-card:focus-visible { transform: none; }
   .visual-hero-action { min-height: 2.9rem; }
   .visual-route-section, .visual-goal-section, .visual-journey-section, .visual-capability-section, .visual-maturity-section, .visual-concept-section, .visual-action-boundary-section, .visual-map-section, .visual-evidence-section, .visual-reading-loop-section, .visual-receipt-section, .visual-gallery-section, .visual-how-section { padding: 3rem 0; }
+  .visual-primary-section { padding-top: 3.75rem; }
+  .visual-gallery-section.visual-primary-section { padding-top: 2.75rem; }
   .visual-section-heading { grid-template-columns: 1fr; gap: .7rem; }
   .visual-section-heading h2 { font-size: 2.3rem; }
   .visual-goal-graph, .visual-map-graph { min-height: 0; padding: .75rem; }
@@ -1451,14 +1440,17 @@ h3 { text-wrap: balance; }
 }
 
 @media (max-width: 374px) {
-  .visual-hero { padding: .85rem 0 .9rem; }
-  .visual-hero h1 { margin-top: .65rem; margin-bottom: .75rem; }
-  .visual-lede { font-size: .95rem; line-height: 1.4; }
-  .visual-boundary { margin-top: .5rem; padding-top: .4rem; font-size: .72rem; }
-  .visual-hero-actions { margin-top: .5rem; }
-  .visual-hero-action { min-height: 2.6rem; }
-  .visual-entry-nav { padding-top: .95rem; }
-  .visual-entry-heading { margin-bottom: .55rem; }
-  .visual-entry-heading h2 { font-size: 1.75rem; }
-  .visual-entry-heading > p { font-size: .74rem; }
+  .visual-hero { gap: .5rem; padding: .65rem 0 .7rem; }
+  .visual-hero-index strong { font-size: 2.2rem; }
+  .visual-hero h1 { margin-top: .5rem; margin-bottom: .55rem; font-size: clamp(2.25rem, 11vw, 3.25rem); }
+  .visual-lede { font-size: .9rem; line-height: 1.3; }
+  .visual-boundary { margin-top: .4rem; padding-top: .35rem; font-size: .68rem; line-height: 1.25; }
+  .visual-hero-actions { margin-top: .4rem; }
+  .visual-hero-action { min-height: 2.45rem; }
+  .visual-entry-nav { padding-top: .75rem; }
+  .visual-entry-heading { margin-bottom: .35rem; }
+  .visual-entry-heading h2 { font-size: 1.6rem; }
+  .visual-entry-heading > p { font-size: .7rem; line-height: 1.25; }
+  .visual-primary-section { padding-top: 3.25rem; }
+  .visual-gallery-section.visual-primary-section { padding-top: 2.5rem; }
 }

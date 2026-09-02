@@ -148,6 +148,7 @@ const waitForImagePixels = async (locator, label) => {
 try {
   for (const locale of locales) {
     await page.goto(`${origin}/site/visuals.html?lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.evaluate(() => window.scrollTo(0, 0));
     assert.equal(await page.locator('html').getAttribute('lang'), locale, `${locale} document language changed`);
     assert.equal(await page.locator('h1').innerText(), expectedHero[locale], `${locale} hero copy changed`);
     assert.deepEqual(
@@ -166,19 +167,35 @@ try {
       assert.notEqual((await card.innerText()).trim(), '', `${locale} visual entry card is empty`);
     }
     const firstScreen = await page.evaluate(() => {
+      const entry = document.querySelector('#visual-entry');
       const firstCard = document.querySelector('#visual-entry .visual-entry-card');
       const action = document.querySelector('.visual-hero-action');
-      const box = (node) => node.getBoundingClientRect();
+      const entryTitle = document.querySelector('#visual-entry-title');
+      const cardTitle = firstCard?.querySelector('strong');
+      const cardAction = firstCard?.querySelector('em');
+      const box = (node) => node?.getBoundingClientRect();
+      const visible = (node) => {
+        const rect = box(node);
+        return rect && rect.top < window.innerHeight && rect.bottom > 0;
+      };
       return {
         viewport: window.innerHeight,
-        entryTop: box(document.querySelector('#visual-entry')).top,
-        firstCardTop: box(firstCard).top,
-        actionTop: box(action).top,
+        entryTop: box(entry)?.top,
+        firstCardTop: box(firstCard)?.top,
+        actionTop: box(action)?.top,
+        actionVisible: visible(action),
+        entryVisible: visible(entry),
+        entryTitleVisible: visible(entryTitle),
+        firstCardTitleVisible: visible(cardTitle),
+        firstCardActionVisible: visible(cardAction),
       };
     });
     assert.ok(firstScreen.entryTop < firstScreen.viewport, `${locale} visual entry is not in the first viewport: ${JSON.stringify(firstScreen)}`);
-    assert.ok(firstScreen.firstCardTop < firstScreen.viewport, `${locale} first visual entry card is not in the first viewport: ${JSON.stringify(firstScreen)}`);
-    assert.ok(firstScreen.actionTop < firstScreen.viewport, `${locale} primary visual action is not in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.equal(firstScreen.entryVisible, true, `${locale} visual entry is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.equal(firstScreen.entryTitleVisible, true, `${locale} visual entry title is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.ok(firstScreen.firstCardTop < firstScreen.viewport, `${locale} first visual entry card does not enter the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.equal(firstScreen.firstCardTitleVisible, true, `${locale} first visual entry card title is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.equal(firstScreen.actionVisible, true, `${locale} primary visual action is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
     for (const selector of ['#visual-entry', '#visual-route', '#visual-goal', '#visual-journey', '#visual-gallery']) {
       assert.notEqual(await page.locator(selector).evaluate((section) => getComputedStyle(section).scrollMarginTop), '0px', `${locale} ${selector} has no anchor offset`);
     }
@@ -243,19 +260,29 @@ try {
 
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'networkidle' });
+  await page.evaluate(() => window.scrollTo(0, 0));
   const desktopFirstScreen = await page.evaluate(() => {
     const entry = document.querySelector('#visual-entry').getBoundingClientRect();
     const card = document.querySelector('#visual-entry .visual-entry-card').getBoundingClientRect();
-    return { viewport: window.innerHeight, entryTop: entry.top, cardTop: card.top };
+    const cardTitle = document.querySelector('#visual-entry .visual-entry-card strong').getBoundingClientRect();
+    const cardAction = document.querySelector('#visual-entry .visual-entry-card em').getBoundingClientRect();
+    return { viewport: window.innerHeight, entryTop: entry.top, cardTop: card.top, cardTitleBottom: cardTitle.bottom, cardActionBottom: cardAction.bottom };
   });
   assert.ok(desktopFirstScreen.entryTop < desktopFirstScreen.viewport, `desktop visual entry is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
-  assert.ok(desktopFirstScreen.cardTop < desktopFirstScreen.viewport, `desktop first visual entry card is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
+  assert.ok(desktopFirstScreen.cardTitleBottom < desktopFirstScreen.viewport, `desktop first visual entry card title is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
+  assert.ok(desktopFirstScreen.cardActionBottom <= desktopFirstScreen.viewport - 16, `desktop first visual entry card action has no visible first-screen margin: ${JSON.stringify(desktopFirstScreen)}`);
 
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
+  await page.evaluate(() => window.scrollTo(0, 0));
   await noHorizontalOverflow('fr 360px visual guide');
   assert.equal(await count('.visual-card'), expectedCounts.cards, 'fr 360px gallery lost teaching boards');
   assert.equal(await page.locator('.visual-footer-site').getAttribute('href'), 'https://prysai.com/', 'fr 360px footer lost the official-site link');
+  const narrowFirstCard = await page.locator('#visual-entry .visual-entry-card').first().evaluate((card) => {
+    const title = card.querySelector('strong')?.getBoundingClientRect();
+    return { viewport: window.innerHeight, titleTop: title?.top, titleBottom: title?.bottom };
+  });
+  assert.ok(narrowFirstCard.titleBottom <= narrowFirstCard.viewport - 8, `fr 360px first visual entry title is not usable in the first viewport: ${JSON.stringify(narrowFirstCard)}`);
   await page.locator('#visual-entry .visual-entry-card').first().focus();
   const focusState = await page.locator('#visual-entry .visual-entry-card').first().evaluate((link) => {
     const style = getComputedStyle(link);
