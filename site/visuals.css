@@ -36,7 +36,7 @@ button, select { font: inherit; }
 .visual-skip:focus { top: .75rem; }
 
 .visual-header {
-  position: relative;
+  position: sticky;
   z-index: 5;
   top: 0;
   border-bottom: 1px solid var(--visual-line);
@@ -123,9 +123,72 @@ button, select { font: inherit; }
 
 .visual-main { width: min(1240px, calc(100% - 3rem)); margin: 0 auto; }
 
+.visual-reading-nav {
+  position: sticky;
+  z-index: 4;
+  top: var(--visual-header-height, 4.5rem);
+  border-bottom: 1px solid var(--visual-line);
+  background: rgba(247, 247, 242, .97);
+  backdrop-filter: blur(12px);
+}
+
+.visual-reading-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: min(1240px, calc(100% - 3rem));
+  min-height: 2.75rem;
+  margin: 0 auto;
+}
+
+.visual-reading-nav-label {
+  flex: 0 0 auto;
+  color: var(--visual-muted);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.visual-reading-nav ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-self: stretch;
+  width: min(35rem, 100%);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visual-reading-nav li { display: flex; min-width: 0; }
+
+.visual-reading-nav a {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: .35rem;
+  padding: .35rem .55rem;
+  border-left: 1px solid var(--visual-line);
+  color: var(--visual-muted);
+  text-decoration: none;
+}
+
+.visual-reading-nav a:hover,
+.visual-reading-nav a:focus-visible,
+.visual-reading-nav a[aria-current="location"] {
+  color: var(--visual-ink);
+  background: var(--visual-white);
+}
+
+.visual-reading-nav a[aria-current="location"] { box-shadow: inset 0 -3px 0 var(--visual-red); }
+.visual-reading-nav a span { font-size: .76rem; font-weight: 800; }
+.visual-reading-nav a small { color: inherit; font-size: .64rem; }
+
 /* The guide is a route first, then a collection of reference boards. Keep
    those decisions visible in the layout without changing the content model. */
-.visual-main > [id] { scroll-margin-top: 5.75rem; }
+.visual-main > [id] { scroll-margin-top: 8rem; }
 
 :where(a, button, select, summary):focus-visible {
   outline: 3px solid var(--visual-red);
@@ -145,7 +208,7 @@ h3 { text-wrap: balance; }
   grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr);
   gap: 2rem;
   align-items: start;
-  padding: clamp(1.9rem, 4vw, 3.25rem) 0 clamp(2.2rem, 4.5vw, 3.75rem);
+  padding: 1.75rem 0 clamp(2.2rem, 4.5vw, 3.75rem);
   border-bottom: 1px solid var(--visual-line);
   border-top: 5px solid var(--visual-red);
 }
@@ -270,7 +333,7 @@ h3 { text-wrap: balance; }
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 2rem;
-  padding: clamp(3.25rem, 4.5vw, 4rem) 0 clamp(2rem, 3vw, 2.75rem);
+  padding: clamp(3.25rem, 4.5vw, 4rem) 0 1.5rem;
   border-bottom: 1px solid var(--visual-line);
 }
 
@@ -1262,7 +1325,13 @@ h3 { text-wrap: balance; }
   .visual-nav { gap: .7rem; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
   .visual-language-label { display: none; }
   .visual-language { min-width: 8rem; }
-  .visual-hero { grid-template-columns: 1fr; gap: .65rem; padding: 1rem 0; }
+  .visual-reading-nav { top: var(--visual-header-height, 4.95rem); }
+  .visual-reading-nav-inner { display: flex; gap: .35rem; width: min(100% - 1.4rem, 1240px); min-height: 2.35rem; }
+  .visual-reading-nav-label { max-width: 3.4rem; font-size: .56rem; line-height: 1.1; }
+  .visual-reading-nav ol { flex: 1; width: auto; min-height: 2.35rem; }
+  .visual-reading-nav a { padding: .3rem .4rem .4rem; }
+  .visual-reading-nav a small { display: none; }
+  .visual-hero { grid-template-columns: 1fr; gap: .5rem; padding: .8rem 0 .85rem; }
   /* Keep the first useful choice in view even when a locale needs more lines. */
   .visual-hero-copy { max-width: none; }
   .visual-hero h1 { font-size: clamp(2.35rem, 11vw, 4.2rem); line-height: .9; }
@@ -1270,16 +1339,16 @@ h3 { text-wrap: balance; }
   .visual-hero .visual-boundary { line-height: 1.3; }
   .visual-hero-index { display: flex; align-items: baseline; gap: .6rem; }
   .visual-hero-index strong { font-size: 2.4rem; }
-  .visual-hero h1 { max-width: 12ch; margin: .65rem 0 .75rem; }
+  .visual-hero h1 { max-width: 12ch; margin: .4rem 0 .55rem; }
   .visual-lede { font-size: .95rem; }
-  .visual-boundary { margin-top: .55rem; padding-top: .45rem; font-size: .75rem; }
-  .visual-hero-actions { margin-top: .55rem; }
-  .visual-entry-nav { padding: .9rem 0 2.5rem; }
-  .visual-entry-heading { gap: .35rem; margin-bottom: .4rem; }
+  .visual-boundary { margin-top: .4rem; padding-top: .35rem; font-size: .75rem; }
+  .visual-hero-actions { margin-top: .4rem; }
+  .visual-entry-nav { padding: .7rem 0 2rem; }
+  .visual-entry-heading { gap: .3rem; margin-bottom: .3rem; }
   .visual-entry-heading h2 { font-size: 1.9rem; line-height: .92; }
   .visual-entry-heading > p { font-size: .78rem; line-height: 1.35; }
   .visual-entry-list { grid-template-columns: 1fr; }
-  .visual-entry-card { min-height: 9.5rem; padding: .85rem; }
+  .visual-entry-card { min-height: 8.25rem; padding: .75rem; gap: .42rem; }
   .visual-entry-card:hover, .visual-entry-card:focus-visible { transform: none; }
   .visual-hero-action { min-height: 2.9rem; }
   .visual-route-section, .visual-goal-section, .visual-journey-section, .visual-capability-section, .visual-maturity-section, .visual-concept-section, .visual-action-boundary-section, .visual-map-section, .visual-evidence-section, .visual-reading-loop-section, .visual-receipt-section, .visual-gallery-section, .visual-how-section { padding: 3rem 0; }
@@ -1440,17 +1509,17 @@ h3 { text-wrap: balance; }
 }
 
 @media (max-width: 374px) {
-  .visual-hero { gap: .5rem; padding: .65rem 0 .7rem; }
+  .visual-hero { gap: .3rem; padding: .35rem 0 .4rem; }
   .visual-hero-index strong { font-size: 2.2rem; }
-  .visual-hero h1 { margin-top: .5rem; margin-bottom: .55rem; font-size: clamp(2.25rem, 11vw, 3.25rem); }
-  .visual-lede { font-size: .9rem; line-height: 1.3; }
-  .visual-boundary { margin-top: .4rem; padding-top: .35rem; font-size: .68rem; line-height: 1.25; }
-  .visual-hero-actions { margin-top: .4rem; }
-  .visual-hero-action { min-height: 2.45rem; }
-  .visual-entry-nav { padding-top: .75rem; }
-  .visual-entry-heading { margin-bottom: .35rem; }
-  .visual-entry-heading h2 { font-size: 1.6rem; }
-  .visual-entry-heading > p { font-size: .7rem; line-height: 1.25; }
+  .visual-hero h1 { margin-top: .25rem; margin-bottom: .3rem; font-size: clamp(2.05rem, 10.5vw, 3rem); }
+  .visual-lede { font-size: .86rem; line-height: 1.24; }
+  .visual-boundary { margin-top: .2rem; padding-top: .25rem; font-size: .64rem; line-height: 1.15; }
+  .visual-hero-actions { margin-top: .2rem; }
+  .visual-hero-action { min-height: 2.3rem; padding: .55rem .7rem; }
+  .visual-entry-nav { padding-top: .25rem; }
+  .visual-entry-heading { margin-bottom: .15rem; }
+  .visual-entry-heading h2 { font-size: 1.5rem; }
+  .visual-entry-heading > p { font-size: .66rem; line-height: 1.18; }
   .visual-primary-section { padding-top: 3.25rem; }
   .visual-gallery-section.visual-primary-section { padding-top: 2.5rem; }
 }

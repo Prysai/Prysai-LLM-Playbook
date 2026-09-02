@@ -99,6 +99,18 @@
   };
   Object.entries(ENTRY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const READING_NAV_COPY = {
+    en: { readingNavAria: 'Visual guide sections', readingNavLabel: 'On this page', readingNavRoute: 'Route', readingNavRouteSub: 'order', readingNavGoal: 'Purpose', readingNavGoalSub: 'choose', readingNavJourney: 'Core', readingNavJourneySub: 'learn', readingNavGallery: 'Boards', readingNavGallerySub: 'reference' },
+    zh: { readingNavAria: '视觉导览分区', readingNavLabel: '本页导航', readingNavRoute: '路线', readingNavRouteSub: '顺序', readingNavGoal: '目的', readingNavGoalSub: '选择', readingNavJourney: '核心', readingNavJourneySub: '学习', readingNavGallery: '图板', readingNavGallerySub: '参考' },
+    es: { readingNavAria: 'Secciones de la guía visual', readingNavLabel: 'En esta página', readingNavRoute: 'Recorrido', readingNavRouteSub: 'orden', readingNavGoal: 'Propósito', readingNavGoalSub: 'elegir', readingNavJourney: 'Núcleo', readingNavJourneySub: 'aprender', readingNavGallery: 'Tableros', readingNavGallerySub: 'referencia' },
+    ja: { readingNavAria: 'ビジュアルガイドのセクション', readingNavLabel: 'このページ', readingNavRoute: 'ルート', readingNavRouteSub: '順序', readingNavGoal: '目的', readingNavGoalSub: '選ぶ', readingNavJourney: 'コア', readingNavJourneySub: '学ぶ', readingNavGallery: 'ボード', readingNavGallerySub: '参照' },
+    ko: { readingNavAria: '시각 안내서 섹션', readingNavLabel: '이 페이지에서', readingNavRoute: '경로', readingNavRouteSub: '순서', readingNavGoal: '목적', readingNavGoalSub: '선택', readingNavJourney: '핵심', readingNavJourneySub: '학습', readingNavGallery: '보드', readingNavGallerySub: '참고' },
+    de: { readingNavAria: 'Abschnitte des visuellen Leitfadens', readingNavLabel: 'Auf dieser Seite', readingNavRoute: 'Route', readingNavRouteSub: 'Reihenfolge', readingNavGoal: 'Zweck', readingNavGoalSub: 'wählen', readingNavJourney: 'Kern', readingNavJourneySub: 'lernen', readingNavGallery: 'Tafeln', readingNavGallerySub: 'Referenz' },
+    'zh-tw': { readingNavAria: '視覺導覽區段', readingNavLabel: '本頁導航', readingNavRoute: '路線', readingNavRouteSub: '順序', readingNavGoal: '目的', readingNavGoalSub: '選擇', readingNavJourney: '核心', readingNavJourneySub: '學習', readingNavGallery: '圖板', readingNavGallerySub: '參考' },
+    fr: { readingNavAria: 'Sections du guide visuel', readingNavLabel: 'Sur cette page', readingNavRoute: 'Parcours', readingNavRouteSub: 'ordre', readingNavGoal: 'Objectif', readingNavGoalSub: 'choisir', readingNavJourney: 'Cœur', readingNavJourneySub: 'apprendre', readingNavGallery: 'Planches', readingNavGallerySub: 'référence' },
+  };
+  Object.entries(READING_NAV_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const ACCESSIBILITY_COPY = {
     en: { brandAria: 'Prysai LLM Playbook home', navAria: 'Visual guide navigation', languageAria: 'Choose visual guide language', metaDescription: 'A visual guide to the Prysai LLM Playbook learning loop, with accessible text fallbacks and project-authored teaching boards.' },
     zh: { brandAria: 'Prysai LLM Playbook 首页', navAria: '视觉导览导航', languageAria: '选择视觉导览语言', metaDescription: 'Prysai LLM Playbook 学习闭环的视觉导览，提供可访问的文字回退和项目原创教学图板。' },
@@ -756,6 +768,7 @@
   let activeExplorerId = 'understand';
   let activeCapabilityId = 'L0';
   let activeMaturityId = 'designed';
+  let refreshReadingNav = () => {};
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
@@ -1143,6 +1156,48 @@
     }
     const language = query('#visual-language');
     if (language) language.value = locale;
+    refreshReadingNav();
+  }
+
+  function setupReadingNav() {
+    const nav = query('.visual-reading-nav');
+    const header = query('.visual-header');
+    const links = queryAll('[data-visual-reading-link]');
+    const sections = ['visual-route', 'visual-goal', 'visual-journey', 'visual-gallery']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+    if (!nav || !header || links.length !== sections.length) return;
+
+    let framePending = false;
+    const updateOffset = () => {
+      nav.style.setProperty('--visual-header-height', `${header.getBoundingClientRect().height}px`);
+    };
+    const setActive = (sectionId) => {
+      links.forEach((link) => {
+        if (link.getAttribute('href') === `#${sectionId}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    const sync = () => {
+      framePending = false;
+      updateOffset();
+      const threshold = header.getBoundingClientRect().height + nav.getBoundingClientRect().height + 24;
+      let activeSection = sections[0];
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= threshold) activeSection = section;
+      });
+      setActive(activeSection.id);
+    };
+    const schedule = () => {
+      if (framePending) return;
+      framePending = true;
+      window.requestAnimationFrame(sync);
+    };
+    refreshReadingNav = schedule;
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    setActive(sections[0].id);
+    schedule();
   }
 
   function renderMap() {
@@ -1703,4 +1758,5 @@
   renderGallery();
   renderBoardExplorer();
   window.PRYSAI_VISUAL_ASSETS?.applyAll(document, locale);
+  setupReadingNav();
 })();

@@ -66,6 +66,7 @@ const expectedTopLevelOrder = [
   'visual-receipt', 'visual-how', 'visual-maturity',
 ];
 const expectedEntryHrefs = ['#visual-route', '#visual-goal', '#visual-journey', '#visual-gallery'];
+const expectedReadingNavHrefs = expectedEntryHrefs;
 const expectedSkillBoundaryCard = {
   en: 'Decide whether a Skill should act',
   zh: '先判断 Skill 是否应该行动',
@@ -159,6 +160,12 @@ try {
     assert.equal(await page.locator('#visual-entry').getAttribute('aria-label'), expectedEntryAria[locale], `${locale} visual entry navigation label is not localized`);
     assert.equal(await page.locator('#visual-entry-title').innerText(), expectedEntryTitle[locale], `${locale} visual entry title is not localized`);
     assert.deepEqual(
+      await page.locator('[data-visual-reading-link]').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
+      expectedReadingNavHrefs,
+      `${locale} reading navigation targets changed`,
+    );
+    assert.notEqual((await page.locator('.visual-reading-nav-label').innerText()).trim(), '', `${locale} reading navigation label is empty`);
+    assert.deepEqual(
       await page.locator('#visual-entry .visual-entry-card').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
       expectedEntryHrefs,
       `${locale} visual entry targets changed`,
@@ -196,6 +203,13 @@ try {
     assert.ok(firstScreen.firstCardTop < firstScreen.viewport, `${locale} first visual entry card does not enter the first viewport: ${JSON.stringify(firstScreen)}`);
     assert.equal(firstScreen.firstCardTitleVisible, true, `${locale} first visual entry card title is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
     assert.equal(firstScreen.actionVisible, true, `${locale} primary visual action is not visible in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.equal(await page.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'sticky', `${locale} visual header is not sticky`);
+    assert.equal(await page.locator('[data-visual-reading-link="route"]').getAttribute('aria-current'), 'location', `${locale} reading navigation has no initial location`);
+    assert.match(
+      await page.locator('[data-visual-goal-fallback] li').first().locator('a').getAttribute('href'),
+      new RegExp(`02-first-safe-task-${locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase()}\\.md&lang=${locale}$`),
+      `${locale} text fallback points to the first safe task`,
+    );
     for (const selector of ['#visual-entry', '#visual-route', '#visual-goal', '#visual-journey', '#visual-gallery']) {
       assert.notEqual(await page.locator(selector).evaluate((section) => getComputedStyle(section).scrollMarginTop), '0px', `${locale} ${selector} has no anchor offset`);
     }
@@ -280,9 +294,11 @@ try {
   assert.equal(await page.locator('.visual-footer-site').getAttribute('href'), 'https://prysai.com/', 'fr 360px footer lost the official-site link');
   const narrowFirstCard = await page.locator('#visual-entry .visual-entry-card').first().evaluate((card) => {
     const title = card.querySelector('strong')?.getBoundingClientRect();
-    return { viewport: window.innerHeight, titleTop: title?.top, titleBottom: title?.bottom };
+    const action = card.querySelector('em')?.getBoundingClientRect();
+    return { viewport: window.innerHeight, titleTop: title?.top, titleBottom: title?.bottom, actionTop: action?.top, actionBottom: action?.bottom };
   });
   assert.ok(narrowFirstCard.titleBottom <= narrowFirstCard.viewport - 8, `fr 360px first visual entry title is not usable in the first viewport: ${JSON.stringify(narrowFirstCard)}`);
+  assert.ok(narrowFirstCard.actionBottom <= narrowFirstCard.viewport - 8, `fr 360px first visual entry action is not usable in the first viewport: ${JSON.stringify(narrowFirstCard)}`);
   await page.locator('#visual-entry .visual-entry-card').first().focus();
   const focusState = await page.locator('#visual-entry .visual-entry-card').first().evaluate((link) => {
     const style = getComputedStyle(link);
