@@ -224,7 +224,7 @@ Kursseiten ausgegeben.
 - [Deutsches Inhaltsverzeichnis](book/table-of-contents-DE.md)
 - [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
 - [Einstiegskarten](book/communication-clinic-DE.md): sieben direkt kopierbare kurze Nachrichten für Sprache, Update, Entscheidung, Quellencheck und Grenzen vor dem Teilen. Es ist eine Route `draft / not_run`, keine Zusage zu Flüssigkeit, Effizienz oder Lernerfolg.
-- [Deutsche Lab-Übersicht](book/labs/README-DE.md): achtzehn risikoarme Übungen, jeweils mit einer deutschen `-DE`-Datei und einem deutschen Pfad.
+- [Deutsche Lab-Übersicht](book/labs/README-DE.md): achtzehn risikoarme Übungen mit strukturellen `-DE`-Zielen. Als redaktionell ausgearbeiteter deutscher Ausschnitt sind derzeit nur Labs 001, 007 und 011 enthalten; die übrigen Ziele dienen dem Routing.
 
 ### Projektverträge und Status
 
