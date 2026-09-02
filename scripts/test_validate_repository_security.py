@@ -23,9 +23,10 @@ def run_contract_fixture(
     sync_author: str = "Prysai-Lab",
     sync_committer: str = "web-flow",
     sync_parent: str = "base-sha",
+    main_history: set[str] | None = None,
 ) -> subprocess.CompletedProcess[str]:
     workflow = policy.PULL_REQUEST_CONTRACT_WORKFLOW.read_text(encoding="utf-8")
-    marker = "          python - \"$RUNNER_TEMP/pull-request.json\" \"$RUNNER_TEMP/pull-request-commits.json\" <<'PY'\n"
+    marker = "          python - \"$RUNNER_TEMP/pull-request.json\" \"$RUNNER_TEMP/pull-request-commits.json\" \"$RUNNER_TEMP/main-commits.json\" <<'PY'\n"
     start = workflow.index(marker) + len(marker)
     end = workflow.index("          PY\n", start)
     contract_script = textwrap.dedent(workflow[start:end])
@@ -84,8 +85,13 @@ def run_contract_fixture(
         root = Path(directory)
         pull_request_path = root / "pull-request.json"
         commits_path = root / "pull-request-commits.json"
+        main_commits_path = root / "main-commits.json"
         pull_request_path.write_text(json.dumps(pull_request), encoding="utf-8")
         commits_path.write_text(json.dumps([commits]), encoding="utf-8")
+        main_commits_path.write_text(
+            json.dumps([[{"sha": sha} for sha in (main_history or {"base-sha"})]]),
+            encoding="utf-8",
+        )
         environment = os.environ.copy()
         environment.update(
             {
@@ -102,6 +108,7 @@ def run_contract_fixture(
                 contract_script,
                 os.fspath(pull_request_path),
                 os.fspath(commits_path),
+                os.fspath(main_commits_path),
             ],
             cwd=policy.ROOT,
             env=environment,
@@ -448,7 +455,8 @@ permissions:
         require(
             "branch_sync_authors = {\"uuzzrm\", \"Prysai-Lab\"}" in pull_request_contract
             and "branch_sync_committer = \"web-flow\"" in pull_request_contract
-            and "parents[1].get(\"sha\") == base.get(\"sha\")" in pull_request_contract
+            and "main_history =" in pull_request_contract
+            and "parents[1].get(\"sha\") in main_history" in pull_request_contract
             and "and committer.get(\"login\") == branch_sync_committer" in pull_request_contract
             and "branch_sync_headline = re.compile" in pull_request_contract
             and "branch_sync_exemptions" in pull_request_contract,
@@ -462,6 +470,18 @@ permissions:
             and "PR_CONTRACT_OK" in branch_sync.stdout
             and "branch_sync_exemptions=1" in branch_sync.stdout,
             "verified GitHub main branch-sync merge was not accepted as the narrow DCO exception",
+        )
+        fixtures += 1
+
+        historical_branch_sync = run_contract_fixture(
+            sync_parent="old-base-sha",
+            main_history={"old-base-sha", "base-sha"},
+        )
+        require(
+            historical_branch_sync.returncode == 0
+            and "PR_CONTRACT_OK" in historical_branch_sync.stdout
+            and "branch_sync_exemptions=1" in historical_branch_sync.stdout,
+            "verified branch-sync merge from an older main ancestor was rejected",
         )
         fixtures += 1
 
