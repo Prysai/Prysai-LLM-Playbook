@@ -32,7 +32,24 @@ jobs:
             > "$RUNNER_TEMP/pull-request-commits.json"
           gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" \
             > "$RUNNER_TEMP/pull-request.json"
-          python - "$RUNNER_TEMP/pull-request.json" "$RUNNER_TEMP/pull-request-commits.json" <<'PY'
+          BASE_SHA="$(python - "$RUNNER_TEMP/pull-request.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          pull_request = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          print((pull_request.get("base") or {}).get("sha") or "")
+          PY
+          )"
+          if [ -z "$BASE_SHA" ]; then
+            echo "PR_CONTRACT_FAILED"
+            echo "- pull request base SHA is unavailable"
+            exit 1
+          fi
+          gh api --paginate --slurp \
+            "repos/${GITHUB_REPOSITORY}/commits?sha=${BASE_SHA}&per_page=100" \
+            > "$RUNNER_TEMP/main-commits.json"
+          python - "$RUNNER_TEMP/pull-request.json" "$RUNNER_TEMP/pull-request-commits.json" "$RUNNER_TEMP/main-commits.json" <<'PY'
           import json
           from datetime import datetime, timezone
           import os
@@ -42,7 +59,14 @@ jobs:
 
           pull_request = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
           commit_pages = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+          main_commit_pages = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
           commits = [commit for page in commit_pages for commit in page]
+          main_history = {
+              commit.get("sha")
+              for page in main_commit_pages
+              for commit in page
+              if isinstance(commit.get("sha"), str)
+          }
           body = pull_request.get("body") or ""
           expected_head = os.environ["EXPECTED_HEAD_SHA"]
           created_at = pull_request.get("created_at")
@@ -140,7 +164,7 @@ jobs:
                   and (base.get("repo") or {}).get("full_name") == os.environ.get("GITHUB_REPOSITORY")
                   and isinstance(base.get("sha"), str)
                   and len(parents) == 2
-                  and parents[1].get("sha") == base.get("sha")
+                  and parents[1].get("sha") in main_history
                   and author.get("login") in branch_sync_authors
                   and committer.get("login") == branch_sync_committer
                   and verification.get("verified") is True
