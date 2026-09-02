@@ -123,11 +123,154 @@ button, select { font: inherit; }
 
 .visual-main { width: min(1240px, calc(100% - 3rem)); margin: 0 auto; }
 
+/* The guide is a route first, then a collection of reference boards. Keep
+   those decisions visible in the layout without changing the content model. */
+.visual-main > [id] { scroll-margin-top: 5.75rem; }
+
+:where(a, button, select, summary):focus-visible {
+  outline: 3px solid var(--visual-red);
+  outline-offset: 3px;
+}
+
+:where(a, button, select, summary) { touch-action: manipulation; }
+
+img { max-width: 100%; }
+
+h1,
+h2,
+h3 { text-wrap: balance; }
+
+.visual-entry-nav {
+  display: grid;
+  grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr);
+  gap: 2rem;
+  align-items: start;
+  padding: clamp(1.9rem, 4vw, 3.25rem) 0 clamp(2.2rem, 4.5vw, 3.75rem);
+  border-bottom: 1px solid var(--visual-line);
+  border-top: 5px solid var(--visual-red);
+}
+
+.visual-entry-heading {
+  display: block;
+  min-width: 0;
+}
+
+.visual-entry-heading > * { min-width: 0; }
+
+.visual-entry-kicker {
+  color: var(--visual-red);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.visual-entry-heading h2 {
+  max-width: 19ch;
+  margin: .45rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: .98;
+  letter-spacing: -.06em;
+}
+
+.visual-entry-heading > p {
+  max-width: 42rem;
+  margin: 1.2rem 0 0;
+  color: var(--visual-muted);
+  font-size: .92rem;
+}
+
+.visual-entry-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--visual-dark-line);
+}
+
+.visual-entry-list li { display: flex; min-width: 0; }
+
+.visual-entry-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: .6rem;
+  width: 100%;
+  min-height: 12rem;
+  padding: 1rem;
+  color: var(--visual-ink);
+  background: var(--visual-white);
+  text-decoration: none;
+  transition: transform .18s ease, color .18s ease, background-color .18s ease;
+}
+
+.visual-entry-card:hover,
+.visual-entry-card:focus-visible {
+  color: var(--visual-white);
+  background: var(--visual-ink);
+  transform: translateY(-3px);
+}
+
+.visual-entry-card:focus-visible { outline-offset: -3px; }
+
+.visual-entry-index {
+  color: var(--visual-red);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.visual-entry-card strong {
+  font-size: 1.05rem;
+  line-height: 1.08;
+}
+
+.visual-entry-card span:not(.visual-entry-index) {
+  color: var(--visual-muted);
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.visual-entry-card:hover span:not(.visual-entry-index),
+.visual-entry-card:focus-visible span:not(.visual-entry-index) { color: #d7d7d2; }
+
+.visual-entry-card em {
+  color: var(--visual-red);
+  font-size: .75rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.visual-hero-actions { margin: 1.25rem 0 0; }
+
+.visual-hero-action {
+  min-height: 2.75rem;
+  margin-top: 0;
+  padding: .7rem .85rem;
+  border: 1px solid var(--visual-ink);
+  color: var(--visual-ink);
+  text-decoration: none;
+}
+
+.visual-hero-action:hover,
+.visual-hero-action:focus-visible {
+  color: var(--visual-white);
+  background: var(--visual-red);
+}
+
+.visual-entry-card strong,
+.visual-entry-card span,
+.visual-entry-card em,
+.visual-section-heading > p,
+.visual-boundary { overflow-wrap: anywhere; }
+
 .visual-hero {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 2rem;
-  padding: 6.5rem 0 5rem;
+  padding: clamp(3.25rem, 4.5vw, 4rem) 0 clamp(2rem, 3vw, 2.75rem);
   border-bottom: 1px solid var(--visual-line);
 }
 
@@ -144,12 +287,12 @@ button, select { font: inherit; }
 
 .visual-hero-index strong { color: var(--visual-ink); font-size: 3.5rem; line-height: .9; letter-spacing: -.08em; }
 
-.visual-hero-copy { max-width: 50rem; }
+.visual-hero-copy { max-width: 64rem; }
 
 .visual-hero h1 {
-  max-width: 10ch;
+  max-width: 20ch;
   margin: .9rem 0 1.2rem;
-  font-size: clamp(3rem, 8vw, 7.2rem);
+  font-size: clamp(3rem, 7vw, 6.4rem);
   line-height: .92;
   letter-spacing: -.075em;
 }
@@ -177,6 +320,16 @@ button, select { font: inherit; }
 .visual-receipt-section,
 .visual-gallery-section,
 .visual-how-section { padding: 4.25rem 0; border-bottom: 1px solid var(--visual-line); }
+
+/* Keep the route-first hierarchy after the shared section rhythm is declared. */
+.visual-primary-section { padding-top: clamp(4.75rem, 8vw, 6rem); }
+.visual-gallery-section.visual-primary-section { padding-top: clamp(3.2rem, 5vw, 4.25rem); }
+.visual-primary-section { border-top: 4px solid var(--visual-red); }
+.visual-primary-section .visual-section-heading > * { min-width: 0; }
+.visual-primary-section .visual-section-number { color: var(--visual-red); font-size: .78rem; }
+.visual-gallery-section.visual-primary-section { border-top-color: var(--visual-ink); }
+.visual-gallery-section .visual-section-heading h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+.visual-gallery-section .visual-section-heading > p { font-size: .86rem; }
 
 .visual-section-heading {
   display: grid;
@@ -1092,7 +1245,12 @@ button, select { font: inherit; }
   .visual-header-inner { grid-template-columns: auto 1fr auto; gap: .8rem; }
   .visual-nav { grid-column: 1 / -1; grid-row: 2; padding-bottom: .7rem; }
   .visual-language-label { justify-self: end; }
-  .visual-hero { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; padding-top: 4.5rem; }
+  .visual-hero { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; }
+  .visual-entry-nav { display: block; }
+  .visual-entry-heading { display: grid; grid-template-columns: minmax(0, .85fr) minmax(260px, 1.15fr); gap: 2rem; align-items: end; margin-bottom: 1.5rem; }
+  .visual-entry-heading > p { margin: 0; }
+  .visual-entry-heading { grid-template-columns: 1fr; gap: .8rem; }
+  .visual-entry-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .visual-route-workspace, .visual-goal-workspace, .visual-journey-workspace, .visual-capability-workspace, .visual-maturity-workspace, .visual-concept-workspace, .visual-action-boundary-workspace, .visual-triage-workspace, .visual-map-workspace, .visual-evidence-workspace, .visual-reading-loop-workspace, .visual-receipt-workspace, .visual-board-explorer, .visual-how-grid { grid-template-columns: 1fr; }
   .visual-map-detail, .visual-evidence-detail, .visual-reading-loop-detail, .visual-receipt-detail { min-height: 0; }
   .visual-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1104,11 +1262,29 @@ button, select { font: inherit; }
   .visual-nav { gap: .7rem; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
   .visual-language-label { display: none; }
   .visual-language { min-width: 8rem; }
-  .visual-hero { grid-template-columns: 1fr; gap: .8rem; padding: 3rem 0 3.2rem; }
+  .visual-hero { grid-template-columns: 1fr; gap: .65rem; padding: 1rem 0; }
+  /* Keep the first useful choice in view even when a locale needs more lines. */
+  .visual-hero-copy { max-width: none; }
+  .visual-hero h1 { font-size: clamp(2.35rem, 11vw, 4.2rem); line-height: .9; }
+  .visual-hero .visual-lede { line-height: 1.32; }
+  .visual-hero .visual-boundary { line-height: 1.3; }
   .visual-hero-index { display: flex; align-items: baseline; gap: .6rem; }
   .visual-hero-index strong { font-size: 2.4rem; }
-  .visual-hero h1 { max-width: 12ch; font-size: clamp(2.8rem, 14vw, 4.8rem); }
+  .visual-hero h1 { max-width: 12ch; margin: .65rem 0 .75rem; }
+  .visual-lede { font-size: .95rem; }
+  .visual-boundary { margin-top: .55rem; padding-top: .45rem; font-size: .75rem; }
+  .visual-hero-actions { margin-top: .55rem; }
+  .visual-entry-nav { padding: .9rem 0 2.5rem; }
+  .visual-entry-heading { gap: .35rem; margin-bottom: .4rem; }
+  .visual-entry-heading h2 { font-size: 1.9rem; line-height: .92; }
+  .visual-entry-heading > p { font-size: .78rem; line-height: 1.35; }
+  .visual-entry-list { grid-template-columns: 1fr; }
+  .visual-entry-card { min-height: 9.5rem; padding: .85rem; }
+  .visual-entry-card:hover, .visual-entry-card:focus-visible { transform: none; }
+  .visual-hero-action { min-height: 2.9rem; }
   .visual-route-section, .visual-goal-section, .visual-journey-section, .visual-capability-section, .visual-maturity-section, .visual-concept-section, .visual-action-boundary-section, .visual-map-section, .visual-evidence-section, .visual-reading-loop-section, .visual-receipt-section, .visual-gallery-section, .visual-how-section { padding: 3rem 0; }
+  .visual-primary-section { padding-top: 3.75rem; }
+  .visual-gallery-section.visual-primary-section { padding-top: 2.75rem; }
   .visual-section-heading { grid-template-columns: 1fr; gap: .7rem; }
   .visual-section-heading h2 { font-size: 2.3rem; }
   .visual-goal-graph, .visual-map-graph { min-height: 0; padding: .75rem; }
@@ -1255,4 +1431,26 @@ button, select { font: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 374px) {
+  .visual-hero { gap: .5rem; padding: .65rem 0 .7rem; }
+  .visual-hero-index strong { font-size: 2.2rem; }
+  .visual-hero h1 { margin-top: .5rem; margin-bottom: .55rem; font-size: clamp(2.25rem, 11vw, 3.25rem); }
+  .visual-lede { font-size: .9rem; line-height: 1.3; }
+  .visual-boundary { margin-top: .4rem; padding-top: .35rem; font-size: .68rem; line-height: 1.25; }
+  .visual-hero-actions { margin-top: .4rem; }
+  .visual-hero-action { min-height: 2.45rem; }
+  .visual-entry-nav { padding-top: .75rem; }
+  .visual-entry-heading { margin-bottom: .35rem; }
+  .visual-entry-heading h2 { font-size: 1.6rem; }
+  .visual-entry-heading > p { font-size: .7rem; line-height: 1.25; }
+  .visual-primary-section { padding-top: 3.25rem; }
+  .visual-gallery-section.visual-primary-section { padding-top: 2.5rem; }
 }

@@ -8,10 +8,10 @@
     <meta name="theme-color" content="#f7f7f2" />
     <title>Prysai LLM Playbook — Visual Guide</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="visuals.css?v=20260828-visual-footer-site-1" />
+    <link rel="stylesheet" href="visuals.css?v=20260901-visual-entry-flow-1" />
     <script src="learning-path-data.js?v=20260825-capability-ladder-1" defer></script>
     <script src="visual-assets.js?v=20260829-evidence-recovery-localized-1"></script>
-    <script src="visuals.js?v=20260828-visual-footer-site-1" defer></script>
+    <script src="visuals.js?v=20260901-visual-entry-flow-1" defer></script>
   </head>
   <body>
     <a class="visual-skip" href="#visual-main" data-i18n="skip">Skip to content</a>
@@ -43,17 +43,31 @@
     <div class="visual-banner" data-visual-banner hidden role="status" aria-live="polite"></div>
 
     <main id="visual-main" class="visual-main">
-      <section class="visual-hero" aria-labelledby="visual-title">
+      <section id="visual-hero" class="visual-hero" aria-labelledby="visual-title">
         <div class="visual-hero-index"><span>VISUAL</span><strong>01</strong></div>
         <div class="visual-hero-copy">
           <p class="visual-eyebrow" data-i18n="heroEyebrow">A picture should answer the next question.</p>
           <h1 id="visual-title" data-i18n="heroTitle">See the method before you read the detail.</h1>
           <p class="visual-lede" data-i18n="heroBody">This guide turns the Playbook's core loop into a route you can inspect: understand, frame, act, inspect, repair, and transfer.</p>
           <p class="visual-boundary" data-i18n="heroBoundary">The boards are orientation aids. The localized text and the source page remain the baseline explanation; a picture does not prove that a model acted or that a learner mastered a method.</p>
+          <p class="visual-hero-actions"><a class="visual-action-link visual-hero-action" href="#visual-entry"><span data-i18n="heroAction">Choose where to begin</span><span aria-hidden="true">↓</span></a></p>
         </div>
       </section>
 
-      <section id="visual-route" class="visual-route-section" aria-labelledby="visual-route-title">
+      <nav id="visual-entry" class="visual-entry-nav" aria-label="Choose a visual guide starting point" aria-labelledby="visual-entry-title" data-i18n-attr="aria-label:entryAria">
+        <div class="visual-entry-heading">
+          <div><span class="visual-entry-kicker" data-i18n="entryKicker">Start here</span><h2 id="visual-entry-title" data-i18n="entryTitle">Four ways in, one route to a checked attempt.</h2></div>
+          <p data-i18n="entryIntro">Use the first card that matches your need. The page keeps the order visible so you can return to the core route instead of wandering through every board.</p>
+        </div>
+        <ol class="visual-entry-list">
+          <li><a class="visual-entry-card" href="#visual-route"><span class="visual-entry-index">01</span><strong data-i18n="entryRouteTitle">Route overview</strong><span data-i18n="entryRouteBody">See how the visual guide moves from a purpose to a checked decision.</span><em data-i18n="entryRouteAction">View the order ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-goal"><span class="visual-entry-index">02</span><strong data-i18n="entryGoalTitle">Choose by purpose</strong><span data-i18n="entryGoalBody">Start with a safe task, an uncertain result, a claim, or a method to reuse.</span><em data-i18n="entryGoalAction">Choose a reason ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-journey"><span class="visual-entry-index">03</span><strong data-i18n="entryJourneyTitle">Core journey</strong><span data-i18n="entryJourneyBody">See the Foundation Core, the first bounded task, evidence, and optional tracks.</span><em data-i18n="entryJourneyAction">See the core route ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-gallery"><span class="visual-entry-index">04</span><strong data-i18n="entryGalleryTitle">Board index</strong><span data-i18n="entryGalleryBody">Choose one project-authored board only when a picture will clarify the decision.</span><em data-i18n="entryGalleryAction">Open the index ↘</em></a></li>
+        </ol>
+      </nav>
+
+      <section id="visual-route" class="visual-route-section visual-primary-section" aria-labelledby="visual-route-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">02</span><p class="visual-eyebrow" data-i18n="routeEyebrow">A guided visual route</p><h2 id="visual-route-title" data-i18n="routeTitle">Know what each picture is for.</h2></div>
           <p data-i18n="routeIntro">Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.</p>
@@ -89,7 +103,7 @@
         </details>
       </section>
 
-      <section id="visual-goal" class="visual-goal-section" aria-labelledby="visual-goal-title">
+      <section id="visual-goal" class="visual-goal-section visual-primary-section" aria-labelledby="visual-goal-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">03</span><p class="visual-eyebrow" data-i18n="goalEyebrow">Start from your question</p><h2 id="visual-goal-title" data-i18n="goalTitle">Choose a reason, not a random page.</h2></div>
           <p data-i18n="goalIntro">Pick the situation that brought you here. The map suggests one bounded next step and one visual explanation instead of sending you into the full catalogue.</p>
@@ -106,7 +120,7 @@
             <p class="visual-goal-next"><span data-i18n="goalNext">Next question</span><strong data-visual-goal-next></strong></p>
             <figure class="visual-goal-figure">
               <a data-visual-goal-image-link href="visual.html?asset=foundation-first-visit-route-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the selected route visual">
-                <img data-visual-goal-image src="../assets/teaching/foundation-first-visit-route-red-black.svg" width="900" height="1500" loading="eager" alt="" />
+                <img data-visual-goal-image src="../assets/teaching/foundation-first-visit-route-red-black.svg" width="900" height="1400" loading="lazy" alt="" />
                 <span class="visual-image-link" data-i18n="goalOpenVisual">Open the route visual</span>
               </a>
               <figcaption data-visual-goal-caption></figcaption>
@@ -126,7 +140,7 @@
         </details>
       </section>
 
-      <section id="visual-journey" class="visual-journey-section" aria-labelledby="visual-journey-title">
+      <section id="visual-journey" class="visual-journey-section visual-primary-section" aria-labelledby="visual-journey-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="journeyEyebrow">Learning journey map</p><h2 id="visual-journey-title" data-i18n="journeyTitle">See the whole Playbook before you choose a track.</h2></div>
           <p data-i18n="journeyIntro">One map answers the first practical question: what should I do now, and what comes after the first checked result?</p>
@@ -164,9 +178,65 @@
         <p class="visual-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
       </section>
 
+      <section id="visual-gallery" class="visual-gallery-section visual-primary-section" aria-labelledby="visual-gallery-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
+        </div>
+        <div class="visual-board-explorer" data-visual-board-explorer>
+          <div class="visual-board-explorer-graph" role="group" aria-label="Project teaching boards grouped by learning stage" data-i18n-attr="aria-label:explorerAria">
+            <div class="visual-board-explorer-center" aria-hidden="true">
+              <span data-i18n="explorerCenter">Selected board</span>
+              <strong data-visual-explorer-center></strong>
+            </div>
+            <ol class="visual-board-explorer-nodes" data-visual-explorer-nodes></ol>
+          </div>
+          <section class="visual-board-explorer-detail" aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="explorerSelected">Selected board</span>
+            <h3 data-visual-explorer-title></h3>
+            <figure class="visual-board-explorer-figure">
+              <a data-visual-explorer-image-link href="visual.html?asset=reader-route-compass-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open selected board">
+                <img data-visual-explorer-image src="../assets/teaching/reader-route-compass-red-black.svg" width="1200" height="780" loading="lazy" alt="" />
+                <span class="visual-image-link" data-i18n="explorerOpenVisual">Open selected board</span>
+              </a>
+              <figcaption data-visual-explorer-caption></figcaption>
+            </figure>
+            <div class="visual-board-explorer-notes">
+              <article><span>01</span><strong data-i18n="explorerReadLabel">What this board explains</strong><p data-visual-explorer-read></p></article>
+              <article><span>02</span><strong data-i18n="explorerTryLabel">What to try next</strong><p data-visual-explorer-try></p></article>
+              <article><span>03</span><strong data-i18n="explorerBoundaryLabel">What it still cannot prove</strong><p data-visual-explorer-boundary></p></article>
+            </div>
+            <p class="visual-board-explorer-next"><span data-i18n="explorerNextLabel">Next question</span><strong data-visual-explorer-next></strong></p>
+            <div class="visual-board-explorer-links">
+              <a class="visual-action-link" data-visual-explorer-lesson href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="explorerOpenLesson">Open matching lesson</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </section>
+        </div>
+        <details class="visual-board-explorer-fallback">
+          <summary data-i18n="explorerFallback">Read board choices as text</summary>
+          <p data-i18n="explorerFallbackIntro">The same board choices remain available without the interactive selection.</p>
+          <ol data-visual-explorer-fallback>
+            <li><strong>01 · Read one page as a four-step route</strong><span>Use the page map to name the next safe action before you open the full catalogue.</span><a class="visual-action-link" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en">Open the foundation guide ↗</a></li>
+            <li><strong>02 · A prompt is a small contract</strong><span>State the goal, context, allowed help, limits, check, and stop condition before asking.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
+            <li><strong>03 · A model proposal is not a tool receipt</strong><span>Separate proposed text from host authority, tool execution, and the result you can inspect.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
+            <li><strong>04 · A claim can travel only as far as its evidence</strong><span>Keep a claim inside the source, test, diff, log, or acceptance rule that supports it.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>05 · Failed interaction recovery</strong><span>Preserve the last known state, classify the failure, and choose a bounded recovery or stop.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the agent loop lesson ↗</a></li>
+            <li><strong>06 · From understanding to transfer</strong><span>Repeat the method on a new task and keep the evidence that shows what transferred.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the transfer lesson ↗</a></li>
+          </ol>
+        </details>
+        <p class="visual-boundary" data-i18n="explorerBoundary">A selected picture is an orientation aid. The source page and your own record remain the evidence boundary.</p>
+        <div class="visual-gallery" data-visual-gallery></div>
+        <details class="visual-gallery-more">
+          <summary data-i18n="galleryMoreSummary">Open more teaching boards</summary>
+          <p data-i18n="galleryMoreIntro">These additional boards cover source checks, handoffs, stopping decisions, and the reading loop. They are optional references, not a second course route.</p>
+          <div class="visual-gallery" data-visual-gallery-more></div>
+        </details>
+        <p class="visual-boundary" data-i18n="galleryBoundary">This is a focused selection from the project-authored teaching boards. It is not a quality score, benchmark, or proof of learning.</p>
+      </section>
+
       <section id="visual-capability" class="visual-capability-section" aria-labelledby="visual-capability-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="capabilityEyebrow">Capability ladder</p><h2 id="visual-capability-title" data-i18n="capabilityTitle">Choose the next capability, not the biggest tool.</h2></div>
+          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="capabilityEyebrow">Capability ladder</p><h2 id="visual-capability-title" data-i18n="capabilityTitle">Choose the next capability, not the biggest tool.</h2></div>
           <p data-i18n="capabilityIntro">The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.</p>
         </div>
         <div class="visual-capability-workspace">
@@ -191,7 +261,7 @@
             <p class="visual-capability-next"><span data-i18n="capabilityNext">Next practice</span><strong data-visual-capability-next>Open the first bounded task.</strong></p>
             <figure class="visual-capability-figure">
               <a data-visual-capability-image-link href="visual.html?asset=capability-ladder-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the capability ladder">
-                <img data-visual-capability-image src="../assets/teaching/capability-ladder-red-black.svg" width="1200" height="1750" loading="eager" alt="Seven-level capability ladder from observing an LLM result to coaching a team" data-i18n-attr="alt:capabilityFigureAlt" />
+                <img data-visual-capability-image src="../assets/teaching/capability-ladder-red-black.svg" width="1200" height="1750" loading="lazy" alt="Seven-level capability ladder from observing an LLM result to coaching a team" data-i18n-attr="alt:capabilityFigureAlt" />
                 <span class="visual-image-link" data-i18n="capabilityOpenVisual">Open the capability ladder</span>
               </a>
               <figcaption data-i18n="capabilityFigureCaption">Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.</figcaption>
@@ -217,7 +287,7 @@
 
       <section id="visual-concept" class="visual-concept-section" aria-labelledby="visual-concept-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
+          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
           <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
         </div>
         <div class="visual-concept-workspace">
@@ -232,7 +302,7 @@
             <p class="visual-concept-next"><span data-i18n="conceptNext">Next check</span><strong data-visual-concept-next></strong></p>
             <figure class="visual-concept-figure">
               <a data-visual-concept-image-link href="visual.html?asset=llm-six-terms-to-one-check.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the six-term concept board">
-                <img data-visual-concept-image src="../assets/teaching/llm-six-terms-to-one-check.svg" width="900" height="1500" loading="lazy" alt="Six LLM terms leading to one checked result" data-i18n-attr="alt:conceptFigureAlt" />
+                <img data-visual-concept-image src="../assets/teaching/llm-six-terms-to-one-check.svg" width="1400" height="1000" loading="lazy" alt="Six LLM terms leading to one checked result" data-i18n-attr="alt:conceptFigureAlt" />
                 <span class="visual-image-link" data-i18n="conceptOpenVisual">Open the full concept board</span>
               </a>
               <figcaption data-i18n="conceptFigureCaption">Project-authored concept board. The selected term, ordered list, and source lesson carry the explanation; the image is an orientation aid.</figcaption>
@@ -257,7 +327,7 @@
 
       <section id="visual-action-boundary" class="visual-action-boundary-section" aria-labelledby="visual-action-boundary-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
+          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
           <p data-i18n="boundaryIntro">Follow one request through the layers that can be checked: a model proposes words, the host decides authority, a tool may run, a person reads the result, and evidence sets the claim limit.</p>
         </div>
         <div class="visual-action-boundary-workspace">
@@ -296,7 +366,7 @@
 
       <section id="visual-triage" class="visual-triage-section" aria-labelledby="visual-triage-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
+          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
           <p data-i18n="triageIntro">A response can be text, a run claim, an external effect, or an unknown dressed up as certainty. Choose the branch first; it tells you which record can change your claim.</p>
         </div>
         <div class="visual-triage-workspace">
@@ -334,7 +404,7 @@
 
       <section id="visual-map" class="visual-map-section" aria-labelledby="visual-map-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
+          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
           <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
         </div>
         <div class="visual-map-workspace">
@@ -366,7 +436,7 @@
 
       <section id="visual-evidence" class="visual-evidence-section" aria-labelledby="visual-evidence-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
+          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
           <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
         </div>
         <div class="visual-evidence-workspace">
@@ -405,7 +475,7 @@
 
       <section id="visual-reading-loop" class="visual-reading-loop-section" aria-labelledby="visual-reading-loop-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
+          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
           <p data-i18n="readingIntro">Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.</p>
         </div>
         <div class="visual-reading-loop-workspace">
@@ -445,7 +515,7 @@
 
       <section id="visual-receipt" class="visual-receipt-section" aria-labelledby="visual-receipt-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="receiptEyebrow">First-attempt receipt</p><h2 id="visual-receipt-title" data-i18n="receiptTitle">Do the small attempt. Keep the receipt.</h2></div>
+          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="receiptEyebrow">First-attempt receipt</p><h2 id="visual-receipt-title" data-i18n="receiptTitle">Do the small attempt. Keep the receipt.</h2></div>
           <p data-i18n="receiptIntro">This five-step map turns a safe first try into a record another person can inspect. Select a step to see what to keep, what to ask next, and where the matching lesson begins.</p>
         </div>
         <div class="visual-receipt-workspace">
@@ -482,62 +552,6 @@
         <p class="visual-boundary" data-i18n="receiptBoundary">A receipt shows what was recorded for one bounded attempt. It does not prove that the task was correct, transferable, or mastered.</p>
       </section>
 
-      <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
-          <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
-        </div>
-        <div class="visual-board-explorer" data-visual-board-explorer>
-          <div class="visual-board-explorer-graph" role="group" aria-label="Project teaching boards grouped by learning stage" data-i18n-attr="aria-label:explorerAria">
-            <div class="visual-board-explorer-center" aria-hidden="true">
-              <span data-i18n="explorerCenter">Selected board</span>
-              <strong data-visual-explorer-center></strong>
-            </div>
-            <ol class="visual-board-explorer-nodes" data-visual-explorer-nodes></ol>
-          </div>
-          <section class="visual-board-explorer-detail" aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="explorerSelected">Selected board</span>
-            <h3 data-visual-explorer-title></h3>
-            <figure class="visual-board-explorer-figure">
-              <a data-visual-explorer-image-link href="visual.html?asset=reader-route-compass-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open selected board">
-                <img data-visual-explorer-image src="../assets/teaching/reader-route-compass-red-black.svg" width="900" height="1500" loading="eager" alt="" />
-                <span class="visual-image-link" data-i18n="explorerOpenVisual">Open selected board</span>
-              </a>
-              <figcaption data-visual-explorer-caption></figcaption>
-            </figure>
-            <div class="visual-board-explorer-notes">
-              <article><span>01</span><strong data-i18n="explorerReadLabel">What this board explains</strong><p data-visual-explorer-read></p></article>
-              <article><span>02</span><strong data-i18n="explorerTryLabel">What to try next</strong><p data-visual-explorer-try></p></article>
-              <article><span>03</span><strong data-i18n="explorerBoundaryLabel">What it still cannot prove</strong><p data-visual-explorer-boundary></p></article>
-            </div>
-            <p class="visual-board-explorer-next"><span data-i18n="explorerNextLabel">Next question</span><strong data-visual-explorer-next></strong></p>
-            <div class="visual-board-explorer-links">
-              <a class="visual-action-link" data-visual-explorer-lesson href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="explorerOpenLesson">Open matching lesson</span><span aria-hidden="true">↗</span></a>
-            </div>
-          </section>
-        </div>
-        <details class="visual-board-explorer-fallback">
-          <summary data-i18n="explorerFallback">Read board choices as text</summary>
-          <p data-i18n="explorerFallbackIntro">The same board choices remain available without the interactive selection.</p>
-          <ol data-visual-explorer-fallback>
-            <li><strong>01 · Read one page as a four-step route</strong><span>Use the page map to name the next safe action before you open the full catalogue.</span><a class="visual-action-link" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en">Open the foundation guide ↗</a></li>
-            <li><strong>02 · A prompt is a small contract</strong><span>State the goal, context, allowed help, limits, check, and stop condition before asking.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
-            <li><strong>03 · A model proposal is not a tool receipt</strong><span>Separate proposed text from host authority, tool execution, and the result you can inspect.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
-            <li><strong>04 · A claim can travel only as far as its evidence</strong><span>Keep a claim inside the source, test, diff, log, or acceptance rule that supports it.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
-            <li><strong>05 · Failed interaction recovery</strong><span>Preserve the last known state, classify the failure, and choose a bounded recovery or stop.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the agent loop lesson ↗</a></li>
-            <li><strong>06 · From understanding to transfer</strong><span>Repeat the method on a new task and keep the evidence that shows what transferred.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the transfer lesson ↗</a></li>
-          </ol>
-        </details>
-        <p class="visual-boundary" data-i18n="explorerBoundary">A selected picture is an orientation aid. The source page and your own record remain the evidence boundary.</p>
-        <div class="visual-gallery" data-visual-gallery></div>
-        <details class="visual-gallery-more">
-          <summary data-i18n="galleryMoreSummary">Open more teaching boards</summary>
-          <p data-i18n="galleryMoreIntro">These additional boards cover source checks, handoffs, stopping decisions, and the reading loop. They are optional references, not a second course route.</p>
-          <div class="visual-gallery" data-visual-gallery-more></div>
-        </details>
-        <p class="visual-boundary" data-i18n="galleryBoundary">This is a focused selection from the project-authored teaching boards. It is not a quality score, benchmark, or proof of learning.</p>
-      </section>
-
       <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">14</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
@@ -555,7 +569,7 @@
           </div>
           <figure class="visual-how-figure">
             <a href="visual.html?asset=reader-page-anatomy-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" data-visual-anatomy-link>
-              <img src="../assets/teaching/reader-page-anatomy-red-black.svg" width="900" height="1500" loading="eager" alt="How to read one Prysai LLM Playbook page" data-visual-anatomy-image />
+              <img src="../assets/teaching/reader-page-anatomy-red-black.svg" width="900" height="1500" loading="lazy" alt="How to read one Prysai LLM Playbook page" data-visual-anatomy-image />
               <span class="visual-image-link" data-i18n="openFullVisual">Open full-size visual</span>
             </a>
             <figcaption data-i18n="howFigureCaption">Project-authored page anatomy: orient, name the concept, act, inspect, keep the boundary visible, and transfer the method.</figcaption>

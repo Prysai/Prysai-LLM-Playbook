@@ -71,6 +71,34 @@
     },
   };
 
+  const ENTRY_COPY = {
+    en: {
+      heroAction: 'Choose where to begin', entryAria: 'Choose a visual guide starting point', entryKicker: 'Start here', entryTitle: 'Four ways in, one route to a checked attempt.', entryIntro: 'Use the first card that matches your need. The page keeps the order visible so you can return to the core route instead of wandering through every board.', entryRouteTitle: 'Route overview', entryRouteBody: 'See how the visual guide moves from a purpose to a checked decision.', entryRouteAction: 'View the order ↘', entryGoalTitle: 'Choose by purpose', entryGoalBody: 'Start with a safe task, an uncertain result, a claim, or a method to reuse.', entryGoalAction: 'Choose a reason ↘', entryJourneyTitle: 'Core journey', entryJourneyBody: 'See the Foundation Core, the first bounded task, evidence, and optional tracks.', entryJourneyAction: 'See the core route ↘', entryGalleryTitle: 'Board index', entryGalleryBody: 'Choose one project-authored board only when a picture will clarify the decision.', entryGalleryAction: 'Open the index ↘',
+    },
+    zh: {
+      heroAction: '选择从哪里开始', entryAria: '选择视觉导览的起点', entryKicker: '从这里开始', entryTitle: '四种入口，通向一次可检查的尝试。', entryIntro: '选择最符合你当前需要的入口。页面会保留清晰顺序，让你回到核心路线，而不是在所有图板之间漫游。', entryRouteTitle: '路线总览', entryRouteBody: '先看视觉导览如何从一个目的走到一个可检查的决定。', entryRouteAction: '查看顺序 ↘', entryGoalTitle: '按目的进入', entryGoalBody: '从安全任务、不确定的结果、待核验结论或要复用的方法开始。', entryGoalAction: '选择一个目的 ↘', entryJourneyTitle: '核心路线', entryJourneyBody: '查看基础核心课、首次有边界任务、证据闭环和可选路径。', entryJourneyAction: '查看核心路线 ↘', entryGalleryTitle: '图板索引', entryGalleryBody: '只有当图片能帮助你理解一个决定时，才选择一张项目原创图板。', entryGalleryAction: '打开图板索引 ↘',
+    },
+    es: {
+      heroAction: 'Elige por dónde empezar', entryAria: 'Elegir un punto de entrada a la guía visual', entryKicker: 'Empieza aquí', entryTitle: 'Cuatro entradas, un recorrido hacia un intento comprobable.', entryIntro: 'Usa la primera tarjeta que corresponda a tu necesidad. La página mantiene visible el orden para que vuelvas a la ruta central en vez de perderte entre los tableros.', entryRouteTitle: 'Resumen del recorrido', entryRouteBody: 'Mira cómo la guía visual pasa de un propósito a una decisión comprobable.', entryRouteAction: 'Ver el orden ↘', entryGoalTitle: 'Entrar por propósito', entryGoalBody: 'Empieza por una tarea segura, un resultado incierto, una afirmación o un método que quieras reutilizar.', entryGoalAction: 'Elegir un motivo ↘', entryJourneyTitle: 'Ruta central', entryJourneyBody: 'Consulta el Foundation Core, la primera tarea acotada, las pruebas y las rutas opcionales.', entryJourneyAction: 'Ver la ruta central ↘', entryGalleryTitle: 'Índice de tableros', entryGalleryBody: 'Elige un tablero original del proyecto solo cuando una imagen aclare la decisión.', entryGalleryAction: 'Abrir el índice ↘',
+    },
+    ja: {
+      heroAction: 'どこから始めるか選ぶ', entryAria: 'ビジュアルガイドの開始地点を選ぶ', entryKicker: 'ここから始める', entryTitle: '4つの入口から、確認できる試行へ進む。', entryIntro: '今の目的に合うカードを1つ選びます。順序を見失わず、すべてのボードをさまよう代わりに中心ルートへ戻れます。', entryRouteTitle: 'ルート全体を見る', entryRouteBody: 'ビジュアルガイドが目的から確認できる判断へ進む流れを見ます。', entryRouteAction: '順序を見る ↘', entryGoalTitle: '目的から入る', entryGoalBody: '安全なタスク、不確かな結果、確認したい主張、再利用したい方法から始めます。', entryGoalAction: '理由を選ぶ ↘', entryJourneyTitle: '中心ルート', entryJourneyBody: 'Foundation Core、最初の範囲付きタスク、証拠のループ、任意のルートを確認します。', entryJourneyAction: '中心ルートを見る ↘', entryGalleryTitle: 'ボード索引', entryGalleryBody: '図が判断を明確にするときだけ、プロジェクト作成のボードを1つ選びます。', entryGalleryAction: '索引を開く ↘',
+    },
+    ko: {
+      heroAction: '시작할 곳 고르기', entryAria: '시각 안내서 시작점 선택', entryKicker: '여기서 시작하세요', entryTitle: '네 가지 입구에서 확인 가능한 시도 하나로.', entryIntro: '지금 필요한 것에 맞는 첫 카드를 고르세요. 모든 보드 사이를 헤매지 않고 핵심 경로로 돌아올 수 있도록 순서를 계속 보여 줍니다.', entryRouteTitle: '경로 개요', entryRouteBody: '시각 안내서가 목적에서 확인 가능한 결정으로 이어지는 흐름을 보세요.', entryRouteAction: '순서 보기 ↘', entryGoalTitle: '목적으로 들어가기', entryGoalBody: '안전한 작업, 불확실한 결과, 확인할 주장 또는 재사용할 방법에서 시작하세요.', entryGoalAction: '이유 고르기 ↘', entryJourneyTitle: '핵심 여정', entryJourneyBody: 'Foundation Core, 첫 번째 범위가 정해진 작업, 증거 루프와 선택 경로를 보세요.', entryJourneyAction: '핵심 경로 보기 ↘', entryGalleryTitle: '보드 색인', entryGalleryBody: '그림이 결정을 명확하게 해 줄 때만 프로젝트 교육 보드 하나를 고르세요.', entryGalleryAction: '색인 열기 ↘',
+    },
+    de: {
+      heroAction: 'Einstieg wählen', entryAria: 'Startpunkt des visuellen Leitfadens wählen', entryKicker: 'Hier beginnen', entryTitle: 'Vier Einstiege, ein Weg zu einem prüfbaren Versuch.', entryIntro: 'Wähle die erste Karte, die zu deinem Bedarf passt. Die Reihenfolge bleibt sichtbar, damit du zur Kernroute zurückkehrst, statt dich zwischen allen Tafeln zu verlieren.', entryRouteTitle: 'Routenübersicht', entryRouteBody: 'Sieh, wie der visuelle Leitfaden von einem Zweck zu einer prüfbaren Entscheidung führt.', entryRouteAction: 'Reihenfolge ansehen ↘', entryGoalTitle: 'Nach Zweck einsteigen', entryGoalBody: 'Beginne mit einer sicheren Aufgabe, einem unsicheren Ergebnis, einer zu prüfenden Aussage oder einer wiederverwendbaren Methode.', entryGoalAction: 'Anlass wählen ↘', entryJourneyTitle: 'Kernroute', entryJourneyBody: 'Sieh den Foundation Core, die erste begrenzte Aufgabe, Belege und optionale Routen.', entryJourneyAction: 'Kernroute ansehen ↘', entryGalleryTitle: 'Tafelindex', entryGalleryBody: 'Wähle eine projektbezogene Lehrtafel nur dann, wenn ein Bild die Entscheidung klärt.', entryGalleryAction: 'Index öffnen ↘',
+    },
+    'zh-tw': {
+      heroAction: '選擇從哪裡開始', entryAria: '選擇視覺導覽的起點', entryKicker: '從這裡開始', entryTitle: '四種入口，通往一次可檢查的嘗試。', entryIntro: '選擇最符合你目前需要的入口。頁面會保留清楚順序，讓你回到核心路線，而不是在所有圖板之間漫無目的地瀏覽。', entryRouteTitle: '路線總覽', entryRouteBody: '先看視覺導覽如何從一個目的走到一個可檢查的判斷。', entryRouteAction: '查看順序 ↘', entryGoalTitle: '依目的進入', entryGoalBody: '從安全任務、不確定的結果、待核實主張或想重複使用的方法開始。', entryGoalAction: '選擇一個目的 ↘', entryJourneyTitle: '核心路線', entryJourneyBody: '查看基礎核心課、第一次有界線的任務、證據閉環與可選路徑。', entryJourneyAction: '查看核心路線 ↘', entryGalleryTitle: '圖板索引', entryGalleryBody: '只有當圖片能幫助你理解一個判斷時，才選擇一張專案原創圖板。', entryGalleryAction: '開啟圖板索引 ↘',
+    },
+    fr: {
+      heroAction: 'Choisir par où commencer', entryAria: 'Choisir un point de départ dans le guide visuel', entryKicker: 'Commencer ici', entryTitle: 'Quatre entrées, un parcours vers un essai vérifiable.', entryIntro: 'Choisissez la première carte qui correspond à votre besoin. L’ordre reste visible pour vous ramener au parcours central plutôt que vous perdre parmi les planches.', entryRouteTitle: 'Vue d’ensemble du parcours', entryRouteBody: 'Voyez comment le guide visuel passe d’un objectif à une décision vérifiable.', entryRouteAction: 'Voir l’ordre ↘', entryGoalTitle: 'Entrer par besoin', entryGoalBody: 'Commencez par une tâche sûre, un résultat incertain, une affirmation à vérifier ou une méthode à réutiliser.', entryGoalAction: 'Choisir un besoin ↘', entryJourneyTitle: 'Parcours central', entryJourneyBody: 'Découvrez le Foundation Core, la première tâche délimitée, les preuves et les parcours facultatifs.', entryJourneyAction: 'Voir le parcours central ↘', entryGalleryTitle: 'Index des planches', entryGalleryBody: 'Choisissez une planche créée par le projet seulement si une image clarifie la décision.', entryGalleryAction: 'Ouvrir l’index ↘',
+    },
+  };
+  Object.entries(ENTRY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const ACCESSIBILITY_COPY = {
     en: { brandAria: 'Prysai LLM Playbook home', navAria: 'Visual guide navigation', languageAria: 'Choose visual guide language', metaDescription: 'A visual guide to the Prysai LLM Playbook learning loop, with accessible text fallbacks and project-authored teaching boards.' },
     zh: { brandAria: 'Prysai LLM Playbook 首页', navAria: '视觉导览导航', languageAria: '选择视觉导览语言', metaDescription: 'Prysai LLM Playbook 学习闭环的视觉导览，提供可访问的文字回退和项目原创教学图板。' },
@@ -681,6 +709,35 @@
       },
     },
   ];
+
+  // Reserve each board's real viewBox ratio before lazy images finish loading.
+  // The card grid can still use a consistent thumbnail crop without making a
+  // landscape board claim portrait dimensions in the document.
+  const VISUAL_DIMENSIONS = Object.freeze({
+    'reader-route-compass-red-black.svg': [1200, 780],
+    'llm-six-terms-to-one-check.svg': [1400, 1000],
+    'response-claim-triage-red-black.svg': [900, 1500],
+    'goal-entry-decision-map-red-black.svg': [900, 1400],
+    'model-choice-is-a-test.svg': [1600, 900],
+    'first-task-evidence-bridge-red-black.svg': [900, 1500],
+    'first-attempt-evidence-receipt-red-black.svg': [900, 1400],
+    'experiment-record-anatomy-red-black.svg': [900, 1500],
+    'prompt-contract-six-fields-red-black.svg': [900, 1400],
+    'first-turn-contract-card.svg': [900, 1500],
+    'conversation-safety-card-red-black.svg': [900, 1450],
+    'side-effect-boundary-decision-map.svg': [900, 1400],
+    'task-to-evidence-red-black.svg': [900, 1400],
+    'claim-to-evidence-audit-red-black.svg': [900, 1500],
+    'source-check-before-belief-red-black.svg': [900, 1400],
+    'evidence-to-decision-stop-map-red-black.svg': [900, 1500],
+    'failed-interaction-recovery-red-black.svg': [1600, 900],
+    'recovery-decision-tree-red-black.svg': [900, 1500],
+    'understanding-to-transfer-red-black.svg': [900, 1400],
+    'beginner-practice-loop-red-black.svg': [900, 1400],
+    'evidence-maturity-ladder-red-black.svg': [900, 1500],
+    'skill-trigger-boundary-decision-map.svg': [900, 1500],
+  });
+  const visualDimensions = (asset) => VISUAL_DIMENSIONS[asset] || [900, 1500];
 
   const params = new URLSearchParams(window.location.search);
   const requestedLocale = params.get('lang');
@@ -1496,6 +1553,7 @@
       const image = document.createElement('img');
       image.src = assetHref(card.asset);
       image.loading = 'lazy';
+      [image.width, image.height] = visualDimensions(card.asset);
       image.alt = `${localized(card.titles)} — ${localized(card.bodies)}`;
       link.append(image);
       const stageLabel = document.createElement('span');
@@ -1584,6 +1642,7 @@
     if (title) title.textContent = localized(card.titles);
     if (image) {
       image.src = assetHref(card.asset);
+      [image.width, image.height] = visualDimensions(card.asset);
       image.alt = `${localized(card.titles)} — ${localized(card.bodies)}`;
     }
     if (imageLink) {
