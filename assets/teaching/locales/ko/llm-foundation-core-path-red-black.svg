@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">LLM Foundation Core 5단계 학습 경로</title>
-  <desc id="desc">이 다섯 단계 경로는 안전한 한 번의 시도에서 시작해 맥락과 지시를 드러내고, 눈에 보이는 실패를 알아차리고, 결과를 점검·수정한 뒤 처음 보는 작업에 방법을 적용합니다.</desc>
+  <desc id="desc">이 다섯 단계 경로는 안전한 시도에서 시작해 작업 항목을 보이게 하고, 눈에 보이는 실패를 이름 붙이고, 증거로 점검·수정한 뒤 처음 보는 작업에 방법을 적용합니다.</desc>
   <rect width="900" height="1400" fill="#f6f6f2"/>
   <rect x="42" y="34" width="816" height="10" fill="#171717"/>
   <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LLM FOUNDATION CORE / 다섯 단계</text>
@@ -19,31 +19,31 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / 시도</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">안전하게 한 번 시도하세요.</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">허구의 오프라인 작업을 사용하고 첫 답변을 남기세요.</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">첫 답변을 기준으로 남기세요.</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / 틀 잡기</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">맥락과 지시를 보이게 하세요.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">제공된 사실, 빠진 사실, 한계와 답변 형식을 나누세요.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">작업 항목을 보이게 하세요.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">목표, 맥락, 한계와 답변 형식.</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / 알아차리기</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">눈에 보이는 실패 유형을 알아보세요.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">누락, 꾸며 낸 내용, 억지로 만든 모호함과 과도한 확신을 표시하세요.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">눈에 보이는 실패를 이름 붙이세요.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">누락, 꾸며 냄, 모호함 또는 과도한 확신.</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / 수정하기</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">점검하고 수정한 뒤 한계를 밝히세요.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">증거와 대조하고 조건 하나만 바꾼 뒤 남은 빈틈을 기록하세요.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">증거로 점검하고 수정하세요.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">증거와 대조하세요. 조건 하나만 바꾸세요.</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / 전이</text>
-    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">처음 보는 작업에 반복 적용하세요.</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">저장한 경로는 연습일 뿐입니다. 새 작업에는 별도 점검이 필요합니다.</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">처음 보는 작업에 방법을 반복하세요.</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">새 작업에는 별도 점검이 필요합니다.</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>

@@ -19,36 +19,36 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / ATTEMPT</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Start with one safe attempt.</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Use a fictional, offline task and keep the first response.</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Keep the first response as the baseline.</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / FRAME</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Make context and instruction visible.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Separate supplied facts, missing facts, limits, and answer shape.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Make the task fields visible.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Goal, context, limits, and answer shape.</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / NOTICE</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Recognize visible failure modes.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Mark omissions, inventions, forced ambiguity, and overconfidence.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Name the visible failure.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Omission, invention, ambiguity, or overconfidence.</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / REPAIR</text>
     <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Check, repair, and state limits.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Compare with evidence, change one condition, and keep the gap.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Compare with evidence. Change one condition.</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / TRANSFER</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Repeat it on an unseen task.</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">A saved route is practice; a new task needs its own check.</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">A new task needs its own check.</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>
   <text x="66" y="1235" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">BOUNDARY / CANDIDATE ROUTE</text>
   <text x="66" y="1278" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">ONE ATTEMPT IS NOT MASTERY.</text>
-  <text x="66" y="1308" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Keep the artifact, the limit, and the next question.</text>
+  <text x="66" y="1308" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Keep the artifact, limit, and next question.</text>
   <text x="42" y="1372" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / PRACTICE BEFORE CLAIM</text>
 </svg>

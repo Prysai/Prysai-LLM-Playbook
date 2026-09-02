@@ -27,6 +27,22 @@ STABLE = {
 # widths reserve a small inset inside the card's right edge while preserving
 # the text as one accessible SVG node.
 LOCALIZED_TEXT_MAX_WIDTHS = {
+    "llm-foundation-core-path-red-black.svg": {
+        "es": {
+            3: 810,  # x=42; keep the red headline inside the 858px frame
+        },
+        "de": {
+            18: 710,  # x=122 after the card transform; keep the transfer title inside the card
+        },
+        "fr": {
+            3: 810,  # x=42; keep the red headline inside the 858px frame
+        },
+    },
+    "playbook-learning-journey-red-black.svg": {
+        "de": {
+            14: 930,  # x=168 after the stage transform; keep the evidence title inside the card
+        },
+    },
     "evidence-maturity-ladder-red-black.svg": {
         "es": {
             4: 762,  # x=78; card right edge=858
@@ -516,79 +532,79 @@ add_asset_locales("evidence-recovery-ladder.svg", {
 add_asset_locales("foundation-first-visit-route-red-black.svg", {
     "zh": (
         "第一次造访路线：完成一个可检查的 LLM 任务",
-        "这张五步教学图带你完成第一次造访：选定一个目标，打开 LLM 基础核心，做一次安全尝试，检查记录，然后继续下一条路线，或让未知保持可见并停下。",
+        "这张五步教学图带你完成第一次造访：选定一个目标，打开 LLM 基础核心，做一次安全尝试，检查记录；只有下一项证明存在时才继续，否则让未知保持可见并停下。",
         [
-            "起点／第一次造访", "一条安全路线。", "先于完整目录。", "选一个目标，做一次小尝试，并保留记录。",
-            "01", "选择", "说清一个结果。", "只理解、练习或检查一件小事。", "02", "打开", "从基础核心开始。", "先了解模型边界，再选择平台。",
-            "03", "尝试", "做一次安全尝试。", "使用虚构或本地的非敏感材料。", "04", "检查", "阅读实际记录。", "对照回答、差异、来源、测试或日志。",
-            "05", "继续／停止", "选择下一条有边界的路线。", "下一项证明缺失时，让未知保持可见。", "边界", "目录是一组选择，不是第一项任务。",
-            "这条路线帮助访客定位；不能证明学习或掌握。", "PRYSAI LAB／原创教学图／从小处开始，检查重要之处",
+            "起点／第一次造访", "一条安全路线。", "先于完整目录。", "选一个目标。做一次小尝试。保留记录。",
+            "01", "选择", "说清一个结果。", "只理解、练习或检查一件小事。", "02", "打开", "从基础核心开始。", "先了解模型边界。",
+            "03", "尝试", "做一次安全尝试。", "使用虚构、本地、非敏感的材料。", "04", "检查", "阅读实际记录。", "对照回答、差异、来源、测试或日志。",
+            "05", "决定／停止", "选择下一条有边界的路线。", "只有下一项证明存在时才继续。", "证据／停止", "缺少证明就停下，让未知保持可见。",
+            "这张图帮助访客定位；不能证明学习。", "PRYSAI LAB／原创教学图／先练习，再下结论",
         ],
     ),
     "es": (
         "Recorrido de primera visita para una tarea LLM comprobable",
-        "Esta lámina de cinco pasos guía la primera visita: elige un objetivo, abre el LLM Foundation Core, haz un intento seguro, revisa el registro y continúa por otra ruta o detente dejando visible lo que se desconoce.",
+        "Esta lámina de cinco pasos guía la primera visita: elige un objetivo, abre el LLM Foundation Core, haz un intento seguro y revisa el registro; continúa solo si existe la siguiente prueba, o detente dejando visible lo desconocido.",
         [
-            "INICIO / PRIMERA VISITA", "UN RECORRIDO SEGURO.", "ANTES DEL CATÁLOGO.", "Elige un objetivo, haz un intento pequeño y conserva el registro.",
-            "01", "ELEGIR", "Nombra un resultado.", "Entiende, practica o comprueba una sola cosa pequeña.", "02", "ABRIR", "Empieza por el LLM Foundation Core.", "Conoce el límite del modelo antes de elegir plataforma.",
-            "03", "PROBAR", "Haz un intento seguro.", "Usa material ficticio o local, sin datos sensibles.", "04", "COMPROBAR", "Lee el registro real.", "Compara la respuesta, el diff, la fuente, la prueba o el registro.",
-            "05", "CONTINUAR / PARAR", "Elige el siguiente recorrido acotado.", "Si falta la próxima prueba, deja visible lo que no sabes.", "LÍMITE", "El catálogo ofrece opciones; no es la primera tarea.",
-            "Este recorrido orienta al visitante; no demuestra aprendizaje ni dominio.", "PRYSAI LAB / TABLERO ORIGINAL / EMPIEZA PEQUEÑO, COMPRUEBA LO IMPORTANTE",
+            "INICIO / PRIMERA VISITA", "UN RECORRIDO SEGURO.", "ANTES DEL CATÁLOGO.", "Elige un objetivo. Haz un intento pequeño. Conserva el registro.",
+            "01", "ELEGIR", "Nombra un resultado.", "Comprende, practica o comprueba una sola cosa pequeña.", "02", "ABRIR", "Empieza por el Foundation Core.", "Conoce primero el límite del modelo.",
+            "03", "PROBAR", "Haz un intento seguro.", "Usa material ficticio, local y no sensible.", "04", "COMPROBAR", "Lee el registro real.", "Compara respuesta, diff, fuente, prueba o registro.",
+            "05", "DECIDIR / PARAR", "Elige el siguiente recorrido acotado.", "Continúa solo cuando exista la próxima prueba.", "EVIDENCIA / PARAR", "Si falta la prueba, detente y deja visible lo desconocido.",
+            "Este mapa orienta al visitante; no demuestra aprendizaje.", "PRYSAI LAB / TABLERO ORIGINAL / PRACTICA ANTES DE AFIRMAR",
         ],
     ),
     "ja": (
         "初回訪問で確認できる LLM タスクへ進むルート",
-        "5段階の教材図です。目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行い、記録を確認します。その後は次のルートへ進むか、不明点を見えるまま止まります。",
+        "5段階の教材図です。目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行って記録を確認します。次の証拠があるときだけ続け、なければ不明点を見えるまま止まります。",
         [
-            "スタート / 初回訪問", "安全なルートを1つ。", "カタログを見る前に。", "目的を1つ決め、小さく試して、記録を残す。",
-            "01", "選ぶ", "結果を1つ言葉にする。", "小さな1点を理解・練習・確認する。", "02", "開く", "LLM Foundation Coreから始める。", "プラットフォームを選ぶ前に、モデルの境界を知る。",
-            "03", "試す", "安全な試行を1回行う。", "架空またはローカルの非機密データを使う。", "04", "確認", "実際の記録を読む。", "応答、差分、出典、テスト、ログを照合する。",
-            "05", "続ける / 止める", "次の範囲を区切ったルートを選ぶ。", "次の証拠がなければ、不明点を見えるままにする。", "境界", "カタログは選択肢であり、最初の課題ではない。",
-            "このルートは訪問者を案内するだけで、学習や習得を証明しない。", "PRYSAI LAB / オリジナル教材図 / 小さく始め、重要な点を確認する",
+            "スタート / 初回訪問", "安全なルートを1つ。", "カタログを見る前に。", "目的を1つ決める。小さく試す。記録を残す。",
+            "01", "選ぶ", "結果を1つ言葉にする。", "小さな1点だけを理解・練習・確認する。", "02", "開く", "Foundation Coreから始める。", "まずモデルの境界を知る。",
+            "03", "試す", "安全な試行を1回行う。", "架空でローカルな、非機密の資料を使う。", "04", "確認", "実際の記録を読む。", "応答、差分、出典、テスト、ログを比べる。",
+            "05", "決める / 止める", "次の範囲を区切ったルートを選ぶ。", "次の証拠があるときだけ続ける。", "証拠 / 止める", "証拠がなければ止まり、不明点を見えるままにする。",
+            "この図は訪問者を案内するが、学習を証明しない。", "PRYSAI LAB / オリジナル教材図 / 主張する前に練習する",
         ],
     ),
     "ko": (
         "확인 가능한 LLM 작업으로 이어지는 첫 방문 경로",
-        "이 다섯 단계 교육 그림은 첫 방문의 순서를 보여 줍니다. 목표를 하나 정하고 LLM Foundation Core를 연 뒤 안전하게 한 번 시도하고 기록을 확인하세요. 다음 경로로 가거나 모르는 점을 드러낸 채 멈춥니다.",
+        "이 다섯 단계 교육 그림은 첫 방문의 순서를 보여 줍니다. 목표를 하나 정하고 LLM Foundation Core를 연 뒤 안전하게 한 번 시도하고 기록을 확인하세요. 다음 증거가 있을 때만 계속하고, 없으면 모르는 점을 드러낸 채 멈춥니다.",
         [
-            "시작 / 첫 방문", "안전한 경로 하나.", "카탈로그보다 먼저.", "목표를 하나 정하고 작게 시도한 뒤 기록을 남기세요.",
-            "01", "선택", "결과를 하나로 정하세요.", "작은 한 가지를 이해하거나 연습하거나 점검하세요.", "02", "열기", "LLM Foundation Core부터 시작하세요.", "플랫폼을 고르기 전에 모델의 경계를 알아보세요.",
-            "03", "시도", "안전하게 한 번 시도하세요.", "허구 또는 로컬의 민감하지 않은 자료를 사용하세요.", "04", "점검", "실제 기록을 읽으세요.", "답변, diff, 출처, 테스트 또는 로그를 대조하세요.",
-            "05", "계속 / 중지", "다음 범위가 분명한 경로를 고르세요.", "다음 증거가 없으면 모르는 점을 그대로 보이게 하세요.", "경계", "카탈로그는 선택지 모음이지 첫 작업이 아닙니다.",
-            "이 경로는 방문자의 방향을 잡아 주지만 학습이나 숙련을 증명하지 않습니다.", "PRYSAI LAB / 프로젝트 원본 교육 그림 / 작게 시작하고 중요한 것을 점검하기",
+            "시작 / 첫 방문", "안전한 경로 하나.", "카탈로그보다 먼저.", "목표를 하나 정하세요. 작게 시도하세요. 기록을 남기세요.",
+            "01", "선택", "결과를 하나로 정하세요.", "작은 한 가지를 이해하거나 연습하거나 점검하세요.", "02", "열기", "Foundation Core부터 시작하세요.", "먼저 모델의 경계를 알아보세요.",
+            "03", "시도", "안전하게 한 번 시도하세요.", "허구이고 로컬인 비민감 자료를 사용하세요.", "04", "점검", "실제 기록을 읽으세요.", "답변, diff, 출처, 테스트 또는 로그를 대조하세요.",
+            "05", "결정 / 중지", "다음 범위가 분명한 경로를 고르세요.", "다음 증거가 있을 때만 계속하세요.", "증거 / 중지", "증거가 없으면 멈추고 모르는 점을 그대로 보이게 하세요.",
+            "이 그림은 방문자의 방향을 잡아 주지만 학습을 증명하지 않습니다.", "PRYSAI LAB / 프로젝트 원본 교육 그림 / 주장하기 전에 연습하기",
         ],
     ),
     "de": (
         "Erster Besuch: eine prüfbare LLM-Aufgabe beginnen",
-        "Diese Lehrtafel mit fünf Schritten führt durch den ersten Besuch: Wähle ein Ziel, öffne den LLM Foundation Core, mache einen sicheren Versuch, lies das Protokoll und gehe weiter oder halte mit sichtbarer Ungewissheit an.",
+        "Diese Lehrtafel mit fünf Schritten führt durch den ersten Besuch: Wähle ein Ziel, öffne den LLM Foundation Core, mache einen sicheren Versuch und lies das Protokoll. Nur mit dem nächsten Beleg geht es weiter; sonst bleibt das Unbekannte sichtbar.",
         [
-            "START / ERSTER BESUCH", "EIN SICHERER WEG.", "VOR DEM KATALOG.", "Wähle ein Ziel, mache einen kleinen Versuch und bewahre das Protokoll auf.",
-            "01", "WÄHLEN", "Benenne ein Ergebnis.", "Verstehe, übe oder prüfe genau eine kleine Sache.", "02", "ÖFFNEN", "Beginne mit dem LLM Foundation Core.", "Lerne die Modellgrenze kennen, bevor du eine Plattform wählst.",
-            "03", "VERSUCH", "Mache einen sicheren Versuch.", "Nutze fiktives oder lokales, nicht sensibles Material.", "04", "PRÜFEN", "Lies das tatsächliche Protokoll.", "Vergleiche Antwort, Diff, Quelle, Test oder Log.",
-            "05", "WEITER / STOPP", "Wähle den nächsten begrenzten Weg.", "Fehlt der nächste Beleg, lass die Ungewissheit sichtbar.", "GRENZE", "Der Katalog bietet Optionen; er ist nicht die erste Aufgabe.",
-            "Dieser Weg orientiert Besucher; er beweist weder Lernen noch Beherrschung.", "PRYSAI LAB / ORIGINALE LEHRGRAFIK / KLEIN ANFANGEN, DAS WICHTIGE PRÜFEN",
+            "START / ERSTER BESUCH", "EIN SICHERER WEG.", "VOR DEM KATALOG.", "Wähle ein Ziel. Mache einen kleinen Versuch. Bewahre das Protokoll auf.",
+            "01", "WÄHLEN", "Benenne ein Ergebnis.", "Verstehe, übe oder prüfe genau eine kleine Sache.", "02", "ÖFFNEN", "Beginne mit dem Foundation Core.", "Lerne zuerst die Modellgrenze kennen.",
+            "03", "VERSUCH", "Mache einen sicheren Versuch.", "Nutze fiktives, lokales, nicht sensibles Material.", "04", "PRÜFEN", "Lies das tatsächliche Protokoll.", "Vergleiche Antwort, Diff, Quelle, Test oder Log.",
+            "05", "ENTSCHEIDEN / STOPP", "Wähle den nächsten begrenzten Weg.", "Mach nur weiter, wenn der nächste Beleg vorhanden ist.", "EVIDENZ / STOPP", "Fehlt der Beleg, stoppe und lass das Unbekannte sichtbar.",
+            "Diese Karte orientiert Besucher; sie beweist kein Lernen.", "PRYSAI LAB / ORIGINALE LEHRGRAFIK / ERST ÜBEN, DANN BEHAUPTEN",
         ],
     ),
     "zh-tw": (
         "第一次造訪路線：完成一項可檢查的 LLM 任務",
-        "這張五步教學圖帶你完成第一次造訪：選定一個目標，開啟 LLM 基礎核心，做一次安全嘗試，檢查紀錄，接著前往下一條路線；如果缺少證明，就讓未知保持可見並停下。",
+        "這張五步教學圖帶你完成第一次造訪：選定一個目標，開啟 LLM 基礎核心，做一次安全嘗試並檢查紀錄。只有下一項證明存在時才繼續；否則讓未知保持可見並停下。",
         [
-            "起點／第一次造訪", "一條安全路線。", "先別急著看完整目錄。", "選一個目標，做一次小嘗試，並留下紀錄。",
-            "01", "選擇", "說清楚一個結果。", "只理解、練習或檢查一件小事。", "02", "開啟", "從 LLM 基礎核心開始。", "先了解模型界線，再選擇平台。",
-            "03", "嘗試", "做一次安全嘗試。", "使用虛構或本機的非敏感資料。", "04", "檢查", "閱讀實際紀錄。", "對照回應、差異、來源、測試或紀錄檔。",
-            "05", "繼續／停止", "選擇下一條有界線的路線。", "下一項證明缺失時，讓未知保持可見。", "界線", "目錄是一組選項，不是第一項任務。",
-            "這條路線只能幫訪客找到方向，不能證明學習或熟練。", "PRYSAI LAB／原創教學圖／從小處開始，檢查重要之處",
+            "起點／第一次造訪", "一條安全路線。", "先別急著看完整目錄。", "選一個目標。做一次小嘗試。留下紀錄。",
+            "01", "選擇", "說清楚一個結果。", "只理解、練習或檢查一件小事。", "02", "開啟", "從 LLM 基礎核心開始。", "先了解模型界線。",
+            "03", "嘗試", "做一次安全嘗試。", "使用虛構、本機、非敏感的資料。", "04", "檢查", "閱讀實際紀錄。", "對照回應、差異、來源、測試或紀錄檔。",
+            "05", "決定／停止", "選擇下一條有界線的路線。", "只有下一項證明存在時才繼續。", "證據／停止", "缺少證明就停下，讓未知保持可見。",
+            "這張圖幫訪客找到方向；不能證明學習。", "PRYSAI LAB／原創教學圖／先練習，再下結論",
         ],
     ),
     "fr": (
         "Parcours de première visite vers une tâche LLM vérifiable",
-        "Cette planche en cinq étapes guide la première visite : choisir un objectif, ouvrir le LLM Foundation Core, faire un essai sûr, lire le relevé, puis poursuivre vers un autre parcours ou s’arrêter en laissant l’inconnu visible.",
+        "Cette planche en cinq étapes guide la première visite : choisissez un objectif, ouvrez le LLM Foundation Core, faites un essai sûr et lisez le relevé. Continuez seulement si la preuve suivante existe ; sinon laissez l’inconnu visible et arrêtez-vous.",
         [
-            "DÉPART / PREMIÈRE VISITE", "UN PARCOURS SÛR.", "AVANT LE CATALOGUE.", "Choisissez un objectif, faites un petit essai et gardez le relevé.",
-            "01", "CHOISIR", "Nommez un résultat.", "Comprenez, pratiquez ou vérifiez une seule petite chose.", "02", "OUVRIR", "Commencez par le LLM Foundation Core.", "Apprenez la limite du modèle avant de choisir une plateforme.",
-            "03", "ESSAYER", "Faites un essai sûr.", "Utilisez un contenu fictif ou local, non sensible.", "04", "VÉRIFIER", "Lisez le relevé réel.", "Comparez la réponse, le diff, la source, le test ou le journal.",
-            "05", "CONTINUER / ARRÊTER", "Choisissez le prochain parcours délimité.", "Si la preuve suivante manque, laissez l’inconnu visible.", "LIMITE", "Le catalogue propose des options ; ce n’est pas la première tâche.",
-            "Ce parcours oriente le visiteur ; il ne prouve ni l’apprentissage ni la maîtrise.", "PRYSAI LAB / CARTE ORIGINALE / COMMENCEZ PETIT, VÉRIFIEZ L’ESSENTIEL",
+            "DÉPART / PREMIÈRE VISITE", "UN PARCOURS SÛR.", "AVANT LE CATALOGUE.", "Choisissez un objectif. Faites un petit essai. Gardez le relevé.",
+            "01", "CHOISIR", "Nommez un résultat.", "Comprenez, pratiquez ou vérifiez une seule petite chose.", "02", "OUVRIR", "Commencez par le Foundation Core.", "Apprenez d’abord la limite du modèle.",
+            "03", "ESSAYER", "Faites un essai sûr.", "Utilisez un contenu fictif, local et non sensible.", "04", "VÉRIFIER", "Lisez le relevé réel.", "Comparez réponse, diff, source, test ou journal.",
+            "05", "DÉCIDER / ARRÊTER", "Choisissez le prochain parcours délimité.", "Ne continuez que si la preuve suivante existe.", "PREUVE / ARRÊT", "S’il manque la preuve, arrêtez-vous et laissez l’inconnu visible.",
+            "Cette carte oriente le visiteur ; elle ne prouve pas l’apprentissage.", "PRYSAI LAB / CARTE ORIGINALE / PRATIQUEZ AVANT D’AFFIRMER",
         ],
     ),
 })
@@ -597,26 +613,26 @@ add_asset_locales("foundation-first-visit-route-red-black.svg", {
 add_asset_locales("llm-foundation-core-path-red-black.svg", {
     "zh": (
         "LLM 基础核心：五个单元",
-        "这条五单元学习路线从一次安全尝试开始，让上下文和指令可见，识别可见失败，检查并修正结果，最后把方法重复到未见过的任务上。",
+        "这条五单元路线从安全尝试开始，让任务字段可见，命名可见失败，检查并修正结果，最后在未见任务上重复方法。",
         """基础核心／五个单元
 先学会方法
 再选择平台
 尝试／观察／命名／修正／迁移
 01／尝试
 先做一次安全尝试。
-使用虚构的离线任务，并保留第一次回答。
+保留第一次回答，作为基线。
 02／框定
-让上下文和指令可见。
-分开已提供事实、缺失事实、限制条件和回答形式。
+让任务字段可见。
+目标、上下文、限制和回答形式。
 03／识别
-识别可见的失败模式。
-标出遗漏、编造、强行制造的歧义和过度自信。
+说出可见的失败。
+遗漏、编造、歧义或过度自信。
 04／修正
-检查、修正，并说明限制。
-用证据对照，只改变一个条件，并保留缺口。
+用证据检查并修正。
+对照证据。只改变一个条件。
 05／迁移
-在未见过的任务上重复方法。
-保存路线只是练习；新任务仍需单独检查。
+在未见任务上重复方法。
+新任务仍需单独检查。
 边界／候选路线
 一次尝试不等于掌握。
 保留产物、限制和下一个问题。
@@ -624,53 +640,53 @@ PRYSAI LAB／原创教学图／先练习，再下结论""",
     ),
     "es": (
         "Ruta LLM Foundation Core de cinco unidades",
-        "Esta ruta de cinco unidades empieza con un intento seguro, hace visibles el contexto y las instrucciones, reconoce fallos observables, comprueba y repara el resultado, y repite el método en una tarea nueva.",
+        "Esta ruta de cinco unidades empieza con un intento seguro, hace visibles los campos de la tarea, nombra el fallo visible, comprueba y repara el resultado, y repite el método en una tarea nueva.",
         """NÚCLEO FUNDAMENTAL LLM / CINCO UNIDADES
 APRENDE EL MÉTODO
 ANTES DE ELEGIR PLATAFORMA.
 probar / observar / nombrar / reparar / transferir
 01 / PROBAR
 Empieza con un intento seguro.
-Usa una tarea ficticia y sin conexión; conserva la primera respuesta.
+Conserva la primera respuesta como base.
 02 / DELIMITAR
-Haz visibles el contexto y la instrucción.
-Separa los hechos dados, los que faltan, los límites y la forma de respuesta.
+Haz visibles los campos de la tarea.
+Objetivo, contexto, límites y forma de respuesta.
 03 / DETECTAR
-Reconoce los fallos que pueden verse.
-Marca omisiones, invenciones, ambigüedad forzada y exceso de seguridad.
+Nombra el fallo visible.
+Omisión, invención, ambigüedad o exceso de seguridad.
 04 / REPARAR
-Comprueba, repara y declara los límites.
-Compara con la evidencia, cambia una sola condición y conserva la brecha.
+Comprueba y repara con evidencia.
+Compara con evidencia. Cambia una condición.
 05 / TRANSFERIR
-Repítelo en una tarea que no hayas visto.
-Guardar la ruta es práctica; una tarea nueva necesita su propia comprobación.
+Repite el método en una tarea nueva.
+Una tarea nueva necesita su propio check.
 LÍMITE / RUTA CANDIDATA
 UN SOLO INTENTO NO ES DOMINIO.
-Conserva el artefacto, el límite y la siguiente pregunta.
+Conserva artefacto, límite y siguiente pregunta.
 PRYSAI LAB / TABLERO ORIGINAL / PRACTICA ANTES DE AFIRMAR""",
     ),
     "ja": (
         "LLM Foundation Core：5つのユニット",
-        "5つのユニットで学ぶルートです。安全な試行から始め、コンテキストと指示を見えるようにし、目に見える失敗を捉え、結果を確認・修正して、初めての課題で方法を転用します。",
+        "5つのユニットで学ぶルートです。安全な試行から始め、タスクの項目を見えるようにし、見える失敗を言葉にして、証拠で確認・修正し、未知の課題で方法を転用します。",
         """FOUNDATION CORE / 5つのユニット
 方法を学ぶ
 プラットフォームを選ぶ前に
 試す / 観察する / 言葉にする / 修正する / 転用する
 01 / 試す
 安全な試行を1回行う。
-架空のオフライン課題を使い、最初の応答を残す。
+最初の応答を基準として残す。
 02 / 枠を決める
-コンテキストと指示を見えるようにする。
-与えられた事実、不足している事実、制約、回答の形を分ける。
+タスクの項目を見えるようにする。
+目的、コンテキスト、制約、回答形式。
 03 / 気づく
-目に見える失敗の型を捉える。
-抜け、作り話、無理な曖昧さ、過信を印づける。
+見える失敗を言葉にする。
+抜け、作り話、曖昧さ、過信。
 04 / 修正する
-確認し、修正し、限界を示す。
-証拠と照合し、条件を1つだけ変え、残る不足を記録する。
+証拠で確認し、修正する。
+証拠と照合する。条件は1つだけ変える。
 05 / 転用する
-未経験の課題で繰り返す。
-保存したルートは練習にすぎない。新しい課題には別の確認が要る。
+未知の課題で方法を繰り返す。
+新しい課題には別の確認が要る。
 境界 / 候補ルート
 1回の試行は習得ではない。
 成果物、限界、次の問いを残す。
@@ -678,26 +694,26 @@ PRYSAI LAB / オリジナル教材図 / 主張する前に練習する""",
     ),
     "ko": (
         "LLM Foundation Core 5단계 학습 경로",
-        "이 다섯 단계 경로는 안전한 한 번의 시도에서 시작해 맥락과 지시를 드러내고, 눈에 보이는 실패를 알아차리고, 결과를 점검·수정한 뒤 처음 보는 작업에 방법을 적용합니다.",
+        "이 다섯 단계 경로는 안전한 시도에서 시작해 작업 항목을 보이게 하고, 눈에 보이는 실패를 이름 붙이고, 증거로 점검·수정한 뒤 처음 보는 작업에 방법을 적용합니다.",
         """LLM FOUNDATION CORE / 다섯 단계
 방법부터 배우기
 플랫폼을 고르기 전에
 시도 / 관찰 / 이름 붙이기 / 수정 / 전이
 01 / 시도
 안전하게 한 번 시도하세요.
-허구의 오프라인 작업을 사용하고 첫 답변을 남기세요.
+첫 답변을 기준으로 남기세요.
 02 / 틀 잡기
-맥락과 지시를 보이게 하세요.
-제공된 사실, 빠진 사실, 한계와 답변 형식을 나누세요.
+작업 항목을 보이게 하세요.
+목표, 맥락, 한계와 답변 형식.
 03 / 알아차리기
-눈에 보이는 실패 유형을 알아보세요.
-누락, 꾸며 낸 내용, 억지로 만든 모호함과 과도한 확신을 표시하세요.
+눈에 보이는 실패를 이름 붙이세요.
+누락, 꾸며 냄, 모호함 또는 과도한 확신.
 04 / 수정하기
-점검하고 수정한 뒤 한계를 밝히세요.
-증거와 대조하고 조건 하나만 바꾼 뒤 남은 빈틈을 기록하세요.
+증거로 점검하고 수정하세요.
+증거와 대조하세요. 조건 하나만 바꾸세요.
 05 / 전이
-처음 보는 작업에 반복 적용하세요.
-저장한 경로는 연습일 뿐입니다. 새 작업에는 별도 점검이 필요합니다.
+처음 보는 작업에 방법을 반복하세요.
+새 작업에는 별도 점검이 필요합니다.
 경계 / 후보 경로
 한 번의 시도가 숙련을 뜻하지는 않습니다.
 산출물, 한계와 다음 질문을 남기세요.
@@ -705,26 +721,26 @@ PRYSAI LAB / 프로젝트 원본 교육 그림 / 주장하기 전에 연습하�
     ),
     "de": (
         "Der LLM Foundation Core in fünf Einheiten",
-        "Dieser Lernweg beginnt mit einem sicheren Versuch, macht Kontext und Anweisung sichtbar, erkennt beobachtbare Fehler, prüft und repariert das Ergebnis und überträgt die Methode anschließend auf eine unbekannte Aufgabe.",
+        "Dieser Lernweg beginnt mit einem sicheren Versuch, macht die Aufgabenfelder sichtbar, benennt den sichtbaren Fehler, prüft und repariert mit Belegen und überträgt die Methode auf eine unbekannte Aufgabe.",
         """FOUNDATION CORE / FÜNF EINHEITEN
 DIE METHODE LERNEN
 VOR DER PLATTFORMWAHL.
 versuchen / beobachten / benennen / reparieren / übertragen
 01 / VERSUCH
 Beginne mit einem sicheren Versuch.
-Nutze eine fiktive Offline-Aufgabe und bewahre die erste Antwort auf.
+Bewahre die erste Antwort als Basis auf.
 02 / RAHMEN
-Mache Kontext und Anweisung sichtbar.
-Trenne gegebene Fakten, fehlende Fakten, Grenzen und Antwortform.
+Mache die Aufgabenfelder sichtbar.
+Ziel, Kontext, Grenzen und Antwortform.
 03 / ERKENNEN
-Erkenne sichtbare Fehlermuster.
-Markiere Auslassungen, Erfindungen, erzwungene Mehrdeutigkeit und übertriebene Sicherheit.
+Benenne den sichtbaren Fehler.
+Auslassung, Erfindung, Mehrdeutigkeit oder übertriebene Sicherheit.
 04 / REPARIEREN
-Prüfe, repariere und nenne die Grenzen.
-Vergleiche mit Belegen, ändere eine Bedingung und halte die Lücke fest.
+Prüfe und repariere mit Belegen.
+Vergleiche mit Belegen. Ändere eine Bedingung.
 05 / ÜBERTRAGEN
 Wiederhole die Methode bei einer unbekannten Aufgabe.
-Ein gespeicherter Weg ist Übung; eine neue Aufgabe braucht ihren eigenen Check.
+Eine neue Aufgabe braucht ihren eigenen Check.
 GRENZE / KANDIDATENWEG
 EIN VERSUCH IST NOCH KEINE BEHERRSCHUNG.
 Bewahre Artefakt, Grenze und nächste Frage auf.
@@ -732,26 +748,26 @@ PRYSAI LAB / ORIGINALE LEHRGRAFIK / ERST ÜBEN, DANN BEHAUPTEN""",
     ),
     "zh-tw": (
         "LLM 基礎核心：五個單元",
-        "這條五單元學習路線從一次安全嘗試開始，讓上下文與指示變得可見，辨識看得見的失敗，檢查並修正結果，最後把方法套用到沒看過的任務。",
+        "這條五單元路線從安全嘗試開始，讓任務欄位保持可見，說出看得見的失敗，用證據檢查並修正，最後把方法套用到沒看過的任務。",
         """基礎核心／五個單元
 先學會方法
 再選擇平台
 嘗試／觀察／命名／修正／遷移
 01／嘗試
 先做一次安全嘗試。
-使用虛構的離線任務，並保留第一次回應。
+保留第一次回應作為基準。
 02／框定
-讓上下文與指示變得可見。
-分開已提供的事實、缺少的事實、限制與回應形式。
+讓任務欄位保持可見。
+目標、上下文、限制與回應形式。
 03／辨識
-辨識看得見的失敗模式。
-標出遺漏、捏造、被迫產生的模糊處與過度自信。
+說出看得見的失敗。
+遺漏、捏造、模糊或過度自信。
 04／修正
-檢查、修正，並說明限制。
-和證據對照，只改變一個條件，並保留缺口。
+用證據檢查並修正。
+和證據對照。只改變一個條件。
 05／遷移
 在沒看過的任務上重複方法。
-保存路線只是練習；新的任務仍需要自己的檢查。
+新任務仍需單獨檢查。
 界線／候選路線
 一次嘗試不等於熟練。
 保留產出、界線與下一個問題。
@@ -759,26 +775,26 @@ PRYSAI LAB／原創教學圖／先練習，再下結論""",
     ),
     "fr": (
         "Le LLM Foundation Core en cinq unités",
-        "Ce parcours en cinq unités commence par un essai sûr, rend le contexte et les consignes visibles, repère les échecs observables, vérifie et répare le résultat, puis réutilise la méthode sur une tâche inconnue.",
+        "Ce parcours en cinq unités commence par un essai sûr, rend les champs de la tâche visibles, nomme l’échec observable, vérifie et répare avec des preuves, puis réutilise la méthode sur une tâche inconnue.",
         """FOUNDATION CORE / CINQ UNITÉS
 APPRENDRE LA MÉTHODE
 AVANT DE CHOISIR LA PLATEFORME.
 essayer / observer / nommer / réparer / transférer
 01 / ESSAYER
 Commencez par un essai sûr.
-Utilisez une tâche fictive hors ligne et gardez la première réponse.
+Gardez la première réponse comme base.
 02 / CADRER
-Rendez le contexte et la consigne visibles.
-Séparez les faits fournis, les faits manquants, les limites et la forme de réponse.
+Rendez les champs de la tâche visibles.
+Objectif, contexte, limites et forme de réponse.
 03 / REPÉRER
-Reconnaissez les formes d’échec visibles.
-Signalez les omissions, les inventions, l’ambiguïté forcée et l’assurance excessive.
+Nommez l’échec visible.
+Omission, invention, ambiguïté ou assurance excessive.
 04 / RÉPARER
-Vérifiez, réparez et énoncez les limites.
-Comparez aux preuves, ne changez qu’une condition et gardez le manque visible.
+Vérifiez et réparez avec des preuves.
+Comparez aux preuves. Ne changez qu’une condition.
 05 / TRANSFÉRER
-Répétez sur une tâche inconnue.
-Un parcours conservé est un entraînement ; une nouvelle tâche exige son propre contrôle.
+Répétez la méthode sur une tâche inconnue.
+Une nouvelle tâche exige son propre contrôle.
 LIMITE / PARCOURS CANDIDAT
 UN SEUL ESSAI NE SUFFIT PAS À MAÎTRISER.
 Gardez l’artefact, la limite et la prochaine question.
@@ -790,27 +806,27 @@ PRYSAI LAB / CARTE ORIGINALE / PRATIQUEZ AVANT D’AFFIRMER""",
 add_asset_locales("playbook-learning-journey-red-black.svg", {
     "zh": (
         "Prysai LLM Playbook 学习旅程",
-        "这段四阶段学习旅程先完成五单元的 LLM 基础核心，再做一项有边界的首任务，把结果变成证据并有意识地停止或做决定，最后选择可选的 Codex、工具、Skill 或团队路线。",
+        "这段四阶段学习旅程先完成五单元的 LLM 基础核心，再做一项有边界的首任务，检查结果并在证据不足时停止，最后选择可选路线。",
         """PRYSAI LLM PLAYBOOK／学习旅程
 先学会方法。
 再选择平台。
 基础／首任务／证据／可选练习
 01／基础核心
-理解 → 开始 → 识别 → 修正 → 迁移
-五个单元让模型、请求、可见失败、检查和未见任务都变得清楚。
+先完成五单元核心。
+学习模型、请求、失败、检查和迁移。
 在 Codex、工具、Agent 或 Skill 之前，从这里开始。
 02／有边界的首任务
 先说清结果，再提出请求。
-写出目标、已有上下文、允许的帮助、限制、回答形式和停止条件。
-使用虚构或可丢弃的任务；保留第一次请求和第一次回答。
+写出目标、上下文、帮助、限制、回答形式和停止。
+使用虚构任务；保留第一次请求和回答。
 03／证据闭环
-观察发生了什么变化，保留仍然未知的部分。
+观察变化，保留未知。
 用来源、测试、日志或验收规则对照回答或差异。
-只有下一项证明存在时才继续；否则记录最小的安全停止。
+只有下一项证明存在时才继续。
 04／可选路线
 选择下一个最有用的最小层级。
-Codex · 工具 · Skill · Agent · 研究 · 工程 · 团队练习
-每条路线都保留自己的来源、权限、证据、失败案例和限制。
+Codex · 工具 · Skill · Agent · 研究 · 团队
+每条路线保留自己的权限、证据和限制。
 边界／候选路线
 地图显示顺序，不证明掌握。
 保留产物、证据、限制和下一个问题。
@@ -818,27 +834,27 @@ PRYSAI LAB／原创教学图／先练习，再下结论""",
     ),
     "es": (
         "Recorrido de aprendizaje de Prysai LLM Playbook",
-        "Este recorrido de cuatro etapas completa primero las cinco unidades del LLM Foundation Core, convierte una primera tarea acotada en evidencia y una parada o decisión deliberada, y después ofrece prácticas opcionales con Codex, herramientas, Skills o equipos.",
+        "Este recorrido de cuatro etapas termina primero el núcleo de cinco unidades, comprueba una primera tarea acotada y solo después ofrece recorridos opcionales.",
         """PRYSAI LLM PLAYBOOK / RECORRIDO DE APRENDIZAJE
 APRENDE EL MÉTODO.
 DESPUÉS ELIGE LA PLATAFORMA.
 fundamentos / primera tarea / evidencia / práctica opcional
 01 / LLM FOUNDATION CORE
-Entender → iniciar → identificar → reparar → transferir
-Las cinco unidades hacen explícitos el modelo, la petición, los fallos visibles, la comprobación y la tarea nueva.
+Termina primero el núcleo de cinco unidades.
+Aprende modelo, petición, fallos, comprobación y transferencia.
 Empieza aquí, antes de Codex, las herramientas, los Agents o los Skills.
 02 / PRIMERA TAREA ACOTADA
 Nombra el resultado antes de pedirlo.
-Indica el objetivo, el contexto disponible, la ayuda permitida, los límites, la forma de respuesta y cuándo parar.
-Usa una tarea ficticia o desechable; conserva la primera petición y la primera respuesta.
+Indica objetivo, contexto, ayuda, límites, forma de respuesta y parada.
+Usa una tarea ficticia; conserva la primera petición y respuesta.
 03 / CICLO DE EVIDENCIA
-Observa qué cambió y conserva lo que aún no sabes.
+Observa el cambio y conserva lo desconocido.
 Compara la respuesta o el diff con una fuente, una prueba, un registro o un criterio de aceptación.
-Continúa solo si existe la siguiente prueba; si no, registra la parada segura más pequeña.
+Continúa solo si existe la siguiente prueba.
 04 / RECORRIDOS OPCIONALES
 Elige la siguiente capa útil más pequeña.
-Codex · herramientas · Skills · Agents · investigación · ingeniería · práctica de equipo
-Cada recorrido conserva sus propias fuentes, permisos, evidencias, fallos y límites.
+Codex · herramientas · Skills · Agents · investigación · equipo
+Cada recorrido conserva sus permisos, evidencias y límites.
 LÍMITE / RECORRIDO CANDIDATO
 EL MAPA MUESTRA EL ORDEN, NO EL DOMINIO.
 Conserva el artefacto, la evidencia, el límite y la siguiente pregunta.
@@ -846,27 +862,27 @@ PRYSAI LAB / TABLERO ORIGINAL / PRACTICA ANTES DE AFIRMAR""",
     ),
     "ja": (
         "Prysai LLM Playbook の学習ルート",
-        "4段階の学習ルートです。まず LLM Foundation Core の5ユニットを終え、範囲を区切った最初の課題を証拠と意図的な停止または判断につなげます。その後、Codex、ツール、Skill、チーム向けの任意ルートを選びます。",
+        "4段階の学習ルートです。まず5ユニットのコアを終え、最初の課題を確認してから、必要な任意ルートを選びます。",
         """PRYSAI LLM PLAYBOOK / 学習ルート
 方法を学ぶ。
 そのあとでプラットフォームを選ぶ。
 基礎 / 最初の課題 / 証拠 / 任意の実践
 01 / FOUNDATION CORE
-理解 → 始める → 気づく → 修正する → 転用する
-5つのユニットで、モデル、依頼、見える失敗、確認、未知の課題を明確にする。
+5ユニットのコアを先に終える。
+モデル、依頼、失敗、確認、転用を学ぶ。
 Codex、ツール、Agent、Skillを選ぶ前に、ここから始める。
 02 / 最初の範囲を区切った課題
 依頼する前に、結果を言葉にする。
-目的、与えられたコンテキスト、許される支援、制約、回答の形、停止条件を書く。
-架空または使い捨ての課題を使い、最初の依頼と応答を残す。
+目的、コンテキスト、支援、制約、回答形式、停止を書く。
+架空の課題を使い、最初の依頼と応答を残す。
 03 / 証拠のループ
-何が変わったかを観察し、不明点を残す。
+変化を観察し、不明点を残す。
 応答や差分を出典、テスト、ログ、受け入れ条件と照合する。
-次の証拠があるときだけ続け、なければ最小限の安全な停止を記録する。
+次の証拠があるときだけ続ける。
 04 / 任意のルート
 次に役立つ最小限の層を選ぶ。
-Codex · ツール · Skill · Agent · 調査 · エンジニアリング · チーム練習
-各ルートで、出典、権限、証拠、失敗例、限界を別々に保つ。
+Codex · ツール · Skill · Agent · 調査 · チーム
+各ルートで、権限、証拠、限界を別々に保つ。
 境界 / 候補ルート
 地図は順序を示すが、習得を証明しない。
 成果物、証拠、限界、次の問いを残す。
@@ -874,27 +890,27 @@ PRYSAI LAB / オリジナル教材図 / 主張する前に練習する""",
     ),
     "ko": (
         "Prysai LLM Playbook 학습 여정",
-        "이 네 단계 여정은 먼저 LLM Foundation Core의 다섯 단계를 끝내고, 범위가 분명한 첫 작업을 증거와 의도적인 중지 또는 판단으로 연결한 뒤 Codex·도구·Skill·팀 연습 중 필요한 경로를 고르게 합니다.",
+        "이 네 단계 여정은 먼저 다섯 단계 핵심을 끝내고 첫 작업을 점검한 뒤 필요한 선택 경로를 고르게 합니다.",
         """PRYSAI LLM PLAYBOOK / 학습 여정
 방법부터 배우세요.
 그다음 플랫폼을 고르세요.
 기초 / 첫 작업 / 증거 / 선택 연습
 01 / FOUNDATION CORE
-이해 → 시작 → 식별 → 수정 → 전이
-다섯 단계에서 모델, 요청, 눈에 보이는 실패, 점검과 처음 보는 작업을 분명히 합니다.
+다섯 단계 핵심을 먼저 끝내세요.
+모델, 요청, 실패, 점검과 전이를 배우세요.
 Codex, 도구, Agent 또는 Skill보다 먼저 여기서 시작하세요.
 02 / 범위가 분명한 첫 작업
 요청하기 전에 결과를 정하세요.
-목표, 제공된 맥락, 허용된 도움, 한계, 답변 형식과 중지 조건을 적으세요.
-허구 또는 폐기 가능한 작업을 사용하고 첫 요청과 첫 답변을 남기세요.
+목표, 맥락, 도움, 한계, 답변 형식과 중지를 적으세요.
+허구의 작업을 사용하고 첫 요청과 답변을 남기세요.
 03 / 증거 루프
-무엇이 바뀌었는지 관찰하고 아직 모르는 것을 남기세요.
+변화를 관찰하고 아직 모르는 것을 남기세요.
 답변이나 diff를 출처, 테스트, 로그 또는 수용 기준과 대조하세요.
-다음 증거가 있을 때만 계속하고, 없으면 가장 작고 안전한 중지를 기록하세요.
+다음 증거가 있을 때만 계속하세요.
 04 / 선택 경로
 다음에 필요한 가장 작은 층을 고르세요.
-Codex · 도구 · Skill · Agent · 연구 · 엔지니어링 · 팀 연습
-각 경로는 고유한 출처, 권한, 증거, 실패 사례와 한계를 따로 보존합니다.
+Codex · 도구 · Skill · Agent · 연구 · 팀
+각 경로의 권한, 증거와 한계를 따로 보존합니다.
 경계 / 후보 경로
 지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다.
 산출물, 증거, 한계와 다음 질문을 남기세요.
@@ -902,27 +918,27 @@ PRYSAI LAB / 프로젝트 원본 교육 그림 / 주장하기 전에 연습하�
     ),
     "de": (
         "Die Lernreise des Prysai LLM Playbook",
-        "Diese Reise in vier Phasen führt zuerst durch die fünf Einheiten des LLM Foundation Core. Danach wird eine begrenzte erste Aufgabe zu Belegen und einem bewussten Stopp oder einer Entscheidung; anschließend folgen optionale Wege mit Codex, Tools, Skills oder im Team.",
+        "Diese Reise in vier Phasen führt zuerst durch fünf Core-Einheiten, prüft eine erste begrenzte Aufgabe und bietet erst danach optionale Wege an.",
         """PRYSAI LLM PLAYBOOK / LERNREISE
 LERN DIE METHODE.
 DANN WÄHLE DIE PLATTFORM.
 Grundlagen / erste Aufgabe / Belege / optionale Praxis
 01 / FOUNDATION CORE
-Verstehen → beginnen → erkennen → reparieren → übertragen
-Fünf Einheiten machen Modell, Anfrage, sichtbare Fehler, Prüfung und unbekannte Aufgabe ausdrücklich.
+Beende zuerst die fünf Core-Einheiten.
+Lerne Modell, Anfrage, Fehler, Prüfung und Übertragung.
 Beginne hier, bevor du Codex, Tools, Agents oder Skills wählst.
 02 / ERSTE BEGRENZTE AUFGABE
 Benenne das Ergebnis, bevor du fragst.
-Halte Ziel, vorhandenen Kontext, erlaubte Hilfe, Grenzen, Antwortform und Stoppbedingung fest.
-Nutze eine fiktive oder wegwerfbare Aufgabe; bewahre erste Anfrage und erste Antwort auf.
+Halte Ziel, Kontext, Hilfe, Grenzen, Antwortform und Stopp fest.
+Nutze eine fiktive Aufgabe; bewahre Anfrage und Antwort auf.
 03 / BELEG-SCHLEIFE
-Beobachte, was sich geändert hat, und halte Unbekanntes fest.
+Beobachte die Änderung und halte Unbekanntes fest.
 Vergleiche Antwort oder Diff mit Quelle, Test, Log oder Abnahmeregel.
-Mach nur weiter, wenn der nächste Beleg vorhanden ist; sonst notiere den kleinsten sicheren Stopp.
+Mach nur weiter, wenn der nächste Beleg vorhanden ist.
 04 / OPTIONALE WEGE
 Wähle die kleinste nützliche nächste Ebene.
-Codex · Tools · Skills · Agents · Recherche · Engineering · Teampraxis
-Jeder Weg bewahrt eigene Quellen, Berechtigungen, Belege, Fehlerfälle und Grenzen.
+Codex · Tools · Skills · Agents · Recherche · Team
+Jeder Weg bewahrt Berechtigungen, Belege und Grenzen.
 GRENZE / KANDIDATENWEG
 DIE KARTE ZEIGT DIE REIHENFOLGE, NICHT DIE BEHERRSCHUNG.
 Bewahre Artefakt, Beleg, Grenze und nächste Frage auf.
@@ -930,27 +946,27 @@ PRYSAI LAB / ORIGINALE LEHRGRAFIK / ERST ÜBEN, DANN BEHAUPTEN""",
     ),
     "zh-tw": (
         "Prysai LLM Playbook 學習旅程",
-        "這段四階段學習旅程先完成五個單元的 LLM 基礎核心，再做一項有界線的首項任務，將結果整理成證據並做出有意識的停止或判斷，最後選擇 Codex、工具、Skill 或團隊路線。",
+        "這段四階段學習旅程先完成五個單元的 LLM 基礎核心，再檢查一項有界線的首項任務，最後選擇需要的路線。",
         """PRYSAI LLM PLAYBOOK／學習旅程
 先學會方法。
 再選擇平台。
 基礎／首項任務／證據／選擇性練習
 01／基礎核心
-理解 → 開始 → 辨識 → 修正 → 遷移
-五個單元讓模型、請求、看得見的失敗、檢查與沒看過的任務都變得清楚。
+先完成五個單元核心。
+學習模型、請求、失敗、檢查與遷移。
 在 Codex、工具、Agent 或 Skill 之前，先從這裡開始。
 02／有界線的首項任務
 提出請求前，先說清楚結果。
-寫下目標、已提供的上下文、允許的協助、限制、回應形式與停止條件。
-使用虛構或可丟棄的任務；保留第一次請求與第一次回應。
+寫下目標、上下文、協助、限制、回應形式與停止。
+使用虛構任務；保留第一次請求與回應。
 03／證據閉環
-觀察發生了什麼變化，保留仍然未知的部分。
+觀察變化，保留未知。
 把回應或差異和來源、測試、紀錄檔或驗收規則對照。
-只有下一項證明存在時才繼續；否則記下最小且安全的停止。
+只有下一項證明存在時才繼續。
 04／選擇性路線
 選擇下一個最有用的最小層次。
-Codex · 工具 · Skill · Agent · 研究 · 工程 · 團隊練習
-每條路線都保留自己的來源、權限、證據、失敗案例與限制。
+Codex · 工具 · Skill · Agent · 研究 · 團隊
+每條路線都保留自己的權限、證據與限制。
 界線／候選路線
 地圖只顯示順序，不代表已經熟練。
 保留產出、證據、界線與下一個問題。
@@ -958,27 +974,27 @@ PRYSAI LAB／原創教學圖／先練習，再下結論""",
     ),
     "fr": (
         "Parcours d’apprentissage du Prysai LLM Playbook",
-        "Ce parcours en quatre étapes commence par les cinq unités du LLM Foundation Core, transforme une première tâche délimitée en preuves et en arrêt ou décision volontaire, puis propose des parcours facultatifs avec Codex, des outils, des Skills ou une équipe.",
+        "Ce parcours en quatre étapes termine d’abord les cinq unités du LLM Foundation Core, vérifie une première tâche délimitée, puis propose les parcours utiles.",
         """PRYSAI LLM PLAYBOOK / PARCOURS D’APPRENTISSAGE
 APPRENDRE LA MÉTHODE.
 CHOISIR ENSUITE LA PLATEFORME.
 fondamentaux / première tâche / preuves / pratique facultative
 01 / FOUNDATION CORE
-Comprendre → commencer → repérer → réparer → transférer
-Les cinq unités rendent explicites le modèle, la demande, les échecs visibles, le contrôle et la tâche inconnue.
+Terminez d’abord les cinq unités du core.
+Apprenez le modèle, la demande, les échecs, le contrôle et le transfert.
 Commencez ici avant Codex, les outils, les Agents ou les Skills.
 02 / PREMIÈRE TÂCHE DÉLIMITÉE
 Nommez le résultat avant de demander.
-Indiquez l’objectif, le contexte fourni, l’aide autorisée, les limites, la forme de réponse et la condition d’arrêt.
-Utilisez une tâche fictive ou jetable ; gardez la première demande et la première réponse.
+Indiquez objectif, contexte, aide, limites, forme de réponse et arrêt.
+Utilisez une tâche fictive ; gardez la première demande et la réponse.
 03 / BOUCLE DES PREUVES
-Observez ce qui a changé et gardez ce qui reste inconnu.
+Observez le changement et gardez l’inconnu.
 Comparez la réponse ou le diff à une source, un test, un journal ou un critère d’acceptation.
-Continuez seulement si la preuve suivante existe ; sinon notez l’arrêt sûr le plus petit.
+Continuez seulement si la preuve suivante existe.
 04 / PARCOURS FACULTATIFS
 Choisissez la prochaine couche utile la plus petite.
-Codex · outils · Skills · Agents · recherche · ingénierie · pratique d’équipe
-Chaque parcours garde ses sources, autorisations, preuves, échecs et limites propres.
+Codex · outils · Skills · Agents · recherche · équipe
+Chaque parcours garde ses autorisations, preuves et limites propres.
 LIMITE / PARCOURS CANDIDAT
 LA CARTE MONTRE L’ORDRE, PAS LA MAÎTRISE.
 Gardez l’artefact, les preuves, la limite et la prochaine question.

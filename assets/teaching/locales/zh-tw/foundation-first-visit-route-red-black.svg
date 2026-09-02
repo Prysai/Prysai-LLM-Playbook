@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">第一次造訪路線：完成一項可檢查的 LLM 任務</title>
-  <desc id="desc">這張五步教學圖帶你完成第一次造訪：選定一個目標，開啟 LLM 基礎核心，做一次安全嘗試，檢查紀錄，接著前往下一條路線；如果缺少證明，就讓未知保持可見並停下。</desc>
+  <desc id="desc">這張五步教學圖帶你完成第一次造訪：選定一個目標，開啟 LLM 基礎核心，做一次安全嘗試並檢查紀錄。只有下一項證明存在時才繼續；否則讓未知保持可見並停下。</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
       <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
@@ -18,7 +18,7 @@
   <text x="78" y="112" class="mono" font-size="22">起點／第一次造訪</text>
   <text x="78" y="174" class="ink" font-size="48" font-weight="900">一條安全路線。</text>
   <text x="78" y="230" class="ink" font-size="48" font-weight="900">先別急著看完整目錄。</text>
-  <text x="78" y="282" class="muted" font-size="22">選一個目標，做一次小嘗試，並留下紀錄。</text>
+  <text x="78" y="282" class="muted" font-size="22">選一個目標。做一次小嘗試。留下紀錄。</text>
 
   <line x1="128" y1="362" x2="128" y2="1154" class="line"/>
   <line x1="128" y1="480" x2="128" y2="538" class="redline"/>
@@ -41,7 +41,7 @@
     <rect x="112" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">開啟</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">從 LLM 基礎核心開始。</text>
-    <text x="140" y="106" class="muted" font-size="17">先了解模型界線，再選擇平台。</text>
+    <text x="140" y="106" class="muted" font-size="17">先了解模型界線。</text>
   </g>
 
   <g transform="translate(78 644)">
@@ -50,7 +50,7 @@
     <rect x="112" width="650" height="120" fill="#ffe5e9" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">嘗試</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">做一次安全嘗試。</text>
-    <text x="140" y="106" class="muted" font-size="17">使用虛構或本機的非敏感資料。</text>
+    <text x="140" y="106" class="muted" font-size="17">使用虛構、本機、非敏感的資料。</text>
   </g>
 
   <g transform="translate(78 806)">
@@ -66,14 +66,14 @@
     <circle cx="50" cy="48" r="34" fill="#111"/>
     <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
     <rect x="112" width="650" height="120" fill="#111"/>
-    <text x="140" y="44" class="mono" fill="#fff" font-size="19">繼續／停止</text>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">決定／停止</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">選擇下一條有界線的路線。</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">下一項證明缺失時，讓未知保持可見。</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">只有下一項證明存在時才繼續。</text>
   </g>
 
   <rect x="78" y="1160" width="762" height="116" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
-  <text x="102" y="1200" class="mono" font-size="17">界線</text>
-  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">目錄是一組選項，不是第一項任務。</text>
-  <text x="102" y="1264" class="muted" font-size="17">這條路線只能幫訪客找到方向，不能證明學習或熟練。</text>
-  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB／原創教學圖／從小處開始，檢查重要之處</text>
+  <text x="102" y="1200" class="mono" font-size="17">證據／停止</text>
+  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">缺少證明就停下，讓未知保持可見。</text>
+  <text x="102" y="1264" class="muted" font-size="17">這張圖幫訪客找到方向；不能證明學習。</text>
+  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB／原創教學圖／先練習，再下結論</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">LLM 基礎核心：五個單元</title>
-  <desc id="desc">這條五單元學習路線從一次安全嘗試開始，讓上下文與指示變得可見，辨識看得見的失敗，檢查並修正結果，最後把方法套用到沒看過的任務。</desc>
+  <desc id="desc">這條五單元路線從安全嘗試開始，讓任務欄位保持可見，說出看得見的失敗，用證據檢查並修正，最後把方法套用到沒看過的任務。</desc>
   <rect width="900" height="1400" fill="#f6f6f2"/>
   <rect x="42" y="34" width="816" height="10" fill="#171717"/>
   <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">基礎核心／五個單元</text>
@@ -19,31 +19,31 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01／嘗試</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">先做一次安全嘗試。</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">使用虛構的離線任務，並保留第一次回應。</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">保留第一次回應作為基準。</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02／框定</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">讓上下文與指示變得可見。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">分開已提供的事實、缺少的事實、限制與回應形式。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">讓任務欄位保持可見。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">目標、上下文、限制與回應形式。</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03／辨識</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">辨識看得見的失敗模式。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">標出遺漏、捏造、被迫產生的模糊處與過度自信。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">說出看得見的失敗。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">遺漏、捏造、模糊或過度自信。</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04／修正</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">檢查、修正，並說明限制。</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">和證據對照，只改變一個條件，並保留缺口。</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">用證據檢查並修正。</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">和證據對照。只改變一個條件。</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05／遷移</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">在沒看過的任務上重複方法。</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">保存路線只是練習；新的任務仍需要自己的檢查。</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">新任務仍需單獨檢查。</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>

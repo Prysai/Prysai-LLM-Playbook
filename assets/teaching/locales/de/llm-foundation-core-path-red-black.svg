@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">Der LLM Foundation Core in fünf Einheiten</title>
-  <desc id="desc">Dieser Lernweg beginnt mit einem sicheren Versuch, macht Kontext und Anweisung sichtbar, erkennt beobachtbare Fehler, prüft und repariert das Ergebnis und überträgt die Methode anschließend auf eine unbekannte Aufgabe.</desc>
+  <desc id="desc">Dieser Lernweg beginnt mit einem sicheren Versuch, macht die Aufgabenfelder sichtbar, benennt den sichtbaren Fehler, prüft und repariert mit Belegen und überträgt die Methode auf eine unbekannte Aufgabe.</desc>
   <rect width="900" height="1400" fill="#f6f6f2"/>
   <rect x="42" y="34" width="816" height="10" fill="#171717"/>
   <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FOUNDATION CORE / FÜNF EINHEITEN</text>
@@ -19,31 +19,31 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / VERSUCH</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Beginne mit einem sicheren Versuch.</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Nutze eine fiktive Offline-Aufgabe und bewahre die erste Antwort auf.</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Bewahre die erste Antwort als Basis auf.</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / RAHMEN</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Mache Kontext und Anweisung sichtbar.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Trenne gegebene Fakten, fehlende Fakten, Grenzen und Antwortform.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Mache die Aufgabenfelder sichtbar.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Ziel, Kontext, Grenzen und Antwortform.</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / ERKENNEN</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Erkenne sichtbare Fehlermuster.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Markiere Auslassungen, Erfindungen, erzwungene Mehrdeutigkeit und übertriebene Sicherheit.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Benenne den sichtbaren Fehler.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Auslassung, Erfindung, Mehrdeutigkeit oder übertriebene Sicherheit.</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / REPARIEREN</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Prüfe, repariere und nenne die Grenzen.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Vergleiche mit Belegen, ändere eine Bedingung und halte die Lücke fest.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Prüfe und repariere mit Belegen.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Vergleiche mit Belegen. Ändere eine Bedingung.</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / ÜBERTRAGEN</text>
-    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Wiederhole die Methode bei einer unbekannten Aufgabe.</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Ein gespeicherter Weg ist Übung; eine neue Aufgabe braucht ihren eigenen Check.</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900" textLength="710" lengthAdjust="spacingAndGlyphs">Wiederhole die Methode bei einer unbekannten Aufgabe.</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Eine neue Aufgabe braucht ihren eigenen Check.</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>

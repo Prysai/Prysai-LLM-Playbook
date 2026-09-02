@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
   <title id="title">Recorrido de aprendizaje de Prysai LLM Playbook</title>
-  <desc id="desc">Este recorrido de cuatro etapas completa primero las cinco unidades del LLM Foundation Core, convierte una primera tarea acotada en evidencia y una parada o decisión deliberada, y después ofrece prácticas opcionales con Codex, herramientas, Skills o equipos.</desc>
+  <desc id="desc">Este recorrido de cuatro etapas termina primero el núcleo de cinco unidades, comprueba una primera tarea acotada y solo después ofrece recorridos opcionales.</desc>
   <rect width="1200" height="1600" fill="#f6f6f2"/>
   <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
   <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / RECORRIDO DE APRENDIZAJE</text>
@@ -17,8 +17,8 @@
   <g transform="translate(140 360)">
     <rect width="1000" height="198" fill="#171717"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / LLM FOUNDATION CORE</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Entender → iniciar → identificar → reparar → transferir</text>
-    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Las cinco unidades hacen explícitos el modelo, la petición, los fallos visibles, la comprobación y la tarea nueva.</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Termina primero el núcleo de cinco unidades.</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Aprende modelo, petición, fallos, comprobación y transferencia.</text>
     <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Empieza aquí, antes de Codex, las herramientas, los Agents o los Skills.</text>
   </g>
 
@@ -26,24 +26,24 @@
     <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / PRIMERA TAREA ACOTADA</text>
     <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Nombra el resultado antes de pedirlo.</text>
-    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Indica el objetivo, el contexto disponible, la ayuda permitida, los límites, la forma de respuesta y cuándo parar.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Usa una tarea ficticia o desechable; conserva la primera petición y la primera respuesta.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Indica objetivo, contexto, ayuda, límites, forma de respuesta y parada.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Usa una tarea ficticia; conserva la primera petición y respuesta.</text>
   </g>
 
   <g transform="translate(140 890)">
     <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / CICLO DE EVIDENCIA</text>
-    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Observa qué cambió y conserva lo que aún no sabes.</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Observa el cambio y conserva lo desconocido.</text>
     <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Compara la respuesta o el diff con una fuente, una prueba, un registro o un criterio de aceptación.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Continúa solo si existe la siguiente prueba; si no, registra la parada segura más pequeña.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Continúa solo si existe la siguiente prueba.</text>
   </g>
 
   <g transform="translate(140 1155)">
-    <rect width="1000" height="198" fill="#d71920"/>
-    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / RECORRIDOS OPCIONALES</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Elige la siguiente capa útil más pequeña.</text>
-    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · herramientas · Skills · Agents · investigación · ingeniería · práctica de equipo</text>
-    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Cada recorrido conserva sus propias fuentes, permisos, evidencias, fallos y límites.</text>
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / RECORRIDOS OPCIONALES</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Elige la siguiente capa útil más pequeña.</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · herramientas · Skills · Agents · investigación · equipo</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Cada recorrido conserva sus permisos, evidencias y límites.</text>
   </g>
 
   <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
