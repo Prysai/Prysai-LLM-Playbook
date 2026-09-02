@@ -8,10 +8,10 @@
     <meta name="theme-color" content="#f7f7f2" />
     <title>Prysai LLM Playbook — Visual Guide</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="visuals.css?v=20260828-visual-footer-site-1" />
+    <link rel="stylesheet" href="visuals.css?v=20260901-visual-entry-flow-1" />
     <script src="learning-path-data.js?v=20260825-capability-ladder-1" defer></script>
     <script src="visual-assets.js?v=20260829-evidence-recovery-localized-1"></script>
-    <script src="visuals.js?v=20260828-visual-footer-site-1" defer></script>
+    <script src="visuals.js?v=20260901-visual-entry-flow-1" defer></script>
   </head>
   <body>
     <a class="visual-skip" href="#visual-main" data-i18n="skip">Skip to content</a>
@@ -43,17 +43,31 @@
     <div class="visual-banner" data-visual-banner hidden role="status" aria-live="polite"></div>
 
     <main id="visual-main" class="visual-main">
-      <section class="visual-hero" aria-labelledby="visual-title">
+      <section id="visual-hero" class="visual-hero" aria-labelledby="visual-title">
         <div class="visual-hero-index"><span>VISUAL</span><strong>01</strong></div>
         <div class="visual-hero-copy">
           <p class="visual-eyebrow" data-i18n="heroEyebrow">A picture should answer the next question.</p>
           <h1 id="visual-title" data-i18n="heroTitle">See the method before you read the detail.</h1>
           <p class="visual-lede" data-i18n="heroBody">This guide turns the Playbook's core loop into a route you can inspect: understand, frame, act, inspect, repair, and transfer.</p>
           <p class="visual-boundary" data-i18n="heroBoundary">The boards are orientation aids. The localized text and the source page remain the baseline explanation; a picture does not prove that a model acted or that a learner mastered a method.</p>
+          <p class="visual-hero-actions"><a class="visual-action-link visual-hero-action" href="#visual-entry"><span data-i18n="heroAction">Choose where to begin</span><span aria-hidden="true">↓</span></a></p>
         </div>
       </section>
 
-      <section id="visual-route" class="visual-route-section" aria-labelledby="visual-route-title">
+      <nav id="visual-entry" class="visual-entry-nav" aria-label="Choose a visual guide starting point" aria-labelledby="visual-entry-title" data-i18n-attr="aria-label:entryAria">
+        <div class="visual-entry-heading">
+          <div><span class="visual-entry-kicker" data-i18n="entryKicker">Start here</span><h2 id="visual-entry-title" data-i18n="entryTitle">Four ways in, one route to a checked attempt.</h2></div>
+          <p data-i18n="entryIntro">Use the first card that matches your need. The page keeps the order visible so you can return to the core route instead of wandering through every board.</p>
+        </div>
+        <ol class="visual-entry-list">
+          <li><a class="visual-entry-card" href="#visual-route"><span class="visual-entry-index">01</span><strong data-i18n="entryRouteTitle">Route overview</strong><span data-i18n="entryRouteBody">See how the visual guide moves from a purpose to a checked decision.</span><em data-i18n="entryRouteAction">View the order ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-goal"><span class="visual-entry-index">02</span><strong data-i18n="entryGoalTitle">Choose by purpose</strong><span data-i18n="entryGoalBody">Start with a safe task, an uncertain result, a claim, or a method to reuse.</span><em data-i18n="entryGoalAction">Choose a reason ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-journey"><span class="visual-entry-index">03</span><strong data-i18n="entryJourneyTitle">Core journey</strong><span data-i18n="entryJourneyBody">See the Foundation Core, the first bounded task, evidence, and optional tracks.</span><em data-i18n="entryJourneyAction">See the core route ↘</em></a></li>
+          <li><a class="visual-entry-card" href="#visual-gallery"><span class="visual-entry-index">04</span><strong data-i18n="entryGalleryTitle">Board index</strong><span data-i18n="entryGalleryBody">Choose one project-authored board only when a picture will clarify the decision.</span><em data-i18n="entryGalleryAction">Open the index ↘</em></a></li>
+        </ol>
+      </nav>
+
+      <section id="visual-route" class="visual-route-section visual-primary-section" aria-labelledby="visual-route-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">02</span><p class="visual-eyebrow" data-i18n="routeEyebrow">A guided visual route</p><h2 id="visual-route-title" data-i18n="routeTitle">Know what each picture is for.</h2></div>
           <p data-i18n="routeIntro">Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.</p>
@@ -89,7 +103,7 @@
         </details>
       </section>
 
-      <section id="visual-goal" class="visual-goal-section" aria-labelledby="visual-goal-title">
+      <section id="visual-goal" class="visual-goal-section visual-primary-section" aria-labelledby="visual-goal-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">03</span><p class="visual-eyebrow" data-i18n="goalEyebrow">Start from your question</p><h2 id="visual-goal-title" data-i18n="goalTitle">Choose a reason, not a random page.</h2></div>
           <p data-i18n="goalIntro">Pick the situation that brought you here. The map suggests one bounded next step and one visual explanation instead of sending you into the full catalogue.</p>
@@ -126,7 +140,7 @@
         </details>
       </section>
 
-      <section id="visual-journey" class="visual-journey-section" aria-labelledby="visual-journey-title">
+      <section id="visual-journey" class="visual-journey-section visual-primary-section" aria-labelledby="visual-journey-title">
         <div class="visual-section-heading">
           <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="journeyEyebrow">Learning journey map</p><h2 id="visual-journey-title" data-i18n="journeyTitle">See the whole Playbook before you choose a track.</h2></div>
           <p data-i18n="journeyIntro">One map answers the first practical question: what should I do now, and what comes after the first checked result?</p>
@@ -164,327 +178,9 @@
         <p class="visual-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
       </section>
 
-      <section id="visual-capability" class="visual-capability-section" aria-labelledby="visual-capability-title">
+      <section id="visual-gallery" class="visual-gallery-section visual-primary-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="capabilityEyebrow">Capability ladder</p><h2 id="visual-capability-title" data-i18n="capabilityTitle">Choose the next capability, not the biggest tool.</h2></div>
-          <p data-i18n="capabilityIntro">The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.</p>
-        </div>
-        <div class="visual-capability-workspace">
-          <div class="visual-capability-graph" role="group" aria-label="Seven candidate capability levels from observer to team coach" data-i18n-attr="aria-label:capabilityAria">
-            <div class="visual-capability-center" aria-hidden="true"><span data-i18n="capabilityCenter">Seven levels</span><small data-i18n="capabilityCenterSub">one observable practice at a time</small></div>
-            <ol class="visual-capability-nodes" data-visual-capability-nodes>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span>00</span><strong>Observer</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span>01</span><strong>Safe user</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en"><span>02</span><strong>Task designer</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en"><span>03</span><strong>Workflow designer</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en"><span>04</span><strong>Capability builder</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span>05</span><strong>Evidence reviewer</strong></a></li>
-              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en"><span>06</span><strong>Team coach</strong></a></li>
-            </ol>
-          </div>
-          <section class="visual-capability-detail" data-visual-capability-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="capabilitySelected">Selected capability</span>
-            <h3 data-visual-capability-title>Observer</h3>
-            <p data-visual-capability-headline>Understand the model before you act.</p>
-            <p data-visual-capability-body>Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.</p>
-            <p class="visual-capability-stats" data-visual-capability-stats>Level 0 · 1 chapter · 1 lab</p>
-            <p class="visual-capability-next"><span data-i18n="capabilityNext">Next practice</span><strong data-visual-capability-next>Open the first bounded task.</strong></p>
-            <figure class="visual-capability-figure">
-              <a data-visual-capability-image-link href="visual.html?asset=capability-ladder-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the capability ladder">
-                <img data-visual-capability-image src="../assets/teaching/capability-ladder-red-black.svg" width="1200" height="1750" loading="eager" alt="Seven-level capability ladder from observing an LLM result to coaching a team" data-i18n-attr="alt:capabilityFigureAlt" />
-                <span class="visual-image-link" data-i18n="capabilityOpenVisual">Open the capability ladder</span>
-              </a>
-              <figcaption data-i18n="capabilityFigureCaption">Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.</figcaption>
-            </figure>
-            <a class="visual-action-link" data-visual-capability-link href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span data-i18n="capabilityOpen">Open the next lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-capability-fallback">
-          <summary data-i18n="capabilityFallback">Read the seven levels as text</summary>
-          <p data-i18n="capabilityFallbackIntro">The same progression remains available without the interactive map. Each level names a practice and a bounded next route.</p>
-          <ol data-visual-capability-fallback>
-            <li><strong>00 · Observer</strong><span>Notice what happened and keep the visible result separate from what you infer.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>01 · Safe user</strong><span>Make one small, reversible request with fictional input, a clear stop, and a saved first response.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>02 · Task designer</strong><span>Write the result, limits, check, and stop so another person can inspect the task contract.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>03 · Workflow designer</strong><span>Sequence actions around evidence and separate proposal, authority, execution, observation, and recovery.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>04 · Capability builder</strong><span>Give a Skill a trigger, boundary, output, evidence, and rollback rule.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>05 · Evidence reviewer</strong><span>Judge claims against source, scope, version, access, and visible unknowns.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-            <li><strong>06 · Team coach</strong><span>Make the method repeatable for others, review the receipt, and stop unsafe escalation.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
-          </ol>
-        </details>
-        <p class="visual-boundary" data-i18n="capabilityBoundary">A level is a practice target, not a status claim. The project has not measured mastery or transfer.</p>
-      </section>
-
-      <section id="visual-concept" class="visual-concept-section" aria-labelledby="visual-concept-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
-          <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
-        </div>
-        <div class="visual-concept-workspace">
-          <div class="visual-concept-graph" role="group" aria-label="Six LLM terms that lead to one checked result" data-i18n-attr="aria-label:conceptAria">
-            <div class="visual-concept-center" aria-hidden="true"><span data-i18n="conceptCenter">One checked result</span><small data-i18n="conceptCenterSub">keep generation, action, and verification distinct</small></div>
-            <ol class="visual-concept-nodes" data-visual-concept-nodes></ol>
-          </div>
-          <section class="visual-concept-detail" data-visual-concept-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="conceptSelected">Selected term</span>
-            <h3 data-visual-concept-title></h3>
-            <p data-visual-concept-body></p>
-            <p class="visual-concept-next"><span data-i18n="conceptNext">Next check</span><strong data-visual-concept-next></strong></p>
-            <figure class="visual-concept-figure">
-              <a data-visual-concept-image-link href="visual.html?asset=llm-six-terms-to-one-check.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the six-term concept board">
-                <img data-visual-concept-image src="../assets/teaching/llm-six-terms-to-one-check.svg" width="900" height="1500" loading="lazy" alt="Six LLM terms leading to one checked result" data-i18n-attr="alt:conceptFigureAlt" />
-                <span class="visual-image-link" data-i18n="conceptOpenVisual">Open the full concept board</span>
-              </a>
-              <figcaption data-i18n="conceptFigureCaption">Project-authored concept board. The selected term, ordered list, and source lesson carry the explanation; the image is an orientation aid.</figcaption>
-            </figure>
-            <a class="visual-action-link" data-visual-concept-link href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span data-i18n="conceptOpen">Open the foundation lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-concept-fallback">
-          <summary data-i18n="conceptFallback">Read the six terms as text</summary>
-          <p data-i18n="conceptFallbackIntro">The same six terms remain available as an ordered list. Use the list when the map or image is unavailable.</p>
-          <ol data-visual-concept-fallback>
-            <li><strong>01 · Token</strong><span>A unit of text processed by the model; it is not a fact or a permission.</span><em>Next check: What material is actually present?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
-            <li><strong>02 · Context</strong><span>Material available in this turn, such as a prompt, supplied text, or tool data.</span><em>Next check: What is missing and still unknown?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
-            <li><strong>03 · Context window</strong><span>The amount of material that fits in one turn; the exact limit depends on the product.</span><em>Next check: Which limit is documented for this surface?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
-            <li><strong>04 · Prompt</strong><span>The goal, context, constraints, and requested answer shape; it frames work but grants no access.</span><em>Next check: What is allowed before the request starts?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
-            <li><strong>05 · Response</strong><span>Text proposed for inspection; fluent wording can still make an error sound certain.</span><em>Next check: What record can I compare with the response?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
-            <li><strong>06 · Tool / Agent</strong><span>A product may add reading, action, or coordination; runtime permission and evidence decide what happened.</span><em>Next check: What action receipt or log exists?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
-          </ol>
-        </details>
-        <p class="visual-boundary" data-i18n="conceptBoundary">Response is not action, and action is not a verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.</p>
-      </section>
-
-      <section id="visual-action-boundary" class="visual-action-boundary-section" aria-labelledby="visual-action-boundary-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
-          <p data-i18n="boundaryIntro">Follow one request through the layers that can be checked: a model proposes words, the host decides authority, a tool may run, a person reads the result, and evidence sets the claim limit.</p>
-        </div>
-        <div class="visual-action-boundary-workspace">
-          <div class="visual-action-boundary-graph" role="group" aria-label="Five layers between a model proposal and a checked claim" data-i18n-attr="aria-label:boundaryAria">
-            <div class="visual-action-boundary-center" aria-hidden="true"><span data-i18n="boundaryCenter">Keep layers separate</span><small data-i18n="boundaryCenterSub">proposal is not execution</small></div>
-            <ol class="visual-action-boundary-nodes" data-visual-action-boundary-nodes></ol>
-          </div>
-          <section class="visual-action-boundary-detail" data-visual-action-boundary-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="boundarySelected">Selected boundary</span>
-            <h3 data-visual-action-boundary-title></h3>
-            <p data-visual-action-boundary-body></p>
-            <p class="visual-action-boundary-next"><span data-i18n="boundaryNext">Next check</span><strong data-visual-action-boundary-next></strong></p>
-            <a class="visual-action-link" data-visual-action-boundary-link href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en"><span data-i18n="boundaryOpen">Open the action-boundary lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-action-boundary-fallback">
-          <summary data-i18n="boundaryFallback">Read the five boundary layers as text</summary>
-          <p data-i18n="boundaryFallbackIntro">Use the ordered list if the interaction is unavailable. Each layer names what can be observed and what it still cannot prove.</p>
-          <ol data-visual-action-boundary-fallback>
-            <li><strong>01 · Model proposes</strong><span>Words can name an action, but a plan or tool call is still a proposal.</span><em>Next check: What did the model actually propose?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
-            <li><strong>02 · Host decides authority</strong><span>The host and a person set the target, permission, and stop boundary.</span><em>Next check: What authority was granted?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
-            <li><strong>03 · Tool executes</strong><span>Look for the actual event and returned data; do not infer a run from fluent text.</span><em>Next check: What event or receipt is visible?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
-            <li><strong>04 · Person reads back</strong><span>Compare the result with a diff, log, source, test, or acceptance rule.</span><em>Next check: What did the read-back confirm?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
-            <li><strong>05 · Evidence limits the claim</strong><span>Keep the claim inside the receipt; if proof is missing, stop and keep it small.</span><em>Next check: What is the strongest label the record permits?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
-          </ol>
-        </details>
-        <figure class="visual-action-boundary-figure">
-          <a data-visual-action-boundary-image-link href="visual.html?asset=observable-action-boundary-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the action boundary board">
-            <img data-visual-action-boundary-image src="../assets/teaching/observable-action-boundary-red-black.svg" width="900" height="1400" loading="lazy" alt="Action boundary board separating model proposal, host authorization, tool execution and human read-back" data-i18n-attr="alt:boundaryFigureAlt" />
-            <span class="visual-image-link" data-i18n="boundaryOpenVisual">Open the full action-boundary board</span>
-          </a>
-          <figcaption data-i18n="boundaryFigureCaption">The project-authored board names four observable layers. This route makes the final evidence check explicit; neither view proves a runtime event.</figcaption>
-        </figure>
-        <p class="visual-boundary" data-i18n="boundaryBoundary">If a receipt is missing, keep the claim small. A model's wording cannot establish host permission, tool execution, or correctness.</p>
-      </section>
-
-      <section id="visual-triage" class="visual-triage-section" aria-labelledby="visual-triage-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
-          <p data-i18n="triageIntro">A response can be text, a run claim, an external effect, or an unknown dressed up as certainty. Choose the branch first; it tells you which record can change your claim.</p>
-        </div>
-        <div class="visual-triage-workspace">
-          <div class="visual-triage-graph" role="group" aria-label="Four response claim types and their next checks" data-i18n-attr="aria-label:triageAria">
-            <div class="visual-triage-center" aria-hidden="true"><span data-i18n="triageCenter">Classify first</span><small data-i18n="triageCenterSub">then choose the smallest check</small></div>
-            <ol class="visual-triage-nodes" data-visual-triage-nodes></ol>
-          </div>
-          <section class="visual-triage-detail" data-visual-triage-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="triageSelected">Selected claim type</span>
-            <h3 data-visual-triage-title></h3>
-            <p data-visual-triage-body></p>
-            <p class="visual-triage-next"><span data-i18n="triageNext">Smallest next check</span><strong data-visual-triage-next></strong></p>
-            <a class="visual-action-link" data-visual-triage-link href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span data-i18n="triageOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-triage-fallback">
-          <summary data-i18n="triageFallback">Read the four claim types as text</summary>
-          <p data-i18n="triageFallbackIntro">The same four branches remain available without the interactive map. Start with the smallest record that could change what you say.</p>
-          <ol data-visual-triage-fallback>
-            <li><strong>01 · Text only</strong><span>Check the source, scope, date, and freshness. A fluent answer is not a citation.</span><em>Smallest next check: Which passage supports the claim?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>02 · Tool or run claim</strong><span>Look for returned data, a diff, a log, or an execution receipt.</span><em>Smallest next check: What event is visible?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>03 · External side effect</strong><span>Confirm the target, permission, receipt, and recovery path before the effect.</span><em>Smallest next check: Who authorized this target?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>04 · Unknown or overconfident</strong><span>Use candidate or unknown, stop, or ask for one smaller check.</span><em>Smallest next check: What is still unobserved?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-          </ol>
-        </details>
-        <figure class="visual-triage-figure">
-          <a data-visual-triage-image-link href="visual.html?asset=response-claim-triage-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the response claim triage board">
-            <img data-visual-triage-image src="../assets/teaching/response-claim-triage-red-black.svg" width="900" height="1500" loading="lazy" alt="Four response claim types leading to the smallest next check" data-i18n-attr="alt:triageFigureAlt" />
-            <span class="visual-image-link" data-i18n="triageOpenVisual">Open the full claim triage board</span>
-          </a>
-          <figcaption data-i18n="triageFigureCaption">Project-authored board; the selected branch, ordered text, and source lesson carry the explanation.</figcaption>
-        </figure>
-        <p class="visual-boundary" data-i18n="triageBoundary">Classification is a starting decision, not proof. Keep the record, label uncertainty, and do not infer execution from fluent wording.</p>
-      </section>
-
-      <section id="visual-map" class="visual-map-section" aria-labelledby="visual-map-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
-          <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
-        </div>
-        <div class="visual-map-workspace">
-          <div class="visual-map-graph" role="group" aria-label="Six stages in the reliable LLM work loop" data-i18n-attr="aria-label:mapAria">
-            <div class="visual-map-center" aria-hidden="true"><span data-i18n="mapCenter">Reliable LLM work</span><small data-i18n="mapCenterSub">make the claim checkable</small></div>
-            <ol class="visual-map-nodes" data-visual-map-nodes></ol>
-          </div>
-          <section class="visual-map-detail" data-visual-map-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="selected">Selected stage</span>
-            <h3 data-visual-map-title></h3>
-            <p data-visual-map-body></p>
-            <p class="visual-map-next"><span data-i18n="nextQuestion">Next question</span><strong data-visual-map-next></strong></p>
-            <a class="visual-action-link" data-visual-map-link href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en" data-visual-reader><span data-i18n="openStage">Open this part of the route</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-map-fallback">
-          <summary data-i18n="fallbackSummary">Read the six stages as text</summary>
-          <p data-i18n="fallbackIntro">Use this ordered route without the interactive map. Each stage names an action and the evidence boundary that follows it.</p>
-          <ol data-visual-map-fallback>
-            <li><strong>01 · Understand</strong><span>Separate a model proposal from what the available evidence can establish.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-            <li><strong>02 · Frame</strong><span>State the goal, context, allowed help, limits, check, and stop condition.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-            <li><strong>03 · Act</strong><span>Allow only the smallest reversible action and pause before an external effect.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-            <li><strong>04 · Inspect</strong><span>Compare the output or diff with a source, test, log, or acceptance rule.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-            <li><strong>05 · Repair</strong><span>Name one mismatch, preserve the failed receipt, and change one condition before retrying.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-            <li><strong>06 · Transfer</strong><span>Repeat the method on an unseen task; one successful attempt is not mastery.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
-          </ol>
-        </details>
-      </section>
-
-      <section id="visual-evidence" class="visual-evidence-section" aria-labelledby="visual-evidence-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
-          <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
-        </div>
-        <div class="visual-evidence-workspace">
-          <div class="visual-evidence-graph" role="group" aria-label="Five steps from a question to a bounded decision" data-i18n-attr="aria-label:evidenceAria">
-            <div class="visual-evidence-center" aria-hidden="true"><span data-i18n="evidenceCenter">Keep the claim checkable</span><small data-i18n="evidenceCenterSub">one record at a time</small></div>
-            <ol class="visual-evidence-nodes" data-visual-evidence-nodes></ol>
-          </div>
-          <section class="visual-evidence-detail" data-visual-evidence-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="evidenceSelected">Selected evidence step</span>
-            <h3 data-visual-evidence-title></h3>
-            <p data-visual-evidence-body></p>
-            <p class="visual-evidence-next"><span data-i18n="evidenceNext">Next check</span><strong data-visual-evidence-next></strong></p>
-            <a class="visual-action-link" data-visual-evidence-link href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span data-i18n="evidenceOpen">Open the evidence route</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-evidence-fallback">
-          <summary data-i18n="evidenceFallback">Read the evidence path as text</summary>
-          <p data-i18n="evidenceFallbackIntro">The same five steps remain available without the interactive map. Each step says what you can claim and what remains outside the record.</p>
-          <ol data-visual-evidence-fallback>
-            <li><strong>01 · Question</strong><span>Name the decision before you search. A broad topic is not yet a checkable question.</span><em>Next check: What decision would this evidence change?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
-            <li><strong>02 · Source</strong><span>Name the owner, location, date, version, and boundary of the source before relying on it.</span><em>Next check: Can I locate the exact passage?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-008-research-question-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
-            <li><strong>03 · Observe</strong><span>Read the page, diff, test, log, or response. Do not infer an event you did not observe.</span><em>Next check: What happened in the record, not in the story?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
-            <li><strong>04 · Decide</strong><span>Keep the claim supported when the check matches; otherwise mark it candidate, unknown, or out of scope.</span><em>Next check: What is the strongest label the record permits?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-015-evidence-delivery-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
-            <li><strong>05 · Stop</strong><span>When the next proof is missing, stop and record the smallest safe next check. Preserve the unknown.</span><em>Next check: What remains unknown, and who can authorize the next step?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
-          </ol>
-        </details>
-        <figure class="visual-evidence-figure">
-          <a data-visual-evidence-image-link href="visual.html?asset=evidence-to-decision-stop-map-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the evidence decision board">
-            <img data-visual-evidence-image src="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" width="900" height="1500" loading="lazy" alt="Evidence to decision and stop teaching board" data-i18n-attr="alt:evidenceFigureAlt" />
-            <span class="visual-image-link" data-i18n="evidenceOpenVisual">Open the full evidence board</span>
-          </a>
-          <figcaption data-i18n="evidenceFigureCaption">Project-authored board; the interactive map and the ordered text carry the same meaning.</figcaption>
-        </figure>
-        <p class="visual-boundary" data-i18n="evidenceBoundary">The map is a reasoning aid. It does not prove that a source is correct, a tool ran, or a learner mastered the method.</p>
-      </section>
-
-      <section id="visual-reading-loop" class="visual-reading-loop-section" aria-labelledby="visual-reading-loop-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
-          <p data-i18n="readingIntro">Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.</p>
-        </div>
-        <div class="visual-reading-loop-workspace">
-          <div class="visual-reading-loop-graph" role="group" aria-label="Six steps from a page to a checked attempt" data-i18n-attr="aria-label:readingAria">
-            <div class="visual-reading-loop-center" aria-hidden="true"><span data-i18n="readingCenter">One page, one attempt</span><small data-i18n="readingCenterSub">read → try → check</small></div>
-            <ol class="visual-reading-loop-nodes" data-visual-reading-loop-nodes></ol>
-          </div>
-          <section class="visual-reading-loop-detail" data-visual-reading-loop-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="readingSelected">Selected reading step</span>
-            <h3 data-visual-reading-loop-title></h3>
-            <p data-visual-reading-loop-body></p>
-            <p class="visual-reading-loop-next"><span data-i18n="readingNext">Next question</span><strong data-visual-reading-loop-next></strong></p>
-            <a class="visual-action-link" data-visual-reading-loop-link href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="readingOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-reading-loop-fallback">
-          <summary data-i18n="readingFallback">Read the page-to-practice loop as text</summary>
-          <p data-i18n="readingFallbackIntro">The same six steps remain available as an ordered list. Follow the links only after you can name the next question.</p>
-          <ol data-visual-reading-loop-fallback>
-            <li><strong>01 · Name the problem</strong><span>Write the concrete question before you browse or ask for a solution.</span><em>Next question: What would count as a small, observable result?</em><a class="visual-action-link" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>02 · Find the concept</strong><span>Locate the distinction or rule that explains the problem; do not skip straight to a tool.</span><em>Next question: Which idea changes what I will do?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>03 · Try one bounded move</strong><span>Make the smallest reversible attempt with a clear input, permission, and stop condition.</span><em>Next question: What exactly will I change or leave untouched?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>04 · Inspect the record</strong><span>Read the output, diff, source, test, or log; separate what you saw from what you inferred.</span><em>Next question: What does the record support?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>05 · State the boundary</strong><span>Name what remains unknown, unauthorized, unobserved, or outside the task.</span><em>Next question: What is the smallest safe next check?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>06 · Try a changed task</strong><span>Vary one condition and repeat the method without claiming mastery from one success.</span><em>Next question: What changed, and did the method still hold?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-          </ol>
-        </details>
-        <figure class="visual-reading-loop-figure">
-          <a data-visual-reading-loop-image-link href="visual.html?asset=reader-page-reading-loop-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the page-to-practice board">
-            <img data-visual-reading-loop-image src="../assets/teaching/reader-page-reading-loop-red-black.svg" width="900" height="1200" loading="lazy" alt="Six-stage page-to-practice reading loop: problem, concept, action, evidence, boundary, transfer" data-i18n-attr="alt:readingFigureAlt" />
-            <span class="visual-image-link" data-i18n="readingOpenVisual">Open the page-to-practice board</span>
-          </a>
-          <figcaption data-i18n="readingFigureCaption">Project-authored reading loop. The board is a memory aid; the page text and your own record remain the basis for any claim.</figcaption>
-        </figure>
-        <p class="visual-boundary" data-i18n="readingBoundary">A completed reading loop is not proof of mastery. Keep the attempt, result, and unknowns visible.</p>
-      </section>
-
-      <section id="visual-receipt" class="visual-receipt-section" aria-labelledby="visual-receipt-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="receiptEyebrow">First-attempt receipt</p><h2 id="visual-receipt-title" data-i18n="receiptTitle">Do the small attempt. Keep the receipt.</h2></div>
-          <p data-i18n="receiptIntro">This five-step map turns a safe first try into a record another person can inspect. Select a step to see what to keep, what to ask next, and where the matching lesson begins.</p>
-        </div>
-        <div class="visual-receipt-workspace">
-          <div class="visual-receipt-graph" role="group" aria-label="Five steps from a bounded first attempt to a checkable receipt" data-i18n-attr="aria-label:receiptAria">
-            <div class="visual-receipt-center" aria-hidden="true"><span data-i18n="receiptCenter">Keep the receipt</span><small data-i18n="receiptCenterSub">small run → clear record</small></div>
-            <ol class="visual-receipt-nodes" data-visual-receipt-nodes></ol>
-          </div>
-          <section class="visual-receipt-detail" data-visual-receipt-detail aria-live="polite" aria-atomic="true">
-            <span class="visual-detail-label" data-i18n="receiptSelected">Selected receipt step</span>
-            <h3 data-visual-receipt-title></h3>
-            <p data-visual-receipt-body></p>
-            <p class="visual-receipt-next"><span data-i18n="receiptNext">Next question</span><strong data-visual-receipt-next></strong></p>
-            <a class="visual-action-link" data-visual-receipt-link href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en"><span data-i18n="receiptOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
-          </section>
-        </div>
-        <details class="visual-receipt-fallback">
-          <summary data-i18n="receiptFallback">Read the first-attempt receipt as text</summary>
-          <p data-i18n="receiptFallbackIntro">The same five steps remain available as an ordered list. Keep the record smaller than the original task, and stop when the boundary is unclear.</p>
-          <ol data-visual-receipt-fallback>
-            <li><strong>01 · Name one checkable result</strong><span>Choose a small outcome that can be observed without expanding the task.</span><em>Next question: What would count as a result?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
-            <li><strong>02 · Keep only safe, relevant input</strong><span>Use a fixture or non-sensitive example, and mark what is missing instead of guessing.</span><em>Next question: What input is allowed?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
-            <li><strong>03 · Save what actually happened</strong><span>Keep the response, diff, exit status, log, or screenshot—not only the plan.</span><em>Next question: What did I observe?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
-            <li><strong>04 · Compare one important detail</strong><span>Use a source, diff, test, log, or acceptance rule for one focused check.</span><em>Next question: Which record could change the claim?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
-            <li><strong>05 · Write result, limit, and unknown</strong><span>Record the result and the smallest safe next step, or stop without filling the gap.</span><em>Next question: What can another person inspect?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
-          </ol>
-        </details>
-        <figure class="visual-receipt-figure">
-          <a data-visual-receipt-image-link href="visual.html?asset=first-attempt-evidence-receipt-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the first-attempt receipt board">
-            <img data-visual-receipt-image src="../assets/teaching/first-attempt-evidence-receipt-red-black.svg" width="900" height="1400" loading="lazy" alt="Five-step first-attempt receipt: goal, safe input, actual run, focused check, and receipt" data-i18n-attr="alt:receiptFigureAlt" />
-            <span class="visual-image-link" data-i18n="receiptOpenVisual">Open the first-attempt receipt board</span>
-          </a>
-          <figcaption data-i18n="receiptFigureCaption">Project-authored teaching board. The text route and your own record carry the explanation; the image is a visual aid.</figcaption>
-        </figure>
-        <p class="visual-boundary" data-i18n="receiptBoundary">A receipt shows what was recorded for one bounded attempt. It does not prove that the task was correct, transferable, or mastered.</p>
-      </section>
-
-      <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
-        <div class="visual-section-heading">
-          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-board-explorer" data-visual-board-explorer>
@@ -536,6 +232,324 @@
           <div class="visual-gallery" data-visual-gallery-more></div>
         </details>
         <p class="visual-boundary" data-i18n="galleryBoundary">This is a focused selection from the project-authored teaching boards. It is not a quality score, benchmark, or proof of learning.</p>
+      </section>
+
+      <section id="visual-capability" class="visual-capability-section" aria-labelledby="visual-capability-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="capabilityEyebrow">Capability ladder</p><h2 id="visual-capability-title" data-i18n="capabilityTitle">Choose the next capability, not the biggest tool.</h2></div>
+          <p data-i18n="capabilityIntro">The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.</p>
+        </div>
+        <div class="visual-capability-workspace">
+          <div class="visual-capability-graph" role="group" aria-label="Seven candidate capability levels from observer to team coach" data-i18n-attr="aria-label:capabilityAria">
+            <div class="visual-capability-center" aria-hidden="true"><span data-i18n="capabilityCenter">Seven levels</span><small data-i18n="capabilityCenterSub">one observable practice at a time</small></div>
+            <ol class="visual-capability-nodes" data-visual-capability-nodes>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span>00</span><strong>Observer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span>01</span><strong>Safe user</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en"><span>02</span><strong>Task designer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en"><span>03</span><strong>Workflow designer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en"><span>04</span><strong>Capability builder</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span>05</span><strong>Evidence reviewer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en"><span>06</span><strong>Team coach</strong></a></li>
+            </ol>
+          </div>
+          <section class="visual-capability-detail" data-visual-capability-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="capabilitySelected">Selected capability</span>
+            <h3 data-visual-capability-title>Observer</h3>
+            <p data-visual-capability-headline>Understand the model before you act.</p>
+            <p data-visual-capability-body>Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.</p>
+            <p class="visual-capability-stats" data-visual-capability-stats>Level 0 · 1 chapter · 1 lab</p>
+            <p class="visual-capability-next"><span data-i18n="capabilityNext">Next practice</span><strong data-visual-capability-next>Open the first bounded task.</strong></p>
+            <figure class="visual-capability-figure">
+              <a data-visual-capability-image-link href="visual.html?asset=capability-ladder-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the capability ladder">
+                <img data-visual-capability-image src="../assets/teaching/capability-ladder-red-black.svg" width="1200" height="1750" loading="eager" alt="Seven-level capability ladder from observing an LLM result to coaching a team" data-i18n-attr="alt:capabilityFigureAlt" />
+                <span class="visual-image-link" data-i18n="capabilityOpenVisual">Open the capability ladder</span>
+              </a>
+              <figcaption data-i18n="capabilityFigureCaption">Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.</figcaption>
+            </figure>
+            <a class="visual-action-link" data-visual-capability-link href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span data-i18n="capabilityOpen">Open the next lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-capability-fallback">
+          <summary data-i18n="capabilityFallback">Read the seven levels as text</summary>
+          <p data-i18n="capabilityFallbackIntro">The same progression remains available without the interactive map. Each level names a practice and a bounded next route.</p>
+          <ol data-visual-capability-fallback>
+            <li><strong>00 · Observer</strong><span>Notice what happened and keep the visible result separate from what you infer.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>01 · Safe user</strong><span>Make one small, reversible request with fictional input, a clear stop, and a saved first response.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>02 · Task designer</strong><span>Write the result, limits, check, and stop so another person can inspect the task contract.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>03 · Workflow designer</strong><span>Sequence actions around evidence and separate proposal, authority, execution, observation, and recovery.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>04 · Capability builder</strong><span>Give a Skill a trigger, boundary, output, evidence, and rollback rule.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>05 · Evidence reviewer</strong><span>Judge claims against source, scope, version, access, and visible unknowns.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>06 · Team coach</strong><span>Make the method repeatable for others, review the receipt, and stop unsafe escalation.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+          </ol>
+        </details>
+        <p class="visual-boundary" data-i18n="capabilityBoundary">A level is a practice target, not a status claim. The project has not measured mastery or transfer.</p>
+      </section>
+
+      <section id="visual-concept" class="visual-concept-section" aria-labelledby="visual-concept-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
+          <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
+        </div>
+        <div class="visual-concept-workspace">
+          <div class="visual-concept-graph" role="group" aria-label="Six LLM terms that lead to one checked result" data-i18n-attr="aria-label:conceptAria">
+            <div class="visual-concept-center" aria-hidden="true"><span data-i18n="conceptCenter">One checked result</span><small data-i18n="conceptCenterSub">keep generation, action, and verification distinct</small></div>
+            <ol class="visual-concept-nodes" data-visual-concept-nodes></ol>
+          </div>
+          <section class="visual-concept-detail" data-visual-concept-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="conceptSelected">Selected term</span>
+            <h3 data-visual-concept-title></h3>
+            <p data-visual-concept-body></p>
+            <p class="visual-concept-next"><span data-i18n="conceptNext">Next check</span><strong data-visual-concept-next></strong></p>
+            <figure class="visual-concept-figure">
+              <a data-visual-concept-image-link href="visual.html?asset=llm-six-terms-to-one-check.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the six-term concept board">
+                <img data-visual-concept-image src="../assets/teaching/llm-six-terms-to-one-check.svg" width="900" height="1500" loading="lazy" alt="Six LLM terms leading to one checked result" data-i18n-attr="alt:conceptFigureAlt" />
+                <span class="visual-image-link" data-i18n="conceptOpenVisual">Open the full concept board</span>
+              </a>
+              <figcaption data-i18n="conceptFigureCaption">Project-authored concept board. The selected term, ordered list, and source lesson carry the explanation; the image is an orientation aid.</figcaption>
+            </figure>
+            <a class="visual-action-link" data-visual-concept-link href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span data-i18n="conceptOpen">Open the foundation lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-concept-fallback">
+          <summary data-i18n="conceptFallback">Read the six terms as text</summary>
+          <p data-i18n="conceptFallbackIntro">The same six terms remain available as an ordered list. Use the list when the map or image is unavailable.</p>
+          <ol data-visual-concept-fallback>
+            <li><strong>01 · Token</strong><span>A unit of text processed by the model; it is not a fact or a permission.</span><em>Next check: What material is actually present?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>02 · Context</strong><span>Material available in this turn, such as a prompt, supplied text, or tool data.</span><em>Next check: What is missing and still unknown?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>03 · Context window</strong><span>The amount of material that fits in one turn; the exact limit depends on the product.</span><em>Next check: Which limit is documented for this surface?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>04 · Prompt</strong><span>The goal, context, constraints, and requested answer shape; it frames work but grants no access.</span><em>Next check: What is allowed before the request starts?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
+            <li><strong>05 · Response</strong><span>Text proposed for inspection; fluent wording can still make an error sound certain.</span><em>Next check: What record can I compare with the response?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>06 · Tool / Agent</strong><span>A product may add reading, action, or coordination; runtime permission and evidence decide what happened.</span><em>Next check: What action receipt or log exists?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
+          </ol>
+        </details>
+        <p class="visual-boundary" data-i18n="conceptBoundary">Response is not action, and action is not a verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.</p>
+      </section>
+
+      <section id="visual-action-boundary" class="visual-action-boundary-section" aria-labelledby="visual-action-boundary-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
+          <p data-i18n="boundaryIntro">Follow one request through the layers that can be checked: a model proposes words, the host decides authority, a tool may run, a person reads the result, and evidence sets the claim limit.</p>
+        </div>
+        <div class="visual-action-boundary-workspace">
+          <div class="visual-action-boundary-graph" role="group" aria-label="Five layers between a model proposal and a checked claim" data-i18n-attr="aria-label:boundaryAria">
+            <div class="visual-action-boundary-center" aria-hidden="true"><span data-i18n="boundaryCenter">Keep layers separate</span><small data-i18n="boundaryCenterSub">proposal is not execution</small></div>
+            <ol class="visual-action-boundary-nodes" data-visual-action-boundary-nodes></ol>
+          </div>
+          <section class="visual-action-boundary-detail" data-visual-action-boundary-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="boundarySelected">Selected boundary</span>
+            <h3 data-visual-action-boundary-title></h3>
+            <p data-visual-action-boundary-body></p>
+            <p class="visual-action-boundary-next"><span data-i18n="boundaryNext">Next check</span><strong data-visual-action-boundary-next></strong></p>
+            <a class="visual-action-link" data-visual-action-boundary-link href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en"><span data-i18n="boundaryOpen">Open the action-boundary lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-action-boundary-fallback">
+          <summary data-i18n="boundaryFallback">Read the five boundary layers as text</summary>
+          <p data-i18n="boundaryFallbackIntro">Use the ordered list if the interaction is unavailable. Each layer names what can be observed and what it still cannot prove.</p>
+          <ol data-visual-action-boundary-fallback>
+            <li><strong>01 · Model proposes</strong><span>Words can name an action, but a plan or tool call is still a proposal.</span><em>Next check: What did the model actually propose?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
+            <li><strong>02 · Host decides authority</strong><span>The host and a person set the target, permission, and stop boundary.</span><em>Next check: What authority was granted?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
+            <li><strong>03 · Tool executes</strong><span>Look for the actual event and returned data; do not infer a run from fluent text.</span><em>Next check: What event or receipt is visible?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
+            <li><strong>04 · Person reads back</strong><span>Compare the result with a diff, log, source, test, or acceptance rule.</span><em>Next check: What did the read-back confirm?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
+            <li><strong>05 · Evidence limits the claim</strong><span>Keep the claim inside the receipt; if proof is missing, stop and keep it small.</span><em>Next check: What is the strongest label the record permits?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the action-boundary lesson ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-action-boundary-figure">
+          <a data-visual-action-boundary-image-link href="visual.html?asset=observable-action-boundary-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the action boundary board">
+            <img data-visual-action-boundary-image src="../assets/teaching/observable-action-boundary-red-black.svg" width="900" height="1400" loading="lazy" alt="Action boundary board separating model proposal, host authorization, tool execution and human read-back" data-i18n-attr="alt:boundaryFigureAlt" />
+            <span class="visual-image-link" data-i18n="boundaryOpenVisual">Open the full action-boundary board</span>
+          </a>
+          <figcaption data-i18n="boundaryFigureCaption">The project-authored board names four observable layers. This route makes the final evidence check explicit; neither view proves a runtime event.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="boundaryBoundary">If a receipt is missing, keep the claim small. A model's wording cannot establish host permission, tool execution, or correctness.</p>
+      </section>
+
+      <section id="visual-triage" class="visual-triage-section" aria-labelledby="visual-triage-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
+          <p data-i18n="triageIntro">A response can be text, a run claim, an external effect, or an unknown dressed up as certainty. Choose the branch first; it tells you which record can change your claim.</p>
+        </div>
+        <div class="visual-triage-workspace">
+          <div class="visual-triage-graph" role="group" aria-label="Four response claim types and their next checks" data-i18n-attr="aria-label:triageAria">
+            <div class="visual-triage-center" aria-hidden="true"><span data-i18n="triageCenter">Classify first</span><small data-i18n="triageCenterSub">then choose the smallest check</small></div>
+            <ol class="visual-triage-nodes" data-visual-triage-nodes></ol>
+          </div>
+          <section class="visual-triage-detail" data-visual-triage-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="triageSelected">Selected claim type</span>
+            <h3 data-visual-triage-title></h3>
+            <p data-visual-triage-body></p>
+            <p class="visual-triage-next"><span data-i18n="triageNext">Smallest next check</span><strong data-visual-triage-next></strong></p>
+            <a class="visual-action-link" data-visual-triage-link href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span data-i18n="triageOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-triage-fallback">
+          <summary data-i18n="triageFallback">Read the four claim types as text</summary>
+          <p data-i18n="triageFallbackIntro">The same four branches remain available without the interactive map. Start with the smallest record that could change what you say.</p>
+          <ol data-visual-triage-fallback>
+            <li><strong>01 · Text only</strong><span>Check the source, scope, date, and freshness. A fluent answer is not a citation.</span><em>Smallest next check: Which passage supports the claim?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>02 · Tool or run claim</strong><span>Look for returned data, a diff, a log, or an execution receipt.</span><em>Smallest next check: What event is visible?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>03 · External side effect</strong><span>Confirm the target, permission, receipt, and recovery path before the effect.</span><em>Smallest next check: Who authorized this target?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>04 · Unknown or overconfident</strong><span>Use candidate or unknown, stop, or ask for one smaller check.</span><em>Smallest next check: What is still unobserved?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-triage-figure">
+          <a data-visual-triage-image-link href="visual.html?asset=response-claim-triage-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the response claim triage board">
+            <img data-visual-triage-image src="../assets/teaching/response-claim-triage-red-black.svg" width="900" height="1500" loading="lazy" alt="Four response claim types leading to the smallest next check" data-i18n-attr="alt:triageFigureAlt" />
+            <span class="visual-image-link" data-i18n="triageOpenVisual">Open the full claim triage board</span>
+          </a>
+          <figcaption data-i18n="triageFigureCaption">Project-authored board; the selected branch, ordered text, and source lesson carry the explanation.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="triageBoundary">Classification is a starting decision, not proof. Keep the record, label uncertainty, and do not infer execution from fluent wording.</p>
+      </section>
+
+      <section id="visual-map" class="visual-map-section" aria-labelledby="visual-map-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
+          <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
+        </div>
+        <div class="visual-map-workspace">
+          <div class="visual-map-graph" role="group" aria-label="Six stages in the reliable LLM work loop" data-i18n-attr="aria-label:mapAria">
+            <div class="visual-map-center" aria-hidden="true"><span data-i18n="mapCenter">Reliable LLM work</span><small data-i18n="mapCenterSub">make the claim checkable</small></div>
+            <ol class="visual-map-nodes" data-visual-map-nodes></ol>
+          </div>
+          <section class="visual-map-detail" data-visual-map-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="selected">Selected stage</span>
+            <h3 data-visual-map-title></h3>
+            <p data-visual-map-body></p>
+            <p class="visual-map-next"><span data-i18n="nextQuestion">Next question</span><strong data-visual-map-next></strong></p>
+            <a class="visual-action-link" data-visual-map-link href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en" data-visual-reader><span data-i18n="openStage">Open this part of the route</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-map-fallback">
+          <summary data-i18n="fallbackSummary">Read the six stages as text</summary>
+          <p data-i18n="fallbackIntro">Use this ordered route without the interactive map. Each stage names an action and the evidence boundary that follows it.</p>
+          <ol data-visual-map-fallback>
+            <li><strong>01 · Understand</strong><span>Separate a model proposal from what the available evidence can establish.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+            <li><strong>02 · Frame</strong><span>State the goal, context, allowed help, limits, check, and stop condition.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+            <li><strong>03 · Act</strong><span>Allow only the smallest reversible action and pause before an external effect.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+            <li><strong>04 · Inspect</strong><span>Compare the output or diff with a source, test, log, or acceptance rule.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+            <li><strong>05 · Repair</strong><span>Name one mismatch, preserve the failed receipt, and change one condition before retrying.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+            <li><strong>06 · Transfer</strong><span>Repeat the method on an unseen task; one successful attempt is not mastery.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open this part of the route ↗</a></li>
+          </ol>
+        </details>
+      </section>
+
+      <section id="visual-evidence" class="visual-evidence-section" aria-labelledby="visual-evidence-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
+          <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
+        </div>
+        <div class="visual-evidence-workspace">
+          <div class="visual-evidence-graph" role="group" aria-label="Five steps from a question to a bounded decision" data-i18n-attr="aria-label:evidenceAria">
+            <div class="visual-evidence-center" aria-hidden="true"><span data-i18n="evidenceCenter">Keep the claim checkable</span><small data-i18n="evidenceCenterSub">one record at a time</small></div>
+            <ol class="visual-evidence-nodes" data-visual-evidence-nodes></ol>
+          </div>
+          <section class="visual-evidence-detail" data-visual-evidence-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="evidenceSelected">Selected evidence step</span>
+            <h3 data-visual-evidence-title></h3>
+            <p data-visual-evidence-body></p>
+            <p class="visual-evidence-next"><span data-i18n="evidenceNext">Next check</span><strong data-visual-evidence-next></strong></p>
+            <a class="visual-action-link" data-visual-evidence-link href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span data-i18n="evidenceOpen">Open the evidence route</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-evidence-fallback">
+          <summary data-i18n="evidenceFallback">Read the evidence path as text</summary>
+          <p data-i18n="evidenceFallbackIntro">The same five steps remain available without the interactive map. Each step says what you can claim and what remains outside the record.</p>
+          <ol data-visual-evidence-fallback>
+            <li><strong>01 · Question</strong><span>Name the decision before you search. A broad topic is not yet a checkable question.</span><em>Next check: What decision would this evidence change?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
+            <li><strong>02 · Source</strong><span>Name the owner, location, date, version, and boundary of the source before relying on it.</span><em>Next check: Can I locate the exact passage?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-008-research-question-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
+            <li><strong>03 · Observe</strong><span>Read the page, diff, test, log, or response. Do not infer an event you did not observe.</span><em>Next check: What happened in the record, not in the story?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
+            <li><strong>04 · Decide</strong><span>Keep the claim supported when the check matches; otherwise mark it candidate, unknown, or out of scope.</span><em>Next check: What is the strongest label the record permits?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-015-evidence-delivery-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
+            <li><strong>05 · Stop</strong><span>When the next proof is missing, stop and record the smallest safe next check. Preserve the unknown.</span><em>Next check: What remains unknown, and who can authorize the next step?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the evidence route ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-evidence-figure">
+          <a data-visual-evidence-image-link href="visual.html?asset=evidence-to-decision-stop-map-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the evidence decision board">
+            <img data-visual-evidence-image src="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" width="900" height="1500" loading="lazy" alt="Evidence to decision and stop teaching board" data-i18n-attr="alt:evidenceFigureAlt" />
+            <span class="visual-image-link" data-i18n="evidenceOpenVisual">Open the full evidence board</span>
+          </a>
+          <figcaption data-i18n="evidenceFigureCaption">Project-authored board; the interactive map and the ordered text carry the same meaning.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="evidenceBoundary">The map is a reasoning aid. It does not prove that a source is correct, a tool ran, or a learner mastered the method.</p>
+      </section>
+
+      <section id="visual-reading-loop" class="visual-reading-loop-section" aria-labelledby="visual-reading-loop-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
+          <p data-i18n="readingIntro">Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.</p>
+        </div>
+        <div class="visual-reading-loop-workspace">
+          <div class="visual-reading-loop-graph" role="group" aria-label="Six steps from a page to a checked attempt" data-i18n-attr="aria-label:readingAria">
+            <div class="visual-reading-loop-center" aria-hidden="true"><span data-i18n="readingCenter">One page, one attempt</span><small data-i18n="readingCenterSub">read → try → check</small></div>
+            <ol class="visual-reading-loop-nodes" data-visual-reading-loop-nodes></ol>
+          </div>
+          <section class="visual-reading-loop-detail" data-visual-reading-loop-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="readingSelected">Selected reading step</span>
+            <h3 data-visual-reading-loop-title></h3>
+            <p data-visual-reading-loop-body></p>
+            <p class="visual-reading-loop-next"><span data-i18n="readingNext">Next question</span><strong data-visual-reading-loop-next></strong></p>
+            <a class="visual-action-link" data-visual-reading-loop-link href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="readingOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-reading-loop-fallback">
+          <summary data-i18n="readingFallback">Read the page-to-practice loop as text</summary>
+          <p data-i18n="readingFallbackIntro">The same six steps remain available as an ordered list. Follow the links only after you can name the next question.</p>
+          <ol data-visual-reading-loop-fallback>
+            <li><strong>01 · Name the problem</strong><span>Write the concrete question before you browse or ask for a solution.</span><em>Next question: What would count as a small, observable result?</em><a class="visual-action-link" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>02 · Find the concept</strong><span>Locate the distinction or rule that explains the problem; do not skip straight to a tool.</span><em>Next question: Which idea changes what I will do?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>03 · Try one bounded move</strong><span>Make the smallest reversible attempt with a clear input, permission, and stop condition.</span><em>Next question: What exactly will I change or leave untouched?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>04 · Inspect the record</strong><span>Read the output, diff, source, test, or log; separate what you saw from what you inferred.</span><em>Next question: What does the record support?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>05 · State the boundary</strong><span>Name what remains unknown, unauthorized, unobserved, or outside the task.</span><em>Next question: What is the smallest safe next check?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>06 · Try a changed task</strong><span>Vary one condition and repeat the method without claiming mastery from one success.</span><em>Next question: What changed, and did the method still hold?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-reading-loop-figure">
+          <a data-visual-reading-loop-image-link href="visual.html?asset=reader-page-reading-loop-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the page-to-practice board">
+            <img data-visual-reading-loop-image src="../assets/teaching/reader-page-reading-loop-red-black.svg" width="900" height="1200" loading="lazy" alt="Six-stage page-to-practice reading loop: problem, concept, action, evidence, boundary, transfer" data-i18n-attr="alt:readingFigureAlt" />
+            <span class="visual-image-link" data-i18n="readingOpenVisual">Open the page-to-practice board</span>
+          </a>
+          <figcaption data-i18n="readingFigureCaption">Project-authored reading loop. The board is a memory aid; the page text and your own record remain the basis for any claim.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="readingBoundary">A completed reading loop is not proof of mastery. Keep the attempt, result, and unknowns visible.</p>
+      </section>
+
+      <section id="visual-receipt" class="visual-receipt-section" aria-labelledby="visual-receipt-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="receiptEyebrow">First-attempt receipt</p><h2 id="visual-receipt-title" data-i18n="receiptTitle">Do the small attempt. Keep the receipt.</h2></div>
+          <p data-i18n="receiptIntro">This five-step map turns a safe first try into a record another person can inspect. Select a step to see what to keep, what to ask next, and where the matching lesson begins.</p>
+        </div>
+        <div class="visual-receipt-workspace">
+          <div class="visual-receipt-graph" role="group" aria-label="Five steps from a bounded first attempt to a checkable receipt" data-i18n-attr="aria-label:receiptAria">
+            <div class="visual-receipt-center" aria-hidden="true"><span data-i18n="receiptCenter">Keep the receipt</span><small data-i18n="receiptCenterSub">small run → clear record</small></div>
+            <ol class="visual-receipt-nodes" data-visual-receipt-nodes></ol>
+          </div>
+          <section class="visual-receipt-detail" data-visual-receipt-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="receiptSelected">Selected receipt step</span>
+            <h3 data-visual-receipt-title></h3>
+            <p data-visual-receipt-body></p>
+            <p class="visual-receipt-next"><span data-i18n="receiptNext">Next question</span><strong data-visual-receipt-next></strong></p>
+            <a class="visual-action-link" data-visual-receipt-link href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en"><span data-i18n="receiptOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-receipt-fallback">
+          <summary data-i18n="receiptFallback">Read the first-attempt receipt as text</summary>
+          <p data-i18n="receiptFallbackIntro">The same five steps remain available as an ordered list. Keep the record smaller than the original task, and stop when the boundary is unclear.</p>
+          <ol data-visual-receipt-fallback>
+            <li><strong>01 · Name one checkable result</strong><span>Choose a small outcome that can be observed without expanding the task.</span><em>Next question: What would count as a result?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>02 · Keep only safe, relevant input</strong><span>Use a fixture or non-sensitive example, and mark what is missing instead of guessing.</span><em>Next question: What input is allowed?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
+            <li><strong>03 · Save what actually happened</strong><span>Keep the response, diff, exit status, log, or screenshot—not only the plan.</span><em>Next question: What did I observe?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>04 · Compare one important detail</strong><span>Use a source, diff, test, log, or acceptance rule for one focused check.</span><em>Next question: Which record could change the claim?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>05 · Write result, limit, and unknown</strong><span>Record the result and the smallest safe next step, or stop without filling the gap.</span><em>Next question: What can another person inspect?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-receipt-figure">
+          <a data-visual-receipt-image-link href="visual.html?asset=first-attempt-evidence-receipt-red-black.svg&amp;lang=en" target="_blank" rel="noreferrer" aria-label="Open the first-attempt receipt board">
+            <img data-visual-receipt-image src="../assets/teaching/first-attempt-evidence-receipt-red-black.svg" width="900" height="1400" loading="lazy" alt="Five-step first-attempt receipt: goal, safe input, actual run, focused check, and receipt" data-i18n-attr="alt:receiptFigureAlt" />
+            <span class="visual-image-link" data-i18n="receiptOpenVisual">Open the first-attempt receipt board</span>
+          </a>
+          <figcaption data-i18n="receiptFigureCaption">Project-authored teaching board. The text route and your own record carry the explanation; the image is a visual aid.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="receiptBoundary">A receipt shows what was recorded for one bounded attempt. It does not prove that the task was correct, transferable, or mastered.</p>
       </section>
 
       <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">

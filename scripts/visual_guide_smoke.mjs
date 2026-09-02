@@ -39,6 +39,33 @@ const expectedHero = {
   'zh-tw': '先看懂方法，再閱讀細節。',
   fr: 'Voyez la méthode avant d’entrer dans le détail.',
 };
+const expectedEntryTitle = {
+  en: 'Four ways in, one route to a checked attempt.',
+  zh: '四种入口，通向一次可检查的尝试。',
+  es: 'Cuatro entradas, un recorrido hacia un intento comprobable.',
+  ja: '4つの入口から、確認できる試行へ進む。',
+  ko: '네 가지 입구에서 확인 가능한 시도 하나로.',
+  de: 'Vier Einstiege, ein Weg zu einem prüfbaren Versuch.',
+  'zh-tw': '四種入口，通往一次可檢查的嘗試。',
+  fr: 'Quatre entrées, un parcours vers un essai vérifiable.',
+};
+const expectedEntryAria = {
+  en: 'Choose a visual guide starting point',
+  zh: '选择视觉导览的起点',
+  es: 'Elegir un punto de entrada a la guía visual',
+  ja: 'ビジュアルガイドの開始地点を選ぶ',
+  ko: '시각 안내서 시작점 선택',
+  de: 'Startpunkt des visuellen Leitfadens wählen',
+  'zh-tw': '選擇視覺導覽的起點',
+  fr: 'Choisir un point de départ dans le guide visuel',
+};
+const expectedTopLevelOrder = [
+  'visual-hero', 'visual-entry', 'visual-route', 'visual-goal', 'visual-journey',
+  'visual-gallery', 'visual-capability', 'visual-concept', 'visual-action-boundary',
+  'visual-triage', 'visual-map', 'visual-evidence', 'visual-reading-loop',
+  'visual-receipt', 'visual-how', 'visual-maturity',
+];
+const expectedEntryHrefs = ['#visual-route', '#visual-goal', '#visual-journey', '#visual-gallery'];
 const expectedSkillBoundaryCard = {
   en: 'Decide whether a Skill should act',
   zh: '先判断 Skill 是否应该行动',
@@ -123,6 +150,38 @@ try {
     await page.goto(`${origin}/site/visuals.html?lang=${locale}`, { waitUntil: 'networkidle' });
     assert.equal(await page.locator('html').getAttribute('lang'), locale, `${locale} document language changed`);
     assert.equal(await page.locator('h1').innerText(), expectedHero[locale], `${locale} hero copy changed`);
+    assert.deepEqual(
+      await page.locator('#visual-main > [id]').evaluateAll((nodes) => nodes.map((node) => node.id)),
+      expectedTopLevelOrder,
+      `${locale} visual guide section order changed`,
+    );
+    assert.equal(await page.locator('#visual-entry').getAttribute('aria-label'), expectedEntryAria[locale], `${locale} visual entry navigation label is not localized`);
+    assert.equal(await page.locator('#visual-entry-title').innerText(), expectedEntryTitle[locale], `${locale} visual entry title is not localized`);
+    assert.deepEqual(
+      await page.locator('#visual-entry .visual-entry-card').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
+      expectedEntryHrefs,
+      `${locale} visual entry targets changed`,
+    );
+    for (const card of await page.locator('#visual-entry .visual-entry-card').all()) {
+      assert.notEqual((await card.innerText()).trim(), '', `${locale} visual entry card is empty`);
+    }
+    const firstScreen = await page.evaluate(() => {
+      const firstCard = document.querySelector('#visual-entry .visual-entry-card');
+      const action = document.querySelector('.visual-hero-action');
+      const box = (node) => node.getBoundingClientRect();
+      return {
+        viewport: window.innerHeight,
+        entryTop: box(document.querySelector('#visual-entry')).top,
+        firstCardTop: box(firstCard).top,
+        actionTop: box(action).top,
+      };
+    });
+    assert.ok(firstScreen.entryTop < firstScreen.viewport, `${locale} visual entry is not in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.ok(firstScreen.firstCardTop < firstScreen.viewport, `${locale} first visual entry card is not in the first viewport: ${JSON.stringify(firstScreen)}`);
+    assert.ok(firstScreen.actionTop < firstScreen.viewport, `${locale} primary visual action is not in the first viewport: ${JSON.stringify(firstScreen)}`);
+    for (const selector of ['#visual-entry', '#visual-route', '#visual-goal', '#visual-journey', '#visual-gallery']) {
+      assert.notEqual(await page.locator(selector).evaluate((section) => getComputedStyle(section).scrollMarginTop), '0px', `${locale} ${selector} has no anchor offset`);
+    }
     const selectors = {
       route: '[data-visual-route-nodes] button',
       goal: '[data-visual-goal-nodes] button',
@@ -182,11 +241,34 @@ try {
     await noHorizontalOverflow(`${locale} 390px visual guide`);
   }
 
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'networkidle' });
+  const desktopFirstScreen = await page.evaluate(() => {
+    const entry = document.querySelector('#visual-entry').getBoundingClientRect();
+    const card = document.querySelector('#visual-entry .visual-entry-card').getBoundingClientRect();
+    return { viewport: window.innerHeight, entryTop: entry.top, cardTop: card.top };
+  });
+  assert.ok(desktopFirstScreen.entryTop < desktopFirstScreen.viewport, `desktop visual entry is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
+  assert.ok(desktopFirstScreen.cardTop < desktopFirstScreen.viewport, `desktop first visual entry card is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
+
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow('fr 360px visual guide');
   assert.equal(await count('.visual-card'), expectedCounts.cards, 'fr 360px gallery lost teaching boards');
   assert.equal(await page.locator('.visual-footer-site').getAttribute('href'), 'https://prysai.com/', 'fr 360px footer lost the official-site link');
+  await page.locator('#visual-entry .visual-entry-card').first().focus();
+  const focusState = await page.locator('#visual-entry .visual-entry-card').first().evaluate((link) => {
+    const style = getComputedStyle(link);
+    return { active: document.activeElement === link, outlineStyle: style.outlineStyle, outlineWidth: style.outlineWidth };
+  });
+  assert.equal(focusState.active, true, 'visual entry card did not receive keyboard focus');
+  assert.notEqual(focusState.outlineStyle, 'none', 'visual entry card has no visible focus style');
+  assert.notEqual(focusState.outlineWidth, '0px', 'visual entry card focus style has no width');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  const reducedMotion = await page.evaluate(() => ({ scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior, transitionDuration: getComputedStyle(document.querySelector('.visual-entry-card')).transitionDuration }));
+  assert.equal(reducedMotion.scrollBehavior, 'auto', 'visual guide did not disable smooth scrolling for reduced motion');
+  assert.notEqual(reducedMotion.transitionDuration, '0s', 'visual guide reduced-motion transition rule was not applied');
+  await page.emulateMedia({ reducedMotion: null });
 
   // Board links open the project-owned responsive viewer rather than a raw
   // SVG. Verify one localized route, the zoom contract, and the invalid-asset
@@ -227,6 +309,14 @@ try {
   const noScriptContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const noScriptPage = await noScriptContext.newPage();
   await noScriptPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
+  assert.equal(await noScriptPage.locator('#visual-entry').count(), 1, 'no-script visual entry navigation is missing');
+  assert.equal(await noScriptPage.locator('#visual-entry .visual-entry-card').count(), 4, 'no-script visual entry navigation changed');
+  assert.deepEqual(
+    await noScriptPage.locator('#visual-entry .visual-entry-card').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
+    expectedEntryHrefs,
+    'no-script visual entry targets changed',
+  );
+  assert.notEqual((await noScriptPage.locator('#visual-entry-title').innerText()).trim(), '', 'no-script visual entry title is empty');
   for (const [name, selector] of Object.entries({
     route: '[data-visual-route-fallback] li',
     goal: '[data-visual-goal-fallback] li',
