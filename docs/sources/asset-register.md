@@ -49,6 +49,8 @@
 
 **新增资产记录 S164：** `.github/workflows/maintainer-pr-automerge.yml` 在 2026-08-30 引入两个固定版本的外部 GitHub Action：`actions/github-script` 通过 GitHub API 做 eligibility 检查并以固定 `commit_id` 提交明确标注的 bot approval，`peter-evans/enable-pull-request-automerge` 请求 GitHub 原生 Squash Auto-merge。使用的 commit pin 分别为 `3a2844b7e9c422d3c10d287c895573f7108da1b3` 和 `a660677d5469627102a1c1e11409dd063606628d`；截至盘点日，两个上游仓库均报告 MIT 许可证。项目没有复制或 vendoring 上游源码，只让 GitHub Actions 按完整 SHA 拉取运行；上游源、`action.yml`、许可证和权限用途已通过对应公开仓库复核。该自动化仍受本仓库的显式 `uuzzrm` / `Prysai-Lab` 作者、目标仓库/来源仓库、标题、路径、大小、SHA、质量、安全和 Ruleset 边界约束；bot approval 不是独立人工审查，不证明自动合并已在生产环境运行或安全。
 
+**新增维护记录 S165：** 2026-09-01 对既有 `foundation-first-visit-route-red-black.svg`、`llm-foundation-core-path-red-black.svg` 与 `playbook-learning-journey-red-black.svg` 做了信息层级重排：缩短固定卡片文案，明确 `DECIDE / STOP` 与 `EVIDENCE / STOP`，并将可选路线降为浅红次级面板。英文源图与七种项目自有语言变体仍保持原文件名、`viewBox`、文字节点顺序和文字回退契约；生成器为西语、德语、法语等确有需要的固定卡片行加入受限的 `textLength`，几何 smoke 现在覆盖这三组图与既有证据成熟度图的 8 个语言版本。改动只使用项目自有文字、几何图形和系统字体，没有引入外部媒体、字体、图标、脚本、文案或远程请求；它改善导航图的决策可读性，不证明视觉质量、翻译达到母语级、学习效果、迁移或生产就绪。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。

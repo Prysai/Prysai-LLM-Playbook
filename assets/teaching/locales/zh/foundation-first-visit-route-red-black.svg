@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">第一次造访路线：完成一个可检查的 LLM 任务</title>
-  <desc id="desc">这张五步教学图带你完成第一次造访：选定一个目标，打开 LLM 基础核心，做一次安全尝试，检查记录，然后继续下一条路线，或让未知保持可见并停下。</desc>
+  <desc id="desc">这张五步教学图带你完成第一次造访：选定一个目标，打开 LLM 基础核心，做一次安全尝试，检查记录；只有下一项证明存在时才继续，否则让未知保持可见并停下。</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
       <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
@@ -18,7 +18,7 @@
   <text x="78" y="112" class="mono" font-size="22">起点／第一次造访</text>
   <text x="78" y="174" class="ink" font-size="48" font-weight="900">一条安全路线。</text>
   <text x="78" y="230" class="ink" font-size="48" font-weight="900">先于完整目录。</text>
-  <text x="78" y="282" class="muted" font-size="22">选一个目标，做一次小尝试，并保留记录。</text>
+  <text x="78" y="282" class="muted" font-size="22">选一个目标。做一次小尝试。保留记录。</text>
 
   <line x1="128" y1="362" x2="128" y2="1154" class="line"/>
   <line x1="128" y1="480" x2="128" y2="538" class="redline"/>
@@ -41,7 +41,7 @@
     <rect x="112" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">打开</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">从基础核心开始。</text>
-    <text x="140" y="106" class="muted" font-size="17">先了解模型边界，再选择平台。</text>
+    <text x="140" y="106" class="muted" font-size="17">先了解模型边界。</text>
   </g>
 
   <g transform="translate(78 644)">
@@ -50,7 +50,7 @@
     <rect x="112" width="650" height="120" fill="#ffe5e9" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">尝试</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">做一次安全尝试。</text>
-    <text x="140" y="106" class="muted" font-size="17">使用虚构或本地的非敏感材料。</text>
+    <text x="140" y="106" class="muted" font-size="17">使用虚构、本地、非敏感的材料。</text>
   </g>
 
   <g transform="translate(78 806)">
@@ -66,14 +66,14 @@
     <circle cx="50" cy="48" r="34" fill="#111"/>
     <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
     <rect x="112" width="650" height="120" fill="#111"/>
-    <text x="140" y="44" class="mono" fill="#fff" font-size="19">继续／停止</text>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">决定／停止</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">选择下一条有边界的路线。</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">下一项证明缺失时，让未知保持可见。</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">只有下一项证明存在时才继续。</text>
   </g>
 
   <rect x="78" y="1160" width="762" height="116" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
-  <text x="102" y="1200" class="mono" font-size="17">边界</text>
-  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">目录是一组选择，不是第一项任务。</text>
-  <text x="102" y="1264" class="muted" font-size="17">这条路线帮助访客定位；不能证明学习或掌握。</text>
-  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB／原创教学图／从小处开始，检查重要之处</text>
+  <text x="102" y="1200" class="mono" font-size="17">证据／停止</text>
+  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">缺少证明就停下，让未知保持可见。</text>
+  <text x="102" y="1264" class="muted" font-size="17">这张图帮助访客定位；不能证明学习。</text>
+  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB／原创教学图／先练习，再下结论</text>
 </svg>

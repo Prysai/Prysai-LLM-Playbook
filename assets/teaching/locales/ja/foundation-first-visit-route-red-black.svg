@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">初回訪問で確認できる LLM タスクへ進むルート</title>
-  <desc id="desc">5段階の教材図です。目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行い、記録を確認します。その後は次のルートへ進むか、不明点を見えるまま止まります。</desc>
+  <desc id="desc">5段階の教材図です。目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行って記録を確認します。次の証拠があるときだけ続け、なければ不明点を見えるまま止まります。</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
       <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
@@ -18,7 +18,7 @@
   <text x="78" y="112" class="mono" font-size="22">スタート / 初回訪問</text>
   <text x="78" y="174" class="ink" font-size="48" font-weight="900">安全なルートを1つ。</text>
   <text x="78" y="230" class="ink" font-size="48" font-weight="900">カタログを見る前に。</text>
-  <text x="78" y="282" class="muted" font-size="22">目的を1つ決め、小さく試して、記録を残す。</text>
+  <text x="78" y="282" class="muted" font-size="22">目的を1つ決める。小さく試す。記録を残す。</text>
 
   <line x1="128" y1="362" x2="128" y2="1154" class="line"/>
   <line x1="128" y1="480" x2="128" y2="538" class="redline"/>
@@ -32,7 +32,7 @@
     <rect x="112" width="650" height="120" fill="#111"/>
     <text x="140" y="44" class="mono" fill="#fff" font-size="19">選ぶ</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">結果を1つ言葉にする。</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">小さな1点を理解・練習・確認する。</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">小さな1点だけを理解・練習・確認する。</text>
   </g>
 
   <g transform="translate(78 482)">
@@ -40,8 +40,8 @@
     <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
     <rect x="112" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">開く</text>
-    <text x="140" y="78" class="ink" font-size="28" font-weight="900">LLM Foundation Coreから始める。</text>
-    <text x="140" y="106" class="muted" font-size="17">プラットフォームを選ぶ前に、モデルの境界を知る。</text>
+    <text x="140" y="78" class="ink" font-size="28" font-weight="900">Foundation Coreから始める。</text>
+    <text x="140" y="106" class="muted" font-size="17">まずモデルの境界を知る。</text>
   </g>
 
   <g transform="translate(78 644)">
@@ -50,7 +50,7 @@
     <rect x="112" width="650" height="120" fill="#ffe5e9" stroke="#111" stroke-width="2"/>
     <text x="140" y="44" class="mono" font-size="19">試す</text>
     <text x="140" y="78" class="ink" font-size="28" font-weight="900">安全な試行を1回行う。</text>
-    <text x="140" y="106" class="muted" font-size="17">架空またはローカルの非機密データを使う。</text>
+    <text x="140" y="106" class="muted" font-size="17">架空でローカルな、非機密の資料を使う。</text>
   </g>
 
   <g transform="translate(78 806)">
@@ -59,21 +59,21 @@
     <rect x="112" width="650" height="120" fill="#d71920"/>
     <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700">確認</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">実際の記録を読む。</text>
-    <text x="140" y="106" fill="#fff" font-size="17">応答、差分、出典、テスト、ログを照合する。</text>
+    <text x="140" y="106" fill="#fff" font-size="17">応答、差分、出典、テスト、ログを比べる。</text>
   </g>
 
   <g transform="translate(78 968)">
     <circle cx="50" cy="48" r="34" fill="#111"/>
     <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
     <rect x="112" width="650" height="120" fill="#111"/>
-    <text x="140" y="44" class="mono" fill="#fff" font-size="19">続ける / 止める</text>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">決める / 止める</text>
     <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">次の範囲を区切ったルートを選ぶ。</text>
-    <text x="140" y="106" fill="#c8c8c2" font-size="17">次の証拠がなければ、不明点を見えるままにする。</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">次の証拠があるときだけ続ける。</text>
   </g>
 
   <rect x="78" y="1160" width="762" height="116" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
-  <text x="102" y="1200" class="mono" font-size="17">境界</text>
-  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">カタログは選択肢であり、最初の課題ではない。</text>
-  <text x="102" y="1264" class="muted" font-size="17">このルートは訪問者を案内するだけで、学習や習得を証明しない。</text>
-  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB / オリジナル教材図 / 小さく始め、重要な点を確認する</text>
+  <text x="102" y="1200" class="mono" font-size="17">証拠 / 止める</text>
+  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">証拠がなければ止まり、不明点を見えるままにする。</text>
+  <text x="102" y="1264" class="muted" font-size="17">この図は訪問者を案内するが、学習を証明しない。</text>
+  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB / オリジナル教材図 / 主張する前に練習する</text>
 </svg>

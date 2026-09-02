@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">Le LLM Foundation Core en cinq unités</title>
-  <desc id="desc">Ce parcours en cinq unités commence par un essai sûr, rend le contexte et les consignes visibles, repère les échecs observables, vérifie et répare le résultat, puis réutilise la méthode sur une tâche inconnue.</desc>
+  <desc id="desc">Ce parcours en cinq unités commence par un essai sûr, rend les champs de la tâche visibles, nomme l’échec observable, vérifie et répare avec des preuves, puis réutilise la méthode sur une tâche inconnue.</desc>
   <rect width="900" height="1400" fill="#f6f6f2"/>
   <rect x="42" y="34" width="816" height="10" fill="#171717"/>
   <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FOUNDATION CORE / CINQ UNITÉS</text>
   <text x="42" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">APPRENDRE LA MÉTHODE</text>
-  <text x="42" y="214" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">AVANT DE CHOISIR LA PLATEFORME.</text>
+  <text x="42" y="214" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2" textLength="810" lengthAdjust="spacingAndGlyphs">AVANT DE CHOISIR LA PLATEFORME.</text>
   <text x="44" y="255" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">essayer / observer / nommer / réparer / transférer</text>
 
   <line x1="76" y1="330" x2="76" y2="1178" stroke="#d71920" stroke-width="8"/>
@@ -19,31 +19,31 @@
     <rect width="734" height="124" fill="#171717"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / ESSAYER</text>
     <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Commencez par un essai sûr.</text>
-    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Utilisez une tâche fictive hors ligne et gardez la première réponse.</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Gardez la première réponse comme base.</text>
   </g>
   <g transform="translate(122 488)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / CADRER</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Rendez le contexte et la consigne visibles.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Séparez les faits fournis, les faits manquants, les limites et la forme de réponse.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Rendez les champs de la tâche visibles.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Objectif, contexte, limites et forme de réponse.</text>
   </g>
   <g transform="translate(122 658)">
     <rect width="734" height="124" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / REPÉRER</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Reconnaissez les formes d’échec visibles.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Signalez les omissions, les inventions, l’ambiguïté forcée et l’assurance excessive.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Nommez l’échec visible.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Omission, invention, ambiguïté ou assurance excessive.</text>
   </g>
   <g transform="translate(122 828)">
     <rect width="734" height="124" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="24" y="35" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / RÉPARER</text>
-    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Vérifiez, réparez et énoncez les limites.</text>
-    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Comparez aux preuves, ne changez qu’une condition et gardez le manque visible.</text>
+    <text x="24" y="80" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Vérifiez et réparez avec des preuves.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Comparez aux preuves. Ne changez qu’une condition.</text>
   </g>
   <g transform="translate(122 998)">
     <rect width="734" height="124" fill="#d71920"/>
     <text x="24" y="35" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / TRANSFÉRER</text>
-    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Répétez sur une tâche inconnue.</text>
-    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Un parcours conservé est un entraînement ; une nouvelle tâche exige son propre contrôle.</text>
+    <text x="24" y="80" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Répétez la méthode sur une tâche inconnue.</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Une nouvelle tâche exige son propre contrôle.</text>
   </g>
 
   <rect x="42" y="1192" width="816" height="132" fill="#171717"/>

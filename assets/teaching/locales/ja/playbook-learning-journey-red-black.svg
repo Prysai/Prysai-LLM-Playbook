@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
   <title id="title">Prysai LLM Playbook の学習ルート</title>
-  <desc id="desc">4段階の学習ルートです。まず LLM Foundation Core の5ユニットを終え、範囲を区切った最初の課題を証拠と意図的な停止または判断につなげます。その後、Codex、ツール、Skill、チーム向けの任意ルートを選びます。</desc>
+  <desc id="desc">4段階の学習ルートです。まず5ユニットのコアを終え、最初の課題を確認してから、必要な任意ルートを選びます。</desc>
   <rect width="1200" height="1600" fill="#f6f6f2"/>
   <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
   <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / 学習ルート</text>
@@ -17,8 +17,8 @@
   <g transform="translate(140 360)">
     <rect width="1000" height="198" fill="#171717"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / FOUNDATION CORE</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">理解 → 始める → 気づく → 修正する → 転用する</text>
-    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">5つのユニットで、モデル、依頼、見える失敗、確認、未知の課題を明確にする。</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">5ユニットのコアを先に終える。</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">モデル、依頼、失敗、確認、転用を学ぶ。</text>
     <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Codex、ツール、Agent、Skillを選ぶ前に、ここから始める。</text>
   </g>
 
@@ -26,24 +26,24 @@
     <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / 最初の範囲を区切った課題</text>
     <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">依頼する前に、結果を言葉にする。</text>
-    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">目的、与えられたコンテキスト、許される支援、制約、回答の形、停止条件を書く。</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">架空または使い捨ての課題を使い、最初の依頼と応答を残す。</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">目的、コンテキスト、支援、制約、回答形式、停止を書く。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">架空の課題を使い、最初の依頼と応答を残す。</text>
   </g>
 
   <g transform="translate(140 890)">
     <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / 証拠のループ</text>
-    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">何が変わったかを観察し、不明点を残す。</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">変化を観察し、不明点を残す。</text>
     <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">応答や差分を出典、テスト、ログ、受け入れ条件と照合する。</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">次の証拠があるときだけ続け、なければ最小限の安全な停止を記録する。</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">次の証拠があるときだけ続ける。</text>
   </g>
 
   <g transform="translate(140 1155)">
-    <rect width="1000" height="198" fill="#d71920"/>
-    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / 任意のルート</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">次に役立つ最小限の層を選ぶ。</text>
-    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · ツール · Skill · Agent · 調査 · エンジニアリング · チーム練習</text>
-    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">各ルートで、出典、権限、証拠、失敗例、限界を別々に保つ。</text>
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / 任意のルート</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">次に役立つ最小限の層を選ぶ。</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · ツール · Skill · Agent · 調査 · チーム</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">各ルートで、権限、証拠、限界を別々に保つ。</text>
   </g>
 
   <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>

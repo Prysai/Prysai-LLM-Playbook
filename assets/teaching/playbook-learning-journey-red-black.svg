@@ -17,8 +17,8 @@
   <g transform="translate(140 360)">
     <rect width="1000" height="198" fill="#171717"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / FOUNDATION CORE</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Understand → initiate → identify → repair → transfer</text>
-    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Five units make the model, the request, the visible failures, the check, and the unseen task explicit.</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Finish the five-unit core first.</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Learn the model, request, failures, check, and transfer.</text>
     <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Start here before Codex, tools, Agents, or Skills.</text>
   </g>
 
@@ -26,29 +26,29 @@
     <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / FIRST BOUNDED TASK</text>
     <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Name the result before you ask.</text>
-    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">State the goal, supplied context, allowed help, limits, response shape, and stop condition.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Use a fictional or disposable task; keep the first request and first response.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">State goal, context, help, limits, response shape, and stop.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Use a fictional task; keep the first request and response.</text>
   </g>
 
   <g transform="translate(140 890)">
     <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
     <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / EVIDENCE LOOP</text>
-    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Observe what changed. Keep what is unknown.</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Observe the change. Keep the unknown.</text>
     <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Compare the answer or diff with a source, test, log, or acceptance rule.</text>
-    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Continue only when the next proof exists; otherwise record the smallest safe stop.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Continue only when the next proof exists.</text>
   </g>
 
   <g transform="translate(140 1155)">
-    <rect width="1000" height="198" fill="#d71920"/>
-    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / OPTIONAL TRACKS</text>
-    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Choose the smallest useful next layer.</text>
-    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · tools · Skills · Agents · research · engineering · team practice</text>
-    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Each track keeps its own source, permissions, evidence, failure cases, and limits.</text>
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / OPTIONAL TRACKS</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Choose the smallest useful next layer.</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · tools · Skills · Agents · research · team</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Each track keeps its own permissions, evidence, and limits.</text>
   </g>
 
   <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
   <text x="84" y="1452" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">BOUNDARY / CANDIDATE ROUTE</text>
   <text x="84" y="1492" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">A MAP SHOWS THE ORDER. IT DOES NOT PROVE MASTERY.</text>
-  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Keep the artifact, the evidence, the limit, and the next question.</text>
-  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / PRACTICE BEFORE CLAIM</text>
+  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Keep artifact, evidence, limit, and next question.</text>
+  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL BOARD / PRACTICE BEFORE CLAIM</text>
 </svg>
