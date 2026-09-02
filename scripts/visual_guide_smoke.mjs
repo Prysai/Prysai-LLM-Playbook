@@ -159,6 +159,7 @@ try {
     );
     assert.equal(await page.locator('#visual-entry').getAttribute('aria-label'), expectedEntryAria[locale], `${locale} visual entry navigation label is not localized`);
     assert.equal(await page.locator('#visual-entry-title').innerText(), expectedEntryTitle[locale], `${locale} visual entry title is not localized`);
+    assert.match(await page.locator('[data-visual-route-progress]').innerText(), /^01 \/ 11$/, `${locale} route progress does not expose the initial step`);
     assert.deepEqual(
       await page.locator('[data-visual-reading-link]').evaluateAll((links) => links.map((link) => link.getAttribute('href'))),
       expectedReadingNavHrefs,
@@ -230,6 +231,15 @@ try {
     for (const [name, selector] of Object.entries(selectors)) {
       assert.equal(await count(selector), expectedCounts[name], `${locale} ${name} visual contract changed`);
     }
+    const mobileRouteOrder = await page.evaluate(() => {
+      const detail = document.querySelector('.visual-route-detail')?.getBoundingClientRect();
+      const nav = document.querySelector('.visual-route-nav')?.getBoundingClientRect();
+      return { detailTop: detail?.top, navTop: nav?.top };
+    });
+    assert.ok(mobileRouteOrder.detailTop < mobileRouteOrder.navTop, `${locale} mobile route explanation does not precede the step list: ${JSON.stringify(mobileRouteOrder)}`);
+    await page.locator('[data-visual-route-nodes] button').nth(4).click();
+    assert.equal(await page.locator('[data-visual-route-progress]').innerText(), '05 / 11', `${locale} route progress did not follow the selected step`);
+    assert.equal(await page.locator('[data-visual-route-nodes] button').nth(4).getAttribute('aria-pressed'), 'true', `${locale} route step selection is not exposed`);
     const officialSite = page.locator('.visual-footer-site');
     assert.equal(await officialSite.count(), 1, `${locale} visual footer is missing the official-site link`);
     assert.equal(await officialSite.getAttribute('href'), 'https://prysai.com/', `${locale} visual footer official-site URL changed`);
@@ -280,11 +290,14 @@ try {
     const card = document.querySelector('#visual-entry .visual-entry-card').getBoundingClientRect();
     const cardTitle = document.querySelector('#visual-entry .visual-entry-card strong').getBoundingClientRect();
     const cardAction = document.querySelector('#visual-entry .visual-entry-card em').getBoundingClientRect();
-    return { viewport: window.innerHeight, entryTop: entry.top, cardTop: card.top, cardTitleBottom: cardTitle.bottom, cardActionBottom: cardAction.bottom };
+    const detail = document.querySelector('.visual-route-detail')?.getBoundingClientRect();
+    const nav = document.querySelector('.visual-route-nav')?.getBoundingClientRect();
+    return { viewport: window.innerHeight, entryTop: entry.top, cardTop: card.top, cardTitleBottom: cardTitle.bottom, cardActionBottom: cardAction.bottom, routeDetailLeft: detail?.left, routeNavLeft: nav?.left };
   });
   assert.ok(desktopFirstScreen.entryTop < desktopFirstScreen.viewport, `desktop visual entry is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
   assert.ok(desktopFirstScreen.cardTitleBottom < desktopFirstScreen.viewport, `desktop first visual entry card title is not in the first viewport: ${JSON.stringify(desktopFirstScreen)}`);
   assert.ok(desktopFirstScreen.cardActionBottom <= desktopFirstScreen.viewport - 16, `desktop first visual entry card action has no visible first-screen margin: ${JSON.stringify(desktopFirstScreen)}`);
+  assert.ok(desktopFirstScreen.routeNavLeft < desktopFirstScreen.routeDetailLeft, `desktop route step list does not precede the explanation visually: ${JSON.stringify(desktopFirstScreen)}`);
 
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });

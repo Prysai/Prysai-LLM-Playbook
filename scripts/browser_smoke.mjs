@@ -909,7 +909,7 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
     assert.equal(await visualGuidePage.locator('.visual-card').count(), 22, `${locale} visual guide lost a teaching board`);
-    assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
+    assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'sticky', `${locale} visual guide header is not sticky for section navigation`);
     const routeCompassCard = visualGuidePage.locator('.visual-card').first();
     assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
     assert.match(await routeCompassCard.locator('img').getAttribute('src'), /reader-route-compass-red-black\.svg$/, `${locale} visual guide lost the reader route compass board`);

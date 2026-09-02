@@ -411,11 +411,13 @@ h3 { text-wrap: balance; }
 .visual-route-workspace {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  grid-template-areas: 'nav detail';
   gap: 1px;
   background: var(--visual-dark-line);
 }
 
 .visual-route-nav {
+  grid-area: nav;
   min-width: 0;
   padding: 1.2rem;
   background: var(--visual-white);
@@ -461,6 +463,7 @@ h3 { text-wrap: balance; }
 .visual-board-explorer-node { width: 100%; }
 
 .visual-route-detail {
+  grid-area: detail;
   display: grid;
   align-content: center;
   gap: .7rem;
@@ -473,6 +476,8 @@ h3 { text-wrap: balance; }
 .visual-route-detail h3 { max-width: 16ch; margin: 0; color: var(--visual-white); font-size: clamp(1.55rem, 2.8vw, 2.4rem); line-height: .98; letter-spacing: -.05em; }
 .visual-route-detail p { margin: 0; color: #d7d7d2; font-size: .84rem; line-height: 1.5; }
 .visual-route-detail .visual-detail-label { color: #ff526f; }
+.visual-route-progress { display: flex; align-items: baseline; gap: .35rem; color: #aaa !important; font-size: .68rem !important; font-weight: 800; letter-spacing: .1em; line-height: 1 !important; text-transform: uppercase; }
+.visual-route-progress strong { color: #ff526f; font-size: 1.25rem; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
 .visual-route-next { display: grid; gap: .2rem; margin-top: .35rem !important; padding-top: .7rem; border-top: 1px solid #555; }
 .visual-route-next span { color: #aaa; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
 .visual-route-next strong { color: var(--visual-white); font-size: .86rem; }
@@ -1315,6 +1320,7 @@ h3 { text-wrap: balance; }
   .visual-entry-heading { grid-template-columns: 1fr; gap: .8rem; }
   .visual-entry-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .visual-route-workspace, .visual-goal-workspace, .visual-journey-workspace, .visual-capability-workspace, .visual-maturity-workspace, .visual-concept-workspace, .visual-action-boundary-workspace, .visual-triage-workspace, .visual-map-workspace, .visual-evidence-workspace, .visual-reading-loop-workspace, .visual-receipt-workspace, .visual-board-explorer, .visual-how-grid { grid-template-columns: 1fr; }
+  .visual-route-workspace { grid-template-areas: 'detail' 'nav'; }
   .visual-map-detail, .visual-evidence-detail, .visual-reading-loop-detail, .visual-receipt-detail { min-height: 0; }
   .visual-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -1362,6 +1368,7 @@ h3 { text-wrap: balance; }
   .visual-route-node { min-height: 5.4rem; padding: .7rem; }
   .visual-route-detail { min-height: 0; padding: 1.25rem; }
   .visual-route-detail h3 { max-width: none; font-size: 2rem; }
+  .visual-route-progress strong { font-size: 1.1rem; }
   .visual-route-fallback { padding: .8rem; }
   .visual-route-fallback ol { grid-template-columns: 1fr; gap: .8rem; }
   .visual-goal-graph::before, .visual-goal-graph::after { display: none; }
