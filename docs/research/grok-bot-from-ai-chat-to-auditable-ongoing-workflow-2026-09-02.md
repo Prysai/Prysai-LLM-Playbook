@@ -21,17 +21,18 @@ completion, complete auditing, or a successful outcome.
 
 ## Why this is timely
 
-The supplied reader material describes a familiar shift: people are moving
-from asking a model for one answer toward delegating a sequence of work that
-can continue, use tools, and return for judgment. That is a useful demand
-signal for this project, not an independent product test. This note responds
-to the question without reproducing the supplied person's name, private
-context, screenshots, paths, transcript, or efficiency claims.
+The supplied reader material reports interest in moving from one-off chat
+toward delegated, multi-step work that can continue, use tools, and return for
+judgment. This is a single-user demand signal, not evidence of a general
+population shift or measured adoption. This note responds to the question
+without reproducing the supplied person's name, private context, screenshots,
+paths, transcript, or efficiency claims.
 
-The timing also matters because the official product pages changed quickly:
-Grok Bot launched on 2026-08-11 as `Early beta`, and the current help pages
-document more platforms and controls. The date on each source is therefore
-part of the claim.
+The timing also matters because the official documentation is time-sensitive
+and may change during this early-beta rollout; this snapshot should be
+rechecked against each recorded access date. Grok Bot launched on 2026-08-11
+as `Early beta`, while the current help pages document its platforms and
+controls.
 
 ## The smallest useful concept
 
