@@ -118,7 +118,7 @@ kleinsten Check, der die Lücke schließen würde.
 
 ## Quellen
 
-- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06 und FP2-20.
+- [Feldprobleme und Prompt-Muster — P2](../evidence-library-DE.md#source-notes), FP2-05, FP2-06 und FP2-20.
 - [Kapitel 9: Verifikation, Zweifel und Wiederherstellung](../chapters/09-verification-and-recovery-DE.md).
 
 <!-- lab-navigation:start -->

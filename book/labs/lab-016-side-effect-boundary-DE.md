@@ -78,7 +78,7 @@ dauerhaften Zustand verändert hätte, und warum die Grenze gehalten hat.
 
 ## Quellen
 
-- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-07, FP2-10, FP2-12 und FP2-19.
+- [Feldprobleme und Prompt-Muster — P2](../evidence-library-DE.md#source-notes), FP2-07, FP2-10, FP2-12 und FP2-19.
 - [Kapitel 13: Aktionsgrenzen](../chapters/13-action-boundaries-DE.md).
 
 <!-- lab-navigation:start -->

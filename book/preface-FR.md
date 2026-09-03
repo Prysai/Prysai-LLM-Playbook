@@ -106,8 +106,8 @@ la justesse de l’arrêt.
 
 Toute conclusion reste limitée à ces tâches, à cet environnement et à cette
 date. Une fixture sans journal d’exécution reste `not_run`. Consultez la
-[fiche d’évaluation Luna (locale-neutral)](../docs/model-evaluation-luna.md) et la
-[recherche de base officielle (locale-neutral)](../docs/research/openai-codex-baseline.md) pour
+[fiche d’évaluation Luna (locale-neutral)](evidence-library-FR.md#method-and-status) et la
+[recherche de base officielle (locale-neutral)](evidence-library-FR.md#source-notes) pour
 connaître la portée exacte des informations disponibles.
 
 ## Commencer par les limites
@@ -158,7 +158,7 @@ Vous pouvez aussi commencer par le [guide du livre](README-FR.md), qui explique
 le contrat des chapitres, le modèle de preuve, l’état courant et la règle des
 locales. Pour les limites générales du projet, consultez la
 [source d’état courant (locale-neutral)](../docs/governance/content-status.yaml) et le
-[cadre d’évaluation (locale-neutral)](../docs/quality/evaluation-framework.md).
+[cadre d’évaluation (locale-neutral)](evidence-library-FR.md#method-and-status).
 
 ## Une première séquence simple
 

@@ -38,7 +38,7 @@ mais :
 
 ## Problèmes de terrain : l’échec peut précéder la première tâche
 
-La [recherche de terrain Codex](../../docs/research/field-problems-codex.md)
+La [recherche de terrain Codex](../evidence-library-FR.md#source-notes)
 consigne deux rapports publics. Ils décrivent des symptômes, pas des causes
 officielles ni des reproductions locales :
 
@@ -328,12 +328,12 @@ capacité, autorité, observation et décision d’adoption.
 
 | Fait ou limite | Source | Accès | Portée | Responsable / prochaine revue |
 |---|---|---:|---|---|
-| Skills comme instructions de tâche ou de workflow, avec ressources et sélection explicite | [Skills and Plugins](https://learn.chatgpt.com/docs/skills-and-plugins.md) et [fiche de mise à jour](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | 2026-08-09 | Description officielle à cette date ; ne prouve pas qu’un Skill précis est activé ou chargé | `facts-maintainer` / 2026-09-09 |
+| Skills comme instructions de tâche ou de workflow, avec ressources et sélection explicite | [Skills and Plugins](https://learn.chatgpt.com/docs/skills-and-plugins.md) et [fiche de mise à jour](../evidence-library-FR.md#source-notes) | 2026-08-09 | Description officielle à cette date ; ne prouve pas qu’un Skill précis est activé ou chargé | `facts-maintainer` / 2026-09-09 |
 | Composition des Plugins, surfaces prises en charge, installation, authentification et approbation | [Plugins](https://learn.chatgpt.com/docs/plugins.md) et [registre d’impact](../../docs/governance/fact-impact-registry.yaml) | 2026-08-09 | Description officielle ; catalogue et accès du compte peuvent varier | `facts-maintainer` / 2026-09-09 |
 | Serveurs MCP, outils/ressources/prompts exposés et contrôle d’autorisation | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | Configuration officielle de l’hôte Codex ; l’authentification, les outils et la politique d’organisation exigent des contrôles séparés | `facts-maintainer` / 2026-09-09 |
 | Les actions d’un connecteur ou de MCP peuvent faire partie de l’approbation | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | Modèle officiel d’approbation ; pas la configuration d’exécution actuelle du dépôt | `facts-maintainer` / 2026-09-09 |
-| Symptômes de découverte liés aux liens et aux appels explicites | [Recherche de terrain Codex](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapports publics ; pas de reproduction locale ni de cause officielle | `curriculum-maintainer` / 2026-09-09 |
-| Inventaire et signaux de licence des candidats | [Catalogue des Skills candidats](../../docs/sources/skill-candidate-catalog.md) et [registre des assets](../../docs/sources/asset-register.md) | 2026-08-09 | Inventaire du projet ; n’est pas une approbation d’installation | `source-maintainer` / 2026-11-09 |
+| Symptômes de découverte liés aux liens et aux appels explicites | [Recherche de terrain Codex](../evidence-library-FR.md#source-notes) | 2026-08-09 | Rapports publics ; pas de reproduction locale ni de cause officielle | `curriculum-maintainer` / 2026-09-09 |
+| Inventaire et signaux de licence des candidats | [Catalogue des Skills candidats](../evidence-library-FR.md#source-notes) et [registre des assets](../evidence-library-FR.md#source-notes) | 2026-08-09 | Inventaire du projet ; n’est pas une approbation d’installation | `source-maintainer` / 2026-11-09 |
 
 Les détails d’installation, d’authentification, de manifeste et d’invocation
 changent. Actualisez les sources de première partie, le registre d’impact, ce

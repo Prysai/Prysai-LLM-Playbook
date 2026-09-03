@@ -36,7 +36,7 @@ preuve de sortie existe et qu’une autre personne peut la relire.
 ### Voir un résultat sans perdre sa frontière
 
 Le dépôt contient aussi un cas fictif et jetable : une page destinée à un
-acheteur immobilier débutant. Lisez d’abord le [registre du cas](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md) :
+acheteur immobilier débutant. Lisez d’abord le [registre du cas](../evidence-library-FR.md#source-notes) :
 il décrit les entrées synthétiques, le rendu local, le viewport et ce que la
 capture ne peut pas établir.
 
@@ -64,7 +64,7 @@ reste assez petit pour être relu et relancé sans secret ni requête externe.
 
 ## Entrée du problème réel : l’échec peut se trouver entre deux écrans
 
-La [recherche de terrain Codex](../../docs/research/field-problems-codex.md)
+La [recherche de terrain Codex](../evidence-library-FR.md#source-notes)
 rassemble des rapports publics. Ce sont des symptômes rapportés, pas des
 analyses officielles de cause ni des reproductions locales.
 
@@ -479,11 +479,11 @@ diff, à un contrôle runtime et à une acceptation humaine.
 
 | Fait ou frontière | Source | Portée | Responsable / prochaine revue |
 |---|---|---|---|
-| Sandbox et approbation sont deux contrôles distincts ; un connecteur peut avoir un effet externe | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) et [facts refresh](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | Description officielle datée ; ne prouve pas la politique runtime de ce dépôt | `facts-maintainer` / 2026-09-09 |
+| Sandbox et approbation sont deux contrôles distincts ; un connecteur peut avoir un effet externe | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) et [facts refresh](../evidence-library-FR.md#source-notes) | Description officielle datée ; ne prouve pas la politique runtime de ce dépôt | `facts-maintainer` / 2026-09-09 |
 | Le travail Cloud sépare setup, Agent, revue et suivi | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | Fait produit ; compte, organisation et environnement exigent une vérification séparée | `facts-maintainer` / 2026-09-09 |
-| Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](https://github.com/openai/codex/issues/33865) et [recherche terrain](../../docs/research/field-problems-codex.md) | Rapport public, sans cause universelle ni reproduction locale | `curriculum-maintainer` / 2026-09-09 |
+| Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](https://github.com/openai/codex/issues/33865) et [recherche terrain](../evidence-library-FR.md#source-notes) | Rapport public, sans cause universelle ni reproduction locale | `curriculum-maintainer` / 2026-09-09 |
 | Une vérification longue peut laisser la complétion ambiguë | [FP-10 / issue #34325](https://github.com/openai/codex/issues/34325) | Rapport public ; cause et portée inconnues | `curriculum-maintainer` / 2026-09-09 |
-| L’authentification doit être décomposée en étapes observables | [FP-01 et FP-02](../../docs/research/field-problems-codex.md) | Discipline de preuve, pas conseil officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
+| L’authentification doit être décomposée en étapes observables | [FP-01 et FP-02](../evidence-library-FR.md#source-notes) | Discipline de preuve, pas conseil officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
 | Une vérification ne doit pas devenir silencieusement une installation persistante | [FP-11 / issue #37677](https://github.com/openai/codex/issues/37677) | Rapport public, pas politique officielle ni reproduction locale | `curriculum-maintainer` / 2026-09-09 |
 
 Les principes de cycle sont relativement stables. Les surfaces, modèles,

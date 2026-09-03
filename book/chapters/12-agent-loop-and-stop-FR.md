@@ -141,7 +141,7 @@ non étayée :
 
 ### Motifs d’architecture à conserver
 
-L’[audit de l’étude claude-code-from-source](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+L’[audit de l’étude claude-code-from-source](../evidence-library-FR.md#source-notes)
 est une référence conceptuelle uniquement : il ne s’agit ni d’une source
 officielle d’implémentation, ni d’une preuve de parité. Ses idées utiles sont
 réécrites ici comme questions de conception transférables :
@@ -817,8 +817,8 @@ de modèles, outils, labels d’interface et commandes sont volatils.
 | Approbations et garde-fous | [OpenAI Guardrails](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) | 2026-08-10 | Ne prouve pas qu’une approbation a été affichée dans ce run. |
 | Instructions indirectes | [OpenAI Agent Builder safety](https://developers.openai.com/api/docs/guides/agent-builder-safety) | 2026-08-10 | Guide de sécurité, pas preuve de blocage universel. |
 | Comparaison d’outils | [Anthropic Tool use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md) · [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | Référence produit, pas contrat Codex. |
-| Rapports de terrain | [Field problems](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md) · [deep dive](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | Rapports et synthèses, sans reproduction ni cause universelle. |
-| Étude d’architecture externe | [Audit claude-code-from-source](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md) | 2026-08-16 | Référence conceptuelle uniquement, sans copie d’implémentation. |
+| Rapports de terrain | [Field problems](../evidence-library-FR.md#source-notes) · [deep dive](../evidence-library-FR.md#source-notes) | 2026-08-11 | Rapports et synthèses, sans reproduction ni cause universelle. |
+| Étude d’architecture externe | [Audit claude-code-from-source](../evidence-library-FR.md#source-notes) | 2026-08-16 | Référence conceptuelle uniquement, sans copie d’implémentation. |
 
 Avant de quitter `candidate`, exécutez les quatre runs dans une copie, gardez
 les traces, faites une relecture indépendante et n’appelez pas cela une preuve

@@ -112,7 +112,7 @@ transfer_limitations: "静态样本不能证明真实 Skill 可以加载、行�
 
 ## 来源
 
-- [现场问题与提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-11 和 FP2-12。
+- [现场问题与提示模式 — P2](../evidence-library-ZH.md#source-notes)，FP2-11 和 FP2-12。
 - [第 7 章：Skills、插件、MCP 与工具](../chapters/07-skills-plugins-and-tools-ZH.md)。
 - [第 14 章：发现、安装与审计外部 Skill](../chapters/14-discover-and-audit-skills-ZH.md)。
 

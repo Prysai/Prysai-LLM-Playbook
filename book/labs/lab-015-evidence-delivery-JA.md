@@ -116,7 +116,7 @@ stop condition:
 
 ## 出典
 
-- [現場の問題とプロンプトのパターン — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、FP2-05、FP2-06、FP2-20。
+- [現場の問題とプロンプトのパターン — P2](../evidence-library-JA.md#source-notes)、FP2-05、FP2-06、FP2-20。
 - [第9章：検証、疑い、復旧](../chapters/09-verification-and-recovery-JA.md)。
 
 <!-- lab-navigation:start -->

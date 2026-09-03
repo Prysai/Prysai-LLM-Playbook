@@ -48,7 +48,7 @@ pas des comportements universels confirmés par le fournisseur.
 | L’appel explicite dépend d’une liste visible | Une résolution de nom peut différer de l’inventaire | Que l’invocation a réussi | Consigner découverte implicite et résolution explicite séparément |
 | La vérification demande une réinstallation forcée | Une frontière persistante a été proposée | Que l’Agent ou le fournisseur l’exige toujours | Arrêter, nommer l’effet et choisir un contrôle isolé |
 
-Consultez `FP-06`, `FP-07` et `FP-11` dans la [recherche de terrain](../../docs/research/field-problems-codex.md).
+Consultez `FP-06`, `FP-07` et `FP-11` dans la [recherche de terrain](../evidence-library-FR.md#source-notes).
 Les identifiants sont des entrées de revue, pas des engagements produit.
 
 ## 1. Écrire le protocole de tâche avant de chercher un Skill
@@ -259,8 +259,8 @@ voir.
 
 ## Sources et limite de mise à jour
 
-- **Rapports de terrain :** [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-06, FP-07 et FP-11 ; ils restent `candidate` et ne sont pas des causes officielles.
-- **Licences et assets :** [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md), S02, S03 et S06 ; revoir après chaque ajout ou changement de licence.
+- **Rapports de terrain :** [`docs/research/field-problems-codex.md`](../evidence-library-FR.md#source-notes), FP-06, FP-07 et FP-11 ; ils restent `candidate` et ne sont pas des causes officielles.
+- **Licences et assets :** [`docs/sources/asset-register.md`](../evidence-library-FR.md#source-notes), S02, S03 et S06 ; revoir après chaque ajout ou changement de licence.
 - **Structure et comportements volatils :** [dépôt officiel OpenAI Codex](https://github.com/openai/codex) ; la source ne remplace pas une preuve runtime locale.
 
 Le propriétaire de mise à jour est le groupe de maintenance Prysai LLM Playbook.

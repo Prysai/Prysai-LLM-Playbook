@@ -82,7 +82,7 @@ Entscheidung verändert hat und was weiterhin `not_observed` ist.
 
 ## Quellen
 
-- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-01 bis FP2-04 und FP2-08.
+- [Feldprobleme und Prompt-Muster — P2](../evidence-library-DE.md#source-notes), FP2-01 bis FP2-04 und FP2-08.
 - [Kapitel 10: Planung und vertikale Schnitte](../chapters/10-planning-and-slicing-DE.md).
 - [Kapitel 12: Agent-Schleife, Zustand und Stoppbedingungen](../chapters/12-agent-loop-and-stop-DE.md).
 

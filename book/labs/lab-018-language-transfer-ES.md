@@ -72,7 +72,7 @@ Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es
 ## Parte 4 — comprobación retrasada y límite
 
 Antes de B1 declara ventana de siete días con tolerancia de un día. Congela la
-revisión del [banco de tarjetas retrasadas del Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md), asigna D1/D2/D3 antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas, autor y hora de revelación. Si exposición es `yes` o `unknown`, es **tarea retrasada cambiada**, no una tarea que el aprendiz no haya visto antes. No reutilices frases de B1 ni C1. Conserva ambas puntuaciones independientes; un desacuerdo relevante deja la retención y la transferencia sin afirmar.
+revisión del [banco de tarjetas retrasadas del Lab 018](../evidence-library-ES.md#method-and-status), asigna D1/D2/D3 antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas, autor y hora de revelación. Si exposición es `yes` o `unknown`, es **tarea retrasada cambiada**, no una tarea que el aprendiz no haya visto antes. No reutilices frases de B1 ni C1. Conserva ambas puntuaciones independientes; un desacuerdo relevante deja la retención y la transferencia sin afirmar.
 
 La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino el idioma» debe recibir una negativa o una afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
 
@@ -123,8 +123,8 @@ registrada `no`.
 
 La [guía de práctica de aprendizaje](../guides/learning-practice-contract-ES.md),
 el [pack de práctica para principiantes](../communication-clinic-ES.md), el
-[límite entre ensayo escrito y conversación oral](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md)
-y el [banco de tarjetas retrasadas](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+[límite entre ensayo escrito y conversación oral](../evidence-library-ES.md#source-notes)
+y el [banco de tarjetas retrasadas](../evidence-library-ES.md#method-and-status)
 respaldan decisiones de diseño y sus límites. No demuestran eficacia del Lab,
 del modelo ni de una plataforma. El artefacto permanece `draft / not_run`.
 

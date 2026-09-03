@@ -100,7 +100,7 @@ stop condition:
 
 ## 来源
 
-- [现场问题与提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-05、FP2-06 和 FP2-20。
+- [现场问题与提示模式 — P2](../evidence-library-ZH.md#source-notes)，FP2-05、FP2-06 和 FP2-20。
 - [第 9 章：验证、疑问与恢复](../chapters/09-verification-and-recovery-ZH.md)。
 
 <!-- lab-navigation:start -->

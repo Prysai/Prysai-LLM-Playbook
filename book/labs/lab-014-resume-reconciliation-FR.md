@@ -142,7 +142,7 @@ exécutable.
 
 ## Sources et limite de mise à jour
 
-- [Problèmes de terrain et modèles de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-01 à FP2-04 et FP2-08.
+- [Problèmes de terrain et modèles de prompts — P2](../evidence-library-FR.md#source-notes), FP2-01 à FP2-04 et FP2-08.
 - [Chapitre 10 : planification et découpage](../chapters/10-planning-and-slicing-FR.md).
 - [Chapitre 12 : boucle d’Agent et conditions d’arrêt](../chapters/12-agent-loop-and-stop-FR.md).
 

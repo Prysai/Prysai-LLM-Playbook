@@ -122,7 +122,7 @@ und ein externer Schreibvorgang genehmigt ist.
 
 ## Quellen
 
-- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11 und FP2-12.
+- [Feldprobleme und Prompt-Muster — P2](../evidence-library-DE.md#source-notes), FP2-11 und FP2-12.
 - [Kapitel 7: Skills, Plugins, MCP und Tools](../chapters/07-skills-plugins-and-tools-DE.md).
 - [Kapitel 14: Externe Skills entdecken, installieren und prüfen](../chapters/14-discover-and-audit-skills-DE.md).
 

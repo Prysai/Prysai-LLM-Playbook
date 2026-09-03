@@ -286,10 +286,10 @@ expurgées ou agrégées :
 
 ## Sources et limite de mise à jour
 
-- **Rapports de terrain :** [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md),
+- **Rapports de terrain :** [`docs/research/field-problems-codex.md`](../evidence-library-FR.md#source-notes),
   FP-03 et FP-04. Dossier `candidate`, organisé le 2026-08-09 par la maintenance
   Prysai ; pas une reproduction locale.
-- **Référence de méthode marketing :** [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md),
+- **Référence de méthode marketing :** [`docs/sources/asset-register.md`](../evidence-library-FR.md#source-notes),
   S04. Cette synthèse est originale ; elle ne copie pas un Skill marketing externe.
 - **Faits de plateforme et confidentialité :** utiliser la documentation
   officielle, la politique d’organisation et la configuration actuelle, avec

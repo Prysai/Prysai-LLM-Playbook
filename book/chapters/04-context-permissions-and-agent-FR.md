@@ -28,7 +28,7 @@ résultat rapide devient difficile à examiner ou à récupérer.
 
 ## Une entrée de terrain
 
-Des rapports publics indexés dans la [recherche sur les problèmes Codex](../../docs/research/field-problems-codex.md)
+Des rapports publics indexés dans la [recherche sur les problèmes Codex](../evidence-library-FR.md#source-notes)
 montrent une erreur récurrente : le navigateur annonce une authentification
 réussie, la CLI est connectée ou un dossier est inscriptible, puis l’utilisateur
 en déduit que l’étape suivante est autorisée et vérifiée. Ce sont des
@@ -115,7 +115,7 @@ Une action peut traverser plusieurs couches de contrôle. Suivez-les séparémen
 | `task_authorization` | Qu’a réellement demandé le propriétaire de cette tâche ? | qu’un réglage du produit accorde une action plus large |
 
 Les faits de produit concernant sandbox et approbation varient selon la surface
-et la version. La [baseline officielle Codex](../../docs/research/openai-codex-baseline.md)
+et la version. La [baseline officielle Codex](../evidence-library-FR.md#source-notes)
 et ses mises à jour sont la frontière des faits volatils ; elles ne prouvent
 pas la configuration de la session courante.
 
@@ -292,7 +292,7 @@ autorité, effet, preuve et arrêt.
 Le modèle de contexte, la frontière de confiance et la discipline de preuve sont
 des méthodes stables. Les modes de permission, sandboxes, outils, connecteurs
 et points d’entrée Codex sont des faits volatils. Consultez la [baseline
-officielle](../../docs/research/openai-codex-baseline.md) et ses mises à jour
+officielle](../evidence-library-FR.md#source-notes) et ses mises à jour
 avant d’affirmer un détail produit. Notez toujours URL, date d’accès, surface,
 responsable et prochaine revue ; la documentation officielle ne remplace pas
 l’observation de la session actuelle.

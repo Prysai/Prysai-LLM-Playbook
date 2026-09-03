@@ -53,7 +53,7 @@ pas à diagnostiquer tous les comptes.
 | Commande sans sortie claire | Aucun signal de fin n’est observé dans ce run | Fixer délai et sortie attendue ; interrompre selon la règle |
 | Vérification qui propose une réinstallation forcée | Une frontière persistante a été franchie dans la proposition | Séparer source, test, installation, restart, déploiement et contrôle en ligne |
 
-Consultez les détails dans [`field-problems-codex.md`](../../docs/research/field-problems-codex.md)
+Consultez les détails dans [`field-problems-codex.md`](../evidence-library-FR.md#source-notes)
 et marquez les causes non reproduites `unknown`.
 
 ## 1. Le cycle d’ingénierie et ses sorties
@@ -267,8 +267,8 @@ faites une observation locale ; puis demandez à un reviewer de classer les preu
 
 ## Sources et limite de mise à jour
 
-- **Problèmes de terrain :** [`field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-09, FP-10 et FP-11 ; statut `candidate`, pas de reproduction locale.
-- **Méthode et assets :** [`asset-register.md`](../../docs/sources/asset-register.md), S05 ; ce chapitre est une réécriture originale.
+- **Problèmes de terrain :** [`field-problems-codex.md`](../evidence-library-FR.md#source-notes), FP-09, FP-10 et FP-11 ; statut `candidate`, pas de reproduction locale.
+- **Méthode et assets :** [`asset-register.md`](../evidence-library-FR.md#source-notes), S05 ; ce chapitre est une réécriture originale.
 - **Faits volatils :** documentation officielle du framework ou de l’API et [dépôt OpenAI Codex](https://github.com/openai/codex) ; noter URL, version, date et portée.
 
 Le propriétaire de mise à jour est le mainteneur de la piste Ingénierie. Revoir

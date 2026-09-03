@@ -349,7 +349,7 @@ Lleva el contrato a aprendizaje o investigación. Un Skill de aprendizaje puede 
 
 ## Fuentes y límite de mantenimiento
 
-El método de decisión de Skills es interno al proyecto. Comportamiento de host, descubrimiento, Plugins, MCP, permisos y candidatos externos cambian. Contrasta una afirmación actual con las [tarjetas oficiales](../evidence-library-ES.md#source-notes), el [registro de candidatos](../evidence-library-ES.md#source-notes) y la [fuente concreta de licencia](../../docs/sources/licensing.md). Ninguna sustituye una ejecución en el host documentado.
+El método de decisión de Skills es interno al proyecto. Comportamiento de host, descubrimiento, Plugins, MCP, permisos y candidatos externos cambian. Contrasta una afirmación actual con las [tarjetas oficiales](../evidence-library-ES.md#source-notes), el [registro de candidatos](../evidence-library-ES.md#source-notes) y la [fuente concreta de licencia](../evidence-library-ES.md#source-notes). Ninguna sustituye una ejecución en el host documentado.
 
 ## Cuatro casos antes de adoptar
 

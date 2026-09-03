@@ -160,9 +160,9 @@ Codex는 컨텍스트, 도구, 권한, Skills, Agents, 검증이라는 전체 �
 이 루트는 `candidate / not_run`입니다: 구조와 검사 항목은 존재하지만,
 학습자 실행, 플랫폼 간 실행, 또는 독립 검토는 기록되지 않았습니다. 위의
 플랫폼별 설명은 1차 문서와 확인 날짜를 함께 적은 연구 기록
-([cross-LLM beginner prompting source receipt(locale-neutral)](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card(locale-neutral)](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md),
-[DeepSeek API source receipt(locale-neutral)](../../docs/research/deepseek-api-source-receipt-2026-08-17.md))에서
+([cross-LLM beginner prompting source receipt(locale-neutral)](../evidence-library-KO.md#source-notes),
+[platform teaching boundary card(locale-neutral)](../evidence-library-KO.md#source-notes),
+[DeepSeek API source receipt(locale-neutral)](../evidence-library-KO.md#source-notes))에서
 파생된 방향 안내입니다. 이것은 어떤 플랫폼이 동일하게 동작한다거나, 과제가
 어디서나 성공한다거나, 제품 기능이 동등하다는 증거가 아닙니다. 플랫폼별
 명령, 권한, 가격, 제공 여부는 변동성 높은 사실입니다. 의존하기 전에 접근

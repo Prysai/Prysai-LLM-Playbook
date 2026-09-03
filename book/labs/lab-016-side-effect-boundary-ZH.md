@@ -69,7 +69,7 @@ transfer_limitations: "静态矩阵不能证明真实环境有有效回滚，也
 
 ## 来源
 
-- [现场问题与提示模式 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)，FP2-07、FP2-10、FP2-12 和 FP2-19。
+- [现场问题与提示模式 — P2](../evidence-library-ZH.md#source-notes)，FP2-07、FP2-10、FP2-12 和 FP2-19。
 - [第 13 章：行动边界](../chapters/13-action-boundaries-ZH.md)。
 
 <!-- lab-navigation:start -->
