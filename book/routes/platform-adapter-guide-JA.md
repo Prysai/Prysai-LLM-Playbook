@@ -166,9 +166,9 @@ Codexは、コンテキスト、ツール、権限、Skills、Agents、検証と
 このルートは`candidate / not_run`です：構造とチェック項目は存在しますが、
 学習者の実行、プラットフォーム間の実行、独立レビューの記録はありません。
 上記のプラットフォーム別の説明は、一次ドキュメントと日付入りの調査レシート
-（[cross-LLM beginner prompting source receipt（locale-neutral）](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
-[platform teaching boundary card（locale-neutral）](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)、
-[DeepSeek API source receipt（locale-neutral）](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)）から
+（[cross-LLM beginner prompting source receipt（locale-neutral）](../evidence-library-JA.md#source-notes)、
+[platform teaching boundary card（locale-neutral）](../evidence-library-JA.md#source-notes)、
+[DeepSeek API source receipt（locale-neutral）](../evidence-library-JA.md#source-notes)）から
 導出された方向づけです。これは、あるプラットフォームが他と同一に動作する
 こと、タスクがどこでも成功すること、製品機能が同等であることの証拠では
 ありません。プラットフォーム固有のコマンド、権限、価格、利用可否は変動し

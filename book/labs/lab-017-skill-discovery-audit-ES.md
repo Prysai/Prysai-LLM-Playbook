@@ -123,7 +123,7 @@ se haya observado un resultado y que una escritura externa esté aprobada.
 
 ## Fuentes
 
-- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11 y FP2-12.
+- [Problemas de campo y patrones de prompts — P2](../evidence-library-ES.md#source-notes), FP2-11 y FP2-12.
 - [Capítulo 7: Skills, plugins, MCP y herramientas](../chapters/07-skills-plugins-and-tools-ES.md).
 - [Capítulo 14: descubrir, instalar y auditar Skills externos](../chapters/14-discover-and-audit-skills-ES.md).
 

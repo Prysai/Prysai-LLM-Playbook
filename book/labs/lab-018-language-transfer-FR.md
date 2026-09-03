@@ -220,9 +220,9 @@ différée avec exposition enregistrée et notation indépendante ?
 
 - [Contrat de pratique pour apprendre](../guides/learning-practice-contract-FR.md) — règles de preuve et de divulgation graduée.
 - [Pack de pratique débutant](../communication-clinic-FR.md) — parcours de pratique linguistique, de travail et de recherche.
-- [La répétition écrite n’est pas une conversation orale](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md) — limite de modalité et d’interprétation.
-- [Apprentissage durable assisté par LLM](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — synthèse candidate et limites de source, consultée le 12/08/2026.
-- [Paquet de cartes différées du Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md) — procédure de cartes et de contrôle préparée par le projet.
+- [La répétition écrite n’est pas une conversation orale](../evidence-library-FR.md#source-notes) — limite de modalité et d’interprétation.
+- [Apprentissage durable assisté par LLM](../evidence-library-FR.md#source-notes) — synthèse candidate et limites de source, consultée le 12/08/2026.
+- [Paquet de cartes différées du Lab 018](../evidence-library-FR.md#method-and-status) — procédure de cartes et de contrôle préparée par le projet.
 
 Les cartes et la rédaction de ce Lab sont originales. Les sources soutiennent
 des choix de rappel, de correction et de contrôle différé ; elles ne prouvent

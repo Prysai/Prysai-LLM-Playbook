@@ -1,6 +1,6 @@
 # Prysai LLM Playbook — 最初のタスクから、信頼できる仕事へ
 
-ライセンス：コース本文と教材は CC BY 4.0、スクリプトとツールは Apache-2.0 です（ファイル内に別段の定めがない限り）。[`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE)、[`ライセンス境界文書（locale-neutral）`](docs/sources/licensing.md)を参照してください。
+ライセンス：コース本文と教材は CC BY 4.0、スクリプトとツールは Apache-2.0 です（ファイル内に別段の定めがない限り）。[`LICENSE`](LICENSE)、[`LICENSE-CODE`](LICENSE-CODE)、[`ライセンス境界文書（locale-neutral）`](book/evidence-library-JA.md#source-notes)を参照してください。
 > LLM 実践ガイド：最初のタスクから、信頼できる仕事へ
 
 <!-- language-switcher:start -->

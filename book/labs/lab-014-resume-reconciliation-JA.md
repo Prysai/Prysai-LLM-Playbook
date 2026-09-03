@@ -79,7 +79,7 @@ checkpoint、コマンドと出力、diff、分類表、短い判断を保存し
 
 ## 出典
 
-- [現場の問題とプロンプトのパターン — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、FP2-01〜FP2-04 と FP2-08。
+- [現場の問題とプロンプトのパターン — P2](../evidence-library-JA.md#source-notes)、FP2-01〜FP2-04 と FP2-08。
 - [第10章：計画と垂直スライス](../chapters/10-planning-and-slicing-JA.md)。
 - [第12章：Agent のループ、状態、停止条件](../chapters/12-agent-loop-and-stop-JA.md)。
 

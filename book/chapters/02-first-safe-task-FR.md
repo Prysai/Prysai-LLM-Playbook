@@ -109,7 +109,7 @@ arrêtez-la avec cette lacune écrite dans la passation.
 
 ## Ce que la frontière officielle dit — et ne dit pas
 
-Consultez la [baseline officielle du chapitre 2](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
+Consultez la [baseline officielle du chapitre 2](../evidence-library-FR.md#source-notes)
 pour les faits produits datés. La méthode stable est :
 
 | Événement | Ce qu’il peut établir | Ce qu’il ne prouve pas seul |
@@ -231,7 +231,7 @@ tenté, terminé, validé, installé, publié et vérifié en ligne ne sont pas 
 ## Cas de terrain : quand les raccourcis cassent
 
 Les cas suivants sont des résumés originaux de rapports publics réunis dans la
-[recherche du chapitre 2](../../docs/research/chapter-02-field-problems-2026-08-10.md).
+[recherche du chapitre 2](../evidence-library-FR.md#source-notes).
 Ce sont des signaux pédagogiques, pas des causes officielles ni des
 reproductions locales. Chaque carte sépare ce qui a été observé de ce qui reste
 à vérifier.
@@ -503,8 +503,8 @@ réutilisation d’équipe.
 
 Le protocole, les couches de preuve et la récupération sont des méthodes
 stables. Permissions, sandbox, commandes, modèles et interface sont volatils.
-Consultez la [baseline officielle](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
-et le [cycle de contenu](../../docs/governance/content-lifecycle.md) avant une
+Consultez la [baseline officielle](../evidence-library-FR.md#source-notes)
+et le [cycle de contenu](../evidence-library-FR.md#method-and-status) avant une
 instruction produit. La recherche de terrain contient des rapports et
 suggestions, pas des causes officielles. Cette version reste `candidate` et
 `not_run` jusqu’à une nouvelle exécution bornée et documentée.

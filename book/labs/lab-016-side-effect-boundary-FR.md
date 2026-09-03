@@ -136,7 +136,7 @@ appel est exécutable ; un formulaire rempli ne prouve pas qu’il a été soumi
 
 ## Sources et limite de mise à jour
 
-- [Problèmes de terrain et modèles de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-07, FP2-10, FP2-12 et FP2-19.
+- [Problèmes de terrain et modèles de prompts — P2](../evidence-library-FR.md#source-notes), FP2-07, FP2-10, FP2-12 et FP2-19.
 - [Chapitre 13 : frontières d’action](../chapters/13-action-boundaries-FR.md).
 
 Ces sources soutiennent la séparation des frontières ; elles ne prouvent ni un

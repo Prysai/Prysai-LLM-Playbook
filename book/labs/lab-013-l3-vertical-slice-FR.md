@@ -187,7 +187,7 @@ Gardez la copie d’entrée et ses hachages, les checkpoints, le diff, le journa
 
 ### Dossier de référence du mainteneur
 
-Le projet possède un dossier de référence déterministe accepté pour cette fixture. Il conserve CP0 à CP4, un contrôle réellement en échec, l’artefact échoué, le diff de récupération, un contrôle réussi, le diff final, le reçu de nettoyage et la transmission. Voir le [contrat des exemples exécutables](../../docs/governance/executable-examples.yaml) et la [revue de resoumission indépendante](../../docs/quality/lab-013-reference-run-resubmission-review-2026-08-12.md).
+Le projet possède un dossier de référence déterministe accepté pour cette fixture. Il conserve CP0 à CP4, un contrôle réellement en échec, l’artefact échoué, le diff de récupération, un contrôle réussi, le diff final, le reçu de nettoyage et la transmission. Voir le [contrat des exemples exécutables](../../docs/governance/executable-examples.yaml) et la [revue de resoumission indépendante](../evidence-library-FR.md#method-and-status).
 
 Ce dossier vient d’un exécuteur local déterministe, pas d’un apprenant ni d’un modèle. Il ne prouve ni l’indépendance, ni le comportement de Codex, ni le transfert, ni la publication, ni la répétition du retour arrière. Les exécutions d’apprenant et de transfert restent `not_run`.
 

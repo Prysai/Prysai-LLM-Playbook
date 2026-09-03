@@ -20,7 +20,7 @@ define → plan → build → verify → review → deliver → maintain
 
 ### 경계가 보이는 결과 하나 보기
 
-이 저장소에는 같은 원칙을 비기술 산출물에 적용한 프로젝트 소유 사례도 있습니다. 사례는 가상의 첫 주택 구매자 안내 페이지이며, 실제 매물이나 고객 작업을 기록한 것이 아닙니다. 먼저 [사례 기록](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)을 읽으세요. 기록에는 합성 입력, 로컬 렌더링 명령, 기록된 뷰포트, 그리고 이미지가 증명할 수 없는 주장이 적혀 있습니다.
+이 저장소에는 같은 원칙을 비기술 산출물에 적용한 프로젝트 소유 사례도 있습니다. 사례는 가상의 첫 주택 구매자 안내 페이지이며, 실제 매물이나 고객 작업을 기록한 것이 아닙니다. 먼저 [사례 기록](../evidence-library-KO.md#source-notes)을 읽으세요. 기록에는 합성 입력, 로컬 렌더링 명령, 기록된 뷰포트, 그리고 이미지가 증명할 수 없는 주장이 적혀 있습니다.
 
 [![합성 첫 주택 구매자 안내 페이지의 로컬 렌더링](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
 
@@ -36,7 +36,7 @@ define → plan → build → verify → review → deliver → maintain
 
 ## 실제 문제: 두 화면 사이에서 작업 흐름이 끊길 수 있다
 
-프로젝트의 [Codex 현장 연구](../../docs/research/field-problems-codex.md)는 공개 사용자 보고를 기록합니다. 이 보고는 유용한 증상이지만 공식적인 근본 원인 분석이나 로컬 재현은 아닙니다.
+프로젝트의 [Codex 현장 연구](../evidence-library-KO.md#source-notes)는 공개 사용자 보고를 기록합니다. 이 보고는 유용한 증상이지만 공식적인 근본 원인 분석이나 로컬 재현은 아닙니다.
 
 | 보고된 증상 | 보고가 뒷받침하는 것 | 증명하지 않는 것 | 첫 번째 안전한 대응 |
 |---|---|---|---|

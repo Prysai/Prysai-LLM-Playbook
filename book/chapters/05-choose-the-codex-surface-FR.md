@@ -38,9 +38,9 @@ les étapes que l’on confond le plus souvent.
 | Le setup Cloud réussit, puis l’Agent ne peut pas joindre le service | Une étape de préparation a réussi | Que le réseau, les secrets et les dépendances sont disponibles dans la phase Agent | Séparer journaux setup/Agent, phase réseau, durée de vie du secret et diff final |
 | Un hôte est bloqué par une allowlist | Une politique a refusé une requête | Que l’ouverture totale du réseau est le bon remède | Distinguer sandbox, proxy, DNS/TLS et pare-feu avant de demander un changement étroit |
 
-Consultez l’[index des problèmes de terrain](../../docs/research/field-problems-index-2026-08-10.md),
-la [recherche sur les surfaces](../../docs/research/field-problems-surface-2026-08-10.md)
-et la [recherche des forums](../../docs/research/field-problems-forums-2026-08-10.md)
+Consultez l’[index des problèmes de terrain](../evidence-library-FR.md#source-notes),
+la [recherche sur les surfaces](../evidence-library-FR.md#source-notes)
+et la [recherche des forums](../evidence-library-FR.md#source-notes)
 pour les liens originaux, les dates et la portée exacte. Le projet n’affirme pas
 avoir reproduit ces cas.
 
@@ -305,7 +305,7 @@ notez la date, la portée et la prochaine revue. Cette traduction reste
 des capacités prouvées par la seule structure de la carte.
 
 Les faits produits et leurs limites sont suivis dans la
-[baseline Codex](../../docs/research/openai-codex-baseline.md) et les rapports
+[baseline Codex](../evidence-library-FR.md#source-notes) et les rapports
 de terrain liés plus haut. Ne copiez pas leurs instructions ou captures ; ils
 servent ici de matériau de vérification, pas de preuve d’un compte courant.
 

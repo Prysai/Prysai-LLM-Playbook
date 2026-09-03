@@ -85,8 +85,8 @@ Skill 是方法与路由契约；工具是观察或改变外部世界的接口�
 
 审查卡和状态区分是稳定方法。目录、安装、运行行为与产品界面会变化；必须针对固定 revision、具体环境和实际目标路径重新核验。
 
-- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，用于 FP-06、FP-07 和 FP-11 的原创摘要与边界记录。该记录仍为 `candidate`，由 Prysai LLM Playbook 维护组维护。
-- 许可证与资产边界：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，用于核对 S02、S03 和 S06；更新时遵循项目的归档与许可证审查流程。
+- 现实问题入口：[`docs/research/field-problems-codex.md`](../evidence-library-ZH.md#source-notes)，用于 FP-06、FP-07 和 FP-11 的原创摘要与边界记录。该记录仍为 `candidate`，由 Prysai LLM Playbook 维护组维护。
+- 许可证与资产边界：[`docs/sources/asset-register.md`](../evidence-library-ZH.md#source-notes)，用于核对 S02、S03 和 S06；更新时遵循项目的归档与许可证审查流程。
 - Skill 结构与易变的产品行为：对照[官方 OpenAI Codex 仓库](https://github.com/openai/codex)检查入口、版本和实现行为；它不能替代本地运行证据。
 - 维护边界：Skill 来源、许可证或发现行为变化时复核，最迟不晚于 2026-11-09。只有具备组织权限、许可证、回归和回滚证据后，才可将相关 Skill 称为 `production-ready`。
 

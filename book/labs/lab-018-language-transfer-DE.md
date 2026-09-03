@@ -73,7 +73,7 @@ allgemeines Sprachniveau.
 ## Teil 4 — vorab deklarierte verzögerte Aufgabe
 
 Deklariere vor B1 ein Sieben-Tage-Fenster mit einem Tag Toleranz. Friere die
-Revision des [Lab-018-Kartenpools](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+Revision des [Lab-018-Kartenpools](../evidence-library-DE.md#method-and-status)
 ein und teile D1/D2/D3 vor der Baseline zu; halte die vollständige Karte außerhalb
 des Übungsprotokolls. Das ist weder eine automatisierte Erinnerung noch ein
 Anspruch, sieben Tage reichten aus. Notiere später tatsächliche Verzögerung,
@@ -134,8 +134,8 @@ die Aufzeichnung auf eine andere Lern- oder Projektabstimmung.
 
 Der [Learning Practice Contract](../guides/learning-practice-contract-DE.md), das
 [Beginner Practice Pack](../communication-clinic-DE.md), die [Grenze zwischen
-getippter Probe und gesprochener Unterhaltung](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md)
-und der [verzögerte Kartenpool](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+getippter Probe und gesprochener Unterhaltung](../evidence-library-DE.md#source-notes)
+und der [verzögerte Kartenpool](../evidence-library-DE.md#method-and-status)
 stützen die Entwurfsentscheidungen. Sie beweisen keine Wirksamkeit des Labs,
 Modells oder einer Plattform. Das Artefakt bleibt `draft / not_run`.
 

@@ -83,7 +83,7 @@ decisión y qué parte sigue siendo `not_observed`.
 
 ## Fuentes
 
-- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-01 a FP2-04 y FP2-08.
+- [Problemas de campo y patrones de prompts — P2](../evidence-library-ES.md#source-notes), FP2-01 a FP2-04 y FP2-08.
 - [Capítulo 10: planificación y cortes verticales](../chapters/10-planning-and-slicing-ES.md).
 - [Capítulo 12: bucle, estado y condiciones de parada del Agent](../chapters/12-agent-loop-and-stop-ES.md).
 

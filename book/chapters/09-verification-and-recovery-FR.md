@@ -54,7 +54,7 @@ Faites dépendre la suite de l’observation, de l’autorité et du budget.
 Ces cas proviennent de rapports GitHub publics consultés le 12 août 2026. Ils ne
 constituent ni une reproduction locale, ni un diagnostic officiel, ni un
 comportement Windows universel. Le détail des versions et la limite de chaque
-source figurent dans la [recherche sur les entrées et les preuves Windows](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md).
+source figurent dans la [recherche sur les entrées et les preuves Windows](../evidence-library-FR.md#source-notes).
 
 | Symptôme rapporté | Ce que l’on peut en tirer | Premier contrôle borné | S’arrêter avant |
 |---|---|---|---|
@@ -90,7 +90,7 @@ est « aucun événement n’a été observé dans cette interface ».
 
 ### Cas FC-EVIDENCE-01 : une commande terminée peut laisser une affirmation impossible à relire
 
-Le [cas borné FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md)
+Le [cas borné FC-EVIDENCE-01](../evidence-library-FR.md#source-notes)
 s’appuie sur le ticket #34951. Le ticket était ouvert, sans diagnostic public de
 mainteneur, et n’a pas été reproduit ici. Si la sortie nécessaire est absente,
 conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou le
@@ -207,7 +207,7 @@ alors qu’un appel en lecture seule échouait, un navigateur dont le DOM était
 lisible mais dont le clic expirait, ou une configuration de fournisseur qui ne
 rendait pas la capacité multi-agent attendue. Ce sont des rapports du 10 août
 2026, pas des faits internes ni des reproductions. Consultez la
-[recherche terrain Web](../../docs/research/web-field-problems-2026-08-10.md),
+[recherche terrain Web](../evidence-library-FR.md#source-notes),
 notamment WF-08 à WF-11, et ne généralisez pas l’exemple à tous les comptes.
 
 ### Fiche de point d’arrêt
@@ -423,17 +423,17 @@ de ce que l’image ne prouve pas.
 
 Les méthodes de preuve et le vocabulaire de statut sont stables. Commandes,
 entrées, noms de modèles, comportements de fournisseurs et états de tickets sont
-volatils. Vérifiez les opérations concrètes dans le [cadre d’évaluation](../../docs/quality/evaluation-framework.md),
-la [baseline officielle](../../docs/research/openai-codex-baseline.md) et la
-[recherche Web](../../docs/research/web-field-problems-2026-08-10.md).
+volatils. Vérifiez les opérations concrètes dans le [cadre d’évaluation](../evidence-library-FR.md#method-and-status),
+la [baseline officielle](../evidence-library-FR.md#source-notes) et la
+[recherche Web](../evidence-library-FR.md#source-notes).
 
 | Fait ou frontière | Source | Consultée le | Portée | Responsable / prochaine revue |
 |---|---|---:|---|---|
-| Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas de reproduction locale ni de conclusion universelle sur la file | `curriculum-maintainer` / 2026-09-09 |
-| Une vérification longue peut laisser l’état d’achèvement incertain | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; cause et portée de version inconnues | `curriculum-maintainer` / 2026-09-09 |
-| Authentification, disponibilité de l’outil, exécution et résultat externe sont des affirmations distinctes | [FP-01—FP-02](../../docs/research/field-problems-codex.md), [WF-08—WF-11](../../docs/research/web-field-problems-2026-08-10.md) | 2026-08-09 / 2026-08-10 | Discipline de preuve pour des symptômes rapportés ; pas un guide officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
-| Une vérification ne doit pas s’élargir silencieusement en installation ou changement persistant | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas une politique officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-09 |
-| Passation, enregistrement d’outil, permissions et retry peuvent échouer à des étapes différentes | [FUP-01—FUP-05](../../docs/research/field-problems-follow-up-2026-08-10.md) | 2026-08-10 | Rapports publics ; compte, version, fournisseur et runtime local restent déterminants | `curriculum-maintainer` / 2026-09-09 |
+| Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](../evidence-library-FR.md#source-notes) | 2026-08-09 | Rapport public ; pas de reproduction locale ni de conclusion universelle sur la file | `curriculum-maintainer` / 2026-09-09 |
+| Une vérification longue peut laisser l’état d’achèvement incertain | [FP-10 / issue #34325](../evidence-library-FR.md#source-notes) | 2026-08-09 | Rapport public ; cause et portée de version inconnues | `curriculum-maintainer` / 2026-09-09 |
+| Authentification, disponibilité de l’outil, exécution et résultat externe sont des affirmations distinctes | [FP-01—FP-02](../evidence-library-FR.md#source-notes), [WF-08—WF-11](../evidence-library-FR.md#source-notes) | 2026-08-09 / 2026-08-10 | Discipline de preuve pour des symptômes rapportés ; pas un guide officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
+| Une vérification ne doit pas s’élargir silencieusement en installation ou changement persistant | [FP-11 / issue #37677](../evidence-library-FR.md#source-notes) | 2026-08-09 | Rapport public ; pas une politique officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-09 |
+| Passation, enregistrement d’outil, permissions et retry peuvent échouer à des étapes différentes | [FUP-01—FUP-05](../evidence-library-FR.md#source-notes) | 2026-08-10 | Rapports publics ; compte, version, fournisseur et runtime local restent déterminants | `curriculum-maintainer` / 2026-09-09 |
 
 Ces sources servent à montrer où la preuve se rompt. Elles ne transforment pas
 un ticket, un contournement, un libellé ou une réponse communautaire en garantie

@@ -30,8 +30,8 @@ Il ajoute des champs d’arrêt, de récupération et de preuve, car une répons
 générée et un travail vérifié ne sont pas la même affirmation.
 
 Pour les faits propres à Codex et aux surfaces d’exécution, consultez la
-[baseline officielle du chapitre 3](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-et la [recherche sur les prompts de travail réel](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md).
+[baseline officielle du chapitre 3](../evidence-library-FR.md#source-notes)
+et la [recherche sur les prompts de travail réel](../evidence-library-FR.md#source-notes).
 Les dates, la portée et les limites de ces sources restent celles de leurs
 fiches de recherche.
 

@@ -621,6 +621,71 @@ def validate_quality_dependency_pin(text: str, label: str) -> list[str]:
     return []
 
 
+def validate_quality_workflow(text: str, label: str) -> list[str]:
+    """Keep release-evidence diagnostics while propagating real gate failures."""
+
+    errors = []
+    release_step = re.search(
+        r"(?ms)^      - name: Run gates and build commit-bound release evidence\s*\n"
+        r"(?P<body>.*?)(?=^      - name: |\Z)",
+        text,
+    )
+    for fragment in ("id: release_evidence", "continue-on-error: true"):
+        if not release_step or fragment not in release_step.group("body"):
+            errors.append(f"{label}: quality workflow is missing the release-evidence fail-closed boundary: {fragment}")
+
+    diagnostic_positions = {}
+    for step_name in ("Upload release evidence packet", "Publish release evidence summary"):
+        step = re.search(
+            rf"(?ms)^      - name: {re.escape(step_name)}\s*$\n"
+            r"(?P<body>.*?)(?=^      - name: |\Z)",
+            text,
+        )
+        if not step:
+            errors.append(
+                f"{label}: quality workflow is missing the release-evidence fail-closed boundary: "
+                f"name: {step_name}"
+            )
+        else:
+            diagnostic_positions[step_name] = step.start()
+            if "if: always()" not in step.group("body"):
+                errors.append(
+                    f"{label}: {step_name} must use if: always() to preserve failure diagnostics"
+                )
+
+    enforcement = re.search(
+        r"(?ms)^      - name: Enforce release evidence result\s*\n"
+        r"(?P<body>.*?)(?=^      - name: |\Z)",
+        text,
+    )
+    if not enforcement:
+        errors.append(
+            f"{label}: quality workflow is missing the release-evidence fail-closed boundary: "
+            "name: Enforce release evidence result"
+        )
+    else:
+        enforcement_body = enforcement.group("body")
+        for fragment in (
+            "if: steps.release_evidence.outcome != 'success'",
+            "run:",
+            "exit 1",
+        ):
+            if fragment not in enforcement_body:
+                errors.append(
+                    f"{label}: quality workflow is missing the release-evidence fail-closed boundary: {fragment}"
+                )
+
+    enforcement_position = text.find("      - name: Enforce release evidence result")
+    if enforcement_position >= 0:
+        for step_name, diagnostic_position in diagnostic_positions.items():
+            if enforcement_position < diagnostic_position:
+                errors.append(
+                    f"{label}: release-evidence failure enforcement must run after "
+                    f"the diagnostic step: {step_name}"
+                )
+    return errors
+
+
 def validate_fast_material_workflow(text: str, label: str) -> list[str]:
     """Keep the fast route on trusted validator code and untrusted data only."""
     errors = []
@@ -785,7 +850,9 @@ def validate_workflows() -> tuple[int, list[str]]:
     if not QUALITY_WORKFLOW.is_file():
         errors.append("missing .github/workflows/quality.yml")
     else:
-        errors.extend(validate_quality_dependency_pin(QUALITY_WORKFLOW.read_text(encoding="utf-8"), relative(QUALITY_WORKFLOW)))
+        quality_text = QUALITY_WORKFLOW.read_text(encoding="utf-8")
+        errors.extend(validate_quality_dependency_pin(quality_text, relative(QUALITY_WORKFLOW)))
+        errors.extend(validate_quality_workflow(quality_text, relative(QUALITY_WORKFLOW)))
     if not FAST_MATERIAL_WORKFLOW.is_file():
         errors.append("missing .github/workflows/contribution-material.yml")
     else:

@@ -67,7 +67,7 @@ n’est pas un envoi vers le dépôt distant (`push`). Un `push` n’est pas une
 déployée. Une demande de vérification qui installe, redémarre ou publie a changé
 de classe d’action.
 
-Le cas borné [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md)
+Le cas borné [FC-SCOPE-01](../evidence-library-FR.md#source-notes)
 reprend un rapport public où une demande de vérification s’est transformée en
 réinstallation persistante. Le rapport ne fournit ni cause racine de mainteneur
 ni reproduction locale. La leçon reste vérifiable : édition source, test,
@@ -447,7 +447,7 @@ de la nouvelle portée ; ne répétez pas un effet non-idempotent par défaut.
 
 ### Cas FC-SAFETY-01 : la demande change, mais l’autorité ne change pas
 
-Le [cas FC-SAFETY-01](../../docs/research/field-case-external-instruction-authority-2026-08-13.md)
+Le [cas FC-SAFETY-01](../evidence-library-FR.md#source-notes)
 transforme deux rapports publics en exercice hors ligne : une instruction dans
 un fichier, une page, une citation ou une sortie d’outil reste une donnée tant
 que le propriétaire de la tâche n’a pas pris une nouvelle décision. Ce n’est ni
@@ -511,10 +511,10 @@ Pour maintenir une affirmation volatile, conservez aussi sa fiche de provenance 
 Une fiche complète facilite la correction lorsque l’interface ou la permission
 change ; elle ne transforme pas un rapport communautaire en règle officielle.
 
-Les exemples s’appuient sur l’[index des problèmes](../../docs/research/field-problems-index-2026-08-10.md),
-la [recherche surface/environnement](../../docs/research/field-problems-surface-2026-08-10.md),
-les [suivis](../../docs/research/field-problems-follow-up-2026-08-10.md) et les
-[motifs de prompts](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md).
+Les exemples s’appuient sur l’[index des problèmes](../evidence-library-FR.md#source-notes),
+la [recherche surface/environnement](../evidence-library-FR.md#source-notes),
+les [suivis](../evidence-library-FR.md#source-notes) et les
+[motifs de prompts](../evidence-library-FR.md#source-notes).
 Le chapitre reste `candidate` et l’expérience `not_run` jusqu’à un run borné.
 
 ## Pratique
