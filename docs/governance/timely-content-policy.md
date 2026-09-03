@@ -38,6 +38,24 @@ content record or the linked source record:
 7. the claims that remain `not_run`, `not_observed`, `unknown`, or otherwise
    unverified.
 
+The matrix uses an explicit `admission_profile` so historical research records
+and new time-sensitive briefs cannot silently share the same review contract:
+
+- `research-record` preserves the lighter, pre-existing admission boundary for
+  dated research records. It still requires a title, content identity, a
+  `candidate` status, and the source record's existing evidence limits.
+- `timely-source-first` is the stricter contract for a new Reader-facing brief.
+  It requires the full identity, scope, claim ledger, reader action, failure
+  boundary, source/licence boundary, maintenance fields, and generated
+  projection details described above.
+
+`translation_policy: source-first` is only a localization strategy: it allows
+an English source to be projected deliberately while other locale files remain
+explicitly `not-started`. It is not an evidence waiver, a review shortcut, or
+an admission profile. A record must declare its profile separately, and every
+new timely brief must remain `candidate` until the declared evidence gate is
+met.
+
 Official documentation or a first-party announcement is the default source for
 product capability. A public user story, friend report, or community post can
 show a demand signal or symptom, but it does not establish a product promise,
@@ -94,9 +112,9 @@ generated entry pointing at a withdrawn source.
 
 ## Reader and locale rules
 
-The first reader-facing source is English. A field-note may be registered in
-the locale matrix with a same-locale English source and explicit
-`not-started` translation states. Mark this deliberate exception with
+The first reader-facing source is English. A `timely-source-first` field-note
+may be registered in the locale matrix with a same-locale English source and
+explicit `not-started` translation states. Mark this deliberate exception with
 `translation_policy: source-first`; undeclared missing translations remain a
 blocking Reader-coverage failure. File/path parity is not translation review.
 Do not label the project fully bilingual or imply that an untranslated brief

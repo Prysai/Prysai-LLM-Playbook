@@ -20,29 +20,45 @@ def require(condition: bool, message: str) -> None:
 
 def fixture_matrix(
     policy: str = "source-first",
+    admission_profile: str | None = "timely-source-first",
     kind: str = "field-note",
     path: str = NOTE_PATH,
+    content_status: str = "candidate",
 ) -> str:
+    fields = [
+        '    "content_id": "{CONTENT_ID}"',
+        '    "kind": "{kind}"',
+        '    "path": "{path}"',
+        '    "content_status": "{content_status}"',
+    ]
+    if admission_profile is not None:
+        fields.append('    "admission_profile": "{admission_profile}"')
+    if policy is not None:
+        fields.append('    "translation_policy": "{policy}"')
+    fields.append('    "localized_paths": {{}}')
     return (
-        '{\n'
+        "{\n"
         '  "schema_version": "1",\n'
         '  "reader_content": [{\n'
-        f'    "content_id": "{CONTENT_ID}",\n'
-        f'    "kind": "{kind}",\n'
-        f'    "path": "{path}",\n'
-        '    "content_status": "candidate",\n'
-        f'    "translation_policy": "{policy}",\n'
-        '    "localized_paths": {}\n'
-        '  }]\n'
-        '}\n'
+        + ",\n".join(fields).format(
+            CONTENT_ID=CONTENT_ID,
+            kind=kind,
+            path=path,
+            content_status=content_status,
+            admission_profile=admission_profile,
+            policy=policy,
+        )
+        + "\n  }]\n}\n"
     )
 
 
 def run_fixture(
     note: str,
     policy: str = "source-first",
+    admission_profile: str | None = "timely-source-first",
     kind: str = "field-note",
     path: str = NOTE_PATH,
+    content_status: str = "candidate",
 ) -> list[str]:
     with tempfile.TemporaryDirectory(prefix="prysai-timely-content-") as directory:
         root = Path(directory)
@@ -50,8 +66,17 @@ def run_fixture(
         note_path = root / NOTE_PATH
         matrix_path.parent.mkdir(parents=True)
         note_path.parent.mkdir(parents=True)
-        matrix_path.write_text(fixture_matrix(policy, kind, path), encoding="utf-8")
-        note_path.write_text(note, encoding="utf-8")
+        matrix_path.write_text(
+            fixture_matrix(policy, admission_profile, kind, path, content_status),
+            encoding="utf-8",
+        )
+        note_path.write_text(
+            note.replace(
+                "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
+                NOTE_PATH,
+            ),
+            encoding="utf-8",
+        )
         return timely.validate_repository(root)
 
 
@@ -76,7 +101,7 @@ def main() -> int:
         "source table": remove_section(note, "What the official sources support"),
         "fact status": note.replace(" | Fact status |", " | Status |", 1),
         "limitation": note.replace(" | Limitation |", " | Notes |", 1),
-        "low-risk action": remove_section(note, "A safe first observation"),
+        "low-risk action": remove_section(note, "Safe reader action and limits"),
         "failure handling": remove_section(note, "Failure and contradiction cases"),
         "next review": remove_bullet(note, "next_review").replace(
             "> **Next review:** `2026-09-09`\n", ""
@@ -89,6 +114,41 @@ def main() -> int:
             any(name.casefold() in error.casefold() for error in errors),
             f"missing {name} was accepted: {errors}",
         )
+
+    for field in timely.REQUIRED_LABELS:
+        errors = run_fixture(remove_bullet(note, field))
+        require(
+            any(field.casefold() in error.casefold() for error in errors),
+            f"missing required field {field} was accepted: {errors}",
+        )
+
+    misordered = note.replace(
+        "## The practical question",
+        "## TEMPORARY PRACTICAL QUESTION",
+        1,
+    ).replace(
+        "## Why this is timely",
+        "## The practical question",
+        1,
+    ).replace(
+        "## TEMPORARY PRACTICAL QUESTION",
+        "## Why this is timely",
+        1,
+    )
+    require(
+        any("sections must follow" in error for error in run_fixture(misordered)),
+        "misordered sections were accepted",
+    )
+
+    no_source_url = note.replace(
+        "xAI/SpaceXAI, [Introducing Grok Bot](https://x.ai/news/introducing-grok-bot)",
+        "xAI/SpaceXAI, Introducing Grok Bot",
+        1,
+    )
+    require(
+        any("source URL and owner" in error for error in run_fixture(no_source_url)),
+        "a source row without a URL was accepted",
+    )
     formatted_header = note.replace(" | Fact status |", " | **Fact status** |", 1).replace(
         " | `current` |", " | `not-a-status` |", 1
     )
@@ -98,8 +158,12 @@ def main() -> int:
     )
 
     require(
-        not run_fixture(note, policy="reference-only"),
-        "non-source-first field note was incorrectly included",
+        any("translation policy" in error for error in run_fixture(note, policy="reference-only")),
+        "non-source-first field note was accepted",
+    )
+    require(
+        any("admission_profile" in error for error in run_fixture(note, admission_profile=None)),
+        "field note without an admission profile was accepted",
     )
     require(
         not run_fixture(note, kind="chapter"),
@@ -109,8 +173,36 @@ def main() -> int:
         any("repository-relative" in error for error in run_fixture(note, path="../docs/research/fixture.md")),
         "path traversal was incorrectly accepted",
     )
+    require(
+        any("under docs/research" in error for error in run_fixture(note, path="docs/quality/fixture.md")),
+        "a field note outside docs/research was accepted",
+    )
 
-    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + 3}")
+    for status in ("verified", "removed"):
+        require(
+            any("remain candidate" in error for error in run_fixture(note, content_status=status)),
+            f"timely field note with {status} status was accepted",
+        )
+
+    legacy_note = "# Historical research record\n\nPre-policy research record.\n"
+    require(
+        not run_fixture(
+            legacy_note,
+            policy=None,
+            admission_profile="research-record",
+        ),
+        "historical research record was rejected by the legacy profile",
+    )
+    require(
+        any("must not use source-first" in error for error in run_fixture(
+            legacy_note,
+            policy="source-first",
+            admission_profile="research-record",
+        )),
+        "legacy research record accepted a source-first translation policy",
+    )
+
+    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 11}")
     return 0
 
 

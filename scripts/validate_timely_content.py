@@ -28,7 +28,30 @@ FACT_STATUSES = {
     "candidate",
 }
 
-REQUIRED_LABELS = (
+CONTENT_STATUSES = {"candidate"}
+SOURCE_HEADER = "source url and owner"
+PRIVATE_SOURCE_MARKERS = ("user-provided", "private")
+INTERNAL_SOURCE_MARKERS = ("prysai", "original note")
+TIMELY_PROFILE = "timely-source-first"
+LEGACY_PROFILE = "research-record"
+
+IDENTITY_LABELS = (
+    "content_id",
+    "title",
+    "canonical_path",
+    "kind",
+    "content_status",
+    "admission_profile",
+    "owner",
+    "audience",
+    "reader_question",
+    "why_now",
+    "scope_in",
+    "scope_out",
+    "related_stable_route",
+)
+
+SOURCE_LABELS = (
     "source_type",
     "source_record",
     "source_license_or_usage_boundary",
@@ -37,6 +60,9 @@ REQUIRED_LABELS = (
     "private_material_removed",
     "long_quotation_or_asset_reused",
     "asset_register_entry",
+)
+
+READER_PROJECTION_LABELS = (
     "locale_matrix_entry",
     "source_locale",
     "translation_policy",
@@ -45,6 +71,18 @@ REQUIRED_LABELS = (
     "generated_outputs",
     "entry_design",
     "rollback_projection",
+)
+
+ACTION_LABELS = (
+    "low_risk_action_or_observation",
+    "approval_or_external_effect_boundary",
+    "failure_or_contradiction_case",
+    "not_run_or_not_observed",
+    "claims_forbidden",
+    "next_smallest_check",
+)
+
+MAINTENANCE_LABELS = (
     "review_trigger",
     "stale_action",
     "reviewer_role",
@@ -53,6 +91,21 @@ REQUIRED_LABELS = (
     "release_commit",
     "rollback_target",
     "unverified_boundary",
+)
+
+REQUIRED_LABELS = IDENTITY_LABELS + SOURCE_LABELS + READER_PROJECTION_LABELS + ACTION_LABELS + MAINTENANCE_LABELS
+
+REQUIRED_SECTION_ORDER = (
+    "the practical question",
+    "why this is timely",
+    "the smallest useful concept",
+    "the decision a reader can make now",
+    "safe reader action and limits",
+    "what the official sources support",
+    "what this note does not prove",
+    "failure and contradiction cases",
+    "source and authorship boundary",
+    "reader projection and maintenance",
 )
 
 
@@ -68,8 +121,8 @@ def load_matrix(path: Path) -> dict[str, Any]:
 def source_first_field_notes(matrix: dict[str, Any]) -> list[dict[str, Any]]:
     """Return only explicitly opted-in field notes.
 
-    Other content is intentionally outside this validator's scope. A source-
-    first policy is the admission signal that a dated field note accepts this
+    Other content is intentionally outside this validator's scope. A timely
+    admission profile is the signal that a dated field note accepts this
     stricter contract before it is exposed through the Reader.
     """
 
@@ -81,7 +134,21 @@ def source_first_field_notes(matrix: dict[str, Any]) -> list[dict[str, Any]]:
         for record in records
         if isinstance(record, dict)
         and record.get("kind") == "field-note"
+        and record.get("admission_profile") == TIMELY_PROFILE
         and record.get("translation_policy") == "source-first"
+    ]
+
+
+def reader_field_notes(matrix: dict[str, Any]) -> list[dict[str, Any]]:
+    """Return every Reader-linked field note for explicit admission handling."""
+
+    records = matrix.get("reader_content", [])
+    if not isinstance(records, list):
+        return []
+    return [
+        record
+        for record in records
+        if isinstance(record, dict) and record.get("kind") == "field-note"
     ]
 
 
@@ -134,6 +201,19 @@ def normalized_header(value: str) -> str:
     return re.sub(r"[`*_]", "", value).strip().casefold()
 
 
+def normalized_value(value: str) -> str:
+    """Remove the lightweight Markdown decoration used by record fields."""
+
+    return re.sub(r"[`*]", "", value).strip()
+
+
+def has_meaningful_value(value: str | None) -> bool:
+    if value is None:
+        return False
+    normalized = normalized_value(value)
+    return bool(normalized and not re.fullmatch(r"<[^>]+>", normalized))
+
+
 def validate_source_table(body: str, label: str, errors: list[str]) -> None:
     rows = [table_cells(line) for line in body.splitlines()]
     rows = [row for row in rows if row]
@@ -146,7 +226,7 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
     required_headers = {
         "claim",
         "evidence class",
-        "source owner and url",
+        SOURCE_HEADER,
         "accessed",
         "applies to",
         "limitation",
@@ -165,10 +245,12 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
     if not data_rows:
         errors.append(f"{label}: source table must contain at least one claim row")
         return
-    if "https://" not in body:
-        errors.append(f"{label}: source table must include an authoritative URL")
-
     expected_width = len(rows[0])
+    source_index = next((i for i, value in enumerate(header_names) if value == SOURCE_HEADER), None)
+    evidence_index = next((i for i, value in enumerate(header_names) if value == "evidence class"), None)
+    status_index = next((i for i, value in enumerate(header_names) if value == "fact status"), None)
+    accessed_index = next((i for i, value in enumerate(header_names) if value == "accessed"), None)
+    next_review_index = next((i for i, value in enumerate(header_names) if value == "next review"), None)
     for index, row in enumerate(data_rows, start=1):
         row_label = f"{label} row {index}"
         if len(row) != expected_width:
@@ -176,16 +258,31 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
             continue
         if any(not cell for cell in row):
             errors.append(f"{row_label}: claim, source, scope, limitation, and status cells must be non-empty")
-        evidence_index = next((i for i, value in enumerate(header_names) if value == "evidence class"), None)
         if evidence_index is not None and row[evidence_index].strip("`").strip() not in EVIDENCE_CLASSES:
             errors.append(f"{row_label}: evidence class is not recognized")
-        status_index = next((i for i, value in enumerate(header_names) if value == "fact status"), None)
         if status_index is not None and row[status_index].strip("`").strip() not in FACT_STATUSES:
             errors.append(f"{row_label}: fact status is not recognized")
-        for header in ("accessed", "next review"):
-            column_index = next((i for i, value in enumerate(header_names) if value == header), None)
+        if source_index is not None:
+            source = normalized_value(row[source_index]).casefold()
+            evidence = (
+                normalized_value(row[evidence_index]).casefold()
+                if evidence_index is not None
+                else ""
+            )
+            has_private_boundary = all(marker in source for marker in PRIVATE_SOURCE_MARKERS)
+            has_internal_boundary = evidence == "project_inference" and all(
+                marker in source for marker in INTERNAL_SOURCE_MARKERS
+            )
+            if "https://" not in source and not has_private_boundary and not has_internal_boundary:
+                errors.append(f"{row_label}: source URL and owner must contain an https:// URL or an explicit private user-provided boundary")
+        for header, column_index in (("accessed", accessed_index), ("next review", next_review_index)):
             if column_index is not None and parse_date(row[column_index]) is None:
                 errors.append(f"{row_label}: {header} must use YYYY-MM-DD")
+        if accessed_index is not None and next_review_index is not None:
+            accessed = parse_date(row[accessed_index])
+            review = parse_date(row[next_review_index])
+            if accessed and review and review < accessed:
+                errors.append(f"{row_label}: next review must not precede accessed date")
 
 
 def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
@@ -194,12 +291,41 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
 
     if record.get("kind") != "field-note":
         return errors
-    if record.get("translation_policy") != "source-first":
-        return errors
 
     title = re.search(r"(?m)^#\s+(.+?)\s*$", text)
     if not title or not title.group(1).strip():
         errors.append(f"{label}: missing Markdown title")
+
+    field_values = {field: labeled_line(text, field) for field in REQUIRED_LABELS}
+    for field, value in field_values.items():
+        if value is None:
+            errors.append(f"{label}: missing {field}")
+        elif not has_meaningful_value(value):
+            errors.append(f"{label}: {field} must not be empty or a placeholder")
+
+    content_id = normalized_value(field_values.get("content_id") or "")
+    if content_id != str(record.get("content_id") or ""):
+        errors.append(f"{label}: content_id must match locale matrix")
+    canonical_path = normalized_value(field_values.get("canonical_path") or "").replace("\\", "/")
+    if canonical_path.startswith("./"):
+        canonical_path = canonical_path[2:]
+    registered_path = normalized_value(str(record.get("path") or "")).replace("\\", "/")
+    if registered_path.startswith("./"):
+        registered_path = registered_path[2:]
+    if canonical_path != registered_path:
+        errors.append(f"{label}: canonical_path must match the registered field-note path")
+    if not registered_path.startswith("docs/research/"):
+        errors.append(f"{label}: field-note path must be under docs/research/")
+    if normalized_value(field_values.get("kind") or "") != "field-note":
+        errors.append(f"{label}: kind must be field-note")
+    if normalized_value(field_values.get("content_status") or "") not in CONTENT_STATUSES:
+        errors.append(f"{label}: source-first field notes must remain candidate")
+    if normalized_value(field_values.get("admission_profile") or "") != TIMELY_PROFILE:
+        errors.append(f"{label}: admission_profile must be {TIMELY_PROFILE}")
+    if normalized_value(field_values.get("owner") or "") != normalized_value(metadata_value(text, "Owner") or ""):
+        errors.append(f"{label}: identity owner must match metadata Owner")
+    if title and normalized_value(field_values.get("title") or "") != title.group(1).strip():
+        errors.append(f"{label}: title must match the Markdown H1")
 
     content_status = metadata_value(text, "Content status")
     if content_status is None:
@@ -235,6 +361,7 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
         "reader question": ("the practical question",),
         "why now": ("why this is timely",),
         "decision": ("the decision a reader can make now",),
+        "concept": ("the smallest useful concept",),
         "low-risk action": ("a safe first observation", "safe reader action and limits"),
         "limits": ("what this note does not prove",),
         "failure handling": ("failure and contradiction cases",),
@@ -261,18 +388,26 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
         ):
             errors.append(f"{label}: failure handling must name a stop or contradiction case")
 
+    section_positions = {
+        heading: index
+        for index, match in enumerate(re.finditer(r"(?m)^##\s+(.+?)\s*$", text))
+        for heading in (match.group(1).strip().casefold(),)
+    }
+    previous_position = -1
+    for heading in REQUIRED_SECTION_ORDER:
+        position = section_positions.get(heading)
+        if position is None:
+            continue
+        if position < previous_position:
+            errors.append(f"{label}: sections must follow the documented problem-to-maintenance order")
+            break
+        previous_position = position
+
     source_section = note_sections.get("what the official sources support")
     if not source_section:
         errors.append(f"{label}: missing source table")
     else:
         validate_source_table(source_section, label, errors)
-
-    for required_label in REQUIRED_LABELS:
-        value = labeled_line(text, required_label)
-        if value is None:
-            errors.append(f"{label}: missing {required_label}")
-        elif not value:
-            errors.append(f"{label}: {required_label} must not be empty")
 
     policy_line = labeled_line(text, "translation_policy")
     if not policy_line or "source-first" not in policy_line:
@@ -284,6 +419,21 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
     return errors
 
 
+def validate_legacy_record(record: dict[str, Any], path: Path, text: str) -> list[str]:
+    """Keep pre-policy research records explicit without rewriting their content."""
+
+    errors: list[str] = []
+    label = str(record.get("content_id") or path.as_posix())
+    title = re.search(r"(?m)^#\s+(.+?)\s*$", text)
+    if not title or not title.group(1).strip():
+        errors.append(f"{label}: missing Markdown title")
+    if record.get("content_status") != "candidate":
+        errors.append(f"{label}: research records must remain candidate")
+    if record.get("translation_policy") is not None:
+        errors.append(f"{label}: research records must not use source-first translation policy")
+    return errors
+
+
 def validate_repository(root: Path = ROOT) -> list[str]:
     matrix_path = root / "docs/governance/locale-matrix.yaml"
     try:
@@ -292,11 +442,11 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         return [f"cannot parse {matrix_path.relative_to(root)}: {exc}"]
 
     errors: list[str] = []
-    records = source_first_field_notes(matrix)
+    records = reader_field_notes(matrix)
     seen_ids: set[str] = set()
     seen_paths: set[str] = set()
     for index, record in enumerate(records, start=1):
-        label = f"source-first field-note {index}"
+        label = f"field-note {index}"
         content_id = record.get("content_id")
         path_text = record.get("path")
         if not isinstance(content_id, str) or not content_id.strip():
@@ -320,6 +470,9 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         ):
             errors.append(f"{content_id}: field-note path must be repository-relative: {path_text}")
             continue
+        if not normalized.startswith("docs/research/"):
+            errors.append(f"{content_id}: field-note path must be under docs/research/")
+            continue
         if normalized in seen_paths:
             errors.append(f"{content_id}: duplicate path {normalized}")
         seen_paths.add(normalized)
@@ -332,7 +485,21 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         if not path.is_file():
             errors.append(f"{content_id}: field-note path does not exist: {normalized}")
             continue
-        errors.extend(validate_note(record, path, path.read_text(encoding="utf-8")))
+        text = path.read_text(encoding="utf-8")
+        profile = record.get("admission_profile")
+        if profile == TIMELY_PROFILE:
+            if record.get("translation_policy") != "source-first":
+                errors.append(f"{content_id}: timely-source-first records must declare source-first translation policy")
+            if record.get("content_status") != "candidate":
+                errors.append(f"{content_id}: timely-source-first records must remain candidate")
+            errors.extend(validate_note(record, path, text))
+        elif profile == LEGACY_PROFILE:
+            errors.extend(validate_legacy_record(record, path, text))
+        else:
+            errors.append(
+                f"{content_id}: field-note must declare admission_profile "
+                f"{TIMELY_PROFILE} or {LEGACY_PROFILE}"
+            )
     return errors
 
 
@@ -344,12 +511,17 @@ def main() -> int:
             print(f"- {error}")
         return 1
     try:
-        records = source_first_field_notes(load_matrix(MATRIX_FILE))
+        matrix = load_matrix(MATRIX_FILE)
+        records = source_first_field_notes(matrix)
+        all_records = reader_field_notes(matrix)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print("TIMELY_CONTENT_VALIDATION_FAILED")
         print(f"- cannot parse {MATRIX_FILE.relative_to(ROOT)}: {exc}")
         return 1
-    print(f"TIMELY_CONTENT_VALIDATION_OK source_first_field_notes={len(records)}")
+    print(
+        "TIMELY_CONTENT_VALIDATION_OK "
+        f"field_notes={len(all_records)} source_first_field_notes={len(records)}"
+    )
     return 0
 
 

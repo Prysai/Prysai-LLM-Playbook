@@ -12,6 +12,7 @@ in the record.
 - `canonical_path`:
 - `kind`: `field-note`
 - `content_status`: `candidate` / `verified` / `removed`
+- `admission_profile`: `timely-source-first`
 - `owner`:
 - `audience`:
 - `reader_question`: what practical question does this answer now?

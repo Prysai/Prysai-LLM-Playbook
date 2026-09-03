@@ -76,6 +76,7 @@
       "kind": "field-note",
       "path": "docs/research/field-problems-index-2026-08-10.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-problems-index-2026-08-10-ZH.md",
         "ES": "docs/research/field-problems-index-2026-08-10-ES.md",
@@ -91,6 +92,7 @@
       "kind": "field-note",
       "path": "docs/research/field-problems-forums-2026-08-10.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-problems-forums-2026-08-10-ZH.md",
         "ES": "docs/research/field-problems-forums-2026-08-10-ES.md",
@@ -106,6 +108,7 @@
       "kind": "field-note",
       "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/codex-field-cases-current-review-2026-08-12-ZH.md",
         "ES": "docs/research/codex-field-cases-current-review-2026-08-12-ES.md",
@@ -121,6 +124,7 @@
       "kind": "field-note",
       "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZH.md",
         "ES": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ES.md",
@@ -136,6 +140,7 @@
       "kind": "field-note",
       "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-case-external-instruction-authority-2026-08-13-ZH.md",
         "ES": "docs/research/field-case-external-instruction-authority-2026-08-13-ES.md",
@@ -151,6 +156,7 @@
       "kind": "field-note",
       "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-case-blocked-network-boundary-2026-08-14-ZH.md",
         "ES": "docs/research/field-case-blocked-network-boundary-2026-08-14-ES.md",
@@ -166,6 +172,7 @@
       "kind": "field-note",
       "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZH.md",
         "ES": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ES.md",
@@ -181,6 +188,7 @@
       "kind": "field-note",
       "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ZH.md",
         "ES": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ES.md",
@@ -196,6 +204,7 @@
       "kind": "field-note",
       "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ZH.md",
         "ES": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ES.md",
@@ -211,6 +220,7 @@
       "kind": "field-note",
       "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZH.md",
         "ES": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ES.md",
@@ -271,6 +281,7 @@
       "kind": "field-note",
       "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZH.md",
         "ES": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ES.md",
@@ -286,6 +297,7 @@
       "kind": "field-note",
       "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ZH.md",
         "ES": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ES.md",
@@ -301,6 +313,7 @@
       "kind": "field-note",
       "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
       "content_status": "candidate",
+      "admission_profile": "research-record",
       "localized_paths": {
         "ZH": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZH.md",
         "ES": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ES.md",
@@ -391,6 +404,7 @@
       "kind": "field-note",
       "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
       "content_status": "candidate",
+      "admission_profile": "timely-source-first",
       "translation_policy": "source-first",
       "localized_paths": {}
     }
