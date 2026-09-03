@@ -545,6 +545,32 @@ permissions:
         )
         fixtures += 1
 
+        quality_workflow = policy.QUALITY_WORKFLOW.read_text(encoding="utf-8")
+        require(
+            not policy.validate_quality_workflow(quality_workflow, "quality.yml"),
+            "quality workflow did not preserve diagnostic evidence while failing closed",
+        )
+        fixtures += 1
+
+        quality_without_fail_closed = quality_workflow.replace(
+            "\n      - name: Enforce release evidence result\n"
+            "        if: steps.release_evidence.outcome != 'success'\n"
+            "        run: |\n"
+            "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
+            "          exit 1\n",
+            "\n",
+        )
+        require(
+            any(
+                "fail-closed" in error
+                for error in policy.validate_quality_workflow(
+                    quality_without_fail_closed, "quality.yml"
+                )
+            ),
+            "quality workflow without final release-evidence failure propagation was accepted",
+        )
+        fixtures += 1
+
         valid_csp = (
             '<meta http-equiv="Content-Security-Policy" '
             'content="default-src \'self\'; base-uri \'self\'; object-src \'none\'; '
