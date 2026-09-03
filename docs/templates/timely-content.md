@@ -47,6 +47,7 @@ behavior.
 
 - `locale_matrix_entry`:
 - `source_locale`: `EN`
+- `translation_policy`: `source-first`
 - `translation_state`: list each locale; use `not-started` until review evidence exists
 - `overview_target`:
 - `generated_outputs`: `site/locale-manifest.js`, `site/search-index.js`

@@ -6668,6 +6668,87 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "es": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "ja": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "ko": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "de": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "zh-tw": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ZHTW.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        },
+        "fr": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+        }
+      },
+      "translation_policy": "source-first"
+    },
     "prysai-dialogue-brief": {
       "kind": "skill",
       "reader_type": "skill",
@@ -9231,6 +9312,14 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/routes/llm-core-visible-failures-EN.md": "llm-core-visible-failures",
     "book/routes/llm-core-check-repair-EN.md": "llm-core-check-repair",
     "book/routes/llm-core-unseen-transfer-EN.md": "llm-core-unseen-transfer",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ZH.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ES.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-JA.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-KO.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-DE.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ZHTW.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+    "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-FR.md": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
     "skills/prysai-dialogue-brief/SKILL-ZH.md": "prysai-dialogue-brief",
     "skills/prysai-dialogue-brief/SKILL-ES.md": "prysai-dialogue-brief",
