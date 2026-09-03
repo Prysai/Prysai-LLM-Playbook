@@ -571,6 +571,48 @@ permissions:
         )
         fixtures += 1
 
+        quality_without_diagnostic_upload = quality_workflow.replace(
+            "      - name: Upload release evidence packet\n"
+            "        if: always()\n",
+            "      - name: Upload release evidence packet\n",
+        )
+        require(
+            any(
+                "preserve failure diagnostics" in error
+                for error in policy.validate_quality_workflow(
+                    quality_without_diagnostic_upload, "quality.yml"
+                )
+            ),
+            "quality workflow without always-run diagnostic upload was accepted",
+        )
+        fixtures += 1
+
+        enforcement_block = (
+            "      - name: Enforce release evidence result\n"
+            "        if: steps.release_evidence.outcome != 'success'\n"
+            "        run: |\n"
+            "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
+            "          exit 1\n"
+        )
+        quality_with_early_enforcement = quality_workflow.replace(
+            enforcement_block,
+            "",
+        )
+        quality_with_early_enforcement = quality_with_early_enforcement.replace(
+            "      - name: Publish release evidence summary\n",
+            enforcement_block + "\n      - name: Publish release evidence summary\n",
+        )
+        require(
+            any(
+                "after the diagnostic step" in error
+                for error in policy.validate_quality_workflow(
+                    quality_with_early_enforcement, "quality.yml"
+                )
+            ),
+            "quality workflow with early release-evidence failure enforcement was accepted",
+        )
+        fixtures += 1
+
         valid_csp = (
             '<meta http-equiv="Content-Security-Policy" '
             'content="default-src \'self\'; base-uri \'self\'; object-src \'none\'; '
