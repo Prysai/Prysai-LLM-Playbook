@@ -21,6 +21,10 @@ in the record.
 - `scope_out`:
 - `related_stable_route`:
 
+The `content_id` and Markdown filename must end with the same valid
+`YYYY-MM-DD` date so that a dated brief can be located and reviewed without
+guessing which snapshot it represents.
+
 ## Source and claim ledger
 
 | Claim or decision | Evidence class | Source URL and owner | Accessed | Applies to | Limitation | Fact status | Next review |

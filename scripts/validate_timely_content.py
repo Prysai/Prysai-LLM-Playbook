@@ -170,6 +170,13 @@ def parse_date(value: str) -> date | None:
         return None
 
 
+def trailing_date(value: str) -> date | None:
+    """Read the required publication date suffix from an identity value."""
+
+    match = re.search(r"(\d{4}-\d{2}-\d{2})$", value)
+    return parse_date(match.group(1)) if match else None
+
+
 def metadata_value(text: str, label: str) -> str | None:
     match = re.search(
         rf"(?m)^>\s+\*\*{re.escape(label)}:\*\*\s*`([^`]+)`",
@@ -273,7 +280,13 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
             has_internal_boundary = evidence == "project_inference" and all(
                 marker in source for marker in INTERNAL_SOURCE_MARKERS
             )
-            if "https://" not in source and not has_private_boundary and not has_internal_boundary:
+            has_source_url = "https://" in source
+            source_is_allowed = (
+                has_source_url
+                or (evidence == "reported_experience" and has_private_boundary)
+                or has_internal_boundary
+            )
+            if not source_is_allowed:
                 errors.append(f"{row_label}: source URL and owner must contain an https:// URL or an explicit private user-provided boundary")
         for header, column_index in (("accessed", accessed_index), ("next review", next_review_index)):
             if column_index is not None and parse_date(row[column_index]) is None:
@@ -316,6 +329,14 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
         errors.append(f"{label}: canonical_path must match the registered field-note path")
     if not registered_path.startswith("docs/research/"):
         errors.append(f"{label}: field-note path must be under docs/research/")
+    content_date = trailing_date(content_id)
+    path_date = trailing_date(Path(registered_path).stem)
+    if content_date is None:
+        errors.append(f"{label}: content_id must end with a valid YYYY-MM-DD date")
+    if path_date is None:
+        errors.append(f"{label}: field-note filename must end with a valid YYYY-MM-DD date")
+    if content_date and path_date and content_date != path_date:
+        errors.append(f"{label}: content_id and field-note filename must use the same date")
     if normalized_value(field_values.get("kind") or "") != "field-note":
         errors.append(f"{label}: kind must be field-note")
     if normalized_value(field_values.get("content_status") or "") not in CONTENT_STATUSES:

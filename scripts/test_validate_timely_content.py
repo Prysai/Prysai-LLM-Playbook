@@ -10,7 +10,7 @@ import validate_timely_content as timely
 
 
 CONTENT_ID = "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02"
-NOTE_PATH = "docs/research/fixture.md"
+NOTE_PATH = "docs/research/fixture-2026-09-02.md"
 
 
 def require(condition: bool, message: str) -> None:
@@ -59,11 +59,12 @@ def run_fixture(
     kind: str = "field-note",
     path: str = NOTE_PATH,
     content_status: str = "candidate",
+    fixture_path: str = NOTE_PATH,
 ) -> list[str]:
     with tempfile.TemporaryDirectory(prefix="prysai-timely-content-") as directory:
         root = Path(directory)
         matrix_path = root / "docs/governance/locale-matrix.yaml"
-        note_path = root / NOTE_PATH
+        note_path = root / fixture_path
         matrix_path.parent.mkdir(parents=True)
         note_path.parent.mkdir(parents=True)
         matrix_path.write_text(
@@ -73,7 +74,7 @@ def run_fixture(
         note_path.write_text(
             note.replace(
                 "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
-                NOTE_PATH,
+                fixture_path,
             ),
             encoding="utf-8",
         )
@@ -149,6 +150,15 @@ def main() -> int:
         any("source URL and owner" in error for error in run_fixture(no_source_url)),
         "a source row without a URL was accepted",
     )
+    private_official_source = note.replace(
+        "xAI/SpaceXAI, [Introducing Grok Bot](https://x.ai/news/introducing-grok-bot)",
+        "User-provided private material",
+        1,
+    )
+    require(
+        any("source URL and owner" in error for error in run_fixture(private_official_source)),
+        "an official fact with only a private user source was accepted",
+    )
     formatted_header = note.replace(" | Fact status |", " | **Fact status** |", 1).replace(
         " | `current` |", " | `not-a-status` |", 1
     )
@@ -176,6 +186,17 @@ def main() -> int:
     require(
         any("under docs/research" in error for error in run_fixture(note, path="docs/quality/fixture.md")),
         "a field note outside docs/research was accepted",
+    )
+    require(
+        any(
+            "same date" in error
+            for error in run_fixture(
+                note,
+                path="docs/research/fixture-2026-09-03.md",
+                fixture_path="docs/research/fixture-2026-09-03.md",
+            )
+        ),
+        "a field note with mismatched identity dates was accepted",
     )
 
     for status in ("verified", "removed"):
