@@ -41,7 +41,7 @@ générale.
 
 ## Problèmes de terrain
 
-La [recherche de terrain du projet](../../docs/research/field-problems-codex.md)
+La [recherche de terrain du projet](../evidence-library-FR.md#source-notes)
 réunit des Issues GitHub publiques et d’autres discussions publiques. Ces
 rapports décrivent des symptômes ; ils ne sont ni des diagnostics officiels ni
 des reproductions locales. Ils sont utiles parce qu’ils montrent les
@@ -54,7 +54,7 @@ hypothèses qui rendent un choix de modèle trompeur.
 | Une commande Windows reste en `Working` | L’interface affiche une activité, mais aucune sortie vérifiable n’arrive | Que le formateur, l’Agent ou le modèle produit encore un travail utile | Appliquer la règle de délai, interrompre prudemment, inspecter l’arbre de travail |
 
 Les liens, les dates, les versions et les niveaux de preuve figurent dans le
-[dossier de recherche sur la sélection des modèles](../../docs/research/codex-model-selection-official-facts-2026-08-11.md).
+[dossier de recherche sur la sélection des modèles](../evidence-library-FR.md#source-notes).
 Le projet n’a pas exécuté les commandes ni les contournements mentionnés dans
 ces rapports.
 
@@ -343,7 +343,7 @@ positionnement officiel et une démonstration ne remplacent pas une évaluation.
 | Positionnement des modèles, effort de raisonnement, valeurs par défaut locales et limites Cloud | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | Documentation officielle à cette date ; ni preuve d’accès du compte ni benchmark | `facts-maintainer` / 2026-09-11 |
 | Surface CLI et workflow de dépôt local | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Documentation officielle ; pas la configuration effective de cette session | `facts-maintainer` / 2026-09-11 |
 | Environnement Cloud, journaux et limites de revue | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Documentation officielle ; la configuration ne prouve pas la fin d’un Agent | `facts-maintainer` / 2026-09-11 |
-| Symptômes de capacité, fournisseur et attente prolongée | [Dossier de terrain](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | Rapports utilisateurs et méthode du projet ; pas une cause officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-11 |
+| Symptômes de capacité, fournisseur et attente prolongée | [Dossier de terrain](../evidence-library-FR.md#source-notes) | 2026-08-11 | Rapports utilisateurs et méthode du projet ; pas une cause officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-11 |
 | Méthode de comparaison à tâches fixes | [Chapitre d’évaluation](19-evaluate-models-and-workflows-FR.md) et [fixture versionnée](../../evals/candidates/three-task-smoke-v1/README-FR.md) | 2026-08-14 | Méthode du Playbook et validateur local ; aucun run de modèle terminé | `evaluation-maintainer` / 2026-09-11 |
 
 Les identifiants de modèles, surfaces, prix, capacités, paramètres et avis de

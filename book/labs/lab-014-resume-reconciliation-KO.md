@@ -76,7 +76,7 @@ checkpoint, 명령과 출력, diff, 분류 표, 짧은 결정을 보관합니다
 
 ## 출처
 
-- [현장 문제와 프롬프트 패턴 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-01~FP2-04 및 FP2-08.
+- [현장 문제와 프롬프트 패턴 — P2](../evidence-library-KO.md#source-notes), FP2-01~FP2-04 및 FP2-08.
 - [10장: 계획과 수직 슬라이스](../chapters/10-planning-and-slicing-KO.md).
 - [12장: Agent 루프, 상태와 중지 조건](../chapters/12-agent-loop-and-stop-KO.md).
 

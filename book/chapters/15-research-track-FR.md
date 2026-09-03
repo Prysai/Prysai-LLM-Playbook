@@ -32,7 +32,7 @@ La compétence visée n’est pas de produire une revue plus longue. C’est de 
 
 Ces deux éléments viennent d’une collecte de problèmes organisée le 2026-08-09. Ils n’ont pas été reproduits localement et leur cause n’a pas été confirmée par un responsable officiel. Ici, ce sont des exemples de séparation des preuves, pas des conclusions définitives sur une version.
 
-Les discussions de communauté montrent aussi des cas faciles à mal interpréter : blocage d’une liste réseau, démarrage d’une extension Windows/VS Code, confusion entre une demande d’approbation et une capacité du bac à sable, ou téléchargement de dépendances qui échoue. Leur intérêt n’est pas de fournir une commande à copier. Ils apprennent à séparer « quelqu’un a observé ceci », « quelqu’un a proposé cette piste » et « la cause est confirmée ». Voir [`field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md) et [`field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md).
+Les discussions de communauté montrent aussi des cas faciles à mal interpréter : blocage d’une liste réseau, démarrage d’une extension Windows/VS Code, confusion entre une demande d’approbation et une capacité du bac à sable, ou téléchargement de dépendances qui échoue. Leur intérêt n’est pas de fournir une commande à copier. Ils apprennent à séparer « quelqu’un a observé ceci », « quelqu’un a proposé cette piste » et « la cause est confirmée ». Voir [`field-problems-forums-2026-08-10.md`](../evidence-library-FR.md#source-notes) et [`field-problems-follow-up-2026-08-10.md`](../evidence-library-FR.md#source-notes).
 
 ## Concepts et décisions essentiels
 
@@ -589,11 +589,11 @@ Prenez une conclusion récente sans la rechercher à nouveau. Donnez un identifi
 
 ## Sources et limite de mise à jour
 
-- Problèmes de terrain : [`field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-01 et FP-02 ; statut `candidate`, collecte 2026-08-09.
-- Problèmes étendus : [`field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md), [`field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md) et [`field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md).
-- Faits officiels et lacunes : [`official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) et [`openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md).
-- Synthèse originale des méthodes : [`web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md).
-- Licences et attribution : [`asset-register.md`](../../docs/sources/asset-register.md), S01, S02, S03 et S06 ; S02 est sous CC BY-NC 4.0 et doit faire l’objet d’une nouvelle vérification avant publication.
+- Problèmes de terrain : [`field-problems-codex.md`](../evidence-library-FR.md#source-notes), FP-01 et FP-02 ; statut `candidate`, collecte 2026-08-09.
+- Problèmes étendus : [`field-problems-forums-2026-08-10.md`](../evidence-library-FR.md#source-notes), [`field-problems-follow-up-2026-08-10.md`](../evidence-library-FR.md#source-notes) et [`field-problems-index-2026-08-10.md`](../evidence-library-FR.md#source-notes).
+- Faits officiels et lacunes : [`official-facts-gap-review-2026-08-10.md`](../evidence-library-FR.md#source-notes) et [`openai-codex-facts-refresh-2026-08-09.md`](../evidence-library-FR.md#source-notes).
+- Synthèse originale des méthodes : [`web-methods-synthesis-2026-08-10.md`](../evidence-library-FR.md#source-notes).
+- Licences et attribution : [`asset-register.md`](../evidence-library-FR.md#source-notes), S01, S02, S03 et S06 ; S02 est sous CC BY-NC 4.0 et doit faire l’objet d’une nouvelle vérification avant publication.
 
 Pour chaque source volatile, notez l’URL exacte, la date d’accès, le périmètre, le responsable et la prochaine revue. Une source inaccessible, une citation non localisable ou un conflit non résolu reste une piste ou un résultat `candidate`, jamais une preuve silencieusement complétée.
 

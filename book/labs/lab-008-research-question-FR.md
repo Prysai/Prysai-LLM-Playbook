@@ -82,7 +82,7 @@ clôture avant de pouvoir réussir.
 
 Consultez la [fixture gelée](../../examples/lab-008-v1/README.md), le
 [contrat de l’exemple exécutable](../../docs/governance/executable-examples.yaml)
-et la [revue du paquet mainteneur](../../docs/quality/lab-008-reference-run-review-2026-08-13.md).
+et la [revue du paquet mainteneur](../evidence-library-FR.md#method-and-status).
 Cette preuve est déterministe et synthétique : elle n’utilise ni modèle, ni
 navigation Web, ni apprenant et n’établit pas la qualité d’une recherche réelle.
 

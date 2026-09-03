@@ -148,7 +148,7 @@ une validation par des locuteurs.
 
 ## Sources et limite de mise à jour
 
-- [Problèmes de terrain et modèles de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06 et FP2-20.
+- [Problèmes de terrain et modèles de prompts — P2](../evidence-library-FR.md#source-notes), FP2-05, FP2-06 et FP2-20.
 - [Chapitre 9 : vérifier, douter et récupérer](../chapters/09-verification-and-recovery-FR.md).
 
 Ces sources soutiennent une discipline de preuve et des limites de rapport ;

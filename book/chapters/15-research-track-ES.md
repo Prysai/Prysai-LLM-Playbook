@@ -117,7 +117,7 @@ Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima 
 
 ## Fuentes y límite de mantenimiento
 
-Las preguntas, las cadenas de evidencia y los registros de conflicto son métodos estables. Las páginas, los hechos de producto, los foros y las búsquedas cambian; registra la fecha de acceso, el alcance y la próxima comprobación. Consulta las [notas de fuentes de la biblioteca de evidencia](../evidence-library-ES.md#source-notes) para conservar el contexto y el estado de cada referencia. Para rastrear los casos y límites usados en este capítulo, empieza por el [registro de problemas de campo](../../docs/research/field-problems-codex.md), la [revisión de hechos oficiales](../../docs/research/official-facts-gap-review-2026-08-10.md) y el [registro de activos y licencias](../../docs/sources/asset-register.md).
+Las preguntas, las cadenas de evidencia y los registros de conflicto son métodos estables. Las páginas, los hechos de producto, los foros y las búsquedas cambian; registra la fecha de acceso, el alcance y la próxima comprobación. Consulta las [notas de fuentes de la biblioteca de evidencia](../evidence-library-ES.md#source-notes) para conservar el contexto y el estado de cada referencia. Para rastrear los casos y límites usados en este capítulo, empieza por el [registro de problemas de campo](../evidence-library-ES.md#source-notes), la [revisión de hechos oficiales](../evidence-library-ES.md#source-notes) y el [registro de activos y licencias](../evidence-library-ES.md#source-notes).
 
 ## Comprobación propia
 

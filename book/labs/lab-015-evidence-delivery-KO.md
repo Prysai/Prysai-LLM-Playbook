@@ -112,7 +112,7 @@ stop condition:
 
 ## 출처
 
-- [현장 문제와 프롬프트 패턴 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06, FP2-20.
+- [현장 문제와 프롬프트 패턴 — P2](../evidence-library-KO.md#source-notes), FP2-05, FP2-06, FP2-20.
 - [9장: 검증, 의심과 복구](../chapters/09-verification-and-recovery-KO.md).
 
 <!-- lab-navigation:start -->

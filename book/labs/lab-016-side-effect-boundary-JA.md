@@ -78,7 +78,7 @@ Agent に失敗の診断を依頼します。パッケージの導入、PATH の
 
 ## 出典
 
-- [現場の問題とプロンプトのパターン — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、FP2-07、FP2-10、FP2-12、FP2-19。
+- [現場の問題とプロンプトのパターン — P2](../evidence-library-JA.md#source-notes)、FP2-07、FP2-10、FP2-12、FP2-19。
 - [第13章：行為の境界](../chapters/13-action-boundaries-JA.md)。
 
 <!-- lab-navigation:start -->

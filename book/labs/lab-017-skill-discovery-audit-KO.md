@@ -118,7 +118,7 @@ revision, 라이선스, NOTICE, 중첩 자산, 의존성, 네트워크/계정 �
 
 ## 출처
 
-- [현장 문제와 프롬프트 패턴 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11, FP2-12.
+- [현장 문제와 프롬프트 패턴 — P2](../evidence-library-KO.md#source-notes), FP2-11, FP2-12.
 - [7장: Skill, 플러그인, MCP와 도구](../chapters/07-skills-plugins-and-tools-KO.md).
 - [14장: 외부 Skill 발견·설치·감사](../chapters/14-discover-and-audit-skills-KO.md).
 

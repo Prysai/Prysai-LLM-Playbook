@@ -99,3 +99,9 @@ jobs:
             echo "# Release evidence unavailable" >> "$GITHUB_STEP_SUMMARY"
             echo "The packet was not generated; inspect the preceding steps." >> "$GITHUB_STEP_SUMMARY"
           fi
+
+      - name: Enforce release evidence result
+        if: steps.release_evidence.outcome != 'success'
+        run: |
+          echo "The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only."
+          exit 1

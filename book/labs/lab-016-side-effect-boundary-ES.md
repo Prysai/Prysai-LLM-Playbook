@@ -79,7 +79,7 @@ estado persistente, y explica por qué se mantuvo la frontera.
 
 ## Fuentes
 
-- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-07, FP2-10, FP2-12 y FP2-19.
+- [Problemas de campo y patrones de prompts — P2](../evidence-library-ES.md#source-notes), FP2-07, FP2-10, FP2-12 y FP2-19.
 - [Capítulo 13: límites de las acciones](../chapters/13-action-boundaries-ES.md).
 
 <!-- lab-navigation:start -->

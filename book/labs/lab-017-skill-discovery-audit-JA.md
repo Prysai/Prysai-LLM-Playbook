@@ -118,7 +118,7 @@ revision、ライセンス、NOTICE、ネストした資産、依存関係、ネ
 
 ## 出典
 
-- [現場の問題とプロンプトのパターン — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、FP2-11、FP2-12。
+- [現場の問題とプロンプトのパターン — P2](../evidence-library-JA.md#source-notes)、FP2-11、FP2-12。
 - [第7章：Skill、プラグイン、MCP、ツール](../chapters/07-skills-plugins-and-tools-JA.md)。
 - [第14章：外部Skillの発見・導入・監査](../chapters/14-discover-and-audit-skills-JA.md)。
 

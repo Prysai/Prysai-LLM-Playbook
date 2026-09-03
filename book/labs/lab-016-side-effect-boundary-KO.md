@@ -76,7 +76,7 @@ Agent에게 실패를 진단하게 합니다. 패키지 설치, PATH 변경, 인
 
 ## 출처
 
-- [현장 문제와 프롬프트 패턴 — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-07, FP2-10, FP2-12, FP2-19.
+- [현장 문제와 프롬프트 패턴 — P2](../evidence-library-KO.md#source-notes), FP2-07, FP2-10, FP2-12, FP2-19.
 - [13장: 행동 경계](../chapters/13-action-boundaries-KO.md).
 
 <!-- lab-navigation:start -->

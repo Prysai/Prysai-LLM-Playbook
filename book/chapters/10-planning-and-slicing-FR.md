@@ -359,10 +359,10 @@ des vérifications locales.
 
 | Sujet | Source et date | Portée | Responsable / prochaine revue |
 |---|---|---|---|
-| Protocole avec objectif, contexte, contraintes, acceptation, arrêt, récupération et livraison | [Prompt patterns for real work](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md), 2026-08-11 | Synthèse du projet, pas format imposé par un fournisseur | `curriculum-maintainer` / 2026-09-11 |
-| Interruptions et validations longues rendent l’état incertain | [Field problems and prompt patterns P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), 2026-08-11 | Rapports publics ; pas de cause universelle ni reproduction locale | `curriculum-maintainer` / 2026-09-11 |
-| Checkpoints, tranches verticales et relais complet | [Content value upgrade plan P2](../../docs/research/content-value-upgrade-plan-p2-2026-08-11.md), 2026-08-11 | Recommandation pédagogique ; expérience `not_run` | `curriculum-maintainer` / 2026-09-11 |
-| Surfaces, permissions et états Codex | [OpenAI Codex baseline](../../docs/research/openai-codex-baseline.md) et [documentation officielle](https://developers.openai.com/codex/), revue 2026-08-11 | Faits volatils ; revalider avant de recopier un libellé ou une commande | `curriculum-maintainer` / 2026-09-11 |
+| Protocole avec objectif, contexte, contraintes, acceptation, arrêt, récupération et livraison | [Prompt patterns for real work](../evidence-library-FR.md#source-notes), 2026-08-11 | Synthèse du projet, pas format imposé par un fournisseur | `curriculum-maintainer` / 2026-09-11 |
+| Interruptions et validations longues rendent l’état incertain | [Field problems and prompt patterns P2](../evidence-library-FR.md#source-notes), 2026-08-11 | Rapports publics ; pas de cause universelle ni reproduction locale | `curriculum-maintainer` / 2026-09-11 |
+| Checkpoints, tranches verticales et relais complet | [Content value upgrade plan P2](../evidence-library-FR.md#source-notes), 2026-08-11 | Recommandation pédagogique ; expérience `not_run` | `curriculum-maintainer` / 2026-09-11 |
+| Surfaces, permissions et états Codex | [OpenAI Codex baseline](../evidence-library-FR.md#source-notes) et [documentation officielle](https://developers.openai.com/codex/), revue 2026-08-11 | Faits volatils ; revalider avant de recopier un libellé ou une commande | `curriculum-maintainer` / 2026-09-11 |
 
 Ne copiez pas le texte, les captures, le code ou les instructions de Skill des
 rapports liés. Cette traduction reste `in-progress / candidate / not_run` jusqu’à

@@ -247,8 +247,8 @@ dans un sandbox et classez le résultat `draft`, `candidate`, `verified` ou
 
 ## Sources et limite de mise à jour
 
-- **Rapports terrain :** [`field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-10 et FP-11 ; `candidate`, non reproduits localement.
-- **Assets et licences :** [`asset-register.md`](../../docs/sources/asset-register.md), S01, S03 et S06 ; contenu sans licence claire = référence seulement.
+- **Rapports terrain :** [`field-problems-codex.md`](../evidence-library-FR.md#source-notes), FP-10 et FP-11 ; `candidate`, non reproduits localement.
+- **Assets et licences :** [`asset-register.md`](../evidence-library-FR.md#source-notes), S01, S03 et S06 ; contenu sans licence claire = référence seulement.
 - **Faits volatils :** documentation officielle de l’outil réellement utilisé ; noter URL, date, version et portée.
 
 Le propriétaire est le mainteneur Contenu/Automatisation. Revoir après changement

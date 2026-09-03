@@ -131,7 +131,7 @@ a été observé et qu’une écriture externe a été approuvée.
 
 ## Sources et limite de mise à jour
 
-- [Problèmes de terrain et modèles de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-11 et FP2-12.
+- [Problèmes de terrain et modèles de prompts — P2](../evidence-library-FR.md#source-notes), FP2-11 et FP2-12.
 - [Chapitre 7 : Skills, plugins, MCP et outils](../chapters/07-skills-plugins-and-tools-FR.md).
 - [Chapitre 14 : découvrir et auditer des Skills externes](../chapters/14-discover-and-audit-skills-FR.md).
 

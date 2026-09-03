@@ -168,7 +168,7 @@ Choisissez un cas synthétique sans réseau et ajoutez-le au registre de claims 
 L'objectif est de nommer la couche qui a réellement échoué. Un résultat de
 schéma, une correspondance de recherche ou une chaîne visible ne prouve pas
 automatiquement la justesse sémantique, l'exhaustivité du contexte ou
-l'autorité. Consultez la [recherche sur les mécanismes des LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)
+l'autorité. Consultez la [recherche sur les mécanismes des LLM](../evidence-library-FR.md#source-notes)
 pour les frontières étayées par des sources ; ce Lab n'exécute pas de
 fournisseur en direct.
 
@@ -191,7 +191,7 @@ préserver le registre, réduire la prochaine vérification ou demander une
 autorisation. Elle ne consiste pas à effacer l'espace de travail, forcer une
 installation ou envoyer l'instruction suivante en attente.
 
-Ces formes d'échec proviennent de [l'étude des problèmes de terrain Codex](../../docs/research/field-problems-codex.md).
+Ces formes d'échec proviennent de [l'étude des problèmes de terrain Codex](../evidence-library-FR.md#source-notes).
 Ce sont des témoignages d'utilisateurs, pas une confirmation officielle de la
 cause ; ce Lab ne prétend pas les avoir reproduits localement.
 
@@ -247,10 +247,10 @@ explicites.
 
 ## Sources et maintenance
 
-- [Terminologie du projet](../../CONTEXT.md) — frontières stables utilisées par le Lab.
-- [Baseline officielle des faits Codex](../../docs/research/openai-codex-baseline.md) — faits produits datés et limites d'autorisation ; vérifiée le 2026-08-09.
-- [Recherche sur les problèmes réels des utilisateurs Codex](../../docs/research/field-problems-codex.md) — rapports publics, liens sources et niveaux de preuve ; vérifiée le 2026-08-09.
-- [Recherche sur les mécanismes des LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — cartes mécanistiques et expériences d'échec appuyées par des sources officielles ; vérifiée le 2026-08-10.
+- [Terminologie du projet](../evidence-library-FR.md#core-terms) — frontières stables utilisées par le Lab.
+- [Baseline officielle des faits Codex](../evidence-library-FR.md#source-notes) — faits produits datés et limites d'autorisation ; vérifiée le 2026-08-09.
+- [Recherche sur les problèmes réels des utilisateurs Codex](../evidence-library-FR.md#source-notes) — rapports publics, liens sources et niveaux de preuve ; vérifiée le 2026-08-09.
+- [Recherche sur les mécanismes des LLM](../evidence-library-FR.md#source-notes) — cartes mécanistiques et expériences d'échec appuyées par des sources officielles ; vérifiée le 2026-08-10.
 - [Chapitre 1 — Comprendre GPT avant de faire confiance à Codex](../chapters/01-gpt-and-codex-FR.md) — contexte conceptuel et cas de terrain pour ce Lab.
 
 Cet exercice est original. Il ne copie ni prompts externes, ni journaux, ni

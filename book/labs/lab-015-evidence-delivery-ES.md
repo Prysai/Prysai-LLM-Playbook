@@ -119,7 +119,7 @@ comprobación mínima que cerraría esa brecha.
 
 ## Fuentes
 
-- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06 y FP2-20.
+- [Problemas de campo y patrones de prompts — P2](../evidence-library-ES.md#source-notes), FP2-05, FP2-06 y FP2-20.
 - [Capítulo 9: verificación, duda y recuperación](../chapters/09-verification-and-recovery-ES.md).
 
 <!-- lab-navigation:start -->
