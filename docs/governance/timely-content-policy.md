@@ -96,6 +96,12 @@ rollout, plan entitlement, platform list, limit, or security control than for a
 stable concept. The record's `next_review` is a maintenance obligation, not a
 promise that the source will still exist.
 
+At admission, the record-level `last_reviewed` date must be on or after every
+claim's `accessed` date, and the record-level `next_review` must be on or before
+every claim's `next review` date. This keeps the document-level maintenance
+promise from hiding a newer source observation or a claim that needs attention
+sooner.
+
 At review time:
 
 - `current`: the source still supports the claim in the recorded scope;

@@ -214,6 +214,20 @@ def normalized_value(value: str) -> str:
     return re.sub(r"[`*]", "", value).strip()
 
 
+def normalized_scalar(value: str | None) -> str:
+    """Normalize a single-line scalar that may end with sentence punctuation."""
+
+    return normalized_value(value or "").rstrip(".").strip()
+
+
+def source_names_owner(source: str) -> bool:
+    """Return whether a source cell names an owner outside its URL text."""
+
+    without_links = re.sub(r"\[[^\]]+\]\(https://[^)]+\)", "", source)
+    without_urls = re.sub(r"https://\S+", "", without_links)
+    return bool(without_urls.strip(" `*_.,;:-"))
+
+
 def has_meaningful_value(value: str | None) -> bool:
     if value is None:
         return False
@@ -221,7 +235,13 @@ def has_meaningful_value(value: str | None) -> bool:
     return bool(normalized and not re.fullmatch(r"<[^>]+>", normalized))
 
 
-def validate_source_table(body: str, label: str, errors: list[str]) -> None:
+def validate_source_table(
+    body: str,
+    label: str,
+    errors: list[str],
+    note_last_reviewed: date | None = None,
+    note_next_review: date | None = None,
+) -> None:
     rows = [table_cells(line) for line in body.splitlines()]
     rows = [row for row in rows if row]
     if len(rows) < 3:
@@ -288,6 +308,8 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
             )
             if not source_is_allowed:
                 errors.append(f"{row_label}: source URL and owner must contain an https:// URL or an explicit private user-provided boundary")
+            elif not source_names_owner(source):
+                errors.append(f"{row_label}: source URL and owner must name the source owner")
         for header, column_index in (("accessed", accessed_index), ("next review", next_review_index)):
             if column_index is not None and parse_date(row[column_index]) is None:
                 errors.append(f"{row_label}: {header} must use YYYY-MM-DD")
@@ -296,6 +318,14 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
             review = parse_date(row[next_review_index])
             if accessed and review and review < accessed:
                 errors.append(f"{row_label}: next review must not precede accessed date")
+            if note_last_reviewed and accessed and accessed > note_last_reviewed:
+                errors.append(
+                    f"{row_label}: accessed date must not be later than note Last reviewed"
+                )
+            if note_next_review and review and note_next_review > review:
+                errors.append(
+                    f"{row_label}: note Next review must not be later than claim Next review"
+                )
 
 
 def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
@@ -428,11 +458,28 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
     if not source_section:
         errors.append(f"{label}: missing source table")
     else:
-        validate_source_table(source_section, label, errors)
+        validate_source_table(
+            source_section,
+            label,
+            errors,
+            note_last_reviewed=parsed_last,
+            note_next_review=parsed_next,
+        )
 
-    policy_line = labeled_line(text, "translation_policy")
-    if not policy_line or "source-first" not in policy_line:
+    source_locale = normalized_scalar(field_values.get("source_locale"))
+    if source_locale != "EN":
+        errors.append(f"{label}: source_locale must be EN for the source-first English brief")
+
+    policy_line = normalized_scalar(field_values.get("translation_policy"))
+    if policy_line != "source-first":
         errors.append(f"{label}: translation_policy must declare source-first")
+    overview_target = normalized_scalar(field_values.get("overview_target"))
+    if overview_target != "site/index.html#field-research":
+        errors.append(f"{label}: overview_target must use the existing field-research surface")
+    generated_outputs = normalized_value(field_values.get("generated_outputs") or "")
+    for output in ("site/locale-manifest.js", "site/search-index.js"):
+        if output not in generated_outputs:
+            errors.append(f"{label}: generated_outputs must include {output}")
     if "scripts/validate_timely_content.py" not in text:
         errors.append(f"{label}: validation_commands must include scripts/validate_timely_content.py")
     if isinstance(record.get("content_id"), str) and record["content_id"] not in text:

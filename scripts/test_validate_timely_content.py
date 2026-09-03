@@ -150,6 +150,15 @@ def main() -> int:
         any("source URL and owner" in error for error in run_fixture(no_source_url)),
         "a source row without a URL was accepted",
     )
+    no_source_owner = note.replace(
+        "xAI/SpaceXAI, [Introducing Grok Bot](https://x.ai/news/introducing-grok-bot)",
+        "[Introducing Grok Bot](https://x.ai/news/introducing-grok-bot)",
+        1,
+    )
+    require(
+        any("source owner" in error for error in run_fixture(no_source_owner)),
+        "a source row without an owner was accepted",
+    )
     private_official_source = note.replace(
         "xAI/SpaceXAI, [Introducing Grok Bot](https://x.ai/news/introducing-grok-bot)",
         "User-provided private material",
@@ -166,10 +175,32 @@ def main() -> int:
         any("fact status is not recognized" in error for error in run_fixture(formatted_header)),
         "formatted fact-status header bypassed row validation",
     )
+    review_date_too_old = note.replace(
+        "> **Last reviewed:** `2026-09-03`",
+        "> **Last reviewed:** `2026-09-02`",
+        1,
+    )
+    require(
+        any("accessed date" in error for error in run_fixture(review_date_too_old)),
+        "a note reviewed before one of its claims was accepted",
+    )
+    claim_review_date_too_early = note.replace(
+        " | 2026-09-09 |",
+        " | 2026-09-08 |",
+        1,
+    )
+    require(
+        any("note Next review" in error for error in run_fixture(claim_review_date_too_early)),
+        "an earlier claim review deadline than the note deadline was accepted",
+    )
 
     require(
         any("translation policy" in error for error in run_fixture(note, policy="reference-only")),
         "non-source-first field note was accepted",
+    )
+    require(
+        any("translation policy" in error for error in run_fixture(note, policy="not-source-first")),
+        "a policy containing source-first as a substring was accepted",
     )
     require(
         any("admission_profile" in error for error in run_fixture(note, admission_profile=None)),
@@ -223,7 +254,7 @@ def main() -> int:
         "legacy research record accepted a source-first translation policy",
     )
 
-    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 11}")
+    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 15}")
     return 0
 
 

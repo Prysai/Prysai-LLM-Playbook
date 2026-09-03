@@ -31,6 +31,11 @@ guessing which snapshot it represents.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | `official_fact` / `reported_experience` / `project_inference` / `not_observed` |  |  |  |  | `current` / `stale` / `disputed` / `removed` / `unverified` / `candidate` |  |
 
+The record-level `last_reviewed` date must be on or after every claim's
+`Accessed` date. The record-level `next_review` must be on or before every
+claim's `Next review` date, so an earlier claim deadline cannot be hidden by a
+later document deadline.
+
 Evidence classes describe what the record can support. An official source does
 not establish account-level availability, and a reported experience does not
 establish a root cause, prevalence, reliability, ROI, or general product
