@@ -88,6 +88,8 @@ REQUIRED_COMMANDS = {
     "lab-navigation": ("{python}", "scripts/validate_lab_navigation.py"),
     "lab-navigation-fixtures": ("{python}", "scripts/test_lab_navigation.py"),
     "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
+    "timely-content": ("{python}", "scripts/validate_timely_content.py"),
+    "timely-content-fixtures": ("{python}", "scripts/test_validate_timely_content.py"),
     "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
     "github-template-fixtures": ("{python}", "scripts/test_validate_github_templates.py"),
     "contributed-test-material": ("{python}", "scripts/validate_contributed_test_material.py"),

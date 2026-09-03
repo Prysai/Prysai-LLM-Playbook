@@ -57,6 +57,8 @@
         {"id": "universal-seam-fixture", "argv": ["{python}", "scripts/validate_universal_seam_fixture.py"]},
         {"id": "universal-seam-fixture-tests", "argv": ["{python}", "scripts/test_universal_seam_fixture.py"]},
         {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
+        {"id": "timely-content", "argv": ["{python}", "scripts/validate_timely_content.py"]},
+        {"id": "timely-content-fixtures", "argv": ["{python}", "scripts/test_validate_timely_content.py"]},
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
         {"id": "content-status-run-projection-fixtures", "argv": ["{python}", "scripts/test_content_status_run_projections.py"]},
         {"id": "input-archive-location-fixtures", "argv": ["{python}", "scripts/test_input_archive_locations.py"]},

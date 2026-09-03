@@ -180,7 +180,9 @@ completion ordering, retry guarantees, resource isolation, or an API contract.
 - `stale_action`: narrow the wording, label the claim stale or disputed, or
   remove the Reader projection while retaining the dated record.
 - `reviewer_role`: `research-maintainer`.
-- `validation_commands`: `scripts/validate_update_registry.py`,
+- `validation_commands`: `scripts/validate_timely_content.py`,
+  `scripts/test_validate_timely_content.py`,
+  `scripts/validate_update_registry.py`,
   `scripts/validate_project.py`, `scripts/check_local_links.py`,
   `scripts/build_site_locale_manifest.py --check`,
   `scripts/build_site_search_index.py --check`, and the affected browser
