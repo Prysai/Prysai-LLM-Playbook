@@ -79,14 +79,14 @@ appropriateness, model behavior, or production readiness. No machine score or
 automated text comparison can substitute for an independent native-language
 review and a short reader comprehension check.
 
-## Current follow-up — 2026-08-26
+## Historical checkpoint — 2026-08-26
 
-The repository now registers eight locales: the English source plus seven
-translation routes (ZH, ZHTW, ES, JA, KO, DE, and FR). The current structural
-audits report all 56 locale-matrix units and all 103 Reader content identities
-for every registered locale, with no missing locale records or files. This is
-route and file coverage only; it is not evidence that the prose is equivalent,
-native, or understood by learners.
+At that checkpoint, the repository registered eight locales: the English source
+plus seven translation routes (ZH, ZHTW, ES, JA, KO, DE, and FR). The
+structural audits then reported all 56 locale-matrix units and 103 Reader
+content identities for every registered locale, with no missing locale records
+or files. This historical baseline is route and file coverage only; it is not
+evidence that the prose is equivalent, native, or understood by learners.
 
 The current depth audit covers 280 locale/content pairs and reports 25 editorial
 attention items. Its character and heading ratios are triage signals, not
@@ -113,6 +113,21 @@ The non-English routes therefore remain `candidate`/`in-progress` until a
 named independent language review and a small comprehension check exist. Green
 validators establish structural contracts only; they do not upgrade this
 status.
+
+## Current follow-up — 2026-09-03
+
+The September Reader audit registers eight locales, 56 locale-matrix units,
+and 104 Reader content identities. Every Reader identity has an explicit
+locale record. The Grok Bot field note added on 2026-09-02 is intentionally
+English-only and declares `translation_policy: source-first`; its seven
+not-started localized files are therefore deferred by policy and remain
+unavailable until authored. This exception does not make the project fully
+bilingual and does not replace native-language review.
+
+The separate depth audit still covers 280 locale/content pairs and reports 25
+editorial attention items. Those ratios remain triage signals, not translation
+scores, and the structural audit still does not prove semantic equivalence,
+native fluency, learner comprehension, or runtime behavior.
 
 ### Precision review slice — Japanese Chapter 15 (2026-08-26)
 

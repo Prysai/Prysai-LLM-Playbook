@@ -12,7 +12,7 @@ window.CODEX_SEARCH_INDEX = {
     "zh-tw",
     "fr"
   ],
-  "document_count": 104,
+  "document_count": 105,
   "source": [
     "docs/governance/content-status.yaml",
     "docs/governance/locale-matrix.yaml",
@@ -8000,11 +8000,37 @@ window.CODEX_SEARCH_INDEX = {
       "search_aliases": {}
     },
     {
+      "content_id": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+      "kind": "field-note",
+      "number": null,
+      "route": null,
+      "order": 77,
+      "status": "candidate",
+      "available_locales": [
+        "en"
+      ],
+      "locales": {
+        "en": {
+          "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
+          "exists": true,
+          "ready": true,
+          "title": "Grok Bot: from AI chat to an auditable ongoing workflow",
+          "snippet": "grok bot: from ai chat to an auditable ongoing workflow grok bot: from ai chat to an auditable ongoing workflow > content status: candidate > fact status: current within the source dates and scopes below > last reviewed: 2026-09-03 > next review: 2026-09-09 > ",
+          "content_status": "candidate",
+          "translation_status": "source"
+        }
+      },
+      "search": {
+        "en": "grok bot: from ai chat to an auditable ongoing workflow grok bot: from ai chat to an auditable ongoing workflow > content status: candidate > fact status: current within the source dates and scopes below > last reviewed: 2026-09-03 > next review: 2026-09-09 > owner: research-maintainer the practical question what should a learner check before treating grok bot as an ongoing work partner rather than as another one-off chat window? the short answer is: identify the work surface, the data and action boundary, the evidence that will remain, and the point at which a person must decide. grok bot is officially described as an early-beta product with persistent cloud computers, named bots, connectors, skills, routines, collaboration, and action approvals. those capabilities make a longer workflow possible. they do not by themselves prove availability for a particular account, reliable completion, complete auditing, or a successful outcome. why this is timely the supplied reader material reports interest in moving from one-off chat toward delegated, multi-step work that can continue, use tools, and return for judgment. this is a single-user demand signal, not evidence of a general population shift or measured adoption. this note responds to the question without reproducing the supplied person's name, private context, screenshots, paths, transcript, or efficiency claims. the timing also matters because the official documentation is time-sensitive and may change during this early-beta rollout; this snapshot should be rechecked against each recorded access date. grok bot launched on 2026-08-11 as early beta, while the current help pages document its platforms and controls. the smallest useful concept an ai chat is usually evaluated at the response boundary. an ongoing bot workflow has more boundaries: work surface: the shared cloud computer, browser, terminal, local execution option, or a connected service. context: files, browser sessions, credentials, connector permissions, bot memory, and messages passed between bots. action: a proposed read, write, message, publication, purchase, delete, permission change, or production change. evidence: the source, diff, file, log, approval decision, or failure record that lets a person inspect what happened. the product documentation supports parts of this model. the project adds the evidence checkpoint as a teaching rule. it is a prysai inference, not a claim that grok bot supplies a complete audit trail for every side effect. what the official sources support | claim | evidence class | source owner and url | accessed | applies to | limitation | fact status | next review | | --- | --- | --- | --- | --- | --- | --- | --- | | grok bot launched on 2026-08-11 and is labeled early beta / beta. | officialfact | xai/spacexai, introducing grok bot | 2026-09-02 | the launch announcement and its stated eligible plans. | a launch announcement is not a ga, sla, or account-level availability guarantee. | current | 2026-09-09 | | a supplied reader account describes interest in a longer-running ai work pattern rather than a one-off chat. | reportedexperience | user-provided material; private and not published or linked. | 2026-09-02 | a demand signal for deciding whether this topic merits a bounded field note. | it is not independently verified product evidence, a representative user study, or a performance result; personal details and claims are not reproduced. | unverified | 2026-09-09 | | grok bot is distinct from the ordinary grok website and mobile grok apps. | officialfact | xai/spacexai, grok faq | 2026-09-02 | product identity and documented surface boundaries. | it does not describe every account, region, or rollout condition. | current | 2026-09-09 | | each bot runs on a persistent cloud vm with a browser, filesystem, and terminal; multiple bots share a user-scoped computer. | officialfact | xai/spacexai, grok bot overview | 2026-09-02 | the documented cloud bot environment. | shared storage, sessions, and credentials mean that a bot is not automatically a security isolation boundary. | current | 2026-09-09 | | browser/computer use and command-line work are documented, while local computer execution is a separate configurable capability. | officialfact | xai/spacexai, use the computer and apps | 2026-09-02 | cloud computer use and the documented desktop settings. | a visible setting does not prove that a given account has access or that a command ran successfully. | current | 2026-09-09 | | connectors, including custom mcp connections, can provide access to external tools and data. | officialfact | xai/spacexai, connectors and custom mcp tunneling | 2026-09-02 | documented connector types and their permission/network prerequisites. | connector lists, scopes, administrator controls, oauth permissions, and rollout status can change; a local mcp server needs a public tunnel for this surface. | current | 2026-09-09 | | skills store reusable task instructions; routines can run a bot on a schedule and, where supported, after an event. | officialfact | xai/spacexai, skills and routines | 2026-09-02 | the documented bot workflow ui. | the source does not establish a public skill package format, webhook guarantee, or universal event support. | current | 2026-09-09 | | bots can exchange messages asynchronously, collaborate in groups, and use a documented account limit of 50 bots and group chats combined. | officialfact | xai/spacexai, create and manage bots and message and collaborate | 2026-09-02 | current documented account and collaboration rules. | limits and handoff behavior are volatile; they do not prove arbitrary topologies, ordering, retries, or reliability. | current | 2026-09-09 | | approvals and auto review can gate selected messages, publications, purchases, deletions, permission changes, production changes, tool calls, and computer actions. | officialfact | xai/spacexai, approvals, security, and privacy | 2026-09-02 | documented action-level controls. | the source explicitly says auto review does not review every side effect; it is not a complete security or audit guarantee. | current | 2026-09-09 | | the mobile help page lists android 9+ and says the product is designed for phones rather than ipad. | officialfact | xai/spacexai, grok bot mobile | 2026-09-02 | the documented mobile requirements. | a help-page platform entry does not prove that the app is downloadable for every eligible account or region. | current | 2026-09-09 | | public android download availability was not independently verified in this review; an automated request to the product download page returned http 403. | notobserved | xai/spacexai, grok bot download page | 2026-09-03 | one unauthenticated automated request from the review environment. | a 403 response does not prove that the page or android app is unavailable to a person, account, or region. | current | 2026-09-09 | | requiring an explicit work surface, action boundary, evidence check, human decision, and stop condition is the teaching rule this note derives from the product facts. | projectinference | prysai lab, this original note, grounded in the official sources in this table. | 2026-09-02 | a low-risk, inspectable first observation for playbook readers. | it is not a grok bot feature claim, product recommendation, or proof of a complete audit trail. | candidate | 2026-09-09 | | a public grok bot api/sdk, complete approval-audit api, offline model runtime, and universal multi-bot execution contract were not found in this review. | notobserved | xai/spacexai, grok bot overview, approvals documentation, and the official urls in this table. | 2026-09-02 | this bounded documentation search. | absence from the reviewed pages is not proof that no private, newly released, or separately documented capability exists. | current | 2026-09-09 | the decision a reader can make now use grok bot for a low-risk, inspectable workflow only when the first pass can stay within a reversible boundary. before adding a connector, local execution, or a routine, write down: the one result you want; whether the work belongs on the shared cloud computer or the local computer; the minimum input and permissions needed; the evidence you expect to inspect; the action that must pause for human approval; and the condition that makes the task stop rather than retry. this is a routing decision, not a recommendation to purchase, install, log in, connect an account, expose an mcp server, or delegate a real external action. a safe first observation do not start by asking a bot to publish, send, buy, delete, change permissions, or modify production data. instead, take one existing low-risk task and map it on paper or in a local note: if the product asks for a login challenge, 2fa, captcha, payment, or another identity check, the official guidance says to take over the computer yourself. do not paste a password or one-time code into ordinary chat. if the task cannot produce the stated evidence without expandin"
+      },
+      "search_aliases": {}
+    },
+    {
       "content_id": "prysai-dialogue-brief",
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 77,
+      "order": 78,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8107,7 +8133,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 78,
+      "order": 79,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8210,7 +8236,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 79,
+      "order": 80,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8313,7 +8339,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 80,
+      "order": 81,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8416,7 +8442,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 81,
+      "order": 82,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8519,7 +8545,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 82,
+      "order": 83,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8622,7 +8648,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 83,
+      "order": 84,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8725,7 +8751,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 84,
+      "order": 85,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8828,7 +8854,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 85,
+      "order": 86,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -8931,7 +8957,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 86,
+      "order": 87,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9034,7 +9060,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 87,
+      "order": 88,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9137,7 +9163,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 88,
+      "order": 89,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9240,7 +9266,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 89,
+      "order": 90,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9343,7 +9369,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 90,
+      "order": 91,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9446,7 +9472,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 91,
+      "order": 92,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9549,7 +9575,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 92,
+      "order": 93,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9652,7 +9678,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 93,
+      "order": 94,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9755,7 +9781,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 94,
+      "order": 95,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9858,7 +9884,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 95,
+      "order": 96,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -9961,7 +9987,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 96,
+      "order": 97,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10064,7 +10090,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 97,
+      "order": 98,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10167,7 +10193,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 98,
+      "order": 99,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10270,7 +10296,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 99,
+      "order": 100,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10373,7 +10399,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 100,
+      "order": 101,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10476,7 +10502,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 101,
+      "order": 102,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -10579,7 +10605,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 102,
+      "order": 103,
       "status": "candidate",
       "available_locales": [
         "en",

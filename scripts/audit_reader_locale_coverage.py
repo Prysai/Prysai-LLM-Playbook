@@ -3,7 +3,9 @@
 The course matrix covers chapters and Labs, but the public Reader also exposes
 Skills, research notes, practice packs, and quality records.  This audit keeps
 those two surfaces distinct.  It reports missing or not-started locale routes
-without treating a generated manifest as proof of translation quality.
+without treating a generated manifest as proof of translation quality.  A
+source-first field note may explicitly defer translation under the timely
+content policy; other not-started Reader routes remain blocking.
 """
 
 from __future__ import annotations
@@ -29,6 +31,20 @@ def load_manifest() -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError("locale manifest must contain an object")
     return value
+
+
+def is_deferred_field_note(content: dict[str, Any]) -> bool:
+    """Return whether a field note has the valid English source-first shape."""
+
+    english = (content.get("locales") or {}).get("en")
+    return bool(
+        content.get("kind") == "field-note"
+        and content.get("translation_policy") == "source-first"
+        and content.get("source_locale") == "en"
+        and isinstance(english, dict)
+        and english.get("exists") is True
+        and english.get("translation_status") == "source"
+    )
 
 
 def audit(manifest: dict[str, Any]) -> dict[str, Any]:
@@ -67,17 +83,21 @@ def audit(manifest: dict[str, Any]) -> dict[str, Any]:
                     {"content_id": str(content_id), "locale": locale, "path": str(record.get("path", ""))}
                 )
 
-    not_started = {
-        locale: [
-            str(content_id)
-            for content_id, content in contents.items()
-            if isinstance(content, dict)
-            and isinstance(content.get("locales"), dict)
-            and isinstance(content["locales"].get(locale), dict)
-            and content["locales"][locale].get("translation_status") == "not-started"
-        ]
-        for locale in locale_tokens
-    }
+    not_started = {locale: [] for locale in locale_tokens}
+    deferred_not_started = {locale: [] for locale in locale_tokens}
+    blocking_not_started = {locale: [] for locale in locale_tokens}
+    for content_id, content in contents.items():
+        if not isinstance(content, dict) or not isinstance(content.get("locales"), dict):
+            continue
+        deferred = is_deferred_field_note(content)
+        for locale in locale_tokens:
+            record = content["locales"].get(locale)
+            if not isinstance(record, dict) or record.get("translation_status") != "not-started":
+                continue
+            identifier = str(content_id)
+            not_started[locale].append(identifier)
+            target = deferred_not_started if deferred else blocking_not_started
+            target[locale].append(identifier)
     return {
         "schema_version": "1",
         "manifest_content_count": len(contents),
@@ -89,11 +109,20 @@ def audit(manifest: dict[str, Any]) -> dict[str, Any]:
         },
         "not_started_counts": {locale: len(items) for locale, items in not_started.items()},
         "not_started": not_started,
+        "deferred_not_started_counts": {
+            locale: len(items) for locale, items in deferred_not_started.items()
+        },
+        "deferred_not_started": deferred_not_started,
+        "blocking_not_started_counts": {
+            locale: len(items) for locale, items in blocking_not_started.items()
+        },
+        "blocking_not_started": blocking_not_started,
         "missing_locale_records": missing_records,
         "missing_files": missing_files,
         "interpretation_boundary": (
             "Manifest coverage proves an explicit route/state record only; it does not prove "
-            "translation quality, native review, learner outcomes, or runtime execution."
+            "translation quality, native review, learner outcomes, or runtime execution. "
+            "Deferred field-note translations remain unavailable until authored."
         ),
     }
 
@@ -109,7 +138,7 @@ def main() -> int:
     parser.add_argument(
         "--fail-on-not-started",
         action="store_true",
-        help="return non-zero when any content identity is explicitly not-started",
+        help="return non-zero for not-started content except declared source-first field notes",
     )
     args = parser.parse_args()
     try:
@@ -129,7 +158,9 @@ def main() -> int:
         for locale in report["locales"]:
             print(
                 f"- {locale}: statuses={report['status_counts'][locale]} "
-                f"not_started={report['not_started_counts'][locale]}"
+                f"not_started={report['not_started_counts'][locale]} "
+                f"deferred={report['deferred_not_started_counts'][locale]} "
+                f"blocking={report['blocking_not_started_counts'][locale]}"
             )
         if report["missing_locale_records"]:
             print(f"missing_locale_records={len(report['missing_locale_records'])}")
@@ -138,7 +169,7 @@ def main() -> int:
         print(f"boundary={report['interpretation_boundary']}")
 
     invalid = bool(report["missing_locale_records"] or report["missing_files"])
-    incomplete = any(report["not_started_counts"].values())
+    incomplete = any(report["blocking_not_started_counts"].values())
     if (args.fail_on_invalid and invalid) or (args.fail_on_not_started and incomplete):
         return 1
     return 0

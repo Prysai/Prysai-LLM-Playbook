@@ -96,10 +96,13 @@ generated entry pointing at a withdrawn source.
 
 The first reader-facing source is English. A field-note may be registered in
 the locale matrix with a same-locale English source and explicit
-`not-started` translation states; file/path parity is not translation review.
-Do not label the project fully bilingual or imply that an untranslated brief is
-localized. A Reader entry must remain low-competition: one existing research
-area, one clear label, and no new top-level header control for each item.
+`not-started` translation states. Mark this deliberate exception with
+`translation_policy: source-first`; undeclared missing translations remain a
+blocking Reader-coverage failure. File/path parity is not translation review.
+Do not label the project fully bilingual or imply that an untranslated brief
+is localized. A Reader entry must remain low-competition: one existing
+research area, one clear label, and no new top-level header control for each
+item.
 
 After changing the canonical record, regenerate the locale manifest and search
 index with their builders. Never hand-edit generated projections. If the

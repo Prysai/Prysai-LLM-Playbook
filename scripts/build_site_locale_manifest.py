@@ -400,6 +400,11 @@ def build_manifest() -> dict[str, Any]:
         localized_paths = item.get("localized_paths", {})
         if not isinstance(localized_paths, dict):
             raise ValueError(f"localized_paths for {content_id} must be an object")
+        translation_policy = item.get("translation_policy")
+        if translation_policy not in {None, "source-first"}:
+            raise ValueError(f"unsupported translation_policy for {content_id}: {translation_policy}")
+        if translation_policy == "source-first" and item.get("kind") != "field-note":
+            raise ValueError(f"source-first translation_policy is limited to field-note content: {content_id}")
         contents[content_id] = neutral_content(
             content_id,
             str(item["kind"]),
@@ -410,6 +415,8 @@ def build_manifest() -> dict[str, Any]:
             locale_records,
             localized_paths=localized_paths,
         )
+        if translation_policy:
+            contents[content_id]["translation_policy"] = translation_policy
 
     status_skills = {str(item["id"]): item for item in status.get("skills", {}).get("items", [])}
     registry_skills = {str(item["id"]): item for item in skill_registry.get("records", [])}

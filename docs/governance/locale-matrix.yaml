@@ -385,6 +385,14 @@
         "ZHTW": "book/routes/first-safe-change-ZHTW.md",
         "FR": "book/routes/first-safe-change-FR.md"
       }
+    },
+    {
+      "content_id": "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02",
+      "kind": "field-note",
+      "path": "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
+      "content_status": "candidate",
+      "translation_policy": "source-first",
+      "localized_paths": {}
     }
   ],
   "content": [

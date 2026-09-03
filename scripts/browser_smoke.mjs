@@ -1760,6 +1760,26 @@ try {
   assert.match(await fieldSignalsPage.locator('[data-reader-article]').innerText(), /not a security log, audit certificate, chain-of-thought record, or proof that the research is complete/i, 'research checkpoint is missing its evidence boundary');
   await fieldSignalsPage.close();
 
+  const grokBotLink = page.getByRole('link', { name: /Read the Grok Bot field note/i });
+  assert.equal(await grokBotLink.count(), 1, 'homepage does not expose exactly one Grok Bot field-note entry');
+  const grokBotHref = await grokBotLink.getAttribute('href');
+  assert.match(grokBotHref, /reader\.html\?path=docs%2Fresearch%2Fgrok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02\.md&lang=en$/, 'Grok Bot entry does not open its canonical English Reader route');
+  const grokBotPage = await context.newPage();
+  await grokBotPage.goto(new URL(grokBotHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await grokBotPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await grokBotPage.locator('[data-reader-article] h1').innerText(), /Grok Bot: from AI chat to an auditable ongoing workflow/i, 'Reader did not render the Grok Bot field note');
+  assert.match(await grokBotPage.locator('[data-reader-article]').innerText(), /candidate[\s\S]*not_run/i, 'Grok Bot field note does not preserve its candidate and runtime-evidence boundary');
+  for (const evidenceClass of ['official_fact', 'reported_experience', 'project_inference', 'not_observed']) {
+    assert.match(await grokBotPage.locator('[data-reader-article]').innerText(), new RegExp(evidenceClass), `Grok Bot field note omits ${evidenceClass}`);
+  }
+  await noHorizontalOverflow(grokBotPage, 'Grok Bot field note');
+  await grokBotPage.locator('[data-reader-language]').selectOption('zh');
+  await grokBotPage.waitForURL(/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02-ZH\.md&lang=zh$/);
+  await grokBotPage.getByRole('alert').waitFor();
+  assert.match(await grokBotPage.getByRole('alert').innerText(), /暂时没有简体中文版本/, 'Grok Bot field note silently falls back to English in the Chinese Reader');
+  assert.equal(await grokBotPage.locator('[data-reader-article] h1').count(), 0, 'missing Chinese Grok Bot translation renders an English article');
+  await grokBotPage.close();
+
   const surfaceChapterPage = await context.newPage();
   await surfaceChapterPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F05-choose-the-codex-surface-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await surfaceChapterPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
@@ -3002,7 +3022,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,boundary-card,ai-safety-field-signals,universal-first-turn,first-win-pilot-protocol,newcomer-entry-protocol,capacity-interruption-case invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,boundary-card,ai-safety-field-signals,grok-bot,universal-first-turn,first-win-pilot-protocol,newcomer-entry-protocol,capacity-interruption-case invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});
