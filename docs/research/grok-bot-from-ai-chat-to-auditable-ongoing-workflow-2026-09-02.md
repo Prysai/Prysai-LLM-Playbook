@@ -2,7 +2,7 @@
 
 > **Content status:** `candidate`
 > **Fact status:** `current` within the source dates and scopes below
-> **Last reviewed:** `2026-09-02`
+> **Last reviewed:** `2026-09-03`
 > **Next review:** `2026-09-09`
 > **Owner:** `research-maintainer`
 
