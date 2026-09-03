@@ -18,14 +18,18 @@ def require(condition: bool, message: str) -> None:
         raise AssertionError(message)
 
 
-def fixture_matrix(policy: str = "source-first", kind: str = "field-note") -> str:
+def fixture_matrix(
+    policy: str = "source-first",
+    kind: str = "field-note",
+    path: str = NOTE_PATH,
+) -> str:
     return (
         '{\n'
         '  "schema_version": "1",\n'
         '  "reader_content": [{\n'
         f'    "content_id": "{CONTENT_ID}",\n'
         f'    "kind": "{kind}",\n'
-        f'    "path": "{NOTE_PATH}",\n'
+        f'    "path": "{path}",\n'
         '    "content_status": "candidate",\n'
         f'    "translation_policy": "{policy}",\n'
         '    "localized_paths": {}\n'
@@ -34,14 +38,19 @@ def fixture_matrix(policy: str = "source-first", kind: str = "field-note") -> st
     )
 
 
-def run_fixture(note: str, policy: str = "source-first", kind: str = "field-note") -> list[str]:
+def run_fixture(
+    note: str,
+    policy: str = "source-first",
+    kind: str = "field-note",
+    path: str = NOTE_PATH,
+) -> list[str]:
     with tempfile.TemporaryDirectory(prefix="prysai-timely-content-") as directory:
         root = Path(directory)
         matrix_path = root / "docs/governance/locale-matrix.yaml"
         note_path = root / NOTE_PATH
         matrix_path.parent.mkdir(parents=True)
         note_path.parent.mkdir(parents=True)
-        matrix_path.write_text(fixture_matrix(policy, kind), encoding="utf-8")
+        matrix_path.write_text(fixture_matrix(policy, kind, path), encoding="utf-8")
         note_path.write_text(note, encoding="utf-8")
         return timely.validate_repository(root)
 
@@ -80,6 +89,13 @@ def main() -> int:
             any(name.casefold() in error.casefold() for error in errors),
             f"missing {name} was accepted: {errors}",
         )
+    formatted_header = note.replace(" | Fact status |", " | **Fact status** |", 1).replace(
+        " | `current` |", " | `not-a-status` |", 1
+    )
+    require(
+        any("fact status is not recognized" in error for error in run_fixture(formatted_header)),
+        "formatted fact-status header bypassed row validation",
+    )
 
     require(
         not run_fixture(note, policy="reference-only"),
@@ -88,6 +104,10 @@ def main() -> int:
     require(
         not run_fixture(note, kind="chapter"),
         "non-field-note content was incorrectly included",
+    )
+    require(
+        any("repository-relative" in error for error in run_fixture(note, path="../docs/research/fixture.md")),
+        "path traversal was incorrectly accepted",
     )
 
     print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + 3}")

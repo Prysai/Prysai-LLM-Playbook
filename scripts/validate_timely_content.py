@@ -6,7 +6,7 @@ import json
 import re
 import sys
 from datetime import date
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 
@@ -128,6 +128,12 @@ def table_cells(line: str) -> list[str]:
     return [cell.strip() for cell in stripped.strip("|").split("|")]
 
 
+def normalized_header(value: str) -> str:
+    """Normalize the small Markdown formatting variations allowed in headers."""
+
+    return re.sub(r"[`*_]", "", value).strip().casefold()
+
+
 def validate_source_table(body: str, label: str, errors: list[str]) -> None:
     rows = [table_cells(line) for line in body.splitlines()]
     rows = [row for row in rows if row]
@@ -135,7 +141,8 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
         errors.append(f"{label}: source table must include a header, separator, and claim")
         return
 
-    headers = {re.sub(r"[`*_]", "", cell).casefold() for cell in rows[0]}
+    header_names = [normalized_header(cell) for cell in rows[0]]
+    headers = set(header_names)
     required_headers = {
         "claim",
         "evidence class",
@@ -169,14 +176,14 @@ def validate_source_table(body: str, label: str, errors: list[str]) -> None:
             continue
         if any(not cell for cell in row):
             errors.append(f"{row_label}: claim, source, scope, limitation, and status cells must be non-empty")
-        evidence_index = next((i for i, value in enumerate(rows[0]) if value.casefold() == "evidence class"), None)
+        evidence_index = next((i for i, value in enumerate(header_names) if value == "evidence class"), None)
         if evidence_index is not None and row[evidence_index].strip("`").strip() not in EVIDENCE_CLASSES:
             errors.append(f"{row_label}: evidence class is not recognized")
-        status_index = next((i for i, value in enumerate(rows[0]) if value.casefold() == "fact status"), None)
+        status_index = next((i for i, value in enumerate(header_names) if value == "fact status"), None)
         if status_index is not None and row[status_index].strip("`").strip() not in FACT_STATUSES:
             errors.append(f"{row_label}: fact status is not recognized")
         for header in ("accessed", "next review"):
-            column_index = next((i for i, value in enumerate(rows[0]) if value.casefold() == header), None)
+            column_index = next((i for i, value in enumerate(header_names) if value == header), None)
             if column_index is not None and parse_date(row[column_index]) is None:
                 errors.append(f"{row_label}: {header} must use YYYY-MM-DD")
 
@@ -301,7 +308,18 @@ def validate_repository(root: Path = ROOT) -> list[str]:
         if not isinstance(path_text, str) or not path_text.strip():
             errors.append(f"{content_id}: path must be non-empty")
             continue
-        normalized = path_text.replace("\\", "/").lstrip("./")
+        normalized = path_text.replace("\\", "/")
+        if normalized.startswith("./"):
+            normalized = normalized[2:]
+        path_parts = PurePosixPath(normalized).parts
+        if (
+            not normalized
+            or normalized.startswith("/")
+            or re.match(r"^[A-Za-z]:", normalized)
+            or ".." in path_parts
+        ):
+            errors.append(f"{content_id}: field-note path must be repository-relative: {path_text}")
+            continue
         if normalized in seen_paths:
             errors.append(f"{content_id}: duplicate path {normalized}")
         seen_paths.add(normalized)
