@@ -29,12 +29,14 @@ guessing which snapshot it represents.
 
 | Claim or decision | Evidence class | Source URL and owner | Accessed | Applies to | Limitation | Fact status | Next review |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|  | `official_fact` / `reported_experience` / `project_inference` / `not_observed` |  |  |  |  | `current` / `stale` / `disputed` / `removed` |  |
+|  | `official_fact` / `reported_experience` / `project_inference` / `not_observed` |  |  |  |  | `current` / `stale` / `disputed` / `removed` / `unverified` / `candidate` |  |
 
 Evidence classes describe what the record can support. An official source does
 not establish account-level availability, and a reported experience does not
 establish a root cause, prevalence, reliability, ROI, or general product
-behavior.
+behavior. Use `unverified` for a supplied report or observation that has not
+been independently checked; use `candidate` for a project inference that is
+still a proposal rather than an established fact.
 
 ## Source, authorship, and licence boundary
 

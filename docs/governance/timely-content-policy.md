@@ -104,6 +104,11 @@ At review time:
 - `removed`: the item no longer belongs in the Reader, or its source/licence
   boundary is no longer acceptable.
 
+For claim-ledger rows, also use `unverified` when a supplied report or
+observation has not been independently checked, and `candidate` when the row
+records a project inference rather than an established fact. These labels do
+not promote the item to a verified product, learning, or production result.
+
 When a claim is stale or disputed, narrow the wording or show the limitation
 before publishing another projection. When it is removed, remove its Reader
 matrix entry and regenerate derived manifests and indexes; preserve the dated
