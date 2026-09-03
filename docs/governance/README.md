@@ -28,6 +28,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change operational release readiness | [`release-readiness.yaml`](release-readiness.yaml) | Version, changelog, tag, reviewed packet, maintenance, and rollback-rehearsal gate |
 | Change repository security automation, PR review boundaries, or Ruleset status | [`repository-security-policy.yaml`](repository-security-policy.yaml) | Read-only security workflow and focused static-policy fixtures |
 | Change a volatile fact's consumers | [`fact-impact-registry.yaml`](fact-impact-registry.yaml) | Affected-content review |
+| Add or review time-sensitive Reader content | [`timely-content-policy.md`](timely-content-policy.md) and [`../templates/timely-content.md`](../templates/timely-content.md) | Dated source ledger, stale handling, locale state, and generated Reader projections |
 | Change authoritative URL audit scope or rollout policy | [`external-url-audit.yaml`](external-url-audit.yaml) | Scheduled categorized reachability report |
 | Record a recurring maintenance update | [`update-registry.yaml`](update-registry.yaml) | Update map and release review |
 | Change ownership or contribution flow | [`contribution-model.md`](contribution-model.md) and [`fast-material-review.md`](fast-material-review.md) | Contributor routing plus the bounded fictional-material review procedure |

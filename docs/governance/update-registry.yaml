@@ -212,6 +212,16 @@
       "validation_commands": ["scripts/build_release_evidence.py --check", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "scripts/validate_project.py", "scripts/check_local_links.py", "scripts/validate_eval_tasks.py"],
       "status_fields": ["decision", "release_version", "release_status", "review_status", "candidate_sha", "release_tag", "changelog", "rollback_target", "rehearsal_record", "owner", "next_review"],
       "next_review": "2026-09-09"
+    },
+    {
+      "area": "timely-content",
+      "canonical_paths": ["docs/governance/timely-content-policy.md", "docs/templates/timely-content.md", "docs/research/README.md", "docs/governance/locale-matrix.yaml", "scripts/build_site_locale_manifest.py", "scripts/build_site_search_index.py", "site/locale-manifest.js", "site/search-index.js"],
+      "owner": "research-maintainer",
+      "triggers": ["official-source-change", "product-release", "breaking-news-intake", "user-demand-signal", "review-date-due", "source-dispute", "content-stale", "reader-entry-change"],
+      "required_inputs": ["content-id", "reader-question", "why-now", "authoritative-sources", "access-dates", "applies-to", "source-owner", "license-boundary", "fact-status", "scope", "owner", "next-review", "stale-action", "reader-kind", "locale-state", "generated-projections", "unverified-boundary"],
+      "validation_commands": ["scripts/validate_update_registry.py", "scripts/validate_project.py", "scripts/check_local_links.py", "scripts/build_site_locale_manifest.py --check", "scripts/build_site_search_index.py --check"],
+      "status_fields": ["content_status", "fact_status", "last_reviewed", "next_review", "owner", "source_freshness", "locale_state", "reader_projection"],
+      "next_review": "2026-09-09"
     }
   ]
 }
