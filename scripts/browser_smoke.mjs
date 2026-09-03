@@ -1769,6 +1769,8 @@ try {
   await grokBotPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.match(await grokBotPage.locator('[data-reader-article] h1').innerText(), /Grok Bot: from AI chat to an auditable ongoing workflow/i, 'Reader did not render the Grok Bot field note');
   assert.match(await grokBotPage.locator('[data-reader-article]').innerText(), /candidate[\s\S]*not_run/i, 'Grok Bot field note does not preserve its candidate and runtime-evidence boundary');
+  assert.equal(await grokBotPage.getByRole('heading', { name: 'What the evidence supports' }).count(), 1, 'Grok Bot field note does not label its mixed evidence table accurately');
+  assert.equal(await grokBotPage.getByRole('heading', { name: 'What the official sources support' }).count(), 0, 'Grok Bot field note uses an official-only heading for mixed evidence');
   for (const evidenceClass of ['official_fact', 'reported_experience', 'project_inference', 'not_observed']) {
     assert.match(await grokBotPage.locator('[data-reader-article]').innerText(), new RegExp(evidenceClass), `Grok Bot field note omits ${evidenceClass}`);
   }

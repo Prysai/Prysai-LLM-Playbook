@@ -99,7 +99,7 @@ def main() -> int:
     cases = {
         "reader question": remove_section(note, "The practical question"),
         "why now": remove_section(note, "Why this is timely"),
-        "source table": remove_section(note, "What the official sources support"),
+        "source table": remove_section(note, "What the evidence supports"),
         "fact status": note.replace(" | Fact status |", " | Status |", 1),
         "limitation": note.replace(" | Limitation |", " | Notes |", 1),
         "low-risk action": remove_section(note, "Safe reader action and limits"),
@@ -115,6 +115,16 @@ def main() -> int:
             any(name.casefold() in error.casefold() for error in errors),
             f"missing {name} was accepted: {errors}",
         )
+
+    legacy_source_heading = note.replace(
+        "## What the evidence supports",
+        "## What the official sources support",
+        1,
+    )
+    require(
+        any("source table" in error for error in run_fixture(legacy_source_heading)),
+        "the source table's mixed evidence classes were allowed to use the misleading official-only heading",
+    )
 
     for field in timely.REQUIRED_LABELS:
         errors = run_fixture(remove_bullet(note, field))

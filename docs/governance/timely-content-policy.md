@@ -64,6 +64,10 @@ such material in original language and remove names, account details, private
 paths, screenshots, transcripts, and long quotations unless a separate rights
 and privacy review explicitly permits them.
 
+When a claim ledger contains more than official facts, label the section and
+each row by evidence class. Do not use an official-only heading for a table that
+also contains reported experience, project inference, or not-observed claims.
+
 ## Writing rules
 
 Write a brief in this order:

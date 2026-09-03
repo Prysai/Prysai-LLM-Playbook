@@ -101,7 +101,7 @@ REQUIRED_SECTION_ORDER = (
     "the smallest useful concept",
     "the decision a reader can make now",
     "safe reader action and limits",
-    "what the official sources support",
+    "what the evidence supports",
     "what this note does not prove",
     "failure and contradiction cases",
     "source and authorship boundary",
@@ -454,7 +454,7 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
             break
         previous_position = position
 
-    source_section = note_sections.get("what the official sources support")
+    source_section = note_sections.get("what the evidence supports")
     if not source_section:
         errors.append(f"{label}: missing source table")
     else:

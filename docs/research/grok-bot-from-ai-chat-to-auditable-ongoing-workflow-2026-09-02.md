@@ -113,7 +113,12 @@ Do not paste a password or one-time code into ordinary chat. If the task cannot
 produce the stated evidence without expanding authority, record `blocked` and
 stop.
 
-## What the official sources support
+## What the evidence supports
+
+This table deliberately separates official facts, a reported experience, a
+project inference, and observations that were not available to this review.
+The evidence class and limitation columns are part of the claim, not optional
+metadata; a row is only as strong as the evidence class and scope it declares.
 
 | Claim | Evidence class | Source URL and owner | Accessed | Applies to | Limitation | Fact status | Next review |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -173,7 +178,7 @@ completion ordering, retry guarantees, resource isolation, or an API contract.
 - `source_type`: first-party official product pages and help documentation,
   plus a user-provided demand signal.
 - `source_record`: the authoritative URLs and evidence classes in the
-  "What the official sources support" table in this note.
+  "What the evidence supports" table in this note.
 - `source_license_or_usage_boundary`: official pages are linked as external
   reference sources. This note is an original Prysai rewrite; it copies no
   screenshots, transcript, private report, source wording, code, logo, or
