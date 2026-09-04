@@ -4868,7 +4868,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/routes/platform-adapter-guide-ZH.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
+          "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4883,7 +4883,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/routes/platform-adapter-guide-ES.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
+          "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4898,7 +4898,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/routes/platform-adapter-guide-JA.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
+          "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4913,7 +4913,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/routes/platform-adapter-guide-KO.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
+          "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4928,7 +4928,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/routes/platform-adapter-guide-DE.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
+          "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
