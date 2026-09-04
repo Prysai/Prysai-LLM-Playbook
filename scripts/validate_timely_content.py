@@ -258,6 +258,12 @@ def validate_source_table(
         return
 
     header_names = [normalized_header(cell) for cell in rows[0]]
+    duplicate_headers = sorted({name for name in header_names if name and header_names.count(name) > 1})
+    if duplicate_headers:
+        errors.append(
+            f"{label}: source table headers must be unique: {', '.join(duplicate_headers)}"
+        )
+        return
     headers = set(header_names)
     required_headers = {
         "claim",

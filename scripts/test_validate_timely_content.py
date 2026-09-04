@@ -105,6 +105,24 @@ def remove_bullet(note: str, label: str) -> str:
     return re.sub(pattern, "", note)
 
 
+def duplicate_source_table_last_column(note: str) -> str:
+    """Add a second Next review column while keeping every row rectangular."""
+
+    pattern = r"(?ms)^(##\s+What the evidence supports\s*$)(.*?)(?=^##\s+|\Z)"
+
+    def mutate(match: re.Match[str]) -> str:
+        lines = match.group(2).splitlines()
+        table_indexes = [index for index, line in enumerate(lines) if timely.table_cells(line)]
+        require(len(table_indexes) >= 3, "source table fixture is unexpectedly incomplete")
+        for index in table_indexes:
+            cells = timely.table_cells(lines[index])
+            cells.append(cells[-1])
+            lines[index] = "| " + " | ".join(cells) + " |"
+        return match.group(1) + "\n" + "\n".join(lines) + ("\n" if match.group(2).endswith("\n") else "")
+
+    return re.sub(pattern, mutate, note, count=1)
+
+
 def main() -> int:
     note = (timely.ROOT / "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md").read_text(encoding="utf-8")
     valid_errors = run_fixture(note)
@@ -221,6 +239,11 @@ def main() -> int:
     require(
         any("note Next review" in error for error in run_fixture(claim_review_date_too_early)),
         "an earlier claim review deadline than the note deadline was accepted",
+    )
+    duplicate_next_review = duplicate_source_table_last_column(note)
+    require(
+        any("headers must be unique" in error for error in run_fixture(duplicate_next_review)),
+        "a duplicate Next review column was accepted and could hide the effective freshness deadline",
     )
     require(
         any(
