@@ -489,7 +489,7 @@ def main() -> int:
         print(f"SITE_LOCALE_MANIFEST_OK locales={len(build_manifest()['locales'])}")
         return 0
 
-    OUTPUT_FILE.write_text(expected, encoding="utf-8")
+    OUTPUT_FILE.write_text(expected, encoding="utf-8", newline="\n")
     print(f"SITE_LOCALE_MANIFEST_BUILT output={OUTPUT_FILE.relative_to(ROOT)}")
     return 0
 

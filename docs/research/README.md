@@ -30,6 +30,14 @@ Useful indexes:
 
 - [Grok Bot: from AI chat to an auditable ongoing workflow](grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) — a dated, source-bounded field note on persistent cloud workspaces, connectors, Skills, routines, Bot collaboration, approvals, and the cloud/local and Android availability boundaries. It treats a supplied personal account as a demand signal only; it does not prove account access, reliability, complete auditability, ROI, learning outcomes, or a public Bot API.
 
+- [Platform encyclopedia: Grok Bot, Codex, Claude Code, and DeepSeek Harness](encyclopedia-grok-bot-sources-2026-09-03.md) — official-source boundary for Grok Bot and Grok Build, including the distinction between a hosted Bot computer and a local terminal client.
+
+- [Platform encyclopedia: Codex and Claude Code](encyclopedia-coding-agents-sources-2026-09-03.md) — official-source receipt for Codex CLI, desktop, IDE, and cloud surfaces, and for Claude Code's CLI, IDE, desktop, and browser/cloud distinctions. It preserves the unresolved “Cloud Code” term instead of treating it as a verified product name.
+
+- [Platform encyclopedia: DeepSeek Harness](encyclopedia-deepseek-harness-sources-2026-09-03.md) — official-source receipt for the developer-preview `dsh` Web entry, source installation path, profile boundaries, Windows/macOS evidence limits, and safety warnings.
+
+- [Platform encyclopedia: ChatGPT and Gemini clients](encyclopedia-chatgpt-gemini-sources-2026-09-04.md) — official-source receipt for ChatGPT web/mobile/desktop boundaries, Gemini web/mobile/CLI/IDE boundaries, current installation entries, authentication choices, and explicitly unresolved availability questions.
+
 - [Localization review and document-language declaration: source receipt](localization-review-and-language-declaration-source-receipt-2026-08-15.md) — three first-party sources on HTML language declarations, translation-friendly source writing, and reviewable pull requests. It supports a candidate small-slice localization workflow and visible course-unit counts; it does not establish translation quality, language review, completeness, learning outcomes, or release readiness.
 
 - [GitHub contribution governance for external test-evidence pull requests: source receipt](github-contribution-governance-source-receipt-2026-08-15.md) — seven official GitHub sources on PR templates, `CODEOWNERS`, Rulesets, checks, and contribution-rights seams. It supports a candidate local review route; it does not prove a host setting, legal agreement, external PR, reviewer, or merge result.
