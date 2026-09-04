@@ -4,18 +4,18 @@
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all appear
-to start with a chat box. The important question comes next: are you using a
-web chat, a mobile app, a desktop client, an editor, a terminal agent, or a
-hosted computer? Those surfaces can differ in their files, permissions,
+ChatGPT, Codex, Claude Code, Google Cloud Code, Gemini, DeepSeek, and Grok may
+all appear to start with a chat box. The important question comes next: are you
+using a web chat, a mobile app, a desktop client, an editor, a terminal agent,
+or a hosted computer? Those surfaces can differ in their files, permissions,
 account rules, and failure modes.
 
 This page is a reference, not a product ranking. Use it to choose one starting
 surface, install only what you need, and carry over the method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md). Commands,
 plans, availability, and client support change. The linked source receipts
-record what the official documentation said on 2026-09-03 or 2026-09-04; they do not prove
-that an installer, account, or task will work for you.
+record what the official documentation said on 2026-09-03 or 2026-09-04; they
+do not prove that an installer, account, or task will work for you.
 
 ## Find the section you need
 
