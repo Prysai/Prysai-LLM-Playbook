@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 import tempfile
+from datetime import date
 from pathlib import Path
 
 import validate_timely_content as timely
@@ -11,6 +12,7 @@ import validate_timely_content as timely
 
 CONTENT_ID = "grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02"
 NOTE_PATH = "docs/research/fixture-2026-09-02.md"
+AS_OF = date(2026, 9, 3)
 
 
 def require(condition: bool, message: str) -> None:
@@ -60,6 +62,7 @@ def run_fixture(
     path: str = NOTE_PATH,
     content_status: str = "candidate",
     fixture_path: str = NOTE_PATH,
+    as_of: date = AS_OF,
 ) -> list[str]:
     with tempfile.TemporaryDirectory(prefix="prysai-timely-content-") as directory:
         root = Path(directory)
@@ -78,7 +81,7 @@ def run_fixture(
             ),
             encoding="utf-8",
         )
-        return timely.validate_repository(root)
+        return timely.validate_repository(root, as_of=as_of)
 
 
 def remove_section(note: str, heading: str) -> str:
@@ -203,6 +206,26 @@ def main() -> int:
         any("note Next review" in error for error in run_fixture(claim_review_date_too_early)),
         "an earlier claim review deadline than the note deadline was accepted",
     )
+    require(
+        any(
+            "current claim is due for review" in error
+            for error in run_fixture(note, as_of=date(2026, 9, 9))
+        ),
+        "a current claim due on the as-of date was accepted",
+    )
+    require(
+        timely.parse_as_of("2026-09-03") == AS_OF,
+        "a valid --as-of date was not parsed",
+    )
+    try:
+        timely.parse_as_of("2026-02-30")
+    except Exception as exc:
+        require(
+            "real YYYY-MM-DD date" in str(exc),
+            f"invalid --as-of date returned the wrong error: {exc}",
+        )
+    else:
+        raise AssertionError("an invalid --as-of date was accepted")
 
     require(
         any("translation policy" in error for error in run_fixture(note, policy="reference-only")),
@@ -264,7 +287,7 @@ def main() -> int:
         "legacy research record accepted a source-first translation policy",
     )
 
-    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 15}")
+    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 16}")
     return 0
 
 

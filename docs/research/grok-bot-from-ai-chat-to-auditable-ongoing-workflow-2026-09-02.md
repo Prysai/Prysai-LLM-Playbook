@@ -210,6 +210,7 @@ completion ordering, retry guarantees, resource isolation, or an API contract.
   remove the Reader projection while retaining the dated record.
 - `reviewer_role`: `research-maintainer`.
 - `validation_commands`: `scripts/validate_timely_content.py`,
+  `scripts/validate_timely_content.py --as-of 2026-09-03`,
   `scripts/test_validate_timely_content.py`,
   `scripts/validate_update_registry.py`,
   `scripts/validate_project.py`, `scripts/check_local_links.py`,

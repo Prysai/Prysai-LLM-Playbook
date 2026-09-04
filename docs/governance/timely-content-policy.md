@@ -114,6 +114,12 @@ At review time:
 - `removed`: the item no longer belongs in the Reader, or its source/licence
   boundary is no longer acceptable.
 
+The timely-content validator runs this freshness check against the current
+date by default. Pass `--as-of YYYY-MM-DD` to replay the same decision for a
+recorded date. On the `next_review` date and every date after it, a claim whose
+fact status is still `current` fails closed; refresh the source or mark the
+claim `stale`, `disputed`, or `removed` before presenting it as current.
+
 For claim-ledger rows, also use `unverified` when a supplied report or
 observation has not been independently checked, and `candidate` when the row
 records a project inference rather than an established fact. These labels do
@@ -149,6 +155,10 @@ Use the `timely-content` row in `update-registry.yaml`, fill in
 the PR limited to one logical content or governance change. Run the focused
 checks listed in the registry, then run the broader project checks required by
 the affected Reader surface.
+
+For a historical or reproducible check, include the explicit replay date, for
+example `scripts/validate_timely_content.py --as-of 2026-09-03`. The date is
+inclusive: a claim due on that date is already awaiting review.
 
 The minimum review asks:
 

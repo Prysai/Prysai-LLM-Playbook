@@ -36,6 +36,11 @@ The record-level `last_reviewed` date must be on or after every claim's
 claim's `Next review` date, so an earlier claim deadline cannot be hidden by a
 later document deadline.
 
+The timely-content validator checks freshness against the current date by
+default. Use `scripts/validate_timely_content.py --as-of YYYY-MM-DD` when a
+review must be replayed deterministically. On or after a claim's `Next review`
+date, do not leave its fact status as `current` without refreshing the source.
+
 Evidence classes describe what the record can support. An official source does
 not establish account-level availability, and a reported experience does not
 establish a root cause, prevalence, reliability, ROI, or general product

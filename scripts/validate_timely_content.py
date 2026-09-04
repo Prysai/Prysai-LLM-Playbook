@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -170,6 +171,13 @@ def parse_date(value: str) -> date | None:
         return None
 
 
+def parse_as_of(value: str) -> date:
+    parsed = parse_date(value)
+    if parsed is None:
+        raise argparse.ArgumentTypeError("must use a real YYYY-MM-DD date")
+    return parsed
+
+
 def trailing_date(value: str) -> date | None:
     """Read the required publication date suffix from an identity value."""
 
@@ -241,6 +249,7 @@ def validate_source_table(
     errors: list[str],
     note_last_reviewed: date | None = None,
     note_next_review: date | None = None,
+    as_of: date | None = None,
 ) -> None:
     rows = [table_cells(line) for line in body.splitlines()]
     rows = [row for row in rows if row]
@@ -326,9 +335,25 @@ def validate_source_table(
                 errors.append(
                     f"{row_label}: note Next review must not be later than claim Next review"
                 )
+            if (
+                as_of
+                and status_index is not None
+                and row[status_index].strip("`").strip() == "current"
+                and review
+                and review <= as_of
+            ):
+                errors.append(
+                    f"{row_label}: current claim is due for review as of {as_of.isoformat()} "
+                    f"(next review {review.isoformat()}); refresh the source or mark it stale, disputed, or removed"
+                )
 
 
-def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
+def validate_note(
+    record: dict[str, Any],
+    path: Path,
+    text: str,
+    as_of: date | None = None,
+) -> list[str]:
     errors: list[str] = []
     label = str(record.get("content_id") or path.as_posix())
 
@@ -464,6 +489,7 @@ def validate_note(record: dict[str, Any], path: Path, text: str) -> list[str]:
             errors,
             note_last_reviewed=parsed_last,
             note_next_review=parsed_next,
+            as_of=as_of,
         )
 
     source_locale = normalized_scalar(field_values.get("source_locale"))
@@ -502,7 +528,9 @@ def validate_legacy_record(record: dict[str, Any], path: Path, text: str) -> lis
     return errors
 
 
-def validate_repository(root: Path = ROOT) -> list[str]:
+def validate_repository(root: Path = ROOT, as_of: date | None = None) -> list[str]:
+    if as_of is None:
+        as_of = date.today()
     matrix_path = root / "docs/governance/locale-matrix.yaml"
     try:
         matrix = load_matrix(matrix_path)
@@ -560,7 +588,7 @@ def validate_repository(root: Path = ROOT) -> list[str]:
                 errors.append(f"{content_id}: timely-source-first records must declare source-first translation policy")
             if record.get("content_status") != "candidate":
                 errors.append(f"{content_id}: timely-source-first records must remain candidate")
-            errors.extend(validate_note(record, path, text))
+            errors.extend(validate_note(record, path, text, as_of=as_of))
         elif profile == LEGACY_PROFILE:
             errors.extend(validate_legacy_record(record, path, text))
         else:
@@ -571,8 +599,16 @@ def validate_repository(root: Path = ROOT) -> list[str]:
     return errors
 
 
-def main() -> int:
-    errors = validate_repository()
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--as-of",
+        type=parse_as_of,
+        help="replay freshness checks as of an inclusive YYYY-MM-DD date; defaults to today",
+    )
+    args = parser.parse_args(argv)
+    as_of = args.as_of or date.today()
+    errors = validate_repository(as_of=as_of)
     if errors:
         print("TIMELY_CONTENT_VALIDATION_FAILED")
         for error in errors:
@@ -588,6 +624,7 @@ def main() -> int:
         return 1
     print(
         "TIMELY_CONTENT_VALIDATION_OK "
+        f"as_of={as_of.isoformat()} "
         f"field_notes={len(all_records)} source_first_field_notes={len(records)}"
     )
     return 0
