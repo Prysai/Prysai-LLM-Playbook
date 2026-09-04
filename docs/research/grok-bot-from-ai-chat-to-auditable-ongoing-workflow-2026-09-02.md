@@ -84,6 +84,14 @@ or a routine, write down:
 This is a routing decision, not a recommendation to purchase, install, log in,
 connect an account, expose an MCP server, or delegate a real external action.
 
+## Start with one job, not a full team
+
+Do not copy a company org chart on day one. Start with one Bot and one
+repeatable result. Add another Bot only when a genuinely separate goal,
+source/tool set, working style, approval boundary, or recurring schedule gives
+the handoff a real reason to exist. This keeps the first workflow small enough
+to inspect and gives collaboration a testable purpose.
+
 ## Safe reader action and limits
 
 - `low_risk_action_or_observation`: map one non-sensitive, reversible read-and-draft task before enabling writes or external effects.
@@ -128,12 +136,12 @@ metadata; a row is only as strong as the evidence class and scope it declares.
 | Each Bot runs on a persistent cloud VM with a browser, filesystem, and terminal; multiple Bots share a user-scoped computer. | `official_fact` | xAI/SpaceXAI, [Grok Bot overview](https://docs.x.ai/grok-bot/overview) | 2026-09-03 | The documented cloud Bot environment. | Shared storage, sessions, and credentials mean that a Bot is not automatically a security isolation boundary. | `current` | 2026-09-09 |
 | Browser/computer use and command-line work are documented, while local computer execution is a separate configurable capability. | `official_fact` | xAI/SpaceXAI, [Use the computer and apps](https://docs.x.ai/grok-bot/computer-and-apps) | 2026-09-03 | Cloud computer use and the documented desktop settings. | A visible setting does not prove that a given account has access or that a command ran successfully. | `current` | 2026-09-09 |
 | Connectors, including custom MCP connections, can provide access to external tools and data. | `official_fact` | xAI/SpaceXAI, [Connectors](https://docs.x.ai/grok/connectors) and [custom MCP tunneling](https://docs.x.ai/grok/connectors/custom-mcp-tunneling) | 2026-09-03 | Documented connector types and their permission/network prerequisites. | Connector lists, scopes, administrator controls, OAuth permissions, and rollout status can change; a local MCP server needs a public tunnel for this surface. | `current` | 2026-09-09 |
-| Skills store reusable task instructions; routines can run a Bot on a schedule and, where supported, after an event. | `official_fact` | xAI/SpaceXAI, [Skills and routines](https://docs.x.ai/grok-bot/skills-routines-and-automations) | 2026-09-03 | The documented Bot workflow UI. | The source does not establish a public Skill package format, webhook guarantee, or universal event support. | `current` | 2026-09-09 |
+| Skills store reusable task instructions; routines can run a Bot on a schedule and, in the documented examples, after an email arrives. | `official_fact` | xAI/SpaceXAI, [Skills and routines](https://docs.x.ai/grok-bot/skills-routines-and-automations) | 2026-09-03 | The documented Bot workflow UI. | The source does not establish a public Skill package format, webhook guarantee, or universal event support. | `current` | 2026-09-09 |
 | Bots can exchange messages asynchronously, collaborate in groups, and use a documented account limit of 50 Bots and group chats combined. | `official_fact` | xAI/SpaceXAI, [Create and manage Bots](https://docs.x.ai/grok-bot/bots) and [Message and collaborate](https://docs.x.ai/grok-bot/chat-and-collaboration) | 2026-09-03 | Current documented account and collaboration rules. | Limits and handoff behavior are volatile; they do not prove arbitrary topologies, ordering, retries, or reliability. | `current` | 2026-09-09 |
 | Approvals can gate selected messages, publications, purchases, deletions, permission changes, production changes, and legal terms; when available, Auto Review evaluates tool calls and computer actions before they run. | `official_fact` | xAI/SpaceXAI, [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy) | 2026-09-03 | Documented action-level controls. | An approval controls the proposed action and does not reverse work already completed; Auto Review is model-based and should complement least privilege and explicit approval boundaries. | `current` | 2026-09-09 |
-| The mobile help page lists Android 9+ and says the product is designed for phones rather than iPad. | `official_fact` | xAI/SpaceXAI, [Grok Bot mobile](https://docs.x.ai/grok-bot/mobile) | 2026-09-03 | The documented mobile requirements. | A help-page platform entry does not prove that the app is downloadable for every eligible account or region. | `current` | 2026-09-09 |
+| The mobile help page lists iPhone with iOS 18+ or Android 9+ and says the product is designed for phones rather than iPad. | `official_fact` | xAI/SpaceXAI, [Grok Bot mobile](https://docs.x.ai/grok-bot/mobile) | 2026-09-03 | The documented mobile requirements. | A help-page platform entry does not prove that the app is downloadable for every eligible account or region. | `current` | 2026-09-09 |
 | An unauthenticated GET to the official Grok Bot product page returned HTTP 403 in this review; its page content was not observed. | `not_observed` | xAI/SpaceXAI, [Grok Bot download page](https://x.ai/bot) | 2026-09-03 | One unauthenticated request from the review environment. | The response may vary with authentication, headers, network, region, or time; HTTP 403 does not prove that a reader, account, device, or region is ineligible. | `current` | 2026-09-09 |
-| Requiring an explicit work surface, action boundary, evidence check, human decision, and stop condition is the teaching rule this note derives from the product facts. | `project_inference` | Prysai Lab, this original note, grounded in the official sources in this table. | 2026-09-03 | A low-risk, inspectable first observation for Playbook readers. | It is not a Grok Bot feature claim, product recommendation, or proof of a complete audit trail. | `candidate` | 2026-09-09 |
+| Requiring an explicit work surface, action boundary, evidence check, human decision, stop condition, and a reason for each added Bot is the teaching rule this note derives from the product facts. | `project_inference` | Prysai Lab, this original note, grounded in the official sources in this table. | 2026-09-03 | A low-risk, inspectable first observation for Playbook readers. | It is not a Grok Bot feature claim, product recommendation, or proof of a complete audit trail. | `candidate` | 2026-09-09 |
 | A public Grok Bot API/SDK, complete approval-audit API, offline model runtime, and universal multi-Bot execution contract were not found in this review. | `not_observed` | xAI/SpaceXAI, [Grok Bot overview](https://docs.x.ai/grok-bot/overview), [approvals documentation](https://docs.x.ai/grok-bot/approvals-security-and-privacy), and the official URLs in this table. | 2026-09-03 | This bounded documentation search. | Absence from the reviewed pages is not proof that no private, newly released, or separately documented capability exists. | `current` | 2026-09-09 |
 
 ## What this note does not prove
@@ -163,7 +171,8 @@ scope and the account or administrator boundary for the specific action.
 decision was requested. It is not proof that every side effect was reviewed or
 that the final external state matches the proposal.
 
-**Android availability.** The official mobile help page lists Android 9+. The
+**Mobile availability.** The official mobile help page lists iPhone with iOS
+18+ or Android 9+ and says the product is designed for phones, not iPad. The
 product page returned HTTP 403 to this review environment, so its content could
 not be inspected here. Neither a help-page requirement nor a product-page
 response proves download eligibility for every account or region. Keep universal
