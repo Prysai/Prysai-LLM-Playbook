@@ -6,6 +6,9 @@
 
 **仓库边界：** 本记录为候选平台适配路线提供来源依据，使用原创事实转述和来源链接；它不验证运行时行为、账号可用性或学习者结果。
 
+**Owner：** Prysai Playbook maintainer/editor
+**Next review：** 2026-10-03，或 DeepSeek Harness 的安装、profile、Web UI、平台或安全文档发生变化时提前复核。
+
 ## 结论摘要
 
 - 官方仓库把 DeepSeek Harness（命令名 `dsh`）定义为 DeepSeek AI 开发的开源 agent harness，并明确标为 developer preview；官方同时警告会发生破坏兼容性变更。

@@ -4890,7 +4890,7 @@
       "kind": "learning-route",
       "stem": "book/routes/platform-adapter-guide",
       "source_locale": "EN",
-      "source_revision": "2026-09-04-platform-encyclopedia",
+      "source_revision": "2026-09-04-platform-encyclopedia-cloud-code",
       "locales": {
         "EN": {
           "path": "book/routes/platform-adapter-guide-EN.md",
