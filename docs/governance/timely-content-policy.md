@@ -38,6 +38,28 @@ content record or the linked source record:
 7. the claims that remain `not_run`, `not_observed`, `unknown`, or otherwise
    unverified.
 
+The matrix uses an explicit `admission_profile` so historical research records
+and new time-sensitive briefs cannot silently share the same review contract:
+
+- `research-record` preserves the lighter, pre-existing admission boundary for
+  dated research records. It still requires a title, content identity, a
+  `candidate` status, and the source record's existing evidence limits.
+- `timely-source-first` is the stricter contract for a new Reader-facing brief.
+  It requires the full identity, scope, claim ledger, reader action, failure
+  boundary, source/licence boundary, maintenance fields, and generated
+  projection details described above.
+
+`translation_policy: source-first` is only a localization strategy: it allows
+an English source to be projected deliberately while other locale files remain
+explicitly `not-started`. It is not an evidence waiver, a review shortcut, or
+an admission profile. A record must declare its profile separately, and every
+new timely brief is admitted as `candidate` only. This profile has no automatic
+promotion path: `verified` requires a separate evidence contract and review.
+`removed` is a removal action, not an active Reader-matrix state; remove the
+matrix record and regenerate projections when a brief is withdrawn. The
+claim-level `fact_status` vocabulary remains separate from the artifact-level
+content status.
+
 Official documentation or a first-party announcement is the default source for
 product capability. A public user story, friend report, or community post can
 show a demand signal or symptom, but it does not establish a product promise,
@@ -45,6 +67,10 @@ root cause, reliability, return on investment, or learning outcome. Rewrite
 such material in original language and remove names, account details, private
 paths, screenshots, transcripts, and long quotations unless a separate rights
 and privacy review explicitly permits them.
+
+When a claim ledger contains more than official facts, label the section and
+each row by evidence class. Do not use an official-only heading for a table that
+also contains reported experience, project inference, or not-observed claims.
 
 ## Writing rules
 
@@ -78,6 +104,12 @@ rollout, plan entitlement, platform list, limit, or security control than for a
 stable concept. The record's `next_review` is a maintenance obligation, not a
 promise that the source will still exist.
 
+At admission, the record-level `last_reviewed` date must be on or after every
+claim's `accessed` date, and the record-level `next_review` must be on or before
+every claim's `next review` date. This keeps the document-level maintenance
+promise from hiding a newer source observation or a claim that needs attention
+sooner.
+
 At review time:
 
 - `current`: the source still supports the claim in the recorded scope;
@@ -85,6 +117,17 @@ At review time:
 - `disputed`: credible sources conflict or the scope cannot be reconciled; and
 - `removed`: the item no longer belongs in the Reader, or its source/licence
   boundary is no longer acceptable.
+
+The timely-content validator runs this freshness check against the current
+date by default. Pass `--as-of YYYY-MM-DD` to replay the same decision for a
+recorded date. On the `next_review` date and every date after it, a claim whose
+fact status is still `current` fails closed; refresh the source or mark the
+claim `stale`, `disputed`, or `removed` before presenting it as current.
+
+For claim-ledger rows, also use `unverified` when a supplied report or
+observation has not been independently checked, and `candidate` when the row
+records a project inference rather than an established fact. These labels do
+not promote the item to a verified product, learning, or production result.
 
 When a claim is stale or disputed, narrow the wording or show the limitation
 before publishing another projection. When it is removed, remove its Reader
@@ -94,9 +137,9 @@ generated entry pointing at a withdrawn source.
 
 ## Reader and locale rules
 
-The first reader-facing source is English. A field-note may be registered in
-the locale matrix with a same-locale English source and explicit
-`not-started` translation states. Mark this deliberate exception with
+The first reader-facing source is English. A `timely-source-first` field-note
+may be registered in the locale matrix with a same-locale English source and
+explicit `not-started` translation states. Mark this deliberate exception with
 `translation_policy: source-first`; undeclared missing translations remain a
 blocking Reader-coverage failure. File/path parity is not translation review.
 Do not label the project fully bilingual or imply that an untranslated brief
@@ -116,6 +159,10 @@ Use the `timely-content` row in `update-registry.yaml`, fill in
 the PR limited to one logical content or governance change. Run the focused
 checks listed in the registry, then run the broader project checks required by
 the affected Reader surface.
+
+For a historical or reproducible check, include the explicit replay date, for
+example `scripts/validate_timely_content.py --as-of 2026-09-03`. The date is
+inclusive: a claim due on that date is already awaiting review.
 
 The minimum review asks:
 

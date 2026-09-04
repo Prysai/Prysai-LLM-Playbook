@@ -11,7 +11,8 @@ in the record.
 - `title`:
 - `canonical_path`:
 - `kind`: `field-note`
-- `content_status`: `candidate` / `verified` / `removed`
+- `content_status`: `candidate`
+- `admission_profile`: `timely-source-first`
 - `owner`:
 - `audience`:
 - `reader_question`: what practical question does this answer now?
@@ -20,16 +21,39 @@ in the record.
 - `scope_out`:
 - `related_stable_route`:
 
+The `content_id` and Markdown filename must end with the same valid
+`YYYY-MM-DD` date so that a dated brief can be located and reviewed without
+guessing which snapshot it represents.
+
 ## Source and claim ledger
 
 | Claim or decision | Evidence class | Source URL and owner | Accessed | Applies to | Limitation | Fact status | Next review |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|  | `official_fact` / `reported_experience` / `project_inference` / `not_observed` |  |  |  |  | `current` / `stale` / `disputed` / `removed` |  |
+|  | `official_fact` / `reported_experience` / `project_inference` / `not_observed` |  |  |  |  | `current` / `stale` / `disputed` / `removed` / `unverified` / `candidate` |  |
+
+The record-level `last_reviewed` date must be on or after every claim's
+`Accessed` date. The record-level `next_review` must be on or before every
+claim's `Next review` date, so an earlier claim deadline cannot be hidden by a
+later document deadline.
+
+New `timely-source-first` notes are admitted as `candidate` only. A future
+promotion to `verified` requires a separate evidence contract and review; this
+template does not authorize that promotion. To remove a note, delete its
+`reader_content` matrix record and regenerate the Reader projections. The
+claim-level `Fact status` vocabulary remains separate from this artifact-level
+admission status.
+
+The timely-content validator checks freshness against the current date by
+default. Use `scripts/validate_timely_content.py --as-of YYYY-MM-DD` when a
+review must be replayed deterministically. On or after a claim's `Next review`
+date, do not leave its fact status as `current` without refreshing the source.
 
 Evidence classes describe what the record can support. An official source does
 not establish account-level availability, and a reported experience does not
 establish a root cause, prevalence, reliability, ROI, or general product
-behavior.
+behavior. Use `unverified` for a supplied report or observation that has not
+been independently checked; use `candidate` for a project inference that is
+still a proposal rather than an established fact.
 
 ## Source, authorship, and licence boundary
 

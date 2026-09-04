@@ -155,6 +155,8 @@ REQUIRED = (
     "scripts/test_validate_site_i18n.py",
     "scripts/validate_teaching_assets.py",
     "scripts/test_validate_teaching_assets.py",
+    "scripts/validate_timely_content.py",
+    "scripts/test_validate_timely_content.py",
 )
 
 

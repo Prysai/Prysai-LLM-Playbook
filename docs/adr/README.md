@@ -67,3 +67,4 @@ Current entry points:
 - [ADR-0049: keep maintainer-only release controls out of public artifacts](0049-maintainer-only-release-controls.md)
 - [ADR-0050: constrain maintainer documentation auto-merge](0050-constrained-maintainer-documentation-auto-merge.md)
 - [ADR-0051: isolate post-merge publication concurrency](0051-isolate-post-merge-publication-concurrency.md)
+- [ADR-0052: keep timely Reader notes candidate-only at admission](0052-timely-reader-notes-candidate-only.md)
