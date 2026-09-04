@@ -4860,8 +4860,12 @@ window.CODEX_LOCALE_MANIFEST = {
             "chatgpt-first-task",
             "claude-code-first-task",
             "deepseek-first-task",
+            "evidence-states",
             "gemini-first-task",
-            "grok-first-task"
+            "grok-first-task",
+            "install-and-make-a-first-safe-attempt",
+            "names-that-are-easy-to-confuse",
+            "platform-and-client-map"
           ]
         },
         "zh": {

@@ -12,6 +12,10 @@ boundaries.
 links to official sources. Vendor documentation remains reference-only and
 volatile; no vendor copy, screenshot, credential, or model output is bundled.
 
+**Owner:** Prysai Playbook maintainer/editor
+**Next review:** 2026-10-04, or sooner if OpenAI or Google changes a client,
+installation, authentication, or availability page.
+
 ## Executive finding
 
 ChatGPT and Gemini each span several clients, but a familiar brand name does

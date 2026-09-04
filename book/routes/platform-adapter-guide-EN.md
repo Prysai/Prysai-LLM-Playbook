@@ -1,26 +1,47 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-cloud-code -->
 
-# Choose your LLM platform: the same core, then one adapter at a time
+# LLM platforms and clients: choose, install, and start safely
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all
-appear to start with a chat box. That similarity is useful, but it can hide
-the decision that matters: are you using a model in a chat, a desktop client,
-an editor, a terminal agent, or a hosted computer? Each surface has different
-files, permissions, account rules, and failure modes.
+ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all appear
+to start with a chat box. The important question comes next: are you using a
+web chat, a mobile app, a desktop client, an editor, a terminal agent, or a
+hosted computer? Those surfaces can differ in their files, permissions,
+account rules, and failure modes.
 
-This route is a practical encyclopedia entry, not a product ranking. Use it to
-choose one small starting surface, install only what you need, and keep the
-transferable method from the
+This page is a reference, not a product ranking. Use it to choose one starting
+surface, install only what you need, and carry over the method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md). Commands,
-plans, availability, and client support are volatile facts. The dated source
-receipts linked below record what the official documentation supported on
-2026-09-04; they do not prove that an installer, account, or task works for you.
+plans, availability, and client support change. The linked source receipts
+record what the official documentation said on 2026-09-03 or 2026-09-04; they do not prove
+that an installer, account, or task will work for you.
 
-## How to use this page
+## Find the section you need
 
-Start with the question you actually have.
+If you are new to LLMs, read the
+[Universal Core Foundations route](universal-core-foundations-EN.md) first. It
+teaches the model boundary and the check-before-trust habit before any product
+setup. If you already know that foundation, use the table below to jump to the
+surface you need. You do not need to install every client.
+
+| If you want to... | Start here |
+| --- | --- |
+| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) |
+| Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
+| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
+| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
+| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
+| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
+
+The rest of this page follows that order: choose a surface, install it, make a
+small first attempt, then record what actually happened.
+
+<span id="platform-and-client-map"></span>
+
+## Platform and client map
+
+### Choose by task
 
 | If you want to... | Start with... | Do not assume... |
 | --- | --- | --- |
@@ -29,10 +50,11 @@ Start with the question you actually have.
 | Keep a long-running task on a hosted machine | A documented cloud-agent surface | Hosted files, sessions, identity, and approval rules are the same as your laptop's |
 | Use a model from your own software | The vendor API documentation | An API is the same product as a consumer app or coding agent |
 
-If two products share a name, pause before treating them as one thing. Product
-marketing often groups them together; safe operation requires separating them.
+When two products share a name, pause before treating them as one thing. A
+shared brand does not imply a shared filesystem, shell, account, or permission
+model.
 
-## The four layers to keep separate
+### Keep these four layers separate
 
 1. **Model:** the system that generates an answer or proposes an action.
 2. **Product:** the vendor experience that provides the model, account, and
@@ -42,26 +64,28 @@ marketing often groups them together; safe operation requires separating them.
 4. **Runtime:** where work occurs: your device, a container, a hosted machine,
    or a vendor service.
 
-The same product can have several clients and more than one runtime. Installing
-a desktop application does not prove that its web version, CLI, and cloud
-agent share the same tools or permissions.
+One product can have several clients and more than one runtime. Installing a
+desktop application does not prove that its web version, CLI, and cloud agent
+share the same tools or permissions.
 
-## The one-page platform and client map
+### Products and their documented surfaces
 
 | Product or family | Documented client choices in this guide | Useful when | Boundary to keep visible |
 | --- | --- | --- | --- |
-| ChatGPT | web, mobile, desktop, API | You need a general-purpose conversation surface | A chat session is not automatically a local coding environment |
+| ChatGPT | web, mobile, desktop | You need a general-purpose conversation surface | A chat session is not automatically a local coding environment |
 | Codex | CLI, IDE, desktop app, Codex Web/Cloud | You need a coding workflow with project context | Local, desktop, and cloud work are separate surfaces |
 | Claude Code | CLI, IDE, desktop app, browser/cloud surfaces | You want an Anthropic coding-agent workflow | Desktop and CLI are not feature-equivalent |
-| Gemini | web, mobile, API, named integrations | You already work in the Google ecosystem | Extensions can create a different data and action scope |
-| DeepSeek | chat/API surfaces; DeepSeek Harness Web and profile-based runtime | You need a documented DeepSeek developer tool | Harness is developer-preview software, not a general safety guarantee |
+| Google Cloud Code | VS Code, IntelliJ/JetBrains, Cloud Shell | You build or deploy cloud-native applications from an IDE | It is a Google Cloud IDE extension family, not the same as Codex or Claude Code |
+| Gemini | web, mobile, CLI, named IDE integrations | You already work in the Google ecosystem | Extensions can create a different data and action scope |
+| DeepSeek | DeepSeek Harness Web and profiles; DeepSeek API is a separate adapter | You need a documented DeepSeek developer tool or API surface | Harness is developer-preview software, not a general safety guarantee |
 | Grok | Grok web/mobile; Grok Bot desktop/mobile; Grok Build terminal | You need a Grok conversation, hosted teammate, or terminal coding agent | These are related names, not interchangeable products |
 
-This table is orientation, not equivalence. It deliberately leaves out price,
-model choice, quotas, and account eligibility because those details can change
-without changing the stable advice on this page.
+Use this table to orient yourself, not to compare products as if they were
+equivalent. API surfaces are deliberately kept separate from consumer chat and
+coding-agent clients. Prices, model choices, quotas, and account eligibility
+change more often than the basic client boundaries do.
 
-## A practical client matrix
+## Client matrix: what each surface is for
 
 | Client | How you start | Best first job | Runtime to record |
 | --- | --- | --- | --- |
@@ -69,19 +93,19 @@ without changing the stable advice on this page.
 | ChatGPT desktop | Install the official app, sign in, then choose a chat, project, or folder | Work with one small local file after checking the selected folder | Your computer plus the ChatGPT service |
 | Gemini web or mobile | Open `gemini.google.com` or the official mobile app | Ask a text-only question with no extension enabled | Vendor service; note account and date |
 | Codex or Claude Code IDE | Install the documented editor integration and open one workspace | Explain one file, then review a proposed diff | Local editor plus the agent service |
+| Google Cloud Code | Install the extension for VS Code, IntelliJ/JetBrains, or use Cloud Shell | Open a sample or disposable cloud-native project and inspect its context | IDE and Google Cloud context; not a general-purpose coding-agent runtime |
 | Codex, Claude Code, Gemini CLI, or Grok Build | Install the official terminal entry, open a disposable folder, and run the command | Inspect a fixture and propose one small change | Local shell, workspace, and agent service |
 | Grok Bot | Install the official desktop or companion mobile client and authenticate | Ask for a read-only summary or draft | Persistent hosted computer; do not call it local |
 | DeepSeek Harness Web | Run the documented `dsh web` entry, choose a disposable workspace, then configure a model | Inspect a fixture with an explicit stop condition | Local Web server and the configured model service |
 
-The matrix answers “where do I begin?” It does not say that the products are
-interchangeable. For every row, keep four records: **installed**,
-**authenticated**, **task run**, and **result accepted**. A green-looking answer
-is not a substitute for the fourth record.
+Use the matrix to pick a starting point. The products are not interchangeable.
+For every attempt, keep four separate records: **installed**,
+**authenticated**, **task run**, and **result accepted**. A plausible answer is
+not evidence that you accepted the result.
 
 ## Before you install anything
 
-Use this five-minute preflight before running an installer or opening a real
-repository:
+Before you run an installer or open a real repository, do this short preflight:
 
 1. Pick a **disposable folder** with no credentials, production data, or
    important uncommitted work.
@@ -95,7 +119,9 @@ repository:
 5. Record the client, version if visible, operating system, date, and result.
    "Installed" and "completed a safe task" are different pieces of evidence.
 
-## Names people routinely mix up
+<span id="names-that-are-easy-to-confuse"></span>
+
+## Names that are easy to confuse
 
 ### Grok, Grok Bot, Grok Build, `@grok`, and the xAI API
 
@@ -112,20 +138,31 @@ do not install a `grok` command and assume it is Grok Bot.
 
 Source: [Grok Bot source receipt](../../docs/research/encyclopedia-grok-bot-sources-2026-09-03.md).
 
-### Codex, Codex Cloud, Codex Web, and "Cloud Code"
+### Codex, Claude Code, Google Cloud Code, and "Cloud Code"
 
 **Codex** has documented CLI, IDE, desktop, and cloud/web surfaces. They can
 share a product identity without sharing a machine, filesystem, shell, or
 approval state. Treat a cloud task as hosted work until its own documentation
 says otherwise.
 
-"**Cloud Code**" is not a verified synonym for a single product in the OpenAI
-and Anthropic documentation checked for this route. If someone uses that name,
-ask which vendor and surface they mean. The verified Anthropic product name is
-**Claude Code**; OpenAI uses **Codex Cloud** and **Codex Web** for its own
-cloud-facing surfaces.
+**Claude Code** is Anthropic's named coding-agent product. Its terminal, IDE,
+desktop, and browser/cloud surfaces have their own documented boundaries; the
+name is not "Cloud Code."
 
-Source: [Codex and Claude Code source receipt](../../docs/research/encyclopedia-coding-agents-sources-2026-09-03.md).
+**Google Cloud Code** is a different product family. Google's documentation
+describes it as an IDE extension for Google Cloud development, with documented
+paths for VS Code, IntelliJ/JetBrains, and Cloud Shell. It brings workflows for
+services such as Google Kubernetes Engine and Cloud Run into the IDE and can
+include Gemini Code Assist. It is not a synonym for Claude Code, Codex Cloud, or
+a general-purpose terminal agent.
+
+When someone says only "Cloud Code," ask which vendor and surface they mean.
+Use **Claude Code** for the Anthropic agent, **Codex Cloud/Web** for OpenAI's
+cloud-facing Codex surfaces, and **Google Cloud Code** for the Google Cloud IDE
+extension family.
+
+Sources: [Codex and Claude Code source receipt](../../docs/research/encyclopedia-coding-agents-sources-2026-09-03.md)
+and [Google Cloud Code source receipt](../../docs/research/encyclopedia-cloud-code-sources-2026-09-04.md).
 
 ## Pick a client before you pick a workflow
 
@@ -169,7 +206,9 @@ credentials, and approvals live. A hosted computer may be useful, but it is not
 your local machine and should not be treated as an isolated security boundary
 unless the product documentation explicitly establishes one.
 
-## Installation and first-use paths
+<span id="install-and-make-a-first-safe-attempt"></span>
+
+## Install and make a first safe attempt
 
 The commands in this section are official installation entries captured on
 2026-09-03 or 2026-09-04, as noted in the linked receipts. They are not
@@ -189,18 +228,21 @@ when the task needs saved history or other account features, and start a new
 chat. Keep the first exercise text-only. A web chat does not, by itself, grant
 local file, shell, or desktop-app access.
 
-**Mobile:** Use the official ChatGPT mobile-app entry, confirm the publisher,
-account, region, and requested permissions, then begin with the same text-only
-exercise. Do not infer that the mobile app has the same file, desktop, or coding
-integrations as the web app.
+**Mobile:** Start from OpenAI's official [ChatGPT download
+page](https://chatgpt.com/download/) and follow its current mobile-app link.
+Before installing, confirm the publisher, account, region, and requested
+permissions. The research receipt did not independently verify a stable store
+URL, so this guide does not hard-code one. Begin with the same text-only
+exercise and do not infer that the mobile app has the same file, desktop, or
+coding integrations as the web app.
 
-**Desktop:** OpenAI's documented sequence is: install the ChatGPT desktop app,
-sign in, choose a chat, project, or folder, then send a first message. The
-desktop documentation covers macOS and Windows and links a separate Linux
-installation guide. Choosing a folder changes the authority boundary because
-the app may use files in that location and may be able to modify them. Start
-with a disposable folder, ask for a read-only explanation, and inspect any
-proposed change before accepting it.
+**Desktop:** Follow OpenAI's [desktop-app guide](https://developers.openai.com/codex/app.md):
+install the app for macOS or Windows (or follow its linked Linux guide), sign
+in, choose a chat, project, or folder, and send a first message. Choosing a
+folder changes the authority boundary because the app may use files in that
+location and may be able to modify them. Start with a disposable folder, ask
+for a read-only explanation, and inspect any proposed change before accepting
+it.
 
 Record the client you used. A successful desktop task is not evidence that the
 web or mobile client can inspect the same local files. See the [ChatGPT and
@@ -259,8 +301,16 @@ files, explain one fixture, and stop. If it proposes a change, review the diff
 and the command scope before allowing it. The official source supports
 prebuilt Windows binaries but describes Windows source builds as best-effort;
 do not turn that source-build limitation into a claim that the binary or every
-feature is unavailable. See the [official Grok Build README](https://raw.githubusercontent.com/xai-org/grok-build/main/README.md)
-and the [Grok Bot source receipt](../../docs/research/encyclopedia-grok-bot-sources-2026-09-03.md).
+feature is unavailable. For a non-interactive, read-only inspection, the
+official headless entry is:
+
+```sh
+grok -p "List the files in this disposable folder; do not edit anything or run commands." --output-format json
+```
+
+Treat the JSON output as a record to inspect, not as proof that the model
+followed the requested boundary. See the [official Grok Build README](https://raw.githubusercontent.com/xai-org/grok-build/main/README.md)
+and [headless and scripting reference](https://docs.x.ai/build/cli/headless-scripting).
 
 ### Codex: terminal, desktop, IDE, and cloud are different choices
 
@@ -288,6 +338,17 @@ After installation, change into a disposable project and run:
 ```text
 codex
 ```
+
+For a repeatable read-only check, OpenAI documents `codex exec` as the
+non-interactive entry. Its default sandbox is read-only; keep the prompt
+explicit and save the JSONL output for review:
+
+```sh
+codex exec --json "Summarize the repository structure. Do not edit files or run commands."
+```
+
+Use `--sandbox workspace-write` only when a separately scoped task genuinely
+needs edits. Do not use `danger-full-access` for a first exercise.
 
 Sign in only through the product flow you intend to use. On Windows, OpenAI
 documents native CLI, desktop, and IDE paths; you do not need to assume that
@@ -327,11 +388,46 @@ Then enter a disposable project and run:
 claude
 ```
 
+For a scriptable, read-only question, Anthropic documents print mode:
+
+```sh
+claude -p "Explain the purpose of this disposable fixture. Do not edit files or run commands."
+```
+
+Print mode exits after the response; it does not turn the response into an
+acceptance decision. Keep the permission mode and any allowed tools visible
+when a later task needs more than reading.
+
 Anthropic also documents VS Code/Cursor and JetBrains integrations, plus a
 desktop app. The desktop app includes Claude Code, but its documented
 interactive experience is not a promise of CLI scripting or automation parity.
 Native Windows users should also check the documented shell and Git-for-Windows
 guidance before assuming Bash behavior. See the official [Claude Code overview](https://code.claude.com/docs/en/overview), [CLI reference](https://code.claude.com/docs/en/cli-reference), and [desktop guide](https://code.claude.com/docs/en/desktop).
+
+### Google Cloud Code: choose the IDE surface that matches the project
+
+Google Cloud Code is a family of AI-assisted IDE extensions for cloud-native
+development. It is useful when a project involves Google Kubernetes Engine,
+Cloud Run, or related Google Cloud services. It is not the same product as
+Claude Code or Codex Cloud, and the official pages checked here do not provide
+one universal `cloud-code` terminal installer.
+
+Choose the installation path that matches the client you actually use:
+
+- **VS Code:** follow Google's [Cloud Code for VS Code installation guide](https://cloud.google.com/code/docs/vscode/install).
+- **IntelliJ or another supported JetBrains IDE:** follow the [Cloud Code for IntelliJ installation guide](https://cloud.google.com/code/docs/intellij/install).
+- **Cloud Shell:** Cloud Code is built into the Cloud Shell Editor, so there is no separate extension install. Follow the [Cloud Code for Cloud Shell guide](https://cloud.google.com/code/docs/shell/overview) and record Cloud Shell as a hosted runtime, separate from a local IDE.
+
+For a first attempt, open a sample or disposable cloud-native project, check
+which Google Cloud project and credentials the IDE has selected, and review any
+proposed build, deploy, secret, or resource action before accepting it. Gemini
+Code Assist may be integrated with Cloud Code, but that does not turn the
+extension into a general-purpose terminal agent or grant deployment
+permission.
+
+See the [Google Cloud Code source receipt](../../docs/research/encyclopedia-cloud-code-sources-2026-09-04.md)
+for the dated source scope and unresolved account, project, and platform
+availability questions.
 
 ### Gemini: web, mobile, CLI, and IDE
 
@@ -394,8 +490,8 @@ Its official repository calls it a developer-preview agent harness and says it
 has not received a security audit. Use it only in a controlled workspace with
 no secrets or irreplaceable files.
 
-For the official npm Web entry, open Terminal on macOS or PowerShell on Windows
-and run:
+For the official npm Web entry, open a terminal on macOS, Windows, or Linux and
+run:
 
 ```sh
 npx @deepseek-ai/dsh web
@@ -407,6 +503,26 @@ To start without opening a browser automatically:
 ```sh
 npx @deepseek-ai/dsh web --no-open
 ```
+
+Before using either command on a clean machine, confirm the runtime first:
+
+```text
+node --version
+npm --version
+npx --version
+```
+
+The published npm entry only requires the Node.js prerequisite stated by the
+official README. The source checkout has a separate Node and pnpm requirement;
+do not apply that source constraint to the published package without checking
+the package metadata.
+
+After the Web UI opens, follow the documented order: open **Settings → Models**
+and configure an authorized DeepSeek API key through the UI; add and select a
+disposable workspace; then use the session composer for the first task. A key
+is a credential, not prompt content. If no workspace is selected, the composer
+is not ready for a task. Start with a read-only fixture and inspect the
+requested action before allowing any change.
 
 The official source path is for contributors or readers who deliberately want
 to inspect the repository before using it:
@@ -638,7 +754,9 @@ integration cannot show what it selected or changed, stop and narrow the task.
 4. If the result is useful, allow one small change. Review the diff, run the
    relevant test or checker, and record whether you accepted or rejected it.
 
-## Evidence states: four different claims
+<span id="evidence-states"></span>
+
+## Four evidence states
 
 | Claim | Minimum evidence | What it does not prove |
 | --- | --- | --- |
@@ -658,9 +776,9 @@ integration cannot show what it selected or changed, stop and narrow the task.
 ## Evidence state and boundary
 
 This route is `candidate / not_run`. It now has dated official-source coverage
-for ChatGPT, Gemini, Grok Bot, Grok Build, Codex, Claude Code, and DeepSeek
-Harness, but it has no recorded learner run, cross-platform installation run,
-account-eligibility check, independent language review, or
+for ChatGPT, Gemini, Grok Bot, Grok Build, Codex, Claude Code, Google Cloud
+Code, and DeepSeek Harness, but it has no recorded learner run, cross-platform
+installation run, account-eligibility check, independent language review, or
 production-readiness review. The new English material has not been propagated
 to the other locale routes.
 
