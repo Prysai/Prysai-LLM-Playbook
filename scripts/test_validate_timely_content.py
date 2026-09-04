@@ -64,16 +64,27 @@ def run_fixture(
     fixture_path: str = NOTE_PATH,
     as_of: date = AS_OF,
 ) -> list[str]:
+    return run_raw_matrix(
+        note,
+        fixture_matrix(policy, admission_profile, kind, path, content_status),
+        fixture_path=fixture_path,
+        as_of=as_of,
+    )
+
+
+def run_raw_matrix(
+    note: str,
+    matrix_text: str,
+    fixture_path: str = NOTE_PATH,
+    as_of: date = AS_OF,
+) -> list[str]:
     with tempfile.TemporaryDirectory(prefix="prysai-timely-content-") as directory:
         root = Path(directory)
         matrix_path = root / "docs/governance/locale-matrix.yaml"
         note_path = root / fixture_path
         matrix_path.parent.mkdir(parents=True)
         note_path.parent.mkdir(parents=True)
-        matrix_path.write_text(
-            fixture_matrix(policy, admission_profile, kind, path, content_status),
-            encoding="utf-8",
-        )
+        matrix_path.write_text(matrix_text, encoding="utf-8")
         note_path.write_text(
             note.replace(
                 "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md",
@@ -245,6 +256,14 @@ def main() -> int:
         "field note without an admission profile was accepted",
     )
     require(
+        any("reader_content must be a list" in error for error in run_raw_matrix(note, '{"reader_content": {}}\n')),
+        "a locale matrix with a non-list reader_content value was accepted",
+    )
+    require(
+        any("entries must be objects" in error for error in run_raw_matrix(note, '{"reader_content": [null]}\n')),
+        "a locale matrix with a non-object reader_content entry was accepted",
+    )
+    require(
         not run_fixture(note, kind="chapter"),
         "non-field-note content was incorrectly included",
     )
@@ -292,7 +311,7 @@ def main() -> int:
         "legacy research record accepted a source-first translation policy",
     )
 
-    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 16}")
+    print(f"TIMELY_CONTENT_TESTS_OK fixtures={len(cases) + len(timely.REQUIRED_LABELS) + 18}")
     return 0
 
 

@@ -543,6 +543,19 @@ def validate_repository(root: Path = ROOT, as_of: date | None = None) -> list[st
         return [f"cannot parse {matrix_path.relative_to(root)}: {exc}"]
 
     errors: list[str] = []
+    raw_records = matrix.get("reader_content")
+    if not isinstance(raw_records, list):
+        return ["locale matrix reader_content must be a list"]
+    invalid_records = [
+        index
+        for index, record in enumerate(raw_records)
+        if not isinstance(record, dict)
+    ]
+    if invalid_records:
+        errors.append(
+            "locale matrix reader_content entries must be objects: "
+            + ", ".join(str(index) for index in invalid_records)
+        )
     records = reader_field_notes(matrix)
     seen_ids: set[str] = set()
     seen_paths: set[str] = set()
