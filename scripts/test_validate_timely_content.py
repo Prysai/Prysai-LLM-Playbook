@@ -103,6 +103,11 @@ def main() -> int:
         "reader question": remove_section(note, "The practical question"),
         "why now": remove_section(note, "Why this is timely"),
         "source table": remove_section(note, "What the evidence supports"),
+        "separator row": note.replace(
+            "| --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| Claim | Evidence class | Source URL and owner | Accessed | Applies to | Limitation | Fact status | Next review |",
+            1,
+        ),
         "fact status": note.replace(" | Fact status |", " | Status |", 1),
         "limitation": note.replace(" | Limitation |", " | Notes |", 1),
         "low-risk action": remove_section(note, "Safe reader action and limits"),

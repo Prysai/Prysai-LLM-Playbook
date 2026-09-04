@@ -273,15 +273,20 @@ def validate_source_table(
     if missing_headers:
         errors.append(f"{label}: source table is missing columns: {', '.join(missing_headers)}")
 
-    data_rows = [
-        row
-        for row in rows[1:]
-        if not all(re.fullmatch(r":?-{3,}:?", cell.replace(" ", "")) for cell in row)
-    ]
+    expected_width = len(rows[0])
+    separator_row = rows[1]
+    if len(separator_row) != expected_width or not all(
+        re.fullmatch(r":?-{3,}:?", cell.replace(" ", ""))
+        for cell in separator_row
+    ):
+        errors.append(
+            f"{label}: source table must include a Markdown separator row immediately after the header"
+        )
+
+    data_rows = rows[2:]
     if not data_rows:
         errors.append(f"{label}: source table must contain at least one claim row")
         return
-    expected_width = len(rows[0])
     source_index = next((i for i, value in enumerate(header_names) if value == SOURCE_HEADER), None)
     evidence_index = next((i for i, value in enumerate(header_names) if value == "evidence class"), None)
     status_index = next((i for i, value in enumerate(header_names) if value == "fact status"), None)
