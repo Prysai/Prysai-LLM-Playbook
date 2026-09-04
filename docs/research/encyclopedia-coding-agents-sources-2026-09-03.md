@@ -6,10 +6,10 @@
 route; it is not verification of runtime behavior, account access, or learner
 outcomes.
 
-**Research date:** 2026-09-03 (America/Los_Angeles)  
+**Research date:** 2026-09-03 (America/Los_Angeles)
 **Scope:** official OpenAI and Anthropic documentation plus the two vendors'
 official GitHub repositories; Windows, macOS, terminal, desktop, and IDE
-surfaces only where the source explicitly describes them.  
+surfaces only where the source explicitly describes them.
 **Repository boundary:** this is an encyclopedia research input, not a claim
 that the project already has a complete or verified cross-platform adapter.
 
@@ -47,10 +47,10 @@ Anthropic product name and records OpenAI's cloud surface separately.
 
 **Fact:** OpenAI's quickstart points developers who want Codex in a terminal or
 code editor to **Codex CLI** or the **Codex IDE extension**. The same page
-describes the ChatGPT desktop app as a separate surface.  
-**URL:** <https://developers.openai.com/codex/quickstart.md>  
-**Accessed:** 2026-09-03  
-**Applies to:** OpenAI documentation's product-surface overview.  
+describes the ChatGPT desktop app as a separate surface.
+**URL:** <https://developers.openai.com/codex/quickstart.md>
+**Accessed:** 2026-09-03
+**Applies to:** OpenAI documentation's product-surface overview.
 **Not verified:** Whether a particular account or operating system exposes every
 surface.
 
@@ -67,11 +67,11 @@ Homebrew:    brew install --cask codex
 ```
 
 It then says to open a project directory, run `codex`, and choose “Sign in with
-ChatGPT” or another available sign-in method on first run.  
-**URL:** <https://developers.openai.com/codex/cli.md>  
-**Accessed:** 2026-09-03  
+ChatGPT” or another available sign-in method on first run.
+**URL:** <https://developers.openai.com/codex/cli.md>
+**Accessed:** 2026-09-03
 **Applies to:** documented Codex CLI setup; shell/package-manager prerequisites
-remain environment-specific.  
+remain environment-specific.
 **Not verified:** Running any installer or authenticating in this workspace.
 
 ### O3 — CLI usage boundary is terminal-local workflow
@@ -79,11 +79,11 @@ remain environment-specific.
 **Fact:** OpenAI describes the CLI as inspecting code, making changes, running
 commands, and automating repeatable work from the terminal. The page separately
 links `codex exec` for scripts/CI and describes `codex cloud` as a way to browse
-or submit cloud work from the terminal.  
-**URL:** <https://developers.openai.com/codex/cli.md>  
-**Accessed:** 2026-09-03  
+or submit cloud work from the terminal.
+**URL:** <https://developers.openai.com/codex/cli.md>
+**Accessed:** 2026-09-03
 **Applies to:** the CLI documentation's stated capabilities and command
-surfaces.  
+surfaces.
 **Not verified:** That a successful process or a cloud submission makes the
 requested code change correct or accepted.
 
@@ -95,11 +95,11 @@ PowerShell with a Windows sandbox without requiring WSL or a virtual machine;
 the guide documents `elevated` and `unelevated` native sandbox modes. It
 recommends Windows 11 as the baseline and describes recent Windows 10 as best
 effort, with Windows 10 version 1809 or newer required in practice for modern
-console support.  
-**URL:** <https://developers.openai.com/codex/windows.md>  
-**Accessed:** 2026-09-03  
+console support.
+**URL:** <https://developers.openai.com/codex/windows.md>
+**Accessed:** 2026-09-03
 **Applies to:** OpenAI's native Windows Codex guidance and its stated version
-matrix.  
+matrix.
 **Not verified:** The local Windows version, administrator policy, sandbox
 availability, or whether WSL is needed for a particular toolchain.
 
@@ -108,11 +108,11 @@ availability, or whether WSL is needed for a particular toolchain.
 **Fact:** The OpenAI IDE page says VS Code and compatible editors use the Codex
 extension; it lists Visual Studio Code, Cursor, Windsurf, and VS Code Insiders,
 and links Xcode and JetBrains IDEs to their own integrations. It describes
-open-file/selection context and in-place review of edits.  
-**URL:** <https://developers.openai.com/codex/ide.md>  
-**Accessed:** 2026-09-03  
+open-file/selection context and in-place review of edits.
+**URL:** <https://developers.openai.com/codex/ide.md>
+**Accessed:** 2026-09-03
 **Applies to:** only the named editors/integrations and the behavior described
-by the page.  
+by the page.
 **Not verified:** Installation or feature parity for any editor not named.
 
 ### O6 — Desktop app availability is not proof of cloud/local equivalence
@@ -122,11 +122,11 @@ Windows, with a separate Linux installation guide. It describes projects,
 files, browser/desktop apps, plugins, and scheduled tasks as desktop workflows.
 The official `openai/codex` README separately describes Codex CLI as local,
 points to `codex app`/the Codex App page for a desktop experience, and points to
-Codex Web for the cloud-based agent.  
+Codex Web for the cloud-based agent.
 **URLs:** <https://developers.openai.com/codex/app.md> and
-<https://github.com/openai/codex>  
-**Accessed:** 2026-09-03  
-**Applies to:** current official product documentation and repository README.  
+<https://github.com/openai/codex>
+**Accessed:** 2026-09-03
+**Applies to:** current official product documentation and repository README.
 **Not verified:** Which backend, worktree, network, or permissions apply to a
 particular desktop or web session.
 
@@ -137,11 +137,11 @@ particular desktop or web session.
 **Fact:** Anthropic's overview defines **Claude Code** as an agentic coding
 tool and says it is available in the terminal, IDE, desktop app, and browser.
 The official repository README likewise says it lives in the terminal and
-links the official documentation.  
+links the official documentation.
 **URLs:** <https://code.claude.com/docs/en/overview> and
-<https://github.com/anthropics/claude-code>  
-**Accessed:** 2026-09-03  
-**Applies to:** Anthropic's named product and the surfaces explicitly listed.  
+<https://github.com/anthropics/claude-code>
+**Accessed:** 2026-09-03
+**Applies to:** Anthropic's named product and the surfaces explicitly listed.
 **Not verified:** Any product called “Cloud Code”; that exact name was absent
 from the checked official pages/repository README.
 
@@ -153,10 +153,10 @@ Homebrew for macOS/Linux, and WinGet for Windows. It says native installations
 auto-update, while Homebrew and WinGet installations do not auto-update and
 should be upgraded explicitly. It also says Git for Windows is recommended on
 native Windows for the Bash tool; without it, Claude Code uses PowerShell as the
-shell tool; WSL does not need Git for Windows.  
-**URL:** <https://code.claude.com/docs/en/overview>  
-**Accessed:** 2026-09-03  
-**Applies to:** Claude Code CLI installation guidance.  
+shell tool; WSL does not need Git for Windows.
+**URL:** <https://code.claude.com/docs/en/overview>
+**Accessed:** 2026-09-03
+**Applies to:** Claude Code CLI installation guidance.
 **Not verified:** Whether installers, auto-update, Git, or shell detection work
 on this machine.
 
@@ -166,12 +166,12 @@ on this machine.
 directory and run `claude`. The CLI reference documents interactive and print
 (`-p`/`--print`) modes, session continuation/resume flags, and permission-mode
 configuration. The desktop documentation explicitly contrasts CLI use for
-scripting/automation with Desktop's interactive-only behavior.  
+scripting/automation with Desktop's interactive-only behavior.
 **URLs:** <https://github.com/anthropics/claude-code>,
 <https://code.claude.com/docs/en/cli-reference>, and
-<https://code.claude.com/docs/en/desktop>  
-**Accessed:** 2026-09-03  
-**Applies to:** Claude Code CLI reference and official desktop comparison.  
+<https://code.claude.com/docs/en/desktop>
+**Accessed:** 2026-09-03
+**Applies to:** Claude Code CLI reference and official desktop comparison.
 **Not verified:** That any flag is supported by the installed version in this
 workspace; CLI flags are version-sensitive.
 
@@ -180,10 +180,10 @@ workspace; CLI flags are version-sensitive.
 **Fact:** Anthropic documents a VS Code extension with inline diffs,
 `@`-mentions, plan review, and conversation history. It provides install links
 for VS Code and Cursor, and documents a JetBrains plugin for IntelliJ IDEA,
-PyCharm, WebStorm, and other JetBrains IDEs.  
-**URL:** <https://code.claude.com/docs/en/overview>  
-**Accessed:** 2026-09-03  
-**Applies to:** named VS Code/Cursor/JetBrains integrations.  
+PyCharm, WebStorm, and other JetBrains IDEs.
+**URL:** <https://code.claude.com/docs/en/overview>
+**Accessed:** 2026-09-03
+**Applies to:** named VS Code/Cursor/JetBrains integrations.
 **Not verified:** Support for other editors or parity with the standalone CLI.
 
 ### A5 — Desktop app includes Claude Code, but is not the full CLI
@@ -194,11 +194,11 @@ selects the Code tab; the source says Claude Code is included and the CLI does
 not need to be installed separately. The desktop comparison says Desktop is
 interactive only for the listed scripting flags, while CLI supports scripting
 and automation. It also says agent teams are available in CLI, not Desktop;
-Desktop has its own dynamic workflows.  
+Desktop has its own dynamic workflows.
 **URLs:** <https://code.claude.com/docs/en/overview> and
-<https://code.claude.com/docs/en/desktop>  
-**Accessed:** 2026-09-03  
-**Applies to:** Anthropic's current desktop app documentation.  
+<https://code.claude.com/docs/en/desktop>
+**Accessed:** 2026-09-03
+**Applies to:** Anthropic's current desktop app documentation.
 **Not verified:** Desktop account eligibility, local session startup, or any
 feature not listed in the comparison.
 
@@ -208,10 +208,10 @@ feature not listed in the comparison.
 `CLAUDE.local.md` files and share settings, hooks, and skills in documented
 locations. The same page separately says the standalone CLI does not read
 `claude_desktop_config.json`, while local Desktop Code-tab sessions can load
-MCP servers from it.  
-**URL:** <https://code.claude.com/docs/en/desktop>  
-**Accessed:** 2026-09-03  
-**Applies to:** configuration behavior explicitly stated on the desktop page.  
+MCP servers from it.
+**URL:** <https://code.claude.com/docs/en/desktop>
+**Accessed:** 2026-09-03
+**Applies to:** configuration behavior explicitly stated on the desktop page.
 **Not verified:** Actual precedence in a local setup or whether a configured
 server is safe, reachable, or approved.
 
@@ -259,9 +259,9 @@ asset/source register as required.
 
 ## Review metadata
 
-**Owner:** research-maintainer  
+**Owner:** research-maintainer
 **Next review:** 2026-10-03, or sooner if either vendor changes installation,
-surface, or terminology documentation.  
+surface, or terminology documentation.
 **Canonical-content action:** The record supports the candidate platform-adapter
 route in `book/routes/platform-adapter-guide-EN.md`; it does not verify runtime
 behavior, account access, or learner outcomes.

@@ -1,9 +1,9 @@
 # Encyclopedia route: Grok Bot official-source research
 
-**Research date:** 2026-09-03  
-**Status:** `candidate / source-checked`  
-**Scope:** Official xAI/SpaceXAI product documentation, official xAI GitHub repositories, and the official web entry points reachable from this environment.  
-**Repository boundary:** This is a source record supporting the candidate encyclopedia route. It contains original factual paraphrases and source links; it is not verification of runtime behavior, account access, or learner outcomes.  
+**Research date:** 2026-09-03
+**Status:** `candidate / source-checked`
+**Scope:** Official xAI/SpaceXAI product documentation, official xAI GitHub repositories, and the official web entry points reachable from this environment.
+**Repository boundary:** This is a source record supporting the candidate encyclopedia route. It contains original factual paraphrases and source links; it is not verification of runtime behavior, account access, or learner outcomes.
 **Purpose:** Establish a source-backed boundary for an encyclopedia route about Grok Bot: what the product is, which official surfaces are documented, and what must not be inferred from adjacent Grok products.
 
 ## Executive finding

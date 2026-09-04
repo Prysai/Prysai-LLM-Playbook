@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-03-platform-encyclopedia -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia -->
 
 # Choose your LLM platform: the same core, then one adapter at a time
 
@@ -16,7 +16,7 @@ transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md). Commands,
 plans, availability, and client support are volatile facts. The dated source
 receipts linked below record what the official documentation supported on
-2026-09-03; they do not prove that an installer, account, or task works for you.
+2026-09-04; they do not prove that an installer, account, or task works for you.
 
 ## How to use this page
 
@@ -60,6 +60,23 @@ agent share the same tools or permissions.
 This table is orientation, not equivalence. It deliberately leaves out price,
 model choice, quotas, and account eligibility because those details can change
 without changing the stable advice on this page.
+
+## A practical client matrix
+
+| Client | How you start | Best first job | Runtime to record |
+| --- | --- | --- | --- |
+| ChatGPT web or mobile | Open the official entry and sign in when the task needs saved history or extra features | Rewrite or compare supplied text | Vendor service; note account and date |
+| ChatGPT desktop | Install the official app, sign in, then choose a chat, project, or folder | Work with one small local file after checking the selected folder | Your computer plus the ChatGPT service |
+| Gemini web or mobile | Open `gemini.google.com` or the official mobile app | Ask a text-only question with no extension enabled | Vendor service; note account and date |
+| Codex or Claude Code IDE | Install the documented editor integration and open one workspace | Explain one file, then review a proposed diff | Local editor plus the agent service |
+| Codex, Claude Code, Gemini CLI, or Grok Build | Install the official terminal entry, open a disposable folder, and run the command | Inspect a fixture and propose one small change | Local shell, workspace, and agent service |
+| Grok Bot | Install the official desktop or companion mobile client and authenticate | Ask for a read-only summary or draft | Persistent hosted computer; do not call it local |
+| DeepSeek Harness Web | Run the documented `dsh web` entry, choose a disposable workspace, then configure a model | Inspect a fixture with an explicit stop condition | Local Web server and the configured model service |
+
+The matrix answers “where do I begin?” It does not say that the products are
+interchangeable. For every row, keep four records: **installed**,
+**authenticated**, **task run**, and **result accepted**. A green-looking answer
+is not a substitute for the fourth record.
 
 ## Before you install anything
 
@@ -155,9 +172,40 @@ unless the product documentation explicitly establishes one.
 ## Installation and first-use paths
 
 The commands in this section are official installation entries captured on
-2026-09-03. They are not commands that this project ran. Read the linked source
+2026-09-03 or 2026-09-04, as noted in the linked receipts. They are not
+commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
+
+### ChatGPT: web, mobile, and desktop
+
+ChatGPT is the general conversation and work surface in this guide. It is not
+automatically a local coding environment, and it is not another name for
+Codex. OpenAI's current documentation separates ChatGPT on the web, the
+desktop app, and the Codex CLI or IDE extension.
+
+**Web:** Open the official [ChatGPT web entry](https://chatgpt.com/), sign in
+when the task needs saved history or other account features, and start a new
+chat. Keep the first exercise text-only. A web chat does not, by itself, grant
+local file, shell, or desktop-app access.
+
+**Mobile:** Use the official ChatGPT mobile-app entry, confirm the publisher,
+account, region, and requested permissions, then begin with the same text-only
+exercise. Do not infer that the mobile app has the same file, desktop, or coding
+integrations as the web app.
+
+**Desktop:** OpenAI's documented sequence is: install the ChatGPT desktop app,
+sign in, choose a chat, project, or folder, then send a first message. The
+desktop documentation covers macOS and Windows and links a separate Linux
+installation guide. Choosing a folder changes the authority boundary because
+the app may use files in that location and may be able to modify them. Start
+with a disposable folder, ask for a read-only explanation, and inspect any
+proposed change before accepting it.
+
+Record the client you used. A successful desktop task is not evidence that the
+web or mobile client can inspect the same local files. See the [ChatGPT and
+Gemini source receipt](../../docs/research/encyclopedia-chatgpt-gemini-sources-2026-09-04.md)
+for the access date and unresolved availability questions.
 
 ### Grok Bot: desktop and companion mobile clients
 
@@ -179,6 +227,40 @@ For passwords, two-factor codes, CAPTCHAs, and payment confirmations, use the
 documented takeover flow rather than putting the secret in chat. Do not claim a
 specific plan, download, or feature is available to your account until you can
 check it yourself. See the [official approvals and privacy guidance](https://docs.x.ai/grok-bot/approvals-security-and-privacy).
+
+### Grok Build: a separate terminal coding agent
+
+Grok Build is the xAI terminal product in this route. It is not the Grok Bot
+desktop client, and it is not proof that a local `grok` command controls the
+persistent computer described in the Grok Bot documentation. The official
+Grok Build repository documents prebuilt binaries, an interactive terminal UI,
+headless use, and ACP integration.
+
+Install a prebuilt binary from the official source:
+
+```sh
+# macOS, Linux, or Git Bash
+curl -fsSL https://x.ai/cli/install.sh | bash
+```
+
+```powershell
+# Windows PowerShell
+irm https://x.ai/cli/install.ps1 | iex
+```
+
+Then verify the command before opening a real repository:
+
+```text
+grok --version
+```
+
+For the first task, enter a disposable folder and ask Grok Build to list the
+files, explain one fixture, and stop. If it proposes a change, review the diff
+and the command scope before allowing it. The official source supports
+prebuilt Windows binaries but describes Windows source builds as best-effort;
+do not turn that source-build limitation into a claim that the binary or every
+feature is unavailable. See the [official Grok Build README](https://raw.githubusercontent.com/xai-org/grok-build/main/README.md)
+and the [Grok Bot source receipt](../../docs/research/encyclopedia-grok-bot-sources-2026-09-03.md).
 
 ### Codex: terminal, desktop, IDE, and cloud are different choices
 
@@ -251,6 +333,60 @@ interactive experience is not a promise of CLI scripting or automation parity.
 Native Windows users should also check the documented shell and Git-for-Windows
 guidance before assuming Bash behavior. See the official [Claude Code overview](https://code.claude.com/docs/en/overview), [CLI reference](https://code.claude.com/docs/en/cli-reference), and [desktop guide](https://code.claude.com/docs/en/desktop).
 
+### Gemini: web, mobile, CLI, and IDE
+
+Gemini is a family of clients, not one universal execution environment. The
+Gemini web app and mobile apps are consumer chat surfaces. Gemini CLI is a
+separate open-source terminal agent, and its IDE integrations add editor
+context. Keep those boundaries visible when writing a tutorial or comparing a
+result.
+
+**Web and mobile:** Open [Gemini](https://gemini.google.com/) in a browser or
+use the official Gemini app for Android or iOS. Google's help center says some
+web features can work without signing in, while additional features and saved
+activity require a Google Account. Sign in with the account you intend to use,
+check the visible region and permissions, and start with supplied text only.
+Do not infer that the mobile app has the same integrations as the web app.
+
+**CLI:** The official Gemini CLI entries are:
+
+```sh
+# Run once without a permanent global install
+npx @google/gemini-cli
+
+# Install globally with npm
+npm install -g @google/gemini-cli
+```
+
+```sh
+# macOS or Linux alternative
+brew install gemini-cli
+
+# macOS alternative
+sudo port install gemini-cli
+```
+
+For a first launch after a global install, run `gemini` in a disposable project
+and choose the documented Google sign-in flow. If you use the `npx` entry, the
+`npx` command itself starts the session; do not assume that it has created a
+permanent `gemini` command. If your environment requires an API key or Vertex
+AI, follow the [official authentication guide](https://geminicli.com/docs/get-started/authentication)
+and keep credentials in the environment or account mechanism it documents;
+never paste a key into a prompt or commit it to the project. The current
+installation page lists Node.js 20+, Bash, Zsh, or PowerShell, and named
+operating-system baselines. These are dated product facts, not a promise about
+every machine or organization policy.
+
+**IDE:** The official [IDE integration guide](https://geminicli.com/docs/ide-integration)
+documents a VS Code companion extension and ACP integrations used with tools
+such as JetBrains and Zed. Open one workspace, start the CLI from that same
+directory, and inspect the visible context before asking for a change. An IDE
+selection, cursor position, or diff is additional context; it is not permission
+to edit the whole repository.
+
+See the [ChatGPT and Gemini source receipt](../../docs/research/encyclopedia-chatgpt-gemini-sources-2026-09-04.md)
+for the access date, source scope, and current unknowns.
+
 ### DeepSeek Harness: a developer-preview Web and profile runtime
 
 **DeepSeek Harness** is not the same thing as the DeepSeek chat product or API.
@@ -303,6 +439,10 @@ only what the client actually shows: browsing, memory, file upload, or a share
 link may be offered, but none is needed for this exercise. Record the surface
 and date rather than assuming that another client behaves the same way.
 
+If you use the desktop app, begin with a new chat rather than opening a real
+project folder. Add a folder only for a later, separately scoped exercise, and
+record the folder boundary before asking for a file-related result.
+
 <span id="claude-code-first-task"></span>
 
 ## Claude Code first task
@@ -318,10 +458,15 @@ carefully as any other project rule.
 
 ## Gemini first task
 
-Run the safe first task in an authorized Gemini chat. Note the active account
-and whether the UI offers Google Workspace or other extensions. Do not enable
-an extension for a text-only exercise: an integration may expand the data and
-action scope beyond the task.
+Run the safe first task in an authorized Gemini web or mobile chat. Note the
+active account and whether the UI offers Google Workspace or other extensions.
+Do not enable an extension for a text-only exercise: an integration may expand
+the data and action scope beyond the task.
+
+If you use Gemini CLI instead, start it from a disposable folder, record the
+authentication method, and ask it to inspect no files for this first text-only
+turn. The CLI and the web/mobile apps are separate clients; a result in one is
+not evidence about the other.
 
 <span id="deepseek-first-task"></span>
 
@@ -344,8 +489,10 @@ Use the generic safe task in the Grok consumer chat if that is the surface you
 mean. Use Grok Bot only when you deliberately want its hosted-teammate model,
 and use Grok Build only when you deliberately want a terminal coding agent.
 For Grok Bot, start with a draft or read-only task and keep the approval
-boundary in the request. A current-looking answer or a connected account is not
-proof that a post, message, payment, or other external action should happen.
+boundary in the request. For Grok Build, start in a disposable local folder and
+ask for inspection only. A current-looking answer or a connected account is
+not proof that a post, message, payment, file change, or other external action
+should happen.
 
 ## The safe first task on any platform
 
@@ -374,7 +521,68 @@ If the client offers to browse, send, publish, use a tool, or requests more
 material than this small exercise needs, stop. A capability is not an
 instruction to use it.
 
-## Windows and macOS: a short practical checklist
+## Windows and macOS setup paths
+
+These are controlled first-use workflows, not a universal support promise. The
+vendor's current documentation remains the authority for operating-system
+versions, architecture, regional availability, account eligibility, and
+installation changes.
+
+### Windows: PowerShell first
+
+1. Open a normal PowerShell window and record the shell, architecture, and
+   tools already present:
+
+   ```powershell
+   $PSVersionTable.PSVersion
+   [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture
+   Get-Command node,npm,git -ErrorAction SilentlyContinue
+   ```
+
+   These are local observations. A missing `node`, `npm`, or `git` command is
+   not a problem for a desktop-only exercise, but it matters for a CLI path.
+2. Choose the official download for the product and match x64 or Arm64 when the
+   vendor offers both. Do not use a package name copied from a search result.
+   For a terminal path, use the PowerShell command in the relevant product
+   section above. Gemini CLI currently requires the Node.js/runtime conditions
+   listed in its official installation page; DeepSeek Harness uses its own
+   documented `npx` entry.
+3. Close and reopen PowerShell if an installer changes `PATH`. Confirm that the
+   intended command resolves before authenticating:
+
+   ```powershell
+   Get-Command codex,claude,gemini,grok -ErrorAction SilentlyContinue
+   ```
+
+   `dsh` started through `npx` need not appear as a permanent global command.
+4. Authenticate only in the product's own sign-in or provider flow. Create or
+   choose a disposable folder, run the safe first task, and record the visible
+   result. Do not put an API key in the folder or in the prompt.
+
+### macOS: check the chip before choosing a download
+
+1. Open Terminal and record the macOS version, architecture, and available
+   package tools:
+
+   ```sh
+   sw_vers
+   uname -m
+   command -v node npm git brew
+   ```
+
+2. Choose the official Apple-silicon or Intel download when the product lists
+   both. If you use a terminal path, use the documented shell installer or the
+   Homebrew/MacPorts alternative shown above; do not mix package-manager
+   instructions from different products.
+3. Start a new Terminal session if the installed command is not on `PATH`, then
+   confirm the command resolves. Authenticate through the client, not through a
+   value copied into a shell history or prompt.
+4. Begin in a disposable folder, run the safe first task, and preserve the
+   output or diff needed for review. A successful launch is only a local
+   observation; it does not prove that another macOS release, chip, account, or
+   product surface behaves the same way.
+
+### Short comparison checklist
 
 | Check | Windows | macOS |
 | --- | --- | --- |
@@ -388,6 +596,57 @@ Do not turn this checklist into a claim that every named product supports every
 Windows release, Mac model, corporate policy, region, account, or IDE. When the
 official source is narrower, the source wins.
 
+## Three first-use recipes
+
+### Desktop app
+
+1. Open the official app and sign in.
+2. Start a new chat with supplied or fictional text only.
+3. Ask for a short result with a visible boundary, such as “do not browse,
+   upload, send, or edit files.”
+4. Compare the response with the supplied material. Only then decide whether a
+   project, folder, upload, or connected capability is necessary for the next
+   task.
+
+### IDE integration
+
+1. Open one disposable workspace and one relevant file.
+2. Check what the integration can see: open files, selection, cursor, project
+   root, and any displayed tool or permission state.
+3. Ask for an explanation before asking for a change.
+4. Request a small proposed diff, inspect every changed line, and run the
+   narrowest relevant check yourself.
+
+An IDE's context window is not a grant to edit the entire repository. If the
+integration cannot show what it selected or changed, stop and narrow the task.
+
+### Terminal agent
+
+1. Open a disposable folder in the shell and record the starting state:
+
+   ```text
+   cd <disposable-folder>
+   git status --short
+   ```
+
+   On PowerShell, use `Set-Location <disposable-folder>` instead of `cd` if
+   that is clearer in your environment.
+2. Launch the intended agent and confirm the account, workspace, and visible
+   permission mode.
+3. Ask it to inspect or explain one fixture and stop. Do not begin with a
+   publish, delete, dependency upgrade, credential, or production task.
+4. If the result is useful, allow one small change. Review the diff, run the
+   relevant test or checker, and record whether you accepted or rejected it.
+
+## Evidence states: four different claims
+
+| Claim | Minimum evidence | What it does not prove |
+| --- | --- | --- |
+| Installed | The app opens or the intended command resolves, with product and version recorded when visible | Authentication, model access, or a successful task |
+| Authenticated | The product accepts the intended account or provider flow | Permission to use a chosen folder or perform an external action |
+| Ran a task | A dated response, log, or proposed diff exists for the declared client and workspace | Correctness, safety, or user acceptance |
+| Accepted the result | The user checked the result against a stated requirement and kept the output, diff, or review note | Long-term learning, platform equivalence, or production readiness |
+
 ## After the first task: which route should you follow?
 
 - You want a text-only starter practice: [Beginner Practice Pack](../communication-clinic-EN.md).
@@ -399,10 +658,11 @@ official source is narrower, the source wins.
 ## Evidence state and boundary
 
 This route is `candidate / not_run`. It now has dated official-source coverage
-for Grok Bot, Grok Build, Codex, Claude Code, and DeepSeek Harness, but it has
-no recorded learner run, cross-platform installation run, account-eligibility
-check, independent language review, or production-readiness review. The new
-English material has not been propagated to the other locale routes.
+for ChatGPT, Gemini, Grok Bot, Grok Build, Codex, Claude Code, and DeepSeek
+Harness, but it has no recorded learner run, cross-platform installation run,
+account-eligibility check, independent language review, or
+production-readiness review. The new English material has not been propagated
+to the other locale routes.
 
 - [ ] I identified the product, client, and runtime instead of relying on a familiar name.
 - [ ] I used only an official source and a disposable or authorized workspace.

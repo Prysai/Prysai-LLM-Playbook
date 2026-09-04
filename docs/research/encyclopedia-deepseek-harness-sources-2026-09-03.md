@@ -1,7 +1,7 @@
 # DeepSeek Harness 官方来源百科核对
 
-**访问日期：** 2026-09-03  
-**研究状态：** `source-checked / read-only / not-installed / not-run`  
+**访问日期：** 2026-09-03
+**研究状态：** `source-checked / read-only / not-installed / not-run`
 **研究范围：** 只核对 DeepSeek Harness 官方仓库 `deepseek-ai/deepseek-harness`、该仓库文档，以及 npm 官方 registry 元数据。本文不把本机历史运行记录、第三方教程、社区帖子或本次安装/运行结果当作证据。
 
 **仓库边界：** 本记录为候选平台适配路线提供来源依据，使用原创事实转述和来源链接；它不验证运行时行为、账号可用性或学习者结果。
@@ -29,8 +29,8 @@
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/LICENSE
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/THIRD_PARTY_NOTICES.md
 
-**访问日期：** 2026-09-03  
-**适用范围：** 官方仓库 `master` 分支 README 对项目整体的描述；版本状态不是对任一具体 npm 版本的稳定性保证。  
+**访问日期：** 2026-09-03
+**适用范围：** 官方仓库 `master` 分支 README 对项目整体的描述；版本状态不是对任一具体 npm 版本的稳定性保证。
 **未核实项：** 本记录没有进行独立安全审计、生产可靠性测试、长期兼容性测试或许可证法律意见审查。
 
 ### 2. npm 安装入口、包名与 npx 行为边界
@@ -62,8 +62,8 @@ npx @deepseek-ai/dsh web
 - https://registry.npmjs.org/@deepseek-ai%2fdsh
 - https://registry.npmjs.org/deepseek-harness
 
-**访问日期：** 2026-09-03  
-**适用范围：** README 的 npm 入口适用于官方发布的 `@deepseek-ai/dsh` CLI 路线；registry 字段只描述 registry 当时返回的包元数据。  
+**访问日期：** 2026-09-03
+**适用范围：** README 的 npm 入口适用于官方发布的 `@deepseek-ai/dsh` CLI 路线；registry 字段只描述 registry 当时返回的包元数据。
 **未核实项：** 未执行 `npx`，因此未核实本机 npm cache、网络、registry 配置、下载、解包、bin 解析、依赖安装或启动成功。未核实 `npx` 在所有 Node.js 安装方式中的可用性；官方 README 只给出 Node.js 前置条件，没有单独承诺 npm/npx 版本矩阵。
 
 ### 3. Node、npm、npx 与源码 checkout 前置条件
@@ -96,8 +96,8 @@ pnpm dsh web
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md#development
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md#plugin-management
 
-**访问日期：** 2026-09-03  
-**适用范围：** Node/pnpm 约束适用于仓库源码 checkout；`pnpm` 版本是仓库 package-manager 声明，不是对 npm 包用户的独立安装要求。  
+**访问日期：** 2026-09-03
+**适用范围：** Node/pnpm 约束适用于仓库源码 checkout；`pnpm` 版本是仓库 package-manager 声明，不是对 npm 包用户的独立安装要求。
 **未核实项：** 官方这些来源没有给出 npm 版本、npx 版本、Corepack 必须性、Windows PowerShell/cmd 的完整命令差异、Node 安装发行版差异或某个具体 Node 版本的实际安装结果。没有执行 `pnpm install`、`pnpm run build` 或任何启动命令。
 
 ### 4. 启动 Web UI、地址、浏览器交接与 SSH 边界
@@ -114,8 +114,8 @@ Web UI 指南规定：新 Web UI 没有选中的 workspace，必须先添加并�
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/index.md
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md#web-alias
 
-**访问日期：** 2026-09-03  
-**适用范围：** 官方 `dsh web` Web profile；默认地址是 loopback 地址，不是对外网公开监听的部署承诺。  
+**访问日期：** 2026-09-03
+**适用范围：** 官方 `dsh web` Web profile；默认地址是 loopback 地址，不是对外网公开监听的部署承诺。
 **未核实项：** 未启动 server，未访问 `127.0.0.1:3080`，未检查端口占用、浏览器关联、SSH 转发、反向代理、TLS、远程访问或具体 `--host` 值的可用性。
 
 ### 5. CLI、Web、headless、SDK、ACP 与终端/TUI 边界
@@ -140,8 +140,8 @@ Web UI 指南规定：新 Web UI 没有选中的 workspace，必须先添加并�
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md
 
-**访问日期：** 2026-09-03  
-**适用范围：** 官方 `@deepseek-ai/dsh` launcher 的 profile 与参数边界。  
+**访问日期：** 2026-09-03
+**适用范围：** 官方 `@deepseek-ai/dsh` launcher 的 profile 与参数边界。
 **未核实项：** 未安装 TUI 或任何外部 plugin，未执行 stdio 协议交互，未验证具体终端 emulator、PTY、shell、编码或信号行为。没有把第三方 `dsh-TUI` 仓库的自述作为 DeepSeek Harness 官方支持声明。
 
 ### 6. Windows 与 macOS 支持声明的证据等级
@@ -160,8 +160,8 @@ Web UI 指南规定：新 Web UI 没有选中的 workspace，必须先添加并�
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/native/landlock-run/docs/support-matrix.md
 - https://github.com/deepseek-ai/deepseek-harness/tree/master/packages/sandbox/sandbox-local/tests
 
-**访问日期：** 2026-09-03  
-**适用范围：** 仓库源代码和其声明的测试/CI 路径；不是安装成功、运行成功或产品支持承诺。  
+**访问日期：** 2026-09-03
+**适用范围：** 仓库源代码和其声明的测试/CI 路径；不是安装成功、运行成功或产品支持承诺。
 **未核实项：** 未在 Windows 或 macOS 上安装、启动或运行 Web UI/CLI/TUI；未执行 Wine gates；未核实不同 CPU、shell、终端、Node 发行版、权限配置、沙箱后端或插件组合的结果；没有真实平台运行证据。
 
 ### 7. 安全、权限、凭据与外部副作用
@@ -182,8 +182,8 @@ Web UI 指南规定：新 Web UI 没有选中的 workspace，必须先添加并�
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/sandbox.md
 - https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/web.md
 
-**访问日期：** 2026-09-03  
-**适用范围：** 官方当前仓库文档所描述的 profile、sandbox、credential 和 Web fetch 行为；实际策略由 profile、patch、平台后端和部署配置共同决定。  
+**访问日期：** 2026-09-03
+**适用范围：** 官方当前仓库文档所描述的 profile、sandbox、credential 和 Web fetch 行为；实际策略由 profile、patch、平台后端和部署配置共同决定。
 **未核实项：** 未运行命令、未加载插件、未配置 API key、未检查本机 `$DSH_HOME` 或权限；未做安全审计、沙箱逃逸测试、数据外泄测试、凭据存储取证或第三方插件审查。文档描述不等于本次环境已启用或已证明有效。
 
 ## 官方来源索引

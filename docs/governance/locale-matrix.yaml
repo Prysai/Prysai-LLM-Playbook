@@ -4890,7 +4890,7 @@
       "kind": "learning-route",
       "stem": "book/routes/platform-adapter-guide",
       "source_locale": "EN",
-      "source_revision": "2026-09-03-platform-encyclopedia",
+      "source_revision": "2026-09-04-platform-encyclopedia",
       "locales": {
         "EN": {
           "path": "book/routes/platform-adapter-guide-EN.md",
@@ -4907,7 +4907,7 @@
           "run_status": "not_run",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "reason": "Simplified Chinese adapter guide predates the 2026-09-03 English encyclopedia expansion; update and independent language review remain pending."
+          "reason": "Simplified Chinese adapter guide predates the 2026-09-04 English encyclopedia expansion; update and independent language review remain pending."
         },
         "ES": {
           "path": "book/routes/platform-adapter-guide-ES.md",
@@ -4917,7 +4917,7 @@
           "run_status": "not_run",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "reason": "Spanish adapter guide predates the 2026-09-03 English encyclopedia expansion; update and independent language review remain pending."
+          "reason": "Spanish adapter guide predates the 2026-09-04 English encyclopedia expansion; update and independent language review remain pending."
         },
         "JA": {
           "path": "book/routes/platform-adapter-guide-JA.md",
@@ -4927,7 +4927,7 @@
           "run_status": "not_run",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "reason": "Japanese adapter guide predates the 2026-09-03 English encyclopedia expansion; update and independent language review remain pending."
+          "reason": "Japanese adapter guide predates the 2026-09-04 English encyclopedia expansion; update and independent language review remain pending."
         },
         "KO": {
           "path": "book/routes/platform-adapter-guide-KO.md",
@@ -4937,7 +4937,7 @@
           "run_status": "not_run",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "reason": "Korean adapter guide predates the 2026-09-03 English encyclopedia expansion; update and independent language review remain pending."
+          "reason": "Korean adapter guide predates the 2026-09-04 English encyclopedia expansion; update and independent language review remain pending."
         },
         "DE": {
           "path": "book/routes/platform-adapter-guide-DE.md",
@@ -4947,7 +4947,7 @@
           "run_status": "not_run",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "reason": "German adapter guide predates the 2026-09-03 English encyclopedia expansion; update and independent language review remain pending."
+          "reason": "German adapter guide predates the 2026-09-04 English encyclopedia expansion; update and independent language review remain pending."
         },
         "ZHTW": {
           "path": "book/routes/platform-adapter-guide-ZHTW.md",
@@ -4957,7 +4957,7 @@
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "coverage": "full",
           "run_status": "not_run",
-          "reason": "繁體中文候選譯文早於 2026-09-03 英文百科擴充；更新、獨立語言審校與學習者執行證據仍待完成。"
+          "reason": "繁體中文候選譯文早於 2026-09-04 英文百科擴充；更新、獨立語言審校與學習者執行證據仍待完成。"
         },
         "FR": {
           "path": "book/routes/platform-adapter-guide-FR.md",
@@ -4967,7 +4967,7 @@
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "coverage": "full",
           "run_status": "not_run",
-          "reason": "French file predates the 2026-09-03 English encyclopedia expansion; update, independent native-language review, and learner-run evidence remain pending."
+          "reason": "French file predates the 2026-09-04 English encyclopedia expansion; update, independent native-language review, and learner-run evidence remain pending."
         }
       }
     },
