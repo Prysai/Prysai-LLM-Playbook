@@ -1,26 +1,47 @@
 <!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia -->
 
-# Choose your LLM platform: the same core, then one adapter at a time
+# LLM platforms and clients: choose, install, and start safely
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all
-appear to start with a chat box. That similarity is useful, but it can hide
-the decision that matters: are you using a model in a chat, a desktop client,
-an editor, a terminal agent, or a hosted computer? Each surface has different
-files, permissions, account rules, and failure modes.
+ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all appear
+to start with a chat box. The important question comes next: are you using a
+web chat, a mobile app, a desktop client, an editor, a terminal agent, or a
+hosted computer? Those surfaces can differ in their files, permissions,
+account rules, and failure modes.
 
-This route is a practical encyclopedia entry, not a product ranking. Use it to
-choose one small starting surface, install only what you need, and keep the
-transferable method from the
+This page is a reference, not a product ranking. Use it to choose one starting
+surface, install only what you need, and carry over the method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md). Commands,
-plans, availability, and client support are volatile facts. The dated source
-receipts linked below record what the official documentation supported on
-2026-09-04; they do not prove that an installer, account, or task works for you.
+plans, availability, and client support change. The linked source receipts
+record what the official documentation said on 2026-09-04; they do not prove
+that an installer, account, or task will work for you.
 
-## How to use this page
+## Find the section you need
 
-Start with the question you actually have.
+If you are new to LLMs, read the
+[Universal Core Foundations route](universal-core-foundations-EN.md) first. It
+teaches the model boundary and the check-before-trust habit before any product
+setup. If you already know that foundation, use the table below to jump to the
+surface you need. You do not need to install every client.
+
+| If you want to... | Start here |
+| --- | --- |
+| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) |
+| Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
+| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
+| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
+| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
+| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
+
+The rest of this page follows that order: choose a surface, install it, make a
+small first attempt, then record what actually happened.
+
+<span id="platform-and-client-map"></span>
+
+## Platform and client map
+
+### Choose by task
 
 | If you want to... | Start with... | Do not assume... |
 | --- | --- | --- |
@@ -29,10 +50,11 @@ Start with the question you actually have.
 | Keep a long-running task on a hosted machine | A documented cloud-agent surface | Hosted files, sessions, identity, and approval rules are the same as your laptop's |
 | Use a model from your own software | The vendor API documentation | An API is the same product as a consumer app or coding agent |
 
-If two products share a name, pause before treating them as one thing. Product
-marketing often groups them together; safe operation requires separating them.
+When two products share a name, pause before treating them as one thing. A
+shared brand does not imply a shared filesystem, shell, account, or permission
+model.
 
-## The four layers to keep separate
+### Keep these four layers separate
 
 1. **Model:** the system that generates an answer or proposes an action.
 2. **Product:** the vendor experience that provides the model, account, and
@@ -42,11 +64,11 @@ marketing often groups them together; safe operation requires separating them.
 4. **Runtime:** where work occurs: your device, a container, a hosted machine,
    or a vendor service.
 
-The same product can have several clients and more than one runtime. Installing
-a desktop application does not prove that its web version, CLI, and cloud
-agent share the same tools or permissions.
+One product can have several clients and more than one runtime. Installing a
+desktop application does not prove that its web version, CLI, and cloud agent
+share the same tools or permissions.
 
-## The one-page platform and client map
+### Products and their documented surfaces
 
 | Product or family | Documented client choices in this guide | Useful when | Boundary to keep visible |
 | --- | --- | --- | --- |
@@ -57,11 +79,11 @@ agent share the same tools or permissions.
 | DeepSeek | chat/API surfaces; DeepSeek Harness Web and profile-based runtime | You need a documented DeepSeek developer tool | Harness is developer-preview software, not a general safety guarantee |
 | Grok | Grok web/mobile; Grok Bot desktop/mobile; Grok Build terminal | You need a Grok conversation, hosted teammate, or terminal coding agent | These are related names, not interchangeable products |
 
-This table is orientation, not equivalence. It deliberately leaves out price,
-model choice, quotas, and account eligibility because those details can change
-without changing the stable advice on this page.
+Use this table to orient yourself, not to compare the products as if they were
+equivalent. It leaves out price, model choice, quotas, and account eligibility;
+those details can change without changing the safer way to begin.
 
-## A practical client matrix
+## Client matrix: what each surface is for
 
 | Client | How you start | Best first job | Runtime to record |
 | --- | --- | --- | --- |
@@ -73,15 +95,14 @@ without changing the stable advice on this page.
 | Grok Bot | Install the official desktop or companion mobile client and authenticate | Ask for a read-only summary or draft | Persistent hosted computer; do not call it local |
 | DeepSeek Harness Web | Run the documented `dsh web` entry, choose a disposable workspace, then configure a model | Inspect a fixture with an explicit stop condition | Local Web server and the configured model service |
 
-The matrix answers “where do I begin?” It does not say that the products are
-interchangeable. For every row, keep four records: **installed**,
-**authenticated**, **task run**, and **result accepted**. A green-looking answer
-is not a substitute for the fourth record.
+Use the matrix to pick a starting point. The products are not interchangeable.
+For every attempt, keep four separate records: **installed**,
+**authenticated**, **task run**, and **result accepted**. A plausible answer is
+not evidence that you accepted the result.
 
 ## Before you install anything
 
-Use this five-minute preflight before running an installer or opening a real
-repository:
+Before you run an installer or open a real repository, do this short preflight:
 
 1. Pick a **disposable folder** with no credentials, production data, or
    important uncommitted work.
@@ -95,7 +116,9 @@ repository:
 5. Record the client, version if visible, operating system, date, and result.
    "Installed" and "completed a safe task" are different pieces of evidence.
 
-## Names people routinely mix up
+<span id="names-that-are-easy-to-confuse"></span>
+
+## Names that are easy to confuse
 
 ### Grok, Grok Bot, Grok Build, `@grok`, and the xAI API
 
@@ -169,7 +192,9 @@ credentials, and approvals live. A hosted computer may be useful, but it is not
 your local machine and should not be treated as an isolated security boundary
 unless the product documentation explicitly establishes one.
 
-## Installation and first-use paths
+<span id="install-and-make-a-first-safe-attempt"></span>
+
+## Install and make a first safe attempt
 
 The commands in this section are official installation entries captured on
 2026-09-03 or 2026-09-04, as noted in the linked receipts. They are not
@@ -638,7 +663,9 @@ integration cannot show what it selected or changed, stop and narrow the task.
 4. If the result is useful, allow one small change. Review the diff, run the
    relevant test or checker, and record whether you accepted or rejected it.
 
-## Evidence states: four different claims
+<span id="evidence-states"></span>
+
+## Four evidence states
 
 | Claim | Minimum evidence | What it does not prove |
 | --- | --- | --- |
