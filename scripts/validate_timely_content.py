@@ -29,6 +29,9 @@ FACT_STATUSES = {
     "candidate",
 }
 
+# Active timely-source-first records are admitted as candidates only. A future
+# promotion to ``verified`` needs its own evidence contract; ``removed`` is a
+# removal action that takes the record out of the active Reader matrix.
 CONTENT_STATUSES = {"candidate"}
 SOURCE_HEADER = "source url and owner"
 PRIVATE_SOURCE_MARKERS = ("user-provided", "private")
@@ -417,8 +420,11 @@ def validate_note(
     content_status = metadata_value(text, "Content status")
     if content_status is None:
         errors.append(f"{label}: missing Content status")
-    elif content_status not in {"candidate", "verified", "removed"}:
-        errors.append(f"{label}: unsupported Content status {content_status!r}")
+    elif content_status not in CONTENT_STATUSES:
+        errors.append(
+            f"{label}: timely-source-first notes must remain candidate; "
+            f"unsupported active Content status {content_status!r}"
+        )
     elif isinstance(record.get("content_status"), str) and content_status != record["content_status"]:
         errors.append(f"{label}: Content status disagrees with locale matrix")
 

@@ -53,8 +53,12 @@ and new time-sensitive briefs cannot silently share the same review contract:
 an English source to be projected deliberately while other locale files remain
 explicitly `not-started`. It is not an evidence waiver, a review shortcut, or
 an admission profile. A record must declare its profile separately, and every
-new timely brief must remain `candidate` until the declared evidence gate is
-met.
+new timely brief is admitted as `candidate` only. This profile has no automatic
+promotion path: `verified` requires a separate evidence contract and review.
+`removed` is a removal action, not an active Reader-matrix state; remove the
+matrix record and regenerate projections when a brief is withdrawn. The
+claim-level `fact_status` vocabulary remains separate from the artifact-level
+content status.
 
 Official documentation or a first-party announcement is the default source for
 product capability. A public user story, friend report, or community post can

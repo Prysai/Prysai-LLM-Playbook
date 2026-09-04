@@ -315,6 +315,18 @@ def main() -> int:
             any("remain candidate" in error for error in run_fixture(note, content_status=status)),
             f"timely field note with {status} status was accepted",
         )
+        status_note = note.replace(
+            "> **Content status:** `candidate`",
+            f"> **Content status:** `{status}`",
+            1,
+        )
+        require(
+            any("remain candidate" in error for error in run_fixture(
+                status_note,
+                content_status=status,
+            )),
+            f"timely field note body with {status} status was accepted",
+        )
 
     legacy_note = "# Historical research record\n\nPre-policy research record.\n"
     require(
