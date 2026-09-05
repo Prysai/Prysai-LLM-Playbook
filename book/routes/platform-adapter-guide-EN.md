@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-cards -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-polish -->
 
 # LLM platforms and clients: choose, install, and start safely
 
@@ -24,6 +24,26 @@ receipts record what the official documentation said on 2026-09-03 or
 2026-09-04; they do not prove that an installer, account, or task will work for
 you.
 
+## How to read a changing product story
+
+This page deliberately keeps three kinds of information apart:
+
+- **Method:** durable habits such as defining the result, limiting authority,
+  and checking the output;
+- **Product fact:** a vendor's current name, client, command, requirement, or
+  feature, tied to an official source and an access date; and
+- **Run evidence:** what happened on one named machine, account, workspace, or
+  task.
+
+A launch announcement can tell you what a vendor says it released. A friend's
+  account can show why readers want a practical guide. Neither one proves that
+  a feature is available to every account or that a workflow is reliable. For
+  current releases and user reports, use the dated
+  [timely-content policy](../../docs/governance/timely-content-policy.md) and
+  the related [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md).
+  That note is an original, source-bounded reference, not a product review or a
+  learner result.
+
 ## Find the section you need
 
 If you are new to LLMs, read the
@@ -38,6 +58,7 @@ surface you need. You do not need to install every client.
 | Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
 | Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
 | Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
+| Choose a web, desktop, IDE, terminal, or hosted route | [Installation routes at a glance](#installation-routes-at-a-glance) |
 | Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
 | Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
 
@@ -197,6 +218,29 @@ Use this table to orient yourself, not to compare products as if they were
 equivalent. API surfaces are deliberately kept separate from consumer chat and
 coding-agent clients. Prices, model choices, quotas, and account eligibility
 change more often than the basic client boundaries do.
+
+<span id="installation-routes-at-a-glance"></span>
+
+## Installation routes at a glance
+
+Do not install everything in this table. Start with the smallest client that
+can complete the next task.
+
+| Route | Use it for | Installation or access | First check |
+| --- | --- | --- | --- |
+| Web chat | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
+| Mobile app | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
+| Desktop app | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
+| IDE integration | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
+| Terminal agent | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
+| Hosted or cloud agent | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
+| DeepSeek Harness Web | A controlled local Web UI around an agent harness | Run the documented `@deepseek-ai/dsh` entry through `npx` | Confirm the loopback address, selected workspace, model configuration, and safety boundary |
+
+The route determines where context and side effects live. A mobile app may be
+able to review a task without exposing a local folder. A terminal agent may see
+the current directory but not the files in a hosted session. A desktop app may
+offer both local and remote work, depending on the product. Record the runtime
+instead of inferring it from the brand name.
 
 ### A one-minute choice
 
@@ -376,6 +420,11 @@ The commands in this section are official installation entries captured on
 commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
+
+Each product section answers four separate questions: where to get the client,
+where the work runs, what a safe first task looks like, and what the setup does
+not prove. If you only need a web chat, skip the terminal sections. If you need
+a terminal workflow, do not treat a desktop login as terminal authentication.
 
 ### ChatGPT: web, mobile, and desktop
 
@@ -706,6 +755,24 @@ removes all network or plugin risk. Read the [official README](https://github.co
 The source does not establish one complete Windows/macOS support promise for
 every profile and configuration. Treat your first controlled launch as an
 observation, not as platform certification. See the [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md).
+
+### If installation stops halfway
+
+Do not repair a vague failure by granting the client more access. Classify the
+failure first:
+
+| Symptom | Check next | Safe interpretation |
+| --- | --- | --- |
+| The command is not found after installation | Start a new shell, inspect `PATH`, and run the product's documented version command | The shell may not have reloaded the installer change; authentication has not been tested |
+| The download does not match the machine | Recheck Windows x64/Arm64 or macOS Intel/Apple silicon, then return to the official download page | A wrong architecture is an installation mismatch, not evidence that the product is unavailable |
+| Browser sign-in succeeds but the client cannot work | Check the client's own account, provider, workspace, and permission state | Browser identity and client authorization are separate observations |
+| A local folder is missing or the hosted workspace is empty | Record the exact runtime and path before adding files or reconnecting a repository | The client may be looking at a different machine or checkout |
+| The first task asks to send, publish, delete, pay, or change permissions | Stop and request explicit approval for that action | Installation and authentication do not authorize an external side effect |
+| DeepSeek Harness starts but the session is unavailable | Check the loopback address, selected workspace, model configuration, and official profile documentation | A Web server launch is not model access, sandbox proof, or task success |
+
+Keep the original error, client, version, operating system, working directory,
+and date in the setup receipt. Do not paste credentials or private file
+contents into an issue, source record, or troubleshooting example.
 
 <span id="chatgpt-first-task"></span>
 
