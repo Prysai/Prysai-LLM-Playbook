@@ -250,6 +250,13 @@ interactive TUI, headless scripting, and ACP integration. The `@grok` bot on X
 and the **xAI API** are further, separate surfaces. Choose the product first;
 do not install a `grok` command and assume it is Grok Bot.
 
+For a dated, source-bounded discussion of moving from one-off chat to an
+ongoing Grok Bot workflow, read [Grok Bot: from AI chat to an auditable ongoing
+workflow](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md).
+That field note treats a supplied personal account as a demand signal only; it
+does not prove account access, reliability, complete auditability, or learning
+outcomes.
+
 Source: [Grok Bot source receipt](../../docs/research/encyclopedia-grok-bot-sources-2026-09-03.md).
 
 ### Codex, Claude Code, Google Cloud Code, and "Cloud Code"
