@@ -1,21 +1,28 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-cloud-code -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-cards -->
 
 # LLM platforms and clients: choose, install, and start safely
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex, and Claude Code may all appear
-to start with a chat box. The important question comes next: are you using a
-web chat, a mobile app, a desktop client, an editor, a terminal agent, or a
-hosted computer? Those surfaces can differ in their files, permissions,
-account rules, and failure modes.
+Most AI products look similar at first: type a request and receive a response.
+That resemblance is where many setup mistakes begin. The same product family
+may offer a browser chat, a phone app, a desktop client, an IDE integration, a
+terminal agent, and a hosted computer. Those surfaces do not automatically
+share files, credentials, permissions, or history.
 
-This page is a reference, not a product ranking. Use it to choose one starting
-surface, install only what you need, and carry over the method from the
-[Universal Core Foundations route](universal-core-foundations-EN.md). Commands,
-plans, availability, and client support change. The linked source receipts
-record what the official documentation said on 2026-09-03 or 2026-09-04; they do not prove
-that an installer, account, or task will work for you.
+Use this page as a field guide. It helps you identify the product in front of
+you, choose the smallest surface that can do the job, follow the vendor's
+current installation path, and record what actually worked. It is not a product
+ranking or a promise that every account, operating system, region, or feature is
+available to every reader.
+
+The route keeps the transferable method from the
+[Universal Core Foundations route](universal-core-foundations-EN.md) in view:
+define the task, limit the authority, inspect the result, and keep the evidence.
+Commands, plans, availability, and client support change. The linked source
+receipts record what the official documentation said on 2026-09-03 or
+2026-09-04; they do not prove that an installer, account, or task will work for
+you.
 
 ## Find the section you need
 
@@ -68,35 +75,142 @@ One product can have several clients and more than one runtime. Installing a
 desktop application does not prove that its web version, CLI, and cloud agent
 share the same tools or permissions.
 
-### Products and their documented surfaces
+### The products in this guide
 
-| Product or family | Documented client choices in this guide | Useful when | Boundary to keep visible |
+| Product or family | What this guide treats it as | A sensible first use | Keep separate from |
 | --- | --- | --- | --- |
-| ChatGPT | web, mobile, desktop | You need a general-purpose conversation surface | A chat session is not automatically a local coding environment |
-| Codex | CLI, IDE, desktop app, Codex Web/Cloud | You need a coding workflow with project context | Local, desktop, and cloud work are separate surfaces |
-| Claude Code | CLI, IDE, desktop app, browser/cloud surfaces | You want an Anthropic coding-agent workflow | Desktop and CLI are not feature-equivalent |
-| Google Cloud Code | VS Code, IntelliJ/JetBrains, Cloud Shell | You build or deploy cloud-native applications from an IDE | It is a Google Cloud IDE extension family, not the same as Codex or Claude Code |
-| Gemini | web, mobile, CLI, named IDE integrations | You already work in the Google ecosystem | Extensions can create a different data and action scope |
-| DeepSeek | DeepSeek Harness Web and profiles; DeepSeek API is a separate adapter | You need a documented DeepSeek developer tool or API surface | Harness is developer-preview software, not a general safety guarantee |
-| Grok | Grok web/mobile; Grok Bot desktop/mobile; Grok Build terminal | You need a Grok conversation, hosted teammate, or terminal coding agent | These are related names, not interchangeable products |
+| ChatGPT | A general-purpose web, mobile, and desktop conversation/work surface | Rewrite or compare supplied text without enabling extra tools | A chat session is not automatically a local coding environment |
+| Codex | A family of terminal, IDE, desktop, and cloud/web coding surfaces | Explain one file, then inspect a proposed diff | Local, desktop, and cloud work are separate surfaces |
+| Claude Code | Anthropic's coding-agent product across terminal, IDE, desktop, and browser/cloud surfaces | Explain a disposable project before requesting a small change | Desktop and CLI are not feature-equivalent |
+| Google Cloud Code | Google's IDE extension family for cloud-native development | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
+| Gemini | A web/mobile chat family with a separate Gemini CLI and IDE integrations | Start with text-only chat; use the CLI only when you need a terminal surface | Web/mobile, CLI, and IDE context are different surfaces |
+| DeepSeek | DeepSeek Harness, a developer-preview runtime; DeepSeek API is a separate adapter | Launch `dsh web` against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
+| Grok | Grok chat, Grok Bot's hosted teammate, and Grok Build's terminal agent | Choose the exact surface before you authenticate or share context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+
+### Platform cards: the short version
+
+#### ChatGPT: start with the conversation, then decide whether you need more
+
+ChatGPT is the general-purpose conversation and work surface in this guide. It
+is a sensible first stop for a question, rewrite, comparison, or lesson that
+uses material you can safely provide in the conversation. The web, mobile, and
+desktop experiences are client choices, not proof that the same files, tools,
+or permissions are available in all three.
+
+The desktop path deserves extra care: selecting a project or folder changes the
+context you are offering to the application. Start with supplied text, then add
+one deliberately chosen local file only when the task needs it. ChatGPT is not
+another name for Codex, and a successful chat response is not a local coding
+run.
+
+#### Codex: a coding workflow with several surfaces
+
+Codex is the coding-oriented family in this guide. Its documented surfaces
+include a terminal CLI, IDE integrations, a desktop experience, and cloud/web
+work. The useful distinction is not the brand name but the runtime: a local
+terminal task, a desktop project task, and a hosted task may have different
+files, shells, approvals, and network access.
+
+Use Codex when the job needs project context, a proposed change, a focused
+check, or a repeatable engineering workflow. Begin with one disposable project
+and one inspectable result. Keep the cloud boundary explicit; a hosted Codex
+task is not evidence that the same local checkout or shell is available.
+
+#### Claude Code: Anthropic's coding agent
+
+Claude Code is Anthropic's named coding-agent product. The official surfaces
+covered here are the terminal, IDE integrations, desktop app, and browser/cloud
+entry points. The terminal is the natural choice for scripting and automation;
+the desktop app is an interactive Code-tab experience with its own feature
+boundary.
+
+On Windows, check the documented shell path before assuming Bash behavior. A
+native installation can use PowerShell, while Git for Windows matters when the
+agent needs its Bash tool. Treat `CLAUDE.md`, project settings, hooks, and
+skills as visible project context that still needs review.
+
+#### Google Cloud Code: an IDE extension family for Google Cloud
+
+Google Cloud Code belongs to a different category. It is an IDE extension
+family for cloud-native development, with documented paths for VS Code,
+IntelliJ/JetBrains, and Cloud Shell. It is useful when the project is tied to
+Google Cloud services such as GKE or Cloud Run and you need that context close
+to the editor.
+
+Do not use “Cloud Code” as shorthand for Claude Code or Codex Cloud/Web. Cloud
+Code's installation path depends on the IDE or hosted shell you choose. Check
+the active Google Cloud project and credentials before accepting any build,
+deploy, secret, or resource action.
+
+#### Gemini: consumer chat first, terminal agent second
+
+Gemini is a family of surfaces rather than one universal runtime. The web and
+mobile apps are consumer chat clients. Gemini CLI is a separate terminal agent,
+and the documented IDE integrations add editor context such as an open file,
+selection, or diff.
+
+For a first session, use the web or mobile chat with supplied text and no
+extension enabled. Choose Gemini CLI when you need a shell-based workflow, and
+record its authentication path separately. A result from the web app does not
+prove that the CLI or an IDE integration sees the same context.
+
+#### DeepSeek Harness: a developer-preview runtime
+
+DeepSeek Harness is a developer-preview agent harness, not the DeepSeek chat
+product and not the DeepSeek API. Its documented Web entry is launched with
+`npx @deepseek-ai/dsh web`; after the local Web UI opens, you select a workspace
+and configure an authorized model before making a request.
+
+The official safety statement says the project has not received a security
+audit. Keep the first run in a disposable workspace with no secrets or
+irreplaceable files. The launch command proves only that you attempted to start
+the local Web surface; it does not prove model access, sandbox isolation, or a
+safe task result.
+
+#### Grok: three names, three boundaries
+
+**Grok** is the consumer assistant surface. **Grok Bot** is the hosted-teammate
+surface described in the xAI documentation: you operate it from a desktop or
+companion mobile client, while its work takes place on a persistent cloud
+computer. **Grok Build** is the separately documented terminal coding agent.
+
+That distinction matters in practice. A terminal visible inside Grok Bot's
+hosted computer is not the same thing as a local `grok` command, and installing
+Grok Build does not give you control of the Bot's hosted computer. Pick one
+surface, record where the files live, and keep sending, publishing, purchasing,
+deleting, and settings changes behind explicit approval.
 
 Use this table to orient yourself, not to compare products as if they were
 equivalent. API surfaces are deliberately kept separate from consumer chat and
 coding-agent clients. Prices, model choices, quotas, and account eligibility
 change more often than the basic client boundaries do.
 
-## Client matrix: what each surface is for
+### A one-minute choice
 
-| Client | How you start | Best first job | Runtime to record |
+- If the task is a question, rewrite, comparison, or lesson using supplied text,
+  start with a web or mobile chat.
+- If the task needs local files, a proposed diff, or project navigation, use a
+  desktop app, IDE integration, or terminal agent in a disposable workspace.
+- If the task needs repeatable scripts or command-line review, choose a terminal
+  agent and keep its permission mode visible.
+- If the task needs a hosted machine that can continue after the client closes,
+  choose a documented cloud or hosted surface and record where its files and
+  credentials live.
+- If the task is specifically about Google Cloud resources from an IDE, choose
+  Google Cloud Code; do not install a similarly named coding agent by mistake.
+
+### Client matrix: what each surface is for
+
+| Surface | Choose it when... | Best first job | Where the work happens |
 | --- | --- | --- | --- |
-| ChatGPT web or mobile | Open the official entry and sign in when the task needs saved history or extra features | Rewrite or compare supplied text | Vendor service; note account and date |
-| ChatGPT desktop | Install the official app, sign in, then choose a chat, project, or folder | Work with one small local file after checking the selected folder | Your computer plus the ChatGPT service |
-| Gemini web or mobile | Open `gemini.google.com` or the official mobile app | Ask a text-only question with no extension enabled | Vendor service; note account and date |
-| Codex or Claude Code IDE | Install the documented editor integration and open one workspace | Explain one file, then review a proposed diff | Local editor plus the agent service |
-| Google Cloud Code | Install the extension for VS Code, IntelliJ/JetBrains, or use Cloud Shell | Open a sample or disposable cloud-native project and inspect its context | IDE and Google Cloud context; not a general-purpose coding-agent runtime |
-| Codex, Claude Code, Gemini CLI, or Grok Build | Install the official terminal entry, open a disposable folder, and run the command | Inspect a fixture and propose one small change | Local shell, workspace, and agent service |
-| Grok Bot | Install the official desktop or companion mobile client and authenticate | Ask for a read-only summary or draft | Persistent hosted computer; do not call it local |
-| DeepSeek Harness Web | Run the documented `dsh web` entry, choose a disposable workspace, then configure a model | Inspect a fixture with an explicit stop condition | Local Web server and the configured model service |
+| ChatGPT web or mobile | You need a low-setup conversation or lesson | Rewrite or compare supplied text | The vendor service; record account and date |
+| ChatGPT desktop | You need a desktop workspace or a carefully selected local folder | Explain one small local file | Your computer plus the ChatGPT service |
+| Gemini web or mobile | You want a text-first task in the Google ecosystem | Ask a text-only question with no extension enabled | The vendor service; record account and date |
+| Codex or Claude Code IDE | You need code selection, inline review, and project navigation | Explain one file, then review a proposed diff | The local editor plus the agent service |
+| Google Cloud Code | You are working on a Google Cloud-native project from an IDE | Open a sample and inspect its project and credential context | The IDE and Google Cloud context |
+| Codex, Claude Code, Gemini CLI, or Grok Build | You need a repeatable shell workflow | Inspect a fixture and propose one small change | The local shell, workspace, and agent service |
+| Grok Bot | You want the documented hosted-computer teammate experience | Ask for a read-only summary or draft | A persistent hosted computer; do not call it local |
+| DeepSeek Harness Web | You want to inspect a fixture with a controlled local Web UI | Launch the Web UI, configure a model, and stop before side effects | A local Web server plus the configured model service |
 
 Use the matrix to pick a starting point. The products are not interchangeable.
 For every attempt, keep four separate records: **installed**,
@@ -135,6 +249,13 @@ not make Grok Bot a local CLI.
 interactive TUI, headless scripting, and ACP integration. The `@grok` bot on X
 and the **xAI API** are further, separate surfaces. Choose the product first;
 do not install a `grok` command and assume it is Grok Bot.
+
+For a dated, source-bounded discussion of moving from one-off chat to an
+ongoing Grok Bot workflow, read [Grok Bot: from AI chat to an auditable ongoing
+workflow](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md).
+That field note treats a supplied personal account as a demand signal only; it
+does not prove account access, reliability, complete auditability, or learning
+outcomes.
 
 Source: [Grok Bot source receipt](../../docs/research/encyclopedia-grok-bot-sources-2026-09-03.md).
 

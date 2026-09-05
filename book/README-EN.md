@@ -77,6 +77,7 @@ currently `draft` with `run_status: not_run`.
 - [LLM Foundation Core v1](routes/llm-foundation-core-v1-EN.md) — the proposed five-unit route: explain, initiate, identify, repair, then transfer. `candidate / not_run`; it is the default contract under construction.
 - [Core Unit 2: Context, instruction, and a first generation](routes/llm-core-first-generation-EN.md) — a universal text-only task card and first-response receipt; no Codex or tool setup required.
 - [First Safe Change](routes/first-safe-change-EN.md) — optional offline bridge from Chapter 2 to Lab 001; candidate fixture route · learner run `not_run`
+- [Choose your LLM platform](routes/platform-adapter-guide-EN.md) — an optional platform-and-client encyclopedia covering web, mobile, desktop, IDE, terminal, and hosted surfaces, with dated installation and first-use boundaries; `candidate / not_run`
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
 - [Beginner Practice Pack: turn a broad wish into one practical route for learning, research, decisions, or creation](communication-clinic-EN.md#first-practice-intake) — supplemental candidate; complete learner run `not_run`; an intake, templates, and evidence contracts exist

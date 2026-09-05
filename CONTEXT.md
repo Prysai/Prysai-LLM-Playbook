@@ -4,7 +4,7 @@
 
 ## 产品是什么
 
-**Prysai LLM Playbook — From First Task to Reliable Work** 是一个以通用 LLM 协作核心为长期架构、以 Codex Practice Track 为当前旗舰实践轨道的学习、实践与能力系统。它把知识理解、操作练习、工作流设计、能力扩展、结果评估和团队治理组织成一条可持续更新的学习路径。公开课程已覆盖六个平台的入门适配器（ChatGPT、Claude / Claude Code、Gemini、DeepSeek、Grok 与 Codex 旗舰轨道）；命名平台仍必须持有逐平台官方来源与适配器边界，名称不代表跨平台内容已经完成或行为等价。
+**Prysai LLM Playbook — From First Task to Reliable Work** 是一个以通用 LLM 协作核心为长期架构、以 Codex Practice Track 为当前旗舰实践轨道的学习、实践与能力系统。它把知识理解、操作练习、工作流设计、能力扩展、结果评估和团队治理组织成一条可持续更新的学习路径。公开课程的正式主线仍是通用核心与 Codex 旗舰轨道；仓库另有一条 `candidate / not_run` 的英文平台与客户端百科路线，按带日期的官方来源整理 ChatGPT、Codex、Claude Code、Google Cloud Code、Gemini、DeepSeek Harness、Grok Bot 与 Grok Build 等产品和运行面。这条路线是有边界的参考入口，不等于这些平台已经通过正式适配器准入，也不证明安装成功、账户可用性、跨平台等价或学习效果。
 
 本项目不是 Skill 目录，也不是单纯的安装手册。Skill 是其中一个能力层；完整产品还必须让学习者理解原理、观察行为、完成实验、审查证据，并把个人方法迁移到真实工作和团队协作中。
 

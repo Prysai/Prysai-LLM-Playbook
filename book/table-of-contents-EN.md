@@ -45,6 +45,7 @@ outcomes, or completion time.
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
 - [Universal LLM first task — optional transfer route after the foundation core](routes/universal-core-foundations-EN.md)
 - [First Safe Change — optional offline fixture before Lab 001](routes/first-safe-change-EN.md)
+- [Choose your LLM platform — optional platform and client encyclopedia after the foundation](routes/platform-adapter-guide-EN.md)
 
 ## Part I: From understanding GPT to the first safe use
 
