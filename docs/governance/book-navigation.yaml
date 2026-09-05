@@ -55,7 +55,7 @@
     },
     {
       "id": "platform-adapter-guide",
-      "title_en": "Choose your LLM platform",
+      "title_en": "LLM platform and client encyclopedia",
       "english_path": "book/routes/platform-adapter-guide-EN.md",
       "status": "candidate",
       "run_status": "not_run",

@@ -1,32 +1,36 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-polish -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-v2 -->
 
-# LLM platforms and clients: choose, install, and start safely
+# LLM platforms and clients: an installation and first-use encyclopedia
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-Most AI products look similar at first: type a request and receive a response.
-That resemblance is where many setup mistakes begin. The same product family
-may offer a browser chat, a phone app, a desktop client, an IDE integration, a
-terminal agent, and a hosted computer. Those surfaces do not automatically
-share files, credentials, permissions, or history.
+A chat window can hide an important detail: where the work happens and what the
+client can touch. One product family may include a browser chat, a phone app, a
+desktop application, an IDE integration, a terminal agent, and a hosted
+computer. Those surfaces do not automatically share files, credentials,
+permissions, or history.
 
-Use this page as a field guide. It helps you identify the product in front of
-you, choose the smallest surface that can do the job, follow the vendor's
-current installation path, and record what actually worked. It is not a product
-ranking or a promise that every account, operating system, region, or feature is
-available to every reader.
+Use this page as a practical reference. It helps you identify the product and
+client in front of you, choose the smallest surface that can do the job, follow
+the vendor's current setup path, and record what actually happened. It is not a
+product ranking or a promise that every account, operating system, region, or
+feature is available to every reader.
 
 The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
 receipts record what the official documentation said on 2026-09-03 or
-2026-09-04; they do not prove that an installer, account, or task will work for
+2026-09-04. They do not prove that an installer, account, or task will work for
 you.
 
-## How to read a changing product story
+> Choose the surface before you choose the command. A familiar product name
+> does not tell you whether the files are local, the work is hosted, or the
+> client can act outside the conversation.
 
-This page deliberately keeps three kinds of information apart:
+## Read the label before you trust the claim
+
+Every entry on this page belongs to one of three categories:
 
 - **Method:** durable habits such as defining the result, limiting authority,
   and checking the output;
@@ -35,14 +39,28 @@ This page deliberately keeps three kinds of information apart:
 - **Run evidence:** what happened on one named machine, account, workspace, or
   task.
 
-A launch announcement can tell you what a vendor says it released. A friend's
-  account can show why readers want a practical guide. Neither one proves that
-  a feature is available to every account or that a workflow is reliable. For
-  current releases and user reports, use the dated
-  [timely-content policy](../../docs/governance/timely-content-policy.md) and
-  the related [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md).
-  That note is an original, source-bounded reference, not a product review or a
-  learner result.
+A launch announcement tells you what a vendor says it released. A user's story
+can tell you why a topic deserves attention. Neither one proves that a feature
+is available to every account or that a workflow is reliable. For fast-moving
+products and public reports, use the dated
+[timely-content policy](../../docs/governance/timely-content-policy.md) and keep
+the source, access date, scope, and unresolved questions with the claim.
+
+## Current topics need a date of their own
+
+The encyclopedia gives readers one place to find the right product surface. A
+dated field note explains what has changed recently. Keeping those jobs
+separate makes it possible to update a current topic without rewriting the
+whole learning path.
+
+| Topic | Read next | What it can help you decide | What it cannot prove |
+| --- | --- | --- | --- |
+| Grok Bot | [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | Whether a low-risk, ongoing hosted workflow is worth checking for your account | Account access, reliability, complete auditability, or a general user result |
+| DeepSeek Harness | [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md), then the setup section below | Which official launch, profile, workspace, and safety boundaries to inspect | A successful local install, full Windows/macOS support, or a secure production runtime |
+| A new release or public report | [Timely-content policy](../../docs/governance/timely-content-policy.md) | How to record why the topic matters now and what a reader can safely check | A permanent product fact, a representative user study, or a measured outcome |
+
+The Grok Bot note uses a supplied user story as a demand signal only. It is an
+original, source-bounded reference, not a product review or a learner result.
 
 ## Find the section you need
 
