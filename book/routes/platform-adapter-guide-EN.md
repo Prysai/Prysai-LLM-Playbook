@@ -1,20 +1,20 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v3 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v4 -->
 
 # LLM platforms and clients: an installation and first-use encyclopedia
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-A chat window can hide an important detail: where the work happens and what the
-client can touch. One product family may include a browser chat, a phone app, a
-desktop application, an IDE integration, a terminal agent, and a hosted
-computer. Those surfaces do not automatically share files, credentials,
-permissions, or history.
+Most people do not begin with a platform. They begin with a job: understand a
+page, rewrite a note, inspect a file, or keep a longer task moving. The same
+product name may lead to a browser chat, a phone app, a desktop application,
+an IDE integration, a terminal agent, or a hosted computer. Those surfaces do
+not automatically share files, credentials, permissions, or history.
 
-Use this page as a practical reference. It helps you identify the product and
+Use this page as a practical reference. It helps you name the product and
 client in front of you, choose the smallest surface that can do the job, follow
-the vendor's current setup path, and record what actually happened. It is not a
-product ranking or a promise that every account, operating system, region, or
-feature is available to every reader.
+the vendor's current setup path, and record what actually happened. It is not
+a product ranking, and it does not promise that every account, operating
+system, region, or feature is available to every reader.
 
 The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
@@ -28,7 +28,27 @@ you.
 > does not tell you whether the files are local, the work is hosted, or the
 > client can act outside the conversation.
 
-## Read the label before you trust the claim
+## The shortest useful route
+
+If you only want to get started, use this sequence:
+
+1. **Name the job.** Decide whether you need a conversation, a local project,
+   an IDE, a terminal, or a hosted computer.
+2. **Choose the smallest surface.** Start with text-only chat for a text-only
+   job. Add files, extensions, tools, or cloud access only when the job needs
+   them.
+3. **Use the vendor's current entry point.** Follow the official download,
+   installation, or sign-in page for the exact product and operating system.
+4. **Make one harmless first attempt.** Ask for an explanation, summary, or
+   draft before allowing edits or external actions.
+5. **Keep the receipt.** Record the client, runtime, visible version, date,
+   permission boundary, and result. Installation, sign-in, task completion,
+   and acceptance are separate events.
+
+The rest of this page fills in each step. You can skip every product you do not
+need.
+
+## Know what kind of statement you are reading
 
 Every entry on this page belongs to one of three categories:
 
@@ -41,12 +61,12 @@ Every entry on this page belongs to one of three categories:
 
 A launch announcement tells you what a vendor says it released. A user's story
 can tell you why a topic deserves attention. Neither one proves that a feature
-is available to every account or that a workflow is reliable. For fast-moving
-products and public reports, use the dated
+is available to every account or that a workflow is reliable. For a fast-moving
+product or public report, use the dated
 [timely-content policy](../../docs/governance/timely-content-policy.md) and keep
 the source, access date, scope, and unresolved questions with the claim.
 
-## Current topics need a date of their own
+## Put current topics in dated notes
 
 The encyclopedia gives readers one place to find the right product surface. A
 dated field note explains what has changed recently. Keeping those jobs
@@ -62,7 +82,7 @@ whole learning path.
 The Grok Bot note uses a supplied user story as a demand signal only. It is an
 original, source-bounded reference, not a product review or a learner result.
 
-## Find the section you need
+## Find your route
 
 If you are new to LLMs, read the
 [Universal Core Foundations route](universal-core-foundations-EN.md) first. It
@@ -80,8 +100,8 @@ surface you need. You do not need to install every client.
 | Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
 | Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
 
-The rest of this page follows that order: choose a surface, install it, make a
-small first attempt, then record what actually happened.
+The rest of this page follows that order: choose a surface, install or open it,
+make a small first attempt, and record what actually happened.
 
 ## Choose your starting point
 
