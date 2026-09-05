@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v5 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v6 -->
 
 # LLM platforms and clients: an installation and first-use encyclopedia
 
@@ -21,8 +21,8 @@ The route keeps the transferable method from the
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
 receipts record what the official documentation said on 2026-09-03 or
-2026-09-04. They do not prove that an installer, account, or task will work for
-you.
+2026-09-04, or 2026-09-05. They do not prove that an installer, account, or
+task will work for you.
 
 > Choose the surface before you choose the command. A familiar product name
 > does not tell you whether the files are local, the work is hosted, or the
@@ -471,8 +471,8 @@ unless the product documentation explicitly establishes one.
 ## Install and make a first safe attempt
 
 The commands in this section are official installation entries captured on
-2026-09-03 or 2026-09-04, as noted in the linked receipts. They are not
-commands that this project ran. Read the linked source
+2026-09-03, 2026-09-04, or 2026-09-05, as noted in the linked receipts. They
+are not commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
 
@@ -794,10 +794,14 @@ and choose the documented Google sign-in flow. If you use the `npx` entry, the
 permanent `gemini` command. If your environment requires an API key or Vertex
 AI, follow the [official authentication guide](https://geminicli.com/docs/get-started/authentication)
 and keep credentials in the environment or account mechanism it documents;
-never paste a key into a prompt or commit it to the project. The current
-installation page lists Node.js 20+, Bash, Zsh, or PowerShell, and named
-operating-system baselines. These are dated product facts, not a promise about
-every machine or organization policy.
+never paste a key into a prompt or commit it to the project. The [current
+installation page](https://geminicli.com/docs/get-started/installation) lists
+Node.js 20+, Bash, Zsh, or PowerShell, and named operating-system baselines.
+It also currently carries a transition notice for unpaid-tier and Google One
+users. Treat that banner as a dated account or product notice, not as a
+universal statement about every Gemini CLI user; check the page again when you
+set up the client. These are volatile product facts, not a promise about every
+machine or organization policy.
 
 **IDE:** The official [IDE integration guide](https://geminicli.com/docs/ide-integration)
 documents a VS Code companion extension and ACP integrations used with tools
