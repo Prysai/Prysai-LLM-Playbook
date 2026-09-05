@@ -44,6 +44,19 @@ surface you need. You do not need to install every client.
 The rest of this page follows that order: choose a surface, install it, make a
 small first attempt, then record what actually happened.
 
+## Choose your starting point
+
+| You are... | Start with... | Your first useful result |
+| --- | --- | --- |
+| New to LLMs | [Universal Core Foundations route](universal-core-foundations-EN.md), then a web or mobile chat | A checked text-only answer with no tool or file access |
+| Comfortable with chat, but new to coding agents | The client map, then an IDE or terminal agent in a disposable folder | An explanation of one fixture and a proposed, reviewable diff |
+| Returning to a product after a break | The official source link, then the four evidence states below | A current client, version, and permission record instead of a memory-based assumption |
+| Working with a team or real repository | The preflight and setup receipt before opening the shared workspace | A named owner, scope, stop condition, and reviewable evidence |
+
+You do not need to install every product. Choose the smallest surface that can
+complete the next task, and only move to a larger surface when the smaller one
+cannot provide the context or control you need.
+
 <span id="platform-and-client-map"></span>
 
 ## Platform and client map
@@ -232,6 +245,33 @@ Before you run an installer or open a real repository, do this short preflight:
    changing permissions are not.
 5. Record the client, version if visible, operating system, date, and result.
    "Installed" and "completed a safe task" are different pieces of evidence.
+
+## Keep a setup receipt
+
+A setup receipt turns a vague statement such as "I installed the tool" into a
+record another person can inspect. Keep one receipt per product and client;
+do not combine a web chat, desktop app, IDE integration, terminal agent, and
+hosted runtime just because they share a brand name.
+
+```text
+Product and exact client:
+Runtime: local computer, IDE, hosted computer, or vendor service
+Operating system / architecture / shell:
+Official installation or access page:
+Version or visible build (if shown):
+Workspace: disposable folder, supplied text, or named project
+Authentication state: not attempted / authenticated / blocked
+Task state: not run / ran / result accepted
+Permission and network boundary:
+Evidence kept: response, log, diff, screenshot, or review note
+Stop condition or unresolved question:
+Date and next review:
+```
+
+Do not put passwords, API keys, one-time codes, private messages, or sensitive
+file contents in the receipt. A receipt records what you observed; it does not
+turn an installation into proof of correctness, security, reliability, or
+platform equivalence.
 
 <span id="names-that-are-easy-to-confuse"></span>
 
