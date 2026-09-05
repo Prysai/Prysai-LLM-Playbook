@@ -1,30 +1,88 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-cards -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v6 -->
 
-# LLM platforms and clients: choose, install, and start safely
+# LLM platforms and clients: an installation and first-use encyclopedia
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-Most AI products look similar at first: type a request and receive a response.
-That resemblance is where many setup mistakes begin. The same product family
-may offer a browser chat, a phone app, a desktop client, an IDE integration, a
-terminal agent, and a hosted computer. Those surfaces do not automatically
-share files, credentials, permissions, or history.
+Most people do not begin with a platform. They begin with a job: understand a
+page, rewrite a note, inspect a file, or keep a longer task moving. The same
+product name may lead to a browser chat, a phone app, a desktop application,
+an IDE integration, a terminal agent, or a hosted computer. Those surfaces do
+not automatically share files, credentials, permissions, or history.
 
-Use this page as a field guide. It helps you identify the product in front of
-you, choose the smallest surface that can do the job, follow the vendor's
-current installation path, and record what actually worked. It is not a product
-ranking or a promise that every account, operating system, region, or feature is
-available to every reader.
+Use this page as a practical reference. It helps you name the product and
+client in front of you, choose the smallest surface that can do the job, follow
+the vendor's current setup path, and record what actually happened. It is not
+a product ranking, and it does not promise that every account, operating
+system, region, or feature is available to every reader.
 
 The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
 receipts record what the official documentation said on 2026-09-03 or
-2026-09-04; they do not prove that an installer, account, or task will work for
-you.
+2026-09-04, or 2026-09-05. They do not prove that an installer, account, or
+task will work for you.
 
-## Find the section you need
+> Choose the surface before you choose the command. A familiar product name
+> does not tell you whether the files are local, the work is hosted, or the
+> client can act outside the conversation.
+
+## The shortest useful route
+
+If you only want to get started, use this sequence:
+
+1. **Name the job.** Decide whether you need a conversation, a local project,
+   an IDE, a terminal, or a hosted computer.
+2. **Choose the smallest surface.** Start with text-only chat for a text-only
+   job. Add files, extensions, tools, or cloud access only when the job needs
+   them.
+3. **Use the vendor's current entry point.** Follow the official download,
+   installation, or sign-in page for the exact product and operating system.
+4. **Make one harmless first attempt.** Ask for an explanation, summary, or
+   draft before allowing edits or external actions.
+5. **Keep the receipt.** Record the client, runtime, visible version, date,
+   permission boundary, and result. Installation, sign-in, task completion,
+   and acceptance are separate events.
+
+The rest of this page fills in each step. You can skip every product you do not
+need.
+
+## Know what kind of statement you are reading
+
+Every entry on this page belongs to one of three categories:
+
+- **Method:** durable habits such as defining the result, limiting authority,
+  and checking the output;
+- **Product fact:** a vendor's current name, client, command, requirement, or
+  feature, tied to an official source and an access date; and
+- **Run evidence:** what happened on one named machine, account, workspace, or
+  task.
+
+A launch announcement tells you what a vendor says it released. A user's story
+can tell you why a topic deserves attention. Neither one proves that a feature
+is available to every account or that a workflow is reliable. For a fast-moving
+product or public report, use the dated
+[timely-content policy](../../docs/governance/timely-content-policy.md) and keep
+the source, access date, scope, and unresolved questions with the claim.
+
+## Put current topics in dated notes
+
+The encyclopedia gives readers one place to find the right product surface. A
+dated field note explains what has changed recently. Keeping those jobs
+separate makes it possible to update a current topic without rewriting the
+whole learning path.
+
+| Topic | Read next | What it can help you decide | What it cannot prove |
+| --- | --- | --- | --- |
+| Grok Bot | [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | Whether a low-risk, ongoing hosted workflow is worth checking for your account | Account access, reliability, complete auditability, or a general user result |
+| DeepSeek Harness | [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md), then the setup section below | Which official launch, profile, workspace, and safety boundaries to inspect | A successful local install, full Windows/macOS support, or a secure production runtime |
+| A new release or public report | [Timely-content policy](../../docs/governance/timely-content-policy.md) | How to record why the topic matters now and what a reader can safely check | A permanent product fact, a representative user study, or a measured outcome |
+
+The Grok Bot note uses a supplied user story as a demand signal only. It is an
+original, source-bounded reference, not a product review or a learner result.
+
+## Find your route
 
 If you are new to LLMs, read the
 [Universal Core Foundations route](universal-core-foundations-EN.md) first. It
@@ -38,11 +96,12 @@ surface you need. You do not need to install every client.
 | Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
 | Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
 | Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
+| Choose a web, desktop, IDE, terminal, or hosted route | [Installation routes at a glance](#installation-routes-at-a-glance) |
 | Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
 | Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
 
-The rest of this page follows that order: choose a surface, install it, make a
-small first attempt, then record what actually happened.
+The rest of this page follows that order: choose a surface, install or open it,
+make a small first attempt, and record what actually happened.
 
 ## Choose your starting point
 
@@ -88,17 +147,33 @@ One product can have several clients and more than one runtime. Installing a
 desktop application does not prove that its web version, CLI, and cloud agent
 share the same tools or permissions.
 
-### The products in this guide
+### A client map you can actually use
 
-| Product or family | What this guide treats it as | A sensible first use | Keep separate from |
-| --- | --- | --- | --- |
-| ChatGPT | A general-purpose web, mobile, and desktop conversation/work surface | Rewrite or compare supplied text without enabling extra tools | A chat session is not automatically a local coding environment |
-| Codex | A family of terminal, IDE, desktop, and cloud/web coding surfaces | Explain one file, then inspect a proposed diff | Local, desktop, and cloud work are separate surfaces |
-| Claude Code | Anthropic's coding-agent product across terminal, IDE, desktop, and browser/cloud surfaces | Explain a disposable project before requesting a small change | Desktop and CLI are not feature-equivalent |
-| Google Cloud Code | Google's IDE extension family for cloud-native development | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
-| Gemini | A web/mobile chat family with a separate Gemini CLI and IDE integrations | Start with text-only chat; use the CLI only when you need a terminal surface | Web/mobile, CLI, and IDE context are different surfaces |
-| DeepSeek | DeepSeek Harness, a developer-preview runtime; DeepSeek API is a separate adapter | Launch `dsh web` against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
-| Grok | Grok chat, Grok Bot's hosted teammate, and Grok Build's terminal agent | Choose the exact surface before you authenticate or share context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+The product name is only the first label. Before you follow an installation
+guide, identify the client you will open and the runtime in which the work will
+take place. This is the distinction that makes a setup reproducible.
+
+| Product or family | Clients covered here | Where the work usually runs | A sensible first use | Keep separate from |
+| --- | --- | --- | --- | --- |
+| ChatGPT | Web, mobile, and desktop app | Vendor service; the desktop app may also use a deliberately selected local folder | Rewrite or compare supplied text without enabling extra tools | A ChatGPT conversation is not automatically a local coding session |
+| Codex | CLI, IDE integration, desktop, and Cloud/Web | Local terminal or editor, desktop-selected project, or a hosted Codex environment | Explain one file, then inspect a proposed diff | Local, desktop, and hosted work are separate surfaces |
+| Claude Code | Terminal, IDE integration, desktop, and browser/cloud | Local shell/editor or an Anthropic-hosted surface, depending on the client | Explain a disposable project before requesting a small change | The desktop and CLI contracts are not interchangeable |
+| Google Cloud Code | VS Code, IntelliJ/JetBrains, and Cloud Shell | The selected IDE or Google's hosted Cloud Shell | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
+| Gemini | Web, mobile, Gemini CLI, and IDE integrations | Vendor chat service, local terminal/editor, or the IDE's integration surface | Start with text-only chat; use the CLI only when a terminal is needed | Web/mobile, CLI, and IDE context are different surfaces |
+| DeepSeek Harness | Web UI and documented CLI/profile surfaces | A local Node process and the selected local workspace | Launch the Web UI against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
+| Grok | Grok chat, Grok Bot desktop/mobile clients, and Grok Build terminal | Vendor chat service, a persistent hosted computer, or a local terminal | Choose the exact surface before authenticating or sharing context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+
+Use the map in this order:
+
+1. Name the job: conversation, local project, cloud project, repeatable
+   terminal task, or hosted computer.
+2. Pick the smallest client that can supply the required context.
+3. Check the product's official setup page for your operating system,
+   architecture, account, and region.
+4. Record the client and runtime before you interpret the first result.
+
+If you cannot answer “which client saw which files, and where did the action
+run?”, you do not yet have a reproducible setup.
 
 ### Platform cards: the short version
 
@@ -142,10 +217,10 @@ native installation can use PowerShell, while Git for Windows matters when the
 agent needs its Bash tool. Treat `CLAUDE.md`, project settings, hooks, and
 skills as visible project context that still needs review.
 
-#### Google Cloud Code: an IDE extension family for Google Cloud
+#### Google Cloud Code: IDE extensions for Google Cloud
 
-Google Cloud Code belongs to a different category. It is an IDE extension
-family for cloud-native development, with documented paths for VS Code,
+Google Cloud Code belongs to a different category. It is a family of IDE
+extensions for cloud-native development, with documented paths for VS Code,
 IntelliJ/JetBrains, and Cloud Shell. It is useful when the project is tied to
 Google Cloud services such as GKE or Cloud Run and you need that context close
 to the editor.
@@ -198,6 +273,29 @@ equivalent. API surfaces are deliberately kept separate from consumer chat and
 coding-agent clients. Prices, model choices, quotas, and account eligibility
 change more often than the basic client boundaries do.
 
+<span id="installation-routes-at-a-glance"></span>
+
+## Installation routes at a glance
+
+Do not install everything in this table. Start with the smallest client that
+can complete the next task.
+
+| Route | Examples in this guide | Use it for | Installation or access | First check |
+| --- | --- | --- | --- | --- |
+| Web chat | ChatGPT, Gemini, Grok | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
+| Mobile app | ChatGPT, Gemini, Grok Bot companion | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
+| Desktop app | ChatGPT, Grok Bot, Claude Code | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
+| IDE integration | Codex, Claude Code, Gemini, Google Cloud Code | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
+| Terminal agent | Codex CLI, Claude Code, Gemini CLI, Grok Build | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
+| Hosted or cloud agent | Codex Cloud/Web, Claude browser/cloud, Grok Bot | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
+| DeepSeek Harness Web | `@deepseek-ai/dsh` Web entry | A controlled local Web UI around an agent harness | Run the documented entry through `npx` | Confirm the loopback address, selected workspace, model configuration, and safety boundary |
+
+The route determines where context and side effects live. A mobile app may be
+able to review a task without exposing a local folder. A terminal agent may see
+the current directory but not the files in a hosted session. A desktop app may
+offer both local and remote work, depending on the product. Record the runtime
+instead of inferring it from the brand name.
+
 ### A one-minute choice
 
 - If the task is a question, rewrite, comparison, or lesson using supplied text,
@@ -212,23 +310,24 @@ change more often than the basic client boundaries do.
 - If the task is specifically about Google Cloud resources from an IDE, choose
   Google Cloud Code; do not install a similarly named coding agent by mistake.
 
-### Client matrix: what each surface is for
+### Choose the client that matches the job
 
-| Surface | Choose it when... | Best first job | Where the work happens |
-| --- | --- | --- | --- |
-| ChatGPT web or mobile | You need a low-setup conversation or lesson | Rewrite or compare supplied text | The vendor service; record account and date |
-| ChatGPT desktop | You need a desktop workspace or a carefully selected local folder | Explain one small local file | Your computer plus the ChatGPT service |
-| Gemini web or mobile | You want a text-first task in the Google ecosystem | Ask a text-only question with no extension enabled | The vendor service; record account and date |
-| Codex or Claude Code IDE | You need code selection, inline review, and project navigation | Explain one file, then review a proposed diff | The local editor plus the agent service |
-| Google Cloud Code | You are working on a Google Cloud-native project from an IDE | Open a sample and inspect its project and credential context | The IDE and Google Cloud context |
-| Codex, Claude Code, Gemini CLI, or Grok Build | You need a repeatable shell workflow | Inspect a fixture and propose one small change | The local shell, workspace, and agent service |
-| Grok Bot | You want the documented hosted-computer teammate experience | Ask for a read-only summary or draft | A persistent hosted computer; do not call it local |
-| DeepSeek Harness Web | You want to inspect a fixture with a controlled local Web UI | Launch the Web UI, configure a model, and stop before side effects | A local Web server plus the configured model service |
+Use the table to choose a starting point. The products are not interchangeable.
+Changing clients can change the available context, the runtime, and the route by
+which an action reaches the outside world. Keep four separate records for every
+attempt: **installed**, **authenticated**, **task run**, and **result accepted**.
 
-Use the matrix to pick a starting point. The products are not interchangeable.
-For every attempt, keep four separate records: **installed**,
-**authenticated**, **task run**, and **result accepted**. A plausible answer is
-not evidence that you accepted the result.
+| Client | Start with | Check before the next step |
+| --- | --- | --- |
+| Web or mobile chat | Supply a small piece of text, ask for a bounded response, and compare it with the source | The client asks for an upload, extension, account connection, or external action |
+| Desktop app | Open a new conversation, choose a folder only when needed, and ask for a read-only explanation | Whether the selected place is local, hosted, shared, or writable |
+| IDE integration | Open one workspace and file, inspect the visible context, and request a small diff | The workspace root, selected files, tools, and permission state are unclear |
+| Terminal agent | Record the directory and status, run a read-only inspection, and review the output | The command would publish, delete, change dependencies, use a secret, or touch an unknown directory |
+| Cloud or hosted client | Record the remote repository and runtime, then start with a draft or read-only task | The remote files, credentials, network access, persistence, or approval boundary are unclear |
+
+Two clients can show the same model name and still produce different evidence.
+When a result matters, record the exact client and runtime that produced it.
+“I used the product” is too vague to reproduce.
 
 ## Before you install anything
 
@@ -372,10 +471,59 @@ unless the product documentation explicitly establishes one.
 ## Install and make a first safe attempt
 
 The commands in this section are official installation entries captured on
-2026-09-03 or 2026-09-04, as noted in the linked receipts. They are not
-commands that this project ran. Read the linked source
+2026-09-03, 2026-09-04, or 2026-09-05, as noted in the linked receipts. They
+are not commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
+
+### The install loop: download, inspect, verify, use
+
+Installation is a short process, but it has four different checkpoints:
+
+1. **Get the entry from the vendor.** Start from the official documentation or
+   download page. Search results and copied commands are leads, not authority.
+2. **Inspect what will run.** A `curl | sh`, `curl | bash`, or `irm | iex`
+   command downloads code and executes it in the same step. That may be the
+   vendor's documented quick path, but it leaves less for you to inspect first.
+   If you want a reviewable copy, download the script to a temporary file,
+   read it, and check any published checksum or signature before using the
+   vendor's documented invocation.
+3. **Verify the client.** Confirm that the intended app opens or that the
+   intended command resolves. Record the visible version when one is shown.
+4. **Run a deliberately small task.** Use supplied text or a disposable
+   workspace. Only after that result is understandable should you consider a
+   real repository, uploads, extensions, tools, or external actions.
+
+The inspect-first pattern below downloads a file but does not execute it. The
+placeholder URL is intentional: replace it only with the official URL from the
+product section you are following, and keep the vendor's documented arguments
+for the final invocation.
+
+```sh
+# macOS/Linux: download for inspection; do not execute this yet
+curl -fL --proto '=https' --tlsv1.2 -o vendor-installer.sh '<official-installer-url>'
+sed -n '1,180p' vendor-installer.sh
+shasum -a 256 vendor-installer.sh
+```
+
+```powershell
+# Windows PowerShell: download for inspection; do not execute this yet
+$installerPath = Join-Path $env:TEMP 'vendor-installer.ps1'
+Invoke-WebRequest -Uri '<official-installer-url>' -OutFile $installerPath
+Get-Content -Path $installerPath -TotalCount 180
+Get-FileHash -Path $installerPath -Algorithm SHA256
+```
+
+A checksum is useful only when it comes from a source you trust and matches
+the exact file you downloaded. If the vendor does not publish one, do not
+invent a “verified” checksum; record that the script was inspected without an
+independent integrity check. This project did not execute any of the vendor
+installers listed below.
+
+Each product section answers four separate questions: where to get the client,
+where the work runs, what a safe first task looks like, and what the setup does
+not prove. If you only need a web chat, skip the terminal sections. If you need
+a terminal workflow, do not treat a desktop login as terminal authentication.
 
 ### ChatGPT: web, mobile, and desktop
 
@@ -441,6 +589,11 @@ headless use, and ACP integration.
 
 Install a prebuilt binary from the official source:
 
+The two commands below are the vendor's quick-install entries. They download
+and execute a remote installer, so read the current script first if you need
+an inspectable installation record. Do not add a deployment key to the command
+line or to shell history.
+
 ```sh
 # macOS, Linux, or Git Bash
 curl -fsSL https://x.ai/cli/install.sh | bash
@@ -477,6 +630,11 @@ and [headless and scripting reference](https://docs.x.ai/build/cli/headless-scri
 
 Use **Codex CLI** when you want a terminal workflow in a local project. The
 officially documented installation entries include:
+
+These are official quick paths, not commands run by this project. If your
+organisation requires an inspect-before-execute process, use the download-only
+pattern above and then follow the current Codex documentation's invocation
+exactly.
 
 ```bash
 # macOS or Linux standalone installer
@@ -527,6 +685,12 @@ are available.
 Use **Claude Code CLI** when you want the documented Anthropic terminal agent.
 The official installation entries include:
 
+The shell and PowerShell one-liners are official quick paths. They execute
+downloaded code in the current environment; check the current Anthropic page,
+your shell policy, and your organisation's software-installation rules before
+using them. Homebrew and WinGet provide package-manager alternatives where
+documented, with their own update and trust boundaries.
+
 ```bash
 # macOS, Linux, or WSL
 curl -fsSL https://claude.ai/install.sh | bash
@@ -567,11 +731,12 @@ guidance before assuming Bash behavior. See the official [Claude Code overview](
 
 ### Google Cloud Code: choose the IDE surface that matches the project
 
-Google Cloud Code is a family of AI-assisted IDE extensions for cloud-native
-development. It is useful when a project involves Google Kubernetes Engine,
-Cloud Run, or related Google Cloud services. It is not the same product as
-Claude Code or Codex Cloud, and the official pages checked here do not provide
-one universal `cloud-code` terminal installer.
+Google Cloud Code is a family of IDE extensions for cloud-native development.
+Some Cloud Code surfaces include Gemini Code Assist, but that does not turn
+Cloud Code into a general-purpose coding agent. It is useful when a project
+involves Google Kubernetes Engine, Cloud Run, or related Google Cloud services.
+It is not the same product as Claude Code or Codex Cloud, and the official
+pages checked here do not provide one universal `cloud-code` terminal installer.
 
 Choose the installation path that matches the client you actually use:
 
@@ -629,10 +794,14 @@ and choose the documented Google sign-in flow. If you use the `npx` entry, the
 permanent `gemini` command. If your environment requires an API key or Vertex
 AI, follow the [official authentication guide](https://geminicli.com/docs/get-started/authentication)
 and keep credentials in the environment or account mechanism it documents;
-never paste a key into a prompt or commit it to the project. The current
-installation page lists Node.js 20+, Bash, Zsh, or PowerShell, and named
-operating-system baselines. These are dated product facts, not a promise about
-every machine or organization policy.
+never paste a key into a prompt or commit it to the project. The [current
+installation page](https://geminicli.com/docs/get-started/installation) lists
+Node.js 20+, Bash, Zsh, or PowerShell, and named operating-system baselines.
+It also currently carries a transition notice for unpaid-tier and Google One
+users. Treat that banner as a dated account or product notice, not as a
+universal statement about every Gemini CLI user; check the page again when you
+set up the client. These are volatile product facts, not a promise about every
+machine or organization policy.
 
 **IDE:** The official [IDE integration guide](https://geminicli.com/docs/ide-integration)
 documents a VS Code companion extension and ACP integrations used with tools
@@ -706,6 +875,24 @@ removes all network or plugin risk. Read the [official README](https://github.co
 The source does not establish one complete Windows/macOS support promise for
 every profile and configuration. Treat your first controlled launch as an
 observation, not as platform certification. See the [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md).
+
+### If installation stops halfway
+
+Do not repair a vague failure by granting the client more access. Classify the
+failure first:
+
+| Symptom | Check next | Safe interpretation |
+| --- | --- | --- |
+| The command is not found after installation | Start a new shell, inspect `PATH`, and run the product's documented version command | The shell may not have reloaded the installer change; authentication has not been tested |
+| The download does not match the machine | Recheck Windows x64/Arm64 or macOS Intel/Apple silicon, then return to the official download page | A wrong architecture is an installation mismatch, not evidence that the product is unavailable |
+| Browser sign-in succeeds but the client cannot work | Check the client's own account, provider, workspace, and permission state | Browser identity and client authorization are separate observations |
+| A local folder is missing or the hosted workspace is empty | Record the exact runtime and path before adding files or reconnecting a repository | The client may be looking at a different machine or checkout |
+| The first task asks to send, publish, delete, pay, or change permissions | Stop and request explicit approval for that action | Installation and authentication do not authorize an external side effect |
+| DeepSeek Harness starts but the session is unavailable | Check the loopback address, selected workspace, model configuration, and official profile documentation | A Web server launch is not model access, sandbox proof, or task success |
+
+Keep the original error, client, version, operating system, working directory,
+and date in the setup receipt. Do not paste credentials or private file
+contents into an issue, source record, or troubleshooting example.
 
 <span id="chatgpt-first-task"></span>
 

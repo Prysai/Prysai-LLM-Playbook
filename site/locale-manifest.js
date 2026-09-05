@@ -4864,6 +4864,7 @@ window.CODEX_LOCALE_MANIFEST = {
             "gemini-first-task",
             "grok-first-task",
             "install-and-make-a-first-safe-attempt",
+            "installation-routes-at-a-glance",
             "names-that-are-easy-to-confuse",
             "platform-and-client-map"
           ]

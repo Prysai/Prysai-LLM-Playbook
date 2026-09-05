@@ -20,6 +20,8 @@ No model call, learner record, personal data, or external action is stored.
 - the scoring set contains correct, boundary, and failure examples.
 - three bounded observation protocols cover context change, first-request
   structure, and proposal/authority/execution/evidence boundaries.
+- the blank run-record template matches the fixture revision, covers all five
+  rubric outcomes, and carries no learner result before an authorized run.
 
 Run the static gate with:
 
@@ -36,7 +38,9 @@ reviewers, disagreements, and limits.
 
 - `fixture.json` — eleven synthetic cases covering all three case types and all five outcomes, including a controlled observation boundary.
 - `scoring-rubric.json` — machine-readable scoring anchors and forbidden claims.
-- `run-record-template.json` — fields required before a future run can be called an observation.
+- `run-record-template.json` — fields required before a future run can be called
+  an observation; the static validator checks its revision, field set, blank
+  result state, and five-outcome score shape.
 - [`docs/quality/core-course-rubric-v1.md`](../../../docs/quality/core-course-rubric-v1.md) — reviewer-facing prose rubric.
 - [`observations/README.md`](observations/README.md) — the three preparation
   protocols and their shared privacy boundary.

@@ -16,10 +16,15 @@ def main() -> int:
     course = validator.load_json(validator.COURSE_PATH)
     rubric = validator.load_json(validator.RUBRIC_PATH)
     fixture = validator.load_json(validator.FIXTURE_PATH)
+    run_record_template = validator.load_json(validator.RUN_RECORD_TEMPLATE_PATH)
 
     require(validator.validate_course(course) == [], "valid core course was rejected")
     require(validator.validate_rubric(rubric) == [], "valid rubric was rejected")
     require(validator.validate_fixture(fixture) == [], "valid fixture was rejected")
+    require(
+        validator.validate_run_record_template(run_record_template, fixture) == [],
+        "valid run record template was rejected",
+    )
 
     duplicate_order = copy.deepcopy(course)
     duplicate_order["units"][1]["sequence"] = duplicate_order["units"][0]["sequence"]
@@ -70,7 +75,42 @@ def main() -> int:
         "unrun fixture status was allowed to become complete",
     )
 
-    print("CORE_COURSE_TESTS_OK fixtures=7")
+    wrong_record_candidate = copy.deepcopy(run_record_template)
+    wrong_record_candidate["candidate_id"] = "other-candidate"
+    require(
+        any("candidate_id" in error for error in validator.validate_run_record_template(wrong_record_candidate, fixture)),
+        "run record candidate mismatch was accepted",
+    )
+
+    wrong_record_revision = copy.deepcopy(run_record_template)
+    wrong_record_revision["fixture_revision"] = "1"
+    require(
+        any("fixture_revision" in error for error in validator.validate_run_record_template(wrong_record_revision, fixture)),
+        "run record fixture revision mismatch was accepted",
+    )
+
+    completed_record = copy.deepcopy(run_record_template)
+    completed_record["run_status"] = "complete"
+    require(
+        any("run_status" in error for error in validator.validate_run_record_template(completed_record, fixture)),
+        "blank run record was allowed to claim completion",
+    )
+
+    missing_record_field = copy.deepcopy(run_record_template)
+    del missing_record_field["limits"]
+    require(
+        any("missing fields" in error for error in validator.validate_run_record_template(missing_record_field, fixture)),
+        "incomplete run record template was accepted",
+    )
+
+    scored_blank_record = copy.deepcopy(run_record_template)
+    scored_blank_record["rubric_scores"]["transfer"] = 2
+    require(
+        any("only null" in error for error in validator.validate_run_record_template(scored_blank_record, fixture)),
+        "blank run record carried a learner score",
+    )
+
+    print("CORE_COURSE_TESTS_OK fixtures=12")
     return 0
 
 
