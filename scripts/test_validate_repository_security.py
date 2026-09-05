@@ -554,7 +554,7 @@ permissions:
 
         quality_without_fail_closed = quality_workflow.replace(
             "\n      - name: Enforce release evidence result\n"
-            "        if: steps.release_evidence.outcome != 'success'\n"
+            "        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}\n"
             "        run: |\n"
             "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
             "          exit 1\n",
@@ -568,6 +568,36 @@ permissions:
                 )
             ),
             "quality workflow without final release-evidence failure propagation was accepted",
+        )
+        fixtures += 1
+
+        quality_without_always = quality_workflow.replace(
+            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
+            "if: steps.release_evidence.outcome != 'success'",
+        )
+        require(
+            any(
+                "fail-closed boundary" in error
+                for error in policy.validate_quality_workflow(
+                    quality_without_always, "quality.yml"
+                )
+            ),
+            "release-evidence enforcement without an explicit non-cancelled guard was accepted",
+        )
+        fixtures += 1
+
+        quality_with_uncancellable_enforcement = quality_workflow.replace(
+            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
+            "if: ${{ always() && steps.release_evidence.outcome != 'success' }}",
+        )
+        require(
+            any(
+                "must not run after cancellation" in error
+                for error in policy.validate_quality_workflow(
+                    quality_with_uncancellable_enforcement, "quality.yml"
+                )
+            ),
+            "uncancellable release-evidence enforcement was accepted",
         )
         fixtures += 1
 
@@ -589,7 +619,7 @@ permissions:
 
         enforcement_block = (
             "      - name: Enforce release evidence result\n"
-            "        if: steps.release_evidence.outcome != 'success'\n"
+            "        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}\n"
             "        run: |\n"
             "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
             "          exit 1\n"

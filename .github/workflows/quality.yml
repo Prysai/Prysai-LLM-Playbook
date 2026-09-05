@@ -101,7 +101,7 @@ jobs:
           fi
 
       - name: Enforce release evidence result
-        if: steps.release_evidence.outcome != 'success'
+        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}
         run: |
           echo "The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only."
           exit 1

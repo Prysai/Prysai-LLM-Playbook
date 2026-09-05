@@ -666,7 +666,7 @@ def validate_quality_workflow(text: str, label: str) -> list[str]:
     else:
         enforcement_body = enforcement.group("body")
         for fragment in (
-            "if: steps.release_evidence.outcome != 'success'",
+            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
             "run:",
             "exit 1",
         ):
@@ -674,6 +674,10 @@ def validate_quality_workflow(text: str, label: str) -> list[str]:
                 errors.append(
                     f"{label}: quality workflow is missing the release-evidence fail-closed boundary: {fragment}"
                 )
+        if "always()" in enforcement_body:
+            errors.append(
+                f"{label}: release-evidence failure enforcement must not run after cancellation"
+            )
 
     enforcement_position = text.find("      - name: Enforce release evidence result")
     if enforcement_position >= 0:
