@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-04-platform-encyclopedia-v2 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v3 -->
 
 # LLM platforms and clients: an installation and first-use encyclopedia
 
@@ -181,10 +181,10 @@ native installation can use PowerShell, while Git for Windows matters when the
 agent needs its Bash tool. Treat `CLAUDE.md`, project settings, hooks, and
 skills as visible project context that still needs review.
 
-#### Google Cloud Code: an IDE extension family for Google Cloud
+#### Google Cloud Code: IDE extensions for Google Cloud
 
-Google Cloud Code belongs to a different category. It is an IDE extension
-family for cloud-native development, with documented paths for VS Code,
+Google Cloud Code belongs to a different category. It is a family of IDE
+extensions for cloud-native development, with documented paths for VS Code,
 IntelliJ/JetBrains, and Cloud Shell. It is useful when the project is tied to
 Google Cloud services such as GKE or Cloud Run and you need that context close
 to the editor.
@@ -274,23 +274,24 @@ instead of inferring it from the brand name.
 - If the task is specifically about Google Cloud resources from an IDE, choose
   Google Cloud Code; do not install a similarly named coding agent by mistake.
 
-### Client matrix: what each surface is for
+### Choose the client that matches the job
 
-| Surface | Choose it when... | Best first job | Where the work happens |
-| --- | --- | --- | --- |
-| ChatGPT web or mobile | You need a low-setup conversation or lesson | Rewrite or compare supplied text | The vendor service; record account and date |
-| ChatGPT desktop | You need a desktop workspace or a carefully selected local folder | Explain one small local file | Your computer plus the ChatGPT service |
-| Gemini web or mobile | You want a text-first task in the Google ecosystem | Ask a text-only question with no extension enabled | The vendor service; record account and date |
-| Codex or Claude Code IDE | You need code selection, inline review, and project navigation | Explain one file, then review a proposed diff | The local editor plus the agent service |
-| Google Cloud Code | You are working on a Google Cloud-native project from an IDE | Open a sample and inspect its project and credential context | The IDE and Google Cloud context |
-| Codex, Claude Code, Gemini CLI, or Grok Build | You need a repeatable shell workflow | Inspect a fixture and propose one small change | The local shell, workspace, and agent service |
-| Grok Bot | You want the documented hosted-computer teammate experience | Ask for a read-only summary or draft | A persistent hosted computer; do not call it local |
-| DeepSeek Harness Web | You want to inspect a fixture with a controlled local Web UI | Launch the Web UI, configure a model, and stop before side effects | A local Web server plus the configured model service |
+Use the table to choose a starting point. The products are not interchangeable.
+Changing clients can change the available context, the runtime, and the route by
+which an action reaches the outside world. Keep four separate records for every
+attempt: **installed**, **authenticated**, **task run**, and **result accepted**.
 
-Use the matrix to pick a starting point. The products are not interchangeable.
-For every attempt, keep four separate records: **installed**,
-**authenticated**, **task run**, and **result accepted**. A plausible answer is
-not evidence that you accepted the result.
+| Client | Start with | Check before the next step |
+| --- | --- | --- |
+| Web or mobile chat | Supply a small piece of text, ask for a bounded response, and compare it with the source | The client asks for an upload, extension, account connection, or external action |
+| Desktop app | Open a new conversation, choose a folder only when needed, and ask for a read-only explanation | Whether the selected place is local, hosted, shared, or writable |
+| IDE integration | Open one workspace and file, inspect the visible context, and request a small diff | The workspace root, selected files, tools, and permission state are unclear |
+| Terminal agent | Record the directory and status, run a read-only inspection, and review the output | The command would publish, delete, change dependencies, use a secret, or touch an unknown directory |
+| Cloud or hosted client | Record the remote repository and runtime, then start with a draft or read-only task | The remote files, credentials, network access, persistence, or approval boundary are unclear |
+
+Two clients can show the same model name and still produce different evidence.
+When a result matters, record the exact client and runtime that produced it.
+“I used the product” is too vague to reproduce.
 
 ## Before you install anything
 
@@ -439,6 +440,50 @@ commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
 
+### The install loop: download, inspect, verify, use
+
+Installation is a short process, but it has four different checkpoints:
+
+1. **Get the entry from the vendor.** Start from the official documentation or
+   download page. Search results and copied commands are leads, not authority.
+2. **Inspect what will run.** A `curl | sh`, `curl | bash`, or `irm | iex`
+   command downloads code and executes it in the same step. That may be the
+   vendor's documented quick path, but it leaves less for you to inspect first.
+   If you want a reviewable copy, download the script to a temporary file,
+   read it, and check any published checksum or signature before using the
+   vendor's documented invocation.
+3. **Verify the client.** Confirm that the intended app opens or that the
+   intended command resolves. Record the visible version when one is shown.
+4. **Run a deliberately small task.** Use supplied text or a disposable
+   workspace. Only after that result is understandable should you consider a
+   real repository, uploads, extensions, tools, or external actions.
+
+The inspect-first pattern below downloads a file but does not execute it. The
+placeholder URL is intentional: replace it only with the official URL from the
+product section you are following, and keep the vendor's documented arguments
+for the final invocation.
+
+```sh
+# macOS/Linux: download for inspection; do not execute this yet
+curl -fL --proto '=https' --tlsv1.2 -o vendor-installer.sh '<official-installer-url>'
+sed -n '1,180p' vendor-installer.sh
+shasum -a 256 vendor-installer.sh
+```
+
+```powershell
+# Windows PowerShell: download for inspection; do not execute this yet
+$installerPath = Join-Path $env:TEMP 'vendor-installer.ps1'
+Invoke-WebRequest -Uri '<official-installer-url>' -OutFile $installerPath
+Get-Content -Path $installerPath -TotalCount 180
+Get-FileHash -Path $installerPath -Algorithm SHA256
+```
+
+A checksum is useful only when it comes from a source you trust and matches
+the exact file you downloaded. If the vendor does not publish one, do not
+invent a “verified” checksum; record that the script was inspected without an
+independent integrity check. This project did not execute any of the vendor
+installers listed below.
+
 Each product section answers four separate questions: where to get the client,
 where the work runs, what a safe first task looks like, and what the setup does
 not prove. If you only need a web chat, skip the terminal sections. If you need
@@ -508,6 +553,11 @@ headless use, and ACP integration.
 
 Install a prebuilt binary from the official source:
 
+The two commands below are the vendor's quick-install entries. They download
+and execute a remote installer, so read the current script first if you need
+an inspectable installation record. Do not add a deployment key to the command
+line or to shell history.
+
 ```sh
 # macOS, Linux, or Git Bash
 curl -fsSL https://x.ai/cli/install.sh | bash
@@ -544,6 +594,11 @@ and [headless and scripting reference](https://docs.x.ai/build/cli/headless-scri
 
 Use **Codex CLI** when you want a terminal workflow in a local project. The
 officially documented installation entries include:
+
+These are official quick paths, not commands run by this project. If your
+organisation requires an inspect-before-execute process, use the download-only
+pattern above and then follow the current Codex documentation's invocation
+exactly.
 
 ```bash
 # macOS or Linux standalone installer
@@ -594,6 +649,12 @@ are available.
 Use **Claude Code CLI** when you want the documented Anthropic terminal agent.
 The official installation entries include:
 
+The shell and PowerShell one-liners are official quick paths. They execute
+downloaded code in the current environment; check the current Anthropic page,
+your shell policy, and your organisation's software-installation rules before
+using them. Homebrew and WinGet provide package-manager alternatives where
+documented, with their own update and trust boundaries.
+
 ```bash
 # macOS, Linux, or WSL
 curl -fsSL https://claude.ai/install.sh | bash
@@ -634,11 +695,12 @@ guidance before assuming Bash behavior. See the official [Claude Code overview](
 
 ### Google Cloud Code: choose the IDE surface that matches the project
 
-Google Cloud Code is a family of AI-assisted IDE extensions for cloud-native
-development. It is useful when a project involves Google Kubernetes Engine,
-Cloud Run, or related Google Cloud services. It is not the same product as
-Claude Code or Codex Cloud, and the official pages checked here do not provide
-one universal `cloud-code` terminal installer.
+Google Cloud Code is a family of IDE extensions for cloud-native development.
+Some Cloud Code surfaces include Gemini Code Assist, but that does not turn
+Cloud Code into a general-purpose coding agent. It is useful when a project
+involves Google Kubernetes Engine, Cloud Run, or related Google Cloud services.
+It is not the same product as Claude Code or Codex Cloud, and the official
+pages checked here do not provide one universal `cloud-code` terminal installer.
 
 Choose the installation path that matches the client you actually use:
 
