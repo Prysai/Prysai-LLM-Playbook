@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v4 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v5 -->
 
 # LLM platforms and clients: an installation and first-use encyclopedia
 
@@ -147,17 +147,33 @@ One product can have several clients and more than one runtime. Installing a
 desktop application does not prove that its web version, CLI, and cloud agent
 share the same tools or permissions.
 
-### The products in this guide
+### A client map you can actually use
 
-| Product or family | What this guide treats it as | A sensible first use | Keep separate from |
-| --- | --- | --- | --- |
-| ChatGPT | A general-purpose web, mobile, and desktop conversation/work surface | Rewrite or compare supplied text without enabling extra tools | A chat session is not automatically a local coding environment |
-| Codex | A family of terminal, IDE, desktop, and cloud/web coding surfaces | Explain one file, then inspect a proposed diff | Local, desktop, and cloud work are separate surfaces |
-| Claude Code | Anthropic's coding-agent product across terminal, IDE, desktop, and browser/cloud surfaces | Explain a disposable project before requesting a small change | Desktop and CLI are not feature-equivalent |
-| Google Cloud Code | Google's IDE extension family for cloud-native development | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
-| Gemini | A web/mobile chat family with a separate Gemini CLI and IDE integrations | Start with text-only chat; use the CLI only when you need a terminal surface | Web/mobile, CLI, and IDE context are different surfaces |
-| DeepSeek | DeepSeek Harness, a developer-preview runtime; DeepSeek API is a separate adapter | Launch `dsh web` against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
-| Grok | Grok chat, Grok Bot's hosted teammate, and Grok Build's terminal agent | Choose the exact surface before you authenticate or share context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+The product name is only the first label. Before you follow an installation
+guide, identify the client you will open and the runtime in which the work will
+take place. This is the distinction that makes a setup reproducible.
+
+| Product or family | Clients covered here | Where the work usually runs | A sensible first use | Keep separate from |
+| --- | --- | --- | --- | --- |
+| ChatGPT | Web, mobile, and desktop app | Vendor service; the desktop app may also use a deliberately selected local folder | Rewrite or compare supplied text without enabling extra tools | A ChatGPT conversation is not automatically a local coding session |
+| Codex | CLI, IDE integration, desktop, and Cloud/Web | Local terminal or editor, desktop-selected project, or a hosted Codex environment | Explain one file, then inspect a proposed diff | Local, desktop, and hosted work are separate surfaces |
+| Claude Code | Terminal, IDE integration, desktop, and browser/cloud | Local shell/editor or an Anthropic-hosted surface, depending on the client | Explain a disposable project before requesting a small change | The desktop and CLI contracts are not interchangeable |
+| Google Cloud Code | VS Code, IntelliJ/JetBrains, and Cloud Shell | The selected IDE or Google's hosted Cloud Shell | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
+| Gemini | Web, mobile, Gemini CLI, and IDE integrations | Vendor chat service, local terminal/editor, or the IDE's integration surface | Start with text-only chat; use the CLI only when a terminal is needed | Web/mobile, CLI, and IDE context are different surfaces |
+| DeepSeek Harness | Web UI and documented CLI/profile surfaces | A local Node process and the selected local workspace | Launch the Web UI against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
+| Grok | Grok chat, Grok Bot desktop/mobile clients, and Grok Build terminal | Vendor chat service, a persistent hosted computer, or a local terminal | Choose the exact surface before authenticating or sharing context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+
+Use the map in this order:
+
+1. Name the job: conversation, local project, cloud project, repeatable
+   terminal task, or hosted computer.
+2. Pick the smallest client that can supply the required context.
+3. Check the product's official setup page for your operating system,
+   architecture, account, and region.
+4. Record the client and runtime before you interpret the first result.
+
+If you cannot answer “which client saw which files, and where did the action
+run?”, you do not yet have a reproducible setup.
 
 ### Platform cards: the short version
 
@@ -264,15 +280,15 @@ change more often than the basic client boundaries do.
 Do not install everything in this table. Start with the smallest client that
 can complete the next task.
 
-| Route | Use it for | Installation or access | First check |
-| --- | --- | --- | --- |
-| Web chat | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
-| Mobile app | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
-| Desktop app | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
-| IDE integration | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
-| Terminal agent | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
-| Hosted or cloud agent | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
-| DeepSeek Harness Web | A controlled local Web UI around an agent harness | Run the documented `@deepseek-ai/dsh` entry through `npx` | Confirm the loopback address, selected workspace, model configuration, and safety boundary |
+| Route | Examples in this guide | Use it for | Installation or access | First check |
+| --- | --- | --- | --- | --- |
+| Web chat | ChatGPT, Gemini, Grok | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
+| Mobile app | ChatGPT, Gemini, Grok Bot companion | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
+| Desktop app | ChatGPT, Grok Bot, Claude Code | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
+| IDE integration | Codex, Claude Code, Gemini, Google Cloud Code | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
+| Terminal agent | Codex CLI, Claude Code, Gemini CLI, Grok Build | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
+| Hosted or cloud agent | Codex Cloud/Web, Claude browser/cloud, Grok Bot | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
+| DeepSeek Harness Web | `@deepseek-ai/dsh` Web entry | A controlled local Web UI around an agent harness | Run the documented entry through `npx` | Confirm the loopback address, selected workspace, model configuration, and safety boundary |
 
 The route determines where context and side effects live. A mobile app may be
 able to review a task without exposing a local folder. A terminal agent may see
