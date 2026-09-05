@@ -57,6 +57,8 @@
 
 **新增来源记录 S168：** `docs/research/encyclopedia-chatgpt-gemini-sources-2026-09-04.md` 与 `book/routes/platform-adapter-guide-EN.md` 的 2026-09-04 更新，补充 ChatGPT web/mobile/desktop、Gemini web/mobile/CLI/IDE 的官方来源边界、安装入口、身份验证选择和访问受限事实。内容是 Prysai Lab 的原创事实转述；官方页面与 registry/产品文档仅作 `reference-only` 的易变来源，不复制供应商正文、截图、代码、凭据或用户私人经历。该扩展仍为 `candidate / not_run`，不证明安装成功、账号可用、翻译质量、学习效果或 production readiness。
 
+**新增来源记录 S169：** `book/routes/platform-adapter-guide-EN.md` 的 2026-09-04 编辑更新把既有平台事实重组为可扫描的平台卡片、客户端选择表和按任务的一分钟决策入口。新增文字是 Prysai Lab 面向读者的原创自然英文重写，继续使用 S167/S168 及 `docs/research/encyclopedia-cloud-code-sources-2026-09-04.md` 的日期化官方来源作为 `reference-only` 依据；没有复制供应商正文、截图、代码、凭据或用户私人经历。该更新只改善读者定位和阅读顺序，仍为 `candidate / not_run`；独立母语审校、安装成功、账号可用、跨平台等价、学习效果和 production readiness 仍未证明。
+
 **新增资产记录 S136：** `assets/teaching/evidence-to-decision-stop-map-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示问题、来源、可观察结果、受证据支持或降级为候选的决定，以及在下一项证明缺失时有意停止的关系。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明来源正确、权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 **新增资产记录 S137：** `assets/teaching/recovery-decision-tree-red-black.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，展示保留请求与可观察轨迹、分类首个不匹配、检查授权、执行一次有边界的检查，以及在权限或证据不足时停止的恢复决策树。它仅使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明恢复成功、工具运行、学习效果、可访问性合规或生产就绪。
