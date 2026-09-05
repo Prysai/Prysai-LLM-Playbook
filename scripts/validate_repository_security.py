@@ -622,7 +622,7 @@ def validate_quality_dependency_pin(text: str, label: str) -> list[str]:
 
 
 def validate_quality_workflow(text: str, label: str) -> list[str]:
-    """Keep release-evidence diagnostics while propagating real gate failures."""
+    """Keep release-evidence diagnostics while propagating the gate failure."""
 
     errors = []
     release_step = re.search(
@@ -630,7 +630,7 @@ def validate_quality_workflow(text: str, label: str) -> list[str]:
         r"(?P<body>.*?)(?=^      - name: |\Z)",
         text,
     )
-    for fragment in ("id: release_evidence", "continue-on-error: true"):
+    for fragment in ("id: release_evidence", "continue-on-error: false"):
         if not release_step or fragment not in release_step.group("body"):
             errors.append(f"{label}: quality workflow is missing the release-evidence fail-closed boundary: {fragment}")
 
@@ -653,40 +653,19 @@ def validate_quality_workflow(text: str, label: str) -> list[str]:
                     f"{label}: {step_name} must use if: always() to preserve failure diagnostics"
                 )
 
-    enforcement = re.search(
-        r"(?ms)^      - name: Enforce release evidence result\s*\n"
+    if "      - name: Enforce release evidence result" in text:
+        errors.append(
+            f"{label}: quality workflow must let the release-evidence step propagate its own failure"
+        )
+    browser_failure_upload = re.search(
+        r"(?ms)^      - name: Upload browser failure evidence\s*$\n"
         r"(?P<body>.*?)(?=^      - name: |\Z)",
         text,
     )
-    if not enforcement:
+    if browser_failure_upload and "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success'" not in browser_failure_upload.group("body"):
         errors.append(
-            f"{label}: quality workflow is missing the release-evidence fail-closed boundary: "
-            "name: Enforce release evidence result"
+            f"{label}: browser failure evidence must remain eligible after a non-cancelled gate failure"
         )
-    else:
-        enforcement_body = enforcement.group("body")
-        for fragment in (
-            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
-            "run:",
-            "exit 1",
-        ):
-            if fragment not in enforcement_body:
-                errors.append(
-                    f"{label}: quality workflow is missing the release-evidence fail-closed boundary: {fragment}"
-                )
-        if "always()" in enforcement_body:
-            errors.append(
-                f"{label}: release-evidence failure enforcement must not run after cancellation"
-            )
-
-    enforcement_position = text.find("      - name: Enforce release evidence result")
-    if enforcement_position >= 0:
-        for step_name, diagnostic_position in diagnostic_positions.items():
-            if enforcement_position < diagnostic_position:
-                errors.append(
-                    f"{label}: release-evidence failure enforcement must run after "
-                    f"the diagnostic step: {step_name}"
-                )
     return errors
 
 

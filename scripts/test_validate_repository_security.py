@@ -553,11 +553,7 @@ permissions:
         fixtures += 1
 
         quality_without_fail_closed = quality_workflow.replace(
-            "\n      - name: Enforce release evidence result\n"
-            "        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}\n"
-            "        run: |\n"
-            "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
-            "          exit 1\n",
+            "        continue-on-error: false",
             "\n",
         )
         require(
@@ -572,32 +568,48 @@ permissions:
         fixtures += 1
 
         quality_without_always = quality_workflow.replace(
-            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
+            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' && hashFiles('.work/browser-smoke/**') != '' }}",
             "if: steps.release_evidence.outcome != 'success'",
         )
         require(
             any(
-                "fail-closed boundary" in error
+                "browser failure evidence must remain eligible" in error
                 for error in policy.validate_quality_workflow(
                     quality_without_always, "quality.yml"
                 )
             ),
-            "release-evidence enforcement without an explicit non-cancelled guard was accepted",
+            "browser failure evidence without an explicit non-cancelled guard was accepted",
         )
         fixtures += 1
 
-        quality_with_uncancellable_enforcement = quality_workflow.replace(
-            "if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}",
-            "if: ${{ always() && steps.release_evidence.outcome != 'success' }}",
+        quality_with_continue_on_error = quality_workflow.replace(
+            "continue-on-error: false",
+            "continue-on-error: true",
         )
         require(
             any(
-                "must not run after cancellation" in error
+                "continue-on-error: false" in error
                 for error in policy.validate_quality_workflow(
-                    quality_with_uncancellable_enforcement, "quality.yml"
+                    quality_with_continue_on_error, "quality.yml"
                 )
             ),
-            "uncancellable release-evidence enforcement was accepted",
+            "release-evidence continue-on-error was accepted",
+        )
+        fixtures += 1
+
+        quality_with_redundant_enforcement = quality_workflow + (
+            "\n      - name: Enforce release evidence result\n"
+            "        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}\n"
+            "        run: exit 1\n"
+        )
+        require(
+            any(
+                "propagate its own failure" in error
+                for error in policy.validate_quality_workflow(
+                    quality_with_redundant_enforcement, "quality.yml"
+                )
+            ),
+            "redundant release-evidence failure enforcement was accepted",
         )
         fixtures += 1
 
@@ -614,32 +626,6 @@ permissions:
                 )
             ),
             "quality workflow without always-run diagnostic upload was accepted",
-        )
-        fixtures += 1
-
-        enforcement_block = (
-            "      - name: Enforce release evidence result\n"
-            "        if: ${{ !cancelled() && steps.release_evidence.outcome != 'success' }}\n"
-            "        run: |\n"
-            "          echo \"The commit-bound release-evidence gate failed; the uploaded packet is diagnostic only.\"\n"
-            "          exit 1\n"
-        )
-        quality_with_early_enforcement = quality_workflow.replace(
-            enforcement_block,
-            "",
-        )
-        quality_with_early_enforcement = quality_with_early_enforcement.replace(
-            "      - name: Publish release evidence summary\n",
-            enforcement_block + "\n      - name: Publish release evidence summary\n",
-        )
-        require(
-            any(
-                "after the diagnostic step" in error
-                for error in policy.validate_quality_workflow(
-                    quality_with_early_enforcement, "quality.yml"
-                )
-            ),
-            "quality workflow with early release-evidence failure enforcement was accepted",
         )
         fixtures += 1
 
