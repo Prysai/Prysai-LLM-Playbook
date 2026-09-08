@@ -19,10 +19,26 @@ ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "docs/governance/core-course.yaml"
 RUBRIC_PATH = ROOT / "evals/candidates/core-course-v1/scoring-rubric.json"
 FIXTURE_PATH = ROOT / "evals/candidates/core-course-v1/fixture.json"
+RUN_RECORD_TEMPLATE_PATH = ROOT / "evals/candidates/core-course-v1/run-record-template.json"
 INVENTORY_PATH = ROOT / "docs/governance/core-content-inventory.yaml"
 
 EXPECTED_OUTCOMES = ["explain", "initiate", "identify", "repair", "transfer"]
 EXPECTED_CASE_TYPES = {"correct", "boundary", "failure"}
+EXPECTED_RUN_RECORD_FIELDS = {
+    "candidate_id",
+    "fixture_revision",
+    "run_status",
+    "model_and_surface",
+    "task_and_context",
+    "allowed_aids",
+    "first_artifact",
+    "rubric_scores",
+    "help_disclosure",
+    "reviewers",
+    "disagreements",
+    "claim_status",
+    "limits",
+}
 UNIT_ID_RE = re.compile(r"^core-[a-z0-9-]+$")
 
 
@@ -311,15 +327,83 @@ def validate_fixture(document: dict[str, Any]) -> list[str]:
     return errors
 
 
+def validate_run_record_template(
+    document: dict[str, Any], fixture: dict[str, Any]
+) -> list[str]:
+    """Validate the blank record that a future authorized run would fill.
+
+    The template is deliberately checked separately from the synthetic fixture:
+    a fixture can describe the fields a run needs while a malformed template
+    silently omits them or carries accidental result data.
+    """
+
+    errors: list[str] = []
+    if document.get("candidate_id") != "core-course-v1":
+        errors.append("run record candidate_id must be core-course-v1")
+    if document.get("candidate_id") != fixture.get("candidate_id"):
+        errors.append("run record candidate_id must match fixture candidate_id")
+    if document.get("fixture_revision") != fixture.get("fixture_revision"):
+        errors.append("run record fixture_revision must match fixture fixture_revision")
+    if document.get("run_status") != "not_run":
+        errors.append("run record run_status must remain not_run")
+
+    missing_fields = EXPECTED_RUN_RECORD_FIELDS.difference(document)
+    if missing_fields:
+        errors.append(
+            "run record is missing fields: " + ", ".join(sorted(missing_fields))
+        )
+
+    required_fields = fixture.get("required_run_fields")
+    if isinstance(required_fields, list):
+        missing_required = {
+            field for field in required_fields if isinstance(field, str) and field not in document
+        }
+        if missing_required:
+            errors.append(
+                "run record is missing fixture required fields: "
+                + ", ".join(sorted(missing_required))
+            )
+
+    rubric_scores = document.get("rubric_scores")
+    if not isinstance(rubric_scores, dict):
+        errors.append("run record rubric_scores must be an object")
+    else:
+        if set(rubric_scores) != set(EXPECTED_OUTCOMES):
+            errors.append("run record rubric_scores must cover the five outcomes exactly")
+        if any(value is not None for value in rubric_scores.values()):
+            errors.append("blank run record rubric_scores must contain only null values")
+
+    blank_strings = (
+        "model_and_surface",
+        "task_and_context",
+        "first_artifact",
+        "help_disclosure",
+        "limits",
+    )
+    for field in blank_strings:
+        if document.get(field) != "":
+            errors.append(f"blank run record {field} must be an empty string")
+
+    blank_lists = ("allowed_aids", "reviewers", "disagreements")
+    for field in blank_lists:
+        if document.get(field) != []:
+            errors.append(f"blank run record {field} must be an empty list")
+    if document.get("claim_status") != "not_observed":
+        errors.append("blank run record claim_status must be not_observed")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     try:
         course = load_json(COURSE_PATH)
         rubric = load_json(RUBRIC_PATH)
         fixture = load_json(FIXTURE_PATH)
+        run_record_template = load_json(RUN_RECORD_TEMPLATE_PATH)
         errors.extend(validate_course(course))
         errors.extend(validate_rubric(rubric))
         errors.extend(validate_fixture(fixture))
+        errors.extend(validate_run_record_template(run_record_template, fixture))
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
         errors.append(str(exc))
     if errors:

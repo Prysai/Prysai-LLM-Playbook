@@ -4,7 +4,7 @@
 route; it is not verification of runtime behavior, account access, or learner
 outcomes.
 
-**Research date:** 2026-09-04 (America/Los_Angeles)
+**Research dates:** 2026-09-04 and 2026-09-05 (America/Los_Angeles)
 **Scope:** Official OpenAI, Google Gemini, and Gemini CLI documentation checked
 for web, mobile, desktop, terminal, IDE, installation, and authentication
 boundaries.
@@ -164,6 +164,22 @@ fact and is not used here to make a permanent product or availability claim.
 **Not verified:** Its future timing, affected users, replacement behavior, or
 whether the notice remains when a reader opens the page.
 
+### G6 - The installation page carries a scoped follow-up notice
+
+**Fact:** On 2026-09-05, the official Gemini CLI installation page displayed a
+notice about replacing Gemini CLI with Antigravity CLI for unpaid-tier and
+Google One users. The notice names June 18th but does not state a year on the
+page. This is a page-level notice with a stated audience, not a universal
+statement about every Gemini CLI user.
+
+**Source:** [Gemini CLI installation](https://geminicli.com/docs/get-started/installation)
+**Accessed:** 2026-09-05
+**Applies to:** The notice visible on the installation page at that access time
+and to the user groups named in the notice.
+**Not verified:** The year or future timing intended by the notice, the
+replacement behavior, account eligibility, or whether the notice remains when
+a reader opens the page.
+
 ## Sources not treated as proof
 
 The supplied personal Grok Bot account is a useful demand signal for deciding
@@ -187,7 +203,8 @@ installation.
 ## Research stop condition
 
 The official sources were sufficient to document the client boundaries,
-installation entries, authentication choices, and first-use cautions. No
+installation entries, authentication choices, the scoped transition follow-up,
+and first-use cautions. No
 attempt was made to fill gaps with third-party tutorials, search snippets, or
 personal anecdotes. A later release still needs controlled installation runs,
 account-eligibility checks, independent language review, and learner evidence.

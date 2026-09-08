@@ -1,14 +1,14 @@
 # Field Guide 外部候选能力集成决策
 
-**盘点日期：** 2026-08-09
-**范围：** 六个输入压缩包、外部候选目录、现有 7 个 Field Guide skills 及其质量门槛
+**历史盘点日期：** 2026-08-09
+**范围：** 六个输入压缩包、外部候选目录、现有 9 个 Field Guide skills 及其质量门槛
 **文档状态：** candidate；本文件是决策记录，不是安装清单或发行批准
 
 ## 1. 审计结论
 
-Field Guide 应把外部项目当作资料、方法假设和候选索引，而不是可直接合并的内容库。当前输入归档审计结果如下：
+Field Guide 应把外部项目当作资料、方法假设和候选索引，而不是可直接合并的内容库。下面的表格是 2026-08-09 的历史归档快照，不是当前机器上的审计结果：
 
-| 来源 | 归档状态 | `SKILL.md` | 当前结论 |
+| 来源 | 历史归档状态（2026-08-09 快照） | `SKILL.md` | 当前结论 |
 |---|---|---:|---|
 | S01 Codex Orange Book | `ok`；268 文件 | 0 | 仅参考；许可证信号不明确 |
 | S02 Academic Research Skills Codex | `ok`；3,533 文件 | 2 个路径、同名 | 仅参考/许可复核；不得直接进入主线 |
@@ -20,6 +20,18 @@ Field Guide 应把外部项目当作资料、方法假设和候选索引，而�
 候选目录共记录 955 个 `SKILL.md`，其中 S02=2、S04=49、S05=24、S06=880；882 个条目带有待审查标记。目录是只读发现索引，不表示质量、许可证、依赖或安装批准。
 
 现有 9 个 Field Guide skills 均有 `SKILL.md` 和 `agents/openai.yaml`，并已通过临时 PyYAML 环境运行的 `scripts/validate_skills.py`：`SKILLS_VALIDATION_OK skills=9`。它们仍统一为 `candidate`，因为项目质量标准要求正例、边界例、失败例、迁移例、新鲜上下文验证、来源与维护责任；结构校验通过不等于运行或生产验证通过。
+
+### 当前审计边界（2026-09-05）
+
+当前仓库不包含 S01–S06 原始压缩包，也没有配置
+`PRYSAI_INPUT_ARCHIVE_DIR`。因此，在没有显式传入 `--archive-dir <directory>`
+或设置该环境变量的情况下，`scripts/audit_input_archives.py` 的当前结果是
+`not_configured` / `INPUT_ARCHIVE_AUDIT_INCOMPLETE`。这表示当前来源审计尚未完成，
+不是六个归档已经通过审计。
+
+要复核当前归档，必须向脚本提供包含六个预期文件名的外部目录；该目录属于本地
+审计输入，不应提交到仓库。`docs/sources/archive-audit-2026-08-09.json` 只保留
+历史快照的哈希和统计信息，不能替代一次新的归档审计。
 
 ## 2. 采用原则
 
@@ -139,7 +151,7 @@ Field Guide 决策：采用原则 / 仅参考 / 不采用 / blocked
 维护责任：谁维护、何时复核、上游变化如何触发重审？
 ```
 
-完成该记录并通过项目验证后，才可以考虑把能力从外部参考层提升为 Field Guide 的 `original-rewrite` 或经许可的外部组件。当前本文件和现有 7 个 skill 的整体状态仍为 `candidate`，不宣称生产就绪。
+完成该记录并通过项目验证后，才可以考虑把能力从外部参考层提升为 Field Guide 的 `original-rewrite` 或经许可的外部组件。当前本文件和现有 9 个 skill 的整体状态仍为 `candidate`，不宣称生产就绪。
 
 ## 8. 复核依据
 
@@ -150,6 +162,6 @@ Field Guide 决策：采用原则 / 仅参考 / 不采用 / blocked
 - `docs/sources/asset-register.md`：S01–S06 来源、许可信号、归档指纹和融合层级；
 - `docs/sources/skill-candidate-catalog.md` 与 `docs/sources/skill-candidate-catalog-2026-08-09.json`：955 项只读候选索引及初始门禁；
 - `docs/integration-map.md`：六个来源的价值抽取、Field Guide 转译和边界说明；
-- `docs/skill-registry.md`：现有 7 个 Field Guide skill 均为 `candidate`；
-- `scripts/audit_input_archives.py`：六个归档均为 `ok`，并确认 S02 重复路径及各来源 skill 数量；
+- `docs/skill-registry.md`：现有 Field Guide skills 均为 `candidate`；
+- `scripts/audit_input_archives.py`：历史快照记录了六个归档的状态、S02 重复路径及各来源 skill 数量；当前审计必须显式提供归档目录，未配置时返回 `not_configured`；
 - `scripts/validate_skills.py`：在临时 PyYAML 目标目录中通过，结果为 `SKILLS_VALIDATION_OK skills=9`。

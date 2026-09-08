@@ -539,7 +539,7 @@
     },
     "platform-adapter-guide-route": {
       "name": {
-        "en": "Choose your LLM platform",
+        "en": "LLM platform and client encyclopedia",
         "zh": "选择你的 LLM 平台",
         "es": "Elige tu plataforma de LLM",
         "ja": "LLMプラットフォームの選び方",
