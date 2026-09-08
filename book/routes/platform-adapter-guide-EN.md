@@ -1,6 +1,6 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v8 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v9 -->
 
-# LLM platforms and clients: a practical encyclopedia for choosing, installing, and getting started
+# LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
@@ -199,7 +199,7 @@ Use the map in this order:
 If you cannot answer “which client saw which files, and where did the action
 run?”, you do not yet have a reproducible setup.
 
-### Platform cards: the short version
+### Platform cards: what each surface is for
 
 #### ChatGPT: start with the conversation, then decide whether you need more
 
@@ -466,47 +466,74 @@ extension family.
 Sources: [Codex and Claude Code source receipt](../../docs/research/encyclopedia-coding-agents-sources-2026-09-03.md)
 and [Google Cloud Code source receipt](../../docs/research/encyclopedia-cloud-code-sources-2026-09-04.md).
 
-## Pick a client before you pick a workflow
+## How to use each client type
 
-### Web and mobile chat
+The client changes the kind of context an LLM can receive and the kinds of
+actions it can propose. The same request can therefore produce different
+evidence in a browser, a desktop app, an IDE, a terminal, or a hosted machine.
+Choose the client from the job, then make the smallest useful first attempt.
 
-Choose this when the task is supplied text, a question, a draft, or a small
-comparison. It is the lowest-setup place to learn the core request-and-check
-loop. Start with no tools, no uploads, and no external actions. If the UI
-offers browsing, extensions, files, or sharing, those are extra surfaces to
-decide about, not defaults you must enable.
+### Web or mobile chat
+
+Choose a browser or mobile chat when the task is a question, a rewrite, a
+draft, or a small comparison based on material you can safely provide in the
+conversation. This is usually the quickest way to practise the core
+request-and-check loop.
+
+A good first session is simple: start a new conversation, state the desired
+result, provide a small source, and ask for a bounded response. Compare the
+answer with the source before enabling browsing, uploads, extensions, sharing,
+or any other connected capability. Those features expand the task surface;
+they are not required just because the client offers them.
 
 ### Desktop app
 
-Choose a desktop client when you need a larger working view, local project
-selection, or an interactive application experience. A desktop app is still a
-client, not proof that automation, headless execution, every CLI flag, or every
-desktop feature is available. Read its local-project and approval controls
-before opening a non-disposable directory.
+Choose a desktop app when you need a larger working view, a local project
+selection, or an interactive application experience. Start with a new chat or
+an empty project. Confirm whether the selected location is local, hosted,
+shared, or writable before you add files.
+
+The usual progression is: open one folder, ask for a read-only explanation,
+inspect what the app says it can see, then request one small proposed change.
+Review the diff yourself before accepting it. A desktop app is still one
+client, not proof that the product's browser, terminal, automation, or cloud
+surface has the same capabilities.
 
 ### IDE integration
 
-Choose an IDE integration when code selection, inline diffs, and project
-navigation are the main value. Start with a narrow request such as "explain
-this file" or "propose a diff for this one typo." Review the diff yourself.
-An IDE extension can surface more context than a plain chat, which makes a
-small scope more important, not less.
+Choose an IDE integration when the value comes from code selection, inline
+diffs, project navigation, or the editor's current context. Open one
+disposable workspace and one relevant file. Check the workspace root, selected
+text, open files, tools, and permission state before sending the request.
+
+Ask for an explanation first. If the explanation is useful, request a small
+diff for one clearly named change, inspect every changed line, and run the
+narrowest relevant check yourself. An IDE extension can expose more context
+than a plain chat, which makes a narrow scope more important, not less.
 
 ### Terminal agent
 
-Choose a terminal agent when you need a repeatable command-line workflow,
-scripts, or source-controlled changes. The terminal is powerful because it can
-inspect and change a real workspace. First learn it in a disposable folder,
-with a clear stop condition and no secrets. A command prompt is not a reason to
-give a model unrestricted authority.
+Choose a terminal agent when you need repeatable commands, scripts, or
+source-controlled changes. Begin in a disposable folder and record the starting
+directory and repository status. Ask for a read-only listing or explanation
+before allowing edits, commands, dependency changes, or network access.
+
+When a small change is justified, keep the request to one file or one fixture.
+Read the proposed command and diff, run the relevant check, and stop if the
+agent reaches outside the declared workspace. Having a command prompt does not
+justify giving a model unrestricted authority.
 
 ### Cloud or hosted agent
 
-Choose a cloud agent when the task genuinely needs a hosted environment or can
-continue while your client is closed. First check where files, browser sessions,
-credentials, and approvals live. A hosted computer may be useful, but it is not
-your local machine and should not be treated as an isolated security boundary
-unless the product documentation explicitly establishes one.
+Choose a cloud or hosted agent when the task genuinely needs a remote
+environment or should continue while your client is closed. Before the first
+request, record the remote repository or workspace, the runtime, the available
+credentials, the network boundary, persistence, and the approval rules.
+
+Start with a draft or read-only task. A hosted computer is not your laptop, and
+it is not automatically an isolated security boundary. Treat a proposed send,
+publish, purchase, deletion, permission change, or production action as a
+separate approval point.
 
 <span id="install-and-make-a-first-safe-attempt"></span>
 
