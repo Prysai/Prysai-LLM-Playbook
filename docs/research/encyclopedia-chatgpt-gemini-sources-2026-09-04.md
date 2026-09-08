@@ -4,7 +4,7 @@
 route; it is not verification of runtime behavior, account access, or learner
 outcomes.
 
-**Research dates:** 2026-09-04 and 2026-09-05 (America/Los_Angeles)
+**Research dates:** 2026-09-04, 2026-09-05, and 2026-09-08 (America/Los_Angeles)
 **Scope:** Official OpenAI, Google Gemini, and Gemini CLI documentation checked
 for web, mobile, desktop, terminal, IDE, installation, and authentication
 boundaries.
@@ -44,7 +44,7 @@ and the Codex IDE extension as separate choices for developers who want a
 terminal or code-editor workflow.
 
 **Source:** [Codex quickstart](https://developers.openai.com/codex/quickstart.md)
-**Accessed:** 2026-09-04
+**Accessed:** 2026-09-04; live rechecked 2026-09-08
 **Applies to:** The product-surface overview in the official OpenAI developer
 documentation.
 **Not verified:** Whether a particular account, country, plan, operating
@@ -65,7 +65,24 @@ authority decision rather than a cosmetic preference.
 **Not verified:** Actual installer success, account eligibility, local policy,
 file permissions, or feature parity with ChatGPT on the web.
 
-### C3 - The download endpoint was not independently readable here
+### C3 - The desktop app is a shared ChatGPT and Codex entry point
+
+**Fact:** The current OpenAI desktop-app documentation says to install ChatGPT,
+sign in, choose where to work, and then choose ChatGPT or Codex. In the
+ChatGPT work surface, the reader can choose Chat or Work; in the Codex surface,
+the documented flow starts a new chat. This supports teaching the desktop app
+as one application with distinct work surfaces, not as proof that desktop,
+CLI, IDE, web, and cloud sessions share the same runtime or permissions.
+
+**Source:** [ChatGPT desktop app](https://developers.openai.com/codex/app.md)
+and [OpenAI quickstart](https://developers.openai.com/codex/quickstart.md)
+**Accessed:** 2026-09-08
+**Applies to:** The product-selection and first-use flow documented for the
+current desktop application.
+**Not verified:** Installer success, account or plan eligibility, local file
+permissions, or parity between any two product surfaces.
+
+### C4 - The download endpoint was not independently readable here
 
 **Fact:** `https://chatgpt.com/download/` returned HTTP 403 from this research
 environment. OpenAI's documentation still links that endpoint as the download

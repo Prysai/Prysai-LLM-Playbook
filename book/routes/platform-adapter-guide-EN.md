@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v9 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v10 -->
 
 # LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
@@ -308,7 +308,7 @@ can complete the next task.
 | --- | --- | --- | --- | --- |
 | Web chat | ChatGPT, Gemini, Grok | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
 | Mobile app | ChatGPT, Gemini, Grok Bot companion | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
-| Desktop app | ChatGPT, Grok Bot, Claude Code | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
+| Desktop app | ChatGPT/Codex, Grok Bot, Claude Code | A larger interactive workspace, a selected local project, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
 | IDE integration | Codex, Claude Code, Gemini, Google Cloud Code | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
 | Terminal agent | Codex CLI, Claude Code, Gemini CLI, Grok Build | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
 | Hosted or cloud agent | Codex Cloud/Web, Claude browser/cloud, Grok Bot | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
@@ -620,13 +620,18 @@ URL, so this guide does not hard-code one. Begin with the same text-only
 exercise and do not infer that the mobile app has the same file, desktop, or
 coding integrations as the web app.
 
-**Desktop:** Follow OpenAI's [desktop-app guide](https://developers.openai.com/codex/app.md):
-install the app for macOS or Windows (or follow its linked Linux guide), sign
-in, choose a chat, project, or folder, and send a first message. Choosing a
-folder changes the authority boundary because the app may use files in that
-location and may be able to modify them. Start with a disposable folder, ask
-for a read-only explanation, and inspect any proposed change before accepting
-it.
+**Desktop:** Start at OpenAI's [ChatGPT desktop app guide](https://developers.openai.com/codex/app.md)
+and follow its current download entry for macOS, Windows, or Linux. The desktop
+application is a shared ChatGPT/Codex entry point: after signing in and choosing
+where to work, the official quickstart lets you choose ChatGPT or Codex. That
+does not make the desktop app equivalent to the web chat, Codex CLI, IDE
+integration, or Codex Cloud.
+
+Choose a chat or project first and keep the first exercise text-only. If you
+open a folder later, treat that as an authority decision: the app may use files
+in that location and may be able to modify them. Start with a disposable folder,
+ask for a read-only explanation, and inspect any proposed change before
+accepting it.
 
 Record the client you used. A successful desktop task is not evidence that the
 web or mobile client can inspect the same local files. See the [ChatGPT and
@@ -743,6 +748,12 @@ codex exec --json "Summarize the repository structure. Do not edit files or run 
 
 Use `--sandbox workspace-write` only when a separately scoped task genuinely
 needs edits. Do not use `danger-full-access` for a first exercise.
+
+**Codex desktop:** In the ChatGPT desktop app, choose **Codex** when the task
+needs codebase context and developer tools. Start with a new chat and one
+disposable project or folder. The desktop, CLI, IDE, and cloud surfaces may have
+different files, shells, approvals, and network access; record the surface that
+produced the result before treating it as reproducible.
 
 Sign in only through the product flow you intend to use. On Windows, OpenAI
 documents native CLI, desktop, and IDE paths; you do not need to assume that
