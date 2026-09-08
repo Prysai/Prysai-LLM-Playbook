@@ -1603,6 +1603,16 @@ try {
       1,
       `${locale} platform adapter lost the stable DeepSeek fragment`,
     );
+    assert.equal(
+      await platformAdapterPage.locator('[data-reader-article] h2#deepseek-first-task').count(),
+      1,
+      `${locale} platform adapter rendered the stable DeepSeek fragment as a separate node`,
+    );
+    assert.equal(
+      await platformAdapterPage.locator('[data-reader-toc-list] a[data-toc-target="deepseek-first-task"]').count(),
+      1,
+      `${locale} platform adapter TOC points at a generated duplicate DeepSeek fragment`,
+    );
     const adapterAnchorTop = await platformAdapterPage.locator('#deepseek-first-task').evaluate((target) => target.getBoundingClientRect().top);
     assert.ok(adapterAnchorTop >= 0 && adapterAnchorTop < 260, `${locale} DeepSeek fragment did not restore the reading band: ${adapterAnchorTop}`);
   }
@@ -1745,6 +1755,22 @@ try {
   assert.equal(await defaultReaderPage.locator('html').getAttribute('lang'), 'en', 'unparameterized English Reader inherits a browser language preference');
   assert.match(await defaultReaderPage.locator('[data-reader-article] h1').innerText(), /LLM Foundation Core v1/i, 'unparameterized Reader does not open the foundation route');
   await defaultReaderPage.close();
+  const rootReaderPage = await context.newPage();
+  await rootReaderPage.goto(`${origin}/reader.html?path=book%2Froutes%2Fplatform-adapter-guide-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await rootReaderPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await rootReaderPage.locator('[data-reader-article] h1').innerText(), /LLM platforms and clients/i, 'root Reader alias did not preserve the requested source route');
+  const rootAdapterTocLink = rootReaderPage.locator('[data-reader-toc-list] a[data-toc-target="platform-and-client-map"]');
+  assert.equal(await rootAdapterTocLink.count(), 1, 'root Reader alias lost the platform map TOC entry');
+  assert.match(await rootAdapterTocLink.getAttribute('href'), /reader\.html\?path=book%2Froutes%2Fplatform-adapter-guide-EN\.md&lang=en#platform-and-client-map$/, 'root Reader alias TOC link discarded the current Reader route');
+  await rootAdapterTocLink.click();
+  await rootReaderPage.waitForTimeout(150);
+  assert.match(await rootReaderPage.url(), /\/site\/reader\.html\?path=book%2Froutes%2Fplatform-adapter-guide-EN\.md&lang=en#platform-and-client-map$/, 'root Reader alias TOC click navigated to the wrong Reader document');
+  assert.equal(await rootReaderPage.locator('[data-reader-article] h2#platform-and-client-map').count(), 1, 'root Reader alias did not land on the stable platform map heading');
+  await rootReaderPage.setViewportSize({ width: 390, height: 844 });
+  await rootReaderPage.goto(`${origin}/reader.html?path=book%2Froutes%2Fplatform-adapter-guide-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await rootReaderPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.ok((await rootReaderPage.evaluate(() => document.documentElement.scrollWidth)) <= 390, 'root Reader alias has horizontal overflow on mobile');
+  await rootReaderPage.close();
   await searchInput.fill('research checkpoint');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').filter({ hasText: 'AI safety field signals' }).first().waitFor();
@@ -2908,7 +2934,11 @@ try {
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /optional application practice: language, work, and research/i, 'Reader did not render the public optional application practice title');
   assert.match(await page.locator('[data-reader-article]').innerText(), /learner evidence:\s*not_run/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
   assert.equal(await page.getByRole('heading', { name: /advanced — recovery route when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
-  assert.equal(await page.locator('[data-reader-article] a[href="#general-skill-practice-route"]').count(), 1, 'recovery route retains a stale Route B anchor');
+  const recoveryRouteBLink = page.locator('[data-reader-article] a[href="#general-skill-practice-route"]').filter({ hasText: /^Route B$/ });
+  assert.equal(await recoveryRouteBLink.count(), 1, 'recovery route lost its stable Route B link');
+  assert.equal(await recoveryRouteBLink.getAttribute('href'), '#general-skill-practice-route', 'recovery route points at a stale generated Route B anchor');
+  assert.equal(await page.locator('[data-reader-article] a[href="#general-skill-practice-route"]').count(), 2, 'Route B navigation does not share one stable heading anchor');
+  assert.equal(await page.locator('[data-reader-article] a[href="#route-b-one-observable-non-language-skill"]').count(), 0, 'recovery route retains the retired generated Route B anchor');
   assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
   const recoveryFragmentPosition = await page.locator('#recovery-route').evaluate((target) => ({
     top: target.getBoundingClientRect().top,

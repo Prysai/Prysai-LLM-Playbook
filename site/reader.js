@@ -2232,7 +2232,21 @@ function canonicalChapterTitle(chapter) {
   }
 
   function headingHref(id) {
-    return `#${encodeURIComponent(id)}`;
+    const hash = `#${encodeURIComponent(id)}`;
+    // The Pages artifact also exposes a root-level reader alias whose base
+    // points at site/reader.html. A bare hash would resolve against that base
+    // file and silently discard the current path and language query.
+    const basePath = new URL(document.baseURI).pathname;
+    const aliasPath = window.location.pathname;
+    if (aliasPath !== basePath && /(?:^|\/)reader\.html$/i.test(aliasPath) && /(?:^|\/)reader\.html$/i.test(basePath)) {
+      return readerHref(requestedPath, hash, activeLocale || requestedLocale || manifest.default_locale);
+    }
+    return hash;
+  }
+
+  function samePageHref(target) {
+    const hash = String(target || '').startsWith('#') ? String(target) : `#${target}`;
+    return headingHref(hash.slice(1));
   }
 
   function directHref(path) {
@@ -2338,7 +2352,7 @@ function canonicalChapterTitle(chapter) {
           const element = document.createElement('a');
           element.textContent = label;
           element.title = destination.title;
-          if (destination.target.startsWith('#')) element.href = destination.target;
+          if (destination.target.startsWith('#')) element.href = samePageHref(destination.target);
           else if (resolved && resolved.endsWith('.md')) element.href = readerHref(resolved, hash);
           else if (resolved && !isExternal(destination.target)) element.href = directHref(resolved) + hash;
           else if (isSafeDestination(destination.target, path)) element.href = destination.target;
@@ -2412,7 +2426,7 @@ function canonicalChapterTitle(chapter) {
         if (child.hasAttribute('href')) {
           const href = child.getAttribute('href') || '';
           const resolved = href.startsWith('#') ? null : resolveSourcePath(path, href);
-          if (href.startsWith('#')) child.setAttribute('href', href);
+          if (href.startsWith('#')) child.setAttribute('href', samePageHref(href));
           else if (resolved && resolved.endsWith('.md')) child.setAttribute('href', readerHref(resolved, hashFrom(href)));
           else if (resolved) child.setAttribute('href', directHref(resolved) + hashFrom(href));
           else if (!isExternal(href)) child.removeAttribute('href');
@@ -2439,7 +2453,11 @@ function canonicalChapterTitle(chapter) {
     let frontMatterSeen = false;
     const usedSlugs = new Map();
     const usedIds = new Set();
-    const uniqueHeadingId = (value) => {
+    const uniqueHeadingId = (value, preferredId = '') => {
+      if (preferredId && !usedIds.has(preferredId)) {
+        usedIds.add(preferredId);
+        return preferredId;
+      }
       let id = slug(value, usedSlugs);
       while (usedIds.has(id)) id = slug(value, usedSlugs);
       usedIds.add(id);
@@ -2520,7 +2538,16 @@ function canonicalChapterTitle(chapter) {
       if (heading) {
         const element = document.createElement(`h${heading[1].length}`);
         addInline(element, heading[2], path);
-        element.id = uniqueHeadingId(heading[2]);
+        const previous = fragment.lastChild;
+        const authoredId = previous?.classList?.contains('reader-anchor') ? previous.id : '';
+        if (authoredId) {
+          // A stable authored anchor immediately before a heading is the
+          // heading's public identity. Remove the duplicate standalone node
+          // so the TOC, hash target, and keyboard focus land together.
+          previous.remove();
+          usedIds.delete(authoredId);
+        }
+        element.id = uniqueHeadingId(heading[2], authoredId);
         fragment.append(element);
         index += 1;
         continue;

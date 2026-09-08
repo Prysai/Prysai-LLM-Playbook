@@ -194,6 +194,7 @@ def _reader_ids(markdown: str) -> set[str]:
     used_ids: set[str] = set()
     available_ids: set[str] = set()
     rendered_nodes: list[str] = []
+    last_anchor_id = ""
     front_matter = False
     front_matter_seen = False
     index = 0
@@ -243,7 +244,8 @@ def _reader_ids(markdown: str) -> set[str]:
             if identifier not in used_ids:
                 used_ids.add(identifier)
                 available_ids.add(identifier)
-            rendered_nodes.append("anchor")
+                rendered_nodes.append("anchor")
+                last_anchor_id = identifier
             index += 1
             continue
 
@@ -255,6 +257,7 @@ def _reader_ids(markdown: str) -> set[str]:
             if index < len(lines):
                 index += 1
             rendered_nodes.append("code")
+            last_anchor_id = ""
             continue
 
         if HTML_BLOCK_RE.match(stripped):
@@ -270,18 +273,24 @@ def _reader_ids(markdown: str) -> set[str]:
                 raw_lines.append(lines[index])
             available_ids.update(_html_block_ids(raw_lines))
             rendered_nodes.append("html")
+            last_anchor_id = ""
             continue
 
         heading = HEADING_RE.match(line)
         if heading:
-            identifier = _unique_heading_id(heading.group(2), used_slugs, used_ids)
+            preferred = last_anchor_id if rendered_nodes and rendered_nodes[-1] == "anchor" else ""
+            if preferred:
+                used_ids.discard(preferred)
+            identifier = preferred or _unique_heading_id(heading.group(2), used_slugs, used_ids)
             used_ids.add(identifier)
             available_ids.add(identifier)
             rendered_nodes.append(f"h{len(heading.group(1))}")
+            last_anchor_id = ""
             index += 1
             continue
 
         rendered_nodes.append("paragraph")
+        last_anchor_id = ""
         index += 1
 
     return available_ids

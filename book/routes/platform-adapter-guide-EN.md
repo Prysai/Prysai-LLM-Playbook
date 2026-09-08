@@ -1,6 +1,6 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-05-platform-encyclopedia-v6 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v8 -->
 
-# LLM platforms and clients: an installation and first-use encyclopedia
+# LLM platforms and clients: a practical encyclopedia for choosing, installing, and getting started
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
@@ -10,11 +10,16 @@ product name may lead to a browser chat, a phone app, a desktop application,
 an IDE integration, a terminal agent, or a hosted computer. Those surfaces do
 not automatically share files, credentials, permissions, or history.
 
-Use this page as a practical reference. It helps you name the product and
-client in front of you, choose the smallest surface that can do the job, follow
-the vendor's current setup path, and record what actually happened. It is not
-a product ranking, and it does not promise that every account, operating
-system, region, or feature is available to every reader.
+Use this page as a practical reference, not as a list of tools to install. It
+answers five questions in order: what kind of work do you have, which client
+fits it, where will the work run, how do you reach the vendor's current setup
+path, and what is safe to try first? Each product entry also states what the
+documented setup does not prove. That distinction matters because an installer
+can succeed while authentication, account eligibility, file access, or the
+first task still fails.
+
+The page is not a product ranking. It does not promise that every account,
+operating system, region, plan, or feature is available to every reader.
 
 The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
@@ -28,9 +33,20 @@ for you.
 > does not tell you whether the files are local, the work is hosted, or the
 > client can act outside the conversation.
 
-## The shortest useful route
+## Start here: choose the job before the product
 
-If you only want to get started, use this sequence:
+If you are new to these tools, start with the work in front of you rather than
+with a product name:
+
+| Your immediate job | Start with | Add only when the task requires it |
+| --- | --- | --- |
+| Ask a question, learn, rewrite, or compare supplied text | A web or mobile chat | Files, browsing, extensions, or account connections |
+| Read or change files on your computer | A desktop app, IDE integration, or terminal agent | A real repository, write access, or external tools |
+| Repeat a command-line task or inspect a project | A terminal agent in a disposable folder | Automation, credentials, dependency changes, or publishing |
+| Work with Google Cloud resources from an IDE | Google Cloud Code for the IDE you use | A selected cloud project, deployment, secrets, or production resources |
+| Leave work running after your laptop closes | A documented cloud or hosted surface | Real credentials, private data, or irreversible actions |
+
+Then use this five-step route:
 
 1. **Name the job.** Decide whether you need a conversation, a local project,
    an IDE, a terminal, or a hosted computer.
@@ -46,7 +62,8 @@ If you only want to get started, use this sequence:
    and acceptance are separate events.
 
 The rest of this page fills in each step. You can skip every product you do not
-need.
+need; the goal is one useful, reviewable first attempt, not a collection of
+sign-ins.
 
 ## Know what kind of statement you are reading
 
@@ -156,13 +173,19 @@ take place. This is the distinction that makes a setup reproducible.
 
 | Product or family | Clients covered here | Where the work usually runs | A sensible first use | Keep separate from |
 | --- | --- | --- | --- | --- |
-| ChatGPT | Web, mobile, and desktop app | Vendor service; the desktop app may also use a deliberately selected local folder | Rewrite or compare supplied text without enabling extra tools | A ChatGPT conversation is not automatically a local coding session |
-| Codex | CLI, IDE integration, desktop, and Cloud/Web | Local terminal or editor, desktop-selected project, or a hosted Codex environment | Explain one file, then inspect a proposed diff | Local, desktop, and hosted work are separate surfaces |
-| Claude Code | Terminal, IDE integration, desktop, and browser/cloud | Local shell/editor or an Anthropic-hosted surface, depending on the client | Explain a disposable project before requesting a small change | The desktop and CLI contracts are not interchangeable |
-| Google Cloud Code | VS Code, IntelliJ/JetBrains, and Cloud Shell | The selected IDE or Google's hosted Cloud Shell | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
-| Gemini | Web, mobile, Gemini CLI, and IDE integrations | Vendor chat service, local terminal/editor, or the IDE's integration surface | Start with text-only chat; use the CLI only when a terminal is needed | Web/mobile, CLI, and IDE context are different surfaces |
-| DeepSeek Harness | Web UI and documented CLI/profile surfaces | A local Node process and the selected local workspace | Launch the Web UI against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
-| Grok | Grok chat, Grok Bot desktop/mobile clients, and Grok Build terminal | Vendor chat service, a persistent hosted computer, or a local terminal | Choose the exact surface before authenticating or sharing context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+| [ChatGPT](https://chatgpt.com/) | Web, mobile, and desktop app | Vendor service; the desktop app may also use a deliberately selected local folder | Rewrite or compare supplied text without enabling extra tools | A ChatGPT conversation is not automatically a local coding session |
+| [Codex](https://developers.openai.com/codex/quickstart) | CLI, IDE integration, desktop, and Cloud/Web | Local terminal or editor, desktop-selected project, or a hosted Codex environment | Explain one file, then inspect a proposed diff | Local, desktop, and hosted work are separate surfaces |
+| [Claude Code](https://code.claude.com/docs/en/overview) | Terminal, IDE integration, desktop, and browser/cloud | Local shell/editor or an Anthropic-hosted surface, depending on the client | Explain a disposable project before requesting a small change | The desktop and CLI contracts are not interchangeable |
+| [Google Cloud Code](https://cloud.google.com/code/docs) | VS Code, IntelliJ/JetBrains, and Cloud Shell | The selected IDE or Google's hosted Cloud Shell | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
+| [Gemini](https://gemini.google.com/) | Web, mobile, Gemini CLI, and IDE integrations | Vendor chat service, local terminal/editor, or the IDE's integration surface | Start with text-only chat; use the CLI only when a terminal is needed | Web/mobile, CLI, and IDE context are different surfaces |
+| [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.md) | Web UI and documented CLI/profile surfaces | A local Node process and the selected local workspace | Launch the Web UI against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
+| [Grok](https://docs.x.ai/grok/overview) | Web and mobile chat | xAI's consumer assistant service | Ask, draft, or compare supplied text | Grok Bot and Grok Build |
+| [Grok Bot](https://docs.x.ai/grok-bot/get-started) | Desktop app for macOS, Windows, and Linux; companion app for iOS and Android | A persistent cloud computer accessed through the client | Draft a checklist or summarize a public page | Grok chat and Grok Build |
+| [Grok Build](https://docs.x.ai/build/overview) | Terminal TUI, headless CLI, and ACP | A local terminal or editor integration | Inspect a disposable project before requesting a change | Grok Bot's hosted computer |
+
+The three Grok rows are intentionally separate. The terminal inside a Grok
+Bot cloud computer is a capability of that hosted runtime; it is not the local
+`grok` command documented for Grok Build.
 
 Use the map in this order:
 
@@ -256,7 +279,7 @@ irreplaceable files. The launch command proves only that you attempted to start
 the local Web surface; it does not prove model access, sandbox isolation, or a
 safe task result.
 
-#### Grok: three names, three boundaries
+#### Grok family: three separate surfaces
 
 **Grok** is the consumer assistant surface. **Grok Bot** is the hosted-teammate
 surface described in the xAI documentation: you operate it from a desktop or
