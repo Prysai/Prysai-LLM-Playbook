@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-07-platform-encyclopedia-v7 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v8 -->
 
 # LLM platforms and clients: a practical encyclopedia for choosing, installing, and getting started
 
@@ -179,7 +179,13 @@ take place. This is the distinction that makes a setup reproducible.
 | [Google Cloud Code](https://cloud.google.com/code/docs) | VS Code, IntelliJ/JetBrains, and Cloud Shell | The selected IDE or Google's hosted Cloud Shell | Open a sample and inspect its project and credential context | It is not Claude Code, Codex Cloud, or a universal terminal agent |
 | [Gemini](https://gemini.google.com/) | Web, mobile, Gemini CLI, and IDE integrations | Vendor chat service, local terminal/editor, or the IDE's integration surface | Start with text-only chat; use the CLI only when a terminal is needed | Web/mobile, CLI, and IDE context are different surfaces |
 | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/README.md) | Web UI and documented CLI/profile surfaces | A local Node process and the selected local workspace | Launch the Web UI against a disposable workspace | Harness is not the DeepSeek chat product or a general safety guarantee |
-| [Grok Bot](https://docs.x.ai/grok-bot/get-started) | Grok chat, Grok Bot desktop/mobile clients, and Grok Build terminal | Vendor chat service, a persistent hosted computer, or a local terminal | Choose the exact surface before authenticating or sharing context | Grok, Grok Bot, and Grok Build are related names, not interchangeable products |
+| [Grok](https://docs.x.ai/grok/overview) | Web and mobile chat | xAI's consumer assistant service | Ask, draft, or compare supplied text | Grok Bot and Grok Build |
+| [Grok Bot](https://docs.x.ai/grok-bot/get-started) | Desktop app for macOS, Windows, and Linux; companion app for iOS and Android | A persistent cloud computer accessed through the client | Draft a checklist or summarize a public page | Grok chat and Grok Build |
+| [Grok Build](https://docs.x.ai/build/overview) | Terminal TUI, headless CLI, and ACP | A local terminal or editor integration | Inspect a disposable project before requesting a change | Grok Bot's hosted computer |
+
+The three Grok rows are intentionally separate. The terminal inside a Grok
+Bot cloud computer is a capability of that hosted runtime; it is not the local
+`grok` command documented for Grok Build.
 
 Use the map in this order:
 
@@ -273,7 +279,7 @@ irreplaceable files. The launch command proves only that you attempted to start
 the local Web surface; it does not prove model access, sandbox isolation, or a
 safe task result.
 
-#### Grok: three names, three boundaries
+#### Grok family: three separate surfaces
 
 **Grok** is the consumer assistant surface. **Grok Bot** is the hosted-teammate
 surface described in the xAI documentation: you operate it from a desktop or
