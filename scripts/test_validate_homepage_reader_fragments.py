@@ -141,6 +141,11 @@ def main() -> int:
         )
         errors, checked = validator._validate_markdown_file(source, directory)
         require(checked == 1 and not errors, "an explicit stable fragment was rejected")
+        require(
+            validator._reader_ids(source.read_text(encoding="utf-8"))
+            == {"chatgpt-first-task"},
+            "an explicit heading anchor was rendered as a duplicate heading id",
+        )
 
         source.write_text(
             '<span id="chatgpt-first-task"></span>\n'
