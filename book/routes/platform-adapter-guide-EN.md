@@ -20,9 +20,9 @@ The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
-receipts record what the official documentation said on 2026-09-03 or
-2026-09-04, or 2026-09-05. They do not prove that an installer, account, or
-task will work for you.
+receipts record what the official documentation said on 2026-09-03, 2026-09-04,
+or 2026-09-05. They do not prove that an installer, account, or task will work
+for you.
 
 > Choose the surface before you choose the command. A familiar product name
 > does not tell you whether the files are local, the work is hosted, or the
@@ -77,6 +77,7 @@ whole learning path.
 | --- | --- | --- | --- |
 | Grok Bot | [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | Whether a low-risk, ongoing hosted workflow is worth checking for your account | Account access, reliability, complete auditability, or a general user result |
 | DeepSeek Harness | [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md), then the setup section below | Which official launch, profile, workspace, and safety boundaries to inspect | A successful local install, full Windows/macOS support, or a secure production runtime |
+| All named platforms | [Unified platform source receipt](../../docs/research/platform-encyclopedia-sources-2026-09-05.md) | Which product name, client, runtime, and official entry point the current source record supports | A successful install, account eligibility, client parity, or production readiness |
 | A new release or public report | [Timely-content policy](../../docs/governance/timely-content-policy.md) | How to record why the topic matters now and what a reader can safely check | A permanent product fact, a representative user study, or a measured outcome |
 
 The Grok Bot note uses a supplied user story as a demand signal only. It is an
@@ -329,6 +330,24 @@ Two clients can show the same model name and still produce different evidence.
 When a result matters, record the exact client and runtime that produced it.
 “I used the product” is too vague to reproduce.
 
+### A practical reading order for this encyclopedia
+
+The platform cards below are reference entries, not a syllabus. Read only the
+branch that matches the work in front of you:
+
+1. **Conversation:** read the web and mobile guidance, then run the shared safe
+   first task with supplied text.
+2. **Local project:** read the desktop, IDE, or terminal card, then record the
+   workspace and permission mode before opening real files.
+3. **Hosted work:** read the cloud or hosted card, then record the remote
+   repository, runtime, credentials, network, and approval boundary.
+4. **A named product:** use its installation card and the linked official
+   receipt. Do not infer a missing platform or client from a neighboring card.
+
+This order keeps a new reader from treating the list of products as a checklist
+to install. The useful result is one documented first attempt, not a collection
+of sign-ins.
+
 ## Before you install anything
 
 Before you run an installer or open a real repository, do this short preflight:
@@ -524,6 +543,12 @@ Each product section answers four separate questions: where to get the client,
 where the work runs, what a safe first task looks like, and what the setup does
 not prove. If you only need a web chat, skip the terminal sections. If you need
 a terminal workflow, do not treat a desktop login as terminal authentication.
+
+The code blocks are intentionally short. They show the vendor's documented
+entry point and a harmless verification step; they are not a complete
+installation script, a version pin, or a promise that the command is safe for
+every machine. Read the linked source receipt before running a command that
+downloads or executes remote code.
 
 ### ChatGPT: web, mobile, and desktop
 

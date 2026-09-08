@@ -40,6 +40,8 @@ Useful indexes:
 
 - [Platform encyclopedia: Google Cloud Code](encyclopedia-cloud-code-sources-2026-09-04.md) — official-source receipt for Cloud Code's Google Cloud IDE extension boundary, VS Code/IntelliJ/Cloud Shell installation paths, Gemini Code Assist relationship, and unresolved account and project permissions.
 
+- [Platform and client encyclopedia: unified source receipt](platform-encyclopedia-sources-2026-09-05.md) — a dated cross-check of the official product names, client surfaces, installation entries, and deliberately unverified boundaries for Grok Bot, Codex, Claude Code, Google Cloud Code, DeepSeek Harness, and the minimal ChatGPT/Gemini taxonomy. It is a source index, not a runtime or account-access test.
+
 - [Localization review and document-language declaration: source receipt](localization-review-and-language-declaration-source-receipt-2026-08-15.md) — three first-party sources on HTML language declarations, translation-friendly source writing, and reviewable pull requests. It supports a candidate small-slice localization workflow and visible course-unit counts; it does not establish translation quality, language review, completeness, learning outcomes, or release readiness.
 
 - [GitHub contribution governance for external test-evidence pull requests: source receipt](github-contribution-governance-source-receipt-2026-08-15.md) — seven official GitHub sources on PR templates, `CODEOWNERS`, Rulesets, checks, and contribution-rights seams. It supports a candidate local review route; it does not prove a host setting, legal agreement, external PR, reviewer, or merge result.
