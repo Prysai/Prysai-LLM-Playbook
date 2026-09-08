@@ -6,7 +6,7 @@
 route; it is not verification of runtime behavior, account access, or learner
 outcomes.
 
-**Research date:** 2026-09-03 (America/Los_Angeles)
+**Research date:** 2026-09-03; selected official pages rechecked live on 2026-09-08 (America/Los_Angeles)
 **Scope:** official OpenAI and Anthropic documentation plus the two vendors'
 official GitHub repositories; Windows, macOS, terminal, desktop, and IDE
 surfaces only where the source explicitly describes them.
@@ -140,7 +140,7 @@ The official repository README likewise says it lives in the terminal and
 links the official documentation.
 **URLs:** <https://code.claude.com/docs/en/overview> and
 <https://github.com/anthropics/claude-code>
-**Accessed:** 2026-09-03
+**Accessed:** 2026-09-03; live rechecked 2026-09-08
 **Applies to:** Anthropic's named product and the surfaces explicitly listed.
 **Not verified:** Any product called “Cloud Code”; that exact name was absent
 from the checked official pages/repository README.
@@ -154,8 +154,14 @@ auto-update, while Homebrew and WinGet installations do not auto-update and
 should be upgraded explicitly. It also says Git for Windows is recommended on
 native Windows for the Bash tool; without it, Claude Code uses PowerShell as the
 shell tool; WSL does not need Git for Windows.
+For Windows Command Prompt, the page gives this exact native-install command:
+
+```cmd
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
 **URL:** <https://code.claude.com/docs/en/overview>
-**Accessed:** 2026-09-03
+**Accessed:** 2026-09-03; live rechecked 2026-09-08
 **Applies to:** Claude Code CLI installation guidance.
 **Not verified:** Whether installers, auto-update, Git, or shell detection work
 on this machine.

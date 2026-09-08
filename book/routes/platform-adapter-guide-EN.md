@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v10 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v11 -->
 
 # LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
@@ -25,8 +25,8 @@ The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
-receipts record what the official documentation said on 2026-09-03, 2026-09-04,
-or 2026-09-05. They do not prove that an installer, account, or task will work
+receipts record the official documentation they checked and the date of the
+latest review. They do not prove that an installer, account, or task will work
 for you.
 
 > Choose the surface before you choose the command. A familiar product name
@@ -99,6 +99,22 @@ whole learning path.
 
 The Grok Bot note uses a supplied user story as a demand signal only. It is an
 original, source-bounded reference, not a product review or a learner result.
+
+### A simple rule for current topics
+
+When a release or public discussion is moving quickly, publish a dated field
+note instead of burying a temporary detail in this evergreen route. Keep the
+note to one practical question, a clearly scoped set of sources, one low-risk
+reader action, and one review date. Label reported experience and project
+interpretation separately from official facts. If a source goes stale or the
+scope changes, narrow the claim or remove the Reader link; do not silently
+leave yesterday's product fact looking permanent.
+
+The [timely-content policy](../../docs/governance/timely-content-policy.md)
+contains the admission fields and rollback procedure. The existing
+[Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
+is the model: it explains why the topic matters now, what the official sources
+support, what a reader can safely check, and what remains unverified.
 
 ## Find your route
 
@@ -640,16 +656,25 @@ for the access date and unresolved availability questions.
 
 ### Grok Bot: desktop and companion mobile clients
 
-Use **Grok Bot** when you want the documented persistent-cloud-computer
-teammate experience, not a local terminal coding agent.
+Use **Grok Bot** when you want the documented experience of working with a
+teammate on a persistent cloud computer, rather than a local terminal coding
+agent. Before downloading,
+check the current getting-started page for account eligibility and storage
+requirements. The page currently says that Grok Bot needs an eligible plan and
+cloud data storage, and that accounts using Legacy Privacy Mode need a supported
+Cursor data setting before Grok Bot can start. These are account preconditions
+reported by the current page, not a promise that the product is available to
+every reader.
 
-1. Open the official [Grok Bot getting-started guide](https://docs.x.ai/grok-bot/get-started).
-2. Select the download that matches your architecture: macOS Apple silicon or
-   Intel; Windows x64 or Arm64; or the documented Linux package. Authenticate
-   in the browser when prompted.
-3. On a phone, use the official companion-app route for iOS or Android. It
-   connects to the same documented Bot and hosted computer, but some routine
-   management remains desktop-only.
+1. Open the official [Grok Bot getting-started guide](https://docs.x.ai/grok-bot/get-started)
+   and check the account and privacy prerequisites shown there.
+2. Download the package for the computer you actually have: on macOS choose
+   Apple silicon or Intel; on Windows choose x64 or Arm64; on Linux choose the
+   package format and architecture documented for your distribution.
+3. Open the app and choose **Get started**. Complete authentication in the
+   browser window, then return to the app. On a phone, use the official iOS or
+   Android companion route; it connects to the same documented Bot and hosted
+   computer, but some management remains desktop-only.
 4. Make the first Bot request read-only: ask it to summarize a public page or
    draft a checklist. Require a result, sources, unknowns, and an explicit
    stop before sending, publishing, buying, deleting, or changing settings.
@@ -793,6 +818,14 @@ irm https://claude.ai/install.ps1 | iex
 winget install Anthropic.ClaudeCode
 ```
 
+If you are using **Command Prompt** rather than PowerShell, use the CMD entry
+documented by Anthropic instead of pasting a PowerShell command into the wrong
+shell:
+
+```cmd
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
 Then enter a disposable project and run:
 
 ```text
@@ -906,14 +939,18 @@ Its official repository calls it a developer-preview agent harness and says it
 has not received a security audit. Use it only in a controlled workspace with
 no secrets or irreplaceable files.
 
-For the official npm Web entry, open a terminal on macOS, Windows, or Linux and
-run:
+For the official npm Web entry, open a terminal on the machine you intend to
+use and run:
 
 ```sh
 npx @deepseek-ai/dsh web
 ```
 
 The source documentation says this starts the Web UI at `http://127.0.0.1:3080`.
+The npm route is documented, but the project does not promise identical
+behaviour for every profile, plugin, or configuration on Windows and macOS.
+Treat a launch on either system as a controlled local observation until you
+have checked the exact profile and recorded the result in a receipt.
 To start without opening a browser automatically:
 
 ```sh
