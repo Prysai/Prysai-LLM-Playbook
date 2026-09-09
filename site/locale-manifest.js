@@ -4667,8 +4667,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
             "core-terms",
+            "deepseek-harness-source-receipt",
+            "google-cloud-code-source-receipt",
+            "grok-bot-field-note",
             "method-and-status",
-            "source-notes"
+            "platform-encyclopedia-independent-review-2026-09-08",
+            "platform-encyclopedia-sources",
+            "source-notes",
+            "timely-content-policy",
+            "timely-content-template",
+            "unified-platform-source-receipt"
           ]
         },
         "es": {
@@ -4732,8 +4740,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [
             "core-terms",
+            "deepseek-harness-source-receipt",
+            "google-cloud-code-source-receipt",
+            "grok-bot-field-note",
             "method-and-status",
-            "source-notes"
+            "platform-encyclopedia-independent-review-2026-09-08",
+            "platform-encyclopedia-sources",
+            "source-notes",
+            "timely-content-policy",
+            "timely-content-template",
+            "unified-platform-source-receipt"
           ]
         },
         "fr": {
