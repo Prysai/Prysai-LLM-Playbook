@@ -1,4 +1,4 @@
-<!-- content_id: reader-evidence-library | locale: ES | language: es | default_locale: EN | translation_status: in-progress | source_revision: worktree-2026-08-16 -->
+<!-- content_id: reader-evidence-library | locale: ES | language: es | default_locale: EN | translation_status: stale | source_revision: worktree-2026-08-16 -->
 
 # Biblioteca de evidencia y términos
 
