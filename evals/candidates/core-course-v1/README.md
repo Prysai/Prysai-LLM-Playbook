@@ -42,6 +42,8 @@ reviewers, disagreements, and limits.
   an observation; the static validator checks its revision, field set, blank
   result state, and five-outcome score shape.
 - [`docs/quality/core-course-rubric-v1.md`](../../../docs/quality/core-course-rubric-v1.md) — reviewer-facing prose rubric.
+- [`docs/quality/core-course-pilot-v1.md`](../../../docs/quality/core-course-pilot-v1.md) — fixed-revision learner observation protocol; preparation only.
+- [`docs/quality/core-course-pilot-blank-results-v1.md`](../../../docs/quality/core-course-pilot-blank-results-v1.md) — public aggregate shape; blank by design.
 - [`observations/README.md`](observations/README.md) — the three preparation
   protocols and their shared privacy boundary.
 - [`observations/context-change-and-unknowns.md`](observations/context-change-and-unknowns.md)
