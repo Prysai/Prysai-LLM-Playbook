@@ -2,7 +2,7 @@
 
 # Official source receipt: platform and client encyclopedia
 
-**Research date:** 2026-09-05; selected official pages rechecked live on 2026-09-08 (America/Los_Angeles)
+**Research date:** 2026-09-05; selected official pages and npm registry metadata rechecked live on 2026-09-08 (America/Los_Angeles)
 
 **Status:** `candidate / source-checked / read-only`
 **Scope:** Official first-party documentation, official vendor repositories, and
@@ -45,9 +45,10 @@ for one official source. Product facts are volatile and must be rechecked before
 reader-facing publication. The 2026-09-08 live recheck reopened the current
 official entry pages used by the latest edits: the Claude Code overview, Grok
 Bot getting-started and approvals pages, and the DeepSeek Harness README. It
-checked page availability and the specific installation or terminology claims
-used by the route; it did not execute an installer, authenticate an account, or
-run a task.
+also checked the official Node.js, Git, and Homebrew entry points referenced as
+optional prerequisites. It checked page availability and the specific
+installation or terminology claims used by the route; it did not execute an
+installer, authenticate an account, or run a task.
 
 | ID | Official URL and page title | Accessed | Claim scope | Limitations |
 | --- | --- | --- | --- | --- |
@@ -72,9 +73,13 @@ run a task.
 | D2 | [CLI README at master — deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md) | 2026-09-05 | Documents `dsh` as the Node launcher and distinguishes `web`, `headless`, `sdk`, `sdk-minimal`, `acp`, plugin management, and conditional profiles such as a TUI profile. | Profiles, stdio behavior, PTY behavior, plugins, and compatibility were not executed. A TUI example is not treated as proof of a default built-in TUI. |
 | D3 | [CLI reference at master — deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md) | 2026-09-05 | Documents the `dsh web` alias, Web flags such as host/port/no-open, source-build requirements, and profile/plugin argument boundaries. | It is a documentation contract, not a local run. The default loopback address is not a public deployment guarantee, and broad cross-platform support is not inferred. |
 | D4 | [package.json at master — deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/package.json) | 2026-09-05 | The source checkout declares `pnpm@11.7.0` and Node `^22.19.0 || >=24.0.0`. | These constraints apply to the repository checkout; they are not automatically the compatibility contract of the published npm package. |
-| D5 | [@deepseek-ai/dsh package metadata — npm registry](https://registry.npmjs.org/@deepseek-ai%2fdsh) | 2026-09-05 | The registry snapshot observed latest `0.1.2-rc.1`, `dsh` as the bin, MIT license, and the official repository directory `apps/cli`; the observed version had no `engines` field. | Registry metadata is time-sensitive. The tarball was not downloaded, installed, or run; no npm/npx version matrix or platform success is claimed. |
+| D5 | [@deepseek-ai/dsh package metadata — npm registry](https://registry.npmjs.org/@deepseek-ai%2fdsh) | 2026-09-05; 2026-09-08 | The registry snapshot observed `latest=0.1.2-rc.1`, `dsh` as the bin, MIT license, and the official repository directory `apps/cli`; the observed version had no `engines` field. | Registry metadata is time-sensitive. The tarball was not downloaded, installed, or run; no npm/npx version matrix or platform success is claimed. |
 | M1 | [Gemini CLI installation, execution, and releases — Gemini CLI](https://geminicli.com/docs/get-started/installation) | 2026-09-05 | Used only for taxonomy: Google documents Gemini CLI as a separate terminal client with npm/Homebrew/MacPorts/other routes, named OS/runtime guidance, and a current scoped transition notice. | The notice, quotas, account eligibility, installation, and compatibility are volatile and were not independently run. It is not evidence about Codex, Claude Code, or Grok Bot. |
 | M2 | [IDE Integration — Gemini CLI](https://geminicli.com/docs/ide-integration) | 2026-09-05 | Used only for taxonomy: documents the VS Code companion extension and ACP/IDE integration boundary. | No extension, IDE, sandbox, PID handoff, or arbitrary-editor compatibility was tested. |
+| B1 | [Node.js downloads](https://nodejs.org/en/download/) | 2026-09-08 | Official download entry used for the optional Node.js prerequisite in the Windows/macOS setup path. | No Node.js version or local installation was tested; each client still owns its runtime requirement. |
+| B2 | [Git for Windows](https://git-scm.com/download/win) | 2026-09-08 | Official Windows download entry used when a terminal route needs Git or a disposable repository. | No Git installation, shell integration, or organization policy was tested. |
+| B3 | [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) | 2026-09-08 | Official Git documentation used for the general macOS/Linux prerequisite entry. | No platform-specific Git installation or version was tested. |
+| B4 | [Homebrew](https://brew.sh/) | 2026-09-08 | Official Homebrew entry used as an optional macOS package-manager route where a product's own documentation lists it. | Homebrew is not required for every product; no package-manager installation or package result was tested. |
 
 ## Not found or deliberately unverified
 

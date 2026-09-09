@@ -1,19 +1,19 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v11 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v13 -->
 
 # LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-Most people do not begin with a platform. They begin with a job: understand a
+Most people do not start with a platform. They start with a job: understand a
 page, rewrite a note, inspect a file, or keep a longer task moving. The same
-product name may lead to a browser chat, a phone app, a desktop application,
+product name may refer to a browser chat, a phone app, a desktop application,
 an IDE integration, a terminal agent, or a hosted computer. Those surfaces do
 not automatically share files, credentials, permissions, or history.
 
 Use this page as a practical reference, not as a list of tools to install. It
 answers five questions in order: what kind of work do you have, which client
 fits it, where will the work run, how do you reach the vendor's current setup
-path, and what is safe to try first? Each product entry also states what the
+path, and what is safe to try first? Each product entry also says what the
 documented setup does not prove. That distinction matters because an installer
 can succeed while authentication, account eligibility, file access, or the
 first task still fails.
@@ -94,7 +94,7 @@ whole learning path.
 | --- | --- | --- | --- |
 | Grok Bot | [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | Whether a low-risk, ongoing hosted workflow is worth checking for your account | Account access, reliability, complete auditability, or a general user result |
 | DeepSeek Harness | [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md), then the setup section below | Which official launch, profile, workspace, and safety boundaries to inspect | A successful local install, full Windows/macOS support, or a secure production runtime |
-| All named platforms | [Unified platform source receipt](../../docs/research/platform-encyclopedia-sources-2026-09-05.md) | Which product name, client, runtime, and official entry point the current source record supports | A successful install, account eligibility, client parity, or production readiness |
+| All named platforms | [Unified platform source receipt](../../docs/research/platform-encyclopedia-sources-2026-09-05.md) and the [2026-09-08 independent recheck](../../docs/research/platform-encyclopedia-sources-2026-09-08-review.md) | Which product name, client, runtime, and official entry point the current source record supports | A successful install, account eligibility, client parity, or production readiness |
 | A new release or public report | [Timely-content policy](../../docs/governance/timely-content-policy.md) | How to record why the topic matters now and what a reader can safely check | A permanent product fact, a representative user study, or a measured outcome |
 
 The Grok Bot note uses a supplied user story as a demand signal only. It is an
@@ -105,14 +105,22 @@ original, source-bounded reference, not a product review or a learner result.
 When a release or public discussion is moving quickly, publish a dated field
 note instead of burying a temporary detail in this evergreen route. Keep the
 note to one practical question, a clearly scoped set of sources, one low-risk
-reader action, and one review date. Label reported experience and project
-interpretation separately from official facts. If a source goes stale or the
-scope changes, narrow the claim or remove the Reader link; do not silently
-leave yesterday's product fact looking permanent.
+reader action, and claim-level review dates recorded in the source record. Label
+reported experience and project interpretation separately from official facts.
+If a source goes stale or the scope changes, narrow the claim or remove the
+Reader link; do not silently leave yesterday's product fact looking permanent.
 
 The [timely-content policy](../../docs/governance/timely-content-policy.md)
-contains the admission fields and rollback procedure. The existing
-[Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
+contains the admission fields and rollback procedure. Before linking a new
+note, fill the [timely-content template](../../docs/templates/timely-content.md),
+register the change under the `timely-content` row in
+[`update-registry.yaml`](../../docs/governance/update-registry.yaml), and record
+the English source and locale state in the
+[`locale-matrix.yaml`](../../docs/governance/locale-matrix.yaml). Generated
+Reader and search projections must be regenerated with the documented builders.
+If a note becomes stale or disputed, remove its Reader projection and regenerate
+the manifest and index while keeping the dated research record for audit history.
+The existing [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
 is the model: it explains why the topic matters now, what the official sources
 support, what a reader can safely check, and what remains unverified.
 
@@ -121,51 +129,28 @@ support, what a reader can safely check, and what remains unverified.
 If you are new to LLMs, read the
 [Universal Core Foundations route](universal-core-foundations-EN.md) first. It
 teaches the model boundary and the check-before-trust habit before any product
-setup. If you already know that foundation, use the table below to jump to the
-surface you need. You do not need to install every client.
+setup. If you already know that foundation, use this table to jump to the
+relevant part of the guide. You do not need to install every client.
 
-| If you want to... | Start here |
-| --- | --- |
-| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) |
-| Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
-| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
-| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
-| Choose a web, desktop, IDE, terminal, or hosted route | [Installation routes at a glance](#installation-routes-at-a-glance) |
-| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
-| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
-
-The rest of this page follows that order: choose a surface, install or open it,
-make a small first attempt, and record what actually happened.
-
-## Choose your starting point
-
-| You are... | Start with... | Your first useful result |
+| If you want to... | Start here | Stop and check... |
 | --- | --- | --- |
-| New to LLMs | [Universal Core Foundations route](universal-core-foundations-EN.md), then a web or mobile chat | A checked text-only answer with no tool or file access |
-| Comfortable with chat, but new to coding agents | The client map, then an IDE or terminal agent in a disposable folder | An explanation of one fixture and a proposed, reviewable diff |
-| Returning to a product after a break | The official source link, then the four evidence states below | A current client, version, and permission record instead of a memory-based assumption |
-| Working with a team or real repository | The preflight and setup receipt before opening the shared workspace | A named owner, scope, stop condition, and reviewable evidence |
+| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) | whether you can explain the result in your own words |
+| Choose a web, mobile, desktop, IDE, terminal, or cloud surface | [Platform and client map](#platform-and-client-map) | where the work will run and what it can see |
+| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) | whether the name identifies the product, client, or runtime |
+| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) | whether the command is official and what it will change |
+| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) | the operating system, architecture, shell, and PATH |
+| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) | whether you have a task result and a human acceptance decision |
 
-You do not need to install every product. Choose the smallest surface that can
-complete the next task, and only move to a larger surface when the smaller one
-cannot provide the context or control you need.
+The page follows one simple loop: choose a surface, install or open it, make a
+small first attempt, and record what actually happened.
 
 <span id="platform-and-client-map"></span>
 
 ## Platform and client map
 
-### Choose by task
-
-| If you want to... | Start with... | Do not assume... |
-| --- | --- | --- |
-| Ask, draft, compare, or learn with supplied text | A web or mobile chat | The chat can inspect local files or act outside the conversation |
-| Work with a local codebase and review edits | An IDE or terminal agent in a disposable project | It has permission to change every file, run every command, or publish work |
-| Keep a long-running task on a hosted machine | A documented cloud-agent surface | Hosted files, sessions, identity, and approval rules are the same as your laptop's |
-| Use a model from your own software | The vendor API documentation | An API is the same product as a consumer app or coding agent |
-
-When two products share a name, pause before treating them as one thing. A
-shared brand does not imply a shared filesystem, shell, account, or permission
-model.
+Start by identifying the surface, then identify the runtime. When two products
+share a name, pause before treating them as one thing. A shared brand does not
+imply a shared filesystem, shell, account, or permission model.
 
 ### Keep these four layers separate
 
@@ -555,9 +540,10 @@ separate approval point.
 
 ## Install and make a first safe attempt
 
-The commands in this section are official installation entries captured on
-2026-09-03, 2026-09-04, or 2026-09-05, as noted in the linked receipts. They
-are not commands that this project ran. Read the linked source
+The commands in this section are official installation entries recorded in the
+linked receipts. Those receipts were first prepared between 2026-09-03 and
+2026-09-05; selected source pages were rechecked on 2026-09-08. They are not
+commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
 
@@ -803,6 +789,7 @@ using them. Homebrew and WinGet provide package-manager alternatives where
 documented, with their own update and trust boundaries.
 
 ```bash
+# Warning: this official quick path downloads and executes remote code.
 # macOS, Linux, or WSL
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -811,6 +798,7 @@ brew install --cask claude-code
 ```
 
 ```powershell
+# Warning: this official quick path downloads and executes remote code.
 # Windows PowerShell
 irm https://claude.ai/install.ps1 | iex
 
@@ -823,10 +811,14 @@ documented by Anthropic instead of pasting a PowerShell command into the wrong
 shell:
 
 ```cmd
+# Warning: this official quick path downloads and executes remote code.
 curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
-Then enter a disposable project and run:
+The final `del install.cmd` removes the temporary local copy after execution; it
+does not verify the installer's integrity. If that distinction matters, use the
+download-and-inspect pattern above before running the vendor's installer. Then
+enter a disposable project and run:
 
 ```text
 claude
@@ -951,7 +943,21 @@ The npm route is documented, but the project does not promise identical
 behaviour for every profile, plugin, or configuration on Windows and macOS.
 Treat a launch on either system as a controlled local observation until you
 have checked the exact profile and recorded the result in a receipt.
-To start without opening a browser automatically:
+
+When checked on 2026-09-08, the npm registry's `latest` tag pointed to
+`0.1.2-rc.1`. The unpinned command follows the tag resolved at execution time;
+record the version that `npx` actually selects. For a repeatable snapshot of
+that observation, pin the package explicitly:
+
+```sh
+npx @deepseek-ai/dsh@0.1.2-rc.1 web --no-open
+```
+
+The pinned command is a reproducibility aid, not a claim that this project ran
+that release. The source documentation also supports `--no-open` when you do
+not want the command to open a browser automatically.
+
+To use the unpinned entry without opening a browser automatically:
 
 ```sh
 npx @deepseek-ai/dsh web --no-open
@@ -1115,6 +1121,23 @@ vendor's current documentation remains the authority for operating-system
 versions, architecture, regional availability, account eligibility, and
 installation changes.
 
+### Base dependencies: install only what the route needs
+
+Desktop-only work may need none of these tools. A terminal route may need
+Node.js, Git, or a package manager, depending on the product. Start at the
+official entry point for the operating system you actually use:
+
+| Dependency | Official entry point | When it matters |
+| --- | --- | --- |
+| Node.js | [Node.js downloads](https://nodejs.org/en/download/) | Gemini CLI and other Node-based clients; check the product's own version requirement first |
+| Git on Windows | [Git for Windows](https://git-scm.com/download/win) | Cloning a disposable project or supplying Git-backed context to a client |
+| Git on macOS/Linux | [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) | A terminal workflow that needs a repository or version-controlled diff |
+| Homebrew on macOS | [Homebrew](https://brew.sh/) | An optional package-manager route when the product's official documentation lists it |
+
+These links are prerequisites, not a recommendation to install everything. A
+package manager does not replace the product's own account, version, or
+permission requirements.
+
 ### Windows: PowerShell first
 
 1. Open a normal PowerShell window and record the shell, architecture, and
@@ -1183,47 +1206,25 @@ Do not turn this checklist into a claim that every named product supports every
 Windows release, Mac model, corporate policy, region, account, or IDE. When the
 official source is narrower, the source wins.
 
-## Three first-use recipes
+## Keep a first-use record
 
-### Desktop app
+After setup or a first task, write one short receipt. It makes a later retry
+meaningful and prevents a successful login from being mistaken for a successful
+workflow.
 
-1. Open the official app and sign in.
-2. Start a new chat with supplied or fictional text only.
-3. Ask for a short result with a visible boundary, such as “do not browse,
-   upload, send, or edit files.”
-4. Compare the response with the supplied material. Only then decide whether a
-   project, folder, upload, or connected capability is necessary for the next
-   task.
+| Field | Record |
+| --- | --- |
+| Client and runtime | Product surface, operating system, architecture, and local or hosted runtime |
+| Scope | Working directory or hosted workspace, permission mode, and whether tools or extensions were enabled |
+| Authentication | Account or provider route used; never record the secret itself |
+| Task and result | The small request, response/log/diff, visible version, and date |
+| Decision | What you accepted, rejected, or stopped before doing, plus the next check |
 
-### IDE integration
-
-1. Open one disposable workspace and one relevant file.
-2. Check what the integration can see: open files, selection, cursor, project
-   root, and any displayed tool or permission state.
-3. Ask for an explanation before asking for a change.
-4. Request a small proposed diff, inspect every changed line, and run the
-   narrowest relevant check yourself.
-
-An IDE's context window is not a grant to edit the entire repository. If the
-integration cannot show what it selected or changed, stop and narrow the task.
-
-### Terminal agent
-
-1. Open a disposable folder in the shell and record the starting state:
-
-   ```text
-   cd <disposable-folder>
-   git status --short
-   ```
-
-   On PowerShell, use `Set-Location <disposable-folder>` instead of `cd` if
-   that is clearer in your environment.
-2. Launch the intended agent and confirm the account, workspace, and visible
-   permission mode.
-3. Ask it to inspect or explain one fixture and stop. Do not begin with a
-   publish, delete, dependency upgrade, credential, or production task.
-4. If the result is useful, allow one small change. Review the diff, run the
-   relevant test or checker, and record whether you accepted or rejected it.
+For a desktop app, the receipt should identify the selected project or folder
+only after you intentionally opened it. For an IDE, record the open file,
+selection, project root, and proposed diff. For a terminal agent, record the
+starting directory and `git status --short` before asking for a change. If the
+client cannot show what it saw or changed, narrow the task before continuing.
 
 <span id="evidence-states"></span>
 
