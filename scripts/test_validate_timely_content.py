@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 import tempfile
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import validate_timely_content as timely
@@ -125,6 +125,11 @@ def duplicate_source_table_last_column(note: str) -> str:
 
 def main() -> int:
     note = (timely.ROOT / "docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md").read_text(encoding="utf-8")
+    last_reviewed = timely.metadata_value(note, "Last reviewed")
+    next_review = timely.metadata_value(note, "Next review")
+    require(last_reviewed is not None and next_review is not None, "canonical note review metadata is missing")
+    last_reviewed_date = date.fromisoformat(last_reviewed)
+    next_review_date = date.fromisoformat(next_review)
     valid_errors = run_fixture(note)
     require(not valid_errors, f"valid source-first field note was rejected: {valid_errors}")
 
@@ -142,7 +147,7 @@ def main() -> int:
         "low-risk action": remove_section(note, "Safe reader action and limits"),
         "failure handling": remove_section(note, "Failure and contradiction cases"),
         "next review": remove_bullet(note, "next_review").replace(
-            "> **Next review:** `2026-09-09`\n", ""
+            f"> **Next review:** `{next_review}`\n", ""
         ),
         "rollback_projection": remove_bullet(note, "rollback_projection"),
     }
@@ -223,8 +228,8 @@ def main() -> int:
         "formatted fact-status header bypassed row validation",
     )
     review_date_too_old = note.replace(
-        "> **Last reviewed:** `2026-09-03`",
-        "> **Last reviewed:** `2026-09-02`",
+        f"> **Last reviewed:** `{last_reviewed}`",
+        f"> **Last reviewed:** `{(last_reviewed_date - timedelta(days=1)).isoformat()}`",
         1,
     )
     require(
@@ -232,8 +237,8 @@ def main() -> int:
         "a note reviewed before one of its claims was accepted",
     )
     claim_review_date_too_early = note.replace(
-        " | 2026-09-09 |",
-        " | 2026-09-08 |",
+        f" | {next_review} |",
+        f" | {last_reviewed} |",
         1,
     )
     require(
@@ -248,7 +253,7 @@ def main() -> int:
     require(
         any(
             "current claim is due for review" in error
-            for error in run_fixture(note, as_of=date(2026, 9, 9))
+            for error in run_fixture(note, as_of=next_review_date)
         ),
         "a current claim due on the as-of date was accepted",
     )

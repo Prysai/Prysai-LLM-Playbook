@@ -1,6 +1,6 @@
 # DeepSeek Harness 官方来源百科核对
 
-**访问日期：** 2026-09-03
+**访问日期：** 2026-09-03；npm registry 元数据于 2026-09-08 再次核对
 **研究状态：** `source-checked / read-only / not-installed / not-run`
 **研究范围：** 只核对 DeepSeek Harness 官方仓库 `deepseek-ai/deepseek-harness`、该仓库文档，以及 npm 官方 registry 元数据。本文不把本机历史运行记录、第三方教程、社区帖子或本次安装/运行结果当作证据。
 
@@ -14,7 +14,7 @@
 - 官方仓库把 DeepSeek Harness（命令名 `dsh`）定义为 DeepSeek AI 开发的开源 agent harness，并明确标为 developer preview；官方同时警告会发生破坏兼容性变更。
 - 官方 README 的 npm 入口是 `npx @deepseek-ai/dsh web`。仓库文档说该入口默认在 `http://127.0.0.1:3080` 启动 Web UI，并在本机启动时打开默认浏览器；`--no-open` 可关闭浏览器交接。
 - 源码 checkout 的仓库根 `package.json` 声明 `pnpm@11.7.0` 和 Node `^22.19.0 || >=24.0.0`。README 的 npm 快速入口只写“安装 Node.js”，没有单独声明 npm 或 npx 版本。
-- npm registry 的 `@deepseek-ai/dsh@0.1.2-rc.1` 元数据有 `dsh` bin，但没有 `engines` 字段。因此，源码 checkout 的 Node 约束不能自动改写成已发布包的 registry 兼容性声明。
+- 2026-09-08 再次查询 npm registry 时，`@deepseek-ai/dsh` 的 `latest` tag 仍指向 `0.1.2-rc.1`；该观察到的元数据有 `dsh` bin，但没有 `engines` 字段。因此，源码 checkout 的 Node 约束不能自动改写成已发布包的 registry 兼容性声明。这个版本观察没有下载、安装或运行 tarball。
 - CLI/终端边界是明确的：`dsh web` 是 Web profile 别名；`headless`、`sdk`、`sdk-minimal` 和 `acp` 是不同 profile，其中 SDK/ACP 通过 stdio 工作。官方 CLI 文档没有把 TUI 当作默认内置入口；文档中的 `dsh --profile tui` 明确是假设该 profile 已安装的示例。
 - 官方没有给出“整个 DeepSeek Harness 在 Windows 和 macOS 上全面支持”的单一声明。仓库包含 Windows ACL、PowerShell、Win32 和 macOS Seatbelt 相关实现/测试与 CI 资料，但这只能证明仓库存在相应平台代码或验证路径，不能单独证明每个发行入口、配置组合或功能在目标平台上可用。
 - 官方安全说明明确说项目尚未经过安全审计，不应视为安全或生产就绪；它可以执行模型生成的代码/命令、加载第三方插件并访问被授予的网络、进程、凭据和文件。沙箱、审批和权限控制只能降低风险，不能保证隔离。
@@ -195,7 +195,7 @@ Web UI 指南规定：新 Web UI 没有选中的 workspace，必须先添加并�
 |---|---|---|---|---|
 | https://github.com/deepseek-ai/deepseek-harness/blob/master/README.md | 项目身份、developer preview、npm/source 启动、Web 默认地址 | 2026-09-03 | 仓库 README | 未验证运行结果或兼容性 |
 | https://github.com/deepseek-ai/deepseek-harness/blob/master/package.json | Node 与 pnpm 源码约束 | 2026-09-03 | 仓库 checkout | 未证明 npm 包继承该 `engines` 字段 |
-| https://registry.npmjs.org/@deepseek-ai%2fdsh | 已发布 CLI 包、latest、bin、registry engines 字段 | 2026-09-03 | registry 返回的 `@deepseek-ai/dsh` 元数据 | 未下载、安装或运行 tarball |
+| https://registry.npmjs.org/@deepseek-ai%2fdsh | 已发布 CLI 包、latest、bin、registry engines 字段 | 2026-09-03；2026-09-08 | registry 返回的 `@deepseek-ai/dsh` 元数据；2026-09-08 观察到 `latest=0.1.2-rc.1` | 未下载、安装或运行 tarball；registry tag 可能继续变化 |
 | https://registry.npmjs.org/deepseek-harness | 名称占位包、无 bin 的元数据边界 | 2026-09-03 | registry 返回的未加 scope 包元数据 | 未把其发布者或相关 TUI 项目视为 DeepSeek 官方实现 |
 | https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/README.md | launcher、profile、Web/stdio/插件边界 | 2026-09-03 | 官方 CLI 包文档 | 未运行各 profile |
 | https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md | 参数边界、Web host/port、权限与源码运行细节 | 2026-09-03 | 官方 CLI 行为参考 | 未验证具体平台行为 |

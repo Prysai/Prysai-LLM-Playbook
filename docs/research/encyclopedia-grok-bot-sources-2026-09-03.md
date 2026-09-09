@@ -1,6 +1,6 @@
 # Encyclopedia route: Grok Bot official-source research
 
-**Research date:** 2026-09-03
+**Research date:** 2026-09-03; selected official pages rechecked live on 2026-09-08
 **Status:** `candidate / source-checked`
 **Scope:** Official xAI/SpaceXAI product documentation, official xAI GitHub repositories, and the official web entry points reachable from this environment.
 **Repository boundary:** This is a source record supporting the candidate encyclopedia route. It contains original factual paraphrases and source links; it is not verification of runtime behavior, account access, or learner outcomes.
@@ -49,10 +49,11 @@ The safest encyclopedia wording is therefore: **“Grok Bot is a persistent clou
 
 - **Fact:** The official getting-started page requires “the Grok Bot desktop app for macOS, Windows, or Linux” and instructs the user to download it, install it, open it, and authenticate in a browser.
 - **Fact:** The page describes separate macOS Apple-silicon/Intel downloads, Windows x64/Arm64 downloads, and Linux x64/Arm64 packages (`.deb`, `.rpm`, or AppImage).
+- **Fact:** The current getting-started page also lists an eligible plan and cloud data storage as prerequisites, and directs accounts using Legacy Privacy Mode to review their Cursor data setting before starting. These are account and privacy preconditions, not a universal availability guarantee.
 - **Fact:** The page says the desktop app checks for updates automatically and also exposes “Check for Updates” under Settings → Beta.
 - **Surface:** Grok Bot desktop application.
 - **Source:** [Get started](https://docs.x.ai/grok-bot/get-started)
-- **Accessed:** 2026-09-03; HTTP 200 from `docs.x.ai`.
+- **Accessed:** 2026-09-03; live rechecked 2026-09-08; HTTP 200 from `docs.x.ai`.
 - **Applicable scope:** Installation instructions and platform labels shown on the official page; actual download availability, account eligibility, architecture support, and rollout can change.
 - **Caveat:** This page lists eligible plans and Cursor-account sign-in requirements. It is not evidence that a reader's account is eligible.
 
@@ -86,7 +87,7 @@ The safest encyclopedia wording is therefore: **“Grok Bot is a persistent clou
 - **Fact:** It says Grok Bot uses Cursor authentication and account data settings, requires data storage, and does not support Legacy Privacy Mode; training opt-out follows applicable Cursor account and privacy settings.
 - **Surface:** Safety, approval, and privacy boundary for Grok Bot.
 - **Source:** [Approvals, security, and privacy](https://docs.x.ai/grok-bot/approvals-security-and-privacy)
-- **Accessed:** 2026-09-03; HTTP 200 from `docs.x.ai`.
+- **Accessed:** 2026-09-03; live rechecked 2026-09-08; HTTP 200 from `docs.x.ai`.
 - **Applicable scope:** The controls and cautions stated in the official documentation. Contractual retention, encryption, and plan terms require the linked current Cursor materials and are not independently restated here.
 - **Caveat:** An approval gate controls a proposed action; it does not reverse work already performed. Do not teach approval as rollback.
 

@@ -1,19 +1,19 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v8 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
 
-# LLM platforms and clients: a practical encyclopedia for choosing, installing, and getting started
+# LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
 **Status:** `candidate`. **Run status:** `not_run`.
 
-Most people do not begin with a platform. They begin with a job: understand a
+Most people do not start with a platform. They start with a job: understand a
 page, rewrite a note, inspect a file, or keep a longer task moving. The same
-product name may lead to a browser chat, a phone app, a desktop application,
+product name may refer to a browser chat, a phone app, a desktop application,
 an IDE integration, a terminal agent, or a hosted computer. Those surfaces do
 not automatically share files, credentials, permissions, or history.
 
 Use this page as a practical reference, not as a list of tools to install. It
 answers five questions in order: what kind of work do you have, which client
 fits it, where will the work run, how do you reach the vendor's current setup
-path, and what is safe to try first? Each product entry also states what the
+path, and what is safe to try first? Each product entry also says what the
 documented setup does not prove. That distinction matters because an installer
 can succeed while authentication, account eligibility, file access, or the
 first task still fails.
@@ -25,8 +25,8 @@ The route keeps the transferable method from the
 [Universal Core Foundations route](universal-core-foundations-EN.md) in view:
 define the task, limit the authority, inspect the result, and keep the evidence.
 Commands, plans, availability, and client support change. The linked source
-receipts record what the official documentation said on 2026-09-03, 2026-09-04,
-or 2026-09-05. They do not prove that an installer, account, or task will work
+receipts record the official documentation they checked and the date of the
+latest review. They do not prove that an installer, account, or task will work
 for you.
 
 > Choose the surface before you choose the command. A familiar product name
@@ -94,62 +94,63 @@ whole learning path.
 | --- | --- | --- | --- |
 | Grok Bot | [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | Whether a low-risk, ongoing hosted workflow is worth checking for your account | Account access, reliability, complete auditability, or a general user result |
 | DeepSeek Harness | [DeepSeek Harness source receipt](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md), then the setup section below | Which official launch, profile, workspace, and safety boundaries to inspect | A successful local install, full Windows/macOS support, or a secure production runtime |
-| All named platforms | [Unified platform source receipt](../../docs/research/platform-encyclopedia-sources-2026-09-05.md) | Which product name, client, runtime, and official entry point the current source record supports | A successful install, account eligibility, client parity, or production readiness |
+| All named platforms | [Unified platform source receipt](../../docs/research/platform-encyclopedia-sources-2026-09-05.md) and the [2026-09-08 independent recheck](../../docs/research/platform-encyclopedia-sources-2026-09-08-review.md) | Which product name, client, runtime, and official entry point the current source record supports | A successful install, account eligibility, client parity, or production readiness |
 | A new release or public report | [Timely-content policy](../../docs/governance/timely-content-policy.md) | How to record why the topic matters now and what a reader can safely check | A permanent product fact, a representative user study, or a measured outcome |
 
 The Grok Bot note uses a supplied user story as a demand signal only. It is an
 original, source-bounded reference, not a product review or a learner result.
+
+### A simple rule for current topics
+
+When a release or public discussion is moving quickly, publish a dated field
+note instead of burying a temporary detail in this evergreen route. Keep the
+note to one practical question, a clearly scoped set of sources, one low-risk
+reader action, and claim-level review dates recorded in the source record. Label
+reported experience and project interpretation separately from official facts.
+If a source goes stale or the scope changes, narrow the claim or remove the
+Reader link; do not silently leave yesterday's product fact looking permanent.
+
+The [timely-content policy](../../docs/governance/timely-content-policy.md)
+contains the admission fields and rollback procedure. Before linking a new
+note, fill the [timely-content template](../../docs/templates/timely-content.md),
+register the change under the `timely-content` row in
+[`update-registry.yaml`](../../docs/governance/update-registry.yaml), and record
+the English source and locale state in the
+[`locale-matrix.yaml`](../../docs/governance/locale-matrix.yaml). Generated
+Reader and search projections must be regenerated with the documented builders.
+If a note becomes stale or disputed, remove its Reader projection and regenerate
+the manifest and index while keeping the dated research record for audit history.
+The existing [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
+is the model: it explains why the topic matters now, what the official sources
+support, what a reader can safely check, and what remains unverified.
 
 ## Find your route
 
 If you are new to LLMs, read the
 [Universal Core Foundations route](universal-core-foundations-EN.md) first. It
 teaches the model boundary and the check-before-trust habit before any product
-setup. If you already know that foundation, use the table below to jump to the
-surface you need. You do not need to install every client.
+setup. If you already know that foundation, use this table to jump to the
+relevant part of the guide. You do not need to install every client.
 
-| If you want to... | Start here |
-| --- | --- |
-| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) |
-| Choose between web, mobile, desktop, IDE, terminal, or cloud | [Platform and client map](#platform-and-client-map) |
-| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) |
-| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) |
-| Choose a web, desktop, IDE, terminal, or hosted route | [Installation routes at a glance](#installation-routes-at-a-glance) |
-| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) |
-| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) |
-
-The rest of this page follows that order: choose a surface, install or open it,
-make a small first attempt, and record what actually happened.
-
-## Choose your starting point
-
-| You are... | Start with... | Your first useful result |
+| If you want to... | Start here | Stop and check... |
 | --- | --- | --- |
-| New to LLMs | [Universal Core Foundations route](universal-core-foundations-EN.md), then a web or mobile chat | A checked text-only answer with no tool or file access |
-| Comfortable with chat, but new to coding agents | The client map, then an IDE or terminal agent in a disposable folder | An explanation of one fixture and a proposed, reviewable diff |
-| Returning to a product after a break | The official source link, then the four evidence states below | A current client, version, and permission record instead of a memory-based assumption |
-| Working with a team or real repository | The preflight and setup receipt before opening the shared workspace | A named owner, scope, stop condition, and reviewable evidence |
+| Understand the basic LLM workflow | [Universal Core Foundations](universal-core-foundations-EN.md) | whether you can explain the result in your own words |
+| Choose a web, mobile, desktop, IDE, terminal, or cloud surface | [Platform and client map](#platform-and-client-map) | where the work will run and what it can see |
+| Learn the product names people often confuse | [Names that are easy to confuse](#names-that-are-easy-to-confuse) | whether the name identifies the product, client, or runtime |
+| Install a product and make a safe first attempt | [Install and make a first safe attempt](#install-and-make-a-first-safe-attempt) | whether the command is official and what it will change |
+| Set up a Windows or macOS machine | [Windows and macOS setup paths](#windows-and-macos-setup-paths) | the operating system, architecture, shell, and PATH |
+| Decide whether a result is actually acceptable | [Four evidence states](#evidence-states) | whether you have a task result and a human acceptance decision |
 
-You do not need to install every product. Choose the smallest surface that can
-complete the next task, and only move to a larger surface when the smaller one
-cannot provide the context or control you need.
+The page follows one simple loop: choose a surface, install or open it, make a
+small first attempt, and record what actually happened.
 
 <span id="platform-and-client-map"></span>
 
 ## Platform and client map
 
-### Choose by task
-
-| If you want to... | Start with... | Do not assume... |
-| --- | --- | --- |
-| Ask, draft, compare, or learn with supplied text | A web or mobile chat | The chat can inspect local files or act outside the conversation |
-| Work with a local codebase and review edits | An IDE or terminal agent in a disposable project | It has permission to change every file, run every command, or publish work |
-| Keep a long-running task on a hosted machine | A documented cloud-agent surface | Hosted files, sessions, identity, and approval rules are the same as your laptop's |
-| Use a model from your own software | The vendor API documentation | An API is the same product as a consumer app or coding agent |
-
-When two products share a name, pause before treating them as one thing. A
-shared brand does not imply a shared filesystem, shell, account, or permission
-model.
+Start by identifying the surface, then identify the runtime. When two products
+share a name, pause before treating them as one thing. A shared brand does not
+imply a shared filesystem, shell, account, or permission model.
 
 ### Keep these four layers separate
 
@@ -199,7 +200,7 @@ Use the map in this order:
 If you cannot answer “which client saw which files, and where did the action
 run?”, you do not yet have a reproducible setup.
 
-### Platform cards: the short version
+### Platform cards: what each surface is for
 
 #### ChatGPT: start with the conversation, then decide whether you need more
 
@@ -297,18 +298,54 @@ equivalent. API surfaces are deliberately kept separate from consumer chat and
 coding-agent clients. Prices, model choices, quotas, and account eligibility
 change more often than the basic client boundaries do.
 
+#### Grok Bot in practical terms
+
+Grok Bot is easier to use when you treat its parts separately instead of
+thinking of it as one large "AI employee." The names below describe different
+kinds of state, authority, or timing. They help you plan a task, but they are
+not security boundaries or promises of reliable automation.
+
+| Part | What it controls | A sensible first use |
+| --- | --- | --- |
+| **Bot** | A named, persistent work role and its standing instructions | Give one Bot one repeatable result with a clear owner and acceptance check |
+| **Skill** | A reusable method for carrying out a kind of task | Save a method only after you have reviewed it on more than one harmless input |
+| **Routine** | When a Bot should run, such as on a schedule or documented trigger | Test one run and check the source date before trusting the next result |
+| **Connector** | Which outside service or data source the Bot can reach | Inspect the connector's account, scopes, and write permissions before enabling it |
+| **Cloud computer** | The remote browser, files, terminal, and other work context used by the Bot | Keep the first workspace disposable and record where each file was created |
+| **Local execution** | A separate permission to use the computer in front of you | Leave it off until the task genuinely needs a local file or command |
+| **Handoff or group chat** | How work moves between Bots and which participants can see it | Give each stage one responsible Bot and send the final result back to a person |
+
+Start with one small setup. Define the result the Bot owns, put its durable
+responsibilities in its profile, and keep today's request in the conversation.
+Begin with a read-only or draft result based on public or sanitized material.
+Keep the sources, unknowns, and proposed next step visible. Once you have
+reviewed the method on more than one harmless input, save it as a Skill, attach
+a Routine, add a Connector, or create another Bot for a genuinely separate
+job.
+
+Bots that share an account may also share cloud files, sessions, or credentials.
+Separate names do not create separate trust zones. Keep messages, publications,
+purchases, deletions, permission changes, and production actions behind an
+explicit human decision. The dated [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
+records the official sources and the limits of what this project has actually
+observed.
+
 <span id="installation-routes-at-a-glance"></span>
 
 ## Installation routes at a glance
 
-Do not install everything in this table. Start with the smallest client that
-can complete the next task.
+“Install” means different things in this guide. A web or mobile client is
+opened, a desktop app is downloaded, an IDE integration is added to an editor,
+a terminal agent is installed through its documented package or installer, and
+a hosted surface is enabled in an account. These routes are not interchangeable.
+Do not set up everything in the table; start with the smallest client that can
+complete the next task.
 
 | Route | Examples in this guide | Use it for | Installation or access | First check |
 | --- | --- | --- | --- | --- |
 | Web chat | ChatGPT, Gemini, Grok | Questions, drafting, comparison, and learning from supplied text | Open the vendor's official web entry | Confirm the account, region, and whether tools or extensions are enabled |
 | Mobile app | ChatGPT, Gemini, Grok Bot companion | Short reading, dictation, capture, and review away from the desk | Follow the vendor's official app or download page | Verify the publisher and check which settings remain desktop-only |
-| Desktop app | ChatGPT, Grok Bot, Claude Code | A larger interactive workspace, local folders, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
+| Desktop app | ChatGPT/Codex, Grok Bot, Claude Code | A larger interactive workspace, a selected local project, or a hosted-computer client | Download the package for the operating system and CPU architecture | Confirm the selected folder or hosted runtime before sharing files |
 | IDE integration | Codex, Claude Code, Gemini, Google Cloud Code | Code selection, editor context, inline diffs, and project navigation | Install the vendor-linked extension or plugin for the IDE you use | Check the workspace root, selected files, tools, and proposed diff |
 | Terminal agent | Codex CLI, Claude Code, Gemini CLI, Grok Build | Repeatable commands, scripts, and source-controlled changes | Use the official installer or package-manager entry | Run the version command in a disposable folder and inspect permission mode |
 | Hosted or cloud agent | Codex Cloud/Web, Claude browser/cloud, Grok Bot | Work that belongs on a remote machine or should continue after the client closes | Enable the documented cloud surface | Record the remote repository, files, credentials, network, and approval boundary |
@@ -466,55 +503,86 @@ extension family.
 Sources: [Codex and Claude Code source receipt](../../docs/research/encyclopedia-coding-agents-sources-2026-09-03.md)
 and [Google Cloud Code source receipt](../../docs/research/encyclopedia-cloud-code-sources-2026-09-04.md).
 
-## Pick a client before you pick a workflow
+## How to use each client type
 
-### Web and mobile chat
+The client changes the kind of context an LLM can receive and the actions it can
+propose. The same request can therefore produce different evidence in a
+browser, a desktop app, an IDE, a terminal, or a hosted machine. A desktop
+client is usually interactive and context-rich. A terminal client is usually
+easier to script and repeat. A hosted client changes where the files,
+credentials, and network access live. Those differences affect the work itself.
+Choose the client from the job, then make the smallest useful first attempt.
 
-Choose this when the task is supplied text, a question, a draft, or a small
-comparison. It is the lowest-setup place to learn the core request-and-check
-loop. Start with no tools, no uploads, and no external actions. If the UI
-offers browsing, extensions, files, or sharing, those are extra surfaces to
-decide about, not defaults you must enable.
+### Web or mobile chat
+
+Choose a browser or mobile chat when the task is a question, a rewrite, a
+draft, or a small comparison based on material you can safely provide in the
+conversation. This is usually the quickest way to practise the core
+request-and-check loop.
+
+A good first session is simple: start a new conversation, state the desired
+result, provide a small source, and ask for a bounded response. Compare the
+answer with the source before enabling browsing, uploads, extensions, sharing,
+or any other connected capability. Those features expand the task surface;
+they are not required just because the client offers them.
 
 ### Desktop app
 
-Choose a desktop client when you need a larger working view, local project
-selection, or an interactive application experience. A desktop app is still a
-client, not proof that automation, headless execution, every CLI flag, or every
-desktop feature is available. Read its local-project and approval controls
-before opening a non-disposable directory.
+Choose a desktop app when you need a larger working view, a local project
+selection, or an interactive application experience. Start with a new chat or
+an empty project. Confirm whether the selected location is local, hosted,
+shared, or writable before you add files.
+
+The usual progression is: open one folder, ask for a read-only explanation,
+inspect what the app says it can see, then request one small proposed change.
+Review the diff yourself before accepting it. A desktop app is still one
+client, not proof that the product's browser, terminal, automation, or cloud
+surface has the same capabilities.
 
 ### IDE integration
 
-Choose an IDE integration when code selection, inline diffs, and project
-navigation are the main value. Start with a narrow request such as "explain
-this file" or "propose a diff for this one typo." Review the diff yourself.
-An IDE extension can surface more context than a plain chat, which makes a
-small scope more important, not less.
+Choose an IDE integration when the value comes from code selection, inline
+diffs, project navigation, or the editor's current context. Open one
+disposable workspace and one relevant file. Check the workspace root, selected
+text, open files, tools, and permission state before sending the request.
+
+Ask for an explanation first. If the explanation is useful, request a small
+diff for one clearly named change, inspect every changed line, and run the
+narrowest relevant check yourself. An IDE extension can expose more context
+than a plain chat, which makes a narrow scope more important, not less.
 
 ### Terminal agent
 
-Choose a terminal agent when you need a repeatable command-line workflow,
-scripts, or source-controlled changes. The terminal is powerful because it can
-inspect and change a real workspace. First learn it in a disposable folder,
-with a clear stop condition and no secrets. A command prompt is not a reason to
-give a model unrestricted authority.
+Choose a terminal agent when you need repeatable commands, scripts, or
+source-controlled changes. Begin in a disposable folder and record the starting
+directory and repository status. Ask for a read-only listing or explanation
+before allowing edits, commands, dependency changes, or network access.
+
+When a small change is justified, keep the request to one file or one fixture.
+Read the proposed command and diff, run the relevant check, and stop if the
+agent reaches outside the declared workspace. Having a command prompt does not
+justify giving a model unrestricted authority.
 
 ### Cloud or hosted agent
 
-Choose a cloud agent when the task genuinely needs a hosted environment or can
-continue while your client is closed. First check where files, browser sessions,
-credentials, and approvals live. A hosted computer may be useful, but it is not
-your local machine and should not be treated as an isolated security boundary
-unless the product documentation explicitly establishes one.
+Choose a cloud or hosted agent when the task genuinely needs a remote
+environment or should continue while your client is closed. Before the first
+request, record the remote repository or workspace, the runtime, the available
+credentials, the network boundary, persistence, and the approval rules.
+
+Start with a draft or read-only task. A hosted computer is not your laptop, and
+it is not automatically an isolated security boundary. Treat a proposed send,
+publish, purchase, deletion, permission change, or production action as a
+separate approval point.
 
 <span id="install-and-make-a-first-safe-attempt"></span>
 
 ## Install and make a first safe attempt
 
-The commands in this section are official installation entries captured on
-2026-09-03, 2026-09-04, or 2026-09-05, as noted in the linked receipts. They
-are not commands that this project ran. Read the linked source
+The commands in this section are official installation entries recorded in the
+linked receipts. Those receipts were first prepared between 2026-09-03 and
+2026-09-05; selected source pages were rechecked on 2026-09-08. They are not
+commands that this project ran. Read the linked source
 and the command before executing it, use a supported account, and stop if the
 actual installer, package name, or permission prompt differs from the source.
 
@@ -593,13 +661,18 @@ URL, so this guide does not hard-code one. Begin with the same text-only
 exercise and do not infer that the mobile app has the same file, desktop, or
 coding integrations as the web app.
 
-**Desktop:** Follow OpenAI's [desktop-app guide](https://developers.openai.com/codex/app.md):
-install the app for macOS or Windows (or follow its linked Linux guide), sign
-in, choose a chat, project, or folder, and send a first message. Choosing a
-folder changes the authority boundary because the app may use files in that
-location and may be able to modify them. Start with a disposable folder, ask
-for a read-only explanation, and inspect any proposed change before accepting
-it.
+**Desktop:** Start at OpenAI's [ChatGPT desktop app guide](https://developers.openai.com/codex/app.md)
+and follow its current download entry for macOS, Windows, or Linux. The desktop
+application is a shared ChatGPT/Codex entry point: after signing in and choosing
+where to work, the official quickstart lets you choose ChatGPT or Codex. That
+does not make the desktop app equivalent to the web chat, Codex CLI, IDE
+integration, or Codex Cloud.
+
+Choose a chat or project first and keep the first exercise text-only. If you
+open a folder later, treat that as an authority decision: the app may use files
+in that location and may be able to modify them. Start with a disposable folder,
+ask for a read-only explanation, and inspect any proposed change before
+accepting it.
 
 Record the client you used. A successful desktop task is not evidence that the
 web or mobile client can inspect the same local files. See the [ChatGPT and
@@ -608,16 +681,25 @@ for the access date and unresolved availability questions.
 
 ### Grok Bot: desktop and companion mobile clients
 
-Use **Grok Bot** when you want the documented persistent-cloud-computer
-teammate experience, not a local terminal coding agent.
+Use **Grok Bot** when you want the documented experience of working with a
+teammate on a persistent cloud computer, rather than a local terminal coding
+agent. Before downloading,
+check the current getting-started page for account eligibility and storage
+requirements. The page currently says that Grok Bot needs an eligible plan and
+cloud data storage, and that accounts using Legacy Privacy Mode need a supported
+Cursor data setting before Grok Bot can start. These are account preconditions
+reported by the current page, not a promise that the product is available to
+every reader.
 
-1. Open the official [Grok Bot getting-started guide](https://docs.x.ai/grok-bot/get-started).
-2. Select the download that matches your architecture: macOS Apple silicon or
-   Intel; Windows x64 or Arm64; or the documented Linux package. Authenticate
-   in the browser when prompted.
-3. On a phone, use the official companion-app route for iOS or Android. It
-   connects to the same documented Bot and hosted computer, but some routine
-   management remains desktop-only.
+1. Open the official [Grok Bot getting-started guide](https://docs.x.ai/grok-bot/get-started)
+   and check the account and privacy prerequisites shown there.
+2. Download the package for the computer you actually have: on macOS choose
+   Apple silicon or Intel; on Windows choose x64 or Arm64; on Linux choose the
+   package format and architecture documented for your distribution.
+3. Open the app and choose **Get started**. Complete authentication in the
+   browser window, then return to the app. On a phone, use the official iOS or
+   Android companion route; it connects to the same documented Bot and hosted
+   computer, but some management remains desktop-only.
 4. Make the first Bot request read-only: ask it to summarize a public page or
    draft a checklist. Require a result, sources, unknowns, and an explicit
    stop before sending, publishing, buying, deleting, or changing settings.
@@ -717,6 +799,12 @@ codex exec --json "Summarize the repository structure. Do not edit files or run 
 Use `--sandbox workspace-write` only when a separately scoped task genuinely
 needs edits. Do not use `danger-full-access` for a first exercise.
 
+**Codex desktop:** In the ChatGPT desktop app, choose **Codex** when the task
+needs codebase context and developer tools. Start with a new chat and one
+disposable project or folder. The desktop, CLI, IDE, and cloud surfaces may have
+different files, shells, approvals, and network access; record the surface that
+produced the result before treating it as reproducible.
+
 Sign in only through the product flow you intend to use. On Windows, OpenAI
 documents native CLI, desktop, and IDE paths; you do not need to assume that
 WSL or a virtual machine is required. That does not guarantee your Windows
@@ -740,6 +828,7 @@ using them. Homebrew and WinGet provide package-manager alternatives where
 documented, with their own update and trust boundaries.
 
 ```bash
+# Warning: this official quick path downloads and executes remote code.
 # macOS, Linux, or WSL
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -748,6 +837,7 @@ brew install --cask claude-code
 ```
 
 ```powershell
+# Warning: this official quick path downloads and executes remote code.
 # Windows PowerShell
 irm https://claude.ai/install.ps1 | iex
 
@@ -755,7 +845,19 @@ irm https://claude.ai/install.ps1 | iex
 winget install Anthropic.ClaudeCode
 ```
 
-Then enter a disposable project and run:
+If you are using **Command Prompt** rather than PowerShell, use the CMD entry
+documented by Anthropic instead of pasting a PowerShell command into the wrong
+shell:
+
+```cmd
+# Warning: this official quick path downloads and executes remote code.
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+The final `del install.cmd` removes the temporary local copy after execution; it
+does not verify the installer's integrity. If that distinction matters, use the
+download-and-inspect pattern above before running the vendor's installer. Then
+enter a disposable project and run:
 
 ```text
 claude
@@ -868,15 +970,33 @@ Its official repository calls it a developer-preview agent harness and says it
 has not received a security audit. Use it only in a controlled workspace with
 no secrets or irreplaceable files.
 
-For the official npm Web entry, open a terminal on macOS, Windows, or Linux and
-run:
+For the official npm Web entry, open a terminal on the machine you intend to
+use and run:
 
 ```sh
 npx @deepseek-ai/dsh web
 ```
 
 The source documentation says this starts the Web UI at `http://127.0.0.1:3080`.
-To start without opening a browser automatically:
+The npm route is documented, but the project does not promise identical
+behaviour for every profile, plugin, or configuration on Windows and macOS.
+Treat a launch on either system as a controlled local observation until you
+have checked the exact profile and recorded the result in a receipt.
+
+When checked on 2026-09-08, the npm registry's `latest` tag pointed to
+`0.1.2-rc.1`. The unpinned command follows the tag resolved at execution time;
+record the version that `npx` actually selects. For a repeatable snapshot of
+that observation, pin the package explicitly:
+
+```sh
+npx @deepseek-ai/dsh@0.1.2-rc.1 web --no-open
+```
+
+The pinned command is a reproducibility aid, not a claim that this project ran
+that release. The source documentation also supports `--no-open` when you do
+not want the command to open a browser automatically.
+
+To use the unpinned entry without opening a browser automatically:
 
 ```sh
 npx @deepseek-ai/dsh web --no-open
@@ -1040,6 +1160,23 @@ vendor's current documentation remains the authority for operating-system
 versions, architecture, regional availability, account eligibility, and
 installation changes.
 
+### Base dependencies: install only what the route needs
+
+Desktop-only work may need none of these tools. A terminal route may need
+Node.js, Git, or a package manager, depending on the product. Start at the
+official entry point for the operating system you actually use:
+
+| Dependency | Official entry point | When it matters |
+| --- | --- | --- |
+| Node.js | [Node.js downloads](https://nodejs.org/en/download/) | Gemini CLI and other Node-based clients; check the product's own version requirement first |
+| Git on Windows | [Git for Windows](https://git-scm.com/download/win) | Cloning a disposable project or supplying Git-backed context to a client |
+| Git on macOS/Linux | [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) | A terminal workflow that needs a repository or version-controlled diff |
+| Homebrew on macOS | [Homebrew](https://brew.sh/) | An optional package-manager route when the product's official documentation lists it |
+
+These links are prerequisites, not a recommendation to install everything. A
+package manager does not replace the product's own account, version, or
+permission requirements.
+
 ### Windows: PowerShell first
 
 1. Open a normal PowerShell window and record the shell, architecture, and
@@ -1108,47 +1245,25 @@ Do not turn this checklist into a claim that every named product supports every
 Windows release, Mac model, corporate policy, region, account, or IDE. When the
 official source is narrower, the source wins.
 
-## Three first-use recipes
+## Keep a first-use record
 
-### Desktop app
+After setup or a first task, write one short receipt. It makes a later retry
+meaningful and prevents a successful login from being mistaken for a successful
+workflow.
 
-1. Open the official app and sign in.
-2. Start a new chat with supplied or fictional text only.
-3. Ask for a short result with a visible boundary, such as “do not browse,
-   upload, send, or edit files.”
-4. Compare the response with the supplied material. Only then decide whether a
-   project, folder, upload, or connected capability is necessary for the next
-   task.
+| Field | Record |
+| --- | --- |
+| Client and runtime | Product surface, operating system, architecture, and local or hosted runtime |
+| Scope | Working directory or hosted workspace, permission mode, and whether tools or extensions were enabled |
+| Authentication | Account or provider route used; never record the secret itself |
+| Task and result | The small request, response/log/diff, visible version, and date |
+| Decision | What you accepted, rejected, or stopped before doing, plus the next check |
 
-### IDE integration
-
-1. Open one disposable workspace and one relevant file.
-2. Check what the integration can see: open files, selection, cursor, project
-   root, and any displayed tool or permission state.
-3. Ask for an explanation before asking for a change.
-4. Request a small proposed diff, inspect every changed line, and run the
-   narrowest relevant check yourself.
-
-An IDE's context window is not a grant to edit the entire repository. If the
-integration cannot show what it selected or changed, stop and narrow the task.
-
-### Terminal agent
-
-1. Open a disposable folder in the shell and record the starting state:
-
-   ```text
-   cd <disposable-folder>
-   git status --short
-   ```
-
-   On PowerShell, use `Set-Location <disposable-folder>` instead of `cd` if
-   that is clearer in your environment.
-2. Launch the intended agent and confirm the account, workspace, and visible
-   permission mode.
-3. Ask it to inspect or explain one fixture and stop. Do not begin with a
-   publish, delete, dependency upgrade, credential, or production task.
-4. If the result is useful, allow one small change. Review the diff, run the
-   relevant test or checker, and record whether you accepted or rejected it.
+For a desktop app, the receipt should identify the selected project or folder
+only after you intentionally opened it. For an IDE, record the open file,
+selection, project root, and proposed diff. For a terminal agent, record the
+starting directory and `git status --short` before asking for a change. If the
+client cannot show what it saw or changed, narrow the task before continuing.
 
 <span id="evidence-states"></span>
 
