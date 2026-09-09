@@ -38,7 +38,7 @@
 - **产品事实：** 厂商当前的名称、客户端、命令、要求或功能，并附官方来源和访问日期；
 - **运行证据：** 某台明确的机器、账号、工作区或任务实际发生了什么。
 
-发布公告只能说明厂商声称发布了什么；用户经历可以说明某个话题为什么值得关注。这两者都不能证明功能对所有账号可用，也不能证明工作流可靠。对于变化迅速的产品或公共报道，请遵守[时效内容政策（locale-neutral）](../../docs/governance/timely-content-policy.md)，并保留来源、访问日期、适用范围和未解决问题。
+发布公告只能说明厂商声称发布了什么；用户经历可以说明某个话题为什么值得关注。这两者都不能证明功能对所有账号可用，也不能证明工作流可靠。对于变化迅速的产品或公共报道，请遵守[时效内容政策（locale-neutral）](../evidence-library-ZH.md#method-and-status)，并保留来源、访问日期、适用范围和未解决问题。
 
 ## 把时效话题放进带日期的文章
 
@@ -46,12 +46,12 @@
 
 | 话题 | 接着阅读 | 它可以帮助你判断什么 | 它不能证明什么 |
 | --- | --- | --- | --- |
-| Grok Bot | [Grok Bot 现场笔记（locale-neutral）](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md) | 是否值得为你的账号检查一条低风险、可持续的托管工作流 | 账号可用、运行可靠、完整可审计，或对一般用户都有效 |
-| DeepSeek Harness | [DeepSeek Harness 来源回执（locale-neutral）](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md)，然后阅读下方安装部分 | 应检查哪些官方入口、配置、工作区和安全边界 | 本地安装成功、完整支持 Windows/macOS，或已达到生产运行要求 |
-| 本页列出的平台 | [统一平台来源回执（locale-neutral）](../../docs/research/platform-encyclopedia-sources-2026-09-05.md)以及 [2026-09-08 独立复核（locale-neutral）](../../docs/research/platform-encyclopedia-sources-2026-09-08-review.md) | 当前来源记录支持哪个产品名称、客户端、运行位置和官方入口 | 安装成功、账号有资格、客户端等价或生产就绪 |
-| 新发布或正在传播的公共话题 | [时效内容政策（locale-neutral）](../../docs/governance/timely-content-policy.md) | 如何记录“为什么现在值得讲”和读者能安全检查什么 | 永久产品事实、代表性用户研究或已测量的效果 |
+| Grok Bot | [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#source-notes) | 是否值得为你的账号检查一条低风险、可持续的托管工作流 | 账号可用、运行可靠、完整可审计，或对一般用户都有效 |
+| DeepSeek Harness | [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)，然后阅读下方安装部分 | 应检查哪些官方入口、配置、工作区和安全边界 | 本地安装成功、完整支持 Windows/macOS，或已达到生产运行要求 |
+| 本页列出的平台 | [统一平台来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)以及 [2026-09-08 独立复核（locale-neutral）](../evidence-library-ZH.md#source-notes) | 当前来源记录支持哪个产品名称、客户端、运行位置和官方入口 | 安装成功、账号有资格、客户端等价或生产就绪 |
+| 新发布或正在传播的公共话题 | [时效内容政策（locale-neutral）](../evidence-library-ZH.md#method-and-status) | 如何记录“为什么现在值得讲”和读者能安全检查什么 | 永久产品事实、代表性用户研究或已测量的效果 |
 
-Grok Bot 现场笔记只把读者提供的个人经历当作需求信号。它是有来源边界的原创参考，不是产品测评，也不是学习结果。新增时效文章前，请填写[时效内容模板（locale-neutral）](../../docs/templates/timely-content.md)，在 update-registry.yaml 的 timely-content 行登记，在 locale-matrix.yaml 中记录英文源和语言状态，并重新生成 Reader 与搜索投影。来源过时或范围变化时，应收窄声明或移除 Reader 链接，而不是让旧事实看起来永久有效。
+Grok Bot 现场笔记只把读者提供的个人经历当作需求信号。它是有来源边界的原创参考，不是产品测评，也不是学习结果。新增时效文章前，请填写[时效内容模板（locale-neutral）](../evidence-library-ZH.md#source-notes)，在 update-registry.yaml 的 timely-content 行登记，在 locale-matrix.yaml 中记录英文源和语言状态，并重新生成 Reader 与搜索投影。来源过时或范围变化时，应收窄声明或移除 Reader 链接，而不是让旧事实看起来永久有效。
 
 ## 找到适合你的路线
 
@@ -141,7 +141,7 @@ Grok Bot 的组成部分应分开理解：
 | 本地执行 | 在当前电脑上行动的额外权限 | 任务确实需要本地文件或命令前保持关闭 |
 | 交接或群聊 | Bot 之间如何传递工作、谁能看到 | 每阶段指定一个负责人，结果交回给人 |
 
-共享账号的多个 Bot 可能共享云端文件、会话或凭据。不同名称不会自动产生不同信任区。详见带日期的 [Grok Bot 现场笔记（locale-neutral）](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)。
+共享账号的多个 Bot 可能共享云端文件、会话或凭据。不同名称不会自动产生不同信任区。详见带日期的 [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#source-notes)。
 
 <span id="installation-routes-at-a-glance"></span>
 
@@ -312,7 +312,7 @@ claude -p "Explain the purpose of this disposable fixture. Do not edit files or 
 
 ### Google Cloud Code：按实际使用的 IDE 选择
 
-它是云原生开发 IDE 扩展，不是通用终端 Agent。VS Code 使用 [安装指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用 [安装指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已内置 Cloud Code，不需单独安装扩展。第一次打开示例或可丢弃云原生项目，检查 Google Cloud 项目和凭据，在接受构建、部署、密钥或资源操作前审阅提议。来源见 [Google Cloud Code 来源回执（locale-neutral）](../../docs/research/encyclopedia-cloud-code-sources-2026-09-04.md)。
+它是云原生开发 IDE 扩展，不是通用终端 Agent。VS Code 使用 [安装指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用 [安装指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已内置 Cloud Code，不需单独安装扩展。第一次打开示例或可丢弃云原生项目，检查 Google Cloud 项目和凭据，在接受构建、部署、密钥或资源操作前审阅提议。来源见 [Google Cloud Code 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)。
 
 ### Gemini：网页、移动端、CLI 与 IDE
 
@@ -351,7 +351,7 @@ npx @deepseek-ai/dsh web --no-open
 npx @deepseek-ai/dsh@0.1.2-rc.1 web --no-open
 ~~~
 
-运行前检查 node --version、npm --version 和 npx --version。Web UI 打开后，进入 Settings → Models 配置获授权的 DeepSeek API key，添加并选择可丢弃工作区，再执行只读任务。源码路径为 clone、pnpm install、pnpm run build、pnpm dsh web；源码的 Node/pnpm 要求不能自动改写成 npm 包的兼容性保证。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；文档中的 TUI 示例不证明 TUI 是默认内置入口。来源见 [DeepSeek Harness 来源回执（locale-neutral）](../../docs/research/encyclopedia-deepseek-harness-sources-2026-09-03.md)与[安全说明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方没有给出所有 profile 和配置在 Windows/macOS 上全面支持的单一承诺。
+运行前检查 node --version、npm --version 和 npx --version。Web UI 打开后，进入 Settings → Models 配置获授权的 DeepSeek API key，添加并选择可丢弃工作区，再执行只读任务。源码路径为 clone、pnpm install、pnpm run build、pnpm dsh web；源码的 Node/pnpm 要求不能自动改写成 npm 包的兼容性保证。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；文档中的 TUI 示例不证明 TUI 是默认内置入口。来源见 [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)与[安全说明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方没有给出所有 profile 和配置在 Windows/macOS 上全面支持的单一承诺。
 
 ### 安装中途停止时
 
