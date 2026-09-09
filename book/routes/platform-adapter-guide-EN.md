@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v13 -->
+<!-- content_id: platform-adapter-guide-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
 
 # LLM platforms and clients: a practical encyclopedia for choosing, installing, and using the right surface
 
@@ -298,12 +298,48 @@ equivalent. API surfaces are deliberately kept separate from consumer chat and
 coding-agent clients. Prices, model choices, quotas, and account eligibility
 change more often than the basic client boundaries do.
 
+#### Grok Bot in practical terms
+
+Grok Bot is easier to use when you treat its parts separately instead of
+thinking of it as one large "AI employee." The names below describe different
+kinds of state, authority, or timing. They help you plan a task, but they are
+not security boundaries or promises of reliable automation.
+
+| Part | What it controls | A sensible first use |
+| --- | --- | --- |
+| **Bot** | A named, persistent work role and its standing instructions | Give one Bot one repeatable result with a clear owner and acceptance check |
+| **Skill** | A reusable method for carrying out a kind of task | Save a method only after you have reviewed it on more than one harmless input |
+| **Routine** | When a Bot should run, such as on a schedule or documented trigger | Test one run and check the source date before trusting the next result |
+| **Connector** | Which outside service or data source the Bot can reach | Inspect the connector's account, scopes, and write permissions before enabling it |
+| **Cloud computer** | The remote browser, files, terminal, and other work context used by the Bot | Keep the first workspace disposable and record where each file was created |
+| **Local execution** | A separate permission to use the computer in front of you | Leave it off until the task genuinely needs a local file or command |
+| **Handoff or group chat** | How work moves between Bots and which participants can see it | Give each stage one responsible Bot and send the final result back to a person |
+
+Start with one small setup. Define the result the Bot owns, put its durable
+responsibilities in its profile, and keep today's request in the conversation.
+Begin with a read-only or draft result based on public or sanitized material.
+Keep the sources, unknowns, and proposed next step visible. Once you have
+reviewed the method on more than one harmless input, save it as a Skill, attach
+a Routine, add a Connector, or create another Bot for a genuinely separate
+job.
+
+Bots that share an account may also share cloud files, sessions, or credentials.
+Separate names do not create separate trust zones. Keep messages, publications,
+purchases, deletions, permission changes, and production actions behind an
+explicit human decision. The dated [Grok Bot field note](../../docs/research/grok-bot-from-ai-chat-to-auditable-ongoing-workflow-2026-09-02.md)
+records the official sources and the limits of what this project has actually
+observed.
+
 <span id="installation-routes-at-a-glance"></span>
 
 ## Installation routes at a glance
 
-Do not install everything in this table. Start with the smallest client that
-can complete the next task.
+“Install” means different things in this guide. A web or mobile client is
+opened, a desktop app is downloaded, an IDE integration is added to an editor,
+a terminal agent is installed through its documented package or installer, and
+a hosted surface is enabled in an account. These routes are not interchangeable.
+Do not set up everything in the table; start with the smallest client that can
+complete the next task.
 
 | Route | Examples in this guide | Use it for | Installation or access | First check |
 | --- | --- | --- | --- | --- |
@@ -469,9 +505,12 @@ and [Google Cloud Code source receipt](../../docs/research/encyclopedia-cloud-co
 
 ## How to use each client type
 
-The client changes the kind of context an LLM can receive and the kinds of
-actions it can propose. The same request can therefore produce different
-evidence in a browser, a desktop app, an IDE, a terminal, or a hosted machine.
+The client changes the kind of context an LLM can receive and the actions it can
+propose. The same request can therefore produce different evidence in a
+browser, a desktop app, an IDE, a terminal, or a hosted machine. A desktop
+client is usually interactive and context-rich. A terminal client is usually
+easier to script and repeat. A hosted client changes where the files,
+credentials, and network access live. Those differences affect the work itself.
 Choose the client from the job, then make the smallest useful first attempt.
 
 ### Web or mobile chat
