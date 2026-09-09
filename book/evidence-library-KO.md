@@ -1,4 +1,4 @@
-<!-- content_id: reader-evidence-library | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | source_revision: worktree-2026-08-16 -->
+<!-- content_id: reader-evidence-library | locale: KO | language: ko | default_locale: EN | translation_status: stale | source_revision: worktree-2026-08-16 -->
 
 # 증거와 용어 안내
 

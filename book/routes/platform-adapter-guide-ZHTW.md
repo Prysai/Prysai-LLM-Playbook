@@ -1,5 +1,5 @@
 <!-- Traditional Chinese candidate aligned to the 2026-09-08 English source; independent language review pending. -->
-<!-- content_id: platform-adapter-guide-route | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
+<!-- content_id: platform-adapter-guide-route | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
 
 # LLM 平台與用戶端實用百科：選擇、安裝並使用合適的工作介面
 

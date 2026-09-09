@@ -4654,8 +4654,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": null,
           "explicit_anchors": [
             "core-terms",
+            "deepseek-harness-source-receipt",
+            "google-cloud-code-source-receipt",
+            "grok-bot-field-note",
             "method-and-status",
-            "source-notes"
+            "platform-encyclopedia-independent-review-2026-09-08",
+            "platform-encyclopedia-sources",
+            "source-notes",
+            "timely-content-policy",
+            "timely-content-template",
+            "unified-platform-source-receipt"
           ]
         },
         "zh": {
@@ -4664,7 +4672,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "source_revision": "2026-09-09-platform-encyclopedia-evidence-v1",
           "explicit_anchors": [
             "core-terms",
             "deepseek-harness-source-receipt",
@@ -4683,7 +4691,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/evidence-library-ES.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4696,7 +4704,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/evidence-library-JA.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4709,7 +4717,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/evidence-library-KO.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4722,7 +4730,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/evidence-library-DE.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
@@ -4737,7 +4745,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "source_revision": "2026-09-09-platform-encyclopedia-evidence-v1",
           "explicit_anchors": [
             "core-terms",
             "deepseek-harness-source-receipt",
@@ -4756,7 +4764,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/evidence-library-FR.md",
           "exists": true,
           "content_status": "draft",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [

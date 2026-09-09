@@ -1,4 +1,4 @@
-<!-- content_id: reader-evidence-library | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
+<!-- content_id: reader-evidence-library | locale: FR | language: fr | default_locale: EN | translation_status: stale | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
 # Bibliothèque des preuves et de la terminologie
 

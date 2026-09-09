@@ -1,4 +1,4 @@
-<!-- content_id: platform-adapter-guide-route | locale: ZH | language: zh-CN | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
+<!-- content_id: platform-adapter-guide-route | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-09-08-platform-encyclopedia-v14 -->
 
 # LLM 平台与客户端实用百科：选择、安装并使用合适的工作界面
 

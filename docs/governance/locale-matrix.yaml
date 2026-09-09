@@ -4725,7 +4725,7 @@
       "kind": "reader-reference",
       "stem": "book/evidence-library",
       "source_locale": "EN",
-      "source_revision": "worktree-2026-08-16",
+      "source_revision": "2026-09-09-platform-encyclopedia-evidence-v1",
       "locales": {
         "EN": {
           "path": "book/evidence-library-EN.md",
@@ -4738,52 +4738,52 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
+          "source_revision": "2026-09-09-platform-encyclopedia-evidence-v1",
           "coverage": "full",
           "reason": "Localized evidence navigation exists; independent Simplified Chinese language review remains pending."
         },
         "ES": {
           "path": "book/evidence-library-ES.md",
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
-          "reason": "Localized evidence navigation exists; independent Spanish language review remains pending."
+          "reason": "The English evidence library added the 2026-09-09 platform-encyclopedia source navigation; this Spanish page still reflects the older source revision and needs update plus independent language review."
         },
         "JA": {
           "path": "book/evidence-library-JA.md",
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
-          "reason": "Localized evidence navigation exists; independent Japanese language review remains pending."
+          "reason": "The English evidence library added the 2026-09-09 platform-encyclopedia source navigation; this Japanese page still reflects the older source revision and needs update plus independent language review."
         },
         "KO": {
           "path": "book/evidence-library-KO.md",
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
-          "reason": "Localized evidence navigation exists; independent Korean language review remains pending."
+          "reason": "The English evidence library added the 2026-09-09 platform-encyclopedia source navigation; this Korean page still reflects the older source revision and needs update plus independent language review."
         },
         "DE": {
           "path": "book/evidence-library-DE.md",
           "content_status": "candidate",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
-          "reason": "Localized evidence navigation exists; independent German language review remains pending."
+          "reason": "The English evidence library added the 2026-09-09 platform-encyclopedia source navigation; this German page still reflects the older source revision and needs update plus independent language review."
         },
         "ZHTW": {
           "path": "book/evidence-library-ZHTW.md",
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "source_revision": "2026-09-09-platform-encyclopedia-evidence-v1",
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
@@ -4791,11 +4791,11 @@
         "FR": {
           "path": "book/evidence-library-FR.md",
           "content_status": "draft",
-          "translation_status": "in-progress",
+          "translation_status": "stale",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "coverage": "full",
-          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
+          "reason": "The English evidence library added the 2026-09-09 platform-encyclopedia source navigation; this French page still reflects the older source revision and needs update plus independent native-language review."
         }
       }
     },

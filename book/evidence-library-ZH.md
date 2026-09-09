@@ -1,4 +1,4 @@
-<!-- content_id: reader-evidence-library | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | source_revision: worktree-2026-08-16 -->
+<!-- content_id: reader-evidence-library | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | source_revision: 2026-09-09-platform-encyclopedia-evidence-v1 -->
 
 # 证据与术语导航
 
