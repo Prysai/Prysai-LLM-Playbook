@@ -38,7 +38,7 @@
 - **产品事实：** 厂商当前的名称、客户端、命令、要求或功能，并附官方来源和访问日期；
 - **运行证据：** 某台明确的机器、账号、工作区或任务实际发生了什么。
 
-发布公告只能说明厂商声称发布了什么；用户经历可以说明某个话题为什么值得关注。这两者都不能证明功能对所有账号可用，也不能证明工作流可靠。对于变化迅速的产品或公共报道，请遵守[时效内容政策（locale-neutral）](../evidence-library-ZH.md#method-and-status)，并保留来源、访问日期、适用范围和未解决问题。
+发布公告只能说明厂商声称发布了什么；用户经历可以说明某个话题为什么值得关注。这两者都不能证明功能对所有账号可用，也不能证明工作流可靠。对于变化迅速的产品或公共报道，请遵守[时效内容政策（locale-neutral）](../evidence-library-ZH.md#timely-content-policy)，并保留来源、访问日期、适用范围和未解决问题。
 
 ## 把时效话题放进带日期的文章
 
@@ -46,12 +46,12 @@
 
 | 话题 | 接着阅读 | 它可以帮助你判断什么 | 它不能证明什么 |
 | --- | --- | --- | --- |
-| Grok Bot | [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#source-notes) | 是否值得为你的账号检查一条低风险、可持续的托管工作流 | 账号可用、运行可靠、完整可审计，或对一般用户都有效 |
-| DeepSeek Harness | [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)，然后阅读下方安装部分 | 应检查哪些官方入口、配置、工作区和安全边界 | 本地安装成功、完整支持 Windows/macOS，或已达到生产运行要求 |
-| 本页列出的平台 | [统一平台来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)以及 [2026-09-08 独立复核（locale-neutral）](../evidence-library-ZH.md#source-notes) | 当前来源记录支持哪个产品名称、客户端、运行位置和官方入口 | 安装成功、账号有资格、客户端等价或生产就绪 |
-| 新发布或正在传播的公共话题 | [时效内容政策（locale-neutral）](../evidence-library-ZH.md#method-and-status) | 如何记录“为什么现在值得讲”和读者能安全检查什么 | 永久产品事实、代表性用户研究或已测量的效果 |
+| Grok Bot | [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#grok-bot-field-note) | 是否值得为你的账号检查一条低风险、可持续的托管工作流 | 账号可用、运行可靠、完整可审计，或对一般用户都有效 |
+| DeepSeek Harness | [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#deepseek-harness-source-receipt)，然后阅读下方安装部分 | 应检查哪些官方入口、配置、工作区和安全边界 | 本地安装成功、完整支持 Windows/macOS，或已达到生产运行要求 |
+| 本页列出的平台 | [统一平台来源回执（locale-neutral）](../evidence-library-ZH.md#unified-platform-source-receipt)以及 [2026-09-08 独立复核（locale-neutral）](../evidence-library-ZH.md#platform-encyclopedia-independent-review-2026-09-08) | 当前来源记录支持哪个产品名称、客户端、运行位置和官方入口 | 安装成功、账号有资格、客户端等价或生产就绪 |
+| 新发布或正在传播的公共话题 | [时效内容政策（locale-neutral）](../evidence-library-ZH.md#timely-content-policy) | 如何记录“为什么现在值得讲”和读者能安全检查什么 | 永久产品事实、代表性用户研究或已测量的效果 |
 
-Grok Bot 现场笔记只把读者提供的个人经历当作需求信号。它是有来源边界的原创参考，不是产品测评，也不是学习结果。新增时效文章前，请填写[时效内容模板（locale-neutral）](../evidence-library-ZH.md#source-notes)，在 update-registry.yaml 的 timely-content 行登记，在 locale-matrix.yaml 中记录英文源和语言状态，并重新生成 Reader 与搜索投影。来源过时或范围变化时，应收窄声明或移除 Reader 链接，而不是让旧事实看起来永久有效。
+Grok Bot 现场笔记只把读者提供的个人经历当作需求信号。它是有来源边界的原创参考，不是产品测评，也不是学习结果。新增时效文章前，请填写[时效内容模板（locale-neutral）](../evidence-library-ZH.md#timely-content-template)，在 update-registry.yaml 的 timely-content 行登记，在 locale-matrix.yaml 中记录英文源和语言状态，并重新生成 Reader 与搜索投影。来源过时或范围变化时，应收窄声明或移除 Reader 链接，而不是让旧事实看起来永久有效。
 
 ## 找到适合你的路线
 
@@ -141,7 +141,7 @@ Grok Bot 的组成部分应分开理解：
 | 本地执行 | 在当前电脑上行动的额外权限 | 任务确实需要本地文件或命令前保持关闭 |
 | 交接或群聊 | Bot 之间如何传递工作、谁能看到 | 每阶段指定一个负责人，结果交回给人 |
 
-共享账号的多个 Bot 可能共享云端文件、会话或凭据。不同名称不会自动产生不同信任区。详见带日期的 [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#source-notes)。
+共享账号的多个 Bot 可能共享云端文件、会话或凭据。不同名称不会自动产生不同信任区。详见带日期的 [Grok Bot 现场笔记（locale-neutral）](../evidence-library-ZH.md#grok-bot-field-note)。
 
 <span id="installation-routes-at-a-glance"></span>
 
@@ -179,11 +179,25 @@ Grok Bot 的组成部分应分开理解：
 
 按客户端类型使用：
 
-- **网页/移动端聊天：** 提供少量文本，请求有边界的回答，与原文比较；先不要上传、联网、启用扩展或连接账号。
-- **桌面应用：** 新建对话，必要时选择一个文件夹，先请求只读解释，再审阅小差异。
-- **IDE 集成：** 打开一个工作区和文件，检查选区、根目录、工具与权限，再请求小范围改动。
-- **终端 Agent：** 记录目录和状态，先做只读检查；触碰未知目录、秘密、依赖、发布或删除时停止。
-- **云端/托管客户端：** 记录远程仓库、运行环境、凭据、网络、持久化和审批规则；先从草稿或只读任务开始。
+#### 网页或移动端聊天
+
+适合提问、改写、摘要和比较已经提供的文字。新建一个对话，给出少量材料，先要求一个有明确格式的回答，再逐句和原文对照。纯文本任务不需要上传文件、联网、启用扩展或连接账号；即使客户端主动提供这些功能，也不要把它们当成默认步骤。
+
+#### 桌面应用
+
+适合需要较大工作区、选择本地项目，或使用托管电脑客户端的任务。先开新对话，确认当前选中的文件夹究竟是本地、共享位置还是云端工作区，再请求只读解释。需要修改时只提出一个小变更，逐行检查差异后再接受。桌面端的成功结果不能代替网页、CLI、自动化或云端入口的运行证据。
+
+#### IDE 集成
+
+适合需要代码选区、编辑器上下文、项目导航或行内差异的任务。只打开一个可丢弃工作区和一个相关文件，先检查工作区根目录、选中的内容、扩展可用的工具和权限，再请求小范围修改。看不清扩展实际读取了哪些文件时，先缩小工作区，不要直接放开整个仓库。
+
+#### 终端 Agent
+
+适合可重复的命令、脚本和版本控制变更。进入可丢弃目录后先记录路径和 `git status --short`，只做列目录或解释文件等只读检查。涉及未知目录、秘密、依赖安装、网络、发布或删除时停下来，重新确认准确目标和权限；命令行界面本身不等于可以无限制执行。
+
+#### 云端或托管客户端
+
+适合确实需要远程机器，或希望客户端关闭后工作仍能继续的任务。开始前记录远程仓库或工作区、运行环境、凭据范围、网络、持久化方式和审批规则。第一次只做草稿或只读任务，并把发送、发布、购买、删除、改权限和生产变更作为单独的人工审批点。云端电脑不是你的本地电脑，也不自动构成安全隔离边界。
 
 <span id="names-that-are-easy-to-confuse"></span>
 
@@ -312,7 +326,7 @@ claude -p "Explain the purpose of this disposable fixture. Do not edit files or 
 
 ### Google Cloud Code：按实际使用的 IDE 选择
 
-它是云原生开发 IDE 扩展，不是通用终端 Agent。VS Code 使用 [安装指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用 [安装指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已内置 Cloud Code，不需单独安装扩展。第一次打开示例或可丢弃云原生项目，检查 Google Cloud 项目和凭据，在接受构建、部署、密钥或资源操作前审阅提议。来源见 [Google Cloud Code 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)。
+它是云原生开发 IDE 扩展，不是通用终端 Agent。VS Code 使用 [安装指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用 [安装指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已内置 Cloud Code，不需单独安装扩展。第一次打开示例或可丢弃云原生项目，检查 Google Cloud 项目和凭据，在接受构建、部署、密钥或资源操作前审阅提议。来源见 [Google Cloud Code 来源回执（locale-neutral）](../evidence-library-ZH.md#google-cloud-code-source-receipt)。
 
 ### Gemini：网页、移动端、CLI 与 IDE
 
@@ -351,7 +365,7 @@ npx @deepseek-ai/dsh web --no-open
 npx @deepseek-ai/dsh@0.1.2-rc.1 web --no-open
 ~~~
 
-运行前检查 node --version、npm --version 和 npx --version。Web UI 打开后，进入 Settings → Models 配置获授权的 DeepSeek API key，添加并选择可丢弃工作区，再执行只读任务。源码路径为 clone、pnpm install、pnpm run build、pnpm dsh web；源码的 Node/pnpm 要求不能自动改写成 npm 包的兼容性保证。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；文档中的 TUI 示例不证明 TUI 是默认内置入口。来源见 [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#source-notes)与[安全说明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方没有给出所有 profile 和配置在 Windows/macOS 上全面支持的单一承诺。
+运行前检查 node --version、npm --version 和 npx --version。Web UI 打开后，进入 Settings → Models 配置获授权的 DeepSeek API key，添加并选择可丢弃工作区，再执行只读任务。源码路径为 clone、pnpm install、pnpm run build、pnpm dsh web；源码的 Node/pnpm 要求不能自动改写成 npm 包的兼容性保证。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；文档中的 TUI 示例不证明 TUI 是默认内置入口。来源见 [DeepSeek Harness 来源回执（locale-neutral）](../evidence-library-ZH.md#deepseek-harness-source-receipt)与[安全说明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方没有给出所有 profile 和配置在 Windows/macOS 上全面支持的单一承诺。
 
 ### 安装中途停止时
 

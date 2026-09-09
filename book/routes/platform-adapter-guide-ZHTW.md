@@ -39,7 +39,7 @@
 - **產品事實：** 廠商目前的名稱、用戶端、命令、要求或功能，並附上官方來源與存取日期；
 - **執行證據：** 某台明確的電腦、帳戶、工作區或任務實際發生了什麼。
 
-發佈公告只能說明廠商聲稱發佈了什麼；使用者經歷可以說明某個話題為什麼值得注意。這兩者都不能證明某項功能對所有帳戶可用，也不能證明工作流程可靠。對於變動快速的產品或公共報導，請遵守[時效內容政策（locale-neutral）](../evidence-library-ZHTW.md#method-and-status)，並保留來源、存取日期、適用範圍和未解決問題。
+發佈公告只能說明廠商聲稱發佈了什麼；使用者經歷可以說明某個話題為什麼值得注意。這兩者都不能證明某項功能對所有帳戶可用，也不能證明工作流程可靠。對於變動快速的產品或公共報導，請遵守[時效內容政策（locale-neutral）](../evidence-library-ZHTW.md#timely-content-policy)，並保留來源、存取日期、適用範圍和未解決問題。
 
 ## 把時效話題放進有日期的文章
 
@@ -47,12 +47,12 @@
 
 | 話題 | 接著閱讀 | 它可以幫你判斷什麼 | 它不能證明什麼 |
 | --- | --- | --- | --- |
-| Grok Bot | [Grok Bot 現場筆記（locale-neutral）](../evidence-library-ZHTW.md#source-notes) | 是否值得為你的帳戶檢查低風險、可持續的託管工作流程 | 帳戶可用、執行可靠、完整可稽核，或對一般使用者都有效 |
-| DeepSeek Harness | [DeepSeek Harness 來源回執（locale-neutral）](../evidence-library-ZHTW.md#source-notes)，再閱讀下方安裝部分 | 應檢查哪些官方入口、設定、工作區和安全界線 | 本機安裝成功、完整支援 Windows/macOS，或已達到生產環境安全要求 |
-| 本頁列出的平台 | [統一平台來源回執（locale-neutral）](../evidence-library-ZHTW.md#source-notes)及 [2026-09-08 獨立複核（locale-neutral）](../evidence-library-ZHTW.md#source-notes) | 目前來源記錄支援哪個產品名稱、用戶端、執行位置和官方入口 | 安裝成功、帳戶有資格、用戶端等價或已可投入生產 |
-| 新發佈或正在流傳的公共話題 | [時效內容政策（locale-neutral）](../evidence-library-ZHTW.md#method-and-status) | 如何記錄「為什麼現在值得講」以及讀者可以安全檢查什麼 | 永久產品事實、代表性使用者研究或已量測的成效 |
+| Grok Bot | [Grok Bot 現場筆記（locale-neutral）](../evidence-library-ZHTW.md#grok-bot-field-note) | 是否值得為你的帳戶檢查低風險、可持續的託管工作流程 | 帳戶可用、執行可靠、完整可稽核，或對一般使用者都有效 |
+| DeepSeek Harness | [DeepSeek Harness 來源回執（locale-neutral）](../evidence-library-ZHTW.md#deepseek-harness-source-receipt)，再閱讀下方安裝部分 | 應檢查哪些官方入口、設定、工作區和安全界線 | 本機安裝成功、完整支援 Windows/macOS，或已達到生產環境安全要求 |
+| 本頁列出的平台 | [統一平台來源回執（locale-neutral）](../evidence-library-ZHTW.md#unified-platform-source-receipt)及 [2026-09-08 獨立複核（locale-neutral）](../evidence-library-ZHTW.md#platform-encyclopedia-independent-review-2026-09-08) | 目前來源記錄支援哪個產品名稱、用戶端、執行位置和官方入口 | 安裝成功、帳戶有資格、用戶端等價或已可投入生產 |
+| 新發佈或正在流傳的公共話題 | [時效內容政策（locale-neutral）](../evidence-library-ZHTW.md#timely-content-policy) | 如何記錄「為什麼現在值得講」以及讀者可以安全檢查什麼 | 永久產品事實、代表性使用者研究或已量測的成效 |
 
-Grok Bot 現場筆記只把讀者提供的個人經歷當作需求訊號。它是有來源界線的原創參考，不是產品評測，也不是學習成果。新增時效文章前，請填寫[時效內容範本（locale-neutral）](../evidence-library-ZHTW.md#source-notes)，在 update-registry.yaml 的 timely-content 列登記，在 locale-matrix.yaml 記錄英文來源與各語言狀態，並重新產生 Reader 與搜尋投影。來源過時或範圍改變時，應縮小聲明或移除 Reader 連結，不要讓舊事實看起來永久有效。
+Grok Bot 現場筆記只把讀者提供的個人經歷當作需求訊號。它是有來源界線的原創參考，不是產品評測，也不是學習成果。新增時效文章前，請填寫[時效內容範本（locale-neutral）](../evidence-library-ZHTW.md#timely-content-template)，在 update-registry.yaml 的 timely-content 列登記，在 locale-matrix.yaml 記錄英文來源與各語言狀態，並重新產生 Reader 與搜尋投影。來源過時或範圍改變時，應縮小聲明或移除 Reader 連結，不要讓舊事實看起來永久有效。
 
 ## 找到適合你的路線
 
@@ -142,7 +142,7 @@ Grok Bot 的組成部分應分開理解：
 | 本機執行 | 在目前電腦上行動的額外權限 | 工作確實需要本機檔案或命令前保持關閉 |
 | 交接或群聊 | Bot 之間如何傳遞工作、誰能看見 | 每個階段指定一位負責人，結果交回人員 |
 
-共用帳戶的多個 Bot 可能共用雲端檔案、工作階段或憑證。不同名稱不會自動產生不同信任區。詳見有日期的 [Grok Bot 現場筆記（locale-neutral）](../evidence-library-ZHTW.md#source-notes)。
+共用帳戶的多個 Bot 可能共用雲端檔案、工作階段或憑證。不同名稱不會自動產生不同信任區。詳見有日期的 [Grok Bot 現場筆記（locale-neutral）](../evidence-library-ZHTW.md#grok-bot-field-note)。
 
 <span id="installation-routes-at-a-glance"></span>
 
@@ -180,11 +180,25 @@ Grok Bot 的組成部分應分開理解：
 
 依用戶端類型使用：
 
-- **網頁/行動版聊天：** 提供少量文字，要求有界線的回答，再與原文比較；先不要上傳、連網、啟用擴充功能或連結帳戶。
-- **桌面 App：** 新建對話，必要時選取資料夾，先要求唯讀解釋，再審閱小幅差異。
-- **IDE 整合：** 開啟一個工作區和檔案，檢查選取內容、根目錄、工具與權限，再要求小範圍變更。
-- **終端機 Agent：** 記錄目錄和狀態，先做唯讀檢查；觸及未知目錄、秘密、依賴、發佈或刪除時停止。
-- **雲端/託管用戶端：** 記錄遠端儲存庫、執行環境、憑證、網路、持久化和核准規則；先從草稿或唯讀任務開始。
+#### 網頁或行動版聊天
+
+適合提問、改寫、摘要和比較已提供的文字。新建一個對話，給出少量材料，先要求一個有明確格式的回答，再逐句和原文對照。純文字任務不需要上傳檔案、連網、啟用擴充功能或連結帳戶；即使用戶端主動提供這些功能，也不要把它們當成預設步驟。
+
+#### 桌面 App
+
+適合需要較大工作區、選取本機專案，或使用託管電腦用戶端的任務。先開新對話，確認目前選取的資料夾究竟是本機、共用位置還是雲端工作區，再要求唯讀解釋。需要修改時只提出一項小變更，逐行檢查差異後再接受。桌面端的成功結果不能代替網頁、CLI、自動化或雲端入口的執行證據。
+
+#### IDE 整合
+
+適合需要程式碼選取、編輯器上下文、專案導覽或行內差異的任務。只開啟一個可丟棄工作區和一個相關檔案，先檢查工作區根目錄、選取內容、擴充功能可用的工具和權限，再要求小範圍修改。看不清擴充功能實際讀取了哪些檔案時，先縮小工作區，不要直接放開整個儲存庫。
+
+#### 終端機 Agent
+
+適合可重複的命令、腳本和版本控制變更。進入可丟棄目錄後先記錄路徑和 `git status --short`，只做列出檔案或解釋檔案等唯讀檢查。涉及未知目錄、秘密、依賴安裝、網路、發佈或刪除時停下來，重新確認準確目標和權限；命令列介面本身不等於可以無限制執行。
+
+#### 雲端或託管用戶端
+
+適合確實需要遠端機器，或希望用戶端關閉後工作仍能繼續的任務。開始前記錄遠端儲存庫或工作區、執行環境、憑證範圍、網路、持久化方式和核准規則。第一次只做草稿或唯讀任務，並把傳送、發佈、購買、刪除、變更權限和生產環境變更作為獨立的人工核准點。雲端電腦不是你的本機電腦，也不會自動構成安全隔離界線。
 
 <span id="names-that-are-easy-to-confuse"></span>
 
@@ -313,7 +327,7 @@ claude -p "Explain the purpose of this disposable fixture. Do not edit files or 
 
 ### Google Cloud Code：按實際使用的 IDE 選擇
 
-它是雲原生開發 IDE 擴充功能，不是通用終端機 Agent。VS Code 使用[安裝指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用[安裝指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已內建 Cloud Code，不需另行安裝擴充功能。第一次開啟範例或可丟棄的雲原生專案，檢查 Google Cloud 專案和憑證，在接受建置、部署、金鑰或資源操作前審閱提議。來源見 [Google Cloud Code 來源回執（locale-neutral）](../evidence-library-ZHTW.md#source-notes)。
+它是雲原生開發 IDE 擴充功能，不是通用終端機 Agent。VS Code 使用[安裝指南](https://cloud.google.com/code/docs/vscode/install)，IntelliJ/JetBrains 使用[安裝指南](https://cloud.google.com/code/docs/intellij/install)，Cloud Shell Editor 已內建 Cloud Code，不需另行安裝擴充功能。第一次開啟範例或可丟棄的雲原生專案，檢查 Google Cloud 專案和憑證，在接受建置、部署、金鑰或資源操作前審閱提議。來源見 [Google Cloud Code 來源回執（locale-neutral）](../evidence-library-ZHTW.md#google-cloud-code-source-receipt)。
 
 ### Gemini：網頁、行動版、CLI 與 IDE
 
@@ -352,7 +366,7 @@ npx @deepseek-ai/dsh web --no-open
 npx @deepseek-ai/dsh@0.1.2-rc.1 web --no-open
 ~~~
 
-執行前檢查 node --version、npm --version 和 npx --version。Web UI 開啟後，進入 Settings → Models 設定獲授權的 DeepSeek API key，加入並選取可丟棄工作區，再執行唯讀任務。原始碼路徑為 clone、pnpm install、pnpm run build、pnpm dsh web；原始碼的 Node/pnpm 要求不能自動改寫成 npm 套件相容性保證。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；TUI 範例不證明 TUI 是預設內建入口。來源見 [DeepSeek Harness 來源回執（locale-neutral）](../evidence-library-ZHTW.md#source-notes)與[安全說明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方沒有提供所有 profile 和設定在 Windows/macOS 上全面支援的單一承諾。
+執行前檢查 node --version、npm --version 和 npx --version。Web UI 開啟後，進入 Settings → Models 設定獲授權的 DeepSeek API key，加入並選取可丟棄工作區，再執行唯讀任務。原始碼路徑為 clone、pnpm install、pnpm run build、pnpm dsh web；原始碼的 Node/pnpm 要求不能自動改寫成 npm 套件相容性保證。web、headless、sdk、sdk-minimal 和 acp 是不同 profile；TUI 範例不證明 TUI 是預設內建入口。來源見 [DeepSeek Harness 來源回執（locale-neutral）](../evidence-library-ZHTW.md#deepseek-harness-source-receipt)與[安全說明（locale-neutral）](https://github.com/deepseek-ai/deepseek-harness/blob/master/SAFETY.md)。官方沒有提供所有 profile 和設定在 Windows/macOS 上全面支援的單一承諾。
 
 ### 安裝中途停止時
 
