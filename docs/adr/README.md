@@ -68,3 +68,4 @@ Current entry points:
 - [ADR-0050: constrain maintainer documentation auto-merge](0050-constrained-maintainer-documentation-auto-merge.md)
 - [ADR-0051: isolate post-merge publication concurrency](0051-isolate-post-merge-publication-concurrency.md)
 - [ADR-0052: keep timely Reader notes candidate-only at admission](0052-timely-reader-notes-candidate-only.md)
+- [ADR-0053: use public `main` as the publication baseline](0053-public-main-as-publication-baseline.md)

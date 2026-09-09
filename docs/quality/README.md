@@ -8,6 +8,7 @@ the project can honestly claim.
 - [Skill quality standard](skill-quality-standard.md)
 - [Evaluation framework](evaluation-framework.md)
 - [Current-state review](current-state-review-2026-08-09.md)
+- [Public baseline and maintenance review](public-baseline-and-maintenance-review-2026-09-09.md) — public `main`, local/worktree boundary, named checks, artifact evidence, and separate host observations
 - [Current adversarial and visual review](adversarial-current-state-and-visual-review-2026-08-15.md) — a current worst-case review of learner evidence, model-evaluation evidence, release operations, scope boundaries, mobile rendering, direct-link behavior, and one candidate search-discovery gap
 - [Model-output integrity adversarial addendum](adversarial-model-output-integrity-addendum-2026-08-15.md) — updates the model-evidence finding after the v1 capture defect, preserves the no-new-Skill decision, and separates real output collection from an eligible comparative study
 - [Static-site security review](static-site-security-review-2026-08-15.md) — an evidence-bounded JavaScript and workflow review; no critical or high client-side finding was confirmed locally, while host HTTP-header/framing and Ruleset enforcement remain explicit medium release risks
