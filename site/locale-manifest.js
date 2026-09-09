@@ -4875,13 +4875,19 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "source_revision": "2026-09-08-platform-encyclopedia-v14",
           "explicit_anchors": [
             "chatgpt-first-task",
             "claude-code-first-task",
             "deepseek-first-task",
+            "evidence-states",
             "gemini-first-task",
-            "grok-first-task"
+            "grok-first-task",
+            "install-and-make-a-first-safe-attempt",
+            "installation-routes-at-a-glance",
+            "names-that-are-easy-to-confuse",
+            "platform-and-client-map",
+            "windows-and-macos-setup-paths"
           ]
         },
         "es": {
@@ -4950,13 +4956,19 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "source_revision": "2026-09-08-platform-encyclopedia-v14",
           "explicit_anchors": [
             "chatgpt-first-task",
             "claude-code-first-task",
             "deepseek-first-task",
+            "evidence-states",
             "gemini-first-task",
-            "grok-first-task"
+            "grok-first-task",
+            "install-and-make-a-first-safe-attempt",
+            "installation-routes-at-a-glance",
+            "names-that-are-easy-to-confuse",
+            "platform-and-client-map",
+            "windows-and-macos-setup-paths"
           ]
         },
         "fr": {

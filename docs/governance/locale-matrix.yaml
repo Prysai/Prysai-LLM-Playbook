@@ -4906,8 +4906,8 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
-          "reason": "Simplified Chinese adapter guide predates the 2026-09-08 English encyclopedia revision; update and independent language review remain pending."
+          "source_revision": "2026-09-08-platform-encyclopedia-v14",
+          "reason": "Simplified Chinese route is aligned to the 2026-09-08 English encyclopedia revision; independent native-language review, installation evidence, and learner-run evidence remain pending."
         },
         "ES": {
           "path": "book/routes/platform-adapter-guide-ES.md",
@@ -4954,10 +4954,10 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "source_revision": "2026-09-08-platform-encyclopedia-v14",
           "coverage": "full",
           "run_status": "not_run",
-          "reason": "繁體中文候選譯文早於 2026-09-08 英文百科修訂；更新、獨立語言審校與學習者執行證據仍待完成。"
+          "reason": "繁體中文路線已對齊 2026-09-08 英文百科修訂；獨立母語審校、安裝證據與學習者執行證據仍待完成。"
         },
         "FR": {
           "path": "book/routes/platform-adapter-guide-FR.md",
