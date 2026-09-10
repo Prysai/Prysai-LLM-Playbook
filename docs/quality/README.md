@@ -15,6 +15,7 @@ the project can honestly claim.
 - [Current First Win pilot protocol](first-win-pilot-protocol-v2.md)
 - [First Win blank results template](first-win-pilot-blank-results-v1.md) — public field shape only; no participant data or result
 - [LLM Foundation Core learner observation protocol](core-course-pilot-v1.md) — five-unit, fixed-revision observation design; no recruitment or participant result
+- [LLM Foundation Core pilot run sheet](core-course-pilot-run-sheet-v1.md) — moderator sequence, freeze fields, help/stopping records, scoring handoff, and deletion boundary; no participant data or result
 - [LLM Foundation Core blank results](core-course-pilot-blank-results-v1.md) — public aggregate field shape only; no participant data or result
 - [Newcomer entry observation protocol](newcomer-entry-observation-protocol-v1.md)
 - [Five repeated local verification runs](verification-stability-2026-08-15.md) — engineering stability only, not a learner or model result

@@ -38,6 +38,10 @@ of truth:
 - [Core rubric](core-course-rubric-v1.md)
 - [Core candidate fixture](../../evals/candidates/core-course-v1/README.md)
 
+For an authorized session, use the [pilot run sheet](core-course-pilot-run-sheet-v1.md)
+to apply the protocol in order. The run sheet is an operational aid; it does
+not change the route, rubric, fixture, cohort boundary, or evidence claim.
+
 Do not change the route, task order, fictional notices, rubric, model surface,
 or visible page during a round. If a condition changes, stop that round and
 start a new labelled revision.
