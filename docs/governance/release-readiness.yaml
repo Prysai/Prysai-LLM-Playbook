@@ -2,8 +2,8 @@
   "schema_version": "1",
   "owner": "release-maintainer",
   "decision": "not_ready",
-  "reviewed_at": "2026-08-17",
-  "next_review": "2026-08-24",
+  "reviewed_at": "2026-09-10",
+  "next_review": "2026-10-10",
   "version": {
     "status": "declared",
     "value": "0.1.0-candidate.1"
@@ -21,8 +21,8 @@
   },
   "release_evidence": {
     "status": "candidate_only",
-    "candidate_sha": "d6bf75f2621ef1c9c8c871d35c679142671a93dd",
-    "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32077857456"
+    "candidate_sha": "4e7b9386a14de3b853429fb3c75bd7a1de19662a",
+    "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/34545068467"
   },
   "rollback": {
     "status": "rehearsed",
@@ -32,13 +32,15 @@
     "reviewed_by": "Prysai"
   },
   "maintenance": {
-    "status": "candidate",
+    "status": "reviewed",
     "policy_path": "docs/governance/content-lifecycle.md",
     "roadmap_path": "docs/roadmap.md"
   },
   "known_gaps": [
-    "The current main candidate may be newer than the last successful workflow evidence and is not itself a release.",
-    "The recorded candidate evidence is bound to the last successful workflow commit and remains candidate_only, not accepted release evidence.",
-    "The rollback rehearsal covers only isolated snapshot restoration and a temporary Pages rebuild; production deployment controls, cache invalidation, and live rollback remain untested."
+    "Public main at 4e7b9386a14de3b853429fb3c75bd7a1de19662a is a current candidate baseline, not an immutable release.",
+    "The successful quality run is bound to the current candidate but remains candidate_only; no accepted release decision has been made.",
+    "The rollback rehearsal covers only isolated snapshot restoration and a temporary Pages rebuild; production deployment controls, cache invalidation, and live rollback remain untested.",
+    "The input-archive audit is still not configured, so the source-provenance boundary is incomplete.",
+    "The core-course learner pilot has a protocol but no learner, transfer, or retention run; those evidence states remain not_run."
   ]
 }
