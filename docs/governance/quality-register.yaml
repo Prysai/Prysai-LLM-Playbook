@@ -157,14 +157,14 @@
       "severity": "P1",
       "owner": "release-maintainer",
       "opened_at": "2026-08-12",
-      "next_review": "2026-08-24",
+      "next_review": "2026-10-10",
       "superseded_by": "",
       "area": "Release operations",
       "finding": "The current main candidate has a newer commit than the reviewed public v0.1.0-alpha tag, but it still has no accepted release evidence or tested rollback rehearsal.",
       "required_evidence": "A version decision, reviewed immutable tag, release evidence packet, rollback target, and rollback rehearsal or bounded recovery record.",
       "status": "in_progress",
       "evidence_paths": ["CHANGELOG.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "docs/quality/rollback-rehearsal-v0.1.0-alpha-2026-08-17.md", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
-      "resolution_scope": "Candidate version 0.1.0-candidate.1 and CHANGELOG.md give reviewers a declared, non-release baseline. The public v0.1.0-alpha tag is reviewed as an older rollback reference, and a bounded static rehearsal restored that tag in an isolated worktree and rebuilt a temporary Pages artifact. The current main candidate has commit-bound workflow evidence that remains candidate_only; production deployment rollback, cache invalidation, and accepted release evidence remain open, so Q-011 remains in progress."
+      "resolution_scope": "Candidate version 0.1.0-candidate.1 and CHANGELOG.md give reviewers a declared, non-release baseline. The public v0.1.0-alpha tag remains an older rollback reference, and a bounded static rehearsal restored that tag in an isolated worktree and rebuilt a temporary Pages artifact. Public main at 4e7b9386a14de3b853429fb3c75bd7a1de19662a has successful commit-bound quality and publication evidence in workflow run 34545068467, but that packet remains candidate_only; production deployment rollback, cache invalidation, and accepted release evidence remain open, so Q-011 remains in progress."
     },
     {
       "id": "Q-012",

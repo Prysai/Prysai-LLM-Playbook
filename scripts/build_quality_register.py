@@ -230,7 +230,10 @@ def main() -> int:
             print("- run: python scripts/build_quality_register.py")
             return 1
     else:
-        OUTPUT.write_text(expected, encoding="utf-8")
+        # Keep generated Markdown byte-stable across Windows and Unix checkouts.
+        # The repository stores text with LF, and git diff --check should report
+        # actual whitespace defects rather than every generated line on Windows.
+        OUTPUT.write_text(expected, encoding="utf-8", newline="\n")
     active = [item for item in register["items"] if item["status"] in register["release_policy"]["active_statuses"]]
     counts = Counter(item["severity"] for item in active)
     verb = "OK" if args.check else "BUILT"
