@@ -8,7 +8,7 @@
 
 把本页当作一份实用参考，而不是一张“所有工具都要安装”的清单。它按顺序回答五个问题：你要做什么工作，哪种客户端适合，工作将在哪里运行，如何找到厂商当前的安装入口，以及第一次尝试什么才比较安全。完成设置并不等于认证成功，也不等于账号有资格、文件可访问或第一次任务已经完成。
 
-本页不是产品排名，也不保证每个读者都能使用所有账号、操作系统、地区、套餐或功能。它保留 [通用基础路线](universal-core-foundations-ZH.md) 中可迁移的方法：定义任务、限制权限、检查结果、保留证据。命令、套餐、可用性和客户端支持都会变化；文中来源回执记录了所查阅的官方文档及其日期，但不证明某个安装器、账号或任务一定能在你的环境中运行。
+本页不是产品排名，也不保证每个读者都能使用所有账号、操作系统、地区、套餐或功能。它保留 [通用基础路线（迁移参考）](universal-core-foundations-ZH.md) 中可迁移的方法：定义任务、限制权限、检查结果、保留证据。命令、套餐、可用性和客户端支持都会变化；文中来源回执记录了所查阅的官方文档及其日期，但不证明某个安装器、账号或任务一定能在你的环境中运行。
 
 > 先选工作界面，再选命令。一个熟悉的产品名称，并不能告诉你文件在本地还是云端，也不能告诉你客户端能否在聊天之外采取行动。
 
@@ -55,11 +55,11 @@ Grok Bot 现场笔记只把读者提供的个人经历当作需求信号。它�
 
 ## 找到适合你的路线
 
-如果你刚开始了解 LLM，请先阅读[通用基础路线](universal-core-foundations-ZH.md)。如果已经掌握基础，可从下面的入口跳转：
+如果你刚开始了解 LLM，请先阅读[通用基础路线（迁移参考）](universal-core-foundations-ZH.md)。如果已经掌握基础，可从下面的入口跳转：
 
 | 目标 | 入口 | 停下来检查 |
 | --- | --- | --- |
-| 理解基本 LLM 工作流 | [通用基础路线](universal-core-foundations-ZH.md) | 能否用自己的话解释结果 |
+| 理解基本 LLM 工作流 | [通用基础路线（迁移参考）](universal-core-foundations-ZH.md) | 能否用自己的话解释结果 |
 | 选择网页、移动端、桌面、IDE、终端或云端工作面 | [平台与客户端地图](#platform-and-client-map) | 工作在哪里运行，以及它能看到什么 |
 | 理解容易混淆的产品名称 | [容易混淆的名称](#names-that-are-easy-to-confuse) | 名称指的是产品、客户端还是运行环境 |
 | 安装产品并完成安全首次尝试 | [安装并完成第一次安全尝试](#install-and-make-a-first-safe-attempt) | 命令是否来自官方，以及会改变什么 |
@@ -500,7 +500,7 @@ command -v node npm git brew
 
 - 纯文本入门练习：[Beginner Practice Pack](../communication-clinic-ZH.md)。
 - 文件和工具的深度旗舰路线：[First Safe Change](first-safe-change-ZH.md)。
-- 平台无关基础：[Universal Core Foundations](universal-core-foundations-ZH.md)。
+- 平台无关基础（迁移参考）：[Universal Core Foundations](universal-core-foundations-ZH.md)。
 - 公平比较两个平台：[LLM Comparison Protocol（locale-neutral）](../../skills/prysai-llm-comparison-protocol/SKILL.md)。
 - 检查变化中的产品声明：[Platform Fact Watch（locale-neutral）](../../skills/prysai-platform-fact-watch/SKILL.md)。
 

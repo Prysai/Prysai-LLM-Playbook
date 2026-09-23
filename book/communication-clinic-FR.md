@@ -3,7 +3,7 @@
 # Pratique d’application facultative : langue, travail et recherche
 
 **Utilisation :** après le [cœur des fondations LLM](guides/llm-fundamentals-FR.md)
-→ [première demande bornée](routes/universal-core-foundations-FR.md). Ces cartes
+→ [première demande bornée, référence de migration](routes/universal-core-foundations-FR.md). Ces cartes
 appliquent la méthode de base ; elles ne remplacent pas le [Chapitre 0](guides/llm-fundamentals-FR.md) : ce n’est pas une introduction à ce qu’est un LLM. Pour
 une carte courte et prête à copier, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md)
 ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md).

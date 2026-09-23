@@ -8,10 +8,10 @@ Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 
 **Úsalas después del núcleo fundamental de LLM:** [Unidad 1: conceptos de LLM](guides/llm-fundamentals-ES.md)
-→ [Unidad 2: primera petición acotada](routes/universal-core-foundations-ES.md).
+→ [Unidad 2: primera petición acotada (referencia de migración)](routes/universal-core-foundations-ES.md).
 Estas tarjetas aplican el método central; no son una introducción a lo que es
 un LLM. Si aún no has terminado el núcleo, empieza por la [ruta fundamental de
-LLM](routes/universal-core-foundations-ES.md).
+LLM como referencia de migración](routes/universal-core-foundations-ES.md).
 Consulta el [Capítulo 0](guides/llm-fundamentals-ES.md) antes de usarlas; no son una introducción a lo que es un LLM.
 
 Estás en la ruta explicada en español: las explicaciones, decisiones y enlaces de esta página están en español. El español que aparece en las tarjetas es una meta opcional de práctica de idiomas, no un cambio accidental de idioma ni una obligación.
