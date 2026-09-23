@@ -17,7 +17,7 @@ L’ordre par défaut est un chemin, pas un menu de chapitres concurrents :
 
 1. [Unité 1 — notions LLM](guides/llm-fundamentals-FR.md) — tokens, contexte,
    prompts, outils, MCP, Agents et Skills ;
-2. [Fondations LLM : première route universelle](routes/universal-core-foundations-FR.md)
+2. [Fondations LLM : première route universelle (référence de migration)](routes/universal-core-foundations-FR.md)
    — expliquer, commencer, identifier, réparer, puis transférer ;
 3. [Première modification sûre](routes/first-safe-change-FR.md)
    — rendre visibles le but, le contexte, les limites et la forme de la réponse ;
@@ -38,7 +38,7 @@ pas que les autres plateformes se comportent de la même manière.
 Terminez le cœur LLM avant d’ouvrir une route Codex, Claude Code, Gemini, Grok,
 outil, Agent, Skill ou domaine métier. Le cœur donne le vocabulaire et les
 contrôles nécessaires pour distinguer une réponse fluide d’un résultat étayé.
-Après cela, utilisez la [première tâche LLM universelle](routes/universal-core-foundations-FR.md)
+Après cela, utilisez la [première tâche LLM universelle](routes/universal-core-foundations-FR.md) comme référence de migration du Foundation Core anglais à cinq unités
 ou le parcours Codex lorsque ses limites et ses sources correspondent à votre
 tâche. Si vous n’avez pas de projet temporaire, faites la [première modification
 sûre](routes/first-safe-change-FR.md) avant le Lab 001.

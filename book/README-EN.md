@@ -33,9 +33,10 @@ collection of unrelated external projects.
 Complete the LLM Foundation Core before opening a Codex, Claude Code, Gemini,
 Grok, tool, Agent, Skill, or domain route. The core gives you the vocabulary
 and checks needed to tell a fluent answer from an evidenced result. After the
-core, use the [Universal LLM first-task route](routes/universal-core-foundations-EN.md)
-or the Codex track when its boundary and sources match your task. If you do not
-have a disposable project, use **First Safe Change** before Lab 001.
+core, the [Universal LLM first-task route](routes/universal-core-foundations-EN.md)
+is an optional migration reference; use it or the Codex track only when its
+boundary and sources match your task. If you do not have a disposable project,
+use **First Safe Change** before Lab 001.
 
 The aim is not to make you sound fluent in product names. It is to help you
 make one decision you can explain, inspect, and improve.
@@ -73,7 +74,7 @@ currently `draft` with `run_status: not_run`.
 
 ## Where to enter the book
 
-- [Universal LLM first-task route](routes/universal-core-foundations-EN.md) — begin with one fictional, text-only rewrite; then learn four transferable foundations. `candidate / not_run`; it does not establish cross-platform behavior or learner outcomes.
+- [Universal LLM first-task route](routes/universal-core-foundations-EN.md) — optional migration reference after the Foundation Core: one fictional, text-only rewrite and four extracted foundations. `candidate / not_run`; it does not establish cross-platform behavior or learner outcomes.
 - [LLM Foundation Core v1](routes/llm-foundation-core-v1-EN.md) — the proposed five-unit route: explain, initiate, identify, repair, then transfer. `candidate / not_run`; it is the default contract under construction.
 - [Core Unit 2: Context, instruction, and a first generation](routes/llm-core-first-generation-EN.md) — a universal text-only task card and first-response receipt; no Codex or tool setup required.
 - [First Safe Change](routes/first-safe-change-EN.md) — optional offline bridge from Chapter 2 to Lab 001; candidate fixture route · learner run `not_run`

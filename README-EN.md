@@ -98,11 +98,12 @@ behaves the same or that any prompt guarantees an outcome: product-specific
 commands, authority, persistence, and failure modes belong in evidence-gated
 adapters with first-party sources.
 
-[Open the universal-core route](book/routes/universal-core-foundations-EN.md)
-to study four extracted units, then use its fictional four-seam fixture to
-practise task, target, receipt, and structured-state checks before choosing an
-adapter. Adapter routes are `candidate / not_run`: the structure exists, the
-learner and cross-platform runs are still missing.
+The [Universal LLM first-task route](book/routes/universal-core-foundations-EN.md)
+is an optional follow-on and migration reference. It contains four extracted
+units and a fictional four-seam fixture; it is not a second starting path and
+does not replace the five-unit Foundation Core. Adapter routes are
+`candidate / not_run`: the structure exists, while learner and cross-platform
+runs are still missing.
 
 The central promise is simple:
 

@@ -15,7 +15,7 @@ Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkze
 Wenn du zum ersten Mal hier bist, wähle noch nicht zwischen Karten, Skills und Produkten. Folge zuerst diesem deutschen Hauptpfad:
 
 1. [LLM-Konzepte](book/guides/llm-fundamentals-DE.md)
-2. [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
+2. [Erste universelle LLM-Aufgabe (Migrationsreferenz für den Foundation Core)](book/routes/universal-core-foundations-DE.md)
 3. [Erste sichere Änderung](book/routes/first-safe-change-DE.md)
 
 ### Den Weg auf einen Blick sehen
@@ -52,7 +52,7 @@ weiterhin auf `not_run`.
 ## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 
 Wenn du heute nur einen gewöhnlichen Textchat ausprobieren möchtest, öffne
-zuerst die [universelle Route für die erste Aufgabe](book/routes/universal-core-foundations-DE.md).
+zuerst die [universelle Route für die erste Aufgabe](book/routes/universal-core-foundations-DE.md) als Migrationsreferenz für den englischen fünfteiligen Foundation Core.
 Du verwendest nur eine fiktive Mitteilung, formulierst eine Anfrage mit
 Ergebnis, Material, Antwortform, Prüfung und Stopp-Punkt und prüfst die Antwort
 selbst. Weder ein besonderes Konto noch Code, Dateien, Netzwerk, private Daten

@@ -10,7 +10,7 @@ Inhalt und wechselt nicht die Sprache.
 ## Hier beginnen
 
 1. [LLM-Konzepte](guides/llm-fundamentals-DE.md).
-2. [Erste universelle LLM-Aufgabe](routes/universal-core-foundations-DE.md).
+2. [Erste universelle LLM-Aufgabe — Migrationsreferenz](routes/universal-core-foundations-DE.md).
 3. [Erste sichere Änderung](routes/first-safe-change-DE.md).
 4. [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll verwandeln](chapters/03-task-protocol-DE.md)
    → [Lab 002: Einen Wunsch in ein Aufgabenprotokoll verwandeln](labs/lab-002-task-protocol-DE.md).

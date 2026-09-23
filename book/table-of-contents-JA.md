@@ -9,7 +9,7 @@
 ## まずここから
 
 1. [LLM の基礎概念](guides/llm-fundamentals-JA.md)。
-2. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md)。
+2. [最初の汎用 LLM タスク（移行用参考）](routes/universal-core-foundations-JA.md)。
 3. [最初の安全な変更](routes/first-safe-change-JA.md)。
 4. [第 3 章：願いをタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
    → [Lab 002：タスク・プロトコル](labs/lab-002-task-protocol-JA.md)。

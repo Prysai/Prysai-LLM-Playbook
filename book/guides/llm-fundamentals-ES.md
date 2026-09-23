@@ -290,7 +290,7 @@ separa modelo de producto o herramienta y nombra una razón para comprobar.
 
 Guarda la ficha, la primera respuesta y una frase sobre lo que sigue sin saber.
 No declares un resultado de aprendizaje a partir de este autochequeo. Continúa
-primero con la [ruta universal de colaboración con LLM](../routes/universal-core-foundations-ES.md).
+primero con la [ruta universal de colaboración con LLM como referencia de migración](../routes/universal-core-foundations-ES.md).
 Cuando termines esa ruta, pasa al [Capítulo 1: entiende GPT antes de confiar en Codex](../chapters/01-gpt-and-codex-ES.md).
 
 ## Fuentes y límites

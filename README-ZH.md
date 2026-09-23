@@ -14,7 +14,7 @@
 第一次来这里，不必在提示词卡、Skill 和不同产品之间做选择。先沿同一条中文主线学习：
 
 1. [LLM 基础概念](book/guides/llm-fundamentals-ZH.md)
-2. [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
+2. [通用 LLM 第一次练习（Foundation Core 的迁移参考）](book/routes/universal-core-foundations-ZH.md)
 3. [第一次安全改动](book/routes/first-safe-change-ZH.md)
 
 ### 先看一张路线图
@@ -23,8 +23,8 @@
 
 这张五步图把“选定目标 → 打开基础核心 → 安全尝试 → 检查记录 → 继续或停下”放在同一条线上；它帮助你先看懂路线，再决定要不要深入阅读。图是教学辅助，不代表学习效果已经验证。
 
-英文基础核心课是当前的规范源文件，中文版本正在重译和复核。在此之前，
-这个入口会保持整条路线只链接中文文件。
+英文五单元基础核心课是当前的规范源文件；这条中文四单元路线只是迁移期间的补充参考，
+不能视为五单元课程的中文翻译。在此之前，这个入口会保持整条路线只链接中文文件。
 
 西班牙语、工作更新和研究核查卡是学完主线后的**可选应用练习**，不是理解大语言模型的第一课，也不保证效率、流利度或能力提升。
 
@@ -133,7 +133,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 - [中文书籍导读](book/README-ZH.md)
 - [中文前言](book/preface-ZH.md)
 - [中文书籍目录](book/table-of-contents-ZH.md)
-- [通用 LLM 第一次练习](book/routes/universal-core-foundations-ZH.md)
+- [通用 LLM 第一次练习（Foundation Core 的迁移参考）](book/routes/universal-core-foundations-ZH.md)
 - [中文新手提示卡](book/communication-clinic-ZH.md)
 
 术语表、治理规则、来源台账和评测定义目前仍以 locale-neutral 记录为主；部分研究档案和 Skill 说明已有中文候选文件，但尚未完成独立语言审校，因此本入口暂不把它们作为已完成中文正文开放。

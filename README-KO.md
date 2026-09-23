@@ -12,7 +12,7 @@
 처음 방문했다면 카드, Skill, 제품 중에서 고르지 마세요. 먼저 한국어 주 학습 경로를 따르세요.
 
 1. [LLM 개념](book/guides/llm-fundamentals-KO.md)
-2. [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+2. [첫 범용 LLM 작업(Foundation Core 마이그레이션 참고 경로)](book/routes/universal-core-foundations-KO.md)
 3. [첫 번째 안전한 변경](book/routes/first-safe-change-KO.md)
 
 ### 먼저 경로를 그림으로 확인하세요
@@ -46,7 +46,7 @@
 ## 설치보다 안전한 텍스트 과제부터 시작하세요
 
 오늘은 일반 텍스트 채팅만 써 보고 싶다면
-[범용 첫 과제 경로](book/routes/universal-core-foundations-KO.md)를 먼저 여세요.
+[범용 첫 과제 경로](book/routes/universal-core-foundations-KO.md)를 영어 5단위 Foundation Core의 마이그레이션 참고로 먼저 여세요.
 가상의 안내문만 사용해 결과, 자료, 응답 형식, 확인, 중단 지점이 있는 요청 하나를
 만들고 답변을 직접 점검합니다. 특별한 계정, 코드, 파일, 네트워크, 개인 자료나 실제
 작업은 필요하지 않습니다. 이것은 `in-progress` 번역이며, 독립 언어 검토나 학습

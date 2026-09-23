@@ -293,7 +293,7 @@ oder Tool und nennt einen Prüfgrund für diese Aufgabe.
 
 Bewahre Karte, erste Antwort und einen Satz über das Unbekannte auf. Behaupte aus
 diesem Selbstcheck weder Lernerfolg noch Kursabschluss. Weiter geht es zuerst mit
-der [universellen LLM-Kollaborationsroute](../routes/universal-core-foundations-DE.md).
+der [universellen LLM-Kollaborationsroute als Migrationsreferenz](../routes/universal-core-foundations-DE.md).
 Nach dieser Route folgt [Kapitel 1: Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md).
 
 ## Quellen und Grenzen
