@@ -9,7 +9,7 @@
 ## Commencer ici
 
 1. [Chapitre 0 — Bases des LLM](guides/llm-fundamentals-FR.md)
-2. [Fondations universelles : une première tâche sûre](routes/universal-core-foundations-FR.md)
+2. [Fondations universelles : une première tâche sûre — référence de migration](routes/universal-core-foundations-FR.md)
 3. [Première modification sûre](routes/first-safe-change-FR.md)
 4. [Chapitre 1 — Comprendre GPT avant Codex](chapters/01-gpt-and-codex-FR.md)
 5. [Chapitre 2 — Première tâche sûre](chapters/02-first-safe-task-FR.md)

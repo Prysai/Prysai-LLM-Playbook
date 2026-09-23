@@ -242,7 +242,7 @@ Pour un premier essai, utilisez un exemple fictif ou non sensible. Conservez
 la première demande et la première réponse ; sinon vous ne saurez pas si une
 révision a réellement corrigé le problème.
 
-Continuez avec [Fondations universelles : une première tâche sûre](../routes/universal-core-foundations-FR.md).
+Continuez avec [Fondations universelles : une première tâche sûre, référence de migration](../routes/universal-core-foundations-FR.md).
 La route Codex commence après les fondations, au [Chapitre 1](../chapters/01-gpt-and-codex-FR.md).
 
 ## 0.8 La seule vérification de fin de cette unité
@@ -275,7 +275,7 @@ Preuve :
 Conservez la carte, la première demande, la première réponse et une phrase sur
 ce qui reste inconnu. Ne déclarez pas une réussite du cours à partir de cette
 auto-vérification. Continuez avec [Fondations universelles : une première tâche
-sûre](../routes/universal-core-foundations-FR.md), puis ouvrez la route Codex au
+sûre, référence de migration](../routes/universal-core-foundations-FR.md), puis ouvrez la route Codex au
 [Chapitre 1](../chapters/01-gpt-and-codex-FR.md).
 
 ## Sources et limites

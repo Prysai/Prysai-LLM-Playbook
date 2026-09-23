@@ -9,7 +9,7 @@
 ## Lee primero la ruta del libro
 
 1. [Conceptos de LLM](guides/llm-fundamentals-ES.md)
-2. [Primera tarea universal de LLM](routes/universal-core-foundations-ES.md)
+2. [Primera tarea universal de LLM (referencia de migración del Foundation Core)](routes/universal-core-foundations-ES.md)
 3. [Primera modificación segura](routes/first-safe-change-ES.md)
 
 La nueva versión del núcleo de fundamentos tiene una fuente canónica en inglés
@@ -25,7 +25,7 @@ Después de los tres pasos anteriores, puedes consultar las [tarjetas de aplicac
 Como aplicación posterior, puedes elegir el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md). Son seis mensajes con una primera respuesta propia, una corrección limitada y un recibo; no demuestran productividad, calidad de investigación ni preparación profesional.
 
 Si ya has terminado la base y todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
-puedes continuar con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):
+puedes continuar con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md) como referencia de migración del Foundation Core inglés de cinco unidades:
 reescribirás un aviso ficticio con una comprobación visible y un punto de
 parada. Es un ejercicio `candidate / not_run`; no prueba resultados de
 aprendizaje ni que las plataformas se comporten igual.

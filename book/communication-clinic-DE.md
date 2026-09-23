@@ -8,7 +8,7 @@ Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](wor
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 
 **Nutze diese Karten nach dem LLM Foundation Core:** [Einheit 1 — LLM-Konzepte](guides/llm-fundamentals-DE.md)
-→ [Einheit 2 — die erste begrenzte Anfrage](routes/universal-core-foundations-DE.md).
+→ [Einheit 2 — die erste begrenzte Anfrage (Migrationsreferenz)](routes/universal-core-foundations-DE.md).
 Die Karten wenden die Kernmethode an; sie führen nicht in die Frage ein, was
 ein LLM ist. Wenn du den Core noch nicht durchlaufen hast, beginne mit Einheit 1.
 Lies zuerst [Kapitel 0](guides/llm-fundamentals-DE.md); diese Karten wenden die

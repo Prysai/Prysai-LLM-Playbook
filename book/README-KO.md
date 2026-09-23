@@ -13,7 +13,7 @@
 ## 먼저 교과서 주 학습 경로를 읽으세요
 
 1. [LLM 개념](guides/llm-fundamentals-KO.md)
-2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md)
+2. [첫 범용 LLM 작업(Foundation Core 마이그레이션 참고 경로)](routes/universal-core-foundations-KO.md)
 3. [첫 번째 안전한 변경](routes/first-safe-change-KO.md)
 
 새 기초 코어의 정식 원문은 영어이며 한국어판은 재번역과 독립 검토를 기다리고 있습니다.
@@ -30,7 +30,7 @@
 기초 뒤에 하나만 응용해 보고 싶다면 [업무 업데이트 여섯 단계 연습](work-update-practice-loop-KO.md)이나 [리서치 확인 여섯 단계 연습](research-check-practice-loop-KO.md)을 고르세요. 자신의 첫 답변, 하나의 제한된 수정, 기록을 남기는 연습일 뿐 생산성, 조사 품질, 업무 준비도를 증명하지 않습니다.
 
 기초를 마친 뒤에도 아직 프로젝트가 없고 AI가 채팅 밖에서 행동하게 하고 싶지 않다면
-[범용 LLM 첫 과제](routes/universal-core-foundations-KO.md)를 다음으로 해보세요. 가상의
+[범용 LLM 첫 과제](routes/universal-core-foundations-KO.md)를 영어 5단위 Foundation Core의 마이그레이션 참고로 다음에 해보세요. 가상의
 안내문을 다시 쓰며 확인 방법과 중단 지점을 분명히 합니다. 이것은
 `candidate / not_run` 연습이며 학습 효과나 플랫폼 간 동일한 동작을 증명하지
 않습니다.

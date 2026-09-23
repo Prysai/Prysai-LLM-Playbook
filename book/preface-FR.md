@@ -163,7 +163,7 @@ locales. Pour les limites générales du projet, consultez la
 ## Une première séquence simple
 
 1. Lisez les [fondamentaux des LLM](guides/llm-fundamentals-FR.md).
-2. Faites la [première tâche universelle](routes/universal-core-foundations-FR.md)
+2. Faites la [première tâche universelle, référence de migration](routes/universal-core-foundations-FR.md)
    avec un texte fictif ou non sensible.
 3. Passez à la [première modification sûre](routes/first-safe-change-FR.md)
    avant d’ouvrir un outil, une permission ou un dépôt réel.

@@ -265,7 +265,7 @@ tool / MCP / Agent / Skillの境界:
 モデルと製品・ツールを分け、この課題で確認が必要な理由を述べる状態です。
 
 カード、最初の回答、まだ不明なことを1文で保存します。この自己チェックだけで学習
-成果やコース修了を宣言しないでください。まずは[汎用LLM協働ルート](../routes/universal-core-foundations-JA.md)に進みます。そのルートを終えてから、[第1章：Codexを信頼する前にGPTを理解する](../chapters/01-gpt-and-codex-JA.md)へ進んでください。
+成果やコース修了を宣言しないでください。まずは[汎用LLM協働ルート（移行用参考）](../routes/universal-core-foundations-JA.md)に進みます。そのルートを終えてから、[第1章：Codexを信頼する前にGPTを理解する](../chapters/01-gpt-and-codex-JA.md)へ進んでください。
 
 ## 情報源と境界
 

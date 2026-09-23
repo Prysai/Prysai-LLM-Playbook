@@ -12,7 +12,7 @@
 初めて読むときは、カード、Skill、製品から選ばず、まず日本語で読める候補ルートをたどります。
 
 1. [LLM の基礎概念](book/guides/llm-fundamentals-JA.md)
-2. [最初の汎用 LLM タスク（日本語の補助ルート）](book/routes/universal-core-foundations-JA.md)
+2. [最初の汎用 LLM タスク（Foundation Core の移行用補助ルート）](book/routes/universal-core-foundations-JA.md)
 3. [最初の安全な変更](book/routes/first-safe-change-JA.md)
 
 英語の正規入口である5ユニットの LLM Foundation Core には、まだ日本語版がありません。ここで案内する「最初の汎用 LLM タスク」は、現時点で読める4単元の日本語補助ルートであり、英語の正規コースと同一の翻訳版だとは主張しません。
@@ -46,7 +46,7 @@
 ## インストールではなく、安全なテキスト課題から始める
 
 今日は普通のテキストチャットを試したいだけなら、まず
-[最初の課題の共通ルート（日本語の補助ルート）](book/routes/universal-core-foundations-JA.md)を開いてください。
+[最初の課題の共通ルート（日本語の補助ルート）](book/routes/universal-core-foundations-JA.md)を、英語の5ユニット Foundation Core の移行用参考として開いてください。
 架空の案内文だけを使い、結果、材料、回答の形、確認、停止点を書いた依頼を
 一つ作り、自分で返答を確認します。特別なアカウント、コード、ファイル、
 ネットワーク、個人データ、実際の操作は必要ありません。これは `in-progress` の

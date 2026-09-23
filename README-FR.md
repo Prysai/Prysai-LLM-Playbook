@@ -17,7 +17,7 @@ d’apprenants, le transfert et la relecture française indépendante restent
 ## Commencer ici
 
 1. [Comprendre les bases des LLM](book/guides/llm-fundamentals-FR.md)
-2. [Route universelle de première tâche](book/routes/universal-core-foundations-FR.md)
+2. [Route universelle de première tâche (référence de migration du Foundation Core)](book/routes/universal-core-foundations-FR.md)
 3. [Première modification sûre](book/routes/first-safe-change-FR.md)
 
 ### Voir le parcours d’un coup d’œil

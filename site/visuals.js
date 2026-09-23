@@ -265,7 +265,7 @@
 
   const MATURITY_STAGES = [
     {
-      id: 'designed', path: 'book/routes/universal-core-foundations',
+      id: 'designed', path: 'book/routes/llm-foundation-core-v1',
       labels: { en: 'Designed', zh: '已设计', es: 'Diseñado', ja: '設計済み', ko: '설계됨', de: 'Entworfen', 'zh-tw': '已設計', fr: 'Conçu' },
       bodies: { en: 'The teaching contract names the intended result, boundary, action, check, and stop.', zh: '教学契约写清了预期结果、边界、行动、检查和停止条件。', es: 'El contrato didáctico nombra el resultado previsto, los límites, la acción, la comprobación y la parada.', ja: '教材の契約に、意図した結果、境界、行動、確認、停止条件が書かれています。', ko: '교육 계약에 의도한 결과, 경계, 행동, 점검과 중지 조건이 적혀 있습니다.', de: 'Der Lehrvertrag benennt Ergebnis, Grenze, Handlung, Prüfung und Stopp.', 'zh-tw': '教學契約寫清楚預期結果、界線、行動、檢查與停止條件。', fr: 'Le contrat pédagogique précise le résultat visé, les limites, l’action, le contrôle et l’arrêt.' },
       supports: { en: 'A clear intended method.', zh: '一套清楚的预期方法。', es: 'Un método previsto y claramente definido.', ja: '意図した方法が明確であること。', ko: '의도한 방법이 분명하다는 점.', de: 'Eine klar beschriebene Methode.', 'zh-tw': '一套清楚定義的預期方法。', fr: 'Une méthode visée et clairement définie.' },
@@ -273,7 +273,7 @@
       next: { en: 'Render the route and make every entry reachable.', zh: '把路线呈现出来，并让每个入口都能访问。', es: 'Publica el recorrido y haz accesible cada entrada.', ja: 'ルートを表示し、すべての入口に到達できるようにします。', ko: '경로를 렌더링하고 모든 진입점을 접근 가능하게 만드세요.', de: 'Route ausliefern und jeden Einstieg erreichbar machen.', 'zh-tw': '把路線呈現出來，並讓每個入口都能使用。', fr: 'Rendez le parcours visible et chaque entrée accessible.' },
     },
     {
-      id: 'rendered', path: 'book/routes/universal-core-foundations',
+      id: 'rendered', path: 'book/routes/llm-foundation-core-v1',
       labels: { en: 'Rendered', zh: '已呈现', es: 'Publicado', ja: '表示済み', ko: '렌더링됨', de: 'Dargestellt', 'zh-tw': '已呈現', fr: 'Rendu' },
       bodies: { en: 'The page, language route, image, and text fallback work for a reader.', zh: '页面、语言路径、图片和文字回退都能供读者使用。', es: 'La página, la ruta lingüística, la imagen y la alternativa textual funcionan para quien lee.', ja: 'ページ、言語ルート、画像、テキスト代替が読者向けに機能しています。', ko: '페이지, 언어 경로, 이미지와 텍스트 대체 설명이 독자에게 작동합니다.', de: 'Seite, Sprachroute, Bild und Textalternative funktionieren für Lesende.', 'zh-tw': '頁面、語言路徑、圖片與文字替代說明都能供讀者使用。', fr: 'La page, la route linguistique, l’image et l’alternative textuelle fonctionnent pour le lecteur.' },
       supports: { en: 'A reader can reach and inspect the material.', zh: '读者能够到达并检查这份材料。', es: 'Que un lector puede llegar al material e inspeccionarlo.', ja: '読者が教材に到達し、確認できること。', ko: '독자가 자료에 도달해 살펴볼 수 있다는 점.', de: 'Dass Lesende das Material erreichen und prüfen können.', 'zh-tw': '讀者能到達並檢查這份教材。', fr: 'Qu’un lecteur puisse atteindre le contenu et l’inspecter.' },
@@ -373,7 +373,7 @@
 
   const JOURNEY_STAGES = [
     {
-      id: 'foundation', path: 'book/routes/universal-core-foundations',
+      id: 'foundation', path: 'book/routes/llm-foundation-core-v1',
       labels: { en: 'Foundation Core', zh: '基础核心课', es: 'Núcleo de fundamentos', ja: 'LLM 基礎コア', ko: 'LLM 기초 코어', de: 'LLM-Grundlagenkern', 'zh-tw': '基礎核心課', fr: 'Foundation Core' },
       bodies: { en: 'Understand the model, make one request, recognize visible failures, repair, and try a new task.', zh: '理解模型，提出一次请求，识别看得见的失败，修正结果，再在新任务上重做。', es: 'Entiende el modelo, haz una petición, reconoce fallos visibles, repara el resultado y repite en una tarea nueva.', ja: 'モデルを理解し、1つ依頼し、目に見える失敗を見つけ、修正して、新しい課題で試します。', ko: '모델을 이해하고 요청 하나를 만든 뒤, 눈에 보이는 실패를 찾아 고치고 새 작업에서 다시 시도합니다.', de: 'Verstehe das Modell, stelle eine Anfrage, erkenne sichtbare Fehler, repariere das Ergebnis und probiere eine neue Aufgabe.', 'zh-tw': '理解模型、提出一次請求、辨識看得見的失敗、修正結果，再在新任務上重做。', fr: 'Comprendre le modèle, formuler une demande, repérer les erreurs visibles, corriger, puis essayer une nouvelle tâche.' },
       next: { en: 'Finish the foundation before adding a platform-specific layer.', zh: '在增加平台专属层之前，先完成基础核心课。', es: 'Completa el núcleo antes de añadir una capa específica de plataforma.', ja: 'プラットフォーム固有の層を加える前に、まず基礎コアを終える。', ko: '플랫폼별 계층을 추가하기 전에 기초 코어를 먼저 끝내세요.', de: 'Schließe den Grundlagenkern ab, bevor du eine plattformspezifische Ebene ergänzt.', 'zh-tw': '在增加平台專屬層之前，先完成基礎核心課。', fr: 'Terminez le Foundation Core avant d’ajouter une couche propre à une plateforme.' },

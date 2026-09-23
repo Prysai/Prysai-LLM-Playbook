@@ -9,7 +9,7 @@
 ## まず教科書の主線を読む
 
 1. [LLM の基礎概念](guides/llm-fundamentals-JA.md)
-2. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md)
+2. [最初の汎用 LLM タスク（Foundation Core の移行用補助ルート）](routes/universal-core-foundations-JA.md)
 3. [最初の安全な変更](routes/first-safe-change-JA.md)
 
 新しい基礎コアの正規ソースは英語で、日本語版は再翻訳と独立レビューを待っています。
@@ -26,7 +26,7 @@
 基礎の後に一つだけ応用するなら、[業務報告の六段階練習](work-update-practice-loop-JA.md) または [リサーチ確認の六段階練習](research-check-practice-loop-JA.md) を選んでください。自分の最初の回答、一つの限定的な修正、記録を残す練習であり、生産性、調査品質、実務準備を証明するものではありません。
 
 基礎を終えてもまだプロジェクトがなく、AI にチャット外の操作をさせたくない場合は、
-[汎用 LLM の最初の課題](routes/universal-core-foundations-JA.md)を次に行ってください。
+[汎用 LLM の最初の課題](routes/universal-core-foundations-JA.md)を、英語の5ユニット Foundation Core の移行用参考として次に行ってください。
 架空の案内を書き直し、確認方法と停止点を明示します。これは
 `candidate / not_run` の練習であり、学習効果やプラットフォーム間の同一動作を
 証明するものではありません。

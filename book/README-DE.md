@@ -12,7 +12,7 @@
 ## Zuerst dem Lehrbuchpfad folgen
 
 1. [LLM-Konzepte](guides/llm-fundamentals-DE.md)
-2. [Erste universelle LLM-Aufgabe](routes/universal-core-foundations-DE.md)
+2. [Erste universelle LLM-Aufgabe (Migrationsreferenz für den Foundation Core)](routes/universal-core-foundations-DE.md)
 3. [Erste sichere Änderung](routes/first-safe-change-DE.md)
 
 Der neue Grundlagenkern hat eine kanonische englische Quelle und wartet noch
@@ -39,7 +39,7 @@ Effizienz noch Lernerfolg.
 Für eine einzelne Anwendung nach dem Fundament kannst du den [sechsstufigen Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [sechsstufigen Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md) wählen. Du bewahrst einen eigenen ersten Versuch, einen begrenzten Hinweis und einen Beleg auf; damit werden weder Produktivität noch Recherchequalität oder Arbeitsreife bewiesen.
 
 Wenn du nach dem Fundament noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
-fahre mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md) fort.
+fahre mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md) als Migrationsreferenz für den englischen fünfteiligen Foundation Core fort.
 Du schreibst eine fiktive Mitteilung um und hältst Prüfung und Stopp-Punkt
 sichtbar. Das ist eine Übung `candidate / not_run`; sie beweist weder
 Lernergebnisse noch gleiches Verhalten auf verschiedenen Plattformen.

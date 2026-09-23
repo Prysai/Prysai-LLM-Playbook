@@ -255,7 +255,7 @@ LLM 경계:
 모델과 제품·도구를 나누고 이 과제에서 확인해야 하는 이유를 말하는 상태입니다.
 
 카드, 첫 답변, 아직 모르는 것을 한 문장으로 저장하세요. 이 자기 점검만으로 학습 결과나
-수료를 선언하지 마세요. 먼저 [범용 LLM 협업 경로](../routes/universal-core-foundations-KO.md)로 가세요. 이 경로를 마친 뒤 [1장: Codex를 믿기 전에 GPT를 이해하라](../chapters/01-gpt-and-codex-KO.md)로 진행하세요.
+수료를 선언하지 마세요. 먼저 [범용 LLM 협업 경로(마이그레이션 참고)](../routes/universal-core-foundations-KO.md)로 가세요. 이 경로를 마친 뒤 [1장: Codex를 믿기 전에 GPT를 이해하라](../chapters/01-gpt-and-codex-KO.md)로 진행하세요.
 
 ## 출처와 경계
 

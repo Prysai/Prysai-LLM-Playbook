@@ -9,7 +9,7 @@
 
 把本頁當作實用參考，不是一張「所有工具都要安裝」的清單。它依序回答五個問題：你要做什麼工作、哪種用戶端適合、工作會在哪裡執行、如何找到廠商目前的設定入口，以及第一次嘗試什麼才比較安全。完成設定不等於驗證成功，也不等於帳戶符合資格、檔案可存取，或第一次任務已經完成。
 
-本頁不是產品排名，也不保證每位讀者都能使用所有帳戶、作業系統、地區、方案或功能。它保留 [通用基礎路線](universal-core-foundations-ZHTW.md) 中可遷移的方法：定義任務、限制權限、檢查結果、保留證據。命令、方案、可用性和用戶端支援都會變動；來源回執記錄所查閱的官方文件及日期，但不代表某個安裝程式、帳戶或任務一定能在你的環境中運作。
+本頁不是產品排名，也不保證每位讀者都能使用所有帳戶、作業系統、地區、方案或功能。它保留 [通用基礎路線（遷移參考）](universal-core-foundations-ZHTW.md) 中可遷移的方法：定義任務、限制權限、檢查結果、保留證據。命令、方案、可用性和用戶端支援都會變動；來源回執記錄所查閱的官方文件及日期，但不代表某個安裝程式、帳戶或任務一定能在你的環境中運作。
 
 > 先選工作介面，再選命令。熟悉的產品名稱，並不能告訴你檔案是在本機還是雲端，也不能告訴你用戶端能否在聊天之外採取行動。
 
@@ -56,11 +56,11 @@ Grok Bot 現場筆記只把讀者提供的個人經歷當作需求訊號。它�
 
 ## 找到適合你的路線
 
-如果你剛開始了解 LLM，請先閱讀[通用基礎路線](universal-core-foundations-ZHTW.md)。如果已經掌握基礎，可以從下表跳到相關入口：
+如果你剛開始了解 LLM，請先閱讀[通用基礎路線（遷移參考）](universal-core-foundations-ZHTW.md)。如果已經掌握基礎，可以從下表跳到相關入口：
 
 | 目標 | 入口 | 停下來檢查 |
 | --- | --- | --- |
-| 理解基本 LLM 工作流程 | [通用基礎路線](universal-core-foundations-ZHTW.md) | 能否用自己的話解釋結果 |
+| 理解基本 LLM 工作流程 | [通用基礎路線（遷移參考）](universal-core-foundations-ZHTW.md) | 能否用自己的話解釋結果 |
 | 選擇網頁、行動版、桌面、IDE、終端機或雲端工作面 | [平台與用戶端地圖](#platform-and-client-map) | 工作在哪裡執行，以及它能看到什麼 |
 | 理解容易混淆的產品名稱 | [容易混淆的名稱](#names-that-are-easy-to-confuse) | 名稱指的是產品、用戶端還是執行環境 |
 | 安裝產品並完成安全的第一次嘗試 | [安裝並完成第一次安全嘗試](#install-and-make-a-first-safe-attempt) | 命令是否來自官方，以及會改變什麼 |
@@ -501,7 +501,7 @@ command -v node npm git brew
 
 - 純文字入門練習：[Beginner Practice Pack](../communication-clinic-ZHTW.md)。
 - 檔案與工具的深度旗艦路線：[First Safe Change](first-safe-change-ZHTW.md)。
-- 平台無關基礎：[Universal Core Foundations](universal-core-foundations-ZHTW.md)。
+- 平台無關基礎（遷移參考）：[Universal Core Foundations](universal-core-foundations-ZHTW.md)。
 - 公平比較兩個平台：[LLM Comparison Protocol（locale-neutral）](../../skills/prysai-llm-comparison-protocol/SKILL.md)。
 - 檢查變動中的產品聲明：[Platform Fact Watch（locale-neutral）](../../skills/prysai-platform-fact-watch/SKILL.md)。
 

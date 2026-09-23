@@ -5,9 +5,9 @@
 状态：`draft` ｜ 学习者运行证据：`not_run` ｜ 适用范围：任何文字聊天式 LLM 使用入口中的低风险、非敏感练习。
 
 **请在完成 LLM 基础核心课程后再使用：**[单元 1：LLM 基础概念](guides/llm-fundamentals-ZH.md)
-→ [单元 2：第一次有边界的请求](routes/universal-core-foundations-ZH.md)。
+→ [单元 2：第一次有边界的请求（迁移参考）](routes/universal-core-foundations-ZH.md)。
 这些卡片用于应用核心方法；它们不是解释“大语言模型是什么”的入门课。
-如果你还没有完成核心课程，请先阅读[第 0 章](guides/llm-fundamentals-ZH.md)，再从[LLM 基础核心课程](routes/universal-core-foundations-ZH.md)开始。
+如果你还没有完成英文五单元核心课程，请先阅读[第 0 章](guides/llm-fundamentals-ZH.md)；这条四单元路线只作为迁移参考，不是五单元课程的替代品。
 
 你现在处于中文说明路径：本页所有说明、判断和导航都使用中文。页面中的西班牙语只是**可选择的外语练习目标**，不是页面误跳转，也不表示你必须学习西班牙语。
 

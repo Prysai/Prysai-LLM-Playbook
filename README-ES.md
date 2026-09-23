@@ -12,7 +12,7 @@ Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0;
 Si es tu primera visita, no elijas todavía entre tarjetas, Skills o productos. Sigue esta ruta en español:
 
 1. [Conceptos de LLM](book/guides/llm-fundamentals-ES.md)
-2. [Primera tarea universal de LLM](book/routes/universal-core-foundations-ES.md)
+2. [Primera tarea universal de LLM (referencia de migración del Foundation Core)](book/routes/universal-core-foundations-ES.md)
 3. [Primera modificación segura](book/routes/first-safe-change-ES.md)
 
 ### Mira el recorrido de un vistazo
@@ -48,7 +48,7 @@ aprendizaje siguen en `not_run`.
 ## Empieza con una tarea de texto segura, sin instalación
 
 Si hoy solo quieres probar un chat de texto, abre la
-[ruta universal de primera tarea](book/routes/universal-core-foundations-ES.md).
+[ruta universal de primera tarea](book/routes/universal-core-foundations-ES.md) como referencia de migración del Foundation Core inglés de cinco unidades.
 Usa un aviso ficticio, escribe una petición con resultado, material, forma de
 respuesta, comprobación y límite de parada, y revisa tú mismo la respuesta.
 No necesitas una cuenta especial, código, archivos, una red, datos privados ni
