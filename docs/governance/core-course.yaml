@@ -14,7 +14,7 @@
     "path": "book/routes/llm-foundation-core-v1-EN.md",
     "estimated_minutes": 10,
     "route_estimated_minutes": 120,
-    "estimated_minutes_note": "The entry estimate covers the first safe attempt; the five-unit route estimate is 120 minutes before independent practice and review.",
+    "estimated_minutes_note": "The five unit estimates total 110 minutes; the route estimate is about 120 minutes including transitions, artifact capture, and route-level review before independent practice and delayed review.",
     "learner_artifact": "the supplied notice, first request, first response, and a three-item self-check",
     "stop_if": [
       "private or credential material is required",
