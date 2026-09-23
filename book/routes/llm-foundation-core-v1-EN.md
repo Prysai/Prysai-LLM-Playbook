@@ -1,4 +1,4 @@
-<!-- content_id: llm-foundation-core-v1-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-17 -->
+<!-- content_id: llm-foundation-core-v1-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-09-23 -->
 
 # LLM Foundation Core v1
 
